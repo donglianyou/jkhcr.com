@@ -1,0 +1,262 @@
+.webuploader-container {
+	position: relative;
+}
+.webuploader-element-invisible {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px,1px,1px,1px);
+}
+.webuploader-pick {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	background: #F5F5F5;
+	padding: 2px 10px;
+	color: #000000;
+	text-align: center;
+	border-radius: 3px;
+	overflow: hidden;
+}
+.webuploader-pick-hover {
+	background: #F5F5F5;
+}
+
+.webuploader-pick-disable {
+	opacity: 0.6;
+	pointer-events:none;
+}
+
+.uploader-list {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+#uploader-qq3479015851{
+	max-width:750px;
+	width:750px;
+}
+
+/* 左移 右移  封面  */
+
+.postimg-item-status_qq3479015851 {
+    background: #eee;
+    display: block;
+    width: 200px;
+    padding: 5px 0;
+	margin-left:-5px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.postimg-item-status_qq3479015851 .cover.status-button:disabled {
+    color: #e74c3c;
+    background: #eee;
+    border: none;
+}
+
+
+.postimg-item-status_qq3479015851 .status-button:disabled {
+    background: #fff;
+    color: #cecdcb;
+}
+.postimg-item-status_qq3479015851 .status-button {
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 8px;
+    background: #f9f9f9;
+    border: 1px solid #ededed;
+    border-radius: 5px;
+    color: #444;
+    cursor: pointer;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size: 12px;
+}
+
+
+.file-item .postimg-status-del {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    height: 20px;
+    width: 20px;
+    font-size: 15px;
+    border-radius: 20px;
+    line-height: 20px;
+    color: #fff;
+    background: #ec5524;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+
+/* 左移 右移  封面  */
+
+
+#uploader-qq3479015851 .thumbnail {
+    width: 190px;
+    height: 230px;
+}
+.file-item {
+    float: left;
+    position: relative;
+	background: url(loading.gif) 74px 74px no-repeat;
+    margin: 0 20px 20px 0;
+    padding: 4px;
+}
+.thumbnail, .img-thumbnail {
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.075);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.075);
+}
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.428571429;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+#uploader-qq3479015851 .thumbnail img {
+    width: 100%;
+}
+.thumbnail>img, .thumbnail a>img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.file-item .info {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    right: 4px;
+    height: 20px;
+    line-height: 20px;
+    text-indent: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    z-index: 10;
+}
+
+.file-item .info a{
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    z-index: 10;
+}
+
+
+.file-item .error {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    background: red;
+    color: white;
+    text-align: center;
+    height: 20px;
+    font-size: 14px;
+    line-height: 23px;
+}
+
+
+.upload-state-done:after {
+    content:"\f00c";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 32px;
+    position: absolute;
+    bottom: 0;
+    right: 4px;
+    color: #4cae4c;
+    z-index: 99;
+}
+.file-item .progress {
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    height: 3px;
+    left: 4px;
+    height: 4px;
+    overflow: hidden;
+    z-index: 15;
+    margin:0;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+}
+.file-item .progress span {
+/*     display: block;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    background: #d14 url(progress.png) repeat-x;
+    -webit-transition: width 200ms linear;
+    -moz-transition: width 200ms linear;
+    -o-transition: width 200ms linear;
+    -ms-transition: width 200ms linear;
+    transition: width 200ms linear;
+    -webkit-animation: progressmove 2s linear infinite;
+    -moz-animation: progressmove 2s linear infinite;
+    -o-animation: progressmove 2s linear infinite;
+    -ms-animation: progressmove 2s linear infinite;
+    animation: progressmove 2s linear infinite;
+    -webkit-transform: translateZ(0); */
+}
+@-webkit-keyframes progressmove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 17px 0;
+    }
+}
+@-moz-keyframes progressmove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 17px 0;
+    }
+}
+@keyframes progressmove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 17px 0;
+    }
+}
+
+a.travis {
+  position: relative;
+  top: -4px;
+  right: 15px;
+}
+
+
+
+
+
+

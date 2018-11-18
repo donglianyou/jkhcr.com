@@ -1,0 +1,8 @@
+#
+# robots.txt for qq3479015851
+# Version 5.8se
+#
+
+User-agent: *
+
+Disallow: /m/

@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="<?php echo $qq3479015851_global[SiteUrl]?>/template/global/button.css">
+<script language="javascript" src="<?php echo $qq3479015851_global[SiteUrl]?>/template/global/noerr.js"></script>
+
+<?php if($mapflag == "baidu") {?>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=4skgMwmXmxBydmeoSqRPm91vB03b4PWa"></script>
+<style>
+body{font:Verdana, Arial, Helvetica, sans-serif; text-align:left;}
+</style>
+<script language="javascript">
+<?php if($documentdomain === 'yes'){?>document.domain = '<?php echo str_replace("http://www.","",$qq3479015851_global["SiteUrl"])?>';<?php }?>
+function besuremark() {
+	var point = document.getElementById("result_").value;
+	if(point == ''){
+		if(!confirm('您尚未标注地图\n\n确认保存吗?')) return false;
+	} else {
+		parent.document.getElementById('mappoint').value =point;
+		alert('地理位置标注成功！');
+	}
+	parent.closeopendiv();
+}
+</script>
+</head>
+<body style="background:#CBE1FF">
+    <div style="width:730px;margin:auto;">   
+        地址：<input id="text_" placeholder="输入地址选择或双击地图标注" type="text" style="width:200px;" value=""/>
+        <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
+        经纬度：<input id="result_" type="text" />
+        <input type="button" value="确认正确,点我标注" onclick="besuremark();"/>
+        <div id="container" 
+            style="position: absolute;
+                margin-top:30px; 
+                width: 730px; 
+                height: 350px; 
+                top: 50; 
+                border: 1px solid gray;
+                overflow:hidden;">
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+function G(id) {
+	return document.getElementById(id);
+}
+function showInfo(e){
+	parent.document.getElementById('mappoint').value =e.point.lng + ", " + e.point.lat;
+	alert('地理位置标注成功！');
+	parent.closeopendiv();
+}
+
+    var map = new BMap.Map("container");
+    var _initPoint = new BMap.Point(<?php echo $p1;?>,<?php echo $p2;?>);
+    map.centerAndZoom(_initPoint,19);
+    var marker = new BMap.Marker(_initPoint); 
+    map.addOverlay(marker);
+    marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+    
+    map.enableScrollWheelZoom(); 
+    map.enableContinuousZoom(); 
+
+    map.addControl(new BMap.NavigationControl());
+    map.addControl(new BMap.OverviewMapControl()); 
+    map.addControl(new BMap.OverviewMapControl({ isOpen: true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT }));
+
+    var localSearch = new BMap.LocalSearch(map);
+    localSearch.enableAutoViewport(); 
+    
+
+	var ac = new BMap.Autocomplete(   
+			{
+				"input" : "text_",
+				"location" : map
+			}
+	);
+    
+	ac.addEventListener("onhighlight", function(e) { 
+		var str = "";
+			var _value = e.fromitem.value;
+			var value = "";
+			if (e.fromitem.index > -1) {
+				value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+			}    
+			str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+			
+			value = "";
+			if (e.toitem.index > -1) {
+				_value = e.toitem.value;
+				value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+			}    
+			str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+			G("searchResultPanel").innerHTML = str;
+		});
+    
+
+	var myValue;
+	ac.addEventListener("onconfirm", function(e) {  
+		
+	var _value = e.item.value;
+		myValue = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+		G("searchResultPanel").innerHTML ="onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+		setPlace();
+	});
+
+	function setPlace(){
+		map.clearOverlays();  
+		function myFun(){
+			
+			var pp = local.getResults().getPoi(0).point;   
+			document.getElementById("result_").value = pp.lng + "," + pp.lat;
+			
+			map.centerAndZoom(pp,19);
+			var marker = new BMap.Marker(pp);
+	        map.addOverlay(marker);
+
+		}
+		var local = new BMap.LocalSearch(map, { 
+		  onSearchComplete: myFun
+		});
+		local.search(myValue);
+	} 
+	map.addEventListener("click", showInfo);
+	
+function searchByStationName() {
+    map.clearOverlays();
+    var keyword = document.getElementById("text_").value;
+    localSearch.setSearchCompleteCallback(function (searchResult) {
+        var poi = searchResult.getPoi(0);
+        document.getElementById("result_").value = poi.point.lng + "," + poi.point.lat;
+        map.centerAndZoom(poi.point, 19);
+        var marker = new BMap.Marker(new BMap.Point(poi.point.lng, poi.point.lat)); 
+        map.addOverlay(marker);
+        var content = document.getElementById("text_").value + "<br/><br/>经度：" + poi.point.lng + "<br/>纬度：" + poi.point.lat+"<br/>如有误请输入详细的小区名称重新查询";
+        var infoWindow = new BMap.InfoWindow("<p style='font-size:14px;'>" + content + "</p>");
+        marker.openInfoWindow(infoWindow);
+
+        marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+    });
+    localSearch.search(keyword);
+} 
+</script>
+
+<?php }else{ ?>
+
+<style>
+body{font:Verdana, Arial, Helvetica, sans-serif; text-align:left;}
+</style>
+<script language="javascript">
+<?php if($documentdomain === 'yes'){?>document.domain = '<?php echo str_replace("http://www.","",$qq3479015851_global["SiteUrl"])?>';<?php }?>
+function besuremark() {
+	var point1 = document.getElementById('point1').value;
+	var point2 = document.getElementById('point2').value;
+	if(point1 == '' || point2 == ''){
+		if(!confirm('您尚未标注地图\n\n确认保存吗?')) return false;
+	} else {
+		parent.document.getElementById('mappoint').value = point1 + "," + point2;
+		alert('地理位置标注成功！');
+	}
+	parent.closeopendiv();
+}
+</script>
+</head>
+<body style="margin:10px 0 0 0; ">
+<div id="mymap" style="width:<?php echo $width; ?>px; height:<?php echo $height; ?>px;"><center style="margin-top:10px;">loading...</center></div>
+<?php if($action == 'markpoint'){?>
+<div style=" margin-left:10px; margin-right:10px; margin-top:10px; padding-bottom:10px; text-align:center; border-top:1px #eee solid"><font style="font-size:12px; color:#585858; line-height:30px">点击“我要标注”按钮后，鼠标左键单击地图指定位置进行标注</font><br />
+<input type="button" onclick="markmap();" id="markbtn" value="我要标注" class="gray large"/>
+<input type="button" value="确定" onclick="besuremark();" class="gray large">
+</div>
+<input type="hidden" id="point1" value='' />
+<input type="hidden" id="point2" value='' />
+<?php }?>
+<script type="text/javascript">
+var map_id = 'mymap';
+var p1 = '<?php echo $p1; ?>';
+var p2 = '<?php echo $p2; ?>';
+var mark = 'mark';
+var show = '<?php echo ($action == "show" && $p1 && $p2) ? 1 : 0; ?>';
+var title = '<?php echo $title; ?>';
+var content = '<?php echo $content; ?>';
+var width = <?php echo $width; ?>;
+var height = <?php echo $height; ?>;
+var view_level = <?php echo $level; ?>;
+var cityname = '<?php echo $cityname ; ?>';
+</script>
+<script type="text/javascript" language="javascript" src="<?php echo $qq3479015851_global[mapapi]; ?>" <?php if($qq3479015851_global[mapapi_charset]) $charset = $qq3479015851_global[mapapi_charset]; ?>></script>
+<script type="text/javascript" language="javascript" src="<?php echo $qq3479015851_global[SiteUrl]?>/include/map/<?php echo $qq3479015851_global[mapflag]?>.js?v=<?php echo $version; ?>"></script>
+</body>
+</html>
+
+<?php }?>
+
+
+
+
+
+
+

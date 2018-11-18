@@ -1,0 +1,37 @@
+RewriteEngine On
+RewriteBase /
+
+#RewriteEngine on RewriteCond % !^$
+#RewriteRule uploads/(.*).(php)$ – [F]
+#RewriteRule data/(.*).(php)$ – [F]
+#RewriteRule templets/(.*).(php)$ –[F]
+
+#如果是二级域名,删除下面2行的# 注释
+RewriteCond Host:  ([a-z]+)\.vjrod\.cn
+RewriteRule ^(.*) /$1/$2
+
+RewriteRule ^space/(.+)\/$ space\.php\?user=$1
+RewriteRule ^store-([0-9]+)\/$ store\.php\?uid=$1
+RewriteRule ^store-([0-9]+)/([^\/]+).html$ store\.php\?uid=$1&Uid=$2
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(?!store|space)(.+)/$ category\.php\?Catid=$1
+#RewriteRule ^([^\/]+)/([0-9]+)\.html$ information\.php\?id=$2
+RewriteRule ^(.*)/([0-9]+)\.html$ /information\.php\?id=$2
+RewriteRule ^(.*)/information-id-([0-9]+)\.html$ $1/information\.php\?id=$2
+RewriteRule ^news\.html$ news\.php
+RewriteRule ^news-id-([0-9]+)\.html$ news\.php\?id=$1
+RewriteRule ^news-catid-([0-9]+)\.html$ news\.php\?catid=$1
+RewriteRule ^news-catid-([0-9]+)-page-([0-9]+)\.html$ news\.php\?catid=$1&page=$2
+RewriteRule ^goods\.html$ goods\.php
+RewriteRule ^goods-id-([0-9]+)\.html$ goods\.php\?id=$1
+RewriteRule ^goods-([^\/]+)\.html$ goods\.php\?Catid=$1
+RewriteRule ^corporation\.html$ corporation\.php
+RewriteRule ^corporation-([^\/]+)\.html$ corporation\.php\?Catid=$1
+RewriteRule ^aboutus\.html$ about\.php\?part=aboutus
+RewriteRule ^sitemap\.html$ about\.php\?part=sitemap
+RewriteRule ^aboutus-id-([0-9]+)\.html$ about\.php\?part=aboutus&id=$1
+RewriteRule ^announce\.html$ about\.php\?part=announce&id=$1
+RewriteRule ^faq\.html$ about\.php\?part=faq
+RewriteRule ^faq-id-([0-9]+)\.html$ about\.php\?part=faq&id=$1
+RewriteRule ^friendlink\.html$ about\.php\?part=friendlink
+

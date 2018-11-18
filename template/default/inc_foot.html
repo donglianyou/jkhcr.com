@@ -1,0 +1,131 @@
+<div id="ad_footerbanner"></div>
+<!--{if $advertisement[type][floatad] || $advertisement[type][couplead]}-->
+<div align="left"  style="clear: both;">
+<script src="{$qq3479015851_global[SiteUrl]}/template/global/floatadv.js" type="text/javascript"></script>
+<!--{if $advertisement[type][couplead]}-->
+<script type="text/javascript">
+	{$adveritems[$advertisement[type][couplead][0]]}theFloaters.play();
+</script>
+<!--{/if}-->
+<!--{if $advertisement[type][floatad]}-->
+<script type="text/javascript">
+	{$adveritems[$advertisement[type][floatad][0]]}theFloaters.play();
+</script>
+<!--{/if}-->
+</div>
+<!--{/if}-->
+<div style="display: none" id="ad_none">
+<!--{if $advertisement[type][headerbanner]}-->
+<div class="header" id="ad_header_none">
+{php $countheaderbanner = count($advertisement[type][headerbanner]);$i=1;}
+<!--{loop $advertisement['type']['headerbanner'] $qq3479015851}-->
+<!--{if {$adveritems[$qq3479015851]}}--><div class="headerbanner" {if $countheaderbanner == $i}style="margin-right:0;"{/if}>{$adveritems[$qq3479015851]}</div><!--{/if}-->
+{php $i=$i+1;}
+<!--{/loop}-->
+</div>
+<!--{/if}-->
+<!--{loop $advertisement[type][indexcatad] $k $qq3479015851}-->
+<div class="indexcatad" id="ad_indexcatad_{$k}_none"><!--{$adveritems[$qq3479015851[0]]}--></div>
+<!--{/loop}-->
+<!--{if $advertisement[type][interlistad][top]}-->
+<div id="ad_interlistad_top_none">
+<ul class="interlistdiv">
+<!--{loop $advertisement[type][interlistad][top] $qq3479015851}-->
+<!--{if $adveritems[$qq3479015851]}--><li class="hover"><!--{$adveritems[$qq3479015851]}--></li><!--{/if}-->
+<!--{/loop}-->
+</ul>
+</div>
+<!--{/if}-->
+<!--{if $advertisement[type][interlistad][bottom]}-->
+<div id="ad_interlistad_bottom_none">
+<ul class="interlistdiv">
+<!--{loop $advertisement[type][interlistad][bottom] $qq3479015851}-->
+<!--{if $adveritems[$qq3479015851]}--><li class="hover"><!--{$adveritems[$qq3479015851]}--></li><!--{/if}-->
+<!--{/loop}-->
+</ul>
+</div>
+<!--{/if}-->
+<!--{if $advertisement[type][intercatad]}-->
+<div class="intercatdiv" id="ad_intercatdiv_none">
+<!--{loop $advertisement[type][intercatad] $qq3479015851}-->
+<div class="intercatad">{$adveritems[$qq3479015851]}</div>
+<!--{/loop}-->
+</div>
+<!--{/if}-->
+<!--{if $advertisement[type][topbanner]}-->
+<div class="topbanner" id="ad_topbanner_none">
+<!--{loop $advertisement[type][topbanner] $qq3479015851}-->
+<div class="topbannerad">{$adveritems[$qq3479015851]}</div>
+<!--{/loop}-->
+</div>
+<!--{/if}-->
+<!--{if $advertisement[type][footerbanner]}-->
+<div class="footerbanner" id="ad_footerbanner_none">
+<!--{loop $advertisement[type][footerbanner] $qq3479015851}-->
+<div class="footerbannerad">{$adveritems[$qq3479015851]}</div>
+<!--{/loop}-->
+</div>
+<!--{/if}-->
+</div>
+<div class="footer_new">
+    <div class="foot_new">
+        <div class="foot_box">
+        	<div class="hd">信息管理</div>
+            <div class="bd">
+            	<ul>
+                	<li><a target="_blank" href="{$qq3479015851_global[SiteUrl]}/{$qq3479015851_global[cfg_postfile]}?cityid={$cityid}">免费发布信息</a></li>
+                    <li><a target="_blank" href="{$qq3479015851_global[SiteUrl]}/delinfo.php?cityid={$cityid}" rel="nofollow">修改/删除信息</a></li>
+                    <li><a target="_blank" href="{$qq3479015851_global[SiteUrl]}/search.php?cityid={$cityid}" rel="nofollow">信息快速搜索</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot_box" id="sjfw" style="display:none;">
+        	<div class="hd">商家服务</div>
+            <div class="bd">
+            	<ul>
+                	<li><a target="_blank" href="{$qq3479015851_global[SiteUrl]}/{$qq3479015851_global[cfg_member_logfile]}?mod=register&action=store&cityid={$cityid}">商家入驻</a></li>
+                    <li><a target="_blank" href="{$qq3479015851_global[SiteUrl]}/{$qq3479015851_global[cfg_member_logfile]}?cityid={$cityid}">商家登录</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot_box">
+        	<div class="hd">关于我们</div>
+            <div class="bd">
+            	<ul>
+                	<!--{php $navurl_foot = qq3479015851_get_navurl('foot',30);}-->
+                    <!--{loop $navurl_foot $k $qq3479015851}-->
+                	<li><a href="{$qq3479015851[url]}" style="color:{$qq3479015851[color]}" target="{$qq3479015851[target]}">{$qq3479015851[title]}<sup class="{$qq3479015851[ico]}"></sup></a></li>
+                    <!--{/loop}-->
+                </ul>
+            </div>
+        </div>
+        <div class="foot_wx">
+        	<div class="hd">扫一扫，访问手机站</div>
+            <div class="bd">
+            	<ul>
+                	<img alt="{$qq3479015851_global[SiteName]}手机版" src="{$qq3479015851_global[SiteUrl]}/qrcode.php?value={$qq3479015851_global[SiteUrl]}/m/index.php&size=4.7">
+                </ul>
+            </div>
+        </div>
+<div class="foot_wx" id="gzh">
+        	<div class="hd">关注微信公众号</div>
+            <div class="bd">
+            	<ul>
+                	<img alt="{$mymps_global[SiteName]}微信公众号" src="{$mymps_global[SiteUrl]}/erweima.gif">
+                </ul>
+            </div>
+        </div>
+        <div class="foot_mobile">
+        	<ul>
+            {if $qq3479015851_global[SiteTel]}<div class="h1"><font>{$qq3479015851_global[SiteTel]}</font></div>{/if}
+            {if $qq3479015851_global[SiteEmail]}<div class="h3">邮箱：<font>{$qq3479015851_global[SiteEmail]}</font></div>{/if}
+            </ul>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="foot_powered">
+    	Copyright &copy; {$qq3479015851_global[SiteName]}版权所有 <a href="http://www.miibeian.gov.cn">{$qq3479015851_global[SiteBeian]}</a>
+    </div>
+</div>
+<p id="back-to-top"><a href="#top"><span></span></a></p>
+<script type="text/javascript">loadDefault(["addiv","iflogin","show_tab","scrolltop","changecity"]);</script>

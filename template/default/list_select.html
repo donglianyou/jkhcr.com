@@ -1,0 +1,70 @@
+<div id="select">
+	<!--{if $cat_list}-->
+	<dl class='fore' id='select-brand'>
+	<dt>栏目分类：</dt>
+	<dd>
+	<div class='content'>
+    	<!--{loop $cat_list $qq3479015851}-->
+		<div><a href="{$city[domain]}{$qq3479015851[uri]}" {if $qq3479015851[catid] == $cat[catid]}class="curr"{/if} title="{$city[cityname]}{$qq3479015851[catname]}">不限</a></div>
+        <!--{loop $qq3479015851[children] $w}-->
+		<div><a href="{$city[domain]}{$w[uri]}" {if $w[catid] == $cat[catid]}class="curr"{/if} title="{$city[cityname]}{$w[catname]}">{$w[catname]}</a></div>
+        <!--{/loop}-->
+		<!--{/loop}-->
+	</div>
+	</dd>
+	</dl>
+    <!--{/if}-->
+    <!--{loop $qq3479015851_extra_model $qq3479015851}-->
+	<dl>
+	<dt><!--{$qq3479015851[title]}-->：</dt>
+	<dd>
+    <!--{loop $qq3479015851['list'] $w}-->
+	<div><a href="{$city[domain]}{$w[uri]}" {if $w[select] == 1}class="curr"{/if}>{$w[name]}</a></div>
+	<!--{/loop}-->
+    </dd>
+	</dl>
+	<!--{/loop}-->
+    <!--{if $area_list}-->
+	<dl>
+	<dt>区域查找：</dt>
+	<dd>
+    	<!--{loop $area_list $qq3479015851}-->
+		<div><a href="{$city[domain]}{$qq3479015851[uri]}" {if $qq3479015851[select] == 1}class="curr"{/if}>{$qq3479015851[areaname]}</a></div>
+		<!--{/loop}-->
+	</dd>
+	</dl>
+	<!--{/if}-->
+    <!--{if $street_list}-->
+		<dl>
+		<dt></dt>
+		<dd>
+        	<!--{loop $street_list $qq3479015851}-->
+			<div><a href="{$city[domain]}{$qq3479015851[uri]}" {if $qq3479015851[select] == 1}class="curr"{/if}>{$qq3479015851[streetname]}</a></div>
+			<!--{/loop}-->
+		</dd>
+		</dl>
+	<!--{/if}-->
+    <!--{if !$cityid && $hotcities}-->
+		<dl>
+		<dt>热门分站</dt>
+		<dd>
+		<div><a href="#" class="curr">不限</a></div>
+        	<!--{loop $hotcities $qq3479015851}-->
+			<div><a href="{$qq3479015851[domain]}{$cat[caturi]}">{$qq3479015851[cityname]}</a></div>
+			<!--{/loop}-->
+		<div><a href="{$qq3479015851_global[SiteUrl]}/changecity.php">更多 &raquo;</a></div>
+		</dd>
+		</dl>
+	<!--{/if}-->
+	<dl class="lastdl">
+	<form method="get" action="{$qq3479015851_global[SiteUrl]}/search.php?" target="_blank">
+		<input name="mod" value="information" type="hidden">
+		<input name="catid" value="{$cat[catid]}" type="hidden">
+		<input name="cityid" value="{$cityid}" type="hidden">
+        <input name="areaid" value="{$areaid}" type="hidden">
+		<input name="streetid" value="{$streetid}" type="hidden">
+		<input name="keywords" type="text" value="" class="searchinput" id="searchbody" onmouseover="hiddennotice('searchbody');"/>
+		<input type="submit" value="搜本类" class="new_searchsubmit" />
+	</form>
+	</dl>
+</div>
