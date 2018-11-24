@@ -2,10 +2,10 @@
 <div class="footer">
     <div class="clearfix footer-inner">
         <p class="copyright">
-            CopyRight &copy; <a href="<?php echo $qq3479015851_global['SiteUrl']; ?>"><?php echo $qq3479015851_global['SiteName']; ?></a> 合作热线:<?php echo $qq3479015851_global['SiteTel']; ?>
+            CopyRight &copy; <a href="<?php echo $SystemGlobalcfm_global['SiteUrl']; ?>"><?php echo $SystemGlobalcfm_global['SiteName']; ?></a> 合作热线:<?php echo $SystemGlobalcfm_global['SiteTel']; ?>
         </p>
         <p class="extrainfo">
-            <?php echo $qq3479015851_global['SiteUrl']; ?> All Rights Reserved. <a rel="nofollow" href="http://www.miibeian.gov.cn/"><?php echo $qq3479015851_global['SiteBeian']?></a>
+            <?php echo $SystemGlobalcfm_global['SiteUrl']; ?> All Rights Reserved. <a rel="nofollow" href="http://www.miibeian.gov.cn/"><?php echo $SystemGlobalcfm_global['SiteBeian']?></a>
         </p>
         <p style="display:none;">
         	Powered by <a href="http://blog.csdn.net/qq_35921430" target="_blank">qq3479015851</a>

@@ -1,5 +1,5 @@
 <?php include qq3479015851_tpl('inc_head');?>
-<div id="<?=QQ3479015851_SOFTNAME?>" style=" padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style=" padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -12,7 +12,7 @@
     </div>
 </div>
 <form name='form1' method='post' action='?'>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   	<input name="part" value="option_delall" type="hidden">
     <input name="url" value="<?=GetUrl()?>" type="hidden">
@@ -48,7 +48,7 @@
 </form>
 <div class="clear" style="height:10px"></div>
 <form action="?part=option_add" method="post" name="form2">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
 <td colspan="2"><?=$detail['title']?> 新增模型字段</td>

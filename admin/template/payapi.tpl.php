@@ -1,5 +1,5 @@
 <?php include qq3479015851_tpl('inc_head');?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr style="font-weight:bold; background-color:#dff6ff">
       <td style="width:15%">接口名称</td>
@@ -23,10 +23,10 @@
 <form action="?" method="post">
 <input type="hidden" name="payid" value="<?=$payid?>">
 <input name="return_url" value="<?php echo GetUrl(); ?>" type="hidden" />
-<div id="<?=QQ3479015851_SOFTNAME?>" style="margin-top:10px; clear:both">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="margin-top:10px; clear:both">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
-<td colspan="2">配置支付接口(诚信源码之家http://junchang.taobao.com)</td>
+<td colspan="2">配置支付接口</td>
 </tr>
   <tr bgcolor="#f5fbff">
     <td width="15%" height="25">接口类型：</td>

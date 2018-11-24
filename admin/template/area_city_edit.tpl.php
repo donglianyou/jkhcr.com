@@ -2,7 +2,7 @@
 <form method="post" name="form1" action="?">
 <input name="cityid" value="<?php echo $cityid?>" type="hidden">
 <input name="cityedit[olddirectory]" value="<?php echo $city['directory']?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
   <td colspan="2" align="left"><span><a href="area.php" style="text-decoration:underline">已增加分站地区</a> &raquo; <?=$city['cityname']?></span></td>
@@ -42,7 +42,7 @@
   <td valign="top">目录名称： </td>
   <td><input name="cityedit[directory]" class="text" type="text" value="<?=$city['directory']?>"> <font color="red">*</font>
    <div style="color:#666; margin-top:5px">如: bj（建议拼音首字母）<br />只能是字母\数字\下画线,不允许汉字与特殊字符,否则无法访问<br />
-<font color="red">分站建立以后,你可以用&nbsp; <b style="color:#006acd; text-decoration:underline"><?php echo $qq3479015851_global['SiteUrl']?><?php echo $qq3479015851_global['cfg_citiesdir']; ?>/bj/</b> &nbsp;来访问此分站</font></div> </td>
+<font color="red">分站建立以后,你可以用&nbsp; <b style="color:#006acd; text-decoration:underline"><?php echo $SystemGlobalcfm_global['SiteUrl']?><?php echo $SystemGlobalcfm_global['cfg_citiesdir']; ?>/bj/</b> &nbsp;来访问此分站</font></div> </td>
 </tr>
 <tr bgcolor="#ffffff">
   <td valign="top">二级域名： </td>

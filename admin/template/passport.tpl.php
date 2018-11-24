@@ -2,7 +2,7 @@
 <style>
 .ttip{ color:#666; margin-top:5px; text-align:left}
 </style>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 <div class="mpstopic-category">
 	<div class="panel-tab">
 		<ul class="clearfix tab-list">
@@ -17,7 +17,7 @@
 <form method="post" action="?">
 <input name="part" value="<?=$part?>" type="hidden">
 <?php if($part == 'bbs'){?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr"><td colspan="2">配置<?php echo $here; ?></td></tr>
 <tr bgcolor="#ffffff" style="font-weight:bold">
@@ -108,7 +108,7 @@
 </table>
 </div>
 <?php } elseif($part == 'qqlogin') {?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr"><td colspan="2">配置QQ登录参数</td></tr>
 <tr bgcolor="#ffffff" style="font-weight:bold">
@@ -141,7 +141,7 @@
 </table>
 </div>
 <?php } elseif($part == 'wxlogin') {?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr"><td colspan="2">配置微信登录参数</td></tr>
 <tr bgcolor="#ffffff" style="font-weight:bold">

@@ -12,7 +12,7 @@
 `*/
 define( "CURSCRIPT", "credit_set" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 $defaultrank = array( 1 => 10, 2 => 20, 3 => 40, 4 => 70, 5 => 120, 6 => 200, 7 => 400, 8 => 700, 9 => 1200, 10 => 1800, 11 => 2600, 12 => 4000, 13 => 10000, 14 => 30000, 15 => 60000 );
 if ( !submit_check( CURSCRIPT."_submit" ) )
 {
@@ -83,5 +83,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$qq3479015851_global = $db = $db_qq3479015851 = $part = NULL;
+$SystemGlobalcfm_global = $db = $db_qq3479015851 = $part = NULL;
 ?>

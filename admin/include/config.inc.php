@@ -7,13 +7,12 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 $admin_global_class = array('网站前台配置', '核心参数配置', '会员相关设置', '图片上传设置', '地图接口设置', '分类信息相关');
 $admin_global = array(
 	'SiteName'                        => array('des' => '网站名称', 'type' => '字符型', 'class' => '网站前台配置'),
-	'SiteUrl'                         => array('des' => '使用域名,范例：http://www.cxkeji.com<br /><i style=color:#666666>若为二级目录安装，则需填写二级目录,范例:http://www.yourdamain.com/upload</i>', 'type' => '字符型', 'class' => '网站前台配置'),
+	'SiteUrl'                         => array('des' => '使用域名,范例：<br /><i style=color:#666666>若为二级目录安装，则需填写二级目录,范例:http://www.yourdamain.com/upload</i>', 'type' => '字符型', 'class' => '网站前台配置'),
 	'SiteQQ'                          => array('des' => '客服QQ，请只填写一个', 'type' => '字符型', 'class' => '网站前台配置'),
 	'SiteEmail'                       => array('des' => '客服邮箱', 'type' => '字符型', 'class' => '网站前台配置'),
 	'SiteTel'                         => array('des' => '客服热线', 'type' => '字符型', 'class' => '网站前台配置'),

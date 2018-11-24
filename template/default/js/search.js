@@ -1,1 +1,1 @@
-$('#fonts').html(' Powered by <a class="copyrights" href="http://junchang.taobao.com" target="_blank">cxkeji</a> <a class="copyversions" href="http://junchang.taobao.com">5.8SE UTF8 </a> ');
+$('#fonts').html(' Powered by <a class="copyversions" href="/">中国健康养生网</a> ');

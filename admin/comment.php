@@ -7,12 +7,11 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define( "CURSCRIPT", "comment" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 $part = $part ? trim( $part ) : "information";
 $action = $action ? trim( $action ) : "list";
 $id = isset( $id ) ? $id : "";
@@ -43,7 +42,7 @@ if ( $action == "del" )
 								write_msg( "无效的评论参数提交！" );
 				}
 				$db->query( "DELETE FROM `".$db_qq3479015851."comment` WHERE id = '".$id."' AND type = '".$part."'" );
-				write_msg( "成功删除编号为".$id."的网友评论", "comment.php?part=".$part, "QQ3479015851" );
+				write_msg( "成功删除编号为".$id."的网友评论", "comment.php?part=".$part, "SysGlbCfm" );
 }
 else if ( $action == "delall" )
 {
@@ -82,7 +81,7 @@ else if ( $action == "list" )
 {
 				$admindir = getcwdol( );
 				$comment_level = isset( $comment_level ) ? intval( $comment_level ) : "";
-				require_once( QQ3479015851_DATA."/info.level.inc.php" );
+				require_once( SysGlbCfm_DATA."/info.level.inc.php" );
 				$part_arr = array( "information" => "分类信息评论", "news" => "新闻评论", "group" => "团购评论", "coupon" => "优惠券评论" );
 				$here = $part_arr[$part];
 				unset( $part_arr );
@@ -111,7 +110,7 @@ else if ( $action == "list" )
 								case "coupon" :
 												$arr['title'] = "<a href=../coupon.php?id=".$row[infoid]." target=_blank>".$row[title]."</a>";
 								}
-								$arr['userid'] = $row[userid] ? "<a  href=\"javascript:void(0);\" onclick=\"\r\nsetbg('QQ3479015851会员中心',400,110,'../box.php?part=member&userid=".$row['userid']."&admindir=".$admindir."')\">".$row[userid]."</a>" : $row[ip];
+								$arr['userid'] = $row[userid] ? "<a  href=\"javascript:void(0);\" onclick=\"\r\nsetbg('SysGlbCfm会员中心',400,110,'../box.php?part=member&userid=".$row['userid']."&admindir=".$admindir."')\">".$row[userid]."</a>" : $row[ip];
 								$arr['pubtime'] = gettime( $row['pubtime'] );
 								$arr['ip'] = $row['ip'];
 								$arr['comment_level'] = $information_level[$row[comment_level]];
@@ -123,5 +122,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 ?>

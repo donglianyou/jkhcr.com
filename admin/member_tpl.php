@@ -12,13 +12,13 @@
 `*/
 define( "CURSCRIPT", "member_tpl" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 require_once( dirname( __FILE__ )."/include/ifview.inc.php" );
 if ( $admin_cityid )
 {
 	write_msg( "您没有权限访问该页！" );
 }
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 	exit( "Access Denied" );
 }
@@ -90,12 +90,12 @@ else
 	}
 	else
 	{
-		write_msg( "会员模板设置更新成功！", $forward_url, "QQ3479015851Record" );
+		write_msg( "会员模板设置更新成功！", $forward_url, "SysGlbCfmRecord" );
 	}
 }
 if ( is_object( $db ) )
 {
 	$db->Close();
 }
-$qq3479015851_global = $db = $db_qq3479015851 = $part = NULL;
+$SystemGlobalcfm_global = $db = $db_qq3479015851 = $part = NULL;
 ?>

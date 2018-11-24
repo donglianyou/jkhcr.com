@@ -9,7 +9,7 @@
 <input name="page" value="<?=$page?>" type="hidden">
 <input name="part" value="sendpm" type="hidden" />
 <?php if(in_array($do_action,array('upgrade_index','upgrade','upgrade_list'))){?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
 	<td class="h" style="text-align:right">置顶时间</td><td class="h">&nbsp;</td>
@@ -30,7 +30,7 @@
 </div>
 <?php }?>
 <?php if(in_array($do_action,array('ifred'))){?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr bgcolor="#f5fbff">
     <td width="20%" style="text-align:right;">信息标题是否套红：</td>
@@ -45,7 +45,7 @@
 </div>
 <?php }?>
 <?php if(in_array($do_action,array('ifbold'))){?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr bgcolor="#f5fbff">
     <td width="20%" style="text-align:right;">信息标题是否加粗：</td>
@@ -59,7 +59,7 @@
 </table>
 </div>
 <?php }?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr"><td class="h" style="text-align:right">管理选项</td><td class="h">&nbsp;</td></tr>
 	<tr bgcolor="#f5fbff">

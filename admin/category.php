@@ -28,10 +28,10 @@ function info_typemodels( $zym_7 = "" )
 @set_time_limit( 0 );
 define( "CURSCRIPT", "category" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 require_once( dirname( __FILE__ )."/include/color.inc.php" );
 require_once( dirname( __FILE__ )."/include/ifview.inc.php" );
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }
@@ -39,7 +39,7 @@ $part = $part ? $part : "list";
 $cat_color = $color;
 if ( !submit_check( CURSCRIPT."_submit" ) )
 {
-				require_once( QQ3479015851_DATA."/html_type.inc.php" );
+				require_once( SysGlbCfm_DATA."/html_type.inc.php" );
 				if ( $part == "list" )
 				{
 								chk_admin_purview( "purview_信息分类" );
@@ -49,8 +49,8 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 				}
 				else if ( $part == "edit" )
 				{
-								include( QQ3479015851_DATA."/category_tpl.inc.php" );
-								include( QQ3479015851_DATA."/information_tpl.inc.php" );
+								include( SysGlbCfm_DATA."/category_tpl.inc.php" );
+								include( SysGlbCfm_DATA."/information_tpl.inc.php" );
 								$cat = $db->getRow( "SELECT * FROM ".$db_qq3479015851."category WHERE catid = '{$catid}'" );
 								$here = "编辑信息分类";
 								$cat['description'] = $cat['description'] ? de_textarea_post_change( $cat['description'] ) : "";
@@ -58,8 +58,8 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 				}
 				else if ( $part == "add" )
 				{
-								include( QQ3479015851_DATA."/category_tpl.inc.php" );
-								include( QQ3479015851_DATA."/information_tpl.inc.php" );
+								include( SysGlbCfm_DATA."/category_tpl.inc.php" );
+								include( SysGlbCfm_DATA."/information_tpl.inc.php" );
 								chk_admin_purview( "purview_添加分类" );
 								$maxorder = $db->getOne( "SELECT MAX(catorder) FROM ".$db_qq3479015851."category" );
 								$maxorder += 1;
@@ -78,7 +78,7 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 								clear_cache_files( "category_pid_releate" );
 								clear_cache_files( "category_tree" );
 								clear_cache_files( "category_dir" );
-								write_msg( "删除信息分类 ".$catid." 成功", "category.php?part=list", "QQ3479015851" );
+								write_msg( "删除信息分类 ".$catid." 成功", "category.php?part=list", "SysGlbCfm" );
 				}
 }
 else
@@ -294,5 +294,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 ?>

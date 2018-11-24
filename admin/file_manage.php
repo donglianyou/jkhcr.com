@@ -12,8 +12,8 @@
 `*/
 define( "CURSCRIPT", "file_manage" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_DATA."/config.inc.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_DATA."/config.inc.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 if ( $admin_cityid )
 {
 				write_msg( "您没有权限访问该页！" );
@@ -59,21 +59,21 @@ if ( $delfile != "" )
 				write_msg( "文件已不存在！" );
 				exit( );
 }
-$cfg_if_tpledit = $qq3479015851_qq3479015851['cfg_if_tpledit'] == 0 ? "<font color=green>已关闭</font>" : "<font color=red>已开启</font>";
+$cfg_if_tpledit = $SystemGlobalcfm_qq3479015851['cfg_if_tpledit'] == 0 ? "<font color=green>已关闭</font>" : "<font color=red>已开启</font>";
 switch ( $part )
 {
 case "template" :
 				chk_admin_purview( "purview_模板管理" );
 				$here = "模板在线管理";
-				$mulu = "QQ3479015851模板目录";
-				$showdir = QQ3479015851_TPL."/default";
+				$mulu = "SysGlbCfm模板目录";
+				$showdir = SysGlbCfm_TPL."/default";
 				if ( !$editfile )
 				{
 								break;
 				}
 				if ( $do == "update" )
 				{
-								if ( $qq3479015851_qq3479015851['cfg_if_tpledit'] == "0" )
+								if ( $SystemGlobalcfm_qq3479015851['cfg_if_tpledit'] == "0" )
 								{
 												write_msg( "操作失败！系统管理员关闭了在线编辑风格的功能!<br /><br />您可以修改/dat/config.inc.php来开启它" );
 								}
@@ -84,7 +84,7 @@ case "template" :
 								{
 												write_msg( "对不起，该文件不存在！" );
 								}
-								$norootfile = str_replace( QQ3479015851_ROOT."/template", "", $nowfile );
+								$norootfile = str_replace( SysGlbCfm_ROOT."/template", "", $nowfile );
 								if ( $db->getOne( "SELECT content FROM `".$db_qq3479015851."template` WHERE filepath LIKE '".$norootfile."'" ) )
 								{
 												$update_sql = $db->query( "UPDATE `".$db_qq3479015851."template` SET content = '".$content."' WHERE filepath = '".$norootfile."'" );
@@ -102,7 +102,7 @@ case "template" :
 								$create_c = createfile( $nowfile, $row[content] );
 								if ( $create_c )
 								{
-												write_msg( "模板文件".$nowfile."<br /><br />修改成功", $url, "QQ3479015851" );
+												write_msg( "模板文件".$nowfile."<br /><br />修改成功", $url, "SysGlbCfm" );
 								}
 								else
 								{
@@ -134,7 +134,7 @@ case "upload" :
 				chk_admin_purview( "purview_附件管理" );
 				$here = "系统上传附件管理";
 				$mulu = "系统附件目录";
-				$showdir = QQ3479015851_UPLOAD;
+				$showdir = SysGlbCfm_UPLOAD;
 }
 $path = trim( $path ) ? trim( $path ) : $showdir;
 $LastPath = str_replace( "/".end( explode( "/", $path ) ), "", $path );
@@ -144,5 +144,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 ?>

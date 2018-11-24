@@ -7,12 +7,11 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
  !defined('WAP') && exit('FORBIDDEN');
-require_once QQ3479015851_DATA . '/moneytype.inc.php';
-require_once QQ3479015851_ROOT . '/member/include/common.func.php';
+require_once SysGlbCfm_DATA . '/moneytype.inc.php';
+require_once SysGlbCfm_ROOT . '/member/include/common.func.php';
 if(!in_array($action, array('upface', 'editbase', 'editpwd', 'pay', 'mypost', 'shoucang', 'docu', 'goods', 'qiandao', 'upgradecorp'))) $action = 'index';
 if($iflogin != 1){
     if($action == 'pay'){
@@ -32,16 +31,16 @@ if($iflogin != 1){
 }
 if($dopost == 1){
     switch($action){
-    case 'upface': require_once QQ3479015851_INC . '/upfile.fun.php';
+    case 'upface': require_once SysGlbCfm_INC . '/upfile.fun.php';
         $name_file = 'qq3479015851_member_logo';
         if ($_FILES[$name_file]['name']){
             check_upimage($name_file);
             $destination = '/face/' . date('Ym') . '/';
-            $qq3479015851_image = start_upload($name_file, $destination, 0, $qq3479015851_qq3479015851['cfg_memberlogo_limit']['width'], $qq3479015851_qq3479015851['cfg_memberlogo_limit']['height']);
-            @unlink(QQ3479015851_ROOT . $face);
-            @unlink(QQ3479015851_ROOT . $normalface);
-            $db -> query("UPDATE `{$db_qq3479015851}member` SET logo='$qq3479015851_image[0]',prelogo='$qq3479015851_image[1]' WHERE userid = '$s_uid'");
-            unset($qq3479015851_qq3479015851, $destination, $name_file, $qq3479015851_image);
+            $SystemGlobalcfm_image = start_upload($name_file, $destination, 0, $SystemGlobalcfm_qq3479015851['cfg_memberlogo_limit']['width'], $SystemGlobalcfm_qq3479015851['cfg_memberlogo_limit']['height']);
+            @unlink(SysGlbCfm_ROOT . $face);
+            @unlink(SysGlbCfm_ROOT . $normalface);
+            $db -> query("UPDATE `{$db_qq3479015851}member` SET logo='$SystemGlobalcfm_image[0]',prelogo='$SystemGlobalcfm_image[1]' WHERE userid = '$s_uid'");
+            unset($SystemGlobalcfm_qq3479015851, $destination, $name_file, $SystemGlobalcfm_image);
             redirectmsg('图片上传成功！', 'index.php?mod=member');
         }else{
             redirectmsg('图片上传失败，请换一张图片试试！', 'javascript:history.back();');
@@ -80,20 +79,20 @@ if($dopost == 1){
         if(strlen($userpwd) < 6 || strlen($userpwd) > 15) redirectmsg('密码不能小于6位或超过15位！', 'index.php?mod=member&action=editpwd');
         if($reuserpwd != $userpwd) redirectmsg('两次密码输入不相同！', 'index.php?mod=member&action=editpwd');
         if(PASSPORT_TYPE == 'phpwind'){
-            require QQ3479015851_ROOT . '/pw_client/uc_client.php';
+            require SysGlbCfm_ROOT . '/pw_client/uc_client.php';
             $pw_user = uc_user_get($s_uid);
             $result = uc_user_edit($pw_user['uid'], $pw_user['username'], '', md5($userpwd), '');
         }elseif(PASSPORT_TYPE == 'ucenter'){
-            require QQ3479015851_ROOT . '/uc_client/client.php';
+            require SysGlbCfm_ROOT . '/uc_client/client.php';
             $result = uc_user_edit($s_uid, $userpwd, $userpwd, $email, 1);
         }
         $db -> query("UPDATE `{$db_qq3479015851}member` SET userpwd = '" . md5($userpwd) . "' WHERE userid = '$s_uid'");
         redirectmsg('密码修改成功，请用新密码重新登录！', 'index.php?mod=member');
         break;
-    case 'pay': include QQ3479015851_INC . '/pay.fun.php';
+    case 'pay': include SysGlbCfm_INC . '/pay.fun.php';
         if($money){
             $money = (float)$money;
-            $money = ceil($money / $qq3479015851_global['cfg_coin_fee']);
+            $money = ceil($money / $SystemGlobalcfm_global['cfg_coin_fee']);
             if($money < 1) redirectmsg('充值的数量不能小于1', 'javascript:history.back();');
             $payid = (int)$payid;
             if(!$payid) redirectmsg('请选择支付接口', 'javascript:history.back();');
@@ -103,8 +102,8 @@ if($dopost == 1){
             $pay_type = 'PayToMoney';
             $productname = '金币充值';
             msetcookie('pay_type', $pay_type);
-            $PayReturnUrlQz = $qq3479015851_global['SiteUrl'];
-            include QQ3479015851_INC . '/payment/' . $payr['paytype'] . '/to_pay.php';
+            $PayReturnUrlQz = $SystemGlobalcfm_global['SiteUrl'];
+            include SysGlbCfm_INC . '/payment/' . $payr['paytype'] . '/to_pay.php';
         }
         break;
     case 'mypost': $row = $db -> getRow("SELECT money_own FROM `{$db_qq3479015851}member` WHERE userid = '$s_uid'");
@@ -116,7 +115,7 @@ if($dopost == 1){
                     echo '该信息已经刷新过了，请不要重复刷新';
                     exit;
                 }
-                $delmoney = $qq3479015851_global['cfg_member_info_refresh'];
+                $delmoney = $SystemGlobalcfm_global['cfg_member_info_refresh'];
                 if($delmoney > $row['money_own']){
                     echo '余额不足';
                     exit;
@@ -133,7 +132,7 @@ if($dopost == 1){
             if(!$id){
                 echo '该信息不存在！';
             }else{
-                $delmoney = $qq3479015851_global['cfg_member_info_bold'];
+                $delmoney = $SystemGlobalcfm_global['cfg_member_info_bold'];
                 if($delmoney > $row['money_own']){
                     echo '余额不足';
                     exit;
@@ -152,7 +151,7 @@ if($dopost == 1){
             if(!$id){
                 echo '该信息不存在！';
             }else{
-                $delmoney = $qq3479015851_global['cfg_member_info_red'];
+                $delmoney = $SystemGlobalcfm_global['cfg_member_info_red'];
                 if($delmoney > $row['money_own']){
                     echo '余额不足';
                     exit;
@@ -175,8 +174,8 @@ if($dopost == 1){
                 if(!empty($r['img_path'])){
                     $del = $db -> getAll("SELECT path,prepath FROM `{$db_qq3479015851}info_img` WHERE infoid='$id'");
                     foreach ($del as $k => $v){
-                        if($v['path']) @unlink(QQ3479015851_ROOT . $v['path']) ;
-                        if($v['prepath']) @unlink(QQ3479015851_ROOT . $v['prepath']);
+                        if($v['path']) @unlink(SysGlbCfm_ROOT . $v['path']) ;
+                        if($v['prepath']) @unlink(SysGlbCfm_ROOT . $v['prepath']);
                     }
                     qq3479015851_delete('info_img', "WHERE infoid = '$id'");
                 }
@@ -194,7 +193,7 @@ if($dopost == 1){
                 echo '您置顶的信息主体不存在或已被删除!';
                 exit;
             }
-            $need = $qq3479015851_global[$upgrade_type] * $upgrade_time;
+            $need = $SystemGlobalcfm_global[$upgrade_type] * $upgrade_time;
             if($row['money_own'] < $need){
                 $money = $need - $row['money_own'];
                 $money = (float)$money;
@@ -244,7 +243,7 @@ if($dopost == 1){
         $mobilepay = $db -> getAll("SELECT * FROM `{$db_qq3479015851}payapi` WHERE isclose='0' AND (paytype='alipay_h5' OR paytype='wxpay')");
         include qq3479015851_tpl('member_pay');
         break;
-    case 'mypost': require_once QQ3479015851_DATA . '/info.level.inc.php';
+    case 'mypost': require_once SysGlbCfm_DATA . '/info.level.inc.php';
         unset($information_level, $news_level);
         if($act == 'upgrade'){
             if(empty($id)) redirectmsg('请选择需要置顶的信息主题');

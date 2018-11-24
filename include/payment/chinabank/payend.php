@@ -7,20 +7,19 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 define('IN_ADMIN', true);
 define('CURSCRIPT', 'payend');
 require_once dirname(__FILE__) . '/../../../include/global.php';
-require_once QQ3479015851_DATA . '/config.php';
-require_once QQ3479015851_DATA . '/config.db.php';
-require_once QQ3479015851_INC . '/db.class.php';
-require_once QQ3479015851_INC . '/member.class.php';
+require_once SysGlbCfm_DATA . '/config.php';
+require_once SysGlbCfm_DATA . '/config.db.php';
+require_once SysGlbCfm_INC . '/db.class.php';
+require_once SysGlbCfm_INC . '/member.class.php';
 
 if (!($member_log->chk_in())) {
-	write_msg('', '../' . $qq3479015851_global['cfg_member_logfile'] . '?url=' . urlencode(GetUrl()));
+	write_msg('', '../' . $SystemGlobalcfm_global['cfg_member_logfile'] . '?url=' . urlencode(GetUrl()));
 }
 
 $editor = 1;
@@ -39,7 +38,7 @@ $remark1 = trim($_POST['remark1']);
 $remark2 = trim($_POST['remark2']);
 $v_md5str = trim($_POST['v_md5str']);
 $md5string = strtoupper(md5($v_oid . $v_pstatus . $v_amount . $v_moneytype . $key));
-include QQ3479015851_INC . '/pay.fun.php';
+include SysGlbCfm_INC . '/pay.fun.php';
 $orderid = $v_oid;
 $ddno = $remark1;
 $money = $v_amount;
@@ -55,8 +54,8 @@ else {
 }
 
 UpdatePayRecord($ddno, $paybz);
-write_msg('您已成功充值 ' . ($money * $qq3479015851_global['cfg_coin_fee']) . ' 个金币', $qq3479015851_global['SiteUrl'] . '/member/index.php?m=pay&ac=record');
+write_msg('您已成功充值 ' . ($money * $SystemGlobalcfm_global['cfg_coin_fee']) . ' 个金币', $SystemGlobalcfm_global['SiteUrl'] . '/member/index.php?m=pay&ac=record');
 is_object($db) && $db->Close();
-$qq3479015851_global = NULL;
+$SystemGlobalcfm_global = NULL;
 
 ?>

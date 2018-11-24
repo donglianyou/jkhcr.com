@@ -2,21 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="{$qq3479015851_global[SiteUrl]}/template/default/js/uaredirect.js" type="text/javascript"></script>
-<script type="text/javascript">uaredirect("{$qq3479015851_global[SiteUrl]}/m/index.php?mod=category&catid={$catid}&cityid={$cityid}");</script>
+<script src="{$SystemGlobalcfm_global[SiteUrl]}/template/default/js/uaredirect.js" type="text/javascript"></script>
+<script type="text/javascript">uaredirect("{$SystemGlobalcfm_global[SiteUrl]}/m/index.php?mod=category&catid={$catid}&cityid={$cityid}");</script>
 <title>{$page_title}</title>
 <meta name="keywords" content="{$cat[keywords]}" />
 <meta name="description" content="{$cat[description]}" />
-<link rel="shortcut icon" href="{$qq3479015851_global[SiteUrl]}/favicon.ico" />
-<link rel="stylesheet" href="{$qq3479015851_global[SiteUrl]}/template/default/css/global.css" />
-<link rel="stylesheet" href="{$qq3479015851_global[SiteUrl]}/template/default/css/style.css" />
-<link rel="stylesheet" href="{$qq3479015851_global[SiteUrl]}/template/default/css/category.css" />
-<link rel="stylesheet" href="{$qq3479015851_global[SiteUrl]}/template/default/css/pagination2.css" />
-<script src="{$qq3479015851_global[SiteUrl]}/template/default/js/global.js" type="text/javascript"></script>
-<script src="{$qq3479015851_global[SiteUrl]}/template/default/js/jquery.min.js" type="text/javascript"></script>
+<link rel="shortcut icon" href="{$SystemGlobalcfm_global[SiteUrl]}/favicon.ico" />
+<link rel="stylesheet" href="{$SystemGlobalcfm_global[SiteUrl]}/template/default/css/global.css" />
+<link rel="stylesheet" href="{$SystemGlobalcfm_global[SiteUrl]}/template/default/css/style.css" />
+<link rel="stylesheet" href="{$SystemGlobalcfm_global[SiteUrl]}/template/default/css/category.css" />
+<link rel="stylesheet" href="{$SystemGlobalcfm_global[SiteUrl]}/template/default/css/pagination2.css" />
+<script src="{$SystemGlobalcfm_global[SiteUrl]}/template/default/js/global.js" type="text/javascript"></script>
+<script src="{$SystemGlobalcfm_global[SiteUrl]}/template/default/js/jquery.min.js" type="text/javascript"></script>
 </head>
 
-<body class="{$qq3479015851_global[cfg_tpl_dir]} full bodybg{$qq3479015851_global[cfg_tpl_dir]}{$qq3479015851_global[bodybg]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]} full bodybg{$SystemGlobalcfm_global[cfg_tpl_dir]}{$SystemGlobalcfm_global[bodybg]}">
 {mytemplate inc_head}
 <div class="bodybgcolor">
 <div class="body1000">
@@ -38,7 +38,7 @@
 			信息总数：<span>{$rows_num}</span> ，您知道吗？置顶发布的信息可使成交率提高50%！
 		</div>
 		<div class="listhdright">
-			<a href="{$qq3479015851_global[SiteUrl]}/{$qq3479015851_global[cfg_postfile]}?catid={$cat[catid]}&cityid={$cityid}" target="_blank">免费发布{$city[cityname]}{$cat[catname]}信息>></a>
+			<a href="{$SystemGlobalcfm_global[SiteUrl]}/{$SystemGlobalcfm_global[cfg_postfile]}?catid={$cat[catid]}&cityid={$cityid}" target="_blank">免费发布{$city[cityname]}{$cat[catname]}信息>></a>
 		</div>
 	</div>
 	<div class="clearfix"></div>
@@ -58,38 +58,38 @@
 						<span class="lxueli">学历</span>
 						<span class="lexp">工作年限</span>
 					</div>
-					{loop $info_list $qq3479015851}
-					<div class="hover {if $qq3479015851[upgrade_type]>1}ding{/if}">
+					{loop $info_list $SystemGlobalcfm}
+					<div class="hover {if $SystemGlobalcfm[upgrade_type]>1}ding{/if}">
 						<span class="ltitle">
-						<a title="{$qq3479015851[title]}" href="{$qq3479015851[uri]}" target="_blank"  style="{if $qq3479015851[ifred] == 1}color:red;{/if} {if $qq3479015851[ifbold] == 1}font-weight:bold;{/if}">{echo cutstr($qq3479015851[contact_who],10)}({echo cutstr($qq3479015851[title],16)})</a>{if $qq3479015851[img_count]}<span class="img_count">{$qq3479015851[img_count]}图</span>{/if}{if $qq3479015851[certify] == 1}<span class="certify">认证</span>{/if}
+						<a title="{$SystemGlobalcfm[title]}" href="{$SystemGlobalcfm[uri]}" target="_blank"  style="{if $SystemGlobalcfm[ifred] == 1}color:red;{/if} {if $SystemGlobalcfm[ifbold] == 1}font-weight:bold;{/if}">{echo cutstr($SystemGlobalcfm[contact_who],10)}({echo cutstr($SystemGlobalcfm[title],16)})</a>{if $SystemGlobalcfm[img_count]}<span class="img_count">{$SystemGlobalcfm[img_count]}图</span>{/if}{if $SystemGlobalcfm[certify] == 1}<span class="certify">认证</span>{/if}
                         <div class="inforbox">
                             <div class="arrow"> <em></em> <span></span> </div>
                             <div class="tipsbox"> 
-                            <a href="{$qq3479015851[uri]}" class="ib-btn">查看详情</a>
-                            <h3>{$qq3479015851[contact_who]}（{$qq3479015851[sex]}，{echo str_replace('.00','',$qq3479015851[age])}）</h3>
-                            <span class="tip">发布时间：{echo GetTime($qq3479015851[begintime],'Y-m-d')}</span>
+                            <a href="{$SystemGlobalcfm[uri]}" class="ib-btn">查看详情</a>
+                            <h3>{$SystemGlobalcfm[contact_who]}（{$SystemGlobalcfm[sex]}，{echo str_replace('.00','',$SystemGlobalcfm[age])}）</h3>
+                            <span class="tip">发布时间：{echo GetTime($SystemGlobalcfm[begintime],'Y-m-d')}</span>
                             <ul class="lists">
-                            <li> <span>是否应届：</span> {$qq3479015851[graduate]} </li>
-                            <li> <span>区域：</span> {$qq3479015851[areaname]} </li>
-                            <li> <span>从业年限：</span>  {echo str_replace('.00','',$qq3479015851[work_life])}</li>
-                            <li> <span>最高学历：</span> {$qq3479015851[education]} </li>
-                            <li style="width:400px"> <span>求职意向：</span> {$qq3479015851[title]} </li>
+                            <li> <span>是否应届：</span> {$SystemGlobalcfm[graduate]} </li>
+                            <li> <span>区域：</span> {$SystemGlobalcfm[areaname]} </li>
+                            <li> <span>从业年限：</span>  {echo str_replace('.00','',$SystemGlobalcfm[work_life])}</li>
+                            <li> <span>最高学历：</span> {$SystemGlobalcfm[education]} </li>
+                            <li style="width:400px"> <span>求职意向：</span> {$SystemGlobalcfm[title]} </li>
                             </ul>
                             
                             <dl class="content noborder">
                             <dt>自我描述：</dt>
-                            <dd>{echo cutstr($qq3479015851[content],'200','...')}</dd>
+                            <dd>{echo cutstr($SystemGlobalcfm[content],'200','...')}</dd>
                             </dl>
                             
                             </div>
                             </div>
                         </span>
-						<span class="ltime">{echo get_format_time($qq3479015851[begintime])}&nbsp;</span>
-						<span class="lterm">{$qq3479015851[graduate]}&nbsp;</span>
-						<span class="lxb">{$qq3479015851[sex]}&nbsp;</span>
-						<span class="lage">{echo str_replace('.00','',$qq3479015851[age])}&nbsp;</span>
-						<span class="lxueli">{$qq3479015851[education]}&nbsp;</span>
-						<span class="lexp">{echo str_replace('.00','',$qq3479015851[work_life])}&nbsp;</span>
+						<span class="ltime">{echo get_format_time($SystemGlobalcfm[begintime])}&nbsp;</span>
+						<span class="lterm">{$SystemGlobalcfm[graduate]}&nbsp;</span>
+						<span class="lxb">{$SystemGlobalcfm[sex]}&nbsp;</span>
+						<span class="lage">{echo str_replace('.00','',$SystemGlobalcfm[age])}&nbsp;</span>
+						<span class="lxueli">{$SystemGlobalcfm[education]}&nbsp;</span>
+						<span class="lexp">{echo str_replace('.00','',$SystemGlobalcfm[work_life])}&nbsp;</span>
 					</div>
 					{/loop}
 				</ul>

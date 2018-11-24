@@ -1,6 +1,6 @@
 <?php include qq3479015851_tpl('inc_head');?>
 <form action="?part=sendlist" method="post"/>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
     <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td><input class="checkbox" name="checkall" type="checkbox" id="checkall" onClick="CheckAll(this.form)"/> 删?</td>

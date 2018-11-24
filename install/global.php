@@ -1,19 +1,19 @@
 <?php
 
-if (!defined('QQ3479015851')) {
+if (!defined('SysGlbCfm')) {
 	exit('FORBIDDEN');
 }
 
-@define('QQ3479015851_ROOT', ereg_replace('[/\\]{1,}', '/', substr(dirname(__FILE__), 0, -8)));
-define('QQ3479015851_INC', QQ3479015851_ROOT . '/include');
-define('QQ3479015851_DATA', QQ3479015851_ROOT . '/data');
-define('QQ3479015851_MEMBER', QQ3479015851_ROOT . '/member');
-define('QQ3479015851_UPLOAD', QQ3479015851_ROOT . '/attachment');
-define('QQ3479015851_TPL', QQ3479015851_ROOT . '/template');
-define('QQ3479015851_ASS', QQ3479015851_INC . '/assign');
-require_once QQ3479015851_DATA . '/config.db.php';
-require_once QQ3479015851_DATA . '/config.php';
-require_once QQ3479015851_INC . '/common.fun.php';
+@define('SysGlbCfm_ROOT', ereg_replace('[/\\]{1,}', '/', substr(dirname(__FILE__), 0, -8)));
+define('SysGlbCfm_INC', SysGlbCfm_ROOT . '/include');
+define('SysGlbCfm_DATA', SysGlbCfm_ROOT . '/data');
+define('SysGlbCfm_MEMBER', SysGlbCfm_ROOT . '/member');
+define('SysGlbCfm_UPLOAD', SysGlbCfm_ROOT . '/attachment');
+define('SysGlbCfm_TPL', SysGlbCfm_ROOT . '/template');
+define('SysGlbCfm_ASS', SysGlbCfm_INC . '/assign');
+require_once SysGlbCfm_DATA . '/config.db.php';
+require_once SysGlbCfm_DATA . '/config.php';
+require_once SysGlbCfm_INC . '/common.fun.php';
 function str_len($str)
 {
 	$length = strlen(preg_replace('/[\\x00-\\x7F]/', '', $str));
@@ -39,14 +39,14 @@ function new_htmlspecialchars($value)
 
 function write_lock()
 {
-	$file = @fopen(QQ3479015851_DATA . '/install.lock', 'wb+');
+	$file = @fopen(SysGlbCfm_DATA . '/install.lock', 'wb+');
 
 	if (!$file) {
 		exit('打开文件失败');
 		return false;
 	}
 
-	if (!@fwrite($file, 'QQ3479015851_INSTALLED')) {
+	if (!@fwrite($file, 'SysGlbCfm_INSTALLED')) {
 		exit('写入文件失败');
 		return false;
 	}
@@ -93,8 +93,8 @@ function import($sql, $table, $db_charset)
 
 function chk_qq3479015851_install()
 {
-	if (file_exists(QQ3479015851_DATA . '/install.lock')) {
-		exit('很抱歉，您已经安装过QQ3479015851！<br /><br />如需重新安装，请删除/data目录下的install.lock');
+	if (file_exists(SysGlbCfm_DATA . '/install.lock')) {
+		exit('很抱歉，您已经安装过SysGlbCfm！<br /><br />如需重新安装，请删除/data目录下的install.lock');
 	}
 }
 

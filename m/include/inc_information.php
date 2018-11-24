@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 
 if ( CURSCRIPT != "wap" )
@@ -28,7 +27,7 @@ $cityid = $row['cityid'];
 $city = get_city_caches( $cityid );
 $db->query( "UPDATE `".$db_qq3479015851."information` SET hit = hit + 1 WHERE id = '".$id."'" );
 $row['endtime'] = get_info_life_time( $row['endtime'] );
-$row['contactview'] = $row['endtime'] == "<font color=red>已过期</font>" && $qq3479015851_global['cfg_info_if_gq'] != 1 ? 0 : 1;
+$row['contactview'] = $row['endtime'] == "<font color=red>已过期</font>" && $SystemGlobalcfm_global['cfg_info_if_gq'] != 1 ? 0 : 1;
 $rowr = $db->getRow( "SELECT catid,parentid,catname,template_info,modid,usecoin FROM `".$db_qq3479015851."category` WHERE catid = '".$row['catid']."'" );
 $row['catid'] = $rowr['catid'];
 $row['parentid'] = $rowr['parentid'];
@@ -44,7 +43,7 @@ if ( $action == "seecontact" )
 				if ( $iflogin == 1 )
 				{
 								$money_own = $db->getOne( "SELECT money_own FROM `".$db_qq3479015851."member` WHERE userid = '".$s_uid."'" );
-								include( QQ3479015851_ROOT."/member/include/common.func.php" );
+								include( SysGlbCfm_ROOT."/member/include/common.func.php" );
 								if ( $row['usecoin'] <= $money_own )
 								{
 												$db->query( "UPDATE `".$db_qq3479015851."member` SET money_own = money_own - '".$row['usecoin']."' WHERE userid = '".$s_uid."'" );

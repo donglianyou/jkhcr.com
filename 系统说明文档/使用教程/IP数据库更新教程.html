@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://www.mymps.com.cn/doc/article-8.html -->
+<html><style type="text/css" id="2517905709"></style><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<meta charset="gbk">
+
+<title>系统接口设置/教程 - Mymps模板制作/标签/参考手册 - 更多蚂蚁分类工具请进入QQ群:201809840</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./IP数据库更新教程_files/jquery-1.9.1.min.js"></script>
+<link href="./IP数据库更新教程_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./IP数据库更新教程_files/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="./IP数据库更新教程_files/docs.css" rel="stylesheet">
+<link href="./IP数据库更新教程_files/prettify.css" rel="stylesheet">
+<!--[if lt IE 9]>
+  <script src="/assets/js/html5shiv.js"></script>
+<![endif]-->
+<style>
+.span9 h4{text-indent:2em;text-align:left;}
+.span9 p{text-indent:2em;text-align:left;}
+</style><script type="text/javascript" src="./IP数据库更新教程_files/noerr.js"></script><script type="text/javascript" src="./IP数据库更新教程_files/noright.js"></script><style>
+.code { font-family: Courier, Courier New; font-weight: normal; color:#000; font-size:12px;}
+.bcontent{ font-size:16px; line-height:200%;}
+</style></head>
+
+
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="50">
+  
+  <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+        	            <li class="active">
+              <a href="http://www.mymps.com.cn/doc/article.html">使用教程_QQ群:201809840</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/index.html">模板基础</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/structure.html">模板目录结构</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/grammer.html">标签语法</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/base.html">基本标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/senior.html">高级标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/diy.html">自定义标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/demo.html">调用示例</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/db.html">数据字典</a>
+            </li>
+                    </ul>
+      </div>
+    </div>
+  </div>
+</div>  <div class="jumbotron subhead" id="overview">
+    <div class="container">
+      <h1>使用教程</h1>
+      <p class="lead">
+        接口配置/系统设置/使用教程
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav affix-top">
+                  <li><a href="http://www.mymps.com.cn/doc/article-1.html"><i class="icon-chevron-right"></i> 电子邮箱服务器配置教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-2.html"><i class="icon-chevron-right"></i> 在线支付接口设置教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-3.html"><i class="icon-chevron-right"></i> QQ登录接口设置教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-4.html"><i class="icon-chevron-right"></i> UCENTER/DISCUZ论坛整合教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-5.html"><i class="icon-chevron-right"></i> 伪静态路径使用教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-6.html"><i class="icon-chevron-right"></i> 地图标注接口设置</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-7.html"><i class="icon-chevron-right"></i> 网站整体转移服务器空间教程 </a></li>
+		          <li class="active"><a href="./IP数据库更新教程_files/IP数据库更新教程.html"><i class="icon-chevron-right"></i> IP数据库更新教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-9.html"><i class="icon-chevron-right"></i> 微信登录整合教程（5.8起支持）</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-10.html"><i class="icon-chevron-right"></i> 短信接口设置（5.8起支持）</a></li>
+		  
+        </ul>
+      </div>
+      <div class="span9">
+        <section>
+        <div class="page-header"><h1>IP数据库更新教程</h1><span style="font-size:12px;">发布时间：2016-01-11 &nbsp;&nbsp;&nbsp;&nbsp;浏览：853</span></div>
+            <div class="bcontent">
+            <strong>IP库说明：</strong><br>
+mymps 程序包中附带的IP数据库可以自行更新至最新版本，<br>
+如果不更新至最新版可能对用户的IP判断不够准确，会造成以下情况：<br>
+1，信息发布者和评论者的ip归属地显示错误<br>
+2，当你在后台设置限制用户发布地区时，属于该地区的用户可能也被误判为不是该地区的用户，导致无法发布信息<br>
+3，当你在后台设置限制用户注册地区时，属于该地区的用户可能也被误判为不是该地区的用户，导致无法注册用户<br>
+<br>
+<strong>下载IP库：</strong><br>
+<a href="http://www.crsky.com/soft/2611.html">http://www.crsky.com/soft/2611.html</a> （该地址的IP数据库会定期更新）<br>
+<br>
+<strong>详细步骤：</strong><br>
+将下载的qqwry.dat 重命名为ipdata.dat 上传覆盖/data/ipdata/ipdata.dat 即可            <br>
+            <br>
+            <a href="http://www.mymps.com.cn/member/index.php?mod=service&action=add#list" target="_blank" style="text-decoration:underline;color:red; font-size:16px;">如果以上教程仍不能解决您的问题，请在此提交售后工单 &gt;&gt;</a>
+            </div>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+    <div class="footer">
+  <div class="container">
+    <p class="center">更多蚂蚁分类工具请进入QQ群:201809840</p>
+
+    <ul class="footer-links">
+      <li><a href="http://www.mymps.com.cn/" target="_blank">蚂蚁分类信息系统官网</a></li>
+      <li><a href="http://bbs.mymps.com.cn/">蚂蚁论坛</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<script src="./IP数据库更新教程_files/bootstrap.min.js" language="javascript" type="text/javascript"></script>
+<script src="./IP数据库更新教程_files/prettify.js"></script>
+<script src="./IP数据库更新教程_files/application.js"></script>
+</body></html>

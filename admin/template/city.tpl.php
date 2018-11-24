@@ -1,38 +1,38 @@
 <?php include qq3479015851_tpl('inc_head');?>
 <form name="form_qq3479015851" action="?part=list" method="post">
 <input name="rename" value="1" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
     <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 		<tr class="firstr">
           <td colspan="2">城市切换页分站排列类型</td>
         </tr>
 		<tr bgcolor="white">
 			<td style="line-height:25px;" colspan="2">
-			<label for="pinyin"><input name="cfg_cityshowtype" value="pinyin" type="radio" id="pinyin" <?php if($qq3479015851_global['cfg_cityshowtype'] == 'pinyin') echo 'checked';?>>按分站拼音首字母</label><br />
-			<label for="province"><input name="cfg_cityshowtype" value="province" type="radio" id="province" <?php if($qq3479015851_global['cfg_cityshowtype'] == 'province') echo 'checked';?>>按分站所属省份</label>
+			<label for="pinyin"><input name="cfg_cityshowtype" value="pinyin" type="radio" id="pinyin" <?php if($SystemGlobalcfm_global['cfg_cityshowtype'] == 'pinyin') echo 'checked';?>>按分站拼音首字母</label><br />
+			<label for="province"><input name="cfg_cityshowtype" value="province" type="radio" id="province" <?php if($SystemGlobalcfm_global['cfg_cityshowtype'] == 'province') echo 'checked';?>>按分站所属省份</label>
 			</td>
 		</tr>
     	<tr class="firstr">
-          <td colspan="2">浏览者首次访问网站首页(<font style="text-decoration:underline"><?php echo $qq3479015851_global['SiteUrl']; ?></font>)时打开</td>
+          <td colspan="2">浏览者首次访问网站首页(<font style="text-decoration:underline"><?php echo $SystemGlobalcfm_global['SiteUrl']; ?></font>)时打开</td>
         </tr>
 		<tr bgcolor="white">
           <td style="line-height:25px;" colspan="2">
-         <label for="home"><input name="cfg_redirectpage" class="radio" value="home" type="radio" id="home" onclick="document.getElementById('nonecity').style.display='none';document.getElementById('sitecity').style.display='none'" <?php if($qq3479015851_global['cfg_redirectpage'] == 'home') echo 'checked';?>>总站首页</label> <br />
-<i style="margin-left:20px"><?php echo $qq3479015851_global['SiteUrl']; ?></i><br />
+         <label for="home"><input name="cfg_redirectpage" class="radio" value="home" type="radio" id="home" onclick="document.getElementById('nonecity').style.display='none';document.getElementById('sitecity').style.display='none'" <?php if($SystemGlobalcfm_global['cfg_redirectpage'] == 'home') echo 'checked';?>>总站首页</label> <br />
+<i style="margin-left:20px"><?php echo $SystemGlobalcfm_global['SiteUrl']; ?></i><br />
           <label for="viewercity"><input name="cfg_redirectpage" class="radio" value="viewercity" type="radio" id="viewercity" onclick="document.getElementById('nonecity').style.display='';document.getElementById('sitecity').style.display='none'">浏览者所在城市的分站首页</label><br />
-<div id="nonecity" style=" background-color:#f5f5f5; border:1px #eee solid; margin-top:5px; margin-bottom:5px; line-height:25px; padding-left:30px; <?php if(!in_array($qq3479015851_global['cfg_redirectpage'],array('nchome','ncchangecity'))) echo 'display:none';?>">
+<div id="nonecity" style=" background-color:#f5f5f5; border:1px #eee solid; margin-top:5px; margin-bottom:5px; line-height:25px; padding-left:30px; <?php if(!in_array($SystemGlobalcfm_global['cfg_redirectpage'],array('nchome','ncchangecity'))) echo 'display:none';?>">
   若无对应城市分站打开<br />
-  <label for="nchome"><input name="cfg_redirectpage" class="radio" value="nchome" id="nchome" type="radio" <?php if($qq3479015851_global['cfg_redirectpage'] == 'nchome') echo 'checked';?>>总站首页</label><br />
-  <label for="ncchangecity"><input name="cfg_redirectpage" class="radio" value="ncchangecity" id="ncchangecity" type="radio" <?php if($qq3479015851_global['cfg_redirectpage'] == 'ncchangecity') echo 'checked';?>>城市选择页</label>
+  <label for="nchome"><input name="cfg_redirectpage" class="radio" value="nchome" id="nchome" type="radio" <?php if($SystemGlobalcfm_global['cfg_redirectpage'] == 'nchome') echo 'checked';?>>总站首页</label><br />
+  <label for="ncchangecity"><input name="cfg_redirectpage" class="radio" value="ncchangecity" id="ncchangecity" type="radio" <?php if($SystemGlobalcfm_global['cfg_redirectpage'] == 'ncchangecity') echo 'checked';?>>城市选择页</label>
 </div>
 <i style="margin-left:20px">根据浏览器IP自动跳转至所在城市分站，如：http://beijing.qq3479015851.com.cn</i><br />
-          <label for="changecity"><input onclick="document.getElementById('nonecity').style.display='none';document.getElementById('sitecity').style.display='none'" name="cfg_redirectpage" class="radio" value="changecity" type="radio" id="changecity" <?php if($qq3479015851_global['cfg_redirectpage'] == 'changecity') echo 'checked';?>>城市选择页</label><br />
-<i style="margin-left:20px"><?php echo $qq3479015851_global['SiteUrl']?>/changecity.php</i><br />
-		  <label for="citysite"><input onclick="document.getElementById('nonecity').style.display='none';document.getElementById('sitecity').style.display=''" class="radio" value="citysite" type="radio" id="citysite" name="cfg_redirectpage" <?php if(is_numeric($qq3479015851_global['cfg_redirectpage'])) echo 'checked';?>>强制访问指定分站首页</label><br />
-		  <div id="sitecity" style="<?php if(!is_numeric($qq3479015851_global['cfg_redirectpage'])){?>display:none;<?php }?>  border-top:1px #eee solid; margin-top:5px; padding-top:10px; margin-bottom:5px; line-height:25px; padding-left:15px">
+          <label for="changecity"><input onclick="document.getElementById('nonecity').style.display='none';document.getElementById('sitecity').style.display='none'" name="cfg_redirectpage" class="radio" value="changecity" type="radio" id="changecity" <?php if($SystemGlobalcfm_global['cfg_redirectpage'] == 'changecity') echo 'checked';?>>城市选择页</label><br />
+<i style="margin-left:20px"><?php echo $SystemGlobalcfm_global['SiteUrl']?>/changecity.php</i><br />
+		  <label for="citysite"><input onclick="document.getElementById('nonecity').style.display='none';document.getElementById('sitecity').style.display=''" class="radio" value="citysite" type="radio" id="citysite" name="cfg_redirectpage" <?php if(is_numeric($SystemGlobalcfm_global['cfg_redirectpage'])) echo 'checked';?>>强制访问指定分站首页</label><br />
+		  <div id="sitecity" style="<?php if(!is_numeric($SystemGlobalcfm_global['cfg_redirectpage'])){?>display:none;<?php }?>  border-top:1px #eee solid; margin-top:5px; padding-top:10px; margin-bottom:5px; line-height:25px; padding-left:15px">
           
 		  	<select name="cfg_redirectpagee">
-			<?php echo get_cityoptions($qq3479015851_global['cfg_redirectpage']); ?>
+			<?php echo get_cityoptions($SystemGlobalcfm_global['cfg_redirectpage']); ?>
 			</select>
 		  </div>
         </td>
@@ -41,15 +41,15 @@
           <td colspan="2">城市分站文件存放目录</td>
         </tr>
         <tr bgcolor="white">
-          <td width="250" style="line-height:25px;"><input name="cfg_citiesdir" class="text" value="<?php echo $qq3479015851_global['cfg_citiesdir'];?>"><br /><i>范例:&nbsp;&nbsp;<b style="color:#006acd">/city</b>&nbsp;&nbsp;或留空。</i>
+          <td width="250" style="line-height:25px;"><input name="cfg_citiesdir" class="text" value="<?php echo $SystemGlobalcfm_global['cfg_citiesdir'];?>"><br /><i>范例:&nbsp;&nbsp;<b style="color:#006acd">/city</b>&nbsp;&nbsp;或留空。</i>
 </td>
           <td bgcolor="#ffffff" style="border-left:1px #eee solid;">
           <div style="line-height:25px;">
           <b style="color:red">以北京(beijing)为例：</b><br />
-<i>(1).</i>若填写为<font color="#006acd">/city</font>，北京分站文件存放目录则为<font color="#006acd">/city/beijing</font>，访问该分站时，分站路径为<font color="#006acd"><?=$qq3479015851_global['SiteUrl']?>/city/beijing/</font><br /><i>(2).</i>若留空，北京分站文件存放目录为<font color="#006acd">/beijing</font>，访问该分站时，分站路径为<font color="#006acd"><?=$qq3479015851_global['SiteUrl']?>/beijing/</font><br />
+<i>(1).</i>若填写为<font color="#006acd">/city</font>，北京分站文件存放目录则为<font color="#006acd">/city/beijing</font>，访问该分站时，分站路径为<font color="#006acd"><?=$SystemGlobalcfm_global['SiteUrl']?>/city/beijing/</font><br /><i>(2).</i>若留空，北京分站文件存放目录为<font color="#006acd">/beijing</font>，访问该分站时，分站路径为<font color="#006acd"><?=$SystemGlobalcfm_global['SiteUrl']?>/beijing/</font><br />
 <b style="color:red">其他说明：</b><br />当分站存放目录留空时，各分站目录名不可与系统目录重复<br />
 <?php 
-foreach($qq3479015851directory as $k){
+foreach($SystemGlobalcfmdirectory as $k){
 	echo ' <font color="#006acd">/'.$k.'</font> ';
 }
 ?>
@@ -62,8 +62,8 @@ foreach($qq3479015851directory as $k){
         <tr bgcolor="white">
           <td style="line-height:25px">
           <?php
-          if($qq3479015851_global['cfg_independency']){
-          	$independency = explode(',',$qq3479015851_global['cfg_independency']);
+          if($SystemGlobalcfm_global['cfg_independency']){
+          	$independency = explode(',',$SystemGlobalcfm_global['cfg_independency']);
           } else {
 		  	$independency = array();
 		  }

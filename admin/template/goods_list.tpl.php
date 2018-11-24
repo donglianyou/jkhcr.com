@@ -4,7 +4,7 @@ $admindir = getcwdOL();
 ?>
 
 <form action="?" method="get">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">搜索符合条件的商品</td>
@@ -40,7 +40,7 @@ $admindir = getcwdOL();
 <center><input type="submit" value="提 交" class="qq3479015851 large" /></center>
 <div class="clear" style="margin-bottom:5px"></div>
 </form>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 <div class="mpstopic-category">
 	<div class="panel-tab">
 		<ul class="clearfix tab-list">
@@ -54,7 +54,7 @@ $admindir = getcwdOL();
 </div>
 <form action="?part=list" method="post">
 <input name="url" type="hidden" value="<?=GetUrl()?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm" >
     <tr class="firstr">
     <td width="30">&nbsp;</td>
@@ -76,7 +76,7 @@ $admindir = getcwdOL();
 	</td>
     <td><a href="../goods.php?catid=<?=$row[catid]?>" target="_blank"><?=$row[catname]?></a></td>
     <td><a href="javascript:void(0);" onclick="
-setbg('<?=QQ3479015851_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$row[userid]?>&admindir=<?=$admindir?>')"><?=$row[userid]?></a></td>
+setbg('<?=SysGlbCfm_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$row[userid]?>&admindir=<?=$admindir?>')"><?=$row[userid]?></a></td>
     <td><em><?php echo GetTime($row['dateline']); ?></em></td>
     <td>
     <?php echo $goodslevel[$row['onsale']] ?></td>

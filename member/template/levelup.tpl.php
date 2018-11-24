@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="template/css/new.my.css" />
 <script language="javascript" src="template/javascript.js"></script>
 </head>
-<body class="<?php echo $qq3479015851_global['cfg_tpl_dir']; ?>">
+<body class="<?php echo $SystemGlobalcfm_global['cfg_tpl_dir']; ?>">
 <div class="container">
 <?php include qq3479015851_tpl('inc_head'); ?>
 <div id="main" class="main section-setting">

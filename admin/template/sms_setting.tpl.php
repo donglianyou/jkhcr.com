@@ -1,8 +1,8 @@
 <?php include qq3479015851_tpl('inc_head');?>
 <form method="post" action="sms.php?part=<?=$part?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
-<tr class="firstr"><td colspan="2">配置短信供应商接口(诚信源码之家http://junchang.taobao.com)</td></tr>
+<tr class="firstr"><td colspan="2">配置短信供应商接口</td></tr>
 <tr bgcolor="#ffffff">
 <td width="25%">
 供应商:  &nbsp;&nbsp;

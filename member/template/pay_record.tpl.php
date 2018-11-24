@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="template/css/new.my.css" />
 <link rel="stylesheet" type="text/css" href="template/css/new.exchange.css" />
 </head>
-<body class="<?php echo $qq3479015851_global['cfg_tpl_dir']; ?>">
+<body class="<?php echo $SystemGlobalcfm_global['cfg_tpl_dir']; ?>">
 <div class="container">
 
 <?php include qq3479015851_tpl('inc_head');?>

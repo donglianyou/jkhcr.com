@@ -23,7 +23,7 @@ function insertunit(text) {
 <style>
 .jswizard{ padding:10px 0; line-height:22px}
 </style>
-<div id="<?=QQ3479015851_SOFTNAME?>" style=" padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style=" padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -34,7 +34,7 @@ function insertunit(text) {
     </div>
 </div>
 <?php if($id){?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr"><td>预览</td></tr>
 	<tbody style="display: yes; background-color:white">
@@ -48,7 +48,7 @@ function insertunit(text) {
 <form action="?" method="post">
 <input name="customtype" value="store" type="hidden">
 <input name="id" value="<?=$id?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr"><td colspan="3">商家店铺数据调用模板</td></tr>
     <tbody>
@@ -80,7 +80,7 @@ function insertunit(text) {
     </tbody>
 </table>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr"><td colspan="2">主题列表</td></tr>
 <tbody id="menu_4d4985d65fe805ed" style="display: yes; background-color:white">

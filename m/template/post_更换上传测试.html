@@ -2,7 +2,7 @@
 <html lang="zh-CN" class="index_page">
 <head>
 {template header}
-<title>发布信息 - {$qq3479015851_global[SiteName]}</title>
+<title>发布信息 - {$SystemGlobalcfm_global[SiteName]}</title>
 <link type="text/css" rel="stylesheet" href="template/css/global.css">
 <link type="text/css" rel="stylesheet" href="template/css/style.css">
 <link type="text/css" rel="stylesheet" href="template/css/post.css">
@@ -10,10 +10,10 @@
 window['current'] = '{echo $id ? "修改" : "发布"}信息';
 </script>
 <script language="javascript">
-function submitForm(){if(document.form1.title.value==""){alert('请填写信息标题!');document.form1.title.focus();return false}if($("#title").val()){if(!isNaN($("#title").val())){alert('请填写正确的信息标题!');$("#title").focus();return false}}var length=lenthString($("#title").val());if(length<6||length>80){alert('请填写至少3个汉字，至多40个汉字!');$("#title").focus();return false}if(document.form1.areaid.value==""){alert('请选择所在地区!');document.form1.areaid.focus();return false}if(document.form1.endtime.value==""){alert('请选择有效期!');document.form1.endtime.focus();return false}<!--{loop $show_mod_option $qq3479015851}--><!--{if $qq3479015851[required]==1}-->if($("[name='extra[{$qq3479015851[identifier]}]']").val()==''){alert('{$qq3479015851[title]}不能为空!');$("[name='extra[{$qq3479015851[identifier]}]']").focus();return false}<!--{/if}--><!--{/loop}-->if(document.form1.contact_who.value==""){alert('请填写联系人!');document.form1.contact_who.focus();return false}if($("#contact_who").val()){if(!isNaN($("#contact_who").val())){alert('请填写正确的联系人!');document.form1.contact_who.focus();return false}}if(document.form1.tel.value==""){alert('请填写联系电话!');document.form1.tel.focus();return false}if($("#qq").val()){if(isNaN($("#qq").val())){alert('请填写正确的QQ号码!');document.form1.qq.focus();return false}}if(document.form1.content.value==""){alert('请填写信息内容!');document.form1.content.focus();return false}var lenth=lenthString($("#content").val());if(lenth<10){alert('请填写至少5个汉字!');$("#content").focus();return false}if(lenth>1000){alert('您的描述字数太多了，请精简内容描述!');$("#content").focus();return false}<!--{if $iflogin==0}-->if(document.form1.manage_pwd.value==""){alert('请填写管理密码!');document.form1.manage_pwd.focus();return false}<!--{/if}--><!--{if $info[imgcode]==1}-->if(document.form1.checkcode.value==""){alert('请填写验证码!');document.form1.checkcode.focus();return false;}<!--{/if}-->$("#loadingPostdiv").show();return true}function chk_authcode(){if($("#checkcode").val()){$.get('../javascript.php?part=chk_authcode&value='+$("#checkcode").val(),function(data){if(data!='success'){alert(data);$("#checkcode").focus();return false}})}}function loadingPost(){var _PageWidth=document.documentElement.clientWidth;var _LoadingLeft=_PageWidth>215?(_PageWidth-215)/2:0;var _LoadingHtml='<div id="loadingPostdiv" style="display:none;position:fixed;left:0;width:100%;height:100%;top:0;background:#e1e1e1;opacity:0.8;filter:alpha(opacity=80);z-index:10000;"><div style="position: absolute; cursor1: wait; left: '+_LoadingLeft+"px; top:40%; width: auto; height: 57px; line-height: 57px; padding-left: 40px; padding-right: 20px; background:#ffffff url(../images/loading.gif) no-repeat scroll 15px 20px; border: 5px solid #CCCCCC; border-radius:5px; color: #000;font-size:14px;\">数据提交中，请等待...</div></div>";document.write(_LoadingHtml)}loadingPost();
+function submitForm(){if(document.form1.title.value==""){alert('请填写信息标题!');document.form1.title.focus();return false}if($("#title").val()){if(!isNaN($("#title").val())){alert('请填写正确的信息标题!');$("#title").focus();return false}}var length=lenthString($("#title").val());if(length<6||length>80){alert('请填写至少3个汉字，至多40个汉字!');$("#title").focus();return false}if(document.form1.areaid.value==""){alert('请选择所在地区!');document.form1.areaid.focus();return false}if(document.form1.endtime.value==""){alert('请选择有效期!');document.form1.endtime.focus();return false}<!--{loop $show_mod_option $SystemGlobalcfm}--><!--{if $SystemGlobalcfm[required]==1}-->if($("[name='extra[{$SystemGlobalcfm[identifier]}]']").val()==''){alert('{$SystemGlobalcfm[title]}不能为空!');$("[name='extra[{$SystemGlobalcfm[identifier]}]']").focus();return false}<!--{/if}--><!--{/loop}-->if(document.form1.contact_who.value==""){alert('请填写联系人!');document.form1.contact_who.focus();return false}if($("#contact_who").val()){if(!isNaN($("#contact_who").val())){alert('请填写正确的联系人!');document.form1.contact_who.focus();return false}}if(document.form1.tel.value==""){alert('请填写联系电话!');document.form1.tel.focus();return false}if($("#qq").val()){if(isNaN($("#qq").val())){alert('请填写正确的QQ号码!');document.form1.qq.focus();return false}}if(document.form1.content.value==""){alert('请填写信息内容!');document.form1.content.focus();return false}var lenth=lenthString($("#content").val());if(lenth<10){alert('请填写至少5个汉字!');$("#content").focus();return false}if(lenth>1000){alert('您的描述字数太多了，请精简内容描述!');$("#content").focus();return false}<!--{if $iflogin==0}-->if(document.form1.manage_pwd.value==""){alert('请填写管理密码!');document.form1.manage_pwd.focus();return false}<!--{/if}--><!--{if $info[imgcode]==1}-->if(document.form1.checkcode.value==""){alert('请填写验证码!');document.form1.checkcode.focus();return false;}<!--{/if}-->$("#loadingPostdiv").show();return true}function chk_authcode(){if($("#checkcode").val()){$.get('../javascript.php?part=chk_authcode&value='+$("#checkcode").val(),function(data){if(data!='success'){alert(data);$("#checkcode").focus();return false}})}}function loadingPost(){var _PageWidth=document.documentElement.clientWidth;var _LoadingLeft=_PageWidth>215?(_PageWidth-215)/2:0;var _LoadingHtml='<div id="loadingPostdiv" style="display:none;position:fixed;left:0;width:100%;height:100%;top:0;background:#e1e1e1;opacity:0.8;filter:alpha(opacity=80);z-index:10000;"><div style="position: absolute; cursor1: wait; left: '+_LoadingLeft+"px; top:40%; width: auto; height: 57px; line-height: 57px; padding-left: 40px; padding-right: 20px; background:#ffffff url(../images/loading.gif) no-repeat scroll 15px 20px; border: 5px solid #CCCCCC; border-radius:5px; color: #000;font-size:14px;\">数据提交中，请等待...</div></div>";document.write(_LoadingHtml)}loadingPost();
 </script>
 </head>
-<body class="{$qq3479015851_global[cfg_tpl_dir]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]}">
 <div class="wrapper">
 	{template header_search}
     <div style="display:none;">
@@ -59,12 +59,12 @@ function submitForm(){if(document.form1.title.value==""){alert('请填写信息�
  </div>
  
  <div class="inp_Itembox">
- {loop $show_mod_option $qq3479015851}
+ {loop $show_mod_option $SystemGlobalcfm}
   <dl class="cfix">
-   <dt>{$qq3479015851[title]}</dt>
+   <dt>{$SystemGlobalcfm[title]}</dt>
    <dd>
-	{$qq3479015851[value]}
-    {if strstr($qq3479015851[value],'select')}
+	{$SystemGlobalcfm[value]}
+    {if strstr($SystemGlobalcfm[value],'select')}
 	<div class="menu">
     <i></i>
     <i></i>
@@ -140,7 +140,7 @@ uploader.init();
 
 
 <!--
-<script type="text/javascript" src="{$qq3479015851_global[SiteUrl]}/template/default/js/a_ddimgview.js"></script>
+<script type="text/javascript" src="{$SystemGlobalcfm_global[SiteUrl]}/template/default/js/a_ddimgview.js"></script>
 <div class="inp_Itembox">
     <dl class="cfix">
         <dt><font color="#ff0000">友情提示:</font></dt>
@@ -169,7 +169,7 @@ uploader.init();
 <div class="inp_Itembox">
 <dl class="cfix">
     <dt>验证码</dt>
-    <dd><input id="checkcode" name="checkcode" onBlur="chk_authcode()" placeholder="请输入下图验证码" type="text" size="26" /><img src="{$qq3479015851_global[SiteUrl]}/{$qq3479015851_global[cfg_authcodefile]}?mod=m" alt="看不清，请点击刷新" class="authcode" align="absmiddle" onClick="this.src=this.src+'?'"/></dd>
+    <dd><input id="checkcode" name="checkcode" onBlur="chk_authcode()" placeholder="请输入下图验证码" type="text" size="26" /><img src="{$SystemGlobalcfm_global[SiteUrl]}/{$SystemGlobalcfm_global[cfg_authcodefile]}?mod=m" alt="看不清，请点击刷新" class="authcode" align="absmiddle" onClick="this.src=this.src+'?'"/></dd>
 </dl>
 </div>
 {/if}

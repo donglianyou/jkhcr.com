@@ -15,11 +15,11 @@ function get_navtype_options( $typeid = "" )
 	global $nav_type;
 	foreach ( $nav_type as $key => $value )
 	{
-		$qq3479015851 .= "<option value=".$key."";
-		$qq3479015851 .= $typeid == $key ? " selected>" : ">";
-		$qq3479015851 .= $value."</option>";
+		$SystemGlobalcfm .= "<option value=".$key."";
+		$SystemGlobalcfm .= $typeid == $key ? " selected>" : ">";
+		$SystemGlobalcfm .= $value."</option>";
 	}
-	return $qq3479015851;
+	return $SystemGlobalcfm;
 }
 
 function get_target_options( $ttarget = "" )
@@ -27,11 +27,11 @@ function get_target_options( $ttarget = "" )
 	global $target;
 	foreach ( $target as $key => $value )
 	{
-		$qq3479015851 .= "<option value=".$key;
-		$qq3479015851 .= $ttarget == $key ? " selected>" : ">";
-		$qq3479015851 .= $value."</option>";
+		$SystemGlobalcfm .= "<option value=".$key;
+		$SystemGlobalcfm .= $ttarget == $key ? " selected>" : ">";
+		$SystemGlobalcfm .= $value."</option>";
 	}
-	return $qq3479015851;
+	return $SystemGlobalcfm;
 }
 
 function restore_footerurl( )
@@ -75,7 +75,7 @@ function restore_headerurl( )
 {
 	global $db;
 	global $db_qq3479015851;
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	global $seo;
 	if ( !$seo )
 	{
@@ -93,7 +93,7 @@ function restore_headerurl( )
 	}
 	$category = $category ? $category : array( );
 	$plugin = array( );
-	@include( QQ3479015851_DATA."/caches/pluginmenu_member.php" );
+	@include( SysGlbCfm_DATA."/caches/pluginmenu_member.php" );
 	if ( is_array( $data ) )
 	{
 		foreach ( $data as $k => $v )
@@ -134,10 +134,10 @@ function restore_headerurl( )
 
 define( "CURSCRIPT", "navurl" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 require_once( dirname( __FILE__ )."/include/color.inc.php" );
 require_once( dirname( __FILE__ )."/include/ifview.inc.php" );
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 	exit( "Access Denied" );
 }
@@ -223,11 +223,11 @@ else
 	clear_cache_files( "navurl_foot" );
 	clear_cache_files( "navurl_header" );
 	clear_cache_files( "navurl_head" );
-	write_msg( "导航链接设置更新成功！", $forward_url, "QQ3479015851Record" );
+	write_msg( "导航链接设置更新成功！", $forward_url, "SysGlbCfmRecord" );
 }
 if ( is_object( $db ) )
 {
 	$db->close( );
 }
-$qq3479015851_global = $db = $db_qq3479015851 = $part = NULL;
+$SystemGlobalcfm_global = $db = $db_qq3479015851 = $part = NULL;
 ?>

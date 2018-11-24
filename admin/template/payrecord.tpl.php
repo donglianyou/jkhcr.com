@@ -9,7 +9,7 @@ $(function(){
 	$("#datepicker2").datepicker();
 });
 </script>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">详细搜索</td>
@@ -35,7 +35,7 @@ $(function(){
 <div class="clear"></div>
 <form action="?part=list" method="post">
 <input name="url" type="hidden" value="<?=GetUrl()?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr style="font-weight:bold; background-color:#dff6ff">
     <td><input class="checkbox" name="checkall" type="checkbox" id="checkall" onClick="CheckAll(this.form)"/> 删?</td>
@@ -54,7 +54,7 @@ $(function(){
     <tr bgcolor="white">
         <td><input type='checkbox' name='delids[]' value='<?=$list[id]?>' class='checkbox' id="<?=$list[id]?>"></td>
         <td><?=$list[orderid]?></td>
-        <td><a href="javascript:void(0);" onclick="setbg('<?=QQ3479015851_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$list[userid]?>&admindir=<?=$admindir?>')"><?=$list[userid]?></a></td>
+        <td><a href="javascript:void(0);" onclick="setbg('<?=SysGlbCfm_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$list[userid]?>&admindir=<?=$admindir?>')"><?=$list[userid]?></a></td>
         <td><em><font color="red"><?=$list[money]?></font></em></td>
         <td><?=GetTime($list[posttime])?></td>
         <td align="left"><?=$list[payip]?></td>

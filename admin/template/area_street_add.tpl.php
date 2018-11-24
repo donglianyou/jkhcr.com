@@ -1,6 +1,6 @@
 <?php include qq3479015851_tpl('inc_head');?>
 <form method=post onSubmit="return chkform()" name="form" action="?part=add">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
   <td colspan="2" align="left">增加地区下的街道</td>

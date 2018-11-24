@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-require_once QQ3479015851_ROOT . '/include/sms.fun.php';
+require_once SysGlbCfm_ROOT . '/include/sms.fun.php';
 
 if ($action == 'sendmail') {
 	$email = (isset($email) ? mhtmlspecialchars($email) : '');
@@ -22,7 +21,7 @@ if ($action == 'sendmail') {
 	$user_info = $db->getRow('SELECT * FROM `' . $db_qq3479015851 . 'member` WHERE email = \'' . $email . '\'');
 
 	if ($user_info['userid']) {
-		require QQ3479015851_INC . '/email.fun.php';
+		require SysGlbCfm_INC . '/email.fun.php';
 		$code = base64_encode($user_info['id'] . '.' . md5($user_info['id'] . '+' . $user_info['userpwd']) . '.' . $timestamp);
 		globalassign();
 
@@ -31,13 +30,13 @@ if ($action == 'sendmail') {
 		}
 		else {
 			$status = 'error2';
-			$msg = '发送邮件失败，请联系客服：' . $qq3479015851_global['SiteTel'] . '重设密码！';
+			$msg = '发送邮件失败，请联系客服：' . $SystemGlobalcfm_global['SiteTel'] . '重设密码！';
 			include qq3479015851_tpl($mod . '_4');
 		}
 	}
 	else {
 		$status = 'error2';
-		$msg = '该电子邮箱或用户名不存在！请联系客服：' . $qq3479015851_global['SiteTel'] . '！';
+		$msg = '该电子邮箱或用户名不存在！请联系客服：' . $SystemGlobalcfm_global['SiteTel'] . '！';
 		globalassign();
 		include qq3479015851_tpl($mod . '_4');
 	}
@@ -53,11 +52,11 @@ else if ($action == 'sendsms') {
 
 	if ($user_info['userid']) {
 		$smsconfig = get_sms_config();
-		$smsconfig['sms_service'] && include QQ3479015851_ROOT . '/include/' . $smsconfig['sms_service'] . '/qq3479015851.php';
+		$smsconfig['sms_service'] && include SysGlbCfm_ROOT . '/include/' . $smsconfig['sms_service'] . '/qq3479015851.php';
 
 		if (!send_pwdsms($smsconfig['sms_user'], $smsconfig['sms_pwd'], $mobile, $smsconfig['sms_pwdtpl'])) {
 			$status = 'error2';
-			$msg = '验证码发送失败！请联系客服：' . $qq3479015851_global['SiteTel'] . '！';
+			$msg = '验证码发送失败！请联系客服：' . $SystemGlobalcfm_global['SiteTel'] . '！';
 			globalassign();
 			include qq3479015851_tpl($mod . '_4');
 		}
@@ -69,7 +68,7 @@ else if ($action == 'sendsms') {
 	}
 	else {
 		$status = 'error2';
-		$msg = '该手机号尚未注册用户！请联系客服：' . $qq3479015851_global['SiteTel'] . '！';
+		$msg = '该手机号尚未注册用户！请联系客服：' . $SystemGlobalcfm_global['SiteTel'] . '！';
 		globalassign();
 		include qq3479015851_tpl($mod . '_4');
 	}
@@ -86,7 +85,7 @@ else if ($action == 'resetpwd') {
 	$mobile = ($mobile ? mhtmlspecialchars($mobile) : '');
 	$smscheckcode = ($smscheckcode ? intval($smscheckcode) : '');
 
-	if ($qq3479015851_global['cfg_member_verify'] == 4) {
+	if ($SystemGlobalcfm_global['cfg_member_verify'] == 4) {
 		if (!qq3479015851_chk_smsrandcode($smscheckcode, $mobile)) {
 			write_msg('密码修改失败，手机验证码输入不正确或与手机号不匹配！', '?mod=forgetpass');
 		}
@@ -97,12 +96,12 @@ else if ($action == 'resetpwd') {
 	}
 
 	if (PASSPORT_TYPE == 'phpwind') {
-		require QQ3479015851_ROOT . '/pw_client/uc_client.php';
+		require SysGlbCfm_ROOT . '/pw_client/uc_client.php';
 		$pw_user = uc_user_get($userid);
 		$result = uc_user_edit($pw_user['uid'], $pw_user['username'], '', md5($userpwd), '');
 	}
 	else if (PASSPORT_TYPE == 'ucenter') {
-		require QQ3479015851_ROOT . '/uc_client/client.php';
+		require SysGlbCfm_ROOT . '/uc_client/client.php';
 		$result = uc_user_edit($userid, $userpwd, $userpwd, $email, 1);
 	}
 

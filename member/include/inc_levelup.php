@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-if (!defined('QQ3479015851')) {
+if (!defined('SysGlbCfm')) {
 	exit('Forbidden');
 }
 
@@ -71,7 +70,7 @@ if (submit_check('levelup_submit')) {
 else {
 	$levelup_notice = $db->getOne('SELECT value FROM `' . $db_qq3479015851 . 'config` WHERE description = \'levelup_notice\'');
 	$data = '';
-	@include QQ3479015851_DATA . '/caches/member_' . $levelid . '.php';
+	@include SysGlbCfm_DATA . '/caches/member_' . $levelid . '.php';
 	$levelname = ($data['levelname'] ? $data['levelname'] : $db->getOne('SELECT levelname FROM `' . $db_qq3479015851 . 'member_level` WHERE id = \'' . $levelid . '\''));
 	unset($data);
 	$memberlevel_array = get_memberlevel_array($levelid);
@@ -104,7 +103,7 @@ function GetUplevelTime($formname = 'upleveltime', $levelid = '')
 	global $charset;
 	$timearray = array('halfyear' => '半年', 'forever' => '永久', 'month' => '一个月', 'year' => '一年');
 	$data = '';
-	@include QQ3479015851_DATA . '/caches/member_' . $levelid . '.php';
+	@include SysGlbCfm_DATA . '/caches/member_' . $levelid . '.php';
 
 	if ($data == '') {
 		$row = $db->getRow('SELECT * FROM `' . $db_qq3479015851 . 'member_level` WHERE id = \'' . $levelid . '\'');

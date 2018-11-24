@@ -11,11 +11,11 @@ body{ background-color:white; font-size:12px; font-family:"microsoft yahei";}
 .button a.yes{ width:148px; height:40px; display:block; color:#ffffff; font-size:16px; text-decoration:none; line-height:40px; float:left;}
 .button a.no{width:127px; height:40px; display:block; color:#444444; font-size:16px; text-decoration:none; line-height:40px;float:left; margin-left:15px;}
 
-a.yes{ background-image:url(<?php echo $qq3479015851_global[SiteUrl]?>/images/button.gif); background-position:0 0;}
-a.yes:hover{ background-image:url(<?php echo $qq3479015851_global[SiteUrl]?>/images/button.gif); background-position:0 -40px;}
+a.yes{ background-image:url(<?php echo $SystemGlobalcfm_global[SiteUrl]?>/images/button.gif); background-position:0 0;}
+a.yes:hover{ background-image:url(<?php echo $SystemGlobalcfm_global[SiteUrl]?>/images/button.gif); background-position:0 -40px;}
 
-a.no{ background-image:url(<?php echo $qq3479015851_global[SiteUrl]?>/images/button.gif); background-position:0 -80px; }
-a.no:hover{ background-image:url(<?php echo $qq3479015851_global[SiteUrl]?>/images/button.gif); background-position:0 -120px;}
+a.no{ background-image:url(<?php echo $SystemGlobalcfm_global[SiteUrl]?>/images/button.gif); background-position:0 -80px; }
+a.no:hover{ background-image:url(<?php echo $SystemGlobalcfm_global[SiteUrl]?>/images/button.gif); background-position:0 -120px;}
 
 li{ list-style:none; text-align:0; margin:0; padding:0;}
 img{ vertical-align:middle}
@@ -69,12 +69,12 @@ img{ vertical-align:middle}
 		<ul>
 			<li class="title"><?php echo $row['title']; ?></li>
 			<li><span class="des">联系人：</span><span class="val"><?php echo $row['contact_who']; ?> </span></li>
-			<li><span class="des">联系电话：</span><span class="val" style="color:red; font-weight:bold;"><?php echo $row['tel']; ?></span> <font class="font"><a rel="nofollow" href="<?=$qq3479015851_global[SiteUrl]?>/posthistory.php?tel=<?php echo base64_encode($row['tel']); ?>" target="_blank">查看发贴记录</a> <a target="_blank" href="http://www.ip138.com:8080/search.asp?action=mobile&mobile=<?php echo $row['tel']; ?>">查归属地</a></font></li>
+			<li><span class="des">联系电话：</span><span class="val" style="color:red; font-weight:bold;"><?php echo $row['tel']; ?></span> <font class="font"><a rel="nofollow" href="<?=$SystemGlobalcfm_global[SiteUrl]?>/posthistory.php?tel=<?php echo base64_encode($row['tel']); ?>" target="_blank">查看发贴记录</a> <a target="_blank" href="http://www.ip138.com:8080/search.asp?action=mobile&mobile=<?php echo $row['tel']; ?>">查归属地</a></font></li>
 			<?php if($row['qq']){?><li><span class="des">QQ咨询：</span><span class="val"><?php echo $row['qq']; ?></span></li><? }?>
 			<?php if($row['email']){?><li><span class="des">E-mail：</span><span class="val"><?php echo $row['email']; ?></span></li><? }?>
 			<?php if($row['ip']){?><li><span class="des">发布者IP：</span><span class="val"><?php echo $row['ip']; ?></span><span style="margin-left:10px; font-size:12px; color:green"><?php echo $row['ip2area']; ?></span></li>
 			<? }?>
-			<li class="tips"><font color="#FF6600">小提示：</font>联系我时请说明是在<?php echo $qq3479015851_global['SiteName']; ?>看到的，谢谢！
+			<li class="tips"><font color="#FF6600">小提示：</font>联系我时请说明是在<?php echo $SystemGlobalcfm_global['SiteName']; ?>看到的，谢谢！
 			</li>
 		</ul>
 	</div>
@@ -84,9 +84,9 @@ img{ vertical-align:middle}
 			<li class="titler">查看该信息联系方式将扣除您 <font color="red"><?php echo $row['usecoin']; ?></font> 个金币，您当前拥有 <font color="red"><?php echo $money_own ?></font> 个金币</li>
 			<li class="button">
 			<?php if($row['usecoin'] > $money_own){?>
-				<a href="<?php echo $qq3479015851_global[SiteUrl]; ?>/member/index.php?m=pay&box=1" class="yes">火速充值金币</a>
+				<a href="<?php echo $SystemGlobalcfm_global[SiteUrl]; ?>/member/index.php?m=pay&box=1" class="yes">火速充值金币</a>
 			<?php }else{?>
-				<a href="<?php echo $qq3479015851_global[SiteUrl]; ?>/box.php?part=seecontact&action=delmoney&infoid=<?php echo $row[id]; ?>" class="yes">确认查看</a>
+				<a href="<?php echo $SystemGlobalcfm_global[SiteUrl]; ?>/box.php?part=seecontact&action=delmoney&infoid=<?php echo $row[id]; ?>" class="yes">确认查看</a>
 			<?php }?>
 			 <a href="#" onclick="parent.closeopendiv();" class="no">放弃查看</a></li>
 		</ul>

@@ -7,7 +7,7 @@ $(function(){
 	$("#datepicker2").datepicker();
 });
 </script>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
 <td colspan="5">
@@ -30,7 +30,7 @@ $(function(){
 <?php if($advid){?>
 <input name="forward_url" value="<?php echo GetUrl(); ?>" type="hidden">
 <?php }?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
 <td colspan="2">
@@ -70,14 +70,14 @@ $(function(){
 	<option value="all" <?php if(in_array('all',$edit['targets'])) echo 'selected style="background-color:#6EB00C;color:white"';?>> > 全部</option>
     <option value=""> </option>
 <?}elseif($type == 'indexcatad' || $edit['type'] == 'indexcatad'){?>
-<optgroup label="<?=QQ3479015851_SOFTNAME?>网站首页">
+<optgroup label="<?=SysGlbCfm_SOFTNAME?>网站首页">
 <?}else{
 foreach($adv_target as $kad => $vad){?>
 <option value="<?=$vad?>" <?php if(is_array($edit['targets'])){
 	if(in_array($vad,$edit['targets'])){
 		echo 'selected style="background-color:#6EB00C;color:white"'; }
         }?>>&nbsp;&nbsp;> <?=$kad?></option>
-<optgroup label="<?=QQ3479015851_SOFTNAME?>">
+<optgroup label="<?=SysGlbCfm_SOFTNAME?>">
 <?php 
 	}}
 }?>
@@ -114,7 +114,7 @@ if($type == 'infoad' || $edit['type'] == 'infoad'){
 </table>
 </div>
 
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 	<?php echo $style ? get_style_forminput('',$style) : get_style_forminput($edit[code],$adv_style); ?>
 </div>
 

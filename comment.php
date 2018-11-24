@@ -7,16 +7,15 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('IN_SMT',true);
-define('QQ3479015851',true);
+define('SysGlbCfm',true);
 require_once dirname(__FILE__)."/include/global.php";
 require_once dirname(__FILE__)."/data/config.php";
-require_once QQ3479015851_DATA."/config.db.php";
-require_once QQ3479015851_INC."/db.class.php";
-require_once QQ3479015851_INC."/member.class.php";
+require_once SysGlbCfm_DATA."/config.db.php";
+require_once SysGlbCfm_INC."/db.class.php";
+require_once SysGlbCfm_INC."/member.class.php";
 $iflogin 	= $member_log -> chk_in();
 
 $action  = isset($action)	? trim($action) 	: '';
@@ -69,7 +68,7 @@ if($action == 'insert'){
 	}
 	
 	
-	$result 		= verify_badwords_filter($qq3479015851_global['cfg_if_comment_verify'],'',$content);
+	$result 		= verify_badwords_filter($SystemGlobalcfm_global['cfg_if_comment_verify'],'',$content);
 	$content 		= textarea_post_change($result['content']);
 	$comment_level  = $result['level'];
 	$db->query("INSERT INTO `{$db_qq3479015851}comment` (typeid,content,pubtime,ip,comment_level,userid,type)VALUES('$id','$content','$timestamp','".GetIP()."','$comment_level','".$userid."','$part')");
@@ -95,7 +94,7 @@ foreach($res as $k => $row){
 }
 	
 $ajax_content ='
-<script type="text/javascript" src="'.$qq3479015851_global[SiteUrl].'/template/default/js/comment.js"></script>
+<script type="text/javascript" src="'.$SystemGlobalcfm_global[SiteUrl].'/template/default/js/comment.js"></script>
 <div class="box specialpostcontainer">';
 if(is_array($comment_all)){
 	$i = 0;
@@ -127,14 +126,14 @@ if(is_array($comment_all)){
 $ajax_content.=' 
 	<div id="postleave">
 		<a name="comment_write"></a>
-		<form action="'.$qq3479015851_global["SiteUrl"].'/comment.php?part='.$part.'&amp;action=insert" method="post" id="CommentForm" name="CommentForm" onsubmit="return CommentCheckForm();">
+		<form action="'.$SystemGlobalcfm_global["SiteUrl"].'/comment.php?part='.$part.'&amp;action=insert" method="post" id="CommentForm" name="CommentForm" onsubmit="return CommentCheckForm();">
 		<input name="id" value="'.$id.'" type="hidden">
 		<dl><dt>评论内容：</dt><dd><textarea name="content" class="commenttextarea"></textarea></dd></dl>
 		';
 		
 		
 if($iflogin){
-	$ajax_content .= '<div class=clearfix></div><dl><dt>&nbsp;</dt><dd><div style="margin-top:5px">'.$s_uid.' &nbsp;<a href="'.$qq3479015851_global[SiteUrl].'/'.$qq3479015851_global[cfg_member_logfile].'?part=out&url='.urlencode($qq3479015851_global["SiteUrl"].'/'.$dotphpurlarray[$part].'?id='.$id).'">退出</a></div></dd></dl>';
+	$ajax_content .= '<div class=clearfix></div><dl><dt>&nbsp;</dt><dd><div style="margin-top:5px">'.$s_uid.' &nbsp;<a href="'.$SystemGlobalcfm_global[SiteUrl].'/'.$SystemGlobalcfm_global[cfg_member_logfile].'?part=out&url='.urlencode($SystemGlobalcfm_global["SiteUrl"].'/'.$dotphpurlarray[$part].'?id='.$id).'">退出</a></div></dd></dl>';
 } else {
 
 	if($commentsettings[$part] == 2){
@@ -145,7 +144,7 @@ if($iflogin){
 			<dd>
 			<input name="loginuser" class="commenttxt" style="width:100px;">
 			&nbsp;&nbsp;&nbsp;&nbsp; 
-			密码：<input name="loginpwd" type="password" class="commenttxt" style="width:100px;">&nbsp;&nbsp;&nbsp;&nbsp;<a href="'.$qq3479015851_global[SiteUrl].'/'.$qq3479015851_global[cfg_member_logfile].'?mod=register" target="_blank">注册帐号 &raquo;</a>
+			密码：<input name="loginpwd" type="password" class="commenttxt" style="width:100px;">&nbsp;&nbsp;&nbsp;&nbsp;<a href="'.$SystemGlobalcfm_global[SiteUrl].'/'.$SystemGlobalcfm_global[cfg_member_logfile].'?mod=register" target="_blank">注册帐号 &raquo;</a>
 			</dd>
 			</dl>
 		';
@@ -157,7 +156,7 @@ if($iflogin){
 	
 	$ajax_content .='<div class="clearfix"></div>';
 	
-	$ajax_content .= '<dl><dt>&nbsp;</dt><dd><img src="'.$qq3479015851_global["SiteUrl"].'/'.$qq3479015851_global[cfg_authcodefile].'" alt="看不清，请点击刷新" class="authcode" align="absmiddle" onClick="this.src=this.src+\'?\'"/></dd></dl>';
+	$ajax_content .= '<dl><dt>&nbsp;</dt><dd><img src="'.$SystemGlobalcfm_global["SiteUrl"].'/'.$SystemGlobalcfm_global[cfg_authcodefile].'" alt="看不清，请点击刷新" class="authcode" align="absmiddle" onClick="this.src=this.src+\'?\'"/></dd></dl>';
 }
 		
 $ajax_content .= '
@@ -169,5 +168,5 @@ $ajax_content .= '
 ';
 echo html2js($ajax_content);
 is_object($db) && $db -> Close();
-unset($ajax_concotent,$iflogin,$qq3479015851_global,$member_log,$comment_all,$rows_num,$param,$page,$userid,$content,$inajax,$id,$part,$action,$userid,$s_uid,$db,$timestamp,$dotphpurlarray,$commentsettings);
+unset($ajax_concotent,$iflogin,$SystemGlobalcfm_global,$member_log,$comment_all,$rows_num,$param,$page,$userid,$content,$inajax,$id,$part,$action,$userid,$s_uid,$db,$timestamp,$dotphpurlarray,$commentsettings);
 ?>

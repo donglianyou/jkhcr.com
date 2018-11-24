@@ -7,16 +7,15 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 
 define( "CURSCRIPT", "channel" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 require_once( dirname( __FILE__ )."/include/color.inc.php" );
 require_once( dirname( __FILE__ )."/include/ifview.inc.php" );
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }
@@ -25,7 +24,7 @@ $cat_color = $color;
 
 if ( !submit_check( CURSCRIPT."_submit" ) )
 {
-				require_once( QQ3479015851_DATA."/html_type.inc.php" );
+				require_once( SysGlbCfm_DATA."/html_type.inc.php" );
 				if ( $part == "list" )
 				{
 								chk_admin_purview( "purview_新闻类别" );
@@ -63,7 +62,7 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 								{
 												clear_cache_files( "channel_".$range );
 								}
-								write_msg( "删除新闻栏目 ".$catid." 成功", "channel.php?part=list", "QQ3479015851" );
+								write_msg( "删除新闻栏目 ".$catid." 成功", "channel.php?part=list", "SysGlbCfm" );
 				}
 }
 else
@@ -249,5 +248,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 ?>

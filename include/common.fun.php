@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 if ( !function_exists('htmlspecialchars_decode') )
 {
@@ -97,16 +96,16 @@ function get_shop_tpl($opt='',$s_uid=''){
 		$option = $db -> getAll("SELECT * FROM `{$db_qq3479015851}member_tpl`");
 	}
 	foreach ($option as $key => $v){
-		$qq3479015851 .= '<option value='.$v[tpl_path];
+		$SystemGlobalcfm .= '<option value='.$v[tpl_path];
 		if(is_array($opt)){
-			$qq3479015851 .= in_array($v[tpl_path],$opt) ? ' style = "background-color:#6EB00C;color:white" selected>' : '>';
+			$SystemGlobalcfm .= in_array($v[tpl_path],$opt) ? ' style = "background-color:#6EB00C;color:white" selected>' : '>';
 		} else {
-			$qq3479015851 .= ($opt == $v[tpl_path]) ? ' style = "background-color:#6EB00C;color:white" selected>' : '>';
+			$SystemGlobalcfm .= ($opt == $v[tpl_path]) ? ' style = "background-color:#6EB00C;color:white" selected>' : '>';
 		}
 		
-		$qq3479015851 .= $v[tpl_name].'</option>';
+		$SystemGlobalcfm .= $v[tpl_name].'</option>';
 	}
-	return $qq3479015851;
+	return $SystemGlobalcfm;
 }
 
 function filter_str($msg){
@@ -183,14 +182,14 @@ function html2js($str){
 	return $re;
 }
 
-function textarea_post_change($qq3479015851_string)
+function textarea_post_change($SystemGlobalcfm_string)
 {
-	return nl2br(str_replace(' ','&nbsp;',mhtmlspecialchars(trim($qq3479015851_string))));
+	return nl2br(str_replace(' ','&nbsp;',mhtmlspecialchars(trim($SystemGlobalcfm_string))));
 }
 
-function de_textarea_post_change($qq3479015851_string)
+function de_textarea_post_change($SystemGlobalcfm_string)
 {
-	return str_replace('<br />',' ',str_replace('&nbsp;',' ',trim($qq3479015851_string)));
+	return str_replace('<br />',' ',str_replace('&nbsp;',' ',trim($SystemGlobalcfm_string)));
 }
 
 function random($length=5,$strtolower=1)
@@ -263,7 +262,7 @@ function DelDir($dirName)
 
 function die_msg($msg)
 {
-	return '<p style="font-family: Verdana, Tahoma; font-size: 11px;"><b>QQ3479015851 info:</b>'.$msg.'</p>';
+	return '<p style="font-family: Verdana, Tahoma; font-size: 11px;"><b>SysGlbCfm info:</b>'.$msg.'</p>';
 }
 
 /* 调用UCenter函数 */
@@ -271,7 +270,7 @@ function uc_call($func, $params=NULL)
 {
     restore_error_handler();
     if (!function_exists($func)){
-        include_once(QQ3479015851_ROOT.'/uc_client/client.php');
+        include_once(SysGlbCfm_ROOT.'/uc_client/client.php');
     }
     $res = call_user_func_array($func, $params);
     //set_error_handler('exception_handler');
@@ -387,7 +386,7 @@ function write_admin_record($msg)
 
 function write_msg($msg="",$url="javascript:history.go(-1);",$action="")
 {
-	global $charset,$db,$db_qq3479015851,$qq3479015851_global,$qq3479015851_starttime;
+	global $charset,$db,$db_qq3479015851,$SystemGlobalcfm_global,$SystemGlobalcfm_starttime;
 	!empty($action) && write_admin_record($msg);
 	if(defined('IN_AJAX')){
 		echo "<script language=javascript>alert('".$msg."');";
@@ -404,7 +403,7 @@ function write_msg($msg="",$url="javascript:history.go(-1);",$action="")
 				$time_echo = "setTimeout('JumpUrl()',1500);";
 				$goto = "<a href='".$url."'>如果你的浏览器没反应，请点击这里...</a>";
 			}
-			include QQ3479015851_ROOT."/template/global/qq3479015851_message.html";
+			include SysGlbCfm_ROOT."/template/global/qq3479015851_message.html";
 		}elseif(empty($msg)&&!empty($url)){
 			Header("HTTP/1.1 303 See Other");
 			Header("Location: $url");
@@ -412,7 +411,7 @@ function write_msg($msg="",$url="javascript:history.go(-1);",$action="")
 	}
 	//is_object($db) && $db->Close();
 	if(!defined('NO_EXIT')) {
-		$qq3479015851_global = $db = $db_qq3479015851 = $charset = $timestamp = NULL;
+		$SystemGlobalcfm_global = $db = $db_qq3479015851 = $charset = $timestamp = NULL;
 		exit;
 	}
 }
@@ -426,8 +425,8 @@ function show_msg($msgs,$ms="")
 	}elseif(!empty($ms)&&$ms!='record'){
 		write_admin_record($ms);
 	}
-	$title = $qq3479015851_global[SiteName].'提示信息!';
-	include(QQ3479015851_ROOT."/template/global/qq3479015851_msg.html");
+	$title = $SystemGlobalcfm_global[SiteName].'提示信息!';
+	include(SysGlbCfm_ROOT."/template/global/qq3479015851_msg.html");
 	while (list($k,$v)=each($msgs)){$str .=	"<br>".$v."<br>";};
 	echo $str."</div></div></div></center></body></html>";
 }
@@ -480,7 +479,7 @@ function setParam($param1,$rewrite='active',$pre='',$htmlpath='')
 
 
 function get_page_idin2($column='id',$sql='',$number=''){
-	global $qq3479015851_global,$db,$db_qq3479015851;
+	global $SystemGlobalcfm_global,$db,$db_qq3479015851;
 	$page = $number ? " LIMIT 0,".$number : "";
 	$query = $db -> query($sql.$page);
 	while($row = $db -> fetchRow($query)){
@@ -491,9 +490,9 @@ function get_page_idin2($column='id',$sql='',$number=''){
 }
 
 function get_page_idin($column='id',$sql='',$cfg_page=''){
-	global $page,$per_page,$per_screen,$pages_num,$rows_num,$qq3479015851_global,$db,$db_qq3479015851;
+	global $page,$per_page,$per_screen,$pages_num,$rows_num,$SystemGlobalcfm_global,$db,$db_qq3479015851;
 	$page = (empty($page) || $page <0 ||!is_numeric($page))?1:$page;
-	$per_page = $cfg_page ? $cfg_page : ($per_page ? $per_page : $qq3479015851_global['cfg_page_line']);
+	$per_page = $cfg_page ? $cfg_page : ($per_page ? $per_page : $SystemGlobalcfm_global['cfg_page_line']);
 	$per_screen = !isset($per_screen)?10:$per_screen;
 	$pages_num = ceil($rows_num/$per_page);
 
@@ -507,9 +506,9 @@ function get_page_idin($column='id',$sql='',$cfg_page=''){
 
 function page1($sqlstr='',$per_page='')
 {
-	global $page,$per_screen,$pages_num,$rows_num,$qq3479015851_global,$db,$db_qq3479015851;
+	global $page,$per_screen,$pages_num,$rows_num,$SystemGlobalcfm_global,$db,$db_qq3479015851;
 	$page = (empty($page) || $page <0 ||!is_numeric($page))?1:$page;
-	$per_page = $per_page ? $per_page : $qq3479015851_global['cfg_page_line'];
+	$per_page = $per_page ? $per_page : $SystemGlobalcfm_global['cfg_page_line'];
 	$per_screen = !isset($per_screen)?10:$per_screen;
 	$pages_num = ceil($rows_num/$per_page);
 	return $db -> getAll($sqlstr." limit ".(($page-1)*$per_page).", ".$per_page);
@@ -596,7 +595,7 @@ function GetTime($time='',$c='Y-m-d H:i:s')
 }
 
 function globalassign(){
-	global $qq3479015851_global,$docunav,$about,$city;
+	global $SystemGlobalcfm_global,$docunav,$about,$city;
 	
 	if(CURSCRIPT == 'store'){
 		$docunav = get_member_docunav();
@@ -615,9 +614,9 @@ function globalassign(){
 
 function qq3479015851_tpl($str,$curscript='')
 {
-	global $qq3479015851_global;
-	$qq3479015851_global['SiteStat'] = htmlspecialchars_decode($qq3479015851_global['SiteStat']);
-	$qq3479015851_global['SiteStat'] = str_replace('type=\'/javascript\'','type=\'text/javascript\'',$qq3479015851_global['SiteStat']);
+	global $SystemGlobalcfm_global;
+	$SystemGlobalcfm_global['SiteStat'] = htmlspecialchars_decode($SystemGlobalcfm_global['SiteStat']);
+	$SystemGlobalcfm_global['SiteStat'] = str_replace('type=\'/javascript\'','type=\'text/javascript\'',$SystemGlobalcfm_global['SiteStat']);
 	$curscript = $curscript ? $curscript : CURSCRIPT;
 	
 
@@ -627,51 +626,51 @@ function qq3479015851_tpl($str,$curscript='')
 		if($curscript == 'wap'){
 			$tpldir = 'm';
 			$templateid = 8;
-			$tplfile =  QQ3479015851_ROOT.'/'.$tpldir.'/template/'.$str.'.html';
-			$objfile =  QQ3479015851_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
+			$tplfile =  SysGlbCfm_ROOT.'/'.$tpldir.'/template/'.$str.'.html';
+			$objfile =  SysGlbCfm_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
 		}elseif($curscript == 'search'){
 			$tpldir = 'search';
 			$templateid = 7;
-			$tplfile =  QQ3479015851_TPL.'/'.$tpldir.'/'.$str.'.html';
-			$objfile =  QQ3479015851_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
+			$tplfile =  SysGlbCfm_TPL.'/'.$tpldir.'/'.$str.'.html';
+			$objfile =  SysGlbCfm_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
 		}elseif($curscript == 'store'){
 			$tpldir = 'spaces/store';
 			$templateid = '6';
-			$tplfile =  QQ3479015851_TPL.'/'.$tpldir.'/'.$str.'.html';
-			$objfile =  QQ3479015851_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
+			$tplfile =  SysGlbCfm_TPL.'/'.$tpldir.'/'.$str.'.html';
+			$objfile =  SysGlbCfm_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
 			
 		}elseif($curscript == 'coupon'){
 			$tpldir = 'plugin/coupon/template';
 			$templateid = '5';
-			$tplfile =  QQ3479015851_ROOT.'/'.$tpldir.'/'.$str.'.html';
-			$objfile =  QQ3479015851_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
+			$tplfile =  SysGlbCfm_ROOT.'/'.$tpldir.'/'.$str.'.html';
+			$objfile =  SysGlbCfm_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
 		}elseif($curscript == 'group'){
 			$tpldir = 'plugin/group/template';
 			$templateid = '4';
-			$tplfile =  QQ3479015851_ROOT.'/'.$tpldir.'/'.$str.'.html';
-			$objfile =  QQ3479015851_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
+			$tplfile =  SysGlbCfm_ROOT.'/'.$tpldir.'/'.$str.'.html';
+			$objfile =  SysGlbCfm_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
 		}elseif($curscript == 'goods'){
 			$tpldir = 'plugin/goods/template';
 			$templateid = '3';
-			$tplfile =  QQ3479015851_ROOT.'/'.$tpldir.'/'.$str.'.html';
-			$objfile =  QQ3479015851_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
+			$tplfile =  SysGlbCfm_ROOT.'/'.$tpldir.'/'.$str.'.html';
+			$objfile =  SysGlbCfm_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
 		}elseif($curscript == 'space'){
 			$tpldir = 'spaces/person';
 			$templateid = 2;
-			$tplfile =  QQ3479015851_TPL.'/'.$tpldir.'/'.$str.'.html';
-			$objfile =  QQ3479015851_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
+			$tplfile =  SysGlbCfm_TPL.'/'.$tpldir.'/'.$str.'.html';
+			$objfile =  SysGlbCfm_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
 		}else{
 			$tpldir = $tpldir ? $tpldir : TPLDIR;
 			$templateid = $templateid ? $templateid : TEMPLATEID;
-			$tplfile = QQ3479015851_TPL.'/'.$tpldir.'/'.$str.'.html';
-			$objfile = QQ3479015851_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
+			$tplfile = SysGlbCfm_TPL.'/'.$tpldir.'/'.$str.'.html';
+			$objfile = SysGlbCfm_DATA.'/templates/'.$templateid.'_'.$str.'.tpl.php';
 		}
 		@chktplrefresh($objfile, $tplfile, filemtime($objfile), $templateid, $tpldir);
 		return $objfile;
 	}else{
-		/*if(defined('IN_ADMIN')) return QQ3479015851_ROOT.'/adm/template/'.$str.'.tpl.php';
-		elseif(defined('IN_MEMBERADMIN')) return QQ3479015851_ROOT.'/member/template/'.$str.'.tpl.php';
-		elseif(defined('WAP')) return QQ3479015851_ROOT.'/m/template/'.$str.'.tpl.php';
+		/*if(defined('IN_ADMIN')) return SysGlbCfm_ROOT.'/adm/template/'.$str.'.tpl.php';
+		elseif(defined('IN_MEMBERADMIN')) return SysGlbCfm_ROOT.'/member/template/'.$str.'.tpl.php';
+		elseif(defined('WAP')) return SysGlbCfm_ROOT.'/m/template/'.$str.'.tpl.php';
 		else */
 		return 'template/'.$str.'.tpl.php';
 	}
@@ -900,7 +899,7 @@ function get_info_life_time($time)
 }
 
 function plugin_url($flag,$params=''){
-	global $qq3479015851_global,$city;
+	global $SystemGlobalcfm_global,$city;
 	$args = array(
 				  'id'=>0,
 				  'cate_id'=>0,
@@ -950,7 +949,7 @@ function plugin_url($flag,$params=''){
  *url rules rewrite functions
  */
 function Rewrite($types, $params){
-	global $seo,$qq3479015851_global;
+	global $seo,$SystemGlobalcfm_global;
     $args = array(
 				'id' => 0,
 				'catid' => 0,
@@ -969,7 +968,7 @@ function Rewrite($types, $params){
     extract(array_merge($args, $params));
 	if(!$seo) $seo = get_seoset();//获得SEO配置信息
 	$uri = '';
-    //$uri .= $qq3479015851_global['SiteUrl'];
+    //$uri .= $SystemGlobalcfm_global['SiteUrl'];
 	
     switch($types){
 		//栏目
@@ -1019,9 +1018,9 @@ function Rewrite($types, $params){
 			} elseif($domain) {
 				$uri = $domain;
 			} elseif($directory) {
-				$uri = $qq3479015851_global['cfg_citiesdir'].'/'.$directory.'/';
+				$uri = $SystemGlobalcfm_global['cfg_citiesdir'].'/'.$directory.'/';
 			} else {
-				$uri = $qq3479015851_global['SiteUrl'].'/';
+				$uri = $SystemGlobalcfm_global['SiteUrl'].'/';
 			}
 			
 			if($rewrite == 1){
@@ -1040,13 +1039,13 @@ function Rewrite($types, $params){
 		//站务
         case 'about':
 			if(in_array($part,array('faq','aboutus'))){
-				$uri = $qq3479015851_global['SiteUrl'].'/';
-			} elseif($qq3479015851_global['cfg_independency']){
-				if($part == 'announce' && strstr($qq3479015851_global['cfg_independency'],'announce')) {
-					$uri = $qq3479015851_global['SiteUrl'].'/';
+				$uri = $SystemGlobalcfm_global['SiteUrl'].'/';
+			} elseif($SystemGlobalcfm_global['cfg_independency']){
+				if($part == 'announce' && strstr($SystemGlobalcfm_global['cfg_independency'],'announce')) {
+					$uri = $SystemGlobalcfm_global['SiteUrl'].'/';
 				}
-				if($part == 'friendlink' && strstr($qq3479015851_global['cfg_independency'],'flink')) {
-					$uri = $qq3479015851_global['SiteUrl'].'/';
+				if($part == 'friendlink' && strstr($SystemGlobalcfm_global['cfg_independency'],'flink')) {
+					$uri = $SystemGlobalcfm_global['SiteUrl'].'/';
 				}
 			} else{
 				$uri = $city['domain'];
@@ -1090,7 +1089,7 @@ function Rewrite($types, $params){
 		
 		//商品
 		case 'goods':
-			$uri = $qq3479015851_global['SiteUrl'];
+			$uri = $SystemGlobalcfm_global['SiteUrl'];
 			$rewrite = $seo['seo_force_goods'] == 'rewrite' ? 1 : 0;
 			if (empty($catid) && empty($orderby) && empty($id)){
 				$uri .= $rewrite ? '/goods' : '/goods.php';
@@ -1114,7 +1113,7 @@ function Rewrite($types, $params){
 		//新闻
 		case 'news':
 			$rewrite = $seo['seo_force_news'] == 'rewrite' ? 1 : 0;
-			$uri = $qq3479015851_global['SiteUrl'].'/';
+			$uri = $SystemGlobalcfm_global['SiteUrl'].'/';
 			if ($action == 'index' && empty($catid) && empty($id)){
 				$uri .= $rewrite ? 'news' : 'news.php';
 			}elseif($id && empty($catid) && empty($action)){
@@ -1130,7 +1129,7 @@ function Rewrite($types, $params){
 		break;
 		//空间
 		case 'space':
-			$uri = $qq3479015851_global['SiteUrl'].'/';
+			$uri = $SystemGlobalcfm_global['SiteUrl'].'/';
 			$rewrite = ($seo['seo_force_space'] == 'rewrite' && inchinese($user)) ? 1 : 0;
             if(empty($user)){
                 return false;
@@ -1140,7 +1139,7 @@ function Rewrite($types, $params){
         break;
 		//店铺
 		case 'store':
-			$uri = $qq3479015851_global['SiteUrl'].'/';
+			$uri = $SystemGlobalcfm_global['SiteUrl'].'/';
 			$rewrite = $seo['seo_force_store'] == 'rewrite' ? 1 : 0;
 
 			if(!$part) $part = 'index';
@@ -1270,22 +1269,22 @@ function get_seoset(){
 /*************************/
 function get_location($type = 'category',$cat = 0, $str = '', $extra='',$pdetail='')
 {
-	global $seo,$pluginsettings,$qq3479015851_global,$city,$areaid,$streetid;
-	$raquo = $qq3479015851_global['cfg_raquo'];
+	global $seo,$pluginsettings,$SystemGlobalcfm_global,$city,$areaid,$streetid;
+	$raquo = $SystemGlobalcfm_global['cfg_raquo'];
 	/* 处理前面部分 */
 	if(!$seo) $seo	= get_seoset();
 	$seo['seo_sitename'] = str_replace('{city}',$city['cityname'],$seo['seo_sitename']);
 	if(in_array($type,array('channel','news'))){
-		$location   = '当前位置：<a href="'.$qq3479015851_global[SiteUrl].'">'.$qq3479015851_global['SiteName'].'</a>';
+		$location   = '当前位置：<a href="'.$SystemGlobalcfm_global[SiteUrl].'">'.$SystemGlobalcfm_global['SiteName'].'</a>';
 	}else{
-		$location   = '当前位置：<a href="'.$city[domain].'">'.$city['cityname'].$qq3479015851_global['SiteName'].'</a>';
+		$location   = '当前位置：<a href="'.$city[domain].'">'.$city['cityname'].$SystemGlobalcfm_global['SiteName'].'</a>';
 	}
 	
 	if($type == 'news'){
 		$page_title = $pluginsettings['news']['seotitle'] ? $pluginsettings['news']['seotitle'] : $city['cityname'].$GLOBALS['qq3479015851_global']['SiteName'];
 		$page_title = str_replace('{city}',$city['cityname'],$page_title);
 	} else {
-		$page_title = $city['cityname'].$qq3479015851_global['SiteName'];
+		$page_title = $city['cityname'].$SystemGlobalcfm_global['SiteName'];
 	}
 	
 	if($seo['seo_sitename'] && $type == 'index' && empty($cat) && empty($str)) $page_title = $page_title.' - '.$seo['seo_sitename'];
@@ -1347,62 +1346,62 @@ function get_areaname($areaid){
 
 function get_upload_image_view($if_upimg = 1 , $infoid = '',$number='')
 {
-	global $qq3479015851_global,$db,$db_qq3479015851;
+	global $SystemGlobalcfm_global,$db,$db_qq3479015851;
 	if($if_upimg == 1){
-		$cfg_upimg_number = $number ? $number : ($qq3479015851_global['cfg_upimg_number']?$qq3479015851_global['cfg_upimg_number']:4);
-		$qq3479015851='<script type="text/javascript">$(function () {';
+		$cfg_upimg_number = $number ? $number : ($SystemGlobalcfm_global['cfg_upimg_number']?$SystemGlobalcfm_global['cfg_upimg_number']:4);
+		$SystemGlobalcfm='<script type="text/javascript">$(function () {';
 		for($i=0;$i<$cfg_upimg_number;$i++){
-			$qq3479015851.='$("#qq3479015851_img_'.$i.'").uploadPreview({ Img: "ImgPr'.$i.'", Width: 108, Height: 108, MaxSize:'.$qq3479015851_global['cfg_upimg_size'].' });';
+			$SystemGlobalcfm.='$("#qq3479015851_img_'.$i.'").uploadPreview({ Img: "ImgPr'.$i.'", Width: 108, Height: 108, MaxSize:'.$SystemGlobalcfm_global['cfg_upimg_size'].' });';
 		}
-		$qq3479015851 .= '});</script>';
+		$SystemGlobalcfm .= '});</script>';
 		for($i=0;$i<$cfg_upimg_number;$i++){
-			$qq3479015851.='<div class="onea_dd">
-                    <div class="viewarea"><img id="ImgPr'.$i.'" src="'.$qq3479015851_global['SiteUrl'].'/template/default/images/post/defaultimg.gif"/></div>
+			$SystemGlobalcfm.='<div class="onea_dd">
+                    <div class="viewarea"><img id="ImgPr'.$i.'" src="'.$SystemGlobalcfm_global['SiteUrl'].'/template/default/images/post/defaultimg.gif"/></div>
 					<div class="a_ddarea">
                     <input type="file" name="qq3479015851_img_'.$i.'" id="qq3479015851_img_'.$i.'" class="comment-pic-upd" />
-                    <img src="'.$qq3479015851_global['SiteUrl'].'/template/default/images/post/addimg.gif" alt="上传照片" title="上传图片">
+                    <img src="'.$SystemGlobalcfm_global['SiteUrl'].'/template/default/images/post/addimg.gif" alt="上传照片" title="上传图片">
                     </div>
                 </div>';
 		}
 	}
-	return $qq3479015851;
+	return $SystemGlobalcfm;
 }
 
 function get_upload_image_edit($if_upimg = 1,$infoid,$number=''){
-	global $qq3479015851_global,$db,$db_qq3479015851;
+	global $SystemGlobalcfm_global,$db,$db_qq3479015851;
 	if(empty($infoid)) return '';
 	if($if_upimg == 1){
-		$cfg_upimg_number = $number ? $number : ($qq3479015851_global['cfg_upimg_number']?$qq3479015851_global['cfg_upimg_number']:4);
+		$cfg_upimg_number = $number ? $number : ($SystemGlobalcfm_global['cfg_upimg_number']?$SystemGlobalcfm_global['cfg_upimg_number']:4);
 		
 		$imagei=array();
 		$view = $db->getAll("SELECT image_id,prepath FROM `{$db_qq3479015851}info_img` WHERE infoid = '$infoid'");
 		foreach($view as $k =>$v){
-			$imagei[$v['image_id']] = $qq3479015851_global['SiteUrl'].$v['prepath'];
+			$imagei[$v['image_id']] = $SystemGlobalcfm_global['SiteUrl'].$v['prepath'];
 		}
 		
-		$qq3479015851='<script type="text/javascript">$(function () {';
+		$SystemGlobalcfm='<script type="text/javascript">$(function () {';
 		for($i=0;$i<$cfg_upimg_number;$i++){
-			$qq3479015851.='$("#qq3479015851_img_'.$i.'").uploadPreview({ Img: "ImgPr'.$i.'", Width: 108, Height: 108, MaxSize:'.$qq3479015851_global['cfg_upimg_size'].' });';
+			$SystemGlobalcfm.='$("#qq3479015851_img_'.$i.'").uploadPreview({ Img: "ImgPr'.$i.'", Width: 108, Height: 108, MaxSize:'.$SystemGlobalcfm_global['cfg_upimg_size'].' });';
 		}
-		$qq3479015851 .= '});</script>';
+		$SystemGlobalcfm .= '});</script>';
 			
 		
 		for($i=0;$i<$cfg_upimg_number;$i++){
-			$qq3479015851.='
+			$SystemGlobalcfm.='
 				<div class="onea_dd">
-                    <div class="viewarea"><img id="ImgPr'.$i.'" src="'.($imagei[$i]?$imagei[$i]:$qq3479015851_global['SiteUrl'].'/template/default/images/post/defaultimg.gif').'"/></div>
+                    <div class="viewarea"><img id="ImgPr'.$i.'" src="'.($imagei[$i]?$imagei[$i]:$SystemGlobalcfm_global['SiteUrl'].'/template/default/images/post/defaultimg.gif').'"/></div>
 					<div class="a_ddarea">
                     <input type="file" name="qq3479015851_img_'.$i.'" id="qq3479015851_img_'.$i.'" class="comment-pic-upd" />
-                    <img src="'.$qq3479015851_global['SiteUrl'].'/template/default/images/post/addimg.gif" alt="上传照片" title="上传图片">
+                    <img src="'.$SystemGlobalcfm_global['SiteUrl'].'/template/default/images/post/addimg.gif" alt="上传照片" title="上传图片">
                     </div>';
-			$qq3479015851 .= $imagei[$i]?'<div class="clearfix"></div><div style="text-align:center; font-weight:100; color:#000; font-size:12px; line-height:22px"><label for="label'.$i.'"><input id="label'.$i.'" name="delinfoimg['.$i.']" type="checkbox" class="checkbox"><font>删?</font></label></div>':'';
-            $qq3479015851 .= '</div>';
+			$SystemGlobalcfm .= $imagei[$i]?'<div class="clearfix"></div><div style="text-align:center; font-weight:100; color:#000; font-size:12px; line-height:22px"><label for="label'.$i.'"><input id="label'.$i.'" name="delinfoimg['.$i.']" type="checkbox" class="checkbox"><font>删?</font></label></div>':'';
+            $SystemGlobalcfm .= '</div>';
 		}
 
 			
-		$qq3479015851 .= '</td></tr>';
+		$SystemGlobalcfm .= '</td></tr>';
 	}
-	return $qq3479015851;
+	return $SystemGlobalcfm;
 }
 
 
@@ -1474,26 +1473,26 @@ function submit_check($var, $allowget = 0) {
 
 function get_sex_option($cursex=''){
 	foreach (array('男','女') as $key){
-		$qq3479015851 .= '<option value='.$key;
-		$qq3479015851 .= ($cursex == $key) ? ' style = "background-color:#6EB00C;color:white" selected>' : '>';
-		$qq3479015851 .= $key.'</option>';
+		$SystemGlobalcfm .= '<option value='.$key;
+		$SystemGlobalcfm .= ($cursex == $key) ? ' style = "background-color:#6EB00C;color:white" selected>' : '>';
+		$SystemGlobalcfm .= $key.'</option>';
 	}
-	return $qq3479015851;
+	return $SystemGlobalcfm;
 }
 
 function get_memtpl_options($opt=''){
 	$option = $GLOBALS['db'] -> getAll("SELECT * FROM `{$GLOBALS['db_qq3479015851']}member_tpl` WHERE if_view = '2' ORDER BY displayorder ASC");
 	foreach ($option as $key => $v){
-		$qq3479015851 .= '<option value='.$v[tpl_path];
+		$SystemGlobalcfm .= '<option value='.$v[tpl_path];
 		if(is_array($opt)){
-			$qq3479015851 .= in_array($v[tpl_path],$opt) ? ' style = "background-color:#6EB00C;color:white" selected>' : '>';
+			$SystemGlobalcfm .= in_array($v[tpl_path],$opt) ? ' style = "background-color:#6EB00C;color:white" selected>' : '>';
 		} else {
-			$qq3479015851 .= ($opt == $v[tpl_path]) ? ' style = "background-color:#6EB00C;color:white" selected>' : '>';
+			$SystemGlobalcfm .= ($opt == $v[tpl_path]) ? ' style = "background-color:#6EB00C;color:white" selected>' : '>';
 		}
 		
-		$qq3479015851 .= $v[tpl_name].'</option>';
+		$SystemGlobalcfm .= $v[tpl_name].'</option>';
 	}
-	return $qq3479015851;
+	return $SystemGlobalcfm;
 }
 
 //根据设置的栏目名称和栏目ID，获得栏目的实际保存路径
@@ -1556,15 +1555,15 @@ function GetInfoPostTime($posttime='',$formname='posttime'){
 }
 
 function qq3479015851_global_header(){
-	global $charset,$qq3479015851_global;
+	global $charset,$SystemGlobalcfm_global;
 	return "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
 <html xmlns=\"http://www.w3.org/1999/xhtml\">
 <head>
 <meta http-equiv=\"Content-Type\" content=\"text/html; charset=".$charset."\" />
 <meta http-equiv=\"Content-Language\" content=\"zh-CN\"/>
-<meta name=\"generator\" content=\"".QQ3479015851_SOFTNAME.QQ3479015851_VERSION."\"/>
-<meta name=\"author\" content=\"".QQ3479015851_SOFTNAME." DevTeam Corporation\" />
-<link rel=\"shortcut icon\" href=\"".$qq3479015851_global[SiteUrl]."/favicon.ico\" />";
+<meta name=\"generator\" content=\"".SysGlbCfm_SOFTNAME.SysGlbCfm_VERSION."\"/>
+<meta name=\"author\" content=\"".SysGlbCfm_SOFTNAME." DevTeam Corporation\" />
+<link rel=\"shortcut icon\" href=\"".$SystemGlobalcfm_global[SiteUrl]."/favicon.ico\" />";
 }
 
 function HighLight($str, $keywords, $color = "red"){
@@ -1625,7 +1624,7 @@ function ip2area($ip){
 		} elseif($iparray[0] > 255 || $iparray[1] > 255 || $iparray[2] > 255 || $iparray[3] > 255){
 			$return = '- Invalid IP Address';
 		} else {
-			$tinyipfile = QQ3479015851_DATA.'/ipdat/tinyipdata.dat';
+			$tinyipfile = SysGlbCfm_DATA.'/ipdat/tinyipdata.dat';
 			$return = convertip_tiny($ip, $tinyipfile);
 		}
 	}
@@ -1645,7 +1644,7 @@ function filter_bad_words($cfg_badwords,$str)
 }
 
 function verify_badwords_filter($ifopenname,$title='',$content=''){
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	static $res = NULL;
 	$title 	 = $title 	? mhtmlspecialchars(trim($title))  : '';
 	$content = $content ? trim($content) : '';
@@ -1704,15 +1703,15 @@ function get_info_option_array(){
 	if($data === false){
 		$query = $db->query("SELECT title,identifier,rules,type FROM `{$db_qq3479015851}info_typeoptions` WHERE classid >0 ORDER BY displayorder DESC");
 		while($row = $db -> fetchRow($query)){
-			$qq3479015851[$row['identifier']]['title'] = $row['title'];
-			$qq3479015851[$row['identifier']]['rules'] = $row['rules'];
-			$qq3479015851[$row['identifier']]['type'] = $row['type'];
+			$SystemGlobalcfm[$row['identifier']]['title'] = $row['title'];
+			$SystemGlobalcfm[$row['identifier']]['rules'] = $row['rules'];
+			$SystemGlobalcfm[$row['identifier']]['type'] = $row['type'];
 		}
-		write_static_cache('info_typeoptions',$qq3479015851);
+		write_static_cache('info_typeoptions',$SystemGlobalcfm);
 	} else {
-		$qq3479015851 = $data;
+		$SystemGlobalcfm = $data;
 	}
-	return $qq3479015851;
+	return $SystemGlobalcfm;
 }
 
 function get_info_option_titval($option,$value,$class="mayi"){
@@ -1764,10 +1763,10 @@ function ajax_output($ajax_content){
 	@header("Cache-Control: no-store, private, post-check=0, pre-check=0, max-age=0", FALSE); 
 	@header("Pragma: no-cache"); 
 	@header('Content-Type: text/xml'); 
-	$qq3479015851 .= '<?xml version="1.0" encoding="'.($charset == "gbk" ? "gbk" : "utf-8").'"?><root><![CDATA[';
-	$qq3479015851 .= $ajax_content;
-	$qq3479015851 .= ']]></root>';
-	return $qq3479015851;
+	$SystemGlobalcfm .= '<?xml version="1.0" encoding="'.($charset == "gbk" ? "gbk" : "utf-8").'"?><root><![CDATA[';
+	$SystemGlobalcfm .= $ajax_content;
+	$SystemGlobalcfm .= ']]></root>';
+	return $SystemGlobalcfm;
 }
 
 /**************************/
@@ -1776,7 +1775,7 @@ function ajax_output($ajax_content){
 function allow_identifier(){
 	$data = read_static_cache("mod_search_identifier");
 	if($data === false){
-		require_once QQ3479015851_DATA."/info.type.inc.php";
+		require_once SysGlbCfm_DATA."/info.type.inc.php";
 		$query 	= $GLOBALS['db'] -> query("SELECT id,options  FROM `{$GLOBALS['db_qq3479015851']}info_typemodels` ORDER BY displayorder DESC");
 		while($row = $GLOBALS['db'] -> fetchRow($query)){
 
@@ -1805,7 +1804,7 @@ function allow_identifier(){
 function mod_identifier(){
 	$data = read_static_cache("mod_search_option");
 	if($data === false){
-		require_once QQ3479015851_DATA."/info.type.inc.php";
+		require_once SysGlbCfm_DATA."/info.type.inc.php";
 		$query 	= $GLOBALS['db'] -> query("SELECT id,options  FROM `{$GLOBALS['db_qq3479015851']}info_typemodels` ORDER BY displayorder DESC");
 		while($row = $GLOBALS['db'] -> fetchRow($query)){
 			$option = explode(',',$row[options]);
@@ -1918,8 +1917,8 @@ function qq3479015851_get_news($num=10,$catid=NULL,$ifimg=NULL,$leftjoin=NULL,$i
 }
 
 function qq3479015851_get_members($num=NULL,$level=NULL,$orderby=NULL,$if_certify=NULL,$ifindex=NULL,$iflist=NULL,$catid=NULL,$cityid=NULL){
-	global $db,$db_qq3479015851,$qq3479015851_global;
-	if($qq3479015851_global['cfg_if_corp'] == 1){
+	global $db,$db_qq3479015851,$SystemGlobalcfm_global;
+	if($SystemGlobalcfm_global['cfg_if_corp'] == 1){
 		$where 	 = $level ? " WHERE a.levelid = '$level'":" WHERE 1";
 		$where   .= " AND a.status = '1'";
 		$where	 .= " AND a.if_corp = '1'";
@@ -1990,7 +1989,7 @@ function qq3479015851_get_member_docus($num=10,$userid=NULL,$typeid=NULL,$orderb
  *获得信息列表
  */
 function qq3479015851_get_infos($num=10,$info_level=NULL,$upgrade_type=NULL,$userid=NULL,$catid=NULL,$certify=NULL,$if_hot=NULL,$tel=NULL,$cityid=NULL){
-	global $timestamp,$db_qq3479015851,$qq3479015851_global,$db,$city,$seo;
+	global $timestamp,$db_qq3479015851,$SystemGlobalcfm_global,$db,$city,$seo;
 	$where .= !$info_level ? 'WHERE (a.info_level =1 OR a.info_level = 2)':'WHERE a.info_level = '.$info_level;
 	$where .= $userid	? ' AND a.userid = "'.$userid.'" ' : '';
 	$where .= $certify	? ' AND a.certify = "'.$certify.'" ' : '';
@@ -2083,8 +2082,8 @@ function qq3479015851_get_goods($num=10,$onsale=1,$shuxing=NULL,$catid=NULL,$use
 		$res[$row['goodsid']]['oldprice'] = $row['oldprice'];
 		$res[$row['goodsid']]['content'] = clear_html($row['content']);
 		$res[$row['goodsid']]['nowprice'] = $row['nowprice'];
-		$res[$row['goodsid']]['pre_picture'] = $row['pre_picture'] ? $row['pre_picture'] : $qq3479015851_global['SiteUrl'].'/images/nophoto.gif';
-		$res[$row['goodsid']]['picture'] = $row['picture'] ? $row['picture'] : $qq3479015851_global['SiteUrl'].'/images/nophoto.gif';
+		$res[$row['goodsid']]['pre_picture'] = $row['pre_picture'] ? $row['pre_picture'] : $SystemGlobalcfm_global['SiteUrl'].'/images/nophoto.gif';
+		$res[$row['goodsid']]['picture'] = $row['picture'] ? $row['picture'] : $SystemGlobalcfm_global['SiteUrl'].'/images/nophoto.gif';
 		$res[$row['goodsid']]['uri'] = plugin_url('goods',array('id'=>$row['goodsid']));
 	}
 	return $res;
@@ -2251,14 +2250,14 @@ function get_member_group($groupid='',$userid=''){
 
 function runcron() {
 	global $timestamp, $db, $db_qq3479015851;
-	include QQ3479015851_ROOT.'/data/cron.cache.php';
+	include SysGlbCfm_ROOT.'/data/cron.cache.php';
 	if(is_array($m_cron)){
 		$i = 0;
 		foreach ($m_cron as $key => $cron){
 			if ($cron['nextrun'] <= $timestamp) {
 				list($yearnow, $monthnow, $daynow) = explode('-', gmdate('Y-m-d', $timestamp + 8* 3600));
 				$nextrun = @gmmktime(0, 0, 0, $monthnow, $daynow+1, $yearnow) - 8 * 3600;
-				include QQ3479015851_ROOT.'/include/crons/'.$key.'.inc.php';
+				include SysGlbCfm_ROOT.'/include/crons/'.$key.'.inc.php';
 				$db->query("UPDATE `{$db_qq3479015851}crons` SET lastrun=".$timestamp.",nextrun=".$nextrun." WHERE name='$key'");
 				$i++;
 			}
@@ -2270,13 +2269,13 @@ function runcron() {
 }
 
 function ifplugin($pluginname=''){
-	global $pluginsettings,$qq3479015851_global;
+	global $pluginsettings,$SystemGlobalcfm_global;
 	$data = read_static_cache('plugin');
 	if($data === false){
 		write_plugin_cache();
 	} else {
 		$pluginsettings = $data;
-		if($qq3479015851_global['cfg_if_corp'] != 1){
+		if($SystemGlobalcfm_global['cfg_if_corp'] != 1){
 			unset($pluginsettings['coupon'],$pluginsettings['group'],$pluginsettings['goods']);
 		}
 	}
@@ -2408,10 +2407,10 @@ function getRootdomain($domain){
 }
 
 function ifsiteopen(){
-	global $qq3479015851_global;
-	if($qq3479015851_global['cfg_if_site_open'] != 1) {
-		$qq3479015851_global['cfg_site_open_reason'] = str_replace('\n','<br />',$qq3479015851_global['cfg_site_open_reason']);
-		exit('网站已关闭，关闭原因：<br><br /><b>'.$qq3479015851_global['cfg_site_open_reason'].'</b>');
+	global $SystemGlobalcfm_global;
+	if($SystemGlobalcfm_global['cfg_if_site_open'] != 1) {
+		$SystemGlobalcfm_global['cfg_site_open_reason'] = str_replace('\n','<br />',$SystemGlobalcfm_global['cfg_site_open_reason']);
+		exit('网站已关闭，关闭原因：<br><br /><b>'.$SystemGlobalcfm_global['cfg_site_open_reason'].'</b>');
 	}
 }
 
@@ -2453,7 +2452,7 @@ function pcclient(){
 }
 
 function get_smplist_cats($cats,$showstyle){
-	global $db,$db_qq3479015851,$qq3479015851_global;
+	global $db,$db_qq3479015851,$SystemGlobalcfm_global;
 	$query = $db -> query("SELECT * FROM `{$db_qq3479015851}category` WHERE catid ".create_in($cats)." AND if_view = '2' ORDER BY catorder ASC");
 	while($row = $db -> fetchRow($query)){
 		$listcats[$row['catid']]['catid'] = $row['catid'];
@@ -2507,17 +2506,17 @@ function select_where($table,$name='parentid',$currentid='',$parentid=''){
 
 //获得三级联动select
 function select_where_option($actionfile,$cityid,$areaid,$streetid){
-	$actionfile = empty($actionfile) ? $qq3479015851_global[SiteUrl].'/include/selectwhere.php' : $actionfile;
-	$qq3479015851 .= '<select id=\'cityid\' name=\'cityid\'  onChange="choose_where(\'getarea\',this.options[this.selectedIndex].value,\'\',\'1\')"  class="input" style="width:140px!important" require="true" datatype="limit" msgid="地区" msg="请选择所在分站">
+	$actionfile = empty($actionfile) ? $SystemGlobalcfm_global[SiteUrl].'/include/selectwhere.php' : $actionfile;
+	$SystemGlobalcfm .= '<select id=\'cityid\' name=\'cityid\'  onChange="choose_where(\'getarea\',this.options[this.selectedIndex].value,\'\',\'1\')"  class="input" style="width:140px!important" require="true" datatype="limit" msgid="地区" msg="请选择所在分站">
 <option value=\'\'  selected >请选择所在分站</option>';
-	$qq3479015851 .= get_cityoptions($cityid);
-	$qq3479015851 .= '</select>
+	$SystemGlobalcfm .= get_cityoptions($cityid);
+	$SystemGlobalcfm .= '</select>
 <span id="showarea"></span>&nbsp;<span id="showstreet"></span>';
-	$qq3479015851 .= '<SCRIPT LANGUAGE="JavaScript">
+	$SystemGlobalcfm .= '<SCRIPT LANGUAGE="JavaScript">
 <!--
 function choose_where(t,parentid,currentid,delstreet){
 ';
-	$qq3479015851 .= "
+	$SystemGlobalcfm .= "
 	if(t=='getarea'){
 		url='".$actionfile."?action=getarea&parentid='+parentid+'&currentid='+currentid+'&delstreet='+delstreet;
 		target='iframe_area';
@@ -2530,13 +2529,13 @@ function choose_where(t,parentid,currentid,delstreet){
 	document.getElementById('form_area').submit();
 	}
 	";
-	$qq3479015851 .= $cityid ? 'choose_where("getarea","'.$cityid.'","'.$areaid.'","1");' : '';
-	$qq3479015851 .= ($cityid && $areaid) ? 'choose_where("getstreet","'.$areaid.'","'.$streetid.'","0");' : '';
-	$qq3479015851 .= '
+	$SystemGlobalcfm .= $cityid ? 'choose_where("getarea","'.$cityid.'","'.$areaid.'","1");' : '';
+	$SystemGlobalcfm .= ($cityid && $areaid) ? 'choose_where("getstreet","'.$areaid.'","'.$streetid.'","0");' : '';
+	$SystemGlobalcfm .= '
 //-->
 </SCRIPT>
 	';
-	return $qq3479015851;
+	return $SystemGlobalcfm;
 }
 
 function ip2city($ip) {
@@ -2544,7 +2543,7 @@ function ip2city($ip) {
 	if(!preg_match("/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/", $ip)) {
 		return '';
 	}
-	if($fd = @fopen(QQ3479015851_DATA.'/ipdat/ipdata.dat', 'rb')) {
+	if($fd = @fopen(SysGlbCfm_DATA.'/ipdat/ipdata.dat', 'rb')) {
 
 		$ip = explode('.', $ip);
 		$ipNum = $ip[0] * 16777216 + $ip[1] * 65536 + $ip[2] * 256 + $ip[3];
@@ -2818,11 +2817,11 @@ function getos() {
 }
 
 function getport(){
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	
 	$port = $_SERVER['REMOTE_PORT'];
 	if($port == 0 || trim($port)=="" || $port == NULL){
-		$port = file_get_contents($qq3479015851_global['SiteUrl']."/include/port.asp");
+		$port = file_get_contents($SystemGlobalcfm_global['SiteUrl']."/include/port.asp");
 	}
 	return $port;
 }
@@ -2855,7 +2854,7 @@ function strexists($haystack, $needle) {
 
 
 function get_gid($catid){
-	global $db,$db_qq3479015851,$qq3479015851_global;
+	global $db,$db_qq3479015851,$SystemGlobalcfm_global;
 	$sid = $db->getOne("SELECT parentid FROM `{$db_qq3479015851}category` WHERE catid='$catid'");
 	if(empty($sid)){
 		return $catid;

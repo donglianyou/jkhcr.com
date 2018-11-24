@@ -3,7 +3,7 @@
 <script language="javascript" src="template/javascript.js"></script>
 
 </head>
-<body class="<?php echo $qq3479015851_global['cfg_tpl_dir']; ?>">
+<body class="<?php echo $SystemGlobalcfm_global['cfg_tpl_dir']; ?>">
 <div class="container">
 
 	<?php include qq3479015851_tpl('inc_head');?>
@@ -37,7 +37,7 @@
             <ul>
                 <?php foreach($album AS $album){?>
                 <li class="li">
-                <a href="<?php echo $qq3479015851_global[SiteUrl].$album['path'];?>" target="_blank" class="box" title="点击查看实际图片"><img src="<?php echo $qq3479015851_global[SiteUrl].$album['prepath']?>" border="0" style="max-height:120px"></a>
+                <a href="<?php echo $SystemGlobalcfm_global[SiteUrl].$album['path'];?>" target="_blank" class="box" title="点击查看实际图片"><img src="<?php echo $SystemGlobalcfm_global[SiteUrl].$album['prepath']?>" border="0" style="max-height:120px"></a>
                 <h4 align="center"><font title="<?=$album['title']?>"><?=substring($album['title'],0,15)?></font><br /><a href="?m=album&ac=edit&id=<?=$album['id']?>&type=corp">修改</a> <a href="?m=album&ac=delete&id=<?=$album['id']?>" onClick="if(!confirm('您确定要删除这张图片吗？一旦删除就不能恢复！'))return false;">删除</a></h4>
                 </li>
                 <?}?>

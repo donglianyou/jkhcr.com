@@ -254,7 +254,7 @@ function sizecount( $filesize )
 define( "CURSCRIPT", "database" );
 error_reporting( 0 );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 $allowpart = array( "backup" => "数据库备份", "restore" => "数据库恢复", "optimize" => "数据库优化", "check" => "数据库检查", "repair" => "数据库修复" );
 if ( !in_array( $part, array_keys( $allowpart ) ) )
 {
@@ -263,18 +263,18 @@ if ( !in_array( $part, array_keys( $allowpart ) ) )
 $here = $allowpart[$part];
 $action = isset( $action ) ? trim( $action ) : "";
 $tabletype = "4.1" < $db->version( ) ? "Engine" : "Type";
-$version = QQ3479015851_VERSION;
+$version = SysGlbCfm_VERSION;
 if ( $admin_cityid )
 {
 	write_msg( "您没有权限访问该页！" );
 }
-$backupdir = $qq3479015851_global['cfg_backup_dir'];
+$backupdir = $SystemGlobalcfm_global['cfg_backup_dir'];
 if ( $part == "backup" )
 {
 	chk_admin_purview( "purview_数据库备份" );
 	if ( $action != "doaction" )
 	{
-		$qq3479015851_tables = fetchtablelist( $db_qq3479015851 );
+		$SystemGlobalcfm_tables = fetchtablelist( $db_qq3479015851 );
 		$defaultfilename = date( "ymd" )."_".random( 8 );
 		include( qq3479015851_tpl( "db_".$part ) );
 	}
@@ -331,7 +331,7 @@ if ( $part == "backup" )
 				$db->query( "SET SQL_MODE=''" );
 			}
 		}
-		$backupfilename = QQ3479015851_ROOT.$backupdir."/".str_replace( array( "/", "\\", "." ), "", $filename );
+		$backupfilename = SysGlbCfm_ROOT.$backupdir."/".str_replace( array( "/", "\\", "." ), "", $filename );
 		$sqldump = "";
 		$startfrom = intval( $startfrom );
 		$complete = true;
@@ -350,7 +350,7 @@ if ( $part == "backup" )
 		}
 		if ( trim( $sqldump ) )
 		{
-			$sqldump = $idstring."# <?exit();?>\n".( "# QQ3479015851 Multi-Volume Data Dump Vol.".$volume."\n" ).( "# Version: QQ3479015851 ".$version."\n" ).( "# Time: ".$time."\n" ).( "# Type: ".$type."\n" ).( "# Table Prefix: ".$db_qq3479015851."\n" )."#\n# QQ3479015851 Home: http://blog.csdn.net/qq_35921430\n# Please visit our website for newest infomation about QQ3479015851\n# --------------------------------------------------------\n\n\n".( $setnames."" ).$sqldump;
+			$sqldump = $idstring."# <?exit();?>\n".( "# SysGlbCfm Multi-Volume Data Dump Vol.".$volume."\n" ).( "# Version: SysGlbCfm ".$version."\n" ).( "# Time: ".$time."\n" ).( "# Type: ".$type."\n" ).( "# Table Prefix: ".$db_qq3479015851."\n" )."#\n# SysGlbCfm Home: http://blog.csdn.net/qq_35921430\n# Please visit our website for newest infomation about SysGlbCfm\n# --------------------------------------------------------\n\n\n".( $setnames."" ).$sqldump;
 			$dumpfilename = sprintf( $dumpfile, $volume );
 			@$fp = @fopen( $dumpfilename, "wb" );
 			@flock( $fp, 2 );
@@ -448,8 +448,8 @@ else if ( $part == "restore" )
 		{
 			foreach ( $delete as $filename )
 			{
-				$file_path = QQ3479015851_ROOT.$backupdir."/".str_replace( array( "/", "\\" ), "", $filename );
-				$file_paths = QQ3479015851_ROOT.$backupdir."/";
+				$file_path = SysGlbCfm_ROOT.$backupdir."/".str_replace( array( "/", "\\" ), "", $filename );
+				$file_paths = SysGlbCfm_ROOT.$backupdir."/";
 				if ( is_file( $file_path ) )
 				{
 					@unlink( $file_path );
@@ -476,14 +476,14 @@ else if ( $part == "restore" )
 	}
 	else
 	{
-		$backuptype = array( "qq3479015851" => "QQ3479015851全部数据表", "custom" => "自定义备份" );
+		$backuptype = array( "qq3479015851" => "SysGlbCfm全部数据表", "custom" => "自定义备份" );
 		$exportlog = $exportsize = $exportziplog = array( );
-		if ( is_dir( QQ3479015851_ROOT.$backupdir ) )
+		if ( is_dir( SysGlbCfm_ROOT.$backupdir ) )
 		{
-			$dir = dir( QQ3479015851_ROOT.$backupdir );
+			$dir = dir( SysGlbCfm_ROOT.$backupdir );
 			while ( $entry = $dir->read( ) )
 			{
-				$entry = QQ3479015851_ROOT.$backupdir."/".$entry;
+				$entry = SysGlbCfm_ROOT.$backupdir."/".$entry;
 				if ( is_file( $entry ) && preg_match( "/\\.sql\$/sim", $entry ) )
 				{
 					$filesize = filesize( $entry );
@@ -547,5 +547,5 @@ if ( is_object( $db ) )
 {
 	$db->close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 ?>

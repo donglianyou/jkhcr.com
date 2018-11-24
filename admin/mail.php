@@ -12,8 +12,8 @@
 `*/
 define( "CURSCRIPT", "mail" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
-require_once( QQ3479015851_INC."/email.fun.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/email.fun.php" );
 if ( !in_array( $part, array( "setting", "template", "sendlist" ) ) || !$part )
 {
     $part = "setting";
@@ -55,7 +55,7 @@ else
 		if ( !empty( $test_mail )) {
 
 			$test_mail = trim( $test_mail );
-			if ( !send_email( $test_mail, "来自".$qq3479015851_global[SiteName]."的测试邮件", "如果你收到了这封邮件，则表明你已经成功配置了邮箱服务器，发送时间：".gettime( time( ) ) ) )
+			if ( !send_email( $test_mail, "来自".$SystemGlobalcfm_global[SiteName]."的测试邮件", "如果你收到了这封邮件，则表明你已经成功配置了邮箱服务器，发送时间：".gettime( time( ) ) ) )
 			{
 				write_msg( "测试邮件发出失败！请仔细配置好邮箱服务信息", "?part=setting" );
 			}
@@ -124,5 +124,5 @@ if ( is_object( $db ) )
 {
 	$db->Close();
 }
-$qq3479015851_global = $db = $db_qq3479015851 = $part = NULL;
+$SystemGlobalcfm_global = $db = $db_qq3479015851 = $part = NULL;
 ?>

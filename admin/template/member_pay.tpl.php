@@ -3,7 +3,7 @@
 <form name="form1" action="member.php?do=member&part=payupdate" method="post">
 <input name="userid" type="hidden" value="<?=$row['userid']?>"/>
 <input name="id" type="hidden" value="<?=$id?>"/>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%"  border="0" cellspacing="0" cellpadding="0" class="vbm">
 	<tr class="firstr">
     	<td colspan="2">
@@ -50,7 +50,7 @@
 </form>
 <div class="clear"></div>
 <div class="clear"></div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 	<tr class="firstr">
     <td colspan="7">
@@ -71,7 +71,7 @@
 	?>
     <tr bgcolor="white">
         <td><?=$list[orderid]?></td>
-        <td><a href="javascript:void(0);" onclick="setbg('<?=QQ3479015851_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$list[userid]?>&admindir=<?=$admindir?>')"><?=$list[userid]?></a></td>
+        <td><a href="javascript:void(0);" onclick="setbg('<?=SysGlbCfm_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$list[userid]?>&admindir=<?=$admindir?>')"><?=$list[userid]?></a></td>
         <td><em><font color="red"><?=$list[money]?></font></em></td>
         <td><?=GetTime($list[posttime])?></td>
         <td align="left"><?=$list[payip]?></td>

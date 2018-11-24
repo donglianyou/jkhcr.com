@@ -45,7 +45,7 @@ function selectalloption(s1) {
 }
 </script>
 <form name='form1' method='post' action='?part=mod&action=delall'>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
    
     <tr class="firstr">
@@ -74,7 +74,7 @@ function selectalloption(s1) {
 <div class="pagination"><?php echo page2();?></div>
 <div class="clear" style="height:10px;"></div>
 <form action="?part=mod&action=insert" method="post" name="form2">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
     <td colspan="2">新增模型</td>

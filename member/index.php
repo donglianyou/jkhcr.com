@@ -7,23 +7,22 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('CURSCRIPT', 'index');
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 define('IN_MEMBERADMIN', true);
 define('MEMBERDIR', dirname(__FILE__));
 require_once MEMBERDIR . './../include/global.php';
 require_once MEMBERDIR . './../data/config.php';
-require_once QQ3479015851_DATA . '/config.db.php';
-require_once QQ3479015851_INC . '/db.class.php';
-require_once QQ3479015851_INC . '/cache.fun.php';
-$uid = $s_uid = $s_pwd = $qq3479015851_image = '';
-require_once QQ3479015851_INC . '/member.class.php';
+require_once SysGlbCfm_DATA . '/config.db.php';
+require_once SysGlbCfm_INC . '/db.class.php';
+require_once SysGlbCfm_INC . '/cache.fun.php';
+$uid = $s_uid = $s_pwd = $SystemGlobalcfm_image = '';
+require_once SysGlbCfm_INC . '/member.class.php';
 
 if (!$log = $member_log->chk_in()) {
-	write_msg('', '../' . $qq3479015851_global['cfg_member_logfile'] . '?url=' . urlencode(GetUrl()));
+	write_msg('', '../' . $SystemGlobalcfm_global['cfg_member_logfile'] . '?url=' . urlencode(GetUrl()));
 }
 
 $box = (isset($_REQUEST['box']) ? intval($_REQUEST['box']) : 0);
@@ -58,7 +57,7 @@ $com_certify = $row['com_certify'];
 $if_corp = $row['if_corp'];
 $uid = $row['id'];
 $cityid = $row['cityid'];
-$allowm = ($qq3479015851_global['cfg_if_corp'] == 1 ? array('info', 'pm', 'base', 'avatar', 'levelup', 'certify', 'pay', 'password', 'album', 'comment', 'document', 'certifycorp', 'shop', 'goods', 'shoucang') : array('info', 'pm', 'base', 'avatar', 'levelup', 'certify', 'pay', 'password', 'shoucang'));
+$allowm = ($SystemGlobalcfm_global['cfg_if_corp'] == 1 ? array('info', 'pm', 'base', 'avatar', 'levelup', 'certify', 'pay', 'password', 'album', 'comment', 'document', 'certifycorp', 'shop', 'goods', 'shoucang') : array('info', 'pm', 'base', 'avatar', 'levelup', 'certify', 'pay', 'password', 'shoucang'));
 require_once MEMBERDIR . '/include/qq3479015851.menu.inc.php';
 is_array($data) && ($allowm = array_merge(array_keys($data), $allowm));
 
@@ -99,7 +98,7 @@ if (($if_corp != 1) && in_array($m, array('goods', 'coupon', 'group', 'document'
 
 include MEMBERDIR . '/include/inc_' . $m . '.php';
 is_object($db) && $db->Close();
-$qq3479015851_global = $m = $ac = $success = $error = $where = $page = $timestamp = $log = $member_log = $face = $money_own = NULL;
+$SystemGlobalcfm_global = $m = $ac = $success = $error = $where = $page = $timestamp = $log = $member_log = $face = $money_own = NULL;
 $levelid = $pm_total = $row = NULL;
 unset($row);
 
@@ -108,7 +107,7 @@ if ($selectedids) {
 }
 function location($type = 'user', $str = '')
 {
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	global $member_menu;
 	global $m;
 	$raquo = '<span class="separator">&raquo;</span>';

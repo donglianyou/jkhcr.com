@@ -7,13 +7,12 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define( "CURSCRIPT", "optimise" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+require_once( SysGlbCfm_INC."/db.class.php" );
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }
@@ -24,13 +23,13 @@ $step = array(
 				4 => "删除无金币消费的会员消费记录",
 				5 => "删除支付失败的会员支付记录",
 				6 => "删除QQ登录的冗余会员帐号",
-				7 => "只保留".$qq3479015851_qq3479015851['cfg_record_save']."条管理员登录记录",
-				8 => "只保留".$qq3479015851_qq3479015851['cfg_record_save']."条管理员操作记录",
+				7 => "只保留".$SystemGlobalcfm_qq3479015851['cfg_record_save']."条管理员登录记录",
+				8 => "只保留".$SystemGlobalcfm_qq3479015851['cfg_record_save']."条管理员操作记录",
 				9 => "删除会员已读短消息",
 				10 => "只保留一个月内的邮件发送记录",
 				11 => "Mysql数据库表优化"
 );
-$here = "QQ3479015851系统优化";
+$here = "SysGlbCfm系统优化";
 if ( $action == "dopost" )
 {
 				$steporder = $steporder ? mhtmlspecialchars( $steporder ) : array( );
@@ -81,15 +80,15 @@ if ( !empty( $next ) )
 								$query = $db->query( "SELECT * FROM `".$db_qq3479015851."information` WHERE id IN (".$selectedids.")" );
 								while ( $row = $db->fetchRow( $query ) )
 								{
-												@unlink( QQ3479015851_ROOT.$row['html_path'] );
+												@unlink( SysGlbCfm_ROOT.$row['html_path'] );
 								}
 								qq3479015851_delete( "information", "WHERE id IN(".$selectedids.")" );
 								qq3479015851_delete( "info_extra", "WHERE infoid IN (".$selectedids.")" );
 								$query = $db->query( "SELECT * FROM `".$db_qq3479015851."info_img` WHERE infoid IN (".$selectedids.")" );
 								while ( $row = $db->fetchRow( $query ) )
 								{
-												@unlink( QQ3479015851_ROOT.$row['imgpath'] );
-												@unlink( QQ3479015851_ROOT.$row['pre_imgpath'] );
+												@unlink( SysGlbCfm_ROOT.$row['imgpath'] );
+												@unlink( SysGlbCfm_ROOT.$row['pre_imgpath'] );
 								}
 								qq3479015851_delete( "info_img", "WHERE infoid IN (".$selectedids.")" );
 								qq3479015851_delete( "comment", "WHERE typeid IN (".$selectedids.") AND type = 'information'" );
@@ -109,15 +108,15 @@ if ( !empty( $next ) )
 								$query = $db->query( "SELECT * FROM `".$db_qq3479015851."information` WHERE id IN (".$selectedids.")" );
 								while ( $row = $db->fetchRow( $query ) )
 								{
-												@unlink( QQ3479015851_ROOT.$row['html_path'] );
+												@unlink( SysGlbCfm_ROOT.$row['html_path'] );
 								}
 								qq3479015851_delete( "information", "WHERE id IN(".$selectedids.")" );
 								qq3479015851_delete( "info_extra", "WHERE infoid IN (".$selectedids.")" );
 								$query = $db->query( "SELECT * FROM `".$db_qq3479015851."info_img` WHERE infoid IN (".$selectedids.")" );
 								while ( $row = $db->fetchRow( $query ) )
 								{
-												@unlink( QQ3479015851_ROOT.$row['imgpath'] );
-												@unlink( QQ3479015851_ROOT.$row['pre_imgpath'] );
+												@unlink( SysGlbCfm_ROOT.$row['imgpath'] );
+												@unlink( SysGlbCfm_ROOT.$row['pre_imgpath'] );
 								}
 								qq3479015851_delete( "info_img", "WHERE infoid IN (".$selectedids.")" );
 								qq3479015851_delete( "comment", "WHERE typeid IN (".$selectedids.") AND type = 'information'" );
@@ -136,16 +135,16 @@ if ( !empty( $next ) )
 								$db->query( "DELETE FROM `".$db_qq3479015851."member` WHERE openid != '' AND userid != '' AND userpwd = ''" );
 								break;
 				case "7" :
-								if ( !$qq3479015851_qq3479015851['cfg_record_save'] )
+								if ( !$SystemGlobalcfm_qq3479015851['cfg_record_save'] )
 								{
-												$qq3479015851_qq3479015851['cfg_record_save'] = 100;
+												$SystemGlobalcfm_qq3479015851['cfg_record_save'] = 100;
 								}
 								$total_count = qq3479015851_count( "admin_record_login" );
-								if ( !( $qq3479015851_qq3479015851['cfg_record_save'] <= $total_count ) )
+								if ( !( $SystemGlobalcfm_qq3479015851['cfg_record_save'] <= $total_count ) )
 								{
 												break;
 								}
-								$delrecord = $db->getAll( "SELECT id FROM `".$db_qq3479015851."admin_record_login` ORDER BY ID DESC LIMIT 1,".$qq3479015851_qq3479015851['cfg_record_save'] );
+								$delrecord = $db->getAll( "SELECT id FROM `".$db_qq3479015851."admin_record_login` ORDER BY ID DESC LIMIT 1,".$SystemGlobalcfm_qq3479015851['cfg_record_save'] );
 								foreach ( $delrecord as $k => $value )
 								{
 												$id .= $value[id].",";
@@ -154,16 +153,16 @@ if ( !empty( $next ) )
 								qq3479015851_delete( "admin_record_login", "WHERE id NOT IN (".$id.")" );
 								break;
 				case "8" :
-								if ( !$qq3479015851_qq3479015851['cfg_record_save'] )
+								if ( !$SystemGlobalcfm_qq3479015851['cfg_record_save'] )
 								{
-												$qq3479015851_qq3479015851['cfg_record_save'] = 100;
+												$SystemGlobalcfm_qq3479015851['cfg_record_save'] = 100;
 								}
 								$total_count = qq3479015851_count( "admin_record_action" );
-								if ( !( $qq3479015851_qq3479015851['cfg_record_save'] <= $total_count ) )
+								if ( !( $SystemGlobalcfm_qq3479015851['cfg_record_save'] <= $total_count ) )
 								{
 												break;
 								}
-								$delrecord = $db->getAll( "SELECT id FROM `".$db_qq3479015851."admin_record_action` ORDER BY ID DESC LIMIT 1,".$qq3479015851_qq3479015851['cfg_record_save'] );
+								$delrecord = $db->getAll( "SELECT id FROM `".$db_qq3479015851."admin_record_action` ORDER BY ID DESC LIMIT 1,".$SystemGlobalcfm_qq3479015851['cfg_record_save'] );
 								foreach ( $delrecord as $k => $value )
 								{
 												$id .= $value[id].",";

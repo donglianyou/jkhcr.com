@@ -7,11 +7,10 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 $var_type = array('text' => '字串', 'textarea' => '编辑框', 'number' => '数字', 'radio' => '单选', 'checkbox' => '多选', 'select' => '选择');
-$qq3479015851_admin_info_type = array('text' => "\r\n\t\t" . '<tr>' . "\r\n\t\t" . '<td bgcolor="#f5fbff" width="45%" >' . "\r\n\t\t" . '<b>字符最大长度:</b>' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '<td bgcolor="#f5fbff">' . "\r\n\t\t" . '<input type="text" size="50" name="rules[text][maxlength]" value="' . $rules[text] . '" >' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t\t", 'textarea' => "\r\n\t\t" . '<tr>' . "\r\n\t\t" . '<td bgcolor="#f5fbff" width="45%" >' . "\r\n\t\t" . '<b>字符最大长度:</b>' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '<td bgcolor="#f5fbff">' . "\r\n\t\t" . '<input type="text" size="50" name="rules[textarea][maxlength]" value="' . $rules[textarea] . '" >' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t\t", 'radio' => "\r\n\t\t" . '<tr>' . "\r\n\t\t" . '<td bgcolor="#f5fbff" width="45%">' . "\r\n\t\t" . '<b>选项内容:</b><br />只在项目为可选时有效，每行一个选项，等号前面为选项索引(建议用数字)，后面为内容，例如: <br /><i>1=苹果<br />2=香蕉<br />3=没有水果</i><br />注意: 选项确定后请勿修改索引和内容的对应关系，但仍可以新增选项。如需调换显示顺序，可以通过移动整行的前后位置来实现' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '<td bgcolor="#f5fbff">' . "\r\n\t\t" . '<textarea  rows="8" name="rules[radio][choices]" id="rules[radio][choices]" cols="50">' . $rules[radio] . '</textarea>' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t\t", 'checkbox' => "\r\n\t\t" . '<tr>' . "\r\n\t\t" . '<td bgcolor="#f5fbff" width="45%">' . "\r\n\t\t" . '<b>选项内容:</b><br />只在项目为可选时有效，每行一个选项，等号前面为选项索引(建议用数字)，后面为内容，例如: <br /><i>1=苹果<br />2=香蕉<br />3=菠萝</i><br />注意: 选项确定后请勿修改索引和内容的对应关系，但仍可以新增选项。如需调换显示顺序，可以通过移动整行的前后位置来实现</td>' . "\r\n\t\t" . '<td bgcolor="#f5fbff">' . "\r\n\t\t" . '<textarea  rows="8" name="rules[checkbox][choices]" id="rules[checkbox][choices]" cols="50">' . $rules[checkbox] . '</textarea>' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t\t", 'select' => "\r\n\t\t" . '<tr>' . "\r\n\t\t" . '<td bgcolor="#f5fbff" width="25%">' . "\r\n\t\t" . '<b>选项内容:</b><br />只在项目为可选时有效，每行一个选项，等号前面为选项索引(建议用数字)，后面为内容，例如: <br /><i>1=分类信息系统<br />2=企业建站系统<br />3=B2B商务系统</i><br /><br />注意: 选项确定后请勿修改索引和内容的对应关系，但仍可以新增选项。如需调换显示顺序，可以通过移动整行的前后位置来实现</td>' . "\r\n\t\t" . '<td bgcolor="#f5fbff">' . "\r\n\t" . '<textarea rows="8" name="rules[select][choices]" id="rules[select][choices]" cols="50">' . $rules[select] . '</textarea>' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t\t", 'number' => "\r\n\t\t" . '<tr>' . "\r\n\t\t" . '<td bgcolor="#f5fbff" width="45%" >' . "\r\n\t\t" . '<b>单位（可选）:</b>' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '<td bgcolor="#f5fbff">' . "\r\n\t\t" . '<input type="text" size="50" name="rules[number][units]" value="' . $rules[number] . '" >' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t\t");
+$SystemGlobalcfm_admin_info_type = array('text' => "\r\n\t\t" . '<tr>' . "\r\n\t\t" . '<td bgcolor="#f5fbff" width="45%" >' . "\r\n\t\t" . '<b>字符最大长度:</b>' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '<td bgcolor="#f5fbff">' . "\r\n\t\t" . '<input type="text" size="50" name="rules[text][maxlength]" value="' . $rules[text] . '" >' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t\t", 'textarea' => "\r\n\t\t" . '<tr>' . "\r\n\t\t" . '<td bgcolor="#f5fbff" width="45%" >' . "\r\n\t\t" . '<b>字符最大长度:</b>' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '<td bgcolor="#f5fbff">' . "\r\n\t\t" . '<input type="text" size="50" name="rules[textarea][maxlength]" value="' . $rules[textarea] . '" >' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t\t", 'radio' => "\r\n\t\t" . '<tr>' . "\r\n\t\t" . '<td bgcolor="#f5fbff" width="45%">' . "\r\n\t\t" . '<b>选项内容:</b><br />只在项目为可选时有效，每行一个选项，等号前面为选项索引(建议用数字)，后面为内容，例如: <br /><i>1=苹果<br />2=香蕉<br />3=没有水果</i><br />注意: 选项确定后请勿修改索引和内容的对应关系，但仍可以新增选项。如需调换显示顺序，可以通过移动整行的前后位置来实现' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '<td bgcolor="#f5fbff">' . "\r\n\t\t" . '<textarea  rows="8" name="rules[radio][choices]" id="rules[radio][choices]" cols="50">' . $rules[radio] . '</textarea>' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t\t", 'checkbox' => "\r\n\t\t" . '<tr>' . "\r\n\t\t" . '<td bgcolor="#f5fbff" width="45%">' . "\r\n\t\t" . '<b>选项内容:</b><br />只在项目为可选时有效，每行一个选项，等号前面为选项索引(建议用数字)，后面为内容，例如: <br /><i>1=苹果<br />2=香蕉<br />3=菠萝</i><br />注意: 选项确定后请勿修改索引和内容的对应关系，但仍可以新增选项。如需调换显示顺序，可以通过移动整行的前后位置来实现</td>' . "\r\n\t\t" . '<td bgcolor="#f5fbff">' . "\r\n\t\t" . '<textarea  rows="8" name="rules[checkbox][choices]" id="rules[checkbox][choices]" cols="50">' . $rules[checkbox] . '</textarea>' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t\t", 'select' => "\r\n\t\t" . '<tr>' . "\r\n\t\t" . '<td bgcolor="#f5fbff" width="25%">' . "\r\n\t\t" . '<b>选项内容:</b><br />只在项目为可选时有效，每行一个选项，等号前面为选项索引(建议用数字)，后面为内容，例如: <br /><i>1=分类信息系统<br />2=企业建站系统<br />3=B2B商务系统</i><br /><br />注意: 选项确定后请勿修改索引和内容的对应关系，但仍可以新增选项。如需调换显示顺序，可以通过移动整行的前后位置来实现</td>' . "\r\n\t\t" . '<td bgcolor="#f5fbff">' . "\r\n\t" . '<textarea rows="8" name="rules[select][choices]" id="rules[select][choices]" cols="50">' . $rules[select] . '</textarea>' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t\t", 'number' => "\r\n\t\t" . '<tr>' . "\r\n\t\t" . '<td bgcolor="#f5fbff" width="45%" >' . "\r\n\t\t" . '<b>单位（可选）:</b>' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '<td bgcolor="#f5fbff">' . "\r\n\t\t" . '<input type="text" size="50" name="rules[number][units]" value="' . $rules[number] . '" >' . "\r\n\t\t" . '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t\t");
 function get_info_var_type($type, $name = '', $rules = '', $value = '', $forward = 'back', $title = '', $require = '')
 {
 	$required = ($require == 1 ? 'require="true" datatype="limit" msg="' . $title . '不能为空"' : '');
@@ -19,13 +18,13 @@ function get_info_var_type($type, $name = '', $rules = '', $value = '', $forward
 	if ($forward == 'back') {
 		switch ($type) {
 		case 'text':
-			$qq3479015851_rule_str = ($rules[maxlength] ? $rules[maxlength] . '字符以内' : '');
-			$qq3479015851 .= '<input name="extra[' . $name . ']" value="' . $value . '" type="text" size="26" ' . $required . '> ' . $qq3479015851_rule_str;
+			$SystemGlobalcfm_rule_str = ($rules[maxlength] ? $rules[maxlength] . '字符以内' : '');
+			$SystemGlobalcfm .= '<input name="extra[' . $name . ']" value="' . $value . '" type="text" size="26" ' . $required . '> ' . $SystemGlobalcfm_rule_str;
 			break;
 
 		case 'textarea':
-			$qq3479015851_rule_str = ($rules[maxlength] ? '<br />不得超过' . $rules[maxlength] . '个字符' : '');
-			$qq3479015851 = '<textarea name="extra[' . $name . ']"  ' . $required . '>' . $value . '</textarea> ' . $qq3479015851_rule_str;
+			$SystemGlobalcfm_rule_str = ($rules[maxlength] ? '<br />不得超过' . $rules[maxlength] . '个字符' : '');
+			$SystemGlobalcfm = '<textarea name="extra[' . $name . ']"  ' . $required . '>' . $value . '</textarea> ' . $SystemGlobalcfm_rule_str;
 			break;
 
 		case 'radio':
@@ -33,9 +32,9 @@ function get_info_var_type($type, $name = '', $rules = '', $value = '', $forward
 
 			foreach ($rules as $k => $v ) {
 				$i = $i + 1;
-				$qq3479015851 .= '<label for="' . $name . $k . '"><input id="' . $name . $k . '" name="extra[' . $name . ']" type="radio" class="radio" value="' . $k . '"';
-				$qq3479015851 .= (($k == $value) || ($i == 1) ? 'checked' : '');
-				$qq3479015851 .= '>' . $v . '</label> ';
+				$SystemGlobalcfm .= '<label for="' . $name . $k . '"><input id="' . $name . $k . '" name="extra[' . $name . ']" type="radio" class="radio" value="' . $k . '"';
+				$SystemGlobalcfm .= (($k == $value) || ($i == 1) ? 'checked' : '');
+				$SystemGlobalcfm .= '>' . $v . '</label> ';
 			}
 
 			$i = $endrules = NULL;
@@ -45,56 +44,56 @@ function get_info_var_type($type, $name = '', $rules = '', $value = '', $forward
 			$count = ($require == 1 ? count($rules) : '');
 			$new_value = explode(',', $value);
 			$required = 'min=1 max=' . $count . ' require="true" datatype="limit|group" msgid = ' . $title . '  msg="必须要选择一个' . $title . '"';
-			$qq3479015851 = '<div class="checkboxinner style=float:left;">';
+			$SystemGlobalcfm = '<div class="checkboxinner style=float:left;">';
 
 			foreach ($rules as $k => $v ) {
-				$qq3479015851 .= '<label for="' . $name . $k . '" style="margin:0 10px 0 0;"><input ' . $required . ' id="' . $name . $k . '" name="extra[' . $name . '][]" type="checkbox" class="checkbox" value="' . $k . '"';
-				$qq3479015851 .= (in_array($k, $new_value) ? 'checked' : '');
-				$qq3479015851 .= '>' . $v . '</label>';
+				$SystemGlobalcfm .= '<label for="' . $name . $k . '" style="margin:0 10px 0 0;"><input ' . $required . ' id="' . $name . $k . '" name="extra[' . $name . '][]" type="checkbox" class="checkbox" value="' . $k . '"';
+				$SystemGlobalcfm .= (in_array($k, $new_value) ? 'checked' : '');
+				$SystemGlobalcfm .= '>' . $v . '</label>';
 			}
 
-			$qq3479015851 .= '</div>';
+			$SystemGlobalcfm .= '</div>';
 			$endrules = $required = NULL;
 			break;
 
 		case 'select':
-			$qq3479015851 .= '<div class="select">';
-			$qq3479015851 .= '<select name="extra[' . $name . ']" class="decorate" ' . $required . '>';
-			$qq3479015851 .= '<option value="">请选择' . $title . '</option>';
+			$SystemGlobalcfm .= '<div class="select">';
+			$SystemGlobalcfm .= '<select name="extra[' . $name . ']" class="decorate" ' . $required . '>';
+			$SystemGlobalcfm .= '<option value="">请选择' . $title . '</option>';
 
 			foreach ($rules as $k => $v ) {
-				$qq3479015851 .= '<option value="' . $k . '"';
-				$qq3479015851 .= ($k == $value ? 'selected ' : '');
-				$qq3479015851 .= '>' . $v . '</option> ';
+				$SystemGlobalcfm .= '<option value="' . $k . '"';
+				$SystemGlobalcfm .= ($k == $value ? 'selected ' : '');
+				$SystemGlobalcfm .= '>' . $v . '</option> ';
 			}
 
-			$qq3479015851 .= '</select>';
-			$qq3479015851 .= '</div>';
+			$SystemGlobalcfm .= '</select>';
+			$SystemGlobalcfm .= '</div>';
 			break;
 
 		case 'number':
 			$required = ($require == 1 ? 'require="true" datatype="limit|double" msg="请填写' . $title . '，0 表示面议"' : '');
-			$qq3479015851 .= '<input ' . $required . ' msgid="' . $title . '" name="extra[' . $name . ']" value="' . $value . '" type="text"> <span class=units>' . $rules[units] . '</span>';
+			$SystemGlobalcfm .= '<input ' . $required . ' msgid="' . $title . '" name="extra[' . $name . ']" value="' . $value . '" type="text"> <span class=units>' . $rules[units] . '</span>';
 			break;
 		}
 	}
 	else {
 		switch ($type) {
 		case 'text':
-			$qq3479015851_rule_str = ($rules[maxlength] ? $rules[maxlength] . '字符以内' : '');
-			$qq3479015851 .= '<input name="' . $name . '" value="' . $value . '" type="text" size="26"> ' . $qq3479015851_rule_str;
+			$SystemGlobalcfm_rule_str = ($rules[maxlength] ? $rules[maxlength] . '字符以内' : '');
+			$SystemGlobalcfm .= '<input name="' . $name . '" value="' . $value . '" type="text" size="26"> ' . $SystemGlobalcfm_rule_str;
 			break;
 
 		case 'textarea':
-			$qq3479015851_rule_str = ($rules[maxlength] ? '<br />不得超过' . $rules[maxlength] . '个字符' : '');
-			$qq3479015851 = '<textarea name="' . $name . '"  cols="100" rows="10" class="input">' . $value . '</textarea> ' . $qq3479015851_rule_str;
+			$SystemGlobalcfm_rule_str = ($rules[maxlength] ? '<br />不得超过' . $rules[maxlength] . '个字符' : '');
+			$SystemGlobalcfm = '<textarea name="' . $name . '"  cols="100" rows="10" class="input">' . $value . '</textarea> ' . $SystemGlobalcfm_rule_str;
 			break;
 
 		case 'radio':
 			foreach ($rules as $k => $v ) {
-				$qq3479015851 .= '<label for="' . $name . $k . '"><input id="' . $name . $k . '" name="extra[' . $name . ']" type="radio" class="radio" value="' . $k . '"';
-				$qq3479015851 .= ($k == $value ? 'checked' : '');
-				$qq3479015851 .= '>' . $v . '</label> ';
+				$SystemGlobalcfm .= '<label for="' . $name . $k . '"><input id="' . $name . $k . '" name="extra[' . $name . ']" type="radio" class="radio" value="' . $k . '"';
+				$SystemGlobalcfm .= ($k == $value ? 'checked' : '');
+				$SystemGlobalcfm .= '>' . $v . '</label> ';
 			}
 
 			$endrules = NULL;
@@ -104,33 +103,33 @@ function get_info_var_type($type, $name = '', $rules = '', $value = '', $forward
 			$new_value = explode(',', $value);
 
 			foreach ($rules as $k => $v ) {
-				$qq3479015851 .= '<label for="' . $name . $k . '" style="margin:0 10px 0 0;"><input id="' . $name . $k . '" name="' . $name . '" type="checkbox"  class="checkbox" value="' . $k . '"';
-				$qq3479015851 .= (in_array($k, $new_value) ? 'checked' : '');
-				$qq3479015851 .= '>' . $v . '</label>';
+				$SystemGlobalcfm .= '<label for="' . $name . $k . '" style="margin:0 10px 0 0;"><input id="' . $name . $k . '" name="' . $name . '" type="checkbox"  class="checkbox" value="' . $k . '"';
+				$SystemGlobalcfm .= (in_array($k, $new_value) ? 'checked' : '');
+				$SystemGlobalcfm .= '>' . $v . '</label>';
 			}
 
 			break;
 
 		case 'select':
-			$qq3479015851 .= '<select name="' . $name . '" class="decorate" >';
-			$qq3479015851 .= '<option value="">请选择' . $title . '</option>';
+			$SystemGlobalcfm .= '<select name="' . $name . '" class="decorate" >';
+			$SystemGlobalcfm .= '<option value="">请选择' . $title . '</option>';
 
 			foreach ($rules as $k => $v ) {
-				$qq3479015851 .= '<option value="' . $k . '"';
-				$qq3479015851 .= ($k == $value ? 'selected ' : '');
-				$qq3479015851 .= '>' . $v . '</option> ';
+				$SystemGlobalcfm .= '<option value="' . $k . '"';
+				$SystemGlobalcfm .= ($k == $value ? 'selected ' : '');
+				$SystemGlobalcfm .= '>' . $v . '</option> ';
 			}
 
-			$qq3479015851 .= '</select>';
+			$SystemGlobalcfm .= '</select>';
 			break;
 
 		case 'number':
-			$qq3479015851 .= '<input name="' . $name . '[min]" type="text"> 至 <input  name="' . $name . '[max]" type="text" float:none;"> ';
+			$SystemGlobalcfm .= '<input name="' . $name . '[min]" type="text"> 至 <input  name="' . $name . '[max]" type="text" float:none;"> ';
 			break;
 		}
 	}
 
-	return $qq3479015851;
+	return $SystemGlobalcfm;
 }
 
 function return_category_info_options($modid = '', $edit_id = '')

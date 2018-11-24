@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://www.mymps.com.cn/doc/index-html.html -->
+<html><style type="text/css" id="2517905709"></style><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<meta charset="gbk">
+
+<title>HTML书写规范 - 起步 - Mymps模板制作/标签/参考手册 - 更多蚂蚁分类工具请进入QQ群:200641831</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./HTML书写规范_files/jquery-1.9.1.min.js"></script>
+<link href="./HTML书写规范_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./HTML书写规范_files/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="./HTML书写规范_files/docs.css" rel="stylesheet">
+<link href="./HTML书写规范_files/prettify.css" rel="stylesheet">
+<!--[if lt IE 9]>
+  <script src="/assets/js/html5shiv.js"></script>
+<![endif]-->
+<style>
+.span9 h4{text-indent:2em;text-align:left;}
+.span9 p{text-indent:2em;text-align:left;}
+</style><script type="text/javascript" src="./HTML书写规范_files/noerr.js"></script><script type="text/javascript" src="./HTML书写规范_files/noright.js"></script><style>
+.code { font-family: Courier, Courier New; font-weight: normal; color:#000; font-size:12px;}
+</style></head>
+
+
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="50">
+  
+  <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+        	            <li>
+              <a href="http://www.mymps.com.cn/doc/article.html">使用教程_QQ群:200641831</a>
+            </li>
+                        <li class="active">
+              <a href="http://www.mymps.com.cn/doc/index.html">模板基础</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/structure.html">模板目录结构</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/grammer.html">标签语法</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/base.html">基本标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/senior.html">高级标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/diy.html">自定义标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/demo.html">调用示例</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/db.html">数据字典</a>
+            </li>
+                    </ul>
+      </div>
+    </div>
+  </div>
+</div>  <div class="jumbotron subhead" id="overview">
+    <div class="container">
+      <h1>起步</h1>
+      <p class="lead">
+        蚂蚁CMS模板语言基础
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav affix-top">
+		            <li><a href="http://www.mymps.com.cn/doc/index.html"><i class="icon-chevron-right"></i> 前言介绍</a></li>
+                    <li class="active"><a href="./HTML书写规范_files/HTML书写规范.html"><i class="icon-chevron-right"></i> HTML书写规范</a></li>
+                    <li><a href="http://www.mymps.com.cn/doc/index-compile.html"><i class="icon-chevron-right"></i> Mymps模板编译机制</a></li>
+                  </ul>
+      </div>
+      <div class="span9">
+
+        <section>
+        <div class="page-header">
+            <h1>HTML书写规范</h1>
+            </div>
+			                <p>对 HTML 标记参数进行赋值时，需使用双引号，例如：</p>
+                <div class="well code">
+                &lt;input type=”text” name=”mymps” value=”mymps” /&gt;
+                </div>
+                <p>非成对标记必须以“/&gt;”结尾，例如：</p>
+                <div class="well code">
+                &lt;input type="text" name="mymps" id="" class="mymps" … /&gt;
+                </div>
+                <p>
+                在Mymps的 .html 模板文件中，由于模板源代码具备逻辑结构，故不考虑 HTML 本身的缩进，所有缩进均为逻辑上的缩进结构。缩进采用 Tab 作为符号，不使用空格。例如：
+                </p>
+                <div class="well code">
+                {loop $info_list $mymps}<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;table cellspacing=”0” cellspadding=”0” border=”0”&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;{$mymps[title]}&lt;/td&gt;&lt;/tr&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;<br>{/loop}
+                </div>
+                    </section>
+
+      </div>
+    </div>
+
+  </div>
+    <div class="footer">
+  <div class="container">
+    <p class="center">更多蚂蚁分类工具请进入QQ群:200641831</p>
+
+    <ul class="footer-links">
+      <li><a href="http://www.mymps.com.cn/" target="_blank">蚂蚁分类信息系统官网</a></li>
+      <li><a href="http://bbs.mymps.com.cn/">蚂蚁论坛</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<script src="./HTML书写规范_files/bootstrap.min.js" language="javascript" type="text/javascript"></script>
+<script src="./HTML书写规范_files/prettify.js"></script>
+<script src="./HTML书写规范_files/application.js"></script>
+</body></html>

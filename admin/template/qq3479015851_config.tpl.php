@@ -3,7 +3,7 @@
 <style>
 .ccc2 ul input{margin:2px 0}
 </style>
-<div id="<?=QQ3479015851_SOFTNAME?>" style=" padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style=" padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">

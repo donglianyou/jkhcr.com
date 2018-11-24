@@ -7,16 +7,15 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define( "CURSCRIPT", "goods_category" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 require_once( dirname( __FILE__ )."/include/color.inc.php" );
 require_once( dirname( __FILE__ )."/include/ifview.inc.php" );
-@require_once( QQ3479015851_ROOT."/plugin/goods/include/functions.php" );
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+@require_once( SysGlbCfm_ROOT."/plugin/goods/include/functions.php" );
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }
@@ -33,14 +32,14 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 				}
 				else if ( $part == "edit" )
 				{
-								include( QQ3479015851_DATA."/category_tpl.inc.php" );
+								include( SysGlbCfm_DATA."/category_tpl.inc.php" );
 								$cat = $db->getRow( "SELECT * FROM ".$db_qq3479015851."goods_category WHERE catid = '".$catid."'" );
 								$here = "编辑商品分类";
 								include( qq3479015851_tpl( "goods_category_edit" ) );
 				}
 				else if ( $part == "add" )
 				{
-								include( QQ3479015851_DATA."/category_tpl.inc.php" );
+								include( SysGlbCfm_DATA."/category_tpl.inc.php" );
 								$maxorder = $db->getOne( "SELECT MAX(catorder) FROM ".$db_qq3479015851."goods_category" );
 								$maxorder += 1;
 								$here = "添加商品分类";
@@ -58,7 +57,7 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 								clear_cache_files( "goods_category_option_static" );
 								clear_cache_files( "goods_category_pid_releate" );
 								clear_cache_files( "goods_category_tree" );
-								write_msg( "删除商品分类 ".$catid." 成功", "goods_category.php?part=list", "QQ3479015851" );
+								write_msg( "删除商品分类 ".$catid." 成功", "goods_category.php?part=list", "SysGlbCfm" );
 				}
 }
 else if ( $part == "list" )
@@ -160,5 +159,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 ?>

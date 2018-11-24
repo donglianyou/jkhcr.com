@@ -1,5 +1,5 @@
 <?php include qq3479015851_tpl('inc_head');?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">技巧提示</td>
@@ -12,7 +12,7 @@
   </tr>
 </table>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 <div class="mpstopic-category">
 	<div class="panel-tab">
 		<ul class="clearfix tab-list">
@@ -26,7 +26,7 @@
 </div>
 <form action="?part=optimize" method="post">
 <input name="action" value="do_action" type="hidden" />
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
   <td><label for="chkall"><input name="chkall" id="chkall" class="checkbox" onclick="checkAll('prefix', this.form)" checked="checked" type="checkbox" />优化?</label></td><td>数据表</td><td>类型</td><td>记录数</td><td>数据</td><td>索引</td><td>碎片</td></tr>

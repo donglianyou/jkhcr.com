@@ -2,7 +2,7 @@
 <html lang="zh-CN" class="index_page">
 <head>
 	{template header}
-	<title>商品展示 - 商家店铺 - {$qq3479015851_global[SiteName]}</title>
+	<title>商品展示 - 商家店铺 - {$SystemGlobalcfm_global[SiteName]}</title>
 	<link type="text/css" rel="stylesheet" href="template/css/global.css">
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
     <link type="text/css" rel="stylesheet" href="template/css/store.css">
@@ -10,7 +10,7 @@
     <script>window['current'] = '{$navi[$action]}';</script>
 </head>
 
-<body class="{$qq3479015851_global[cfg_tpl_dir]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]}">
 <div class="wrapper">
 	{template header_search}
     {template store_header}
@@ -22,11 +22,11 @@
     	 <div class="commodity_list">
          
           <ul>
-          {loop $list $k $qq3479015851}
+          {loop $list $k $SystemGlobalcfm}
            <li>
-            <a href="index.php?mod=goods&id={$qq3479015851[goodsid]}"><img src="{$qq3479015851_global[SiteUrl]}{$qq3479015851[pre_picture]}" onerror="this.src='template/images/nopic.gif';this.onerror='';" alt="{$qq3479015851[goodsname]}" />
-            <h3>{$qq3479015851[goodsname]}</h3>
-            <div class="price">&yen;<strong>{$qq3479015851[nowprice]}</strong><del>&yen;{$qq3479015851[oldprice]}</del></div>
+            <a href="index.php?mod=goods&id={$SystemGlobalcfm[goodsid]}"><img src="{$SystemGlobalcfm_global[SiteUrl]}{$SystemGlobalcfm[pre_picture]}" onerror="this.src='template/images/nopic.gif';this.onerror='';" alt="{$SystemGlobalcfm[goodsname]}" />
+            <h3>{$SystemGlobalcfm[goodsname]}</h3>
+            <div class="price">&yen;<strong>{$SystemGlobalcfm[nowprice]}</strong><del>&yen;{$SystemGlobalcfm[oldprice]}</del></div>
             <sup class="cx{$cuxiao}"></sup>
             <sup class="tj{$istop}"></sup>
             </a>

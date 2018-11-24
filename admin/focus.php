@@ -7,12 +7,11 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define( "CURSCRIPT", "focus" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 $part = $part ? $part : "list";
 $cityid = intval( $cityid );
 if ( !in_array( $typename, array( "网站首页", "新闻首页" ) ) || !$typename )
@@ -58,7 +57,7 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 }
 else
 {
-				require_once( QQ3479015851_INC."/upfile.fun.php" );
+				require_once( SysGlbCfm_INC."/upfile.fun.php" );
 				$limit = $typename == "新闻首页" ? "news" : "index";
 				if ( $part == "add" )
 				{
@@ -67,9 +66,9 @@ else
 								{
 												check_upimage( $name_file );
 												$destination = "/focus/";
-												$qq3479015851_image = start_upload( $name_file, $destination, 0, $qq3479015851_qq3479015851['cfg_focus_limit'][$tpl_index['banmian']]['index']['width'], $qq3479015851_qq3479015851['cfg_focus_limit'][$tpl_index['banmian']]['index']['height'] );
+												$SystemGlobalcfm_image = start_upload( $name_file, $destination, 0, $SystemGlobalcfm_qq3479015851['cfg_focus_limit'][$tpl_index['banmian']]['index']['width'], $SystemGlobalcfm_qq3479015851['cfg_focus_limit'][$tpl_index['banmian']]['index']['height'] );
 												unset( $limit );
-												$db->query( "INSERT INTO `".$db_qq3479015851."focus` (id,image,pre_image,words,url,pubdate,focusorder,typename,cityid)\r\n\t\t\t\t\tVALUES('','".$qq3479015851_image[0]."','".$qq3479015851_image[1]."','".$words."','".$url."','".$timestamp."','".$focusorder."','".$typename."','".$cityid."')" );
+												$db->query( "INSERT INTO `".$db_qq3479015851."focus` (id,image,pre_image,words,url,pubdate,focusorder,typename,cityid)\r\n\t\t\t\t\tVALUES('','".$SystemGlobalcfm_image[0]."','".$SystemGlobalcfm_image[1]."','".$words."','".$url."','".$timestamp."','".$focusorder."','".$typename."','".$cityid."')" );
 												clear_cache_files( "city_".$cityid );
 								}
 				}
@@ -80,10 +79,10 @@ else
 								{
 												check_upimage( $name_file );
 												$destination = "/focus/";
-												$qq3479015851_image = start_upload( $name_file, $destination, 0, $qq3479015851_qq3479015851['cfg_focus_limit'][$tpl_index['banmian']]['index']['width'], $qq3479015851_qq3479015851['cfg_focus_limit'][$tpl_index['banmian']]['index']['height'], $image, $pre_image );
+												$SystemGlobalcfm_image = start_upload( $name_file, $destination, 0, $SystemGlobalcfm_qq3479015851['cfg_focus_limit'][$tpl_index['banmian']]['index']['width'], $SystemGlobalcfm_qq3479015851['cfg_focus_limit'][$tpl_index['banmian']]['index']['height'], $image, $pre_image );
 												unset( $limit );
-												$image = $qq3479015851_image[0];
-												$pre_image = $qq3479015851_image[1];
+												$image = $SystemGlobalcfm_image[0];
+												$pre_image = $SystemGlobalcfm_image[1];
 								}
 								$res = $db->query( "UPDATE `".$db_qq3479015851."focus` SET image='".$image."',pre_image='".$pre_image."',words='".$words."',url='".$url."',focusorder='".$focusorder."',cityid='".$cityid."' WHERE id = '".$id."'" );
 								clear_cache_files( "city_".$cityid );
@@ -95,8 +94,8 @@ else
 												foreach ( $delids as $kids => $vids )
 												{
 																$delrow = $db->getRow( "SELECT image,pre_image FROM `".$db_qq3479015851."focus` WHERE id = '".$vids."'" );
-																@unlink( QQ3479015851_ROOT.$delrow['image'] );
-																@unlink( QQ3479015851_ROOT.$delrow['pre_image'] );
+																@unlink( SysGlbCfm_ROOT.$delrow['image'] );
+																@unlink( SysGlbCfm_ROOT.$delrow['pre_image'] );
 																qq3479015851_delete( CURSCRIPT, "WHERE id = ".$vids );
 												}
 								}
@@ -115,5 +114,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 ?>

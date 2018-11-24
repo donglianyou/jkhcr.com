@@ -27,7 +27,7 @@ function check_sub(){
 <form name="form1" action="?part=edit&id=<?=$id?>" method="post" enctype="multipart/form-data" onSubmit="return check_sub();">
 <input name="pre_picture" value="<?=$edit['pre_picture']?>" type="hidden">
 <input name="picture" value="<?=$edit['picture']?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
 	<td colspan="2">基本信息</td>
@@ -81,7 +81,7 @@ function check_sub(){
     <td class="altbg1">商品图片:</td>
     <td> 
     <?php
-    echo "<img src=".$qq3479015851_global[SiteUrl]."".$edit[pre_picture]." style='_margin-top:expression(( 180 - this.height ) / 2);' />\r\n";
+    echo "<img src=".$SystemGlobalcfm_global[SiteUrl]."".$edit[pre_picture]." style='_margin-top:expression(( 180 - this.height ) / 2);' />\r\n";
     ?>
     </td>
 </tr>

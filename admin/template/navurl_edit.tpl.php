@@ -13,7 +13,7 @@ function chkform(){
 	}
 }
 </script>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">技巧提示</td>
@@ -27,7 +27,7 @@ function chkform(){
 </div>
 <form method=post onSubmit="return chkform()" name="form1" action="?part=edit">
 <input name="id" value="<?=$navurl[id]?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%"  border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
 <td colspan="2"><a href="javascript:collapse_change('1')">导航基本信息</a>

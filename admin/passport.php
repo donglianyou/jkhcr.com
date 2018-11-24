@@ -7,13 +7,12 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('CURSCRIPT', 'passport');
 require_once dirname(__FILE__) . '/global.php';
-require_once QQ3479015851_INC . '/db.class.php';
-(!defined('IN_ADMIN') || !defined('QQ3479015851')) && exit('Access Denied');
+require_once SysGlbCfm_INC . '/db.class.php';
+(!defined('IN_ADMIN') || !defined('SysGlbCfm')) && exit('Access Denied');
 chk_admin_purview('purview_第三方账号整合');
 !in_array($part, array('bbs', 'qqlogin', 'wxlogin')) && ($part = 'bbs');
 if (!submit_check(CURSCRIPT . '_submit')) {
@@ -69,8 +68,8 @@ else if ($part == 'bbs') {
 		}
 	}
 
-	if (!api_write_config($ucsettings, QQ3479015851_DATA . '/config.db.php')) {
-		write_msg(QQ3479015851_DATA . '/config.db.php 文件不可写，请设置可写权限');
+	if (!api_write_config($ucsettings, SysGlbCfm_DATA . '/config.db.php')) {
+		write_msg(SysGlbCfm_DATA . '/config.db.php 文件不可写，请设置可写权限');
 	}
 
 	write_msg('成功更新第三方账号整合！', 'passport.php');

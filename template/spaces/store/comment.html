@@ -3,9 +3,9 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>留言点评-{$store[tname]}-{$qq3479015851_global[SiteName]}</title>
-<link href="{$qq3479015851_global[SiteUrl]}/template/spaces/store/css/{$store[template]}.css" type="text/css" rel="stylesheet" />
-<script src="{$qq3479015851_global[SiteUrl]}/template/spaces/store/js/StoreComment.js" type="text/javascript"></script> 
+<title>留言点评-{$store[tname]}-{$SystemGlobalcfm_global[SiteName]}</title>
+<link href="{$SystemGlobalcfm_global[SiteUrl]}/template/spaces/store/css/{$store[template]}.css" type="text/css" rel="stylesheet" />
+<script src="{$SystemGlobalcfm_global[SiteUrl]}/template/spaces/store/js/StoreComment.js" type="text/javascript"></script> 
 </head>
 <body>
 
@@ -47,17 +47,17 @@
         
                     </div>
         			
-                    {loop $comment $qq3479015851}
+                    {loop $comment $SystemGlobalcfm}
                     <div class="clear"></div>
                     <div class="comment cfix">
                     <div class="bd">
                         <div class="dpContent cfix">
-                            <div class="pic"><img src="{$qq3479015851_global[SiteUrl]}/images/{$qq3479015851[enjoy]}.gif"></div>
+                            <div class="pic"><img src="{$SystemGlobalcfm_global[SiteUrl]}/images/{$SystemGlobalcfm[enjoy]}.gif"></div>
                             <div class="textt">
-                                <div class="ut">{$qq3479015851[content]} <span class="time">[网友发表于 {$qq3479015851[pubtime]}]</span></div>
+                                <div class="ut">{$SystemGlobalcfm[content]} <span class="time">[网友发表于 {$SystemGlobalcfm[pubtime]}]</span></div>
                             </div>
                         </div>
-                        {if $qq3479015851[reply]}<div class="clearfix"></div><div class="huip"><em>老师回复：</em>{$qq3479015851[reply]}<span class="time">[回复于 {$qq3479015851[retime]}]</span></div>{/if}
+                        {if $SystemGlobalcfm[reply]}<div class="clearfix"></div><div class="huip"><em>老师回复：</em>{$SystemGlobalcfm[reply]}<span class="time">[回复于 {$SystemGlobalcfm[retime]}]</span></div>{/if}
                     </div>
                     </div>
                     {/loop}
@@ -76,7 +76,7 @@
 
         <div class="mbk-send cfix" style="border-top:0;">
 
-        <form method="post" action="{$qq3479015851_global[SiteUrl]}/store.php?" name="StoreCommentForm" onsubmit="return StoreCommentFormCheck();">
+        <form method="post" action="{$SystemGlobalcfm_global[SiteUrl]}/store.php?" name="StoreCommentForm" onsubmit="return StoreCommentFormCheck();">
         <input type="hidden" name="part" value="comment" />
         <input type="hidden" name="user" value="{$store[userid]}" />
         <input type="hidden" name="action" value="dopost" />

@@ -5,7 +5,7 @@
 .altbg2{ background-color:white;}
 .altbg2 li{ margin:5px auto;}
 </style>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -16,7 +16,7 @@
 	</div>
 </div>
 
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr"><td colspan="2">详细介绍</td></tr>
 	<?php foreach($vbm_adv_type as $k => $v){?>

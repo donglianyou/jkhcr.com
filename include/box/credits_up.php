@@ -7,14 +7,13 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-!(defined('QQ3479015851')) && exit('FORBIDDEN');
-require_once QQ3479015851_DATA . '/config.db.php';
-require_once QQ3479015851_INC . '/db.class.php';
-require_once QQ3479015851_INC . '/cache.fun.php';
-require_once QQ3479015851_INC . '/member.class.php';
+!(defined('SysGlbCfm')) && exit('FORBIDDEN');
+require_once SysGlbCfm_DATA . '/config.db.php';
+require_once SysGlbCfm_INC . '/db.class.php';
+require_once SysGlbCfm_INC . '/cache.fun.php';
+require_once SysGlbCfm_INC . '/member.class.php';
 
 if (!($member_log->chk_in())) {
 	write_msg('对不起,您还没有登录！');
@@ -25,7 +24,7 @@ $coin_credit = $score_change['credit']['rank']['coin_credit'];
 $row = $db->getRow('SELECT credit,credits,money_own FROM `' . $db_qq3479015851 . 'member` WHERE userid = \'' . $s_uid . '\'');
 
 if ($action == 'post') {
-	require_once QQ3479015851_ROOT . '/member/include/common.func.php';
+	require_once SysGlbCfm_ROOT . '/member/include/common.func.php';
 	$coin = (isset($_POST['coin']) ? floor(intval($_POST['coin'])) : '');
 	if (!($coin) || ($coin < 0)) {
 		write_msg('请输入您要使用的金币。');
@@ -60,7 +59,7 @@ else {
 	$defaultrank = array(1 => 10, 2 => 20, 3 => 40, 4 => 70, 5 => 120, 6 => 200, 7 => 400, 8 => 700, 9 => 1200, 10 => 1800, 11 => 2600, 12 => 4000, 13 => 10000, 14 => 30000, 15 => 60000);
 	$credit_set = $db->getOne('SELECT value FROM `' . $db_qq3479015851 . 'config` WHERE type=\'credit_sco\' AND description = \'credit_set\'');
 	$credit_set = ($credit_set ? ($charset == 'utf-8' ? utf8_unserialize($credit_set) : unserialize($credit_set)) : array('rank' => $defaultrank));
-	include QQ3479015851_ROOT . '/template/box/credits_up.html';
+	include SysGlbCfm_ROOT . '/template/box/credits_up.html';
 }
 
 $row = $credit_set = $defaultrank = $nowcredit = $credit = $credits = $credit_set = NULL;

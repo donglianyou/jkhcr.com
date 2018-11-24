@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="template/css/new.my.css" />
 <script language="javascript" src="template/javascript.js"></script>
 </head>
-<body class="<?php echo $qq3479015851_global['cfg_tpl_dir']; ?>" <?php if($box == 1){?>style="background:none"<?}?>>
+<body class="<?php echo $SystemGlobalcfm_global['cfg_tpl_dir']; ?>" <?php if($box == 1){?>style="background:none"<?}?>>
 <div class="container">
     
     <?php include qq3479015851_tpl('inc_head');?>
@@ -39,10 +39,10 @@
                                             <div class="errormsg" id="error" style="display:none"></div>
                                           
                                             <div class="formrow">
-                                                <h3 class="label"><label for="value">请输入要充值的<span id="pointname">金币</span>数 <span class="note">(一次最少需要充值<span id="minvalue" style="color:red"><?=$qq3479015851_global[cfg_pay_nin]?></span>个金币)</span></label></h3>
+                                                <h3 class="label"><label for="value">请输入要充值的<span id="pointname">金币</span>数 <span class="note">(一次最少需要充值<span id="minvalue" style="color:red"><?=$SystemGlobalcfm_global[cfg_pay_nin]?></span>个金币)</span></label></h3>
                                                 <div class="formrow-enter">
                                                     <input type="hidden" name="currentPointType" id="currentPointType" value="Point8" />
-                                                    <input type="text" class="text number" name="money" id="payvalue" value="<?php echo $qq3479015851_global[cfg_pay_min]?>" onKeyUp="value=value.replace(/[^\d]/g,'');if(value>2147483647)value=2147483647;setMustPay()" />
+                                                    <input type="text" class="text number" name="money" id="payvalue" value="<?php echo $SystemGlobalcfm_global[cfg_pay_min]?>" onKeyUp="value=value.replace(/[^\d]/g,'');if(value>2147483647)value=2147483647;setMustPay()" />
                                                     <span id="pointunit"></span>
                                                     <span class="surplus">(当前金币为: <img src="template/images/coins.gif" align="absmiddle"><?=$money_own?>)</span>
                                                 </div>
@@ -140,11 +140,11 @@
                                         </form>
                                 		<?php if($box != 1){?>
                                         <div class="topup-note">
-                                            <p>1、充值费用与金币比例为1:<?php echo $qq3479015851_global['cfg_coin_fee']; ?>，即充值1<?php echo $moneytype; ?>可购买<?php echo $qq3479015851_global['cfg_coin_fee']; ?>个金币</p>
+                                            <p>1、充值费用与金币比例为1:<?php echo $SystemGlobalcfm_global['cfg_coin_fee']; ?>，即充值1<?php echo $moneytype; ?>可购买<?php echo $SystemGlobalcfm_global['cfg_coin_fee']; ?>个金币</p>
 											<p>2、若出现已成功充值的提示，但金额未到帐，可能是网络或系统繁忙导致，我们会在2个工作日内核对后为您充值。 </p>
                                             <p> 3、在充值时请仔细确认充值的金额和账户，以免为充值错误；</p>
                                             <p>4、在充值过程中如出现网页错误或打开缓慢时，请先查询银行或者相关支付方式的交易记录，检查扣款是否成功；然后查看帐户是否已成功充值。若没有确认，请不要反复刷新页面，以防止重复购买； </p>
-                                            <p>5、如有任何疑问也可直接联系客服：<strong><?=$qq3479015851_global['SiteTel']?></strong></p>
+                                            <p>5、如有任何疑问也可直接联系客服：<strong><?=$SystemGlobalcfm_global['SiteTel']?></strong></p>
                                         </div>
 										<?php }?>
                                     
@@ -173,7 +173,7 @@
             //
             'Point4': ['一次最少需要充值0金币'],
             //
-            'Point8': ['一次最少需要充值<?=$qq3479015851_global['cfg_pay_min']?>金币'],
+            'Point8': ['一次最少需要充值<?=$SystemGlobalcfm_global['cfg_pay_min']?>金币'],
             //
             '-1': ['', '']
         };
@@ -198,7 +198,7 @@
     //
     moneys['Point8'] = 1;
     points['Point8'] = 10;
-    minvalues['Point8'] = <?php echo $qq3479015851_global['cfg_pay_min'] ? $qq3479015851_global['cfg_pay_min'] : 1 ;?>;
+    minvalues['Point8'] = <?php echo $SystemGlobalcfm_global['cfg_pay_min'] ? $SystemGlobalcfm_global['cfg_pay_min'] : 1 ;?>;
     //
     //
     function setMustPay() {
@@ -219,7 +219,7 @@
                 pay = parseInt(payStr.substring(0, dotIndex)) + t / 100;
             }
         }
-        $obj('mustpay').innerHTML = Math.ceil(pay/<?php echo $qq3479015851_global["cfg_coin_fee"];?>);
+        $obj('mustpay').innerHTML = Math.ceil(pay/<?php echo $SystemGlobalcfm_global["cfg_coin_fee"];?>);
     }
     setMustPay();
     //

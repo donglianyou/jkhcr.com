@@ -11,7 +11,7 @@ function CheckSubmit()
 	return true;
 }
 </script>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%"  border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td width="40" align="center" valign="top">类型ID</td>

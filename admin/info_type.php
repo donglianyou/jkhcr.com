@@ -2,9 +2,9 @@
 
 define('CURSCRIPT', 'info_type');
 require_once dirname(__FILE__) . '/global.php';
-require_once QQ3479015851_INC . '/db.class.php';
+require_once SysGlbCfm_INC . '/db.class.php';
 $part = ($part ? $part : 'option_list');
-(!(defined('IN_ADMIN')) || !(defined('QQ3479015851'))) && exit('Access Denied');
+(!(defined('IN_ADMIN')) || !(defined('SysGlbCfm'))) && exit('Access Denied');
 
 if ($admin_cityid) {
 	write_msg('您没有权限访问该页！');
@@ -12,7 +12,7 @@ if ($admin_cityid) {
 
 if ($part == 'option_list') {
 	chk_admin_purview('purview_字段管理');
-	require_once QQ3479015851_DATA . '/info.type.inc.php';
+	require_once SysGlbCfm_DATA . '/info.type.inc.php';
 	$classid = ($classid ? $classid : $db->getOne('SELECT MAX(classid) FROM `' . $db_qq3479015851 . 'info_typeoptions`'));
 	$here = '信息分类字段';
 	$options = $db->getAll('SELECT * FROM `' . $db_qq3479015851 . 'info_typeoptions` WHERE classid =\'0\' ORDER BY displayorder DESC');
@@ -111,7 +111,7 @@ else if ($part == 'option_edit') {
 				}
 			}
 		}
-		require_once QQ3479015851_DATA . '/info.type.inc.php';
+		require_once SysGlbCfm_DATA . '/info.type.inc.php';
 		include qq3479015851_tpl('info_option_edit');
 		break;
 	}
@@ -169,19 +169,19 @@ else if ($part == 'option_type') {
 			write_msg('请填写类型名称');
 		}
 
-		$qq3479015851_in = $db->query('INSERT `' . $db_qq3479015851 . 'info_typeoptions` (title,classid) VALUES (\'' . $title . '\',\'0\')');
+		$SystemGlobalcfm_in = $db->query('INSERT `' . $db_qq3479015851 . 'info_typeoptions` (title,classid) VALUES (\'' . $title . '\',\'0\')');
 		write_msg('字段模型分类' . $title . '添加成功！', '?part=option_type', 'MYMPS.COM.CN');
 		break;
 
 	case 'update':
 		empty($title) && write_msg('请填写类型名称');
-		$qq3479015851_rs = $db->query('UPDATE `' . $db_qq3479015851 . 'info_typeoptions` SET title = \'' . $title . '\' WHERE optionid = \'' . $id . '\'');
+		$SystemGlobalcfm_rs = $db->query('UPDATE `' . $db_qq3479015851 . 'info_typeoptions` SET title = \'' . $title . '\' WHERE optionid = \'' . $id . '\'');
 		write_msg('字段模型分类' . $title . '修改成功！', '?part=option_type', 'MYMPS.COM.CN');
 		break;
 
 	case 'del':
 		empty($id) && write_msg('您还没有选定编号');
-		$qq3479015851_del = qq3479015851_delete('info_typeoptions', 'WHERE optionid = \'' . $id . '\'');
+		$SystemGlobalcfm_del = qq3479015851_delete('info_typeoptions', 'WHERE optionid = \'' . $id . '\'');
 		write_msg('字段模型分类' . $id . '删除成功！', '?part=option_type', 'WWW.MYMPS.COM.CN');
 		break;
 
@@ -362,7 +362,7 @@ else if ($part == 'mod') {
 }
 
 is_object($db) && $db->Close();
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 function get_type_option($identifier = '')
 {
 	global $var_type;
@@ -387,12 +387,12 @@ function mb_unserialize_qq_3479015851($serial_str) {
 
 function get_qq3479015851_admin_info_type($rules = '')
 {
-	global $qq3479015851_admin_info_type;
+	global $SystemGlobalcfm_admin_info_type;
 	global $edit;
 	global $rules;
 	global $var_type;
 
-	foreach ($qq3479015851_admin_info_type as $k => $value ) {
+	foreach ($SystemGlobalcfm_admin_info_type as $k => $value ) {
 		$estyle = ($edit[type] != $k ? 'style="display:none"' : '');
 		$str .= '<div id="style_' . $k . '" ' . $estyle . ' class="mytable"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="vbm"><tr class="firstr"><td colspan="2">' . $var_type[$k] . '(' . $k . ')</td></tr>' . $value . '</table></div>';
 	}

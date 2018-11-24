@@ -7,12 +7,11 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 function updatecaches(){
 	@set_time_limit(0);
-	global $db,$db_qq3479015851,$qq3479015851_global;
+	global $db,$db_qq3479015851,$SystemGlobalcfm_global;
 	clear_cache_files();
 	write_admin_cache();
 	updateadvertisement();
@@ -29,7 +28,7 @@ function updatecaches(){
 }
 
 function get_changecity_cities(){
-	global $db,$db_qq3479015851,$qq3479015851_global;
+	global $db,$db_qq3479015851,$SystemGlobalcfm_global;
 	$FinalArray = read_static_cache('changecity_cities');
 	if($FinalArray === false){
 		$all = $db -> getAll("SELECT firstletter FROM `{$db_qq3479015851}city` WHERE `status` = '1' GROUP BY firstletter");
@@ -47,7 +46,7 @@ function get_changecity_cities(){
 						$FinalArray['all'][$v][$val['cityid']]['cityid'] = $val['cityid'];
 						$FinalArray['all'][$v][$val['cityid']]['cityname'] = $val['cityname'];
 						$FinalArray['all'][$v][$val['cityid']]['ifhot'] = $val['ifhot'];
-						$FinalArray['all'][$v][$val['cityid']]['domain'] = $val['domain'] ? $val['domain'] : $qq3479015851_global['SiteUrl'].$qq3479015851_global['cfg_citiesdir'].'/'.$val['directory'].'/';
+						$FinalArray['all'][$v][$val['cityid']]['domain'] = $val['domain'] ? $val['domain'] : $SystemGlobalcfm_global['SiteUrl'].$SystemGlobalcfm_global['cfg_citiesdir'].'/'.$val['directory'].'/';
 					}
 				}
 			}
@@ -95,7 +94,7 @@ function write_plugin_cache(){
 	write_static_cache('plugin',$res);
 	clear_cache_files('pluginmenu_admin');
 	clear_cache_files('pluginmenu_member');
-	@include QQ3479015851_DATA.'/caches/plugin.php';
+	@include SysGlbCfm_DATA.'/caches/plugin.php';
 	if(is_array($data)){
 		foreach($data as $key => $val){
 			if($val['disable'] != 1){
@@ -109,7 +108,7 @@ function write_plugin_cache(){
 }
 
 function get_changeprovince_cities(){
-	global $db,$db_qq3479015851,$qq3479015851_global;
+	global $db,$db_qq3479015851,$SystemGlobalcfm_global;
 	$FinalArray = read_static_cache('changeprovince_cities');
 	if($FinalArray === false){
 		$all = $db -> getAll("SELECT provinceid,provincename FROM `{$db_qq3479015851}province` ORDER BY displayorder ASC");
@@ -132,7 +131,7 @@ function get_changeprovince_cities(){
 						$FinalArray['all'][$v][$val['cityid']]['cityid'] = $val['cityid'];
 						$FinalArray['all'][$v][$val['cityid']]['cityname'] = $val['cityname'];
 						$FinalArray['all'][$v][$val['cityid']]['ifhot'] = $val['ifhot'];
-						$FinalArray['all'][$v][$val['cityid']]['domain'] = $val['domain'] ? $val['domain'] : $qq3479015851_global['SiteUrl'].$qq3479015851_global['cfg_citiesdir'].'/'.$val['directory'].'/';
+						$FinalArray['all'][$v][$val['cityid']]['domain'] = $val['domain'] ? $val['domain'] : $SystemGlobalcfm_global['SiteUrl'].$SystemGlobalcfm_global['cfg_citiesdir'].'/'.$val['directory'].'/';
 					}
 				}
 			}
@@ -146,7 +145,7 @@ function get_changeprovince_cities(){
 }
 
 function get_hot_cities(){
-	global $db,$db_qq3479015851,$qq3479015851_global;
+	global $db,$db_qq3479015851,$SystemGlobalcfm_global;
 	$FinalArray = read_static_cache('hot_cities');
 	if($FinalArray === false){
 		$query = $db -> query("SELECT * FROM `{$db_qq3479015851}city` WHERE ifhot = '1' AND `status` = '1' ORDER BY displayorder ASC");
@@ -155,7 +154,7 @@ function get_hot_cities(){
 			$FinalArray['hot'][$row['cityid']]['citypy'] = $row['citypy'];
 			$FinalArray['hot'][$row['cityid']]['cityname'] = $row['cityname'];
 			$FinalArray['hot'][$row['cityid']]['directory'] = $row['directory'];
-			$FinalArray['hot'][$row['cityid']]['domain'] = $row['domain'] ? $row['domain'] : $qq3479015851_global['SiteUrl'].$qq3479015851_global['cfg_citiesdir'].'/'.$row['directory'].'/';
+			$FinalArray['hot'][$row['cityid']]['domain'] = $row['domain'] ? $row['domain'] : $SystemGlobalcfm_global['SiteUrl'].$SystemGlobalcfm_global['cfg_citiesdir'].'/'.$row['directory'].'/';
 		}
 		
 		write_static_cache('hot_cities',$FinalArray);
@@ -169,7 +168,7 @@ function get_nearby_cities( $provinceid = NULL )
 {
 	global $db;
 	global $db_qq3479015851;
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	if ( $provinceid )
 	{
 		$query = $db->query( "SELECT * FROM `".$db_qq3479015851."city` WHERE provinceid = '".$provinceid."' AND `status` = '1' ORDER BY displayorder ASC LIMIT 0,19" );
@@ -179,7 +178,7 @@ function get_nearby_cities( $provinceid = NULL )
 						$FinalArray[$row['cityid']]['citypy'] = $row['citypy'];
 						$FinalArray[$row['cityid']]['cityname'] = $row['cityname'];
 						$FinalArray[$row['cityid']]['directory'] = $row['directory'];
-						$FinalArray[$row['cityid']]['domain'] = $row['domain'] ? $row['domain'] : $qq3479015851_global['SiteUrl'].$qq3479015851_global['cfg_citiesdir']."/".$row['directory']."/";
+						$FinalArray[$row['cityid']]['domain'] = $row['domain'] ? $row['domain'] : $SystemGlobalcfm_global['SiteUrl'].$SystemGlobalcfm_global['cfg_citiesdir']."/".$row['directory']."/";
 		}
 		return $FinalArray;
 	}
@@ -300,8 +299,8 @@ function write_cron_cache(){
 	$content = "<?php\r\n";
     $content .= "\$m_cron = " . var_export($res, true) . ";\r\n";
     $content .= "?>";
-	if(!createfile(QQ3479015851_DATA.'/cron.cache.php',$content)){
-		write_msg(QQ3479015851_DATA.'/cron.cache.php 文件不可写，请检查相应权限');
+	if(!createfile(SysGlbCfm_DATA.'/cron.cache.php',$content)){
+		write_msg(SysGlbCfm_DATA.'/cron.cache.php 文件不可写，请检查相应权限');
 	}
 }
 
@@ -368,20 +367,20 @@ function update_config_cache(){
 		$res[$row['description']] = $row['value'];
 	}
 	$content = "<?php\r\n";
-    $content .= "\$qq3479015851_global = " . var_export($res, true) . ";\r\n";
+    $content .= "\$SystemGlobalcfm_global = " . var_export($res, true) . ";\r\n";
     $content .= "?>";
-	if(!createfile(QQ3479015851_DATA.'/config.php',$content)){
-		write_msg(QQ3479015851_DATA.'/config.php 文件不可写，请检查相应权限！');
+	if(!createfile(SysGlbCfm_DATA.'/config.php',$content)){
+		write_msg(SysGlbCfm_DATA.'/config.php 文件不可写，请检查相应权限！');
 	}
 }
 
 function write_htmlstyle_cache($style = 'news'){
 	global $db,$db_qq3479015851;
 	$row = $db->getRow("SELECT value FROM `{$db_qq3479015851}config` WHERE description = 'glb_html_".$style."'");
-	$qq3479015851 .= "<?php\n";
-	$qq3479015851 .= "\$htmlstyle[$style] = '$row[value]';\n";
-	$qq3479015851 .= "?>";
-	!createfile(QQ3479015851_DATA.'/html_style.inc.php',$qq3479015851) && write_msg(QQ3479015851_DATA."/html_style.inc.php 文件不可写，请检查相应权限");
+	$SystemGlobalcfm .= "<?php\n";
+	$SystemGlobalcfm .= "\$htmlstyle[$style] = '$row[value]';\n";
+	$SystemGlobalcfm .= "?>";
+	!createfile(SysGlbCfm_DATA.'/html_style.inc.php',$SystemGlobalcfm) && write_msg(SysGlbCfm_DATA."/html_style.inc.php 文件不可写，请检查相应权限");
 }
 
 /**
@@ -397,15 +396,15 @@ function clear_tpl_files($is_cache = 1, $ext = '')
 {
     $dirs = array();
     if ($is_cache == 1){
-        $dirs[] = QQ3479015851_DATA . '/caches/';
+        $dirs[] = SysGlbCfm_DATA . '/caches/';
     }elseif($is_cache == 2){
-        $dirs[] = QQ3479015851_DATA . '/pagesinfo/';
+        $dirs[] = SysGlbCfm_DATA . '/pagesinfo/';
     } elseif($is_cache == 3){
-		$dirs[] = QQ3479015851_DATA . '/templates/';
+		$dirs[] = SysGlbCfm_DATA . '/templates/';
 	}elseif($is_cache == 4){
-        $dirs[] = QQ3479015851_DATA . '/pageslist/';
+        $dirs[] = SysGlbCfm_DATA . '/pageslist/';
     }elseif($is_cache == 5){
-        $dirs[] = QQ3479015851_DATA . '/pagesqq3479015851/';
+        $dirs[] = SysGlbCfm_DATA . '/pagesqq3479015851/';
     }
     $str_len = strlen($ext);
     $count   = 0;
@@ -505,7 +504,7 @@ function read_static_cache($cache_name){
     if (!empty($result[$cache_name])){
         return $result[$cache_name];
     }
-    $cache_file_path = QQ3479015851_DATA . '/caches/' . $cache_name . '.php';
+    $cache_file_path = SysGlbCfm_DATA . '/caches/' . $cache_name . '.php';
     if (file_exists($cache_file_path)){
         include_once($cache_file_path);
         $result[$cache_name] = $data;
@@ -519,7 +518,7 @@ function write_static_cache($cache_name, $caches){
     if ((DEBUG_MODE & 2) == 2){
         return false;
     }
-    $cache_file_path = QQ3479015851_DATA . '/caches/' . $cache_name . '.php';
+    $cache_file_path = SysGlbCfm_DATA . '/caches/' . $cache_name . '.php';
     $content = "<?php\r\n";
     $content .= "\$data = " . var_export($caches, true) . ";\r\n";
     $content .= "?>";
@@ -619,7 +618,7 @@ function get_tpl_index(){
 }
 
 function get_city_caches($cityid=0){
-	global $db,$db_qq3479015851,$qq3479015851_global,$tpl_index,$timestamp;
+	global $db,$db_qq3479015851,$SystemGlobalcfm_global,$tpl_index,$timestamp;
 	
 	if(!$tpl_index){
 		$tpl_index = get_tpl_index();
@@ -668,7 +667,7 @@ function get_city_caches($cityid=0){
 			$list['citypy'] = '';
 			$list['cityname'] = '';
 			$list['directory'] = '';
-			$list['domain'] = $qq3479015851_global['SiteUrl'].'/';
+			$list['domain'] = $SystemGlobalcfm_global['SiteUrl'].'/';
 			$list['mappoint'] = '';
 			$list['firstletter'] = '';
 			$list['title'] = '';
@@ -710,7 +709,7 @@ function get_city_caches($cityid=0){
 }
 
 function get_allcities($cityid=0){
-	global $db,$db_qq3479015851,$qq3479015851_global;
+	global $db,$db_qq3479015851,$SystemGlobalcfm_global;
 	$data = read_static_cache('allcities');
 	if($data === false){
 		$query = $db -> query("SELECT * FROM `{$db_qq3479015851}city` WHERE `status` = '1' ORDER BY firstletter ASC,displayorder ASC");
@@ -722,7 +721,7 @@ function get_allcities($cityid=0){
 			$res[$row['cityid']]['firstletter'] = $row['firstletter'];
 			$res[$row['cityid']]['mappoint'] = $row['mappoint'];
 			$res[$row['cityid']]['ifhot'] = $row['ifhot'];
-			$res[$row['cityid']]['domain'] = $row['domain'] ? $row['domain'] : $qq3479015851_global['SiteUrl'].$qq3479015851_global['cfg_citiesdir'].'/'.$row['directory'].'/';
+			$res[$row['cityid']]['domain'] = $row['domain'] ? $row['domain'] : $SystemGlobalcfm_global['SiteUrl'].$SystemGlobalcfm_global['cfg_citiesdir'].'/'.$row['directory'].'/';
 			$res[$row['cityid']]['title'] = $row['title'];
 			$res[$row['cityid']]['keywords'] = $row['keywords'];
 			$res[$row['cityid']]['description'] = $row['description'];
@@ -741,15 +740,15 @@ function get_cityoptions($cityid=''){
 	
 	foreach($citycaches as $k => $v){
 		if(is_array($cityid)){
-			$qq3479015851 .= in_array($k,$cityid) ? '<option value="'.$v[cityid].'" selected>' : '<option value="'.$v[cityid].'">';
+			$SystemGlobalcfm .= in_array($k,$cityid) ? '<option value="'.$v[cityid].'" selected>' : '<option value="'.$v[cityid].'">';
 		} else {
-			$qq3479015851 .= $cityid == $k ? '<option value="'.$v[cityid].'" selected>' : '<option value="'.$v[cityid].'" '.$disabled.'>';
+			$SystemGlobalcfm .= $cityid == $k ? '<option value="'.$v[cityid].'" selected>' : '<option value="'.$v[cityid].'" '.$disabled.'>';
 		}
-		$qq3479015851 .= $v['firstletter'].'.'.$v['cityname'];
-		$qq3479015851 .= '</option>';
+		$SystemGlobalcfm .= $v['firstletter'].'.'.$v['cityname'];
+		$SystemGlobalcfm .= '</option>';
 	}
 	unset($citycaches);
-	return $qq3479015851;
+	return $SystemGlobalcfm;
 }
 
 
@@ -765,12 +764,12 @@ function get_areaoptions( $cityid = 0, $areaid = 0 )
 	{
 		foreach ( $city['area'] as $k => $v )
 		{
-			$qq3479015851 .= $areaid == $v['areaid'] ? "<option value=\"".$v[areaid]."\" selected>" : "<option value=\"".$v[areaid]."\">";
-			$qq3479015851 .= $v['areaname'];
-			$qq3479015851 .= "</option>";
+			$SystemGlobalcfm .= $areaid == $v['areaid'] ? "<option value=\"".$v[areaid]."\" selected>" : "<option value=\"".$v[areaid]."\">";
+			$SystemGlobalcfm .= $v['areaname'];
+			$SystemGlobalcfm .= "</option>";
 		}
 	}
-	return $qq3479015851;
+	return $SystemGlobalcfm;
 }
 
 

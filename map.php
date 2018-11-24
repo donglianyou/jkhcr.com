@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 error_reporting(E_ALL^E_NOTICE);
 __FILE__ == '' && die('Fatal error code: 0');
@@ -31,7 +30,7 @@ if (isset($_REQUEST['GLOBALS']) OR isset($_FILES['GLOBALS'])) {
 if(function_exists('date_default_timezone_set')) date_default_timezone_set('Hongkong');
 
 define('CURSCRIPT', 'map');
-define('QQ3479015851',true);
+define('SysGlbCfm',true);
 define('CURRENTDIR',dirname(__FILE__));
 
 require_once CURRENTDIR.'/data/config.php';
@@ -50,18 +49,18 @@ if(!in_array($action,array('show','markpoint'))) $action = 'show';
 $cityname = isset($_GET['cityname']) ? trim(mhtmlspecialchars($_GET['cityname'])) : 'beijing';
 $documentdomain = isset($_GET['documentdomain']) ? trim(mhtmlspecialchars($_GET['documentdomain'])) : 0;
 $title = isset($_GET['title']) ? checkhtml($_GET['title']) : '您标注的位置';
-$level = is_numeric($_GET['level']) ? intval($_GET['level']) : (is_numeric($qq3479015851_global['mapview_level']) ? $qq3479015851_global['mapview_level'] : 10);
+$level = is_numeric($_GET['level']) ? intval($_GET['level']) : (is_numeric($SystemGlobalcfm_global['mapview_level']) ? $SystemGlobalcfm_global['mapview_level'] : 10);
 $width = isset($_GET['width']) ? intval($_GET['width']) : 500;
 $height = isset($_GET['height']) ? intval($_GET['height']) : 500;
 $markpoint = isset($_GET['markpoint']) ? intval($_GET['markpoint']) : 0;
 
-if((!$p1 || !$p2) && !empty($qq3479015851_global['cfg_mappoint'])) {
+if((!$p1 || !$p2) && !empty($SystemGlobalcfm_global['cfg_mappoint'])) {
 	$key = 1;
-	list($p1,$p2) = explode(',',$qq3479015851_global['cfg_mappoint']);
+	list($p1,$p2) = explode(',',$SystemGlobalcfm_global['cfg_mappoint']);
 }
 
-$mapflag = $qq3479015851_global['mapflag'] ? $qq3479015851_global['mapflag'] : 'baidu';
+$mapflag = $SystemGlobalcfm_global['mapflag'] ? $SystemGlobalcfm_global['mapflag'] : 'baidu';
 $version = 1.1;
 include CURRENTDIR.'/template/box/map.html';
-$qq3479015851_global = $mapflag = $width = $height = $title = $level = $action = $p1 = $areacode = $p2 = NULL;
+$SystemGlobalcfm_global = $mapflag = $width = $height = $title = $level = $action = $p1 = $areacode = $p2 = NULL;
 ?>

@@ -7,13 +7,12 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('IN_AJAX', true);
 @header('Content-Type: text/html; charset=utf-8');
 
-if (!(defined('QQ3479015851'))) {
+if (!(defined('SysGlbCfm'))) {
 	exit();
 }
 
@@ -26,7 +25,7 @@ $total_fee = $money;
 $out_trade_no = ($ddno ? $ddno : $timestamp);
 $subject = ($charset == 'gbk' ? iconv('gbk', 'utf-8', $productname) : $productname);
 $body = $out_trade_no;
-$show_url = $qq3479015851_global['SiteUrl'] . '/m/index.php?mod=member&action=pay';
+$show_url = $SystemGlobalcfm_global['SiteUrl'] . '/m/index.php?mod=member&action=pay';
 $return_url = $PayReturnUrlQz . '/include/payment/alipay_h5/payend.php';
 $notify_url = $PayReturnUrlQz . '/include/payment/alipay_h5/notify.php';
 if (empty($s_uid) || empty($uid)) {

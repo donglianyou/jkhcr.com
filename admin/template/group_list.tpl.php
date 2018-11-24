@@ -4,7 +4,7 @@ $admindir = getcwdOL();
 ?>
 
 <form action="?" method="get">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">搜索符合条件的团购活动</td>
@@ -42,7 +42,7 @@ $admindir = getcwdOL();
 </form>
 <form action="?part=list" method="post">
 <input name="url" type="hidden" value="<?=GetUrl()?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm" >
     <tr class="firstr">
     <td width="30">&nbsp;</td>
@@ -59,10 +59,10 @@ $admindir = getcwdOL();
 <?php foreach($group AS $row){?>
     <tr bgcolor="white" >
     <td><input type='checkbox' name='selectedids[]' value="<?=$row['groupid']?>" class='checkbox' id="<?=$row['groupid']?>"></td>
-    <td><img src="<?=$qq3479015851_global['SiteUrl'].$row['pre_picture']?>" width="60"></td>
+    <td><img src="<?=$SystemGlobalcfm_global['SiteUrl'].$row['pre_picture']?>" width="60"></td>
     <td><a href="../group.php?id=<?=$row[groupid]?>" target="_blank"><?=$row['gname']?></a></td>
     <td><a href="javascript:void(0);" onclick="
-setbg('<?=QQ3479015851_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$row[userid]?>&admindir=<?=$admindir?>')"><?=$row[userid]?></a></td>
+setbg('<?=SysGlbCfm_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$row[userid]?>&admindir=<?=$admindir?>')"><?=$row[userid]?></a></td>
     <td><em><?php echo GetTime($row['dateline']); ?></em></td>
     <td><?=$row['displayorder']?></td>
     <td>&nbsp;<?=$row['signintotal']?></td>

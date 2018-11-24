@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 error_reporting(32767 ^ 8);
 @header('Content-Type: text/html; charset=utf-8');
@@ -17,19 +16,19 @@ if (function_exists('date_default_timezone_set')) {
 	date_default_timezone_set('Hongkong');
 }
 
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 define('WXLOGIN', 1);
 define('WXLOGINDIR', dirname(__FILE__));
-@define('QQ3479015851_ROOT', ereg_replace('[/\\]{1,}', '/', substr(WXLOGINDIR, 0, -15)));
-define('QQ3479015851_DATA', QQ3479015851_ROOT . '/data');
-define('QQ3479015851_INC', QQ3479015851_ROOT . 'include');
-require_once QQ3479015851_DATA . '/config.php';
-require_once QQ3479015851_DATA . '/config.db.php';
-require_once QQ3479015851_INC . '/db.class.php';
-require_once QQ3479015851_INC . '/common.fun.php';
-require_once QQ3479015851_INC . '/openlogin.fun.php';
-require_once QQ3479015851_INC . '/cache.fun.php';
-require_once QQ3479015851_ROOT . '/member/include/common.func.php';
+@define('SysGlbCfm_ROOT', ereg_replace('[/\\]{1,}', '/', substr(WXLOGINDIR, 0, -15)));
+define('SysGlbCfm_DATA', SysGlbCfm_ROOT . '/data');
+define('SysGlbCfm_INC', SysGlbCfm_ROOT . 'include');
+require_once SysGlbCfm_DATA . '/config.php';
+require_once SysGlbCfm_DATA . '/config.db.php';
+require_once SysGlbCfm_INC . '/db.class.php';
+require_once SysGlbCfm_INC . '/common.fun.php';
+require_once SysGlbCfm_INC . '/openlogin.fun.php';
+require_once SysGlbCfm_INC . '/cache.fun.php';
+require_once SysGlbCfm_ROOT . '/member/include/common.func.php';
 $timestamp = time();
 
 if (!(pcclient())) {
@@ -39,7 +38,7 @@ else {
 	$_GET['mod'] = 'pc';
 }
 
-session_save_path(QQ3479015851_DATA . '/sessions');
+session_save_path(SysGlbCfm_DATA . '/sessions');
 $code = (isset($_GET['code']) ? trim(htmlspecialchars($_GET['code'])) : '');
 $actionkey = (isset($_GET['actionkey']) ? trim(htmlspecialchars($_GET['actionkey'])) : '');
 $data = read_static_cache('wxlogin');
@@ -55,7 +54,7 @@ $json_obj_more = get_wxuser_more();
 $prelogo = $json_obj_more['headimgurl'];
 $logo = $prelogo;
 $row = $db->getRow('SELECT userid,userpwd FROM `' . $db_qq3479015851 . 'member` WHERE `openid_wx` = \'' . $openid . '\'');
-require_once QQ3479015851_INC . '/member.class.php';
+require_once SysGlbCfm_INC . '/member.class.php';
 
 if (is_array($row)) {
 	$userid = $row['userid'];
@@ -63,14 +62,14 @@ if (is_array($row)) {
 	$db->query('UPDATE `' . $db_qq3479015851 . 'member` SET logintime=\'' . $timestamp . '\' WHERE userid = \'' . $userid . '\' ');
 
 	if (PASSPORT_TYPE == 'phpwind') {
-		require QQ3479015851_ROOT . '/pw_client/uc_client.php';
+		require SysGlbCfm_ROOT . '/pw_client/uc_client.php';
 		$user_login = uc_user_login($userid, $userpwd, 0);
 		$member_log->in($userid, $userpwd, 'off', 'noredirect');
 		echo $user_login['synlogin'];
 	}
 	else if (PASSPORT_TYPE == 'ucenter') {
 		$member_log->in($userid, $userpwd, 'off', 'noredirect');
-		require QQ3479015851_ROOT . '/uc_client/client.php';
+		require SysGlbCfm_ROOT . '/uc_client/client.php';
 		list($uid, $username, $password, $email) = uc_user_login($userid, $userpwd);
 		echo uc_user_synlogin($uid);
 	}
@@ -80,10 +79,10 @@ if (is_array($row)) {
 
 	$db->query('INSERT INTO `' . $db_qq3479015851 . 'member_wx` (`actionkey`,`openid`,`userid`,`userpwd`)VALUES (\'' . $actionkey . '\',\'' . $openid . '\',\'' . $userid . '\',\'' . $userpwd . '\')');
 	if (!(pcclient()) && ($view != 'pc')) {
-		echo qq3479015851_goto($qq3479015851_global['SiteUrl'] . '/m/index.php?mod=member');
+		echo qq3479015851_goto($SystemGlobalcfm_global['SiteUrl'] . '/m/index.php?mod=member');
 	}
 	else {
-		echo qq3479015851_goto($qq3479015851_global['SiteUrl'] . '/member/index.php');
+		echo qq3479015851_goto($SystemGlobalcfm_global['SiteUrl'] . '/member/index.php');
 	}
 }
 else {
@@ -99,10 +98,10 @@ else {
 	$member_log->in($userid, $userpwd, 'off', 'noredirect');
 	$db->query('INSERT INTO `' . $db_qq3479015851 . 'member_wx` (`actionkey`,`openid`,`userid`,`userpwd`)VALUES (\'' . $actionkey . '\',\'' . $openid . '\',\'' . $userid . '\',\'' . $userpwd . '\')');
 	if (!(pcclient()) && ($view != 'pc')) {
-		echo qq3479015851_goto($qq3479015851_global['SiteUrl'] . '/m/index.php?mod=member');
+		echo qq3479015851_goto($SystemGlobalcfm_global['SiteUrl'] . '/m/index.php?mod=member');
 	}
 	else {
-		echo qq3479015851_goto($qq3479015851_global['SiteUrl'] . '/member/index.php');
+		echo qq3479015851_goto($SystemGlobalcfm_global['SiteUrl'] . '/member/index.php');
 	}
 }
 

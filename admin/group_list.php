@@ -12,8 +12,8 @@
 `*/
 define( "CURSCRIPT", "group" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+require_once( SysGlbCfm_INC."/db.class.php" );
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }
@@ -22,8 +22,8 @@ $id = isset( $id ) ? intval( $id ) : "";
 chk_admin_purview( "purview_已发起团购" );
 if ( !submit_check( CURSCRIPT."_submit" ) )
 {
-				require_once( QQ3479015851_ROOT."/plugin/group/include/functions.php" );
-				require_once( QQ3479015851_DATA."/grouplevel.inc.php" );
+				require_once( SysGlbCfm_ROOT."/plugin/group/include/functions.php" );
+				require_once( SysGlbCfm_DATA."/grouplevel.inc.php" );
 				$here = ( $part == "edit" ? "修改" : "" )."已发起的团购活动";
 				if ( $part == "edit" )
 				{
@@ -88,8 +88,8 @@ else
 												}
 												foreach ( $delete as $k => $v )
 												{
-																@unlink( QQ3479015851_ROOT.$v['picture'] );
-																@unlink( QQ3479015851_ROOT.$v['pre_picture'] );
+																@unlink( SysGlbCfm_ROOT.$v['picture'] );
+																@unlink( SysGlbCfm_ROOT.$v['pre_picture'] );
 												}
 												$db->query( "DELETE FROM `".$db_qq3479015851."group` WHERE groupid ".$create_in );
 												unset( $delete );
@@ -161,13 +161,13 @@ else
 								$displayorder = intval( $displayorder );
 								if ( $_FILES[$name_file]['name'] )
 								{
-												require_once( QQ3479015851_INC."/upfile.fun.php" );
+												require_once( SysGlbCfm_INC."/upfile.fun.php" );
 												$destination = "/group/".date( "Ym" )."/";
 												check_upimage($name_file);
-												$qq3479015851_image = start_upload( $name_file, $destination, 0, $qq3479015851_qq3479015851['cfg_group_limit']['width'], $qq3479015851_qq3479015851['cfg_group_limit']['height'], $picture, $pre_picture );
-												$picture = $qq3479015851_image[0];
-												$pre_picture = $qq3479015851_image[1];
-												unset( $qq3479015851_image );
+												$SystemGlobalcfm_image = start_upload( $name_file, $destination, 0, $SystemGlobalcfm_qq3479015851['cfg_group_limit']['width'], $SystemGlobalcfm_qq3479015851['cfg_group_limit']['height'], $picture, $pre_picture );
+												$picture = $SystemGlobalcfm_image[0];
+												$pre_picture = $SystemGlobalcfm_image[1];
+												unset( $SystemGlobalcfm_image );
 								}
 								unset( $name_file );
 								$db->query( "UPDATE `".$db_qq3479015851."group` SET gname='".$gname."',des='".$des."',content='".$content."',cate_id='".$cate_id."',areaid='".$areaid."',gaddress='".$gaddress."',picture='".$picture."',pre_picture='".$pre_picture."',meetdate='".$meetdate."',enddate='".$enddate."',dateline='".$timestamp."',mastername='".$mastername."',masterqq='".$masterqq."',glevel='".$glevel."',signintotal='".$signintotal."',glevel='".$glevel."',commenturl='".$commenturl."',biztype='".$biztype."',othercontent='".$othercontent."',displayorder='".$displayorder."' WHERE groupid = '".$id."'" );

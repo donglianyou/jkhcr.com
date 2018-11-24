@@ -2,7 +2,7 @@
 <form action="plugin.php" method="post" name="form1">
 <input name="op" value="edit" type="hidden">
 <input name="id" value="<?=$id?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%" cellspacing="0" cellpadding="0" class="vbm">
       <tr class="firstr">
         <td colspan="5">

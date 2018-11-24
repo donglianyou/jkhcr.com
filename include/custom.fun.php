@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 function custom($flag = '', $js = 'html')
 {
@@ -17,7 +16,7 @@ function custom($flag = '', $js = 'html')
 	global $jswizard_lists;
 	global $jssettings;
 	global $jscharset;
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	global $charset;
 	global $timestamp;
 
@@ -28,12 +27,12 @@ function custom($flag = '', $js = 'html')
 	$jswizard_lists = array();
 	$data = '';
 	$allowflag = '';
-	include QQ3479015851_ROOT . '/data/caches/jswizard_lists.php';
+	include SysGlbCfm_ROOT . '/data/caches/jswizard_lists.php';
 	$jswizard_lists = $data;
 	unset($data);
 	!(in_array($flag, array_keys($jswizard_lists))) && exit(html2js('NO flag exists!'));
-	require_once QQ3479015851_ROOT . '/include/cache.fun.php';
-	@include QQ3479015851_ROOT . '/data/caches/jswizard_settings.php';
+	require_once SysGlbCfm_ROOT . '/include/cache.fun.php';
+	@include SysGlbCfm_ROOT . '/data/caches/jswizard_settings.php';
 	$jssettings = $data;
 	unset($data);
 
@@ -48,12 +47,12 @@ function custom($flag = '', $js = 'html')
 		exit($js == 'js' ? html2js('<font color=red>Referer restriction is taking effect.</font>') : '<font color=red>Referer restriction is taking effect.</font>');
 	}
 
-	$cachefile = QQ3479015851_ROOT . '/data/caches/custom_' . $flag . '.php';
+	$cachefile = SysGlbCfm_ROOT . '/data/caches/custom_' . $flag . '.php';
 	$expiration = NULL;
 	@include $cachefile;
 	if (!($expiration) || ($timestamp <= $expiration)) {
-		require_once QQ3479015851_ROOT . '/data/config.db.php';
-		require_once QQ3479015851_ROOT . '/include/db.class.php';
+		require_once SysGlbCfm_ROOT . '/data/config.db.php';
+		require_once SysGlbCfm_ROOT . '/include/db.class.php';
 		$customtag = customtag($flag);
 		$writedata = procdata($customtag);
 
@@ -85,7 +84,7 @@ function customtag($flag = '')
 	global $jswizard_lists;
 	global $jssettings;
 	global $jscharset;
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	global $charset;
 	global $timestamp;
 	$parameter = $jswizard_lists[$flag]['parameter'];
@@ -137,7 +136,7 @@ function customtag($flag = '')
 			$keyword = '';
 		}
 
-		require_once QQ3479015851_ROOT . '/data/info_special.inc.php';
+		require_once SysGlbCfm_ROOT . '/data/info_special.inc.php';
 		$sql = ($catid ? ' AND t.catid IN (\'' . $catid . '\')' : '') . $keyword . ($ids ? ' AND t.id IN (\'' . $ids . '\')' : '') . ($areaid ? ' AND t.areaid IN (\'' . $areaid . '\')' : '');
 		if (is_array($special) && ($special != array('1', '2', '3', '4', '5', '6', '7', '8', '9'))) {
 			foreach ($special as $k => $v ) {
@@ -194,7 +193,7 @@ function customtag($flag = '')
 			$datalist[$data['id']]['img_path'] = $data['img_path'];
 			$datalist[$data['id']]['catnamelength'] = strlen($datalist[$data['id']]['catname']);
 			$datalist[$data['id']]['title'] = (isset($data['title']) ? str_replace('\'', '&nbsp;', addslashes($data['title'])) : NULL);
-			$datalist[$data['id']]['link'] = $qq3479015851_global[SiteUrl] . Rewrite('info', array('id' => $data['id'], 'dir_typename' => $data['dir_typename'], 'areaid' => $data['areaid']));
+			$datalist[$data['id']]['link'] = $SystemGlobalcfm_global[SiteUrl] . Rewrite('info', array('id' => $data['id'], 'dir_typename' => $data['dir_typename'], 'areaid' => $data['areaid']));
 			$datalist[$data['id']]['begintime'] = date($jsdateformat, $data['begintime']);
 			$datalist[$data['id']]['hit'] = $data['hit'];
 			$datalist[$data['id']]['ifbold'] = $data['ifbold'];
@@ -226,7 +225,7 @@ function customtag($flag = '')
 				$replace['{introduce}'] = $val['introduce'];
 				$replace['{author}'] = $val['author'];
 				$replace['{hit}'] = $val['hit'];
-				$replace['{imgpath}'] = $qq3479015851_global['SiteUrl'] . ($val['img_path'] ? $val['img_path'] : '/images/nophoto.gif');
+				$replace['{imgpath}'] = $SystemGlobalcfm_global['SiteUrl'] . ($val['img_path'] ? $val['img_path'] : '/images/nophoto.gif');
 				$writedata .= str_replace(array_keys($replace), $replace, $jstemplate);
 			}
 		}
@@ -257,14 +256,14 @@ function customtag($flag = '')
 				$SubjectStyles .= ($val['is_commend'] == 1 ? 'color: red;' : NULL);
 				$SubjectStyles .= '\'';
 				$val['title'] = cutstr($val['title'], $maxlength);
-				$replace['{link}'] = $qq3479015851_global['SiteUrl'] . $val['uri'];
+				$replace['{link}'] = $SystemGlobalcfm_global['SiteUrl'] . $val['uri'];
 				$replace['{title}'] = '<a title=' . $val['title'] . ' href=\'' . $val['uri'] . '\' ' . $SubjectStyles . ' ' . $target . '>' . $val['title'] . '</a>';
 				$replace['{title_nolink}'] = $val['title'];
 				$replace['{catname}'] = '<a href=\'' . $val['caturi'] . '\'  ' . $target . '>' . $val['catname'] . '</a>';
 				$replace['{begintime}'] = date($jsdateformat, $val['begintime']);
 				$replace['{introduce}'] = str_replace(array('\'', "\n", "\r"), array('&nbsp;', '', ''), addslashes(cutstr(mhtmlspecialchars(preg_replace('/(\\[.+\\])/s', '', strip_tags(nl2br($val['content'])))), 255)));
 				$replace['{hit}'] = $val['hit'];
-				$replace['{imgpath}'] = $qq3479015851_global['SiteUrl'] . ($val['imgpath'] ? $val['imgpath'] : '/images/nophoto.gif');
+				$replace['{imgpath}'] = $SystemGlobalcfm_global['SiteUrl'] . ($val['imgpath'] ? $val['imgpath'] : '/images/nophoto.gif');
 				$writedata .= str_replace(array_keys($replace), $replace, $jstemplate);
 			}
 		}
@@ -293,7 +292,7 @@ function customtag($flag = '')
 		if (is_array($datalist)) {
 			foreach ($datalist as $t => $val ) {
 				$val['tname'] = cutstr($val['tname'], $maxlength);
-				$replace['{link}'] = $qq3479015851_global['SiteUrl'] . $val['uri'];
+				$replace['{link}'] = $SystemGlobalcfm_global['SiteUrl'] . $val['uri'];
 				$replace['{tname}'] = '<a title=' . $val['tname'] . ' href=\'' . $val['uri'] . '\' ' . $target . '>' . $val['tname'] . '</a>';
 				$replace['{tname_nolink}'] = $val['tname'];
 				$replace['{jointime}'] = date($jsdateformat, $val['jointime']);
@@ -303,7 +302,7 @@ function customtag($flag = '')
 				$replace['{tel}'] = $val['tel'];
 				$replace['{address}'] = $val['address'];
 				$replace['{userid}'] = $val['userid'];
-				$replace['{prelogo}'] = $qq3479015851_global['SiteUrl'] . $val['prelogo'];
+				$replace['{prelogo}'] = $SystemGlobalcfm_global['SiteUrl'] . $val['prelogo'];
 				$writedata .= str_replace(array_keys($replace), $replace, $jstemplate);
 			}
 		}
@@ -348,8 +347,8 @@ function customtag($flag = '')
 				$replace['{oldprice}'] = $val['oldprice'];
 				$replace['{nowprice}'] = $val['nowprice'];
 				$replace['{userid}'] = $val['userid'];
-				$replace['{picture}'] = $qq3479015851_global['SiteUrl'] . $val['picture'];
-				$replace['{prepicture}'] = $qq3479015851_global['SiteUrl'] . $val['prepicture'];
+				$replace['{picture}'] = $SystemGlobalcfm_global['SiteUrl'] . $val['picture'];
+				$replace['{prepicture}'] = $SystemGlobalcfm_global['SiteUrl'] . $val['prepicture'];
 				$writedata .= str_replace(array_keys($replace), $replace, $jstemplate);
 			}
 		}
@@ -357,7 +356,7 @@ function customtag($flag = '')
 		break;
 	}
 
-	unset($qq3479015851_global);
+	unset($SystemGlobalcfm_global);
 	return parsenode($writedata);
 }
 
@@ -394,8 +393,8 @@ function UpdateCache($cachefile, $data = '')
 	}
 
 	$fp = @fopen($cachefile, 'wb');
-	$cachedata = 'if(!defined(\'QQ3479015851\')) exit(\'Access Denied\');' . "\n" . '$expiration = \'' . ($timestamp + $jscachelife) . '\';' . "\n" . $data . "\n";
-	@fwrite($fp, '<?php' . "\n" . '//QQ3479015851 cache file, DO NOT modify me!' . "\n" . '//Created: ' . date('M j, Y, G:i') . "\n" . '//Identify: ' . md5(basename($cachefile) . $cachedata) . "\n\n" . $cachedata . '?>');
+	$cachedata = 'if(!defined(\'SysGlbCfm\')) exit(\'Access Denied\');' . "\n" . '$expiration = \'' . ($timestamp + $jscachelife) . '\';' . "\n" . $data . "\n";
+	@fwrite($fp, '<?php' . "\n" . '//SysGlbCfm cache file, DO NOT modify me!' . "\n" . '//Created: ' . date('M j, Y, G:i') . "\n" . '//Identify: ' . md5(basename($cachefile) . $cachedata) . "\n\n" . $cachedata . '?>');
 	@fclose($fp);
 }
 

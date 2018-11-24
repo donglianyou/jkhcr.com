@@ -1,6 +1,6 @@
 <? include qq3479015851_tpl('inc_head');?>
 <script type="text/javascript" src="/template/global/messagebox.js"></script>
-<div id="<?=QQ3479015851_SOFTNAME?>" style=" padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style=" padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -15,7 +15,7 @@
 <form name='form1' method='post' action='?part=<?=$part?>' onSubmit='return checkSubmit();'>
 <input name="url" type="hidden" value="<?=GetUrl()?>">
 <input name="action" type="hidden" value="delall">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td width="60"><input name="checkall" type="checkbox" id="checkall" onClick="CheckAll(this.form)" class="checkbox"/>删?</td>

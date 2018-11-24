@@ -7,16 +7,15 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('IN_SMT',true);
 define('CURSCRIPT','about');
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 require_once dirname(__FILE__).'/include/global.php';
 require_once dirname(__FILE__)."/data/config.php";
-require_once QQ3479015851_DATA.'/config.db.php';
-require_once QQ3479015851_INC.'/db.class.php';
+require_once SysGlbCfm_DATA.'/config.db.php';
+require_once SysGlbCfm_INC.'/db.class.php';
 
 ifsiteopen();
 (!$part || !in_array($part,array('aboutus','friendlink','faq','announce','sitemap','googlemap'))) && $part = 'aboutus';
@@ -46,7 +45,7 @@ if($action == 'dopost'){
 }
 
 $cache = get_cache_config();
-require_once QQ3479015851_INC.'/cachepages.class.php';
+require_once SysGlbCfm_INC.'/cachepages.class.php';
 
 if($part == 'aboutus'){
 	
@@ -92,7 +91,7 @@ if($part == 'aboutus'){
 	if(!$faq 	= get_faq($id)) write_msg('您指定的帮助主题不存在！');
 	$loc	  	= get_location('faq','',$faq['title']);
 } elseif($part == 'friendlink'){
-	require QQ3479015851_INC."/flink.fun.php" ;
+	require SysGlbCfm_INC."/flink.fun.php" ;
 	
 	$cachepages = new cachepages($cache['friendlink']['time'],'friendlink_'.$cityid);
 	$cachetime = $cache['friendlink']['time'] > 0 ? true : false;

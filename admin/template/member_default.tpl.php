@@ -13,7 +13,7 @@ $(function(){
 </script>
 <script language="javascript" src="js/vbm.js"></script>
 
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -28,7 +28,7 @@ $(function(){
 <form action="member.php" method="get">
 <input type='hidden' name='part' value='default'/>
 <input name="if_corp" value="<?=$if_corp?>" type="hidden" />
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="4">搜索符合条件的<?php echo $if_corp == '0' ? '个人会员' : '商家会员'; ?> <label for="moreoptions"><input name="moreoptions" value="yes" type="checkbox" class="checkbox" onclick="blocknone('showtbody');" id="moreoptions" <?php if($moreoptions == 'yes') echo 'checked'?>>全部条件</label></td>
@@ -101,7 +101,7 @@ $(function(){
 <form name='form1' method='post' action='member.php' onSubmit='return checkSubmit();'>
 <input type='hidden' name='part' value='default'/>
 <input name="url" type="hidden" value="<?=GetUrl()?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td width="30">选择</td>
@@ -122,7 +122,7 @@ $(function(){
       <td><input type='checkbox' name='id[]' value='<?=$member[id]?>' class='checkbox' id="<?=$member[id]?>" <?php if($userid) echo ' checked ';?>></td>
       <td><?=$member[id]?></td>
 	  <td><a href="javascript:void(0);" onclick="
-setbg('<?=QQ3479015851_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$member[userid]?>&admindir=<?=$admindir?>')"><?=$member[userid]?></a></td>
+setbg('<?=SysGlbCfm_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$member[userid]?>&admindir=<?=$admindir?>')"><?=$member[userid]?></a></td>
 	  <? if($if_corp == 1){?><td><?php if($member['if_corp'] == 1 && $member['ifindex'] == 2){ echo '[<a href="?ifindex=2&if_corp=1" style="color:red" title="首页推荐">首页</a>] ';}?><?php if($member['if_corp'] == 1 && $member['iflist'] == 2){ echo '[<a href="?iflist=2&if_corp=1" style="color:#ff6600" title="列表推荐">列表</a>] ';}?><font color="#000"><?=$member[tname]?></font></td><? }?>
       <td>
 	  <?php if($member['per_certify'] == 1){?><img src="../images/person1.gif" align="absmiddle" title="已通过身份证认证"/><?php }else{?><img src="../images/person0.gif" align="absmiddle" title="未通过身份证认证"/><? }?>

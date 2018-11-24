@@ -1,5 +1,5 @@
 <?php include qq3479015851_tpl('inc_head');?>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -13,7 +13,7 @@
 </div>
 <form action="?part=badwords" method="post" name="form1">
 <input name="action" value="dopost" type="hidden"/>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
 <td colspan="5">

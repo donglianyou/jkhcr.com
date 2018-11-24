@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-!(defined('QQ3479015851')) && exit('FORBIDDEN');
+!(defined('SysGlbCfm')) && exit('FORBIDDEN');
 function get_member_cat($cat_arr = '', $ifnone = true)
 {
 	$option .= ($ifnone == false ? '<select id="catid" datatype="limit" require="true" msg="请选择所属分类" class=input name=catid>' : '<select id="catid" datatype="limit" require="true" msg="请选择所属分类" class=input name="catid[]">');

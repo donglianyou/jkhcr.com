@@ -1,5 +1,5 @@
 <?php include qq3479015851_tpl('inc_head');?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
 	<td>检索公告</td>
@@ -25,7 +25,7 @@
 </tr>
 </table>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <form name='form1' method='post' action='announce.php' onSubmit='return checkSubmit();'>
     <input type='hidden' name='part' value='delall'/>

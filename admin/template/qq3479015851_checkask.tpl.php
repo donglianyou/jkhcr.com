@@ -1,5 +1,5 @@
 <?php include qq3479015851_tpl('inc_head');?>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -11,7 +11,7 @@
 		</div>
 	</div>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">相关说明</td>
@@ -28,7 +28,7 @@
 <div class="clear"></div>
 <form action="?part=checkask" method="post">
 <input name="action" type="hidden" value="do_post">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
     	<td colspan="2">验证问答设置</td>
@@ -39,7 +39,7 @@
     </tr>
 </table>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td colspan="3">验证问答及答案设置</td>

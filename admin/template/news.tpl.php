@@ -26,7 +26,7 @@ function NewsAdd(){
 <title><?php echo $part == 'edit' ? '修改文章' : '增加文章'?></title>
 </head>
 <body <?php if($row[isjump] == 1){?>onload='HidUrlTr()'<?php }?>>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -38,7 +38,7 @@ function NewsAdd(){
 		</div>
 	</div>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">技巧提示</td>
@@ -55,7 +55,7 @@ function NewsAdd(){
 <form name="form1" action="?part=<?php echo $part; ?>" method="post" onSubmit="return NewsAdd();">
 <input type="hidden" name="id" value="<?=$row[id]?>">
 <input type="hidden" name="html_path" value="<?php echo $row[html_path] == '/html/news'? '' : $row['html_path']?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
 	<td colspan="2">常规内容</td>
@@ -91,7 +91,7 @@ function NewsAdd(){
 </tr>
 <tr style="background-color:#FFF;" >
   <td width="135">&nbsp;来源：</td>
-  <td colspan="2"><input name="from" type="text" class="text" value="<?=$row[source]?$row[source]:$qq3479015851_global[SiteName]?>" style="width:300px"/>
+  <td colspan="2"><input name="from" type="text" class="text" value="<?=$row[source]?$row[source]:$SystemGlobalcfm_global[SiteName]?>" style="width:300px"/>
   </td>
 </tr>
 <tr style=" background-color:#FFF"> 

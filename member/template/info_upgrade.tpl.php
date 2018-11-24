@@ -4,7 +4,7 @@
 <script language="javascript" src="template/javascript.js"></script>
 
 </head>
-<body class="<?php echo $qq3479015851_global['cfg_tpl_dir']; ?>">
+<body class="<?php echo $SystemGlobalcfm_global['cfg_tpl_dir']; ?>">
 <div class="container">
 
 	<?php include qq3479015851_tpl('inc_head');?>
@@ -28,21 +28,21 @@
 			<td>
 			<div class="upgradetd">
                 <div class="introTitle"><span style="color:#F30;" class="t1">首页置顶</span><br>
-<span class="t2">1天仅需<?=$qq3479015851_global[cfg_member_upgrade_index_top]?>金币</span></div>
+<span class="t2">1天仅需<?=$SystemGlobalcfm_global[cfg_member_upgrade_index_top]?>金币</span></div>
                 <div class="t3">在网站<font color="#FF3300">首页最醒目位置</font>轮播展示您发布的信息,吸引全场眼球！</div>
             </div>
             </td>
 			<td>
             <div class="upgradetd" style="margin-left:5px">
                 <div class="introTitle"><span style="color:#369;" class="t1">大类置顶</span><br>
-<span class="t2">1天仅需<?=$qq3479015851_global[cfg_member_upgrade_top]?>金币</span></div>
+<span class="t2">1天仅需<?=$SystemGlobalcfm_global[cfg_member_upgrade_top]?>金币</span></div>
                 <div class="t3">显示在大类类目列表页面的<font color="#FF3300">最顶部位置</font>，吸引更多关注！</div>
             </div>
             </td>
 			<td>
 			<div class="upgradetd" style="margin-left:5px">
                 <div class="introTitle"><span style="color:green;" class="t1">小类置顶</span><br>
-<span class="t2">1天仅需<?=$qq3479015851_global[cfg_member_upgrade_list_top]?>金币</span></div>
+<span class="t2">1天仅需<?=$SystemGlobalcfm_global[cfg_member_upgrade_list_top]?>金币</span></div>
                 <div class="t3">显示在小类类目列表页面的<font color="#FF3300">最顶部位置</font>，吸引更多关注！</div>
             </div>
             </td>
@@ -98,11 +98,11 @@
                 var ID1=document.getElementById("upgrade_time").value; 
                 var ID2=document.getElementById("total").value;
                 if(ID0 == "cfg_member_upgrade_top"){
-                    document.getElementById("total").innerHTML=(<?php echo $qq3479015851_global[cfg_member_upgrade_top]?>*ID1);
+                    document.getElementById("total").innerHTML=(<?php echo $SystemGlobalcfm_global[cfg_member_upgrade_top]?>*ID1);
                 }else if(ID0 == "cfg_member_upgrade_list_top"){
-                    document.getElementById("total").innerHTML=(<?php echo $qq3479015851_global[cfg_member_upgrade_list_top]?>*ID1);
+                    document.getElementById("total").innerHTML=(<?php echo $SystemGlobalcfm_global[cfg_member_upgrade_list_top]?>*ID1);
                 }else{
-                    document.getElementById("total").innerHTML=(<?php echo $qq3479015851_global[cfg_member_upgrade_index_top]?>*ID1);
+                    document.getElementById("total").innerHTML=(<?php echo $SystemGlobalcfm_global[cfg_member_upgrade_index_top]?>*ID1);
                 }
                 
                 if(ID0==""||ID1=="") 

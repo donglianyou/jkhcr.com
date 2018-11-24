@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-<title><?=$here?>  - powered by <?=QQ3479015851_SOFTNAME?></title>
-<link href='template/css/<?=QQ3479015851_SOFTNAME?>.css' rel='stylesheet' type='text/css'>
+<title><?=$here?>  - powered by <?=SysGlbCfm_SOFTNAME?></title>
+<link href='template/css/<?=SysGlbCfm_SOFTNAME?>.css' rel='stylesheet' type='text/css'>
 <style>
 body{ font-family:Arial, Helvetica, sans-serif!important;}
 </style>
@@ -11,7 +11,7 @@ body{ font-family:Arial, Helvetica, sans-serif!important;}
 <script type='text/javascript' src='js/loading.js'></script>
 <script src="js/jquery.172.min.js" type="text/javascript"></script>
 <script language="javascript">
-var current_domain = '<?php echo $qq3479015851_global[SiteUrl]; ?>';
+var current_domain = '<?php echo $SystemGlobalcfm_global[SiteUrl]; ?>';
 ifcheck = true;
 function AllCheck(type, form, value, checkall, changestyle) {
 	var checkall = checkall ? checkall : 'chkall';

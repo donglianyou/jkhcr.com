@@ -23,7 +23,7 @@ tr{ background-color:#f5fbff}
     <input name="id" value="<?=$post[id]?>" type="hidden">
     <input name="ismember" value="<?=$post[ismember]?>" type="hidden">
     <input name="userid" value="<?=$post[userid]?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%" cellspacing="0" cellpadding="0" class="vbm">
       <tr class="firstr">
         <td colspan="5">
@@ -80,7 +80,7 @@ tr{ background-color:#f5fbff}
 	  <?=$acontent?>
 	  </div>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%" cellspacing="0" cellpadding="0" class="vbm">
       <tr class="firstr">
       <td colspan="3">
@@ -113,7 +113,7 @@ tr{ background-color:#f5fbff}
       </table>
 </div>
 <?php if($post[upload_img]){?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%" cellspacing="0" cellpadding="0" class="vbm">
      <tr class="firstr">
         <td colspan="3">
@@ -131,7 +131,7 @@ tr{ background-color:#f5fbff}
     </table>
 </div>
 <?php }?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%" cellspacing="0" cellpadding="0" class="vbm">
      <tr class="firstr">
         <td colspan="3">

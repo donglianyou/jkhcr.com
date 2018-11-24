@@ -1,6 +1,6 @@
 <?php include qq3479015851_tpl('inc_head');?>
 <script type='text/javascript' src='js/vbm.js'></script>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">技巧提示</td>
@@ -16,7 +16,7 @@
 </table>
 </div>
 <form name="cpform" method="post" action="?part=restore&action=dodelete">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
 <td width="50"><input type="checkbox" name="chkall" id="chkall" class="checkbox" onclick="CheckAll(this.form)" /><label for="chkall">删?</label></td>

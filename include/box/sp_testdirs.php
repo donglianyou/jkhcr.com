@@ -7,11 +7,10 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-!(defined('QQ3479015851')) && exit('FORBIDDEN');
-require_once QQ3479015851_DATA . '/sp_testdirs.php';
-include QQ3479015851_ROOT . '/template/box/sp_testdirs.html';
+!(defined('SysGlbCfm')) && exit('FORBIDDEN');
+require_once SysGlbCfm_DATA . '/sp_testdirs.php';
+include SysGlbCfm_ROOT . '/template/box/sp_testdirs.html';
 
 ?>

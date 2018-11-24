@@ -2,7 +2,7 @@
 <html lang="zh-CN" class="index_page">
 <head>
 	{template header}
-	<title>我的文章 - {$qq3479015851_global[SiteName]}</title>
+	<title>我的文章 - {$SystemGlobalcfm_global[SiteName]}</title>
 	<link type="text/css" rel="stylesheet" href="template/css/global.css">
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
 	<link type="text/css" rel="stylesheet" href="template/css/member.css">
@@ -10,7 +10,7 @@
     
 </head>
 
-<body class="{$qq3479015851_global[cfg_tpl_dir]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]}">
 <div class="wrapper">
 
 	{template header_search}
@@ -23,13 +23,13 @@
 
 	<div class="my_docu">
     <ul>
-    	{loop $list $qq3479015851}
-        <li id="info{$qq3479015851[id]}">
-        	<div class="img"><img src="{$qq3479015851[pre_picture]}"></div>
-            <h3><a href="index.php?mod=goods&id={$qq3479015851[goodsid]}">{echo cutstr($qq3479015851[goodsname],40)}</a></h3>
+    	{loop $list $SystemGlobalcfm}
+        <li id="info{$SystemGlobalcfm[id]}">
+        	<div class="img"><img src="{$SystemGlobalcfm[pre_picture]}"></div>
+            <h3><a href="index.php?mod=goods&id={$SystemGlobalcfm[goodsid]}">{echo cutstr($SystemGlobalcfm[goodsname],40)}</a></h3>
             <dl class="cfix">
-             <dt style="color:#f30">价格：&yen;{$qq3479015851[nowprice]}</dt>
-             <dd><del>原价：&yen;{$qq3479015851[oldprice]}</del></dd>
+             <dt style="color:#f30">价格：&yen;{$SystemGlobalcfm[nowprice]}</dt>
+             <dd><del>原价：&yen;{$SystemGlobalcfm[oldprice]}</del></dd>
             </dl>
         </li>
         {/loop}

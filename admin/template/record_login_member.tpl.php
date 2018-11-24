@@ -2,7 +2,7 @@
 $admindir = getcwdOL();
 ?>
 <script type="text/javascript" src="../template/global/messagebox.js"></script>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">检索指定用户名的登录日志</td>
@@ -21,7 +21,7 @@ $admindir = getcwdOL();
   </tr>
 </table>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <form name='form1' method='post' action='?do=<?=$do?>&part=<?=$part?>' onSubmit='return checkSubmit();'>
     <input type='hidden' name='action' value='delall'/>
@@ -45,7 +45,7 @@ foreach($record AS $k)
     <tr align="center" bgcolor="white">
     <td><input type='checkbox' class="checkbox" name='id[]' value='<?=$k[id]?>' id="<?=$k[id]?>"></td>
     <td><a href="javascript:
-setbg('<?=QQ3479015851_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$k[userid]?>&admindir=<?=$admindir?>')"><?=$k[userid]?></a></td>
+setbg('<?=SysGlbCfm_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$k[userid]?>&admindir=<?=$admindir?>')"><?=$k[userid]?></a></td>
     <td><?=$k[ip]?></td>
 	<td><?=$k[ip2area]?></td>
 	<td><?=$k[port]?></td>

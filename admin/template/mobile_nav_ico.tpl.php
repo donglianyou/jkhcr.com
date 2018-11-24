@@ -5,7 +5,7 @@
 .altbg1{ background-color:#f1f5f8; width:45%;}
 .ico{ width:28px; height:28px;}
 </style>
-<div id="<?=QQ3479015851_SOFTNAME?>" style=" padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style=" padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -19,7 +19,7 @@
 </div>
 
 <?php if($type == 'nav_ico'){?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">技巧提示</td>
@@ -37,7 +37,7 @@
 <form method="post" action="?">
 <input type="hidden" name="type" value="<?=$type?>">
 <input name="return_url" value="<?php echo GetUrl();?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
     <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
     <td colspan="8"><b>手机版导航设置</b></td>
@@ -61,7 +61,7 @@
           <td bgcolor="white" width="60px">
           <input name="isviewids[<?=$value[id]?>]" value="2" type="checkbox" class="checkbox" <?php if($value['isview'] == '2'){echo 'checked';}?>></td>
           <td bgcolor="white">
-<? if($value[ico]){?><img class="ico" src="<?=$qq3479015851_global[SiteUrl]?><?=$value[ico]?>"> <? }?><input name="navico[<?=$value[id]?>]" value="<?=$value[ico]?>" type="text" class="text" style="width:280px"/>
+<? if($value[ico]){?><img class="ico" src="<?=$SystemGlobalcfm_global[SiteUrl]?><?=$value[ico]?>"> <? }?><input name="navico[<?=$value[id]?>]" value="<?=$value[ico]?>" type="text" class="text" style="width:280px"/>
           </td>
           <td bgcolor="white">
 		  <input name="navtitle[<?=$value[id]?>]" value="<?=$value[title]?>" type="text" class="text" style="width:80px"/>

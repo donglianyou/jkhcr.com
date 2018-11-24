@@ -7,28 +7,27 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 error_reporting(32767 ^ 8);
 @header('Content-Type: text/html; charset=gbk');
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 define('QQLOGINDIR', dirname(__FILE__));
-@define('QQ3479015851_ROOT', ereg_replace('[/\\]{1,}', '/', substr(QQLOGINDIR, 0, -15)));
-define('QQ3479015851_DATA', QQ3479015851_ROOT . '/data');
-define('QQ3479015851_INC', QQ3479015851_ROOT . 'include');
-require_once QQ3479015851_DATA . '/config.php';
+@define('SysGlbCfm_ROOT', ereg_replace('[/\\]{1,}', '/', substr(QQLOGINDIR, 0, -15)));
+define('SysGlbCfm_DATA', SysGlbCfm_ROOT . '/data');
+define('SysGlbCfm_INC', SysGlbCfm_ROOT . 'include');
+require_once SysGlbCfm_DATA . '/config.php';
 
 if (function_exists('date_default_timezone_set')) {
 	date_default_timezone_set('Hongkong');
 }
 
-require_once QQ3479015851_DATA . '/config.db.php';
-require_once QQ3479015851_INC . '/db.class.php';
-require_once QQ3479015851_INC . '/common.fun.php';
-require_once QQ3479015851_INC . '/openlogin.fun.php';
-require_once QQ3479015851_INC . '/cache.fun.php';
-require_once QQ3479015851_ROOT . '/member/include/common.func.php';
+require_once SysGlbCfm_DATA . '/config.db.php';
+require_once SysGlbCfm_INC . '/db.class.php';
+require_once SysGlbCfm_INC . '/common.fun.php';
+require_once SysGlbCfm_INC . '/openlogin.fun.php';
+require_once SysGlbCfm_INC . '/cache.fun.php';
+require_once SysGlbCfm_ROOT . '/member/include/common.func.php';
 $timestamp = time();
 
 if (!pcclient()) {
@@ -45,12 +44,12 @@ get_openid();
 $openid = $_SESSION['openid'];
 
 if (empty($openid)) {
-	write_msg('登录失败，请返回重新登陆！', $qq3479015851_global[SiteUrl] . '/include/qqlogin/qq_login.php');
+	write_msg('登录失败，请返回重新登陆！', $SystemGlobalcfm_global[SiteUrl] . '/include/qqlogin/qq_login.php');
 }
 
 $row = NULL;
 $row = $db->getRow('SELECT userid,userpwd FROM `' . $db_qq3479015851 . 'member` WHERE openid = \'' . $openid . '\'');
-require_once QQ3479015851_INC . '/member.class.php';
+require_once SysGlbCfm_INC . '/member.class.php';
 
 if (is_array($row)) {
 	$userid = $row['userid'];
@@ -58,14 +57,14 @@ if (is_array($row)) {
 	$db->query('UPDATE `' . $db_qq3479015851 . 'member` SET logintime=\'' . $timestamp . '\' WHERE userid = \'' . $userid . '\' ');
 
 	if (PASSPORT_TYPE == 'phpwind') {
-		require QQ3479015851_ROOT . '/pw_client/uc_client.php';
+		require SysGlbCfm_ROOT . '/pw_client/uc_client.php';
 		$user_login = uc_user_login($userid, $userpwd, 0);
 		$member_log->in($userid, $userpwd, 'off', 'noredirect');
 		echo $user_login['synlogin'];
 	}
 	else if (PASSPORT_TYPE == 'ucenter') {
 		$member_log->in($userid, $userpwd, 'off', 'noredirect');
-		require QQ3479015851_ROOT . '/uc_client/client.php';
+		require SysGlbCfm_ROOT . '/uc_client/client.php';
 		list($uid, $username, $password, $email) = uc_user_login($userid, $userpwd);
 		echo uc_user_synlogin($uid);
 	}
@@ -74,10 +73,10 @@ if (is_array($row)) {
 	}
 
 	if (!pcclient() && ($view != 'pc')) {
-		echo qq3479015851_goto($qq3479015851_global['SiteUrl'] . '/m/index.php?mod=member');
+		echo qq3479015851_goto($SystemGlobalcfm_global['SiteUrl'] . '/m/index.php?mod=member');
 	}
 	else {
-		echo qq3479015851_goto($qq3479015851_global['SiteUrl'] . '/member/index.php');
+		echo qq3479015851_goto($SystemGlobalcfm_global['SiteUrl'] . '/member/index.php');
 	}
 }
 else {
@@ -90,7 +89,7 @@ else {
 		$email = $userid . '@qq3479015851.com.cn';
 
 		if (PASSPORT_TYPE == 'phpwind') {
-			require QQ3479015851_ROOT . '/pw_client/uc_client.php';
+			require SysGlbCfm_ROOT . '/pw_client/uc_client.php';
 			$checkuser = uc_check_username($userid);
 
 			if ($checkuser == -2) {
@@ -116,7 +115,7 @@ else {
 			echo $user_login['synlogin'];
 		}
 		else if (PASSPORT_TYPE == 'ucenter') {
-			require QQ3479015851_ROOT . '/uc_client/client.php';
+			require SysGlbCfm_ROOT . '/uc_client/client.php';
 			if ($activation && ($activeuser = uc_get_user($activation))) {
 				$userid = $activeuser[1];
 				$uid = $activeuser[0];
@@ -124,7 +123,7 @@ else {
 			else {
 				$user = $db->getRow('SELECT id,userid FROM `' . $db_qq3479015851 . 'member` WHERE userid = \'' . $userid . '\'');
 				if (uc_get_user($userid) && !$user['userid']) {
-					write_msg('该用户无需注册，请重新登录', $qq3479015851_global[SiteUrl] . '/' . $qq3479015851_global['cfg_member_logfile']);
+					write_msg('该用户无需注册，请重新登录', $SystemGlobalcfm_global[SiteUrl] . '/' . $SystemGlobalcfm_global['cfg_member_logfile']);
 				}
 
 				$uid = uc_user_register($userid, $userpwd, $email);
@@ -168,10 +167,10 @@ else {
 
 	$member_log->in($userid, $userpwd, 'off', 'noredirect');
 	if (!pcclient() && ($view != 'pc')) {
-		echo qq3479015851_goto($qq3479015851_global['SiteUrl'] . '/m/index.php?mod=member');
+		echo qq3479015851_goto($SystemGlobalcfm_global['SiteUrl'] . '/m/index.php?mod=member');
 	}
 	else {
-		echo qq3479015851_goto($qq3479015851_global['SiteUrl'] . '/member/index.php');
+		echo qq3479015851_goto($SystemGlobalcfm_global['SiteUrl'] . '/member/index.php');
 	}
 }
 function get_qquser_info()

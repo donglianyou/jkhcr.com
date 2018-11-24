@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040) -->
+<html><style type="text/css" id="2874124017"></style><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<meta charset="gbk">
+
+<title>模板标签语法 - Mymps模板制作/标签/参考手册 - 更多蚂蚁分类工具请进入QQ群:201809840</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./模板标签语法_files/jquery-1.9.1.min.js"></script>
+<link href="./模板标签语法_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./模板标签语法_files/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="./模板标签语法_files/docs.css" rel="stylesheet">
+<link href="./模板标签语法_files/prettify.css" rel="stylesheet">
+<!--[if lt IE 9]>
+  <script src="/assets/js/html5shiv.js"></script>
+<![endif]-->
+<style>
+.span9 h4{text-indent:2em;text-align:left;}
+.span9 p{text-indent:2em;text-align:left;}
+</style><script type="text/javascript" src="./模板标签语法_files/noerr.js"></script><script type="text/javascript" src="./模板标签语法_files/noright.js"></script><style>
+.code { font-family: Courier, Courier New; font-weight: normal; color:#000; font-size:12px;}
+</style><script type="text/javascript">
+function showb(i){
+	var a1 = document.getElementById('a1');
+	var a2 = document.getElementById('a2');
+	var a3 = document.getElementById('a3');
+	var a4 = document.getElementById('a4');
+	var a5 = document.getElementById('a5');
+	var ba1 = document.getElementById('ba1');
+	var ba2 = document.getElementById('ba2');
+	var ba3 = document.getElementById('ba3');
+	var ba4 = document.getElementById('ba4');
+	var ba5 = document.getElementById('ba5');
+	var a = document.getElementById(i);
+	var b = document.getElementById('b'+i);
+	a1.className='';
+	a2.className='';
+	a3.className='';
+	a4.className='';
+	a5.className='';
+	ba1.style.display='none';
+	ba2.style.display='none';
+	ba3.style.display='none';
+	ba4.style.display='none';
+	ba5.style.display='none';
+	a.className='active';
+	b.style.display='';
+}
+</script></head>
+
+
+
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="50">
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+        	            <li>
+              <a href="http://www.mymps.com.cn/doc/article.html">使用教程_QQ群:200641831</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/index.html">模板基础</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/structure.html">模板目录结构</a>
+            </li>
+                        <li class="active">
+              <a href="./模板标签语法_files/模板标签语法.html">标签语法</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/base.html">基本标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/senior.html">高级标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/diy.html">自定义标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/demo.html">调用示例</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/db.html">数据字典</a>
+            </li>
+                    </ul>
+      </div>
+    </div>
+  </div>
+</div>    <div class="jumbotron subhead" id="overview">
+    <div class="container">
+    <h1>模板标签语法</h1>
+    <p class="lead"> 蚂蚁CMS模板标签语法</p>
+    <div class="subnav">
+    <ul class="nav nav-pills">
+      
+            <li class="active" id="a1">
+              <a href="#" onclick="showb(&#39;a1&#39;);">引入模板文件</a>
+            </li>
+          
+            <li id="a2">
+              <a href="#" onclick="showb(&#39;a2&#39;);">逻辑判断/条件语句</a>
+            </li>
+            
+            <li id="a3">
+              <a href="#" onclick="showb(&#39;a3&#39;);">循环语法（可多重循环）</a>
+            </li>
+            
+            <li id="a4">
+              <a href="#" onclick="showb(&#39;a4&#39;);">直接执行php代码标签</a>
+            </li>
+            
+            <li id="a5">
+              <a href="#" onclick="showb(&#39;a5&#39;);">直接输出php变量</a>
+            </li>
+            
+      
+    </ul>
+    </div>
+    </div>
+    </div>
+    <div class="container">
+    <div class="row">
+    <div class="container" style="padding:10px 30px;">
+    	<div id="ba1">
+            <p>引入<b>/template/default</b>目录下inc_head.html的写法<br>inc_head对应<b>/template/default</b>目录下inc_head.html模板文件</p>
+            <div class="well code">
+            {mytemplate inc_head}
+            </div>
+            <p>引入<b>当前模板目录</b>下的inc_head.html<br>inc_head对应<b>当前模板目录下</b>的inc_head.html模板文件</p>
+            <div class="well code">
+            {template inc_head}
+            </div>
+    	</div>
+        <div id="ba2" style="display:none;">
+            <p>普通if语句写法</p>
+                <div class="well code">
+               {if $my_var}xxx{/if}
+                </div>
+                <p>带有分支条件的 if 写法</p>
+                <div class="well code">
+               {if $my_var}xxx{else}xxx{/if}
+                </div>
+                <p>带有多重分支条件的 if 写法</p>
+                <div class="well code">
+               {if $my_var}xxx{elseif}xxx{else}xxx{/if}
+                </div>
+                <p>带有多条件的 if 写法，可使用 PHP 常规判断中的按位运算符</p>
+                <div class="well code">
+               {if empty($mymps_global['SiteName']) &amp;&amp; $_GET['action'] == 'postinfo' &amp;&amp; empty($_GET['act']) }<br>&nbsp;&nbsp;任意 html 语句 <br>{/if}
+                </div>
+        </div>
+        <div id="ba3" style="display:none;">
+            <p>带有数组键的循环写法</p>
+                <div class="well code">
+               {loop $my_arr $k $mymps}<br>
+               {$mymps[title]}<br>
+               {/loop}
+                </div>
+                <p>不带数组键的循环写法</p>
+                <div class="well code">
+               {loop $my_arr $mymps}<br>
+               {$mymps[title]}<br>
+               {/loop}
+                </div>
+                <p>隔行输出的循环写法</p>
+                <div class="well code">
+               {php $i =1;}<br>
+               {loop $my_arr $mymps}<br>
+               &nbsp;&nbsp;{if $i%2 == 0}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;偶数行输出HTML语句<br>
+                &nbsp;&nbsp;{else}<br>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;奇数行输出HTML语句<br>
+                &nbsp;&nbsp;{/if}<br>
+                &nbsp;&nbsp;{php $i=$i+1;}<br>
+               {/loop}
+                </div>
+                <p>双重嵌套的循环写法</p>
+                <div class="well code">
+               {loop $my_arr $mymps}<br>
+               &nbsp;&nbsp;{loop $mymps $w}<br>
+               &nbsp;&nbsp;&nbsp;&nbsp;{$w[title]}<br>
+               &nbsp;&nbsp;{/loop}<br>
+               {/loop}
+                </div>
+               
+        </div>
+        <div id="ba4" style="display:none;">
+            <p>单行执行php代码标签</p>
+                <div class="well code">
+               {php echo $my_var;}<br>
+               {php $my_arr = array(1, 2, 3);}<br>
+               {php print_r($my_arr);}
+                </div>
+                <p>多行执行php代码标签代码以{php}开始，{/php}结尾</p>
+                <div class="well code">
+                {php}<br>
+                $my_arr = 'mayicms';<br>
+                echo $my_arr;<br>
+                $my_arr = array(1,2,3);<br>
+                print_r($my_arr);<br>
+                output();<br>
+                exit();<br>
+                {/php}
+                </div>
+        </div>
+        <div id="ba5" style="display:none;">
+            <p>直接输出php变量，效果等同于&lt;?php echo $my_var; ?&gt;</p>
+                <div class="well code">
+               {echo $my_var}
+                </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="footer">
+  <div class="container">
+    <p class="center">更多蚂蚁分类工具请进入QQ群:201809840</p>
+
+    <ul class="footer-links">
+      <li><a href="http://www.mymps.com.cn/" target="_blank">蚂蚁分类信息系统官网</a></li>
+      <li><a href="http://bbs.mymps.com.cn/">蚂蚁论坛</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<script src="./模板标签语法_files/bootstrap.min.js" language="javascript" type="text/javascript"></script>
+<script src="./模板标签语法_files/prettify.js"></script>
+<script src="./模板标签语法_files/application.js"></script>
+</body></html>

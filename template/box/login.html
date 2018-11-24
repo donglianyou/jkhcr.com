@@ -5,23 +5,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Language" content="zh-CN"/>
 <title>powered by cxkeji</title>
-<link href="<?=$qq3479015851_global['SiteUrl']?>/template/global/button.css" rel="stylesheet" type="text/css" />
-<script language="javascript" src="<?=$qq3479015851_global['SiteUrl']?>/template/default/js/login.js"></script>
+<link href="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/global/button.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/js/login.js"></script>
 </head>
 <body style="padding:20px 0px 10px 20px; font-size:14px; line-height:22px; color:#666; font-family:microsoft yahei;">
 <div style="float:left; width:290px; border-right:1px #eeeeee solid; margin-bottom:20px; ">
-<form name="formLogin" method="post" action="<?=$qq3479015851_global['SiteUrl']?>/<?php echo $qq3479015851_global['cfg_member_logfile']?>" target="_self" onSubmit="return submitForm();">
+<form name="formLogin" method="post" action="<?=$SystemGlobalcfm_global['SiteUrl']?>/<?php echo $SystemGlobalcfm_global['cfg_member_logfile']?>" target="_self" onSubmit="return submitForm();">
 <input name="mod" type="hidden" value="login">
 <input name="action" type="hidden" value="dopost">
 <?php
 if($gourl == 'seecontact'){
-	$url = $qq3479015851_global[SiteUrl].'/box.php?part=seecontact&infoid='.$infoid.'&if_view='.$if_view;
+	$url = $SystemGlobalcfm_global[SiteUrl].'/box.php?part=seecontact&infoid='.$infoid.'&if_view='.$if_view;
 }elseif($gourl == 'shoucang'){
-	$url = $qq3479015851_global[SiteUrl].'/box.php?part=shoucang&infoid='.$infoid;
+	$url = $SystemGlobalcfm_global[SiteUrl].'/box.php?part=shoucang&infoid='.$infoid;
 }elseif($gourl == 'delinfo'){
-	$url = $qq3479015851_global[SiteUrl].'/box.php?part=delinfo&id='.$id;
+	$url = $SystemGlobalcfm_global[SiteUrl].'/box.php?part=delinfo&id='.$id;
 }else{
-	$url = $qq3479015851_global[SiteUrl].'/box.php?part=upgrade&id='.$id.'&catid='.$catid;
+	$url = $SystemGlobalcfm_global[SiteUrl].'/box.php?part=upgrade&id='.$id.'&catid='.$catid;
 }
 $url = urlencode($url);
 ?>
@@ -42,7 +42,7 @@ $url = urlencode($url);
  </td>
  <tr>
  	<td>&nbsp;</td>
-	<td><img src="<?=$qq3479015851_global['SiteUrl']?>/<?=$qq3479015851_global['cfg_authcodefile']?>" alt="看不清，请点击刷新" class="authcode" align="absmiddle" onClick="this.src=this.src+'?'"/></td>
+	<td><img src="<?=$SystemGlobalcfm_global['SiteUrl']?>/<?=$SystemGlobalcfm_global['cfg_authcodefile']?>" alt="看不清，请点击刷新" class="authcode" align="absmiddle" onClick="this.src=this.src+'?'"/></td>
  </tr>
 <?}?>
   <tr>
@@ -58,7 +58,7 @@ $url = urlencode($url);
 </div>
 <div style="float:left; padding-left:15px; padding-bottom:6px; margin-top:10px;height:auto; overflow:auto; display:block; width:auto; color:#585858">
 	您需要登录方能进行后续操作<br /><br />还没有会员帐号？<br /><br />
-<input type="button" class="gray mini" onclick="window.open('<?=$qq3479015851_global['SiteUrl']?>/<?php echo $qq3479015851_global['cfg_member_logfile'];?>?mod=register')" value="立即注册">
+<input type="button" class="gray mini" onclick="window.open('<?=$SystemGlobalcfm_global['SiteUrl']?>/<?php echo $SystemGlobalcfm_global['cfg_member_logfile'];?>?mod=register')" value="立即注册">
 </div>
 </body>
 </html>

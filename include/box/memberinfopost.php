@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-!(defined('QQ3479015851')) && exit('FORBIDDEN');
-echo '<div style="font-size:12px; font-weight:100; margin:10px;">您还没有登录会员管理,本站并不强制要求你必须登录会员后才能发布信息<br /><br />但是注册会员后，您可以更方便地管理自己发布的信息，<a href="' . $qq3479015851_global['SiteUrl'] . '/' . $qq3479015851_global['cfg_member_logfile'] . '?url=' . $url . '" target=_top>点我登录</a></div>';
+!(defined('SysGlbCfm')) && exit('FORBIDDEN');
+echo '<div style="font-size:12px; font-weight:100; margin:10px;">您还没有登录会员管理,本站并不强制要求你必须登录会员后才能发布信息<br /><br />但是注册会员后，您可以更方便地管理自己发布的信息，<a href="' . $SystemGlobalcfm_global['SiteUrl'] . '/' . $SystemGlobalcfm_global['cfg_member_logfile'] . '?url=' . $url . '" target=_top>点我登录</a></div>';
 
 ?>

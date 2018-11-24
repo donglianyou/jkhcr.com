@@ -2,15 +2,15 @@
 <link rel="stylesheet" type="text/css" href="template/css/new.exchange.css" />
 <script language="javascript" src="template/javascript.js"></script>
 <style>
-.start0 { background:url('../template/default/<?=$qq3479015851_global[cfg_tpl_dir]?>/images/review_start.gif') no-repeat 0 -1px;  width:58px; height:15px; }
-.start1 { background:url('../template/default/<?=$qq3479015851_global[cfg_tpl_dir]?>/images/review_start.gif') no-repeat 0 -15px; width:58px; height:15px; }
-.start2 { background:url('../template/default/<?=$qq3479015851_global[cfg_tpl_dir]?>/images/review_start.gif') no-repeat 0 -29px; width:58px; height:15px; }
-.start3 { background:url('../template/default/<?=$qq3479015851_global[cfg_tpl_dir]?>/images/review_start.gif') no-repeat 0 -43px; width:58px; height:15px; }
-.start4 { background:url('../template/default/<?=$qq3479015851_global[cfg_tpl_dir]?>/images/review_start.gif') no-repeat 0 -57px; width:58px; height:15px; }
-.start5 { background:url('../template/default/<?=$qq3479015851_global[cfg_tpl_dir]?>/images/review_start.gif') no-repeat 0 -71px; width:58px; height:15px; }
+.start0 { background:url('../template/default/<?=$SystemGlobalcfm_global[cfg_tpl_dir]?>/images/review_start.gif') no-repeat 0 -1px;  width:58px; height:15px; }
+.start1 { background:url('../template/default/<?=$SystemGlobalcfm_global[cfg_tpl_dir]?>/images/review_start.gif') no-repeat 0 -15px; width:58px; height:15px; }
+.start2 { background:url('../template/default/<?=$SystemGlobalcfm_global[cfg_tpl_dir]?>/images/review_start.gif') no-repeat 0 -29px; width:58px; height:15px; }
+.start3 { background:url('../template/default/<?=$SystemGlobalcfm_global[cfg_tpl_dir]?>/images/review_start.gif') no-repeat 0 -43px; width:58px; height:15px; }
+.start4 { background:url('../template/default/<?=$SystemGlobalcfm_global[cfg_tpl_dir]?>/images/review_start.gif') no-repeat 0 -57px; width:58px; height:15px; }
+.start5 { background:url('../template/default/<?=$SystemGlobalcfm_global[cfg_tpl_dir]?>/images/review_start.gif') no-repeat 0 -71px; width:58px; height:15px; }
 </style>
 </head>
-<body class="<?php echo $qq3479015851_global['cfg_tpl_dir']; ?>">
+<body class="<?php echo $SystemGlobalcfm_global['cfg_tpl_dir']; ?>">
 <div class="container">
 
 	<?php include qq3479015851_tpl('inc_head');?>

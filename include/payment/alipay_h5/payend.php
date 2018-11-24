@@ -7,16 +7,15 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 define('IN_ADMIN', true);
 define('CURSCRIPT', 'payend');
 require_once dirname(__FILE__) . '/../../../include/global.php';
-require_once QQ3479015851_DATA . '/config.php';
-require_once QQ3479015851_DATA . '/config.db.php';
-require_once QQ3479015851_INC . '/db.class.php';
+require_once SysGlbCfm_DATA . '/config.php';
+require_once SysGlbCfm_DATA . '/config.db.php';
+require_once SysGlbCfm_INC . '/db.class.php';
 $editor = 1;
 
 if (!(mgetcookie('checkpaysession'))) {
@@ -40,7 +39,7 @@ $get_seller_email = rawurldecode($_GET['seller_email']);
 ksort($_GET);
 reset($_GET);
 if (($_GET['trade_status'] == 'TRADE_FINISHED') || ($_GET['trade_status'] == 'TRADE_SUCCESS') || ($_GET['trade_status'] == 'WAIT_BUYER_CONFIRM_GOODS') || ($_GET['trade_status'] == 'WAIT_SELLER_SEND_GOODS')) {
-	include QQ3479015851_INC . '/pay.fun.php';
+	include SysGlbCfm_INC . '/pay.fun.php';
 	$orderid = $_GET['trade_no'];
 	$ddno = $_GET['out_trade_no'];
 	$money = $_GET['total_fee'];
@@ -54,11 +53,11 @@ if (($_GET['trade_status'] == 'TRADE_FINISHED') || ($_GET['trade_status'] == 'TR
 
 	UpdatePayRecord($ddno, $paybz);
 	define('IN_AJAX', 1);
-	write_msg('您已成功充值 ' . ($money * $qq3479015851_global['cfg_coin_fee']) . ' 个金币', $qq3479015851_global['SiteUrl'] . '/m/index.php?mod=member');
+	write_msg('您已成功充值 ' . ($money * $SystemGlobalcfm_global['cfg_coin_fee']) . ' 个金币', $SystemGlobalcfm_global['SiteUrl'] . '/m/index.php?mod=member');
 }
 
 is_object($db) && $db->Close();
-$qq3479015851_global = NULL;
+$SystemGlobalcfm_global = NULL;
 function getHttpResponsePOST($url, $cacert_url, $para, $input_charset = '')
 {
 	if (trim($input_charset) != '') {

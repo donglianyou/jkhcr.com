@@ -12,7 +12,7 @@
 `*/
 define( "CURSCRIPT", "faq" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 if ( $admin_cityid )
 {
 				write_msg( "您没有权限访问该页！" );
@@ -157,5 +157,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 ?>

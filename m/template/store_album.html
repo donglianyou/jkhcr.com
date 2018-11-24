@@ -2,14 +2,14 @@
 <html lang="zh-CN" class="index_page">
 <head>
 	{template header}
-	<title>机构相册 - {$store[tname]} - {$qq3479015851_global[SiteName]}</title>
+	<title>机构相册 - {$store[tname]} - {$SystemGlobalcfm_global[SiteName]}</title>
 	<link type="text/css" rel="stylesheet" href="template/css/global.css">
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
     <link type="text/css" rel="stylesheet" href="template/css/store.css">
     <script>window['current'] = '{$navi[$action]}';</script>
 </head>
 
-<body class="{$qq3479015851_global[cfg_tpl_dir]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]}">
 <div class="wrapper">
 
     {template header_search}
@@ -24,8 +24,8 @@
     <div class="image_area_w" style="height:100%;">
         <div class="image_area">
             <ul>
-            {loop $album $qq3479015851}
-            <li><img src="{$qq3479015851_global[SiteUrl]}/{$qq3479015851[prepath]}" ref="{$qq3479015851_global[SiteUrl]}/images/nophoto.gif"></li>
+            {loop $album $SystemGlobalcfm}
+            <li><img src="{$SystemGlobalcfm_global[SiteUrl]}/{$SystemGlobalcfm[prepath]}" ref="{$SystemGlobalcfm_global[SiteUrl]}/images/nophoto.gif"></li>
             {/loop}
             </ul>
         </div>

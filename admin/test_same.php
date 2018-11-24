@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 function DelInfo( $id = "" )
 {
@@ -19,14 +18,14 @@ function DelInfo( $id = "" )
 								exit( );
 				}
 				$get_row = $db->getRow( "SELECT a.*,b.modid FROM `".$db_qq3479015851."information` AS a LEFT JOIN `".$db_qq3479015851."category` AS b ON a.catid = b.catid  WHERE a.id = '".$id."'" );
-				@unlink( QQ3479015851_ROOT.$get_row['html_path'] );
+				@unlink( SysGlbCfm_ROOT.$get_row['html_path'] );
 				if ( !empty( $get_row['img_path'] ) )
 				{
 								$del = $db->getAll( "SELECT path,prepath FROM `".$db_qq3479015851."info_img` WHERE infoid='".$id."'" );
 								foreach ( $del as $k => $v )
 								{
-												@unlink( QQ3479015851_ROOT.$v[path] );
-												@unlink( QQ3479015851_ROOT.$v[prepath] );
+												@unlink( SysGlbCfm_ROOT.$v[path] );
+												@unlink( SysGlbCfm_ROOT.$v[prepath] );
 								}
 								qq3479015851_delete( "info_img", "WHERE infoid = '".$id."'" );
 				}
@@ -40,8 +39,8 @@ function DelInfo( $id = "" )
 
 define( "CURSCRIPT", "test_same" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+require_once( SysGlbCfm_INC."/db.class.php" );
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }

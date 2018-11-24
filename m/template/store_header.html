@@ -1,13 +1,13 @@
-{if $action == 'index' && $store[banner]}<div class="gbanner" style='background-image:url("{$qq3479015851_global[SiteUrl]}{$store[banner]}")'></div>{/if}
+{if $action == 'index' && $store[banner]}<div class="gbanner" style='background-image:url("{$SystemGlobalcfm_global[SiteUrl]}{$store[banner]}")'></div>{/if}
 <div class="infobox">
     <div class="infoboximg"   pageTitle="商家相册">
-        <a href="javascript:void(0)"><img src='{$store[prelogo]}' onerror="this.src='{$qq3479015851_global[SiteUrl]}/images/nophoto.jpg'"/></a>
+        <a href="javascript:void(0)"><img src='{$store[prelogo]}' onerror="this.src='{$SystemGlobalcfm_global[SiteUrl]}/images/nophoto.jpg'"/></a>
     </div>
        
     <ul class="gsmc">
         <li><b>{echo $store[tname] ? $store[tname] : $store[userid];}</b></li> 
         <li>
-           <span class="dp_xx"><img src="{$qq3479015851_global[SiteUrl]}/images/credit/{$store[credits]}.gif"></span>
+           <span class="dp_xx"><img src="{$SystemGlobalcfm_global[SiteUrl]}/images/credit/{$store[credits]}.gif"></span>
         </li>
         <li>
         {if $store[per_certify] == 1}实名已认证<span class="smrz"></span>{else}实名未认证<span class="nosmrz"></span>{/if}&nbsp;&nbsp;
@@ -32,8 +32,8 @@
 
 <div class="select_01" id="wrapper2">
     <ul class="tab-hd" id="scroller2">
-        <!--{loop $navi $k $qq3479015851}-->
-        <li id="ele_{$k}" class="item {if $action == $k}current{/if}"><a href="index.php?mod=store&id={$store[id]}&action={$k}">{$qq3479015851}</a></li>
+        <!--{loop $navi $k $SystemGlobalcfm}-->
+        <li id="ele_{$k}" class="item {if $action == $k}current{/if}"><a href="index.php?mod=store&id={$store[id]}&action={$k}">{$SystemGlobalcfm}</a></li>
         <!--{/loop}-->
     </ul>
 </div>

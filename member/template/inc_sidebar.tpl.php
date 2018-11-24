@@ -5,7 +5,7 @@
             <div class="sidebarmenu-inner">
                 <div class="sidebarmenu-list">
                     <ul class="faceview">
-                    	<div class="img"><img src="<?php echo $qq3479015851_global['SiteUrl'].($face != '' ? $face : '/images/noavatar_small.gif')?>" alt="" width="66" height="66" /></div><?php echo $s_uid; ?>
+                    	<div class="img"><img src="<?php echo $SystemGlobalcfm_global['SiteUrl'].($face != '' ? $face : '/images/noavatar_small.gif')?>" alt="" width="66" height="66" /></div><?php echo $s_uid; ?>
                     </ul>
                     <ul class="index">
                     	<li <?php if($m != 'index'){?>onmouseover= "this.className= 'li_mouseover '; " onmouseout= "this.className= 'li_normal '; " <?php } if($m == 'index') echo 'class="current"';?>><a href="?type=<?php echo $type; ?>" class="house">首页</a></li>
@@ -27,7 +27,7 @@
                         }
                         ?>
                 </div>
-				<?php if($if_corp != 1 && $qq3479015851_global[cfg_if_corp] == 1){?><div style="margin-top:6px"><a href="index.php?m=shop" title="我是商户，申请开通商家管理平台"><img src="template/images/shop_apply.gif"></a></div>
+				<?php if($if_corp != 1 && $SystemGlobalcfm_global[cfg_if_corp] == 1){?><div style="margin-top:6px"><a href="index.php?m=shop" title="我是商户，申请开通商家管理平台"><img src="template/images/shop_apply.gif"></a></div>
 				<?php }?>
             </div>
         </div>

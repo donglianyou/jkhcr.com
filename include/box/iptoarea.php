@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-!(defined('QQ3479015851')) && exit('FORBIDDEN');
+!(defined('SysGlbCfm')) && exit('FORBIDDEN');
 $ip = (isset($_GET['ip']) ? trim($_GET['ip']) : '');
 
 if ($ip == 'wap') {
@@ -18,14 +17,14 @@ if ($ip == 'wap') {
 }
 else {
 	$area = $address = $ipdata = '';
-	require_once QQ3479015851_INC . '/ip.class.php';
+	require_once SysGlbCfm_INC . '/ip.class.php';
 	$ipdata = new ip();
 	$address = $ipdata->getaddress($ip);
 	$area = $address['area1'] . $address['area2'];
 	$area = iconv('GB2312', 'UTF-8', $area);
 }
 
-include QQ3479015851_ROOT . '/template/box/iptoarea.html';
+include SysGlbCfm_ROOT . '/template/box/iptoarea.html';
 unset($ipdata);
 unset($address);
 

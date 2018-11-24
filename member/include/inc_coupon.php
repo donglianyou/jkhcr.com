@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-if (!defined('QQ3479015851')) {
+if (!defined('SysGlbCfm')) {
 	exit('Forbidden');
 }
 
@@ -31,8 +30,8 @@ if (submit_check('coupon_submit')) {
 		}
 
 		foreach ($delete as $k => $v ) {
-			@unlink(QQ3479015851_ROOT . $v['picture']);
-			@unlink(QQ3479015851_ROOT . $v['pre_picture']);
+			@unlink(SysGlbCfm_ROOT . $v['picture']);
+			@unlink(SysGlbCfm_ROOT . $v['pre_picture']);
 		}
 
 		$db->query('DELETE FROM `' . $db_qq3479015851 . 'coupon` ' . $where . ' AND id ' . $create_in);
@@ -43,7 +42,7 @@ if (submit_check('coupon_submit')) {
 		write_msg('', '?m=coupon&success=3&status=' . $status . '&page=' . $page);
 	}
 
-	include QQ3479015851_DATA . '/config.inc.php';
+	include SysGlbCfm_DATA . '/config.inc.php';
 	$name_file = 'coupon_image';
 	$title = trim(mhtmlspecialchars($_POST['title']));
 	$content = trim($_POST['content']);
@@ -73,13 +72,13 @@ if (submit_check('coupon_submit')) {
 	}
 
 	if ($_FILES[$name_file]['name']) {
-		require_once QQ3479015851_INC . '/upfile.fun.php';
+		require_once SysGlbCfm_INC . '/upfile.fun.php';
 		check_upimage($name_file);
 		$destination = '/coupon/' . date('Ym') . '/';
-		$qq3479015851_image = (empty($id) ? start_upload($name_file, $destination, 0, $qq3479015851_qq3479015851['cfg_coupon_limit']['width'], $qq3479015851_qq3479015851['cfg_coupon_limit']['height']) : start_upload($name_file, $destination, 0, $qq3479015851_qq3479015851['cfg_coupon_limit']['width'], $qq3479015851_qq3479015851['cfg_coupon_limit']['height'], $picture, $pre_picture));
-		$picture = $qq3479015851_image[0];
-		$pre_picture = $qq3479015851_image[1];
-		unset($qq3479015851_image);
+		$SystemGlobalcfm_image = (empty($id) ? start_upload($name_file, $destination, 0, $SystemGlobalcfm_qq3479015851['cfg_coupon_limit']['width'], $SystemGlobalcfm_qq3479015851['cfg_coupon_limit']['height']) : start_upload($name_file, $destination, 0, $SystemGlobalcfm_qq3479015851['cfg_coupon_limit']['width'], $SystemGlobalcfm_qq3479015851['cfg_coupon_limit']['height'], $picture, $pre_picture));
+		$picture = $SystemGlobalcfm_image[0];
+		$pre_picture = $SystemGlobalcfm_image[1];
+		unset($SystemGlobalcfm_image);
 	}
 
 	if (empty($id)) {
@@ -109,8 +108,8 @@ else {
 		$coupon = page1('SELECT * FROM `' . $db_qq3479015851 . 'coupon` ' . $where . ' ORDER BY dateline DESC');
 	}
 	else if ($ac == 'detail') {
-		require_once QQ3479015851_ROOT . '/plugin/coupon/include/functions.php';
-		require_once QQ3479015851_INC . '/class.fun.php';
+		require_once SysGlbCfm_ROOT . '/plugin/coupon/include/functions.php';
+		require_once SysGlbCfm_INC . '/class.fun.php';
 
 		if ($id) {
 			$edit = $db->getRow('SELECT * FROM `' . $db_qq3479015851 . 'coupon` WHERE id = \'' . $id . '\'');

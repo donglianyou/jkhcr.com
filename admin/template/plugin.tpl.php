@@ -1,5 +1,5 @@
 <?php include qq3479015851_tpl('inc_head');?>
-<!--<div id="<?=QQ3479015851_SOFTNAME?>">
+<!--<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">相关说明</td>
@@ -11,7 +11,7 @@
   </tr>
 </table>
 </div>-->
-<?php if($qq3479015851_global['cfg_if_corp'] != 1){?>
+<?php if($SystemGlobalcfm_global['cfg_if_corp'] != 1){?>
 <div class="ccc2">
     <ul>
         <img src="../images/warn.gif" align="absmiddle"> 提示：当前你的<font color="red">商家功能已经关闭，团购插件，优惠券插件，商品插件已自动被禁用</font>，您可以在<a href="config.php">系统配置 -> 会员相关设置</a>里开启商家功能
@@ -21,7 +21,7 @@
 <?php }?>
 <form action="?part=list" method="post">
 <input name="url" type="hidden" value="<?=GetUrl()?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr style="font-weight:bold; background-color:#dff6ff">
       <td>编号</td>

@@ -16,14 +16,14 @@ ifcheck = false;
 .dblist{ line-height:25px;}
 .dblist li{ float:left; display:block; width:200px}
 </style>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">技巧提示</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td id="menu_tip">
-      <li style="color:#FF6600;">服务器备份目录为 <font color="#006acd"><b><? echo $qq3479015851_global[cfg_backup_dir]?></b></font></li>
+      <li style="color:#FF6600;">服务器备份目录为 <font color="#006acd"><b><? echo $SystemGlobalcfm_global[cfg_backup_dir]?></b></font></li>
       <li>数据备份功能根据您的选择备份全部分类信息和设置数据，导出的数据文件可用“数据还原”功能</li>
       <li>数据备份选项中的设置，仅供高级用户的特殊用途使用，当您尚未对数据库做全面细致的了解之前，请使用默认参数备份，否则将导致备份数据错误等严重问题。
       </li>
@@ -37,7 +37,7 @@ ifcheck = false;
 </div>
 <form action="?part=backup&setup=1" method="post">
 <input name="action" value="doaction" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
     <td colspan="2">数据备份类型</td>
@@ -45,7 +45,7 @@ ifcheck = false;
     <tr bgcolor="#ffffff">
       <td width="100" class="bd_txt">数据库</td>
       <td>
-		<label for="qq3479015851"><input id="qq3479015851" name="type" type="radio" class="radio" value="qq3479015851" checked="checked" onClick="hide_backup_type()"> QQ3479015851全部数据</label>
+		<label for="qq3479015851"><input id="qq3479015851" name="type" type="radio" class="radio" value="qq3479015851" checked="checked" onClick="hide_backup_type()"> 全部数据</label>
       </td>
       </tr>
     <tr bgcolor="#ffffff">
@@ -60,7 +60,7 @@ ifcheck = false;
         </td>
         <td>
         <ul class="dblist" onmouseover="altStyle(this);">
-        <?php foreach($qq3479015851_tables as $key => $val){?>
+        <?php foreach($SystemGlobalcfm_tables as $key => $val){?>
         <li><label for="list_<?php echo $val['Name'];?>"><input type="checkbox" name="customtables[]" value="<?php echo $val['Name'];?>" class="checkbox" checked="checked" id="list_<?php echo $val['Name'];?>"/> <?php echo $val['Name'];?></label></li>
         <?php }?>
         </ul>

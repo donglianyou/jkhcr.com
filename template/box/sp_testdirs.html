@@ -6,8 +6,8 @@
     <?php
         foreach($sp_testdirs as $d)
         {
-          if($d!='/') $fulld = QQ3479015851_ROOT.$d;
-          else $fulld = QQ3479015851_ROOT;
+          if($d!='/') $fulld = SysGlbCfm_ROOT.$d;
+          else $fulld = SysGlbCfm_ROOT;
           if($d!='/') $rsta = (is_readable($fulld) ? '<font color=green>[√]读</font>' : '<font color=red>[×]读</font>');
           else $rsta = '';
           $wsta = (is_writeable($fulld) ? '<font color=green>[√]写</font>' : '<font color=red>[×]写</font>');

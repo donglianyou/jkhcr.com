@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 function mail_template_list()
 {
@@ -90,7 +89,7 @@ function send_email($email_to, $mail_subject, $mail_body, $mail_type = 'html', $
 		}
 	}
 	else if ($mail_cfg['mail_service'] == 'smtp') {
-		require_once QQ3479015851_INC . '/email.class.php';
+		require_once SysGlbCfm_INC . '/email.class.php';
 		$smtp = new smtp($mail_cfg['smtp_server'], $mail_cfg['smtp_serverport'], true, $mail_cfg['mail_user'], $mail_cfg['mail_pass']);
 		$smtp->debug = false;
 
@@ -113,7 +112,7 @@ function send_pwd_email($uid, $userid, $email, $code)
 {
 	global $db;
 	global $db_qq3479015851;
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	global $timestamp;
 	$mailtmp = $db->getRow('SELECT * FROM `' . $db_qq3479015851 . 'mail_template` WHERE template_id = \'1\'');
 
@@ -121,10 +120,10 @@ function send_pwd_email($uid, $userid, $email, $code)
 		return false;
 	}
 	else {
-		$mail_subject = $qq3479015851_global['SiteName'] . '密码修改';
-		$code = $qq3479015851_global['SiteUrl'] . '/' . $qq3479015851_global['cfg_member_logfile'] . '?mod=forgetpass&code=' . $code;
+		$mail_subject = $SystemGlobalcfm_global['SiteName'] . '密码修改';
+		$code = $SystemGlobalcfm_global['SiteUrl'] . '/' . $SystemGlobalcfm_global['cfg_member_logfile'] . '?mod=forgetpass&code=' . $code;
 		$mail_body = $mailtmp['template_content'];
-		$mail_body = str_replace(array('{$user_name}', '{$reset_email}', '{$site_name}', '{$send_date}'), array($userid, $code, $qq3479015851_global['SiteName'], GetTime($timestamp)), $mail_body);
+		$mail_body = str_replace(array('{$user_name}', '{$reset_email}', '{$site_name}', '{$send_date}'), array($userid, $code, $SystemGlobalcfm_global['SiteName'], GetTime($timestamp)), $mail_body);
 		return send_email($email, $mail_subject, $mail_body, 'html', 1);
 	}
 }
@@ -133,7 +132,7 @@ function send_validate_email($uid, $userid, $email, $code)
 {
 	global $db;
 	global $db_qq3479015851;
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	global $timestamp;
 	$mailtmp = $db->getRow('SELECT * FROM `' . $db_qq3479015851 . 'mail_template` WHERE template_id = \'2\'');
 
@@ -141,10 +140,10 @@ function send_validate_email($uid, $userid, $email, $code)
 		return false;
 	}
 	else {
-		$mail_subject = $qq3479015851_global['SiteName'] . '用户验证';
-		$code = $qq3479015851_global['SiteUrl'] . '/' . $qq3479015851_global['cfg_member_logfile'] . '?mod=validate&code=' . $code;
+		$mail_subject = $SystemGlobalcfm_global['SiteName'] . '用户验证';
+		$code = $SystemGlobalcfm_global['SiteUrl'] . '/' . $SystemGlobalcfm_global['cfg_member_logfile'] . '?mod=validate&code=' . $code;
 		$mail_body = $mailtmp['template_content'];
-		$mail_body = str_replace(array('{$user_name}', '{$validate_email}', '{$site_name}', '{$send_date}'), array($userid, $code, $qq3479015851_global['SiteName'], GetTime($timestamp)), $mail_body);
+		$mail_body = str_replace(array('{$user_name}', '{$validate_email}', '{$site_name}', '{$send_date}'), array($userid, $code, $SystemGlobalcfm_global['SiteName'], GetTime($timestamp)), $mail_body);
 		return send_email($email, $mail_subject, $mail_body, 'html', 1);
 	}
 }

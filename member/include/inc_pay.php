@@ -7,16 +7,15 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-if (!defined('QQ3479015851')) {
+if (!defined('SysGlbCfm')) {
 	exit('Forbidden');
 }
 
 $ac = (in_array($ac, array('pay', 'record', 'use')) ? trim($ac) : 'pay');
-$qq3479015851_global['cfg_coin_fee'] = ($qq3479015851_global['cfg_coin_fee'] ? $qq3479015851_global['cfg_coin_fee'] : 1);
-require_once QQ3479015851_DATA . '/moneytype.inc.php';
+$SystemGlobalcfm_global['cfg_coin_fee'] = ($SystemGlobalcfm_global['cfg_coin_fee'] ? $SystemGlobalcfm_global['cfg_coin_fee'] : 1);
+require_once SysGlbCfm_DATA . '/moneytype.inc.php';
 
 if (submit_check('pay_submit')) {
 	$money = (isset($_POST['money']) ? intval($_POST['money']) : '');
@@ -40,7 +39,7 @@ if (submit_check('pay_submit')) {
 
 	if (!empty($money) && ($ac == 'pay')) {
 		$money = (double) $money;
-		$money = ceil($money / $qq3479015851_global['cfg_coin_fee']);
+		$money = ceil($money / $SystemGlobalcfm_global['cfg_coin_fee']);
 
 		if ($money <= 0) {
 			write_msg('', '?m=pay&error=17');
@@ -69,15 +68,15 @@ if (submit_check('pay_submit')) {
 		$ddno = $timestamp;
 		$pay_type = 'PayToMoney';
 		$productname = '金币充值';
-		include QQ3479015851_INC . '/pay.fun.php';
+		include SysGlbCfm_INC . '/pay.fun.php';
 		msetcookie('pay_type', $pay_type, 0);
-		$PayReturnUrlQz = $qq3479015851_global['SiteUrl'];
+		$PayReturnUrlQz = $SystemGlobalcfm_global['SiteUrl'];
 
 		if ($charset == 'utf-8') {
 			@header('Content-Type: text/html; charset=utf-8');
 		}
 
-		include QQ3479015851_INC . '/payment/' . $payr['paytype'] . '/to_pay.php';
+		include SysGlbCfm_INC . '/payment/' . $payr['paytype'] . '/to_pay.php';
 	}
 }
 else {

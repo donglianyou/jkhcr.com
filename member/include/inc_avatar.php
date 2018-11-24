@@ -7,30 +7,29 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-if (!defined('QQ3479015851')) {
+if (!defined('SysGlbCfm')) {
 	exit('FORBIDDEN');
 }
 
-include QQ3479015851_DATA . '/config.inc.php';
+include SysGlbCfm_DATA . '/config.inc.php';
 
 if (submit_check('avatar_submit')) {
-	require_once QQ3479015851_INC . '/upfile.fun.php';
+	require_once SysGlbCfm_INC . '/upfile.fun.php';
 	$name_file = 'qq3479015851_member_logo';
 
 	if ($_FILES[$name_file]['name']) {
 		check_upimage($name_file);
 		$destination = '/face/' . date('Ym') . '/';
-		$qq3479015851_image = start_upload($name_file, $destination, 0, $qq3479015851_qq3479015851['cfg_memberlogo_limit']['width'], $qq3479015851_qq3479015851['cfg_memberlogo_limit']['height']);
-		@unlink(QQ3479015851_ROOT . $face);
-		@unlink(QQ3479015851_ROOT . $normalface);
-		$db->query('UPDATE `' . $db_qq3479015851 . 'member` SET logo=\'' . $qq3479015851_image[0] . '\',prelogo=\'' . $qq3479015851_image[1] . '\' ' . $where);
-		unset($qq3479015851_qq3479015851);
+		$SystemGlobalcfm_image = start_upload($name_file, $destination, 0, $SystemGlobalcfm_qq3479015851['cfg_memberlogo_limit']['width'], $SystemGlobalcfm_qq3479015851['cfg_memberlogo_limit']['height']);
+		@unlink(SysGlbCfm_ROOT . $face);
+		@unlink(SysGlbCfm_ROOT . $normalface);
+		$db->query('UPDATE `' . $db_qq3479015851 . 'member` SET logo=\'' . $SystemGlobalcfm_image[0] . '\',prelogo=\'' . $SystemGlobalcfm_image[1] . '\' ' . $where);
+		unset($SystemGlobalcfm_qq3479015851);
 		unset($destination);
 		unset($name_file);
-		unset($qq3479015851_image);
+		unset($SystemGlobalcfm_image);
 		write_msg('', '?m=avatar&success=8');
 	}
 	else {

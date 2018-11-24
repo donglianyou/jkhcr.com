@@ -13,7 +13,7 @@ label{float:left; width:180px; height:16px; display:block}
      return true;
  }
 </script>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <form name="form1" action="admin.php?do=group" onSubmit="return checkSubmit();" method="post">
 <input type="hidden" name="ifsystem" value="<?=$group[ifsystem]?>">

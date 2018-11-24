@@ -2,14 +2,14 @@
 <html lang="zh-CN" class="index_page">
 <head>
 	{template header}
-	<title>{$store[tname]} - {$qq3479015851_global[SiteName]}</title>
+	<title>{$store[tname]} - {$SystemGlobalcfm_global[SiteName]}</title>
 	<link type="text/css" rel="stylesheet" href="template/css/global.css">
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
     <link type="text/css" rel="stylesheet" href="template/css/store.css">
     <script>window['current'] = '商家店铺';</script>
 </head>
 
-<body class="{$qq3479015851_global[cfg_tpl_dir]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]}">
 <div class="wrapper">
 
     {template header_search}
@@ -34,10 +34,10 @@
    </p>
    
    <ul class="infolst">
-   {loop $info_list $qq3479015851}
-   	<li class="linkdetail" onclick="javascript:window.location.href='index.php?mod=information&id={$qq3479015851[id]}'">
-            <dd class="tit" style="">{$qq3479015851[title]}</dd>
-            <dd class="tm"> {echo GetTime($qq3479015851[begintime],'m-d')}</dd>
+   {loop $info_list $SystemGlobalcfm}
+   	<li class="linkdetail" onclick="javascript:window.location.href='index.php?mod=information&id={$SystemGlobalcfm[id]}'">
+            <dd class="tit" style="">{$SystemGlobalcfm[title]}</dd>
+            <dd class="tm"> {echo GetTime($SystemGlobalcfm[begintime],'m-d')}</dd>
     </li>
    {loopelse}
    <li class="linkdetail">暂无数据...</li>
@@ -53,10 +53,10 @@
    </p>
    
    <ul class="infolst">
-   {loop $docu_list $qq3479015851}
-   	<li class="linkdetail" onclick="javascript:window.location.href='index.php?mod=store&action=docu&id={$qq3479015851[uid]}&docuid={$qq3479015851[id]}'">
-            <dd class="tit" style="">{$qq3479015851[title]}</dd>
-            <dd class="tm"> {echo GetTime($qq3479015851[pubtime],'m-d')}</dd>
+   {loop $docu_list $SystemGlobalcfm}
+   	<li class="linkdetail" onclick="javascript:window.location.href='index.php?mod=store&action=docu&id={$SystemGlobalcfm[uid]}&docuid={$SystemGlobalcfm[id]}'">
+            <dd class="tit" style="">{$SystemGlobalcfm[title]}</dd>
+            <dd class="tm"> {echo GetTime($SystemGlobalcfm[pubtime],'m-d')}</dd>
     </li>
    {loopelse}
    <li class="linkdetail">暂无数据...</li>
@@ -71,8 +71,8 @@
     <div class="image_area_w">
         <div class="image_area">
             <ul>
-            {loop $album $qq3479015851}
-            <li><a href="index.php?mod=store&id={$store[id]}&action=album"><img src="{$qq3479015851_global[SiteUrl]}/{$qq3479015851[prepath]}" ref="{$qq3479015851_global[SiteUrl]}/images/nophoto.gif"></a></li>
+            {loop $album $SystemGlobalcfm}
+            <li><a href="index.php?mod=store&id={$store[id]}&action=album"><img src="{$SystemGlobalcfm_global[SiteUrl]}/{$SystemGlobalcfm[prepath]}" ref="{$SystemGlobalcfm_global[SiteUrl]}/images/nophoto.gif"></a></li>
             {/loop}
             </ul>
         </div>

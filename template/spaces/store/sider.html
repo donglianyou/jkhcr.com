@@ -6,7 +6,7 @@
 		<!--机构基本信息--> 
 		<ul class="mb5"> 
 		   <li>机构级别：<span class="vip">{$store[levelname]}</span></li> 
-		   <li>信用等级：<img align="absmiddle" src="{$qq3479015851_global[SiteUrl]}/images/credit/{$store[credits]}.gif" title="信用值:{$store[credit]}" /></li> 
+		   <li>信用等级：<img align="absmiddle" src="{$SystemGlobalcfm_global[SiteUrl]}/images/credit/{$store[credits]}.gif" title="信用值:{$store[credit]}" /></li> 
 		</ul> 
 		<!--机构基本信息-->
         
@@ -42,8 +42,8 @@
 		<!--身份及认证--> 
 		 <h3 class="mt10 cfix">资料认证</h3> 
 		 <ul class="renzheng Identity"> 
-		 <p>{if $store[per_certify] == '1'}<img src="{$qq3479015851_global[SiteUrl]}/images/person1.gif" alt="已通过身份证认证"/> 已通过身份证认证{else}<img src="{$qq3479015851_global[SiteUrl]}/images/person0.gif" alt="未通过身份证认证"/> 未通过身份证认证{/if}</p> 
-		 <p>{if $store[com_certify] == '1'}<img src="{$qq3479015851_global[SiteUrl]}/images/company1.gif" alt="已通过营业执照认证"/> 已通过营业执照认证{else}<img src="{$qq3479015851_global[SiteUrl]}/images/company0.gif" alt="未通过营业执照认证"/> 未通过营业执照认证{/if}</p> 
+		 <p>{if $store[per_certify] == '1'}<img src="{$SystemGlobalcfm_global[SiteUrl]}/images/person1.gif" alt="已通过身份证认证"/> 已通过身份证认证{else}<img src="{$SystemGlobalcfm_global[SiteUrl]}/images/person0.gif" alt="未通过身份证认证"/> 未通过身份证认证{/if}</p> 
+		 <p>{if $store[com_certify] == '1'}<img src="{$SystemGlobalcfm_global[SiteUrl]}/images/company1.gif" alt="已通过营业执照认证"/> 已通过营业执照认证{else}<img src="{$SystemGlobalcfm_global[SiteUrl]}/images/company0.gif" alt="未通过营业执照认证"/> 未通过营业执照认证{/if}</p> 
 		 </ul> 
 		<!--身份及认证--> 
         
@@ -51,7 +51,7 @@
         
         <div class="viewhit">
         <ul>
-            <li>浏览人次：<span class="hit" id="hit"><img src="{$qq3479015851_global[SiteUrl]}/images/loading.gif" border="0"></span>次</li>
+            <li>浏览人次：<span class="hit" id="hit"><img src="{$SystemGlobalcfm_global[SiteUrl]}/images/loading.gif" border="0"></span>次</li>
             <li>加盟时间：<span class="time">{echo GetTime($store[jointime],'Y年m月d日');}</span></li>
         </ul>
         </div>

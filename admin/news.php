@@ -40,9 +40,9 @@ function mystripslashes( $string )
 
 define( "CURSCRIPT", "news" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_DATA."/info.level.inc.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+require_once( SysGlbCfm_DATA."/info.level.inc.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }
@@ -83,7 +83,7 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 												write_msg( "没有选择记录" );
 								}
 								qq3479015851_delete( "news", "WHERE id = '".$id."'" );
-								write_msg( "删除新闻 ".$id." 成功", $url, "QQ3479015851" );
+								write_msg( "删除新闻 ".$id." 成功", $url, "SysGlbCfm" );
 				}
 }
 else if ( $part == "list" )
@@ -130,7 +130,7 @@ else if ( $part == "add" )
 												write_msg( "请填写新闻内容!" );
 								}
 				}
-				$viewpath = $qq3479015851_global['SiteUrl']."/news.php?id=".$id;
+				$viewpath = $SystemGlobalcfm_global['SiteUrl']."/news.php?id=".$id;
 				if ( $isjump == 1 )
 				{
 								$do_qq3479015851 = $db->query( "INSERT INTO `".$db_qq3479015851."news` (title,cityid,catid,redirect_url,isjump,isbold,iscommend,begintime,introduction,author,source,keywords) VALUES ('{$title}','{$cityid}','{$catid}','{$redirect_url}','1','{$isbold}','{$iscommend}','{$timestamp}','{$introduction}','{$author}','{$from}','{$keywords}')" );
@@ -193,7 +193,7 @@ else if ( $part == "edit" )
 												write_msg( "请填写新闻内容!" );
 								}
 				}
-				$viewpath = $qq3479015851_global['SiteUrl']."/news.php?id=".$id;
+				$viewpath = $SystemGlobalcfm_global['SiteUrl']."/news.php?id=".$id;
 				if ( $isjump == 1 )
 				{
 								$do_qq3479015851 = $db->query( "UPDATE `".$db_qq3479015851."news` SET title = '{$title}' , redirect_url = '{$redirect_url}' , catid = '{$catid}', cityid = '{$cityid}' , keywords = '{$keywords}' , iscommend = '{$iscommend}' , isbold = '{$isbold}' , isjump = '1' , hit = '{$hit}' , perhit = '{$perhit}' , imgpath = '{$imgpath}' , author = '{$author}' , source = '{$from}' , introduction = '{$introduction}' WHERE id = '{$id}'" );
@@ -207,7 +207,7 @@ else if ( $part == "edit" )
 								}
 								$do_qq3479015851 = $db->query( "UPDATE `".$db_qq3479015851."news` SET title = '{$title}', content = '{$content}', keywords = '{$keywords}' , catid = '{$catid}' , cityid = '{$cityid}' , iscommend = '{$iscommend}' , isbold = '{$isbold}' , isjump = '0' , hit = '{$hit}' , perhit = '{$perhit}' ,begintime = '{$timestamp}' , imgpath = '{$imgpath}' , author = '{$author}' , source = '{$from}' , introduction = '{$introduction}' WHERE id = '{$id}'" );
 				}
-				$viewpath = $qq3479015851_global['SiteUrl']."/news.php?id=".$id;
+				$viewpath = $SystemGlobalcfm_global['SiteUrl']."/news.php?id=".$id;
 				if ( is_array( $isfocus ) && $imgpath )
 				{
 								foreach ( $isfocus as $kfocus => $vfocus )
@@ -232,5 +232,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$qq3479015851_global = $db = $db_qq3479015851 = $part = NULL;
+$SystemGlobalcfm_global = $db = $db_qq3479015851 = $part = NULL;
 ?>

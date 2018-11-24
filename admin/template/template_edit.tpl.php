@@ -5,7 +5,7 @@
         <img src="../images/warn.gif" align="absmiddle"> 安全提示：当前在线编辑模板功能</span>：<?=$cfg_if_tpledit?>。建议您只有在十分必要的时候才开启它。您可以修改 /dat/config.inc.php 关闭此功能
     </ul>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr" align="left">
     <td>当前所在目录<b style="color:red">【<?=$path?>】</b></td>
@@ -39,7 +39,7 @@ while ($file=@readdir($fso))
 </table>
 </div>
 <div class="clear"></div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <form method="post" action="?editfile=<?=$editfile?>" onsubmit="return confirm('如果您没有html基础，不建议您在线编辑模板风格\n否则可能造成页面排版错乱甚至无法显示！\n您确定要提交修改该文件吗？')">
 <input name="do" value="update" type="hidden">

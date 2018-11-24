@@ -7,18 +7,17 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define( "CURSCRIPT", "template" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 $part = $part ? $part : "list";
 if ( $admin_cityid )
 {
 				write_msg( "您没有权限访问该页！" );
 }
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }
@@ -28,7 +27,7 @@ $defaultset['classic'] = array( "banmian" => "classic", "indextopinfo" => "12", 
 $defaultset['simple'] = array( "banmian" => "simple", "indextopinfo" => "20", "newinfo" => "0", "announce" => "0", "faq" => "0", "news" => "0", "foreachinfo" => "0", "telephone" => "16", "lifebox" => "13", "goods" => "8" );
 if ( !submit_check( CURSCRIPT."_submit" ) )
 {
-				require_once( QQ3479015851_DATA."/template.inc.php" );
+				require_once( SysGlbCfm_DATA."/template.inc.php" );
 				$here = "模板管理";
 				$tpl_index = $db->getOne( "SELECT value FROM `".$db_qq3479015851."config` WHERE type='tpl' AND description = 'tpl_set'" );
 				$tpl_index = $tpl_index ? $charset == "utf-8" ? utf8_unserialize( $tpl_index ) : unserialize( $tpl_index ) : $defaultset['classic'];
@@ -37,9 +36,9 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 				$tpl_index[smp_cats][third] = is_array( $tpl_index[smp_cats][third] ) ? $tpl_index[smp_cats][third] : array( );
 				$tpl_index[smp_cats][fourth] = is_array( $tpl_index[smp_cats][fourth] ) ? $tpl_index[smp_cats][fourth] : array( );
 				$cat = $db->getAll( "SELECT * FROM `".$db_qq3479015851."category` WHERE parentid = '0' ORDER BY catorder ASC" );
-				if ( empty( $qq3479015851_global['head_style'] ) )
+				if ( empty( $SystemGlobalcfm_global['head_style'] ) )
 				{
-								$qq3479015851_global['head_style'] = "nomal";
+								$SystemGlobalcfm_global['head_style'] = "nomal";
 				}
 				include( qq3479015851_tpl( CURSCRIPT ) );
 }
@@ -73,5 +72,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$qq3479015851_global = $db = $db_qq3479015851 = $part = NULL;
+$SystemGlobalcfm_global = $db = $db_qq3479015851 = $part = NULL;
 ?>

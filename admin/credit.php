@@ -12,13 +12,13 @@
 `*/
 define( "CURSCRIPT", "credit" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 $defaultrank = array( "com_certify" => "+50", "per_certify" => "+50", "coin_credit" => "+10" );
 if ( !submit_check( CURSCRIPT."_submit" ) )
 {
 				chk_admin_purview( "purview_积分信用等级" );
 				$here = "信用值增减设置";
-				require_once( QQ3479015851_DATA."/moneytype.inc.php" );
+				require_once( SysGlbCfm_DATA."/moneytype.inc.php" );
 				$credit = $db->getOne( "SELECT value FROM `".$db_qq3479015851."config` WHERE type='credit_sco' AND description = 'credit'" );
 				$credit = $credit ? $charset == "utf-8" ? utf8_unserialize( $credit ) : unserialize( $credit ) : array(
 								"rank" => $defaultrank
@@ -36,5 +36,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$qq3479015851_global = $db = $db_qq3479015851 = $part = NULL;
+$SystemGlobalcfm_global = $db = $db_qq3479015851 = $part = NULL;
 ?>

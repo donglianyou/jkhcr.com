@@ -10,7 +10,7 @@
      return true;
  }
 </script>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%"  border="0" cellspacing="0" cellpadding="0" class="vbm">
 <form name="form1" action="?do=user" method="post" onSubmit="return checkSubmit();">
 <input type="hidden" name="part" value="update" />

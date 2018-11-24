@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://www.mymps.com.cn/doc/article-6.html -->
+<html><style type="text/css" id="2517905709"></style><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<meta charset="gbk">
+
+<title>系统接口设置/教程 - Mymps模板制作/标签/参考手册 - 更多蚂蚁分类工具请进入QQ群:201809840</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./地图标注接口设置_files/jquery-1.9.1.min.js"></script>
+<link href="./地图标注接口设置_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./地图标注接口设置_files/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="./地图标注接口设置_files/docs.css" rel="stylesheet">
+<link href="./地图标注接口设置_files/prettify.css" rel="stylesheet">
+<!--[if lt IE 9]>
+  <script src="/assets/js/html5shiv.js"></script>
+<![endif]-->
+<style>
+.span9 h4{text-indent:2em;text-align:left;}
+.span9 p{text-indent:2em;text-align:left;}
+</style><script type="text/javascript" src="./地图标注接口设置_files/noerr.js"></script><script type="text/javascript" src="./地图标注接口设置_files/noright.js"></script><style>
+.code { font-family: Courier, Courier New; font-weight: normal; color:#000; font-size:12px;}
+.bcontent{ font-size:16px; line-height:200%;}
+</style></head>
+
+
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="50">
+  
+  <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+        	            <li class="active">
+              <a href="http://www.mymps.com.cn/doc/article.html">使用教程_QQ群:201809840</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/index.html">模板基础</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/structure.html">模板目录结构</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/grammer.html">标签语法</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/base.html">基本标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/senior.html">高级标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/diy.html">自定义标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/demo.html">调用示例</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/db.html">数据字典</a>
+            </li>
+                    </ul>
+      </div>
+    </div>
+  </div>
+</div>  <div class="jumbotron subhead" id="overview">
+    <div class="container">
+      <h1>使用教程</h1>
+      <p class="lead">
+        接口配置/系统设置/使用教程
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav affix-top">
+                  <li><a href="http://www.mymps.com.cn/doc/article-1.html"><i class="icon-chevron-right"></i> 电子邮箱服务器配置教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-2.html"><i class="icon-chevron-right"></i> 在线支付接口设置教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-3.html"><i class="icon-chevron-right"></i> QQ登录接口设置教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-4.html"><i class="icon-chevron-right"></i> UCENTER/DISCUZ论坛整合教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-5.html"><i class="icon-chevron-right"></i> 伪静态路径使用教程</a></li>
+		          <li class="active"><a href="./地图标注接口设置_files/地图标注接口设置.html"><i class="icon-chevron-right"></i> 地图标注接口设置</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-7.html"><i class="icon-chevron-right"></i> 网站整体转移服务器空间教程 </a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-8.html"><i class="icon-chevron-right"></i> IP数据库更新教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-9.html"><i class="icon-chevron-right"></i> 微信登录整合教程（5.8起支持）</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-10.html"><i class="icon-chevron-right"></i> 短信接口设置（5.8起支持）</a></li>
+		  
+        </ul>
+      </div>
+      <div class="span9">
+        <section>
+        <div class="page-header"><h1>地图标注接口设置</h1><span style="font-size:12px;">发布时间：2016-01-11 &nbsp;&nbsp;&nbsp;&nbsp;浏览：1775</span></div>
+            <div class="bcontent">
+            mymps支持整合三种地图接口设置，像国内常用的51ditu和baidu，以及全球范围内的google地图。 <br>
+<br>
+首先进入后台管理，系统-》核心设置-》系统配置-》地图接口设置 <br>
+<br>
+<strong>1，</strong><strong>baidu&nbsp;</strong><br>
+<span>（1）百度地图api地址填写</span><span style="color:#E53333;">http://api.map.baidu.com/api?v=1.4</span><br>
+<span>（注意：百度1.5版本以上需要注册密钥，密钥申请地址：</span><a target="_blank" href="http://lbsyun.baidu.com/apiconsole/key?application=key">http://lbsyun.baidu.com/apiconsole/key?application=key</a><span>）</span><br>
+<span>（2）地图标识填写"</span><span style="color:#E53333;">baidu</span><span>"，地图api编码</span><span style="color:#E53333;">留空</span><span>，地图默认缩放等级可自行设置调整（默认14）</span><br>
+<span>（3）提交保存设置</span><br>
+<span>（4）标注起始坐标</span><br>
+<br>
+<strong>2，</strong><strong>51ditu&nbsp;</strong><br>
+（1）地图api地址填写：<span style="color:#E53333;">http://api.51ditu.com/js/maps.js</span><br>
+（2）地图标识填写"<span style="color:#E53333;">51ditu</span>"，地图api编码<span style="color:#E53333;">留空</span>，地图默认缩放等级可自行设置调整<br>
+（3）提交保存设置<br>
+（4）标注起始坐标<br>
+<br>
+<strong>3，google</strong><br>
+（1）进入 <a href="https://developers.google.com/maps/documentation/javascript/v2/v2tov3" target="_blank">https://developers.google.com/maps/documentation/javascript/v2/v2tov3</a> 申请api，如果你的域名后缀是.cn，则可能无法申请通过认证，您可以将.cn改为.CN，得到google api的key以后，地图api地址填写"<span style="color:#E53333;">https://maps.googleapis.com/maps/api/js?key=申请的密钥&amp;callback=initMap</span>"<br>
+（2）地图标识填写"<span style="color:#E53333;">google_v3</span>"，地图api编码填写"<span style="color:#E53333;">UTF-8</span>"，地图默认缩放等级填写"<span style="color:#E53333;">15</span>"<br>
+（3）提交保存设置<br>
+（4）标注起始坐标<br>            <br>
+            <br>
+            <a href="http://www.mymps.com.cn/member/index.php?mod=service&action=add#list" target="_blank" style="text-decoration:underline;color:red; font-size:16px;">如果以上教程仍不能解决您的问题，请在此提交售后工单 &gt;&gt;</a>
+            </div>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+    <div class="footer">
+  <div class="container">
+    <p class="center">更多蚂蚁分类工具请进入QQ群:201809840</p>
+
+    <ul class="footer-links">
+      <li><a href="http://www.mymps.com.cn/" target="_blank">蚂蚁分类信息系统官网</a></li>
+      <li><a href="http://bbs.mymps.com.cn/">蚂蚁论坛</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<script src="./地图标注接口设置_files/bootstrap.min.js" language="javascript" type="text/javascript"></script>
+<script src="./地图标注接口设置_files/prettify.js"></script>
+<script src="./地图标注接口设置_files/application.js"></script>
+</body></html>

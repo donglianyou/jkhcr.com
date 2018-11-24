@@ -7,18 +7,17 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('IN_SMT',true);
 define('CURSCRIPT','goods');
-define('QQ3479015851',TRUE);
+define('SysGlbCfm',TRUE);
 define('DIR_NAV',dirname(__FILE__));
 
 require_once DIR_NAV.'/include/global.php';
-require_once QQ3479015851_DATA."/config.php";
-require_once QQ3479015851_DATA."/config.db.php";
-require_once QQ3479015851_INC."/db.class.php";
+require_once SysGlbCfm_DATA."/config.php";
+require_once SysGlbCfm_DATA."/config.db.php";
+require_once SysGlbCfm_INC."/db.class.php";
 
 $cityid 	= isset($cityid) 	? intval($cityid) 	: '';
 $id 		= isset($id) 		? intval($id) 		: '';
@@ -57,7 +56,7 @@ if(!submit_check(CURSCRIPT.'_submit')){
 		
 		$db->query("UPDATE `{$db_qq3479015851}goods` SET hit = hit + 1 WHERE goodsid = '$id'");
 		
-		$goods['picture'] = $goods['picture'] ? $goods['picture'] : $qq3479015851_global['SiteUrl'].'/images/nophoto.gif';
+		$goods['picture'] = $goods['picture'] ? $goods['picture'] : $SystemGlobalcfm_global['SiteUrl'].'/images/nophoto.gif';
 		/*商品介绍内链处理*/
 		$goods['content'] = replace_insidelink($goods['content'],'goods');
 		
@@ -81,9 +80,9 @@ if(!submit_check(CURSCRIPT.'_submit')){
 	}else{
 		$city = get_city_caches($cityid);
 		
-		if($qq3479015851_global['cfg_independency'] && $cityid){
+		if($SystemGlobalcfm_global['cfg_independency'] && $cityid){
 			$maincity = get_city_caches(0);
-			$independency = explode(',',$qq3479015851_global['cfg_independency']);
+			$independency = explode(',',$SystemGlobalcfm_global['cfg_independency']);
 			$independency = is_array($independency) ? $independency : array();
 			if(in_array('advertisement',$independency)){
 				$city['advertisement'] = empty($city['advertisement']) ? $maincity['advertisement'] : $city['advertisement'];

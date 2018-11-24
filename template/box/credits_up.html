@@ -124,13 +124,13 @@ input.submit{border:1px solid;cursor:pointer;border-color:#fff #848484 #848484 #
 	
 		<div class="cont_1"> 
 		
-			<div class="nr" style="border-bottom:3px #ddd solid"><b>您当前拥有金币 <font color="red"><?=$row['money_own']?></font> <img src="<?=$qq3479015851_global['SiteUrl']?>/member/images/qq3479015851_icon_incomes.gif" align="absmiddle">，信用值 <font color="red" id="scorenow"><?=$row['credit']?></font> <img src="<?=$qq3479015851_global['SiteUrl']?>/images/credit/<?php echo $row['credits']?>.gif" align="absmiddle"></div> 
+			<div class="nr" style="border-bottom:3px #ddd solid"><b>您当前拥有金币 <font color="red"><?=$row['money_own']?></font> <img src="<?=$SystemGlobalcfm_global['SiteUrl']?>/member/images/qq3479015851_icon_incomes.gif" align="absmiddle">，信用值 <font color="red" id="scorenow"><?=$row['credit']?></font> <img src="<?=$SystemGlobalcfm_global['SiteUrl']?>/images/credit/<?php echo $row['credits']?>.gif" align="absmiddle"></div> 
 			<div>
 				<table border="0" cellspacing="0" cellpadding="0" class="qq3479015851">
 				<tr class="firstr"><td colspan="5" style="text-align:left!important">信用等级对照说明</td></tr> 
 				<tr bgcolor="#f5f8ff" style="font-weight:bold"><td>信用等级</td><td>信用度大于</td><td>信用度小于</td><td>等级图标</td></tr> 
 				<?php for($i=1;$i<16;$i++){?>
-				<tr align="center" bgcolor="white" <?php if($row['credits'] == $i) echo 'class="current"';?>><td class="icon"><?php echo $i; ?></td><td><?php echo $credit_set[rank][$i]?></td><td><?php echo $credit_set[rank][$i+1]?>&nbsp;</td><td><img src="<?=$qq3479015851_global['SiteUrl']?>/images/credit/<?php echo $i; ?>.gif" border="0"></td> 
+				<tr align="center" bgcolor="white" <?php if($row['credits'] == $i) echo 'class="current"';?>><td class="icon"><?php echo $i; ?></td><td><?php echo $credit_set[rank][$i]?></td><td><?php echo $credit_set[rank][$i+1]?>&nbsp;</td><td><img src="<?=$SystemGlobalcfm_global['SiteUrl']?>/images/credit/<?php echo $i; ?>.gif" border="0"></td> 
 				<?php }?>
 				</table>
 			</div>

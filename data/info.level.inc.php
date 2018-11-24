@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-if (!defined('QQ3479015851')) {
+if (!defined('SysGlbCfm')) {
 	exit('FORBIDDEN');
 }
 
@@ -30,57 +29,57 @@ $news_level[2] = '<font color=green>推荐</font>';
 function GetInfoLevel($level = '', $formname = 'info_level')
 {
 	global $information_level;
-	$qq3479015851 .= '<select name=\'' . $formname . '\' id=\'' . $formname . '\'>';
-	$qq3479015851 .= '<option value = "">请选择信息属性</option>';
+	$SystemGlobalcfm .= '<select name=\'' . $formname . '\' id=\'' . $formname . '\'>';
+	$SystemGlobalcfm .= '<option value = "">请选择信息属性</option>';
 
 	foreach ($information_level as $k => $v ) {
 		if ($k == $level) {
-			$qq3479015851 .= '<option value=\'' . $k . '\' selected style=\'background-color:#6EB00C;color:white\'>' . $v . '</option>' . "\r\n";
+			$SystemGlobalcfm .= '<option value=\'' . $k . '\' selected style=\'background-color:#6EB00C;color:white\'>' . $v . '</option>' . "\r\n";
 		}
 		else {
-			$qq3479015851 .= '<option value=\'' . $k . '\'>' . $v . '</option>' . "\r\n";
+			$SystemGlobalcfm .= '<option value=\'' . $k . '\'>' . $v . '</option>' . "\r\n";
 		}
 	}
 
-	$qq3479015851 .= '</select>' . "\r\n";
-	return $qq3479015851;
+	$SystemGlobalcfm .= '</select>' . "\r\n";
+	return $SystemGlobalcfm;
 }
 
 function GetUpgradeTime($time = '', $formname = 'upgrade_time')
 {
 	global $info_upgrade_time;
-	$qq3479015851 .= '<select name=\'' . $formname . '\' id=\'' . $formname . '\'>';
+	$SystemGlobalcfm .= '<select name=\'' . $formname . '\' id=\'' . $formname . '\'>';
 
 	foreach ($info_upgrade_time as $k => $v ) {
 		if ($k == $time) {
-			$qq3479015851 .= '<option value=\'' . $k . '\' selected style=\'background-color:#6EB00C;color:white\'>' . $v . '</option>' . "\r\n";
+			$SystemGlobalcfm .= '<option value=\'' . $k . '\' selected style=\'background-color:#6EB00C;color:white\'>' . $v . '</option>' . "\r\n";
 		}
 		else {
-			$qq3479015851 .= '<option value=\'' . $k . '\'>' . $v . '</option>' . "\r\n";
+			$SystemGlobalcfm .= '<option value=\'' . $k . '\'>' . $v . '</option>' . "\r\n";
 		}
 	}
 
-	$qq3479015851 .= '</select>' . "\r\n";
-	return $qq3479015851;
+	$SystemGlobalcfm .= '</select>' . "\r\n";
+	return $SystemGlobalcfm;
 }
 
 function GetNewsLevel($level = '', $formname = 'news_level')
 {
 	global $news_level;
-	$qq3479015851 .= '<select name=\'' . $formname . '\' id=\'' . $formname . '\'>';
-	$qq3479015851 .= '<option value = "">请选择新闻属性</option>';
+	$SystemGlobalcfm .= '<select name=\'' . $formname . '\' id=\'' . $formname . '\'>';
+	$SystemGlobalcfm .= '<option value = "">请选择新闻属性</option>';
 
 	foreach ($news_level as $k => $v ) {
 		if ($k == $level) {
-			$qq3479015851 .= '<option value=\'' . $k . '\' selected style=\'background-color:#6EB00C;color:white\'>' . $v . '</option>' . "\r\n";
+			$SystemGlobalcfm .= '<option value=\'' . $k . '\' selected style=\'background-color:#6EB00C;color:white\'>' . $v . '</option>' . "\r\n";
 		}
 		else {
-			$qq3479015851 .= '<option value=\'' . $k . '\'>' . $v . '</option>' . "\r\n";
+			$SystemGlobalcfm .= '<option value=\'' . $k . '\'>' . $v . '</option>' . "\r\n";
 		}
 	}
 
-	$qq3479015851 .= '</select>' . "\r\n";
-	return $qq3479015851;
+	$SystemGlobalcfm .= '</select>' . "\r\n";
+	return $SystemGlobalcfm;
 }
 
 

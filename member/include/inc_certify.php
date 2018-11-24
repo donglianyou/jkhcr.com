@@ -7,25 +7,24 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-if (!defined('QQ3479015851')) {
+if (!defined('SysGlbCfm')) {
 	exit('Forbidden');
 }
 
 $ac = (!in_array($ac, array('person', 'com')) ? 'person' : trim($ac));
 
 if (submit_check('certify_submit')) {
-	require_once QQ3479015851_INC . '/upfile.fun.php';
+	require_once SysGlbCfm_INC . '/upfile.fun.php';
 	$name_file = 'certify_image';
 	$typeid = ($ac == 'person' ? 2 : 1);
 
 	if ($_FILES[$name_file]['name']) {
 		check_upimage($name_file);
 		$destination = '/certification/' . date('Ym') . '/';
-		$qq3479015851_image = start_upload($name_file, $destination, 0);
-		$db->query('INSERT INTO `' . $db_qq3479015851 . 'certification` SET typeid=\'' . $typeid . '\',userid=\'' . $s_uid . '\',img_path=\'' . $qq3479015851_image . '\',pubtime = \'' . $timestamp . '\'');
+		$SystemGlobalcfm_image = start_upload($name_file, $destination, 0);
+		$db->query('INSERT INTO `' . $db_qq3479015851 . 'certification` SET typeid=\'' . $typeid . '\',userid=\'' . $s_uid . '\',img_path=\'' . $SystemGlobalcfm_image . '\',pubtime = \'' . $timestamp . '\'');
 	}
 	else {
 		write_msg('', '?m=certify&error=13');

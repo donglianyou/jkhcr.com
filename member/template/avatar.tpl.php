@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="template/css/new.my.css" />
 <script language="javascript" src="template/javascript.js"></script>
 </head>
-<body class="<?php echo $qq3479015851_global['cfg_tpl_dir']; ?>">
+<body class="<?php echo $SystemGlobalcfm_global['cfg_tpl_dir']; ?>">
 <div class="container">
 <?php include qq3479015851_tpl('inc_head');?>
 <div id="main" class="main section-setting">
@@ -38,7 +38,7 @@
                                             <h3 class="label">选择文件：</h3>
                                             <div class="form-enter">
                                                 <input type=file name="qq3479015851_member_logo" size=45 id="litpic">
-          支持上传的类型：<?=$qq3479015851_global[cfg_upimg_type]?>，图片尺寸：<?=$qq3479015851_qq3479015851[cfg_memberlogo_limit][width]?> * <?=$qq3479015851_qq3479015851[cfg_memberlogo_limit][height]?>
+          支持上传的类型：<?=$SystemGlobalcfm_global[cfg_upimg_type]?>，图片尺寸：<?=$SystemGlobalcfm_qq3479015851[cfg_memberlogo_limit][width]?> * <?=$SystemGlobalcfm_qq3479015851[cfg_memberlogo_limit][height]?>
                                             </div>
                                         </div>
 

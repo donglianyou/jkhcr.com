@@ -28,7 +28,7 @@ function getpinyinhead(t){
 	}
 }
 </script>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -43,7 +43,7 @@ function getpinyinhead(t){
     <form method="post" target="iframe_t" id="form_t"></form>
 </div>
 <form method=post onSubmit="return chkform()" name="form" action="?">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
   <td colspan="2" align="left">创建城市分站</td>
@@ -70,8 +70,8 @@ function getpinyinhead(t){
 </tr>
 <tr bgcolor="#ffffff">
   <td valign="top">分站储存目录名： </td>
-  <td><input id="newdirectory" onBlur="document.getElementById('newfirstletter').value=this.value.substring(0,1);document.getElementById('newdomain').value='http://'+this.value+'<?php echo str_replace('http://www','',$qq3479015851_global[SiteUrl]).'/'; ?>';getpinyin(document.getElementById('newcityname').value);" name="citynew[directory]" class="text" type="text" value=""> <font color="red">*</font><div style="color:#666; margin-top:5px">如: <font style="text-decoration:underline">bj</font>，只能是字母\数字\下画线,不允许汉字与特殊字符,否则无法访问<br />
-<font color="red">分站建立以后,你可以用&nbsp; <b style="color:#006acd; text-decoration:underline"><?php echo $qq3479015851_global['SiteUrl']?><?php echo $qq3479015851_global['cfg_citiesdir']; ?>/bj/</b> &nbsp;来访问此分站</font></div> </td>
+  <td><input id="newdirectory" onBlur="document.getElementById('newfirstletter').value=this.value.substring(0,1);document.getElementById('newdomain').value='http://'+this.value+'<?php echo str_replace('http://www','',$SystemGlobalcfm_global[SiteUrl]).'/'; ?>';getpinyin(document.getElementById('newcityname').value);" name="citynew[directory]" class="text" type="text" value=""> <font color="red">*</font><div style="color:#666; margin-top:5px">如: <font style="text-decoration:underline">bj</font>，只能是字母\数字\下画线,不允许汉字与特殊字符,否则无法访问<br />
+<font color="red">分站建立以后,你可以用&nbsp; <b style="color:#006acd; text-decoration:underline"><?php echo $SystemGlobalcfm_global['SiteUrl']?><?php echo $SystemGlobalcfm_global['cfg_citiesdir']; ?>/bj/</b> &nbsp;来访问此分站</font></div> </td>
 </tr>
 <tr bgcolor="#ffffff">
   <td valign="top">分站城市全拼/英文全称：</td>

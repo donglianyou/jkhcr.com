@@ -2,7 +2,7 @@
 <script language="javascript">
 ifcheck = false;
 </script>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -15,7 +15,7 @@ ifcheck = false;
 </div>
 <form action="?part=cache_sysupdate" method="post">
 <input name="return_url" type="hidden" value="<?=$return_url?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">更新系统缓存页面</td>

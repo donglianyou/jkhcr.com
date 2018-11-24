@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://www.mymps.com.cn/doc/demo-corp.html -->
+<html><style type="text/css" id="2874124017"></style><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<meta charset="gbk">
+
+<title>调用示例 - Mymps模板制作/标签/参考手册 - 更多蚂蚁分类工具请进入QQ群:201809840</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./机构分类_files/jquery-1.9.1.min.js"></script>
+<link href="./机构分类_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./机构分类_files/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="./机构分类_files/docs.css" rel="stylesheet">
+<link href="./机构分类_files/prettify.css" rel="stylesheet">
+<!--[if lt IE 9]>
+  <script src="/assets/js/html5shiv.js"></script>
+<![endif]-->
+<style>
+.span9 h4{text-indent:2em;text-align:left;}
+.span9 p{text-indent:2em;text-align:left;}
+</style><script type="text/javascript" src="./机构分类_files/noerr.js"></script><script type="text/javascript" src="./机构分类_files/noright.js"></script><style>
+.code { font-family: Courier, Courier New; font-weight: normal; color:#000; font-size:12px;}
+</style></head>
+
+
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="50">
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+        	            <li>
+              <a href="http://www.mymps.com.cn/doc/article.html">使用教程_QQ群:201809840</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/index.html">模板基础</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/structure.html">模板目录结构</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/grammer.html">标签语法</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/base.html">基本标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/senior.html">高级标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/diy.html">自定义标签</a>
+            </li>
+                        <li class="active">
+              <a href="http://www.mymps.com.cn/doc/demo.html">调用示例</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/db.html">数据字典</a>
+            </li>
+                    </ul>
+      </div>
+    </div>
+  </div>
+</div>    <div class="jumbotron subhead" id="overview">
+    <div class="container">
+    <h1>数据调用示例</h1>
+    <p class="lead"> 蚂蚁CMS机构分类数据调用</p>
+    <div class="subnav">
+    <ul class="nav nav-pills">
+       <li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="http://www.mymps.com.cn/doc/demo-corp.html#">分类信息 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="http://www.mymps.com.cn/doc/demo-info.html">信息调用</a></li>
+<li><a href="http://www.mymps.com.cn/doc/demo-cat.html">分类调用</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="http://www.mymps.com.cn/doc/demo-corp.html#">商家机构 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="http://www.mymps.com.cn/doc/demo-store.html">机构调用</a></li>
+<li><a href="http://www.mymps.com.cn/doc/demo-docu.html">机构文章</a></li>
+<li class="active"><a href="./机构分类_files/机构分类.html">机构分类</a></li>
+</ul>
+</li>
+
+<li><a href="http://www.mymps.com.cn/doc/demo-navigation.html">导航调用</a></li>
+
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="http://www.mymps.com.cn/doc/demo-corp.html#">插件调用<b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="http://www.mymps.com.cn/doc/demo-news.html">新闻</a></li>
+<li><a href="http://www.mymps.com.cn/doc/demo-goods.html">商品</a></li>
+<li><a href="http://www.mymps.com.cn/doc/demo-group.html">团购</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="http://www.mymps.com.cn/doc/demo-corp.html#">站务 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="http://www.mymps.com.cn/doc/demo-focus.html">焦点图</a></li>
+<li><a href="http://www.mymps.com.cn/doc/demo-announce.html">网站公告</a></li>
+<li><a href="http://www.mymps.com.cn/doc/demo-faq.html">网站帮助</a></li>
+<li><a href="http://www.mymps.com.cn/doc/demo-friendlink.html">友情链接</a></li>
+</ul>
+</li>    </ul>
+    </div>
+    </div>
+    </div>
+    <div class="container">
+    <div class="row">
+    <div class="container" style="padding:10px 30px;">
+		<div class="well code">
+        {php $shopclass = get_corp_tree(0,'corp');}<br>
+        {loop $shopclass $mymps}<br>
+        &nbsp;&nbsp;&nbsp;{$mymps[corpid]}输出根分类编号<br>
+        &nbsp;&nbsp;&nbsp;{$mymps[uri]}输出根分类链接<br>
+        &nbsp;&nbsp;&nbsp;{$mymps[corpname]}输出根分类名称<br>
+        	&nbsp;&nbsp;&nbsp;{loop $myps[children] $w}<br>
+            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$w[corpid]}输出子分类编号<br>
+            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$w[uri]}输出子分类名称<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$w[corpname]}输出子分类名称<br>
+            &nbsp;&nbsp;&nbsp;{/loop}<br>
+        {/loop}
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="footer">
+  <div class="container">
+    <p class="center">更多蚂蚁分类工具请进入QQ群:201809840</p>
+
+    <ul class="footer-links">
+      <li><a href="http://www.mymps.com.cn/" target="_blank">蚂蚁分类信息系统官网</a></li>
+      <li><a href="http://bbs.mymps.com.cn/">蚂蚁论坛</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<script src="./机构分类_files/bootstrap.min.js" language="javascript" type="text/javascript"></script>
+<script src="./机构分类_files/prettify.js"></script>
+<script src="./机构分类_files/application.js"></script>
+</body></html>

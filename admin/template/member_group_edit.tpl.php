@@ -2,7 +2,7 @@
 <style>
 label{float:left; display:block; height:20px;}
 </style>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <form name="form1" action="member.php?do=group&part=update" onSubmit="return checkSubmit();" method="post">
 <input type="hidden" name="id" value="<?=$group[id]?>">

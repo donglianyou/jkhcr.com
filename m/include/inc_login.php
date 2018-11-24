@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 
 if ( CURSCRIPT != "wap" )
@@ -21,12 +20,12 @@ if ( $action == "logout" )
 {
 				if ( PASSPORT_TYPE == "ucenter" )
 				{
-								require( QQ3479015851_ROOT."/uc_client/client.php" );
+								require( SysGlbCfm_ROOT."/uc_client/client.php" );
 								$ucsynlogout = uc_user_synlogout( );
 								echo $ucsynlogout;
 				}
 				$member_log->out( "noredirect" );
-				echo qq3479015851_goto( $url ? $url : $qq3479015851_global['SiteUrl']."/m/index.php?mod=member" );
+				echo qq3479015851_goto( $url ? $url : $SystemGlobalcfm_global['SiteUrl']."/m/index.php?mod=member" );
 }
 else if ( $action == "login" )
 {
@@ -46,8 +45,8 @@ else if ( $action == "login" )
 				$s_uid = $row['userid'];
 				if ( PASSPORT_TYPE == "ucenter" )
 				{
-								require_once( QQ3479015851_ROOT."/member/include/common.func.php" );
-								require( QQ3479015851_ROOT."/uc_client/client.php" );
+								require_once( SysGlbCfm_ROOT."/member/include/common.func.php" );
+								require( SysGlbCfm_ROOT."/uc_client/client.php" );
 								list( $uid, $username, $password, $email ) = uc_user_login( $userid, $userpwd, $email );
 								if ( 0 < $uid )
 								{

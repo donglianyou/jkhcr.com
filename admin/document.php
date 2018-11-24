@@ -15,18 +15,18 @@ function get_docuarr_options( $arrid = "" )
 				global $docu_arr;
 				foreach ( $docu_arr as $key => $value )
 				{
-								$qq3479015851 .= "<option value=".$key."";
-								$qq3479015851 .= $arrid == $key ? " style = \"background-color:#6EB00C;color:white\" selected>" : ">";
-								$qq3479015851 .= $value."</option>";
+								$SystemGlobalcfm .= "<option value=".$key."";
+								$SystemGlobalcfm .= $arrid == $key ? " style = \"background-color:#6EB00C;color:white\" selected>" : ">";
+								$SystemGlobalcfm .= $value."</option>";
 				}
-				return $qq3479015851;
+				return $SystemGlobalcfm;
 }
 
 define( "CURSCRIPT", "document" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 require_once( dirname( __FILE__ )."/include/ifview.inc.php" );
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }
@@ -113,12 +113,12 @@ else
 				else
 				{
 								clear_cache_files( "document_type" );
-								write_msg( $do == "type" ? "会员文档模型设置更新成功！" : "会员文档更新成功！", $forward_url, "QQ3479015851Record" );
+								write_msg( $do == "type" ? "会员文档模型设置更新成功！" : "会员文档更新成功！", $forward_url, "SysGlbCfmRecord" );
 				}
 }
 if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 ?>

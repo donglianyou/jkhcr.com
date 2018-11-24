@@ -12,15 +12,15 @@
 `*/
 define( "CURSCRIPT", "group_signin" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+require_once( SysGlbCfm_INC."/db.class.php" );
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }
 $part = $part ? trim( $part ) : "list";
 $id = isset( $id ) ? intval( $id ) : "";
 chk_admin_purview( "purview_报名管理" );
-require_once( QQ3479015851_DATA."/group_signin_status.inc.php" );
+require_once( SysGlbCfm_DATA."/group_signin_status.inc.php" );
 if ( !submit_check( CURSCRIPT."_submit" ) )
 {
 				if ( $part == "list" )

@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 if ( CURSCRIPT != "wap" )
 {
@@ -34,34 +33,34 @@ $allow_identifier = allow_identifier( );
 $allow_identifier = $allow_identifier[$cat['modid']]['identifier'];
 $allow_identifier = is_array( $allow_identifier ) ? $allow_identifier : array( );
 $allow_identifiers = array_merge( array( "mod", "catid", "cityid", "areaid", "streetid", "lat", "lng", "distance" ), $allow_identifier );
-$qq3479015851_extra_model = mod_identifier( );
-$qq3479015851_extra_model = $qq3479015851_extra_model[$cat['modid']];
-$qq3479015851_extra_model = is_array( $qq3479015851_extra_model ) ? $qq3479015851_extra_model : array( );
-foreach ( $qq3479015851_extra_model as $key => $val )
+$SystemGlobalcfm_extra_model = mod_identifier( );
+$SystemGlobalcfm_extra_model = $SystemGlobalcfm_extra_model[$cat['modid']];
+$SystemGlobalcfm_extra_model = is_array( $SystemGlobalcfm_extra_model ) ? $SystemGlobalcfm_extra_model : array( );
+foreach ( $SystemGlobalcfm_extra_model as $key => $val )
 {
 	if ( is_array( $val['list'] ) )
 	{
 		foreach ( $val['list'] as $k => $v )
 		{
-			$qq3479015851_extra_model[$key]['list'][$k]['uri'] = "index.php?mod=category&cityid=".$cityid;
+			$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] = "index.php?mod=category&cityid=".$cityid;
 			foreach ( $allow_identifiers as $keys )
 			{
 				if ( $v['identifier'] == $keys )
 				{
-					$qq3479015851_extra_model[$key]['list'][$k]['uri'] .= $v['id'] ? "&".$keys."=".$v['id'] : "";
+					$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] .= $v['id'] ? "&".$keys."=".$v['id'] : "";
 				}
 				else
 				{
-					$qq3479015851_extra_model[$key]['list'][$k]['uri'] .= $$keys ? "&".$keys."=".$$keys : "";
+					$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] .= $$keys ? "&".$keys."=".$$keys : "";
 				}
 			}
 			if ( $v['id'] == $$v['identifier'] )
 			{
-				$qq3479015851_extra_model[$key]['list'][$k]['select'] .= 1;
+				$SystemGlobalcfm_extra_model[$key]['list'][$k]['select'] .= 1;
 			}
 			else
 			{
-				$qq3479015851_extra_model[$key]['list'][$k]['select'] .= 0;
+				$SystemGlobalcfm_extra_model[$key]['list'][$k]['select'] .= 0;
 			}
 		}
 	}

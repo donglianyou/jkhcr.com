@@ -7,17 +7,16 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 define('IN_ADMIN', true);
 define('CURSCRIPT', 'notify');
 require_once dirname(__FILE__) . '/../../../include/global.php';
-require_once QQ3479015851_DATA . '/config.php';
-require_once QQ3479015851_DATA . '/config.db.php';
-require_once QQ3479015851_INC . '/db.class.php';
-include QQ3479015851_INC . '/pay.fun.php';
+require_once SysGlbCfm_DATA . '/config.php';
+require_once SysGlbCfm_DATA . '/config.db.php';
+require_once SysGlbCfm_INC . '/db.class.php';
+include SysGlbCfm_INC . '/pay.fun.php';
 $payr = $db->getRow('SELECT * FROM ' . $db_qq3479015851 . 'payapi WHERE paytype=\'wxpay\'');
 $payr['paykey'] = trim($payr['paykey']);
 require_once 'function.php';

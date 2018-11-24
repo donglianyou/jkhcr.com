@@ -13,8 +13,8 @@
 
 define( "CURSCRIPT", "corp" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+require_once( SysGlbCfm_INC."/db.class.php" );
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }
@@ -56,7 +56,7 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 								qq3479015851_delete( "corp", "WHERE parentid = '".$corpid."'" );
 								clear_cache_files( "corp_option_static" );
 								clear_cache_files( "corp_pid_releate" );
-								write_msg( "删除商家分类 ".$corpid." 成功", "?part=list", "QQ3479015851_record" );
+								write_msg( "删除商家分类 ".$corpid." 成功", "?part=list", "SysGlbCfm_record" );
 				}
 }
 else if ( $part == "add" )
@@ -134,5 +134,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 ?>

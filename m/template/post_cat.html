@@ -2,20 +2,20 @@
 <html lang="zh-CN" class="index_page">
 <head>
 	{template header}
-	<title>发布信息 - {$qq3479015851_global[SiteName]}</title>
+	<title>发布信息 - {$SystemGlobalcfm_global[SiteName]}</title>
 	<link type="text/css" rel="stylesheet" href="template/css/global.css">
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
 	<link type="text/css" rel="stylesheet" href="template/css/post.css">
 	<script>window['current'] = '发布信息';</script>
 </head>
-<body class="{$qq3479015851_global[cfg_tpl_dir]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]}">
 <div class="wrapper">
     {template header_search}
-    {loop $categories $qq3479015851}
+    {loop $categories $SystemGlobalcfm}
     <dl class="business">
-        <dt class="house"><i class="ico" style="background-image:url({$qq3479015851_global[SiteUrl]}/{$qq3479015851[icon]});"></i>发布{$qq3479015851[catname]}信息</dt>
+        <dt class="house"><i class="ico" style="background-image:url({$SystemGlobalcfm_global[SiteUrl]}/{$SystemGlobalcfm[icon]});"></i>发布{$SystemGlobalcfm[catname]}信息</dt>
         <dd {if $catid}style="display:block"{/if}>
-            {loop $qq3479015851[children] $c}
+            {loop $SystemGlobalcfm[children] $c}
             <a href="index.php?mod=post&catid={$c[catid]}&areaid={$areaid}">{$c[catname]}</a>
             {/loop}
         </dd>

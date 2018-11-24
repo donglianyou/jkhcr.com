@@ -7,12 +7,11 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('CURSCRIPT', 'seoset');
 require_once dirname(__FILE__) . '/global.php';
-require_once QQ3479015851_INC . '/db.class.php';
+require_once SysGlbCfm_INC . '/db.class.php';
 $admdir = getcwdOL();
 $admdir = ($admdir ? substr($admdir, 1) : 'admin');
 
@@ -31,7 +30,7 @@ if ($action == 'makeapacherewrite') {
 
 		foreach ($allcities as $k => $v ) {
 			$ServerName = preg_replace('/^http:\\/\\/(.*)/is', '\\1', $v[domain]);
-			$documentroot = $documentroots . $qq3479015851_global[cfg_citiesdir] . '/' . $v['directory'];
+			$documentroot = $documentroots . $SystemGlobalcfm_global[cfg_citiesdir] . '/' . $v['directory'];
 
 			if (substr($ServerName, -1) == '/') {
 				$ServerName = substr($ServerName, 0, -1);
@@ -57,11 +56,11 @@ if ($action == 'makeapacherewrite') {
 		}
 	}
 
-	if (!createfile(QQ3479015851_ROOT . '/htaccess.txt', $conf)) {
-		write_msg(QQ3479015851_ROOT . '/htaccess.txt 文件不可写，请检查根目录权限！');
+	if (!createfile(SysGlbCfm_ROOT . '/htaccess.txt', $conf)) {
+		write_msg(SysGlbCfm_ROOT . '/htaccess.txt 文件不可写，请检查根目录权限！');
 	}
 	else {
-		write_msg('htaccess.txt文件更新成功！<br>Include ' . str_replace('\\', '/', QQ3479015851_ROOT) . '/htaccess.txt', 'olmsg');
+		write_msg('htaccess.txt文件更新成功！<br>Include ' . str_replace('\\', '/', SysGlbCfm_ROOT) . '/htaccess.txt', 'olmsg');
 	}
 
 	unset($conf);
@@ -69,7 +68,7 @@ if ($action == 'makeapacherewrite') {
 }
 
 if (!submit_check(CURSCRIPT . '_submit')) {
-	$here = QQ3479015851_SOFTNAME . 'SEO优化设置';
+	$here = SysGlbCfm_SOFTNAME . 'SEO优化设置';
 	chk_admin_purview('purview_SEO伪静态');
 	$res = $db->query('SELECT description,value FROM ' . $db_qq3479015851 . 'config WHERE type=\'seo\'');
 
@@ -165,20 +164,20 @@ else {
 
 		$rules['iis7'] .= '</rules>' . "\r\n" . '</rewrite>' . "\r\n" . '</system.webServer>' . "\r\n" . '</configuration>' . "\r\n";
 
-		if (!createfile(QQ3479015851_ROOT . '/rewrite/httpd.ini', $rules['iis'])) {
-			$notice .= QQ3479015851_ROOT . '/rewrite/httpd.ini 请设置为777属性或者写入修改权限<br><br>';
+		if (!createfile(SysGlbCfm_ROOT . '/rewrite/httpd.ini', $rules['iis'])) {
+			$notice .= SysGlbCfm_ROOT . '/rewrite/httpd.ini 请设置为777属性或者写入修改权限<br><br>';
 		}
 
-		if (!createfile(QQ3479015851_ROOT . '/rewrite/.htaccess', $rules['apache'])) {
-			$notice .= QQ3479015851_ROOT . '/rewrite/.htaccess 请设置为777属性或者写入修改权限<br><br>';
+		if (!createfile(SysGlbCfm_ROOT . '/rewrite/.htaccess', $rules['apache'])) {
+			$notice .= SysGlbCfm_ROOT . '/rewrite/.htaccess 请设置为777属性或者写入修改权限<br><br>';
 		}
 
-		if (!createfile(QQ3479015851_ROOT . '/rewrite/web.config', $rules['iis7'])) {
-			$notice .= QQ3479015851_ROOT . '/rewrite/web.config 请设置为777属性或者写入修改权限<br><br>';
+		if (!createfile(SysGlbCfm_ROOT . '/rewrite/web.config', $rules['iis7'])) {
+			$notice .= SysGlbCfm_ROOT . '/rewrite/web.config 请设置为777属性或者写入修改权限<br><br>';
 		}
 
-		if (!createfile(QQ3479015851_ROOT . '/rewrite/nginx.conf', $rules['nginx'])) {
-			$notice .= QQ3479015851_ROOT . '/rewrite/nginx.conf 请设置为777属性或者写入修改权限<br><br>';
+		if (!createfile(SysGlbCfm_ROOT . '/rewrite/nginx.conf', $rules['nginx'])) {
+			$notice .= SysGlbCfm_ROOT . '/rewrite/nginx.conf 请设置为777属性或者写入修改权限<br><br>';
 		}
 	}
 
@@ -186,14 +185,14 @@ else {
 }
 
 is_object($db) && $db->Close();
-$qq3479015851_global = $db = $db_qq3479015851 = $part = NULL;
+$SystemGlobalcfm_global = $db = $db_qq3479015851 = $part = NULL;
 
 
 function GetSeoType($seo_type = '', $formname = 'seo_type')
 {
-	global $qq3479015851_qq3479015851;
+	global $SystemGlobalcfm_qq3479015851;
 	$seo_arr = array('active' => '动态', 'rewrite' => '伪静态');
-	if (in_array($formname, array('seo_force_category', 'seo_force_info')) && ($qq3479015851_qq3479015851['cfg_if_rewritepy'] == 1)) {
+	if (in_array($formname, array('seo_force_category', 'seo_force_info')) && ($SystemGlobalcfm_qq3479015851['cfg_if_rewritepy'] == 1)) {
 		$seo_arr = array('active' => '动态', 'rewrite' => '伪静态', 'rewrite_py' => '拼音伪静态');
 	}
 

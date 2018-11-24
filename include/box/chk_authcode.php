@@ -7,14 +7,13 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-!(defined('QQ3479015851')) && exit('FORBIDDEN');
+!(defined('SysGlbCfm')) && exit('FORBIDDEN');
 $value = (isset($_GET['value']) ? strip_tags(trim($_GET['value'])) : '');
-require_once QQ3479015851_DATA . '/config.db.php';
+require_once SysGlbCfm_DATA . '/config.db.php';
 @header('Content-type: text/html; charset=' . $charset);
-require_once QQ3479015851_INC . '/db.class.php';
+require_once SysGlbCfm_INC . '/db.class.php';
 
 if (empty($value)) {
 	echo '请输入验证码';

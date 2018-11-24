@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-if (!defined('QQ3479015851')) {
+if (!defined('SysGlbCfm')) {
 	exit('FORBIDDEN');
 }
 
@@ -43,7 +42,7 @@ $element[plugin] = array(
 	'订单'    => array('table' => 'goods_order', 'url' => 'goods_order.php')
 	);
 
-if ($qq3479015851_global['cfg_if_corp'] != 1) {
+if ($SystemGlobalcfm_global['cfg_if_corp'] != 1) {
 	unset($element[plugin]['优惠券']);
 	unset($element[plugin]['团购']);
 	unset($element[plugin]['商品']);

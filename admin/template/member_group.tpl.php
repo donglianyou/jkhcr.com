@@ -1,5 +1,5 @@
 <?php include qq3479015851_tpl('inc_head');?>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -9,7 +9,7 @@
 		</div>
 	</div>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td width="60">组编号</td>
@@ -43,7 +43,7 @@ foreach($group AS $row)
 </table>
 </div>
 <form action="member.php?part=levelup" method="post">
-<div id="<?=QQ3479015851_SOFTNAME?>" style="margin-top:10px; clear:both">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="margin-top:10px; clear:both">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
 <td colspan="2">会员自助升级页面提示信息</td>

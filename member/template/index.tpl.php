@@ -6,7 +6,7 @@
 <script language="javascript" src="../template/global/messagebox.js"></script>
 <script language="javascript" src="template/javascript.js"></script>
 </head>
-<body class="<?php echo $qq3479015851_global['cfg_tpl_dir']; ?>">
+<body class="<?php echo $SystemGlobalcfm_global['cfg_tpl_dir']; ?>">
 <div class="container">
 
 <?php include qq3479015851_tpl('inc_head');?>
@@ -75,7 +75,7 @@
                             <div class="pbody">
                             <ul class="clearfix statistics-list">
 								<div class="clearfix counttable">
-									<div class="cli"><span class="label">分类信息</span> <span class="value"><a href="index.php?m=info"><?=$info_total?>条</a></span> <input name="postinfo" value="发布信息&raquo;" type="button" class="postinfo" onClick="window.open('<?php echo (!$row['tel'] && !$row['qq']) ? '?m=base&error=41' : '../'.$qq3479015851_global['cfg_postfile']; ?>')"></div>
+									<div class="cli"><span class="label">分类信息</span> <span class="value"><a href="index.php?m=info"><?=$info_total?>条</a></span> <input name="postinfo" value="发布信息&raquo;" type="button" class="postinfo" onClick="window.open('<?php echo (!$row['tel'] && !$row['qq']) ? '?m=base&error=41' : '../'.$SystemGlobalcfm_global['cfg_postfile']; ?>')"></div>
 									<div class="cli"><span class="label">短消息</span> <span class="value"><a href="index.php?m=pm"><?=$pm_total?>条</a></span></div>
 									<?php if($if_corp == 1){?>
 									<div class="cli"><span class="label">店铺相片</span> <span class="value"><a href="index.php?m=album&type=corp"><?=$album_total?>张</a></span><input name="postinfo" value="上传相片&raquo;" type="button" class="postinfo" style="color:#12459c" onClick="location.href='index.php?m=album&ac=upload&type=corp'"></div>
@@ -156,7 +156,7 @@
                             <div class="pfoot"><p><b>-</b></p></div>
                             </div>
 							
-							<?php if($qq3479015851_global['cfg_if_affiliate'] == 1){?>
+							<?php if($SystemGlobalcfm_global['cfg_if_affiliate'] == 1){?>
 							<div class="pwrap pwrap-simple exchange-security">
                             <div class="phead"><div class="phead-inner"><div class="phead-inner">
                                 <h3 class="ptitle"><span>注册推广</span></h3>
@@ -167,19 +167,19 @@
                                         本站为鼓励推荐新用户注册，现开展推荐注册分成活动，活动流程如下：<br>
 
 										1.复制本站提供给您的推荐代码，粘贴发送到论坛、博客上或者QQ好友。<br>2.访问者点击链接，访问本站。<br>
-										3.在访问者点击链接的24小时内，若该访问者在本站注册，您将获得积分 <font color="#ff3300;"><?php echo $qq3479015851_global['cfg_affiliate_score']?></font> 的奖励。<br>
+										3.在访问者点击链接的24小时内，若该访问者在本站注册，您将获得积分 <font color="#ff3300;"><?php echo $SystemGlobalcfm_global['cfg_affiliate_score']?></font> 的奖励。<br>
 <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" style="margin-top:5px">
 <tr>
 <td width="20%" height="50" bgcolor="#ffffff">&nbsp;&nbsp;网页签名代码</td>
-<td bgcolor="#ffffff">&nbsp;&nbsp;<input size="115" onClick="this.select();" type="text" value="&lt;a href=&quot;<?php echo $qq3479015851_global['SiteUrl']?>/index.php?fromuid=<?=$row[id]?>&quot; target=&quot;_blank&quot;&gt;<?php echo $qq3479015851_global['SiteName']?>&lt;/a&gt;" style="border:1px solid #ccc;padding:3px 5px" /></td>
+<td bgcolor="#ffffff">&nbsp;&nbsp;<input size="115" onClick="this.select();" type="text" value="&lt;a href=&quot;<?php echo $SystemGlobalcfm_global['SiteUrl']?>/index.php?fromuid=<?=$row[id]?>&quot; target=&quot;_blank&quot;&gt;<?php echo $SystemGlobalcfm_global['SiteName']?>&lt;/a&gt;" style="border:1px solid #ccc;padding:3px 5px" /></td>
 </tr>
 <tr>
 <td bgcolor="#ffffff" height="50">&nbsp;&nbsp;论坛签名代码</td>
-<td bgcolor="#ffffff">&nbsp;&nbsp;<input size="115" onClick="this.select();" type="text" value="[url=<?php echo $qq3479015851_global['SiteUrl']?>/index.php?fromuid=<?=$row[id]?>]<?php echo $qq3479015851_global['SiteName']?>[/url]" style="border:1px solid #ccc;padding:3px 5px" /></td>
+<td bgcolor="#ffffff">&nbsp;&nbsp;<input size="115" onClick="this.select();" type="text" value="[url=<?php echo $SystemGlobalcfm_global['SiteUrl']?>/index.php?fromuid=<?=$row[id]?>]<?php echo $SystemGlobalcfm_global['SiteName']?>[/url]" style="border:1px solid #ccc;padding:3px 5px" /></td>
 </tr>
 <tr>
 <td bgcolor="#ffffff" height="50">&nbsp;&nbsp;直接将链接发给QQ好友</td>
-<td bgcolor="#ffffff">&nbsp;&nbsp;<input size="115" onClick="this.select();" type="text" value="<?php echo $qq3479015851_global['SiteUrl']?>/index.php?fromuid=<?=$row[id]?>" style="border:1px solid #ccc;padding:3px 5px" /></td>
+<td bgcolor="#ffffff">&nbsp;&nbsp;<input size="115" onClick="this.select();" type="text" value="<?php echo $SystemGlobalcfm_global['SiteUrl']?>/index.php?fromuid=<?=$row[id]?>" style="border:1px solid #ccc;padding:3px 5px" /></td>
 </tr>
 </table>
 										

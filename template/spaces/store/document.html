@@ -4,8 +4,8 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>{$typename}-{$store[tname]}-{$qq3479015851_global[SiteName]}</title> 
-<link href="{$qq3479015851_global[SiteUrl]}/template/spaces/store/css/{$store[template]}.css" type="text/css" rel="stylesheet" />
+<title>{$typename}-{$store[tname]}-{$SystemGlobalcfm_global[SiteName]}</title> 
+<link href="{$SystemGlobalcfm_global[SiteUrl]}/template/spaces/store/css/{$store[template]}.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 
@@ -22,11 +22,11 @@
 					   <th align="left">发布时间</th>
                        <th align="left">浏览次数</th>
 					   </tr> 
-                       {loop $docu $qq3479015851}
+                       {loop $docu $SystemGlobalcfm}
 					   <tr> 
-					   <td><a href="{$qq3479015851[uri]}">{$qq3479015851[title]}</a></td> 
-					   <td align="left">{echo GetTime($qq3479015851[pubtime],'Y-m-d')}</td> 
-                       <td align="left">{$qq3479015851[hit]}次</td> 
+					   <td><a href="{$SystemGlobalcfm[uri]}">{$SystemGlobalcfm[title]}</a></td> 
+					   <td align="left">{echo GetTime($SystemGlobalcfm[pubtime],'Y-m-d')}</td> 
+                       <td align="left">{$SystemGlobalcfm[hit]}次</td> 
 					   </tr>
                        {loopelse}
                        <tr> 
@@ -51,8 +51,8 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>{$docu[title]}-{$store[tname]}-{$qq3479015851_global[SiteName]}</title> 
-<link href="{$qq3479015851_global[SiteUrl]}/template/spaces/store/css/{$store[template]}.css" type="text/css" rel="stylesheet" />
+<title>{$docu[title]}-{$store[tname]}-{$SystemGlobalcfm_global[SiteName]}</title> 
+<link href="{$SystemGlobalcfm_global[SiteUrl]}/template/spaces/store/css/{$store[template]}.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 

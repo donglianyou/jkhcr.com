@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 error_reporting( E_ALL ^ E_NOTICE );
 @header( "Content-Type: text/html; charset=utf-8" );
@@ -16,11 +15,11 @@ if ( __FILE__ == "" )
 {
     exit( "Fatal error code: 0" );
 }
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 define( "MAGIC_QUOTES_GPC", get_magic_quotes_gpc( ) );
-define( "QQ3479015851_ROOT", dirname( __FILE__ ) );
-define( "QQ3479015851_DATA", QQ3479015851_ROOT."/data" );
-define( "QQ3479015851_INC", QQ3479015851_ROOT."/include" );
+define( "SysGlbCfm_ROOT", dirname( __FILE__ ) );
+define( "SysGlbCfm_DATA", SysGlbCfm_ROOT."/data" );
+define( "SysGlbCfm_INC", SysGlbCfm_ROOT."/include" );
 define( "CURSCRIPT", "javascript" );
 if ( function_exists( "date_default_timezone_set" ) )
 {
@@ -42,10 +41,10 @@ if ( isset( $_REQUEST['GLOBALS'] ) || isset( $_FILES['GLOBALS'] ) )
 {
     exit( "Request tainting attempted." );
 }
-require_once( QQ3479015851_DATA."/config.php" );
-require_once( QQ3479015851_ROOT."/include/common.fun.php" );
-require_once( QQ3479015851_ROOT."/include/class.fun.php" );
-require_once( QQ3479015851_ROOT."/include/custom.fun.php" );
+require_once( SysGlbCfm_DATA."/config.php" );
+require_once( SysGlbCfm_ROOT."/include/common.fun.php" );
+require_once( SysGlbCfm_ROOT."/include/class.fun.php" );
+require_once( SysGlbCfm_ROOT."/include/custom.fun.php" );
 $part = isset( $_GET['part'] ) ? mhtmlspecialchars( $_GET['part'] ) : "jswizard";
 $flag = isset( $_GET['flag'] ) ? mhtmlspecialchars( $_GET['flag'] ) : "";
 $id = isset( $_GET['id'] ) ? intval( $_GET['id'] ) : "";
@@ -62,7 +61,7 @@ if ( empty( $part ) || !in_array( $part, array( "advertisement", "information", 
 if ( $part == "chk_answer" )
 {
     $data = NULL;
-    @require_once( QQ3479015851_ROOT."/include/cache.fun.php" );
+    @require_once( SysGlbCfm_ROOT."/include/cache.fun.php" );
     $result = read_static_cache( "checkanswer" );
     if ( is_array( $result ) )
     {
@@ -82,7 +81,7 @@ else
 {
     if ( $part == "chk_authcode" )
     {
-        @session_save_path( QQ3479015851_ROOT."/data/sessions" );
+        @session_save_path( SysGlbCfm_ROOT."/data/sessions" );
         if ( qq3479015851_chk_randcode( $getvalue ) )
         {
             exit( "success" );
@@ -91,7 +90,7 @@ else
     }
     if ( $part == "chk_smsauthcode" )
     {
-        @session_save_path( QQ3479015851_ROOT."/data/sessions" );
+        @session_save_path( SysGlbCfm_ROOT."/data/sessions" );
         if ( qq3479015851_chk_smsrandcode( $getvalue ) )
         {
             exit( "success" );
@@ -100,9 +99,9 @@ else
     }
     if ( $part == "chk_remember" )
     {
-        require_once( QQ3479015851_DATA."/config.db.php" );
+        require_once( SysGlbCfm_DATA."/config.db.php" );
         @header( "Content-type: text/html; charset=".$charset );
-        require_once( QQ3479015851_INC."/db.class.php" );
+        require_once( SysGlbCfm_INC."/db.class.php" );
         if ( empty( $getvalue ) )
         {
             echo "用户名不符合规范！";
@@ -111,7 +110,7 @@ else
         {
             if ( PASSPORT_TYPE == "phpwind" )
             {
-                include( QQ3479015851_ROOT."/pw_client/uc_client.php" );
+                include( SysGlbCfm_ROOT."/pw_client/uc_client.php" );
                 if ( uc_user_get( $getvalue ) )
                 {
                     exit( "很遗憾！该用户名已被注册！" );
@@ -120,7 +119,7 @@ else
             }
             if ( PASSPORT_TYPE == "ucenter" )
             {
-                include( QQ3479015851_ROOT."/uc_client/client.php" );
+                include( SysGlbCfm_ROOT."/uc_client/client.php" );
                 if ( uc_get_user( $getvalue ) )
                 {
                     exit( "很遗憾！该用户名已被注册！" );
@@ -151,9 +150,9 @@ else
     else if ( $part == "chk_remail" )
     {
         $mod = isset( $_GET['mod'] ) ? intval( $_GET['mod'] ) : 0;
-        require_once( QQ3479015851_DATA."/config.db.php" );
+        require_once( SysGlbCfm_DATA."/config.db.php" );
         @header( "Content-type: text/html; charset=".$charset );
-        require_once( QQ3479015851_INC."/db.class.php" );
+        require_once( SysGlbCfm_INC."/db.class.php" );
         if ( $db->getOne( "SELECT id FROM ".$db_qq3479015851."member WHERE email = '{$getvalue}'" ) )
         {
             echo empty( $mod ) ? "很抱歉！该电子邮箱地址已经被注册！" : "success";
@@ -166,9 +165,9 @@ else
     else if ( $part == "chk_wxlogin" )
     {
         $actionkey = isset( $_GET['actionkey'] ) ? mhtmlspecialchars( $_GET['actionkey'] ) : "";
-        require_once( QQ3479015851_DATA."/config.db.php" );
-        require_once( QQ3479015851_INC."/db.class.php" );
-        require_once( QQ3479015851_INC."/member.class.php" );
+        require_once( SysGlbCfm_DATA."/config.db.php" );
+        require_once( SysGlbCfm_INC."/db.class.php" );
+        require_once( SysGlbCfm_INC."/member.class.php" );
         if ( $row = $db->getRow( "SELECT * FROM `".$db_qq3479015851."member_wx` WHERE actionkey='{$actionkey}'" ) )
         {
             $db->query( "DELETE FROM `".$db_qq3479015851."member_wx` WHERE actionkey = '{$actionkey}'" );
@@ -183,9 +182,9 @@ else
     else if ( $part == "chk_remobile" )
     {
         $mod = isset( $_GET['mod'] ) ? intval( $_GET['mod'] ) : 0;
-        require_once( QQ3479015851_DATA."/config.db.php" );
+        require_once( SysGlbCfm_DATA."/config.db.php" );
         @header( "Content-type: text/html; charset=".$charset );
-        require_once( QQ3479015851_INC."/db.class.php" );
+        require_once( SysGlbCfm_INC."/db.class.php" );
         if ( $db->getOne( "SELECT id FROM ".$db_qq3479015851."member WHERE mobile = '{$getvalue}'" ) )
         {
             echo empty( $mod ) ? "很抱歉！该手机号码已经被注册！" : "success";
@@ -201,8 +200,8 @@ else
         {
             exit( html2js( "Invalid Id" ) );
         }
-        require_once( QQ3479015851_ROOT."/data/config.db.php" );
-        require_once( QQ3479015851_ROOT."/include/db.class.php" );
+        require_once( SysGlbCfm_ROOT."/data/config.db.php" );
+        require_once( SysGlbCfm_ROOT."/include/db.class.php" );
         if ( $code = $db->getOne( "SELECT code FROM `".$db_qq3479015851."advertisement` WHERE available > '0' AND starttime<='".$timestamp.( "' AND type = 'normalad' AND advid = '".$id."'" ) ) )
         {
             echo html2js( $code );
@@ -210,10 +209,10 @@ else
     }
     else if ( $part == "iflogin" )
     {
-        require_once( QQ3479015851_DATA."/config.db.php" );
-        require_once( QQ3479015851_INC."/db.class.php" );
-        require_once( QQ3479015851_INC."/member.class.php" );
-        require_once( QQ3479015851_INC."/cache.fun.php" );
+        require_once( SysGlbCfm_DATA."/config.db.php" );
+        require_once( SysGlbCfm_INC."/db.class.php" );
+        require_once( SysGlbCfm_INC."/member.class.php" );
+        require_once( SysGlbCfm_INC."/cache.fun.php" );
         $qqlogin = read_static_cache( "qqlogin" );
         $wxlogin = read_static_cache( "wxlogin" );
         $return = array( );
@@ -252,8 +251,8 @@ else
         {
             exit( html2js( "Invalid Id" ) );
         }
-        require_once( QQ3479015851_ROOT."/data/config.db.php" );
-        require_once( QQ3479015851_ROOT."/include/db.class.php" );
+        require_once( SysGlbCfm_ROOT."/data/config.db.php" );
+        require_once( SysGlbCfm_ROOT."/include/db.class.php" );
         $db->query( "UPDATE `".$db_qq3479015851.$part.( "` SET hit = hit+1 WHERE id = '".$id."'" ) );
         $hit = $db->getOne( "SELECT hit FROM `".$db_qq3479015851.$part.( "` WHERE id = '".$id."'" ) );
         $callback = mhtmlspecialchars( $_GET['callback'] );
@@ -262,8 +261,8 @@ else
     }
     else if ( $part == "jswizard" )
     {
-        require_once( QQ3479015851_ROOT."/data/config.db.php" );
-        require_once( QQ3479015851_ROOT."/include/db.class.php" );
+        require_once( SysGlbCfm_ROOT."/data/config.db.php" );
+        require_once( SysGlbCfm_ROOT."/include/db.class.php" );
         echo custom( $flag, "js" );
     }
     else

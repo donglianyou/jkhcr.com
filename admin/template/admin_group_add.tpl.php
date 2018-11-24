@@ -13,7 +13,7 @@ label{float:left; width:180px; height:16px; display:block}
      return true;
  }
 </script>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -23,7 +23,7 @@ label{float:left; width:180px; height:16px; display:block}
 		</div>
 	</div>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 	<form name="form1" action="?do=group&part=insert" onSubmit="return checkSubmit();" method="post">
     <input type="hidden" name="ifsystem" value="0">

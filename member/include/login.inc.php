@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-if (!defined('QQ3479015851')) {
+if (!defined('SysGlbCfm')) {
 	exit('Forbidden');
 }
 
@@ -32,7 +31,7 @@ $row['status'] = (in_array(PASSPORT_TYPE, array('ucenter', 'phpwind')) ? 1 : $ro
 $user_id = $s_uid;
 
 if (PASSPORT_TYPE == 'phpwind') {
-	require QQ3479015851_ROOT . '/pw_client/uc_client.php';
+	require SysGlbCfm_ROOT . '/pw_client/uc_client.php';
 	$user_login = uc_user_login($userid, md5($userpwd), 0);
 
 	if ($user_login['status'] == '-2') {
@@ -48,7 +47,7 @@ if (PASSPORT_TYPE == 'phpwind') {
 	}
 }
 else if (PASSPORT_TYPE == 'ucenter') {
-	require QQ3479015851_ROOT . '/uc_client/client.php';
+	require SysGlbCfm_ROOT . '/uc_client/client.php';
 	list($uid, $username, $password, $email) = uc_user_login($userid, $userpwd);
 
 	if (0 < $uid) {
@@ -92,7 +91,7 @@ if ($s_uid) {
 		echo uc_user_synlogin($uid);
 	}
 
-	echo qq3479015851_goto($url ? $url : $qq3479015851_global['SiteUrl'] . '/member/index.php');
+	echo qq3479015851_goto($url ? $url : $SystemGlobalcfm_global['SiteUrl'] . '/member/index.php');
 }
 else {
 	write_msg('登录失败，您输入了错误的账号或密码！');

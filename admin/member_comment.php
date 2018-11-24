@@ -12,7 +12,7 @@
 `*/
 define( "CURSCRIPT", "member_comment" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 $where = $userid ? "WHERE userid = '".$userid."'" : "";
 $where .= $commentlevell ? " AND commentlevel = '".$commentlevel."'" : "";
 $mlevel = array( );
@@ -62,5 +62,5 @@ if ( is_object( $db ) )
 {
 	$db->Close();
 }
-$qq3479015851_global = $db = $db_qq3479015851 = $part = NULL;
+$SystemGlobalcfm_global = $db = $db_qq3479015851 = $part = NULL;
 ?>

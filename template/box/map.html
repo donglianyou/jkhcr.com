@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="<?php echo $qq3479015851_global[SiteUrl]?>/template/global/button.css">
-<script language="javascript" src="<?php echo $qq3479015851_global[SiteUrl]?>/template/global/noerr.js"></script>
+<link rel="stylesheet" href="<?php echo $SystemGlobalcfm_global[SiteUrl]?>/template/global/button.css">
+<script language="javascript" src="<?php echo $SystemGlobalcfm_global[SiteUrl]?>/template/global/noerr.js"></script>
 <style>
 body{font:Verdana, Arial, Helvetica, sans-serif; text-align:left;}
 </style>
 <script language="javascript">
-<?php if($documentdomain === 'yes'){?>document.domain = '<?php echo str_replace("http://www.","",$qq3479015851_global["SiteUrl"])?>';<?php }?>
+<?php if($documentdomain === 'yes'){?>document.domain = '<?php echo str_replace("http://www.","",$SystemGlobalcfm_global["SiteUrl"])?>';<?php }?>
 function besuremark() {
 	var point1 = document.getElementById('point1').value;
 	var point2 = document.getElementById('point2').value;
@@ -45,7 +45,7 @@ var height = <?php echo $height; ?>;
 var view_level = <?php echo $level; ?>;
 var cityname = '<?php echo $cityname ; ?>';
 </script>
-<script type="text/javascript" language="javascript" src="<?php echo $qq3479015851_global[mapapi]; ?>" <?php if($qq3479015851_global[mapapi_charset]) $charset = $qq3479015851_global[mapapi_charset]; ?>></script>
-<script type="text/javascript" language="javascript" src="<?php echo $qq3479015851_global[SiteUrl]?>/include/map/<?php echo $qq3479015851_global[mapflag]?>.js?v=<?php echo $version; ?>"></script>
+<script type="text/javascript" language="javascript" src="<?php echo $SystemGlobalcfm_global[mapapi]; ?>" <?php if($SystemGlobalcfm_global[mapapi_charset]) $charset = $SystemGlobalcfm_global[mapapi_charset]; ?>></script>
+<script type="text/javascript" language="javascript" src="<?php echo $SystemGlobalcfm_global[SiteUrl]?>/include/map/<?php echo $SystemGlobalcfm_global[mapflag]?>.js?v=<?php echo $version; ?>"></script>
 </body>
 </html>

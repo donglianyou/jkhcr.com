@@ -7,17 +7,16 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('IN_SMT',true);
 define('CURSCRIPT','search');
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 
 require_once dirname(__FILE__).'/include/global.php';
 require_once dirname(__FILE__)."/data/config.php";
-require_once QQ3479015851_DATA.'/config.db.php';
-require_once QQ3479015851_INC.'/db.class.php';
+require_once SysGlbCfm_DATA.'/config.db.php';
+require_once SysGlbCfm_INC.'/db.class.php';
 
 ifsiteopen();
 
@@ -52,24 +51,24 @@ if(is_array($pluginsettings)){
 
 $city = get_city_caches($cityid);
 if(!is_array($city)){
-	$city = array('cityname'=>'总站','cityid'=>'0','cityname'=>$qq3479015851_global['SiteUrl']);
+	$city = array('cityname'=>'总站','cityid'=>'0','cityname'=>$SystemGlobalcfm_global['SiteUrl']);
 }
 
 $sql = $search = $where = $cat_children = $allow_identifier = '';
 switch($mod){
 	case 'information':
 		if($keywords != '' || $tel != ''){
-			require QQ3479015851_DATA."/info_posttime.php";
-			//$document_domain = str_replace('http://www.','',$qq3479015851_global['SiteUrl']);
-			$search['page_title'] = ($keywords != '' ? $keywords.' - ' : '').'信息搜索 - '.$qq3479015851_global['SiteName'];
+			require SysGlbCfm_DATA."/info_posttime.php";
+			//$document_domain = str_replace('http://www.','',$SystemGlobalcfm_global['SiteUrl']);
+			$search['page_title'] = ($keywords != '' ? $keywords.' - ' : '').'信息搜索 - '.$SystemGlobalcfm_global['SiteName'];
 			
 				if($catid){
 					$modid = $db -> getOne("SELECT modid FROM `{$db_qq3479015851}category` WHERE catid = '$catid'");
 					$cat_children	  =	get_children($catid);
 					$allow_identifier = allow_identifier();
 					$allow_identifier = $allow_identifier[$modid]['identifier'];
-					$qq3479015851_extra_model = mod_identifier();
-					$extra_model = $qq3479015851_extra_model[$modid];
+					$SystemGlobalcfm_extra_model = mod_identifier();
+					$extra_model = $SystemGlobalcfm_extra_model[$modid];
 					$sq = $s = '';
 					if($modid > 1 && is_array($allow_identifier)){
 						$s = "LEFT JOIN `{$db_qq3479015851}information_{$modid}` AS g ON a.id = g.id";
@@ -143,8 +142,8 @@ switch($mod){
 	break;
 	case 'store':
 		if($keywords != ''){
-			$document_domain = str_replace('http://www.','',$qq3479015851_global['SiteUrl']);
-			$search['page_title'] = ($keywords != '' ? $keywords.' - ' : '').'商家搜索 - '.$qq3479015851_global['SiteName'];
+			$document_domain = str_replace('http://www.','',$SystemGlobalcfm_global['SiteUrl']);
+			$search['page_title'] = ($keywords != '' ? $keywords.' - ' : '').'商家搜索 - '.$SystemGlobalcfm_global['SiteName'];
 			if($keywords != ''){
 				if(is_array($keyword = explode(' ',$keywords))){
 					$or = '';
@@ -223,20 +222,20 @@ switch($mod){
 				}
 				$search['pagination'] = page2();
 			}
-			$search['page_title'] = ($keywords != '' ? $keywords.' - ' : '').'网站新闻搜索 - '.$qq3479015851_global['SiteName'];
+			$search['page_title'] = ($keywords != '' ? $keywords.' - ' : '').'网站新闻搜索 - '.$SystemGlobalcfm_global['SiteName'];
 			$select_where_option = select_where_option('/include/selectwhere.php',$cityid,$areaid,$streetid);
 		}
 	break;
 	
 	case 'group':
 		if($keywords != ''){
-			require_once QQ3479015851_ROOT.'/plugin/group/include/functions.php';
+			require_once SysGlbCfm_ROOT.'/plugin/group/include/functions.php';
 			
 			$group_class = get_group_class();
 			$catoption = $group_class;
 			$area_list = get_cityoptions($cityid);
 			
-			require_once QQ3479015851_DATA.'/grouplevel.inc.php';
+			require_once SysGlbCfm_DATA.'/grouplevel.inc.php';
 			
 			if($keywords != ''){
 			
@@ -275,13 +274,13 @@ switch($mod){
 				$search['pagination'] = page2();
 			}
 				
-			$search['page_title'] = ($keywords != '' ? $keywords.' - ' : '').'团购活动搜索 - '.$qq3479015851_global['SiteName'];
+			$search['page_title'] = ($keywords != '' ? $keywords.' - ' : '').'团购活动搜索 - '.$SystemGlobalcfm_global['SiteName'];
 		}
 	break;
 	
 	case 'coupon':
 		if($keywords != ''){
-			require_once QQ3479015851_ROOT.'/plugin/coupon/include/functions.php';
+			require_once SysGlbCfm_ROOT.'/plugin/coupon/include/functions.php';
 			
 			$coupon_class = get_coupon_class();
 			$catoption = $coupon_class;
@@ -322,13 +321,13 @@ switch($mod){
 				$search['pagination'] = page2();
 			}
 			
-			$search['page_title'] = ($keywords != '' ? $keywords.' - ' : '').'优惠券搜索 - '.$qq3479015851_global['SiteName'];
+			$search['page_title'] = ($keywords != '' ? $keywords.' - ' : '').'优惠券搜索 - '.$SystemGlobalcfm_global['SiteName'];
 		}
 	break;
 	
 	case 'goods':
 		if($keywords != ''){
-			require_once QQ3479015851_ROOT.'/plugin/goods/include/functions.php';
+			require_once SysGlbCfm_ROOT.'/plugin/goods/include/functions.php';
 			
 			$goods_class = goods_category_tree(0);
 			$catoption = $goods_class;
@@ -357,21 +356,21 @@ switch($mod){
 					$result['goodsid'] = $v['goodsid'];
 					$result['goodsname'] = $v['goodsname'];
 					$result['nowprice'] = $v['nowprice'];
-					$result['pre_picture'] = $v['pre_picture'] ? $v['pre_picture'] : $qq3479015851_global['SiteUrl'].'/images/nophoto.gif';
+					$result['pre_picture'] = $v['pre_picture'] ? $v['pre_picture'] : $SystemGlobalcfm_global['SiteUrl'].'/images/nophoto.gif';
 					$result['uri'] = Rewrite('goods',array('id'=>$v['goodsid'],'cityid'=>$v['cityid']));
 					$search['result'][] = $result;
 				}
 				$search['pagination'] = page2();
 			}
 			
-			$search['page_title'] = ($keywords != '' ? $keywords.' - ' : '').'商品搜索 - '.$qq3479015851_global['SiteName'];
+			$search['page_title'] = ($keywords != '' ? $keywords.' - ' : '').'商品搜索 - '.$SystemGlobalcfm_global['SiteName'];
 			$select_where_option = select_where_option('/include/selectwhere.php',$cityid,$areaid,$streetid);
 		}
 	break;
 }
 
 $mtime = explode(' ', microtime());
-$totaltime = number_format(($mtime[1] + $mtime[0] - $qq3479015851_starttime), 6);
+$totaltime = number_format(($mtime[1] + $mtime[0] - $SystemGlobalcfm_starttime), 6);
 $sitedebug = 'Processed in '.$totaltime.' second(s) , '.$db->query_num.' queries';
 $search['keywords'] = $keywords;
 $search['tel'] = $tel;

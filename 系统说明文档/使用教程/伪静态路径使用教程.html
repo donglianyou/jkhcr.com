@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://www.mymps.com.cn/doc/article-5.html -->
+<html><style type="text/css" id="2517905709"></style><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<meta charset="gbk">
+
+<title>系统接口设置/教程 - Mymps模板制作/标签/参考手册 - 更多蚂蚁分类工具请进入QQ群:201809840</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./伪静态路径使用教程_files/jquery-1.9.1.min.js"></script>
+<link href="./伪静态路径使用教程_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./伪静态路径使用教程_files/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="./伪静态路径使用教程_files/docs.css" rel="stylesheet">
+<link href="./伪静态路径使用教程_files/prettify.css" rel="stylesheet">
+<!--[if lt IE 9]>
+  <script src="/assets/js/html5shiv.js"></script>
+<![endif]-->
+<style>
+.span9 h4{text-indent:2em;text-align:left;}
+.span9 p{text-indent:2em;text-align:left;}
+</style><script type="text/javascript" src="./伪静态路径使用教程_files/noerr.js"></script><script type="text/javascript" src="./伪静态路径使用教程_files/noright.js"></script><style>
+.code { font-family: Courier, Courier New; font-weight: normal; color:#000; font-size:12px;}
+.bcontent{ font-size:16px; line-height:200%;}
+</style></head>
+
+
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="50">
+  
+  <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+        	            <li class="active">
+              <a href="http://www.mymps.com.cn/doc/article.html">使用教程_QQ群:201809840</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/index.html">模板基础</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/structure.html">模板目录结构</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/grammer.html">标签语法</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/base.html">基本标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/senior.html">高级标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/diy.html">自定义标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/demo.html">调用示例</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/db.html">数据字典</a>
+            </li>
+                    </ul>
+      </div>
+    </div>
+  </div>
+</div>  <div class="jumbotron subhead" id="overview">
+    <div class="container">
+      <h1>使用教程</h1>
+      <p class="lead">
+        接口配置/系统设置/使用教程
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav affix-top">
+                  <li><a href="http://www.mymps.com.cn/doc/article-1.html"><i class="icon-chevron-right"></i> 电子邮箱服务器配置教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-2.html"><i class="icon-chevron-right"></i> 在线支付接口设置教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-3.html"><i class="icon-chevron-right"></i> QQ登录接口设置教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-4.html"><i class="icon-chevron-right"></i> UCENTER/DISCUZ论坛整合教程</a></li>
+		          <li class="active"><a href="./伪静态路径使用教程_files/伪静态路径使用教程.html"><i class="icon-chevron-right"></i> 伪静态路径使用教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-6.html"><i class="icon-chevron-right"></i> 地图标注接口设置</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-7.html"><i class="icon-chevron-right"></i> 网站整体转移服务器空间教程 </a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-8.html"><i class="icon-chevron-right"></i> IP数据库更新教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-9.html"><i class="icon-chevron-right"></i> 微信登录整合教程（5.8起支持）</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-10.html"><i class="icon-chevron-right"></i> 短信接口设置（5.8起支持）</a></li>
+		  
+        </ul>
+      </div>
+      <div class="span9">
+        <section>
+        <div class="page-header"><h1>伪静态路径使用教程</h1><span style="font-size:12px;">发布时间：2016-01-11 &nbsp;&nbsp;&nbsp;&nbsp;浏览：1478</span></div>
+            <div class="bcontent">
+            <span style="color:#003399;"><strong>蚂蚁建站系统伪静态规则的添加主要分为两个步骤：</strong></span><br>
+第一步，添加应用伪静态规则(联系客服索取<span></span>)<br>
+第二步，mymps后台设置开启使用伪静态<br>
+<br>
+<span style="color:#003399;"><strong>第一步，添加应用伪静态规则</strong></span><br>
+<strong>a，如果您的服务器是虚拟主机</strong><br>
+一般情况下，只需将伪静态规则文件复制或移动到网站根目录下，即可完成伪静态规则的应用<br>
+<br>
+<strong>b，如果您的服务器环境是vps或者独立服务器</strong><br>
+<strong>IIS6（windows 2003）：</strong><br>
+进入IIS，选择您的网站，右键点击属性按钮，选择ISAPI筛选器，点击添加；<br>
+筛选器名称写“rewrite”（不包括双引号），可执行文件选择网站根目录下rewrite目录下的rewrite.dll，点击确定<br>
+<br>
+<strong>IIS7（windows2008）：</strong><br>
+伪静态文件是web.config，将文件放在网站根目录下即可<br>
+<br>
+<strong>Apache 2：</strong><br>
+将.htaccess上传到网站根目录下<br>
+<br>
+如果伪静态规则并不能生效，需要修改下apache配置让apache支持根目录的.htaccess规则解析<br>
+修改apache的httpd.conf设置就可以让APACHE支持解析根目录.htaccess<br>
+打开httpd.conf文件(在APACHE目录的CONF目录里面),用文本编辑器打开后,查找 <br>
+<div>
+	&lt;Directory /&gt; <br>
+Options FollowSymLinks <br>
+AllowOverride none <br>
+&lt;/Directory&gt;
+</div>
+<span style="color:#006600;"><strong>改为</strong></span><br>
+<div>
+	&lt;Directory /&gt; <br>
+Options FollowSymLinks <br>
+AllowOverride All <br>
+&lt;/Directory&gt;
+</div>
+<br>
+重启下apache就可以了<br>
+<br>
+<strong>nginx：</strong><br>
+伪静态文件是nginx.conf，将该文件提供给你的空间商，让空间商协助完成规则的添加工作<br>
+<br>
+<span style="color:#003399;"><strong>第二步，mymps后台设置开启使用伪静态</strong></span><br>
+进入mymps网站后台，<br>
+1，系统 -》核心设置 -》 SEO优化设置-》SEO详细设置 -》针对页面详细显示方式全部选择伪静态并提交<br>
+2，站务 -》链接导航 -》主导航 -》恢复默认主导航链接<br>
+3，站务 -》链接导航-》尾部导航 -》 恢复默认尾部导航链接            <br>
+            <br>
+            <a href="http://www.mymps.com.cn/member/index.php?mod=service&action=add#list" target="_blank" style="text-decoration:underline;color:red; font-size:16px;">如果以上教程仍不能解决您的问题，请在此提交售后工单 &gt;&gt;</a>
+            </div>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+    <div class="footer">
+  <div class="container">
+    <p class="center">更多蚂蚁分类工具请进入QQ群:201809840</p>
+
+    <ul class="footer-links">
+      <li><a href="http://www.mymps.com.cn/" target="_blank">蚂蚁分类信息系统官网</a></li>
+      <li><a href="http://bbs.mymps.com.cn/">蚂蚁论坛</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<script src="./伪静态路径使用教程_files/bootstrap.min.js" language="javascript" type="text/javascript"></script>
+<script src="./伪静态路径使用教程_files/prettify.js"></script>
+<script src="./伪静态路径使用教程_files/application.js"></script>
+</body></html>

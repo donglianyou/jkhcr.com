@@ -7,12 +7,11 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('IN_AJAX', true);
 @header('Content-Type: text/html; charset=utf-8');
-!(defined('QQ3479015851')) && exit('ACCESS DENIED!');
+!(defined('SysGlbCfm')) && exit('ACCESS DENIED!');
 require_once 'function.php';
 $payr['payuser'] = trim($payr['payuser']);
 $payr['paykey'] = trim($payr['paykey']);
@@ -67,7 +66,7 @@ echo '",' . "\r\n" . '                    "signType" : "';
 echo $params['signType'];
 echo '",         //微信签名方式:' . "\r\n" . '                    "paySign"  : "';
 echo $params['paySign'];
-echo '" //微信签名' . "\r\n" . '                },' . "\r\n" . '                function(res) {' . "\r\n" . '                    if (res.err_msg == "get_brand_wcpay_request:ok") {' . "\r\n" . '                        location.href = \'index.php?mod=member\';' . "\r\n" . '                    } else if (res.err_msg == "get_brand_wcpay_request:fail") {' . "\r\n" . '                        alert(\'支付失败(联系qq896685868)\');' . "\r\n" . '                    }' . "\r\n" . '                }' . "\r\n" . '            );' . "\r\n" . '        }' . "\r\n\r\n" . '        function callpay()' . "\r\n" . '        {' . "\r\n" . '            if (typeof WeixinJSBridge == "undefined"){' . "\r\n" . '                if( document.addEventListener ){' . "\r\n" . '                    document.addEventListener(\'WeixinJSBridgeReady\', jsApiCall, false);' . "\r\n" . '                }else if (document.attachEvent){' . "\r\n" . '                    document.attachEvent(\'WeixinJSBridgeReady\', jsApiCall);' . "\r\n" . '                    document.attachEvent(\'onWeixinJSBridgeReady\', jsApiCall);' . "\r\n" . '                }' . "\r\n" . '            }else{' . "\r\n" . '                jsApiCall();' . "\r\n" . '            }' . "\r\n" . '        }' . "\r\n\r\n" . '    </script>' . "\r\n" . '</head>' . "\r\n" . '<body ontouchstart>' . "\r\n\r\n" . '<div class="weui_msg">' . "\r\n" . '    <div class="weui_text_area" style="margin-top: 5em;">' . "\r\n" . '        <div class="hd">' . "\r\n" . '            <h1 class="page_title">';
+echo '" //微信签名' . "\r\n" . '                },' . "\r\n" . '                function(res) {' . "\r\n" . '                    if (res.err_msg == "get_brand_wcpay_request:ok") {' . "\r\n" . '                        location.href = \'index.php?mod=member\';' . "\r\n" . '                    } else if (res.err_msg == "get_brand_wcpay_request:fail") {' . "\r\n" . '                        alert(\'支付失败(联系管理员)\');' . "\r\n" . '                    }' . "\r\n" . '                }' . "\r\n" . '            );' . "\r\n" . '        }' . "\r\n\r\n" . '        function callpay()' . "\r\n" . '        {' . "\r\n" . '            if (typeof WeixinJSBridge == "undefined"){' . "\r\n" . '                if( document.addEventListener ){' . "\r\n" . '                    document.addEventListener(\'WeixinJSBridgeReady\', jsApiCall, false);' . "\r\n" . '                }else if (document.attachEvent){' . "\r\n" . '                    document.attachEvent(\'WeixinJSBridgeReady\', jsApiCall);' . "\r\n" . '                    document.attachEvent(\'onWeixinJSBridgeReady\', jsApiCall);' . "\r\n" . '                }' . "\r\n" . '            }else{' . "\r\n" . '                jsApiCall();' . "\r\n" . '            }' . "\r\n" . '        }' . "\r\n\r\n" . '    </script>' . "\r\n" . '</head>' . "\r\n" . '<body ontouchstart>' . "\r\n\r\n" . '<div class="weui_msg">' . "\r\n" . '    <div class="weui_text_area" style="margin-top: 5em;">' . "\r\n" . '        <div class="hd">' . "\r\n" . '            <h1 class="page_title">';
 echo $money;
 echo ' 元</h1>' . "\r\n" . '            <p class="weui_msg_desc">';
 echo $config['title'];

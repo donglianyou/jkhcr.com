@@ -12,8 +12,8 @@
 `*/
 define( "CURSCRIPT", "goods" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+require_once( SysGlbCfm_INC."/db.class.php" );
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }
@@ -23,11 +23,11 @@ $cityid = isset( $cityid ) ? intval( $cityid ) : "";
 chk_admin_purview( "purview_商品管理" );
 if ( !submit_check( CURSCRIPT."_submit" ) )
 {
-				require_once( QQ3479015851_ROOT."/plugin/goods/include/functions.php" );
+				require_once( SysGlbCfm_ROOT."/plugin/goods/include/functions.php" );
 				$here = ( $part == "edit" ? "修改" : "" )."已发布商品";
 				if ( $part == "edit" )
 				{
-								@include_once( QQ3479015851_DATA."/moneytype.inc.php" );
+								@include_once( SysGlbCfm_DATA."/moneytype.inc.php" );
 								if ( empty( $id ) )
 								{
 												write_msg( "商品编号不能为空！" );
@@ -84,8 +84,8 @@ else
 												}
 												foreach ( $delete as $k => $v )
 												{
-																@unlink( QQ3479015851_ROOT.$v['picture'] );
-																@unlink( QQ3479015851_ROOT.$v['pre_picture'] );
+																@unlink( SysGlbCfm_ROOT.$v['picture'] );
+																@unlink( SysGlbCfm_ROOT.$v['pre_picture'] );
 												}
 												$db->query( "DELETE FROM `".$db_qq3479015851."goods` WHERE goodsid ".$create_in );
 												unset( $delete );
@@ -134,13 +134,13 @@ else
 								$catid = intval( $catid );
 								if ( $_FILES[$name_file]['name'] )
 								{
-												require_once( QQ3479015851_INC."/upfile.fun.php" );
+												require_once( SysGlbCfm_INC."/upfile.fun.php" );
 												$destination = "/goods/".date( "Ym" )."/";
 												check_upimage($name_file);
-												$qq3479015851_image = start_upload( $name_file, $destination, 0, $qq3479015851_qq3479015851['cfg_goods_limit']['width'], $qq3479015851_qq3479015851['cfg_goods_limit']['height'], $picture, $pre_picture );
-												$picture = $qq3479015851_image[0];
-												$pre_picture = $qq3479015851_image[1];
-												unset( $qq3479015851_image );
+												$SystemGlobalcfm_image = start_upload( $name_file, $destination, 0, $SystemGlobalcfm_qq3479015851['cfg_goods_limit']['width'], $SystemGlobalcfm_qq3479015851['cfg_goods_limit']['height'], $picture, $pre_picture );
+												$picture = $SystemGlobalcfm_image[0];
+												$pre_picture = $SystemGlobalcfm_image[1];
+												unset( $SystemGlobalcfm_image );
 								}
 								unset( $name_file );
 								$db->query( "UPDATE `".$db_qq3479015851."goods` SET goodsname='".$goodsname."',content='".$content."',cityid='".$cityid."',catid='".$catid."',picture='".$picture."',pre_picture='".$pre_picture."',dateline='".$timestamp."',cityid='".$cityid."',userid='".$userid."',oldprice='".$oldprice."',nowprice='".$nowprice."',gift='".$gift."',huoyuan='".$huoyuan."',rushi='".$rushi."',tuihuan='".$tuihuan."',jiayi='".$jiayi."',weixiu='".$weixiu."',fahuo='".$fahuo."',zhengpin='".$zhengpin."',onsale='".$onsale."',tuijian='".$tuijian."',remai='".$remai."',cuxiao='".$cuxiao."',baozhang='".$baozhang."' WHERE goodsid = '".$id."'" );

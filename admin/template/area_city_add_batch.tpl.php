@@ -1,5 +1,5 @@
 <?php include qq3479015851_tpl('inc_head');?>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -13,7 +13,7 @@
 <form name="form_qq3479015851" action="?" method="post">
 <input name="step" value="2" type="hidden">
 <input name="batchnewprovinceid" value="<?php echo $batchnew[provinceid]; ?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td width="80">隶属省份</td>
@@ -49,7 +49,7 @@
 <?php }else{?>
 <form method="post" name="form" action="?">
 <input name="step" value="1" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
   <td colspan="2" align="left">创建城市分站</td>

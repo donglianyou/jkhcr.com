@@ -4,9 +4,9 @@
 	<dt>栏目分类：</dt>
 	<dd>
 	<div class='content'>
-    	<!--{loop $cat_list $qq3479015851}-->
-		<div><a href="{$city[domain]}{$qq3479015851[uri]}" {if $qq3479015851[catid] == $cat[catid]}class="curr"{/if} title="{$city[cityname]}{$qq3479015851[catname]}">不限</a></div>
-        <!--{loop $qq3479015851[children] $w}-->
+    	<!--{loop $cat_list $SystemGlobalcfm}-->
+		<div><a href="{$city[domain]}{$SystemGlobalcfm[uri]}" {if $SystemGlobalcfm[catid] == $cat[catid]}class="curr"{/if} title="{$city[cityname]}{$SystemGlobalcfm[catname]}">不限</a></div>
+        <!--{loop $SystemGlobalcfm[children] $w}-->
 		<div><a href="{$city[domain]}{$w[uri]}" {if $w[catid] == $cat[catid]}class="curr"{/if} title="{$city[cityname]}{$w[catname]}">{$w[catname]}</a></div>
         <!--{/loop}-->
 		<!--{/loop}-->
@@ -14,11 +14,11 @@
 	</dd>
 	</dl>
     <!--{/if}-->
-    <!--{loop $qq3479015851_extra_model $qq3479015851}-->
+    <!--{loop $SystemGlobalcfm_extra_model $SystemGlobalcfm}-->
 	<dl>
-	<dt><!--{$qq3479015851[title]}-->：</dt>
+	<dt><!--{$SystemGlobalcfm[title]}-->：</dt>
 	<dd>
-    <!--{loop $qq3479015851['list'] $w}-->
+    <!--{loop $SystemGlobalcfm['list'] $w}-->
 	<div><a href="{$city[domain]}{$w[uri]}" {if $w[select] == 1}class="curr"{/if}>{$w[name]}</a></div>
 	<!--{/loop}-->
     </dd>
@@ -28,8 +28,8 @@
 	<dl>
 	<dt>区域查找：</dt>
 	<dd>
-    	<!--{loop $area_list $qq3479015851}-->
-		<div><a href="{$city[domain]}{$qq3479015851[uri]}" {if $qq3479015851[select] == 1}class="curr"{/if}>{$qq3479015851[areaname]}</a></div>
+    	<!--{loop $area_list $SystemGlobalcfm}-->
+		<div><a href="{$city[domain]}{$SystemGlobalcfm[uri]}" {if $SystemGlobalcfm[select] == 1}class="curr"{/if}>{$SystemGlobalcfm[areaname]}</a></div>
 		<!--{/loop}-->
 	</dd>
 	</dl>
@@ -38,8 +38,8 @@
 		<dl>
 		<dt></dt>
 		<dd>
-        	<!--{loop $street_list $qq3479015851}-->
-			<div><a href="{$city[domain]}{$qq3479015851[uri]}" {if $qq3479015851[select] == 1}class="curr"{/if}>{$qq3479015851[streetname]}</a></div>
+        	<!--{loop $street_list $SystemGlobalcfm}-->
+			<div><a href="{$city[domain]}{$SystemGlobalcfm[uri]}" {if $SystemGlobalcfm[select] == 1}class="curr"{/if}>{$SystemGlobalcfm[streetname]}</a></div>
 			<!--{/loop}-->
 		</dd>
 		</dl>
@@ -49,15 +49,15 @@
 		<dt>热门分站</dt>
 		<dd>
 		<div><a href="#" class="curr">不限</a></div>
-        	<!--{loop $hotcities $qq3479015851}-->
-			<div><a href="{$qq3479015851[domain]}{$cat[caturi]}">{$qq3479015851[cityname]}</a></div>
+        	<!--{loop $hotcities $SystemGlobalcfm}-->
+			<div><a href="{$SystemGlobalcfm[domain]}{$cat[caturi]}">{$SystemGlobalcfm[cityname]}</a></div>
 			<!--{/loop}-->
-		<div><a href="{$qq3479015851_global[SiteUrl]}/changecity.php">更多 &raquo;</a></div>
+		<div><a href="{$SystemGlobalcfm_global[SiteUrl]}/changecity.php">更多 &raquo;</a></div>
 		</dd>
 		</dl>
 	<!--{/if}-->
 	<dl class="lastdl">
-	<form method="get" action="{$qq3479015851_global[SiteUrl]}/search.php?" target="_blank">
+	<form method="get" action="{$SystemGlobalcfm_global[SiteUrl]}/search.php?" target="_blank">
 		<input name="mod" value="information" type="hidden">
 		<input name="catid" value="{$cat[catid]}" type="hidden">
 		<input name="cityid" value="{$cityid}" type="hidden">

@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 
 function get_style_forminput( $code = "", $array = "" )
@@ -28,20 +27,20 @@ function get_style_forminput( $code = "", $array = "" )
 				);
 				foreach ( $vbm_style_form as $ktypeform => $vform )
 				{
-								$qq3479015851 .= "<div id=\"style_".$ktypeform."\" style=\"";
+								$SystemGlobalcfm .= "<div id=\"style_".$ktypeform."\" style=\"";
 								if ( is_array( $array ) )
 								{
-												$qq3479015851 .= $array[style] == $ktypeform ? "display:yes" : "display:none";
+												$SystemGlobalcfm .= $array[style] == $ktypeform ? "display:yes" : "display:none";
 								}
 								else
 								{
-												$qq3479015851 .= $array == $ktypeform ? "display:yes" : "display:none";
+												$SystemGlobalcfm .= $array == $ktypeform ? "display:yes" : "display:none";
 								}
-								$qq3479015851 .= "\" class=\"maintablediv\">";
-								$qq3479015851 .= $vform;
-								$qq3479015851 .= "</div>";
+								$SystemGlobalcfm .= "\" class=\"maintablediv\">";
+								$SystemGlobalcfm .= $vform;
+								$SystemGlobalcfm .= "</div>";
 				}
-				return $qq3479015851;
+				return $SystemGlobalcfm;
 }
 
 function get_adv_style( $style = "", $formname = "style" )
@@ -108,11 +107,11 @@ function get_infoad_target( $selected )
 
 define( "CURSCRIPT", "advertisement" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 require_once( dirname( __FILE__ )."/include/adv.inc.php" );
 $part = $part ? $part : "list";
 $cityid = isset( $cityid ) ? intval( $cityid ) : 0;
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }
@@ -292,5 +291,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = $part = $adv = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = $part = $adv = NULL;
 ?>

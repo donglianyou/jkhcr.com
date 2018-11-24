@@ -7,14 +7,13 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-if (!defined('QQ3479015851')) {
+if (!defined('SysGlbCfm')) {
 	exit('Forbidden');
 }
 
-require_once QQ3479015851_INC . '/class.fun.php';
+require_once SysGlbCfm_INC . '/class.fun.php';
 
 if (submit_check('shop_submit')) {
 	$tname = (isset($_POST['tname']) ? trim(mhtmlspecialchars($_POST['tname'])) : '');
@@ -57,12 +56,12 @@ if (submit_check('shop_submit')) {
 		}
 		else if ($ac == 'template') {
 			if ($_FILES[$name_file]['name']) {
-				require_once QQ3479015851_INC . '/upfile.fun.php';
+				require_once SysGlbCfm_INC . '/upfile.fun.php';
 				check_upimage($name_file);
 				$destination = '/banner/' . date('Ym') . '/';
-				$qq3479015851_image = start_upload($name_file, $destination, 0, '', '', $oldbanner, '');
-				$picture = $qq3479015851_image;
-				unset($qq3479015851_image);
+				$SystemGlobalcfm_image = start_upload($name_file, $destination, 0, '', '', $oldbanner, '');
+				$picture = $SystemGlobalcfm_image;
+				unset($SystemGlobalcfm_image);
 				unset($_FILES);
 			}
 			else {
@@ -126,7 +125,7 @@ else {
 	}
 	else {
 		chk_member_purview('purview_banner');
-		require_once QQ3479015851_DATA . '/config.inc.php';
+		require_once SysGlbCfm_DATA . '/config.inc.php';
 		$location = location('corp');
 		include qq3479015851_tpl('shop_template');
 	}

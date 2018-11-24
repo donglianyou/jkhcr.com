@@ -1,6 +1,6 @@
 <?php include qq3479015851_tpl('inc_head');?>
 <form name="form_qq3479015851" action="?part=list" method="post">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr style="background: #e1f2fc; font-weight: bold; text-align:center">
       <td width="40">编号</td>

@@ -13,7 +13,7 @@
 
 define( "CURSCRIPT", "certification" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 $certify_arr = array( 1 => "营业执照", 2 => "个人身份证" );
 $typeid = $typeid ? $typeid : "1";
 $page = $page ? intval( $page ) : "1";
@@ -82,7 +82,7 @@ else
 								foreach ( $delids as $kids => $vids )
 								{
 												$delrow = $db->getRow( "SELECT img_path FROM `".$db_qq3479015851."certification` WHERE id = '".$vids."'" );
-												@unlink( QQ3479015851_ROOT.$delrow['img_path'] );
+												@unlink( SysGlbCfm_ROOT.$delrow['img_path'] );
 												unset( $delrow );
 												qq3479015851_delete( CURSCRIPT, "WHERE id = ".$vids );
 								}
@@ -90,7 +90,7 @@ else
 				}
 				if ( $part == "sendpm" )
 				{
-								require_once( QQ3479015851_MEMBER."/include/common.func.php" );
+								require_once( SysGlbCfm_MEMBER."/include/common.func.php" );
 								if ( !$userid )
 								{
 												write_msg( "您没有指定会员用户名！" );
@@ -113,5 +113,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 ?>

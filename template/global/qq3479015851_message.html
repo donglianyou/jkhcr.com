@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>系统提示信息</title>
-<meta name="generator" content="<?=QQ3479015851_SOFTNAME?> <?=QQ3479015851_VERSION?>" />
+<meta name="generator" content="<?=SysGlbCfm_SOFTNAME?> <?=SysGlbCfm_VERSION?>" />
 <meta name="description" content="qq3479015851" />
 <meta name="keywords" content="qq3479015851" />
 <base id="headbase" />
@@ -79,7 +79,7 @@ if(defined('IN_ADMIN')){
 <center style="color:#999999; width:500px; margin-left:auto; margin-right:auto;">
 <?php
 	$mtime = explode(' ', microtime());
-	$totaltime = number_format(($mtime[1] + $mtime[0] - $qq3479015851_starttime), 6);
+	$totaltime = number_format(($mtime[1] + $mtime[0] - $SystemGlobalcfm_starttime), 6);
 	echo $sitedebug = 'Processed in '.$totaltime.' second(s) , '.$db->query_num.' queries';
 }
 ?>

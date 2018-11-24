@@ -91,7 +91,7 @@ function windowToShow(action_name,to_url,ok_url){//从微信客户端中跳出//
 	history.pushState(null, '', to_url);
 	alert('to_url:'+to_url);
 }
-function QQ3479015851WindowMsg_JSON(data){
+function SysGlbCfmWindowMsg_JSON(data){
 	if(data.action === "pay" && data.classid === "2" ){
 		payAppsubmitGo(data);
 	}else{
@@ -102,12 +102,12 @@ function QQ3479015851WindowMsg_JSON(data){
 			$('#chrcontent2').val('');
 			$('#maskTB').trigger('click');
 			if(data.isopen === '0'){
-				QQ3479015851WindowMsg('revert','0','恭喜你，回复成功！请耐心等待系统审核！','','');
+				SysGlbCfmWindowMsg('revert','0','恭喜你，回复成功！请耐心等待系统审核！','','');
 			}else{
 				successPostRevert(data);
 			}
 		}else{
-			QQ3479015851WindowMsg('revert','0',data.error,'','');
+			SysGlbCfmWindowMsg('revert','0',data.error,'','');
 		}
 	}
 }
@@ -126,7 +126,7 @@ function windowlocationhref(url,nodecode){
 	if(nodecode) {}else{url = decodeURIComponent(url);}
 	if(url.length > 5){window.location.href=url;}
 }
-function QQ3479015851WindowMsg(action,showid,str,url,formcode){
+function SysGlbCfmWindowMsg(action,showid,str,url,formcode){
 	var sys_tips = '<div class="sys_tips" id="sys_tips" style="display:none;"><div class="hd" id="sys_tips_title"></div><div class="bd"><p id="sys_tips_info"></p><div class="btn"><a href="javascript:void(0);" class="btn2" id="sys_tips_submit">确定</a></div></div></div>';
 	if(!$('#sys_tips')[0]){
 		$('body').prepend(sys_tips);
@@ -166,7 +166,7 @@ function reloadLocation(){//切换地址 恢复当前位置
 		navigator.geolocation.getCurrentPosition(showMapGPSre, handleError, {enableHighAccuracy:true, maximumAge:1000,timeout:6000});
 		window['location_timeout'] = setTimeout("geolocFail()", 10000);
 	}else{
-		QQ3479015851WindowMsg('location','0','抱歉，您的浏览器不支持使用HTML 5来获取地理位置服务','','');
+		SysGlbCfmWindowMsg('location','0','抱歉，您的浏览器不支持使用HTML 5来获取地理位置服务','','');
 	}
 }
 function getLocation(){
@@ -174,7 +174,7 @@ function getLocation(){
 		navigator.geolocation.getCurrentPosition(showMapGPS, handleError, {enableHighAccuracy:true, maximumAge:1000,timeout:6000});
 		window['location_timeout'] = setTimeout("geolocFail()", 10000);
 	}else{
-		QQ3479015851WindowMsg('location','0','抱歉，您的浏览器不支持使用HTML 5来获取地理位置服务','','');
+		SysGlbCfmWindowMsg('location','0','抱歉，您的浏览器不支持使用HTML 5来获取地理位置服务','','');
 	}
 }
 window['location_timeout'] = null;
@@ -182,23 +182,23 @@ function geolocFail(){
 	if(typeof keyvalues !== 'undefined'){
 		getPagingGlobal();
 	}
-	QQ3479015851WindowMsg('location','0','抱歉，我们没有获取到您的位置信息','','');
+	SysGlbCfmWindowMsg('location','0','抱歉，我们没有获取到您的位置信息','','');
 }
 function handleError(value){
 	clearTimeout(window['location_timeout']);
 	geolocFail();
 	switch(value.code){
 		case value.PERMISSION_DENIED:
-		  QQ3479015851WindowMsg('location','0','抱歉，位置服务被拒绝','','');
+		  SysGlbCfmWindowMsg('location','0','抱歉，位置服务被拒绝','','');
 		  break;
 		case value.POSITION_UNAVAILABLE:
-		  QQ3479015851WindowMsg('location','0','抱歉，暂时获取不到位置信息','','');
+		  SysGlbCfmWindowMsg('location','0','抱歉，暂时获取不到位置信息','','');
 		  break;
 		case value.TIMEOUT:
-		  QQ3479015851WindowMsg('location','0','抱歉，获取信息超时','','');
+		  SysGlbCfmWindowMsg('location','0','抱歉，获取信息超时','','');
 		  break;
 		case value.UNKNOWN_ERROR:
-		  QQ3479015851WindowMsg('location','0','抱歉，位置服务未知错误','','');
+		  SysGlbCfmWindowMsg('location','0','抱歉，位置服务未知错误','','');
 		  break;
 	}
 }

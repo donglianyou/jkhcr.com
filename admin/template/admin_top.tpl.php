@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="template/css/head.css" rel="stylesheet" type="text/css">
-    <title>QQ896685868 Administrator's Control Panel - powered by qq896685868</title>
+    <title>网站后台管理</title>
     <script type="text/javascript" src="js/menu.js"></script>
     <script>var menus = new Array('index', 'info', 'member', 'category', 'news', 'siteabout', 'sitesys', 'plugin', 'extend');
       function togglemenu(id) {
@@ -30,11 +30,11 @@
       <div class="logo">
         <img src="template/images/3_01.jpg" border="0" alt="qq3479015851 4.0i" /></div>
       <div class="nav">
-        <?php echo $qq3479015851_admin_menu; ?>
+        <?php echo $SystemGlobalcfm_admin_menu; ?>
           <li class="more">
-            <a href="javascript:;" onClick="framRight.contentWindow.setbg('<?php echo QQ3479015851_SOFTNAME; ?>功能菜单',670,545,'../box.php?part=adminmenu&admindir=<?php echo $admindir;?>');">全 部&nbsp;</a></li>
+            <a href="javascript:;" onClick="framRight.contentWindow.setbg('功能菜单',670,545,'../box.php?part=adminmenu&admindir=<?php echo $admindir;?>');">全 部&nbsp;</a></li>
       </div>
-      <div class="sitenav"><?=$admin['cityname']?>管理中心cxkeji</div>
+      <div class="sitenav"><?=$admin['cityname']?>管理中心</div>
 	</div>
     <div class="afterlogonav">
       <div class="left1">
@@ -53,7 +53,7 @@
             <?php echo $admin_id?></font>[
           <a target="framRight" href="admin.php?do=user&part=edit&userid=<?php echo $admin_id?>" style="text-decoration:underline;">改密</a>
           <a href="index.php?part=out" style="text-decoration:underline;" target="_top">注销</a>]
-          <a href="http://junchang.taobao.com" target="_blank">cxkeji</a></span></div>
+          </span></div>
     </div>
   </body>
 

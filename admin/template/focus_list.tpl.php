@@ -1,6 +1,6 @@
 <?php include qq3479015851_tpl('inc_head'); ?>
 <script type='text/javascript' src='js/vbm.js'></script>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -20,7 +20,7 @@
 </div>
 <form method='post' action='?part=<?=$part?>'>
 <input name="typename" value="<?=$typename?>" type="hidden" />
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
     <td width="60"><input name="checkall" type="checkbox" class="checkbox" id="checkall" onClick="CheckAll(this.form)"/> 删?</td>

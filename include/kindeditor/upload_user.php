@@ -1,17 +1,17 @@
 <?php
 
 echo '﻿';
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 define('IN_AJAX', true);
 define('IN_JSON', true);
 require_once 'JSON.php';
 require_once dirname(__FILE__) . '/../global.inc.php';
-require_once QQ3479015851_INC . '/global.php';
-require_once QQ3479015851_DATA . '/config.php';
-require_once QQ3479015851_DATA . '/config.db.php';
-require_once QQ3479015851_INC . '/upfile.fun.php';
-require_once QQ3479015851_INC . '/db.class.php';
-require_once QQ3479015851_INC . '/member.class.php';
+require_once SysGlbCfm_INC . '/global.php';
+require_once SysGlbCfm_DATA . '/config.php';
+require_once SysGlbCfm_DATA . '/config.db.php';
+require_once SysGlbCfm_INC . '/upfile.fun.php';
+require_once SysGlbCfm_INC . '/db.class.php';
+require_once SysGlbCfm_INC . '/member.class.php';
 
 if (!$member_log->chk_in()) {
 	alert('请登录用户管理中心再上传图片!');
@@ -28,15 +28,15 @@ $small = (isset($small) ? $small : '');
 
 if (empty($_FILES) === false) {
 	$name_file = 'imgFile';
-	$size = $qq3479015851_global['cfg_upimg_size'] * 1024;
-	$upimg_allow = explode(',', $qq3479015851_global['cfg_upimg_type']);
+	$size = $SystemGlobalcfm_global['cfg_upimg_size'] * 1024;
+	$upimg_allow = explode(',', $SystemGlobalcfm_global['cfg_upimg_type']);
 
 	if ($size < $_FILES[$name_file]['size']) {
-		alert('上传文件应小于' . $qq3479015851_global['cfg_upimg_size'] . 'KB');
+		alert('上传文件应小于' . $SystemGlobalcfm_global['cfg_upimg_size'] . 'KB');
 	}
 
 	if (!in_array(FileExt($_FILES[$name_file]['name']), $upimg_allow)) {
-		alert('系统只允许上传' . $qq3479015851_global['cfg_upimg_type'] . '格式的图片！');
+		alert('系统只允许上传' . $SystemGlobalcfm_global['cfg_upimg_type'] . '格式的图片！');
 	}
 
 	if (!preg_match('/^image\\//i', $_FILES[$name_file]['type'])) {
@@ -47,15 +47,15 @@ if (empty($_FILES) === false) {
 
 	if ($_FILES[$name_file]['name']) {
 		check_upimage($name_file);
-		$qq3479015851_image = start_upload($name_file, $destination, $qq3479015851_global[cfg_upimg_watermark]);
-		$imgsrcValue = $qq3479015851_image;
-		$full_litfilename = $full_filename = QQ3479015851_ROOT . $qq3479015851_image;
+		$SystemGlobalcfm_image = start_upload($name_file, $destination, $SystemGlobalcfm_global[cfg_upimg_watermark]);
+		$imgsrcValue = $SystemGlobalcfm_image;
+		$full_litfilename = $full_filename = SysGlbCfm_ROOT . $SystemGlobalcfm_image;
 		$sizes = getimagesize($full_filename);
 		$imgwidthValue = $sizes[0];
 		$imgheightValue = $sizes[1];
 		$imgsize = filesize($full_litfilename);
-		$db->query('INSERT INTO `' . $db_qq3479015851 . 'upload` (title,url,width,height,filesize,uptime,adminid) VALUES (\'' . $qq3479015851_image[0] . '\',\'' . $imgsrcValue . '\',\'' . $imgwidthValue . '\',\'' . $imgheightValue . '\',\'' . $imgsize . '\',\'' . $nowtime . '\',\'' . $s_uid . '\')');
-		$file_url = $qq3479015851_global[SiteUrl] . $imgsrcValue;
+		$db->query('INSERT INTO `' . $db_qq3479015851 . 'upload` (title,url,width,height,filesize,uptime,adminid) VALUES (\'' . $SystemGlobalcfm_image[0] . '\',\'' . $imgsrcValue . '\',\'' . $imgwidthValue . '\',\'' . $imgheightValue . '\',\'' . $imgsize . '\',\'' . $nowtime . '\',\'' . $s_uid . '\')');
+		$file_url = $SystemGlobalcfm_global[SiteUrl] . $imgsrcValue;
 	}
 
 	header('Content-type: text/html; charset=utf-8');

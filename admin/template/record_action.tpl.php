@@ -1,6 +1,6 @@
 <?php include qq3479015851_tpl('inc_head');?>
 <?php if($do == 'admin'){?>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -18,11 +18,11 @@
     <input name="part" value="action" type="hidden">
     <input name="keywords" class="text" value="<?=$keywords?>">
     <input type="submit" value="模糊搜索" class="gray mini">&nbsp;&nbsp;
-    <input type="button" value="只保存最新的<?=$qq3479015851_qq3479015851['cfg_record_save']?>条记录" class="qq3479015851 mini" onclick="location.href='?do=<?=$do?>&part=<?=$part?>&action=delrecord&url=<?=urlencode(GetUrl())?>'" <?php if($do == 'member'){echo "disabled";}?>>
+    <input type="button" value="只保存最新的<?=$SystemGlobalcfm_qq3479015851['cfg_record_save']?>条记录" class="qq3479015851 mini" onclick="location.href='?do=<?=$do?>&part=<?=$part?>&action=delrecord&url=<?=urlencode(GetUrl())?>'" <?php if($do == 'member'){echo "disabled";}?>>
  </form>
 </ul>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <form name='form1' method='post' action='?do=<?=$do?>&part=<?=$part?>' onSubmit='return checkSubmit();'>
     <input type='hidden' name='action' value='delall'/>

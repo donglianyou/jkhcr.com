@@ -1,6 +1,6 @@
 <?php include qq3479015851_tpl('inc_head');?>
 <form action="?part=template" method="post"/>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
     <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td><input class="checkbox" name="checkall" type="checkbox" id="checkall" onClick="CheckAll(this.form)"/> 删?</td>
@@ -47,7 +47,7 @@
 <?php if($template_id){?>
 <br />
 <form method="post" action="?part=template&edit_id=<?=$edit[template_id]?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <input name="edit[template_id]" type="hidden" value="<?=$template_id?>" />
 <tr class="firstr">

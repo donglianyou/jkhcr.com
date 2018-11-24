@@ -103,7 +103,7 @@ function swapOptionProperties(option1,option2){
 </script>
 <form method="post" name="form1" action="?part=mod&action=update" onsubmit="selectalloption('moptselect');">
 <input name="id" value="<?=$edit['id']?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
     <td colspan="2">分类选项基本设置</td>
@@ -118,7 +118,7 @@ function swapOptionProperties(option1,option2){
     </tr>
 </table>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
     <table border="0" cellpadding="0" cellspacing="0" class="vbm">
     <tr class="firstr">
     <td colspan="3">模型选项设置</td>

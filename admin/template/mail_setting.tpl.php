@@ -1,5 +1,5 @@
 <?php include qq3479015851_tpl('inc_head');?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">技巧提示</td>
@@ -13,9 +13,9 @@
 </table>
 </div>
 <form method="post" action="mail.php?part=<?=$part?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
-<tr class="firstr"><td colspan="2">配置邮件服务器设置(诚信源码之家http://junchang.taobao.com)</td></tr>
+<tr class="firstr"><td colspan="2">配置邮件服务器设置</td></tr>
 <tr bgcolor="#ffffff">
 <td width="25%">
 邮件服务:  &nbsp;&nbsp;
@@ -74,7 +74,7 @@
 </form>
 <div class="clear" style="height:10px;"></div>
 <form method="post" action="mail.php?part=<?=$part?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr"><td colspan="2">测试邮件发送</td></tr>
 <tr bgcolor="#ffffff">

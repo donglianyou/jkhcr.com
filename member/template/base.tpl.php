@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="template/css/new.my.css" />
 <script language="javascript" src="template/javascript.js"></script>
 </head>
-<body class="<?php echo $qq3479015851_global['cfg_tpl_dir']; ?>">
+<body class="<?php echo $SystemGlobalcfm_global['cfg_tpl_dir']; ?>">
 <div class="container">
 <?php include qq3479015851_tpl('inc_head'); ?>
 <div id="main" class="main section-setting">
@@ -27,7 +27,7 @@
 									<div id="msg_alert"></div>
                                     
                                     <form action="?m=base" method="post">
-                                    <?php if($error == '41'){?><input name="url" value="../<?=$qq3479015851_global['cfg_postfile']?>" type="hidden"><?}?>
+                                    <?php if($error == '41'){?><input name="url" value="../<?=$SystemGlobalcfm_global['cfg_postfile']?>" type="hidden"><?}?>
                                     <div class="formgroup">
                                         <div class="formrow">
                                             <h3 class="label"><label>用户名</label></h3>

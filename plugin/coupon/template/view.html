@@ -3,15 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>{$page_title}</title>
-<link rel="stylesheet" href="{$qq3479015851_global[SiteUrl]}/template/default/css/global.css" />
-<link rel="stylesheet" href="{$qq3479015851_global[SiteUrl]}/template/default/css/style.css" />
-<link rel="stylesheet" href="{$qq3479015851_global[SiteUrl]}/plugin/coupon/template/style.css" />
-<script src="{$qq3479015851_global[SiteUrl]}/template/global/noerr.js" type="text/javascript"></script>
-<script src="{$qq3479015851_global[SiteUrl]}/template/default/js/global.js" type="text/javascript"></script>
-<script src="{$qq3479015851_global[SiteUrl]}/template/default/js/jquery.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="{$SystemGlobalcfm_global[SiteUrl]}/template/default/css/global.css" />
+<link rel="stylesheet" href="{$SystemGlobalcfm_global[SiteUrl]}/template/default/css/style.css" />
+<link rel="stylesheet" href="{$SystemGlobalcfm_global[SiteUrl]}/plugin/coupon/template/style.css" />
+<script src="{$SystemGlobalcfm_global[SiteUrl]}/template/global/noerr.js" type="text/javascript"></script>
+<script src="{$SystemGlobalcfm_global[SiteUrl]}/template/default/js/global.js" type="text/javascript"></script>
+<script src="{$SystemGlobalcfm_global[SiteUrl]}/template/default/js/jquery.min.js" type="text/javascript"></script>
 </head>
 
-<body class="{$qq3479015851_global[cfg_tpl_dir]} {$qq3479015851_global[screen_search]} bodybg{$qq3479015851_global[cfg_tpl_dir]}{$qq3479015851_global[bodybg]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]} {$SystemGlobalcfm_global[screen_search]} bodybg{$SystemGlobalcfm_global[cfg_tpl_dir]}{$SystemGlobalcfm_global[bodybg]}">
 	{mytemplate inc_head}
 	<div class="body1000">
 		<div class="location">{$location}</div>
@@ -39,11 +39,11 @@
 				</div>
 				<div class="clear"></div>
 				<div class="controlcoupon">
-					<div class="button"><button value="上传优惠券" class="fbyhq" onclick="window.open('{$qq3479015851_global[SiteUrl]}/member/index.php?m=coupon&ac=detail');"></button> <button value="管理优惠券" class="glyhq" onclick="window.open('{$qq3479015851_global[SiteUrl]}/member/index.php?m=coupon');"></button>
+					<div class="button"><button value="上传优惠券" class="fbyhq" onclick="window.open('{$SystemGlobalcfm_global[SiteUrl]}/member/index.php?m=coupon&ac=detail');"></button> <button value="管理优惠券" class="glyhq" onclick="window.open('{$SystemGlobalcfm_global[SiteUrl]}/member/index.php?m=coupon');"></button>
 					</div>
 					<div class="clearfix"></div>
 					<div class="tel">
-						合作热线：<span>{$qq3479015851_global[SiteTel]}</span>
+						合作热线：<span>{$SystemGlobalcfm_global[SiteTel]}</span>
 					</div>
 				</div>
 			</div>
@@ -55,7 +55,7 @@
 						<div class="yhq"><span>优惠券</span></div>
 						<div class="coupond">
 							<div class="lefter">
-								<div class="img"><img src="{$qq3479015851_global[SiteUrl]}{$coupon[pre_picture]}">{if  $coupon[sup]}<sup>{$coupon[sup]}折</sup>{/if}</div>
+								<div class="img"><img src="{$SystemGlobalcfm_global[SiteUrl]}{$coupon[pre_picture]}">{if  $coupon[sup]}<sup>{$coupon[sup]}折</sup>{/if}</div>
 								<div class="tips">
 									<ul>
 										<li>使用前请出示此券，黑白打印即可。 </li>
@@ -72,7 +72,7 @@
 						</div>
 					</div>
 					<div class="printer">
-						<div class="printbutton"><input type="button" value="打印此券" class="print" onclick="window.open('{$qq3479015851_global[SiteUrl]}/coupon.php?id={$coupon[id]}&action=print')"><br />
+						<div class="printbutton"><input type="button" value="打印此券" class="print" onclick="window.open('{$SystemGlobalcfm_global[SiteUrl]}/coupon.php?id={$coupon[id]}&action=print')"><br />
 						<span>{$coupon[prints]}</span> 人打印</div>
 					</div>
 				</div>

@@ -7,19 +7,18 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 
 define( "CURSCRIPT", "announce" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 $part = $part ? $part : "all";
 $cityid = $cityid ? intval( $cityid ) : 0;
 if ( $part == "add" || $part == "edit" )
 {
 				require_once( dirname( __FILE__ )."/include/color.inc.php" );
-				$qq3479015851_title_color = $color;
+				$SystemGlobalcfm_title_color = $color;
 }
 if ( $part == "add" )
 {
@@ -70,7 +69,7 @@ else if ( $part == "delete" )
 				{
 								qq3479015851_delete( "announce", "WHERE id = '".$id."'" );
 								clear_cache_files( "city_".$cityid );
-								write_msg( "删除公告 ".$id." 成功", $url, "QQ3479015851_record" );
+								write_msg( "删除公告 ".$id." 成功", $url, "SysGlbCfm_record" );
 				}
 }
 else if ( $part == "all" )
@@ -90,11 +89,11 @@ else if ( $part == "all" )
 else if ( $part == "delall" )
 {
 				clear_cache_files( "city_".$cityid );
-				write_msg( "删除公告 ".qq3479015851_del_all( "announce", $_POST[id] )." 成功", $url, "QQ3479015851_record" );
+				write_msg( "删除公告 ".qq3479015851_del_all( "announce", $_POST[id] )." 成功", $url, "SysGlbCfm_record" );
 }
 if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 ?>

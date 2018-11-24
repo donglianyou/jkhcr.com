@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 if ( CURSCRIPT != "wap" )
 {
@@ -30,7 +29,7 @@ if ( $id )
 }
 else
 {
-				require_once( QQ3479015851_ROOT."/plugin/goods/include/functions.php" );
+				require_once( SysGlbCfm_ROOT."/plugin/goods/include/functions.php" );
 				$where = " WHERE onsale = '1' ";
 				if ( $catid )
 				{

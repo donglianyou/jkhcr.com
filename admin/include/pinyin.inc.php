@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 function utf82gb($utfstr)
 {
@@ -24,7 +23,7 @@ function utf82gb($utfstr)
 	}
 
 	if (empty($UC2GBTABLE)) {
-		$filename = QQ3479015851_DATA . '/gb2312-utf8.table';
+		$filename = SysGlbCfm_DATA . '/gb2312-utf8.table';
 		$fp = fopen($filename, 'r');
 
 		while ($l = fgets($fp, 15)) {
@@ -83,7 +82,7 @@ function GetPinyin($str, $ishead = 0, $isclose = 1)
 	}
 
 	if (count($pinyins) == 0) {
-		$fp = fopen(QQ3479015851_DATA . '/pinyin.db', 'r');
+		$fp = fopen(SysGlbCfm_DATA . '/pinyin.db', 'r');
 
 		while (!feof($fp)) {
 			$line = trim(fgets($fp));

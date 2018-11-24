@@ -7,12 +7,11 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('IN_SMT',true);
 define('CURSCRIPT','corp');
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 
 require_once dirname(__FILE__)."/data/config.php";
 require_once dirname(__FILE__)."/include/global.php";
@@ -22,8 +21,8 @@ ifsiteopen();
 $catid  	= isset($catid)  	? intval($catid)  : '';
 $areaid 	= isset($areaid) 	? intval($areaid) : '';
 
-require_once QQ3479015851_DATA."/config.db.php";
-require_once QQ3479015851_INC."/db.class.php";
+require_once SysGlbCfm_DATA."/config.db.php";
+require_once SysGlbCfm_INC."/db.class.php";
 
 $seo	 	= get_seoset();
 $rewrite	= $seo['seo_force_yp'];
@@ -47,9 +46,9 @@ if($catid && !$cur = $db -> getRow("SELECT parentid,corpname FROM `{$db_qq347901
 
 $city = get_city_caches($cityid);
 /*自动补充总站数据start*/
-if($qq3479015851_global['cfg_independency'] && $cityid){
+if($SystemGlobalcfm_global['cfg_independency'] && $cityid){
 	$maincity = get_city_caches(0);
-	$independency = explode(',',$qq3479015851_global['cfg_independency']);
+	$independency = explode(',',$SystemGlobalcfm_global['cfg_independency']);
 	$independency = is_array($independency) ? $independency : array();
 	if(in_array('advertisement',$independency)){
 		$city['advertisement'] = empty($city['advertisement']) ? $maincity['advertisement'] : $city['advertisement'];
@@ -67,7 +66,7 @@ $count_sql	= empty($cate_limit) ? "SELECT COUNT(a.id) FROM `{$db_qq3479015851}me
 
 $rows_num 	= $db -> getOne($count_sql);
 $param		= setParam(array('catid','areaid'),$rewrite,'corporation-');
-if(is_array($res = page1($sql,$qq3479015851_global['cfg_list_page_line'] ? $qq3479015851_global['cfg_list_page_line'] : 10))){
+if(is_array($res = page1($sql,$SystemGlobalcfm_global['cfg_list_page_line'] ? $SystemGlobalcfm_global['cfg_list_page_line'] : 10))){
 	foreach($res as $key => $val){
 		$arr['userid']		= $val['userid'];
 		$arr['per_certify']	= $val['per_certify'];

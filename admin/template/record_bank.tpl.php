@@ -1,6 +1,6 @@
 <?php include qq3479015851_tpl('inc_head');?>
 <script type="text/javascript" src="../template/global/messagebox.js"></script>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <form name='form1' method='post' action='?do=<?=$do?>&part=<?=$part?>&type=<?=$type?>' onSubmit='return checkSubmit();'>
   <input name="url" type="hidden" value="<?=GetUrl()?>">
@@ -19,7 +19,7 @@
       <td><input type='checkbox' name='id[]' value='<?=$v[id]?>' class='checkbox' id="<?=$v[id]?>"></td>
       <td><?=$v[id]?></td>
       <td><a href="javascript:void(0);" onclick="
-setbg('QQ3479015851会员中心',400,110,'/box.php?part=member&userid=<?=$v[userid]?>')"><?=$v[userid]?></a></td>
+setbg('SysGlbCfm会员中心',400,110,'/box.php?part=member&userid=<?=$v[userid]?>')"><?=$v[userid]?></a></td>
 	  <td><?=$v[subject]?></td>
       <td><?=$v[paycost]?></td>
       <td><em><?=$v[pubtime]?></em></td>

@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-if (!defined('QQ3479015851')) {
+if (!defined('SysGlbCfm')) {
 	exit('Forbidden');
 }
 
@@ -32,8 +31,8 @@ if (submit_check('group_submit')) {
 		}
 
 		foreach ($delete as $k => $v ) {
-			@unlink(QQ3479015851_ROOT . $v['picture']);
-			@unlink(QQ3479015851_ROOT . $v['pre_picture']);
+			@unlink(SysGlbCfm_ROOT . $v['picture']);
+			@unlink(SysGlbCfm_ROOT . $v['pre_picture']);
 		}
 
 		$db->query('DELETE FROM `' . $db_qq3479015851 . 'group` ' . $where . ' AND groupid ' . $create_in);
@@ -44,7 +43,7 @@ if (submit_check('group_submit')) {
 		write_msg('', '?m=group&success=3&status=' . $status . '&page=' . $page);
 	}
 
-	include QQ3479015851_DATA . '/config.inc.php';
+	include SysGlbCfm_DATA . '/config.inc.php';
 	$name_file = 'group_image';
 	$gname = trim(mhtmlspecialchars($_POST['gname']));
 	$content = trim($_POST['content']);
@@ -68,13 +67,13 @@ if (submit_check('group_submit')) {
 	}
 
 	if ($_FILES[$name_file]['name']) {
-		require_once QQ3479015851_INC . '/upfile.fun.php';
+		require_once SysGlbCfm_INC . '/upfile.fun.php';
 		$destination = '/group/' . date('Ym') . '/';
 		check_upimage($name_file);
-		$qq3479015851_image = (empty($id) ? start_upload($name_file, $destination, 0, $qq3479015851_qq3479015851['cfg_group_limit']['width'], $qq3479015851_qq3479015851['cfg_group_limit']['height']) : start_upload($name_file, $destination, 0, $qq3479015851_qq3479015851['cfg_group_limit']['width'], $qq3479015851_qq3479015851['cfg_group_limit']['height'], $picture, $pre_picture));
-		$picture = $qq3479015851_image[0];
-		$pre_picture = $qq3479015851_image[1];
-		unset($qq3479015851_image);
+		$SystemGlobalcfm_image = (empty($id) ? start_upload($name_file, $destination, 0, $SystemGlobalcfm_qq3479015851['cfg_group_limit']['width'], $SystemGlobalcfm_qq3479015851['cfg_group_limit']['height']) : start_upload($name_file, $destination, 0, $SystemGlobalcfm_qq3479015851['cfg_group_limit']['width'], $SystemGlobalcfm_qq3479015851['cfg_group_limit']['height'], $picture, $pre_picture));
+		$picture = $SystemGlobalcfm_image[0];
+		$pre_picture = $SystemGlobalcfm_image[1];
+		unset($SystemGlobalcfm_image);
 		unset($_FILES);
 	}
 
@@ -100,15 +99,15 @@ else if (submit_check('group_signin_submit')) {
 }
 else {
 	if ($ac == 'list') {
-		require_once QQ3479015851_DATA . '/grouplevel.inc.php';
+		require_once SysGlbCfm_DATA . '/grouplevel.inc.php';
 		$rows_num = qq3479015851_count('group', $where);
 		$param = setParam(array('m', 'ac'));
 		$group = page1('SELECT a.*,b.cate_name FROM `' . $db_qq3479015851 . 'group` AS a LEFT JOIN `' . $db_qq3479015851 . 'group_category` AS b ON a.cate_id = b.cate_id WHERE a.userid = \'' . $s_uid . '\' ORDER BY a.dateline DESC');
 	}
 	else if ($ac == 'detail') {
-		require_once QQ3479015851_DATA . '/grouplevel.inc.php';
-		require_once QQ3479015851_ROOT . '/plugin/group/include/functions.php';
-		require_once QQ3479015851_INC . '/class.fun.php';
+		require_once SysGlbCfm_DATA . '/grouplevel.inc.php';
+		require_once SysGlbCfm_ROOT . '/plugin/group/include/functions.php';
+		require_once SysGlbCfm_INC . '/class.fun.php';
 
 		if ($id) {
 			$edit = $db->getRow('SELECT * FROM `' . $db_qq3479015851 . 'group` WHERE groupid = \'' . $id . '\'');
@@ -120,7 +119,7 @@ else {
 		$acontent = get_editor('content', 'Member', $edit['content'], '90%', '250px');
 	}
 	else if ($ac == 'signin') {
-		require_once QQ3479015851_DATA . '/group_signin_status.inc.php';
+		require_once SysGlbCfm_DATA . '/group_signin_status.inc.php';
 
 		if (empty($id)) {
 			$param = setParam('m', 'ac', 'id');

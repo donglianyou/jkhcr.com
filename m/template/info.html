@@ -2,16 +2,16 @@
 <html lang="zh-CN" class="index_page">
 <head>
 	{template header}
-	<title>{$row[title]} - {$row[catname]} - {$qq3479015851_global[SiteName]}</title>
+	<title>{$row[title]} - {$row[catname]} - {$SystemGlobalcfm_global[SiteName]}</title>
     <meta name="keywords" content="{$row[title]}"/>
-    <meta name="description" content="{$row[title]}-{$qq3479015851_global[SiteName]}手机版"/>
+    <meta name="description" content="{$row[title]}-{$SystemGlobalcfm_global[SiteName]}手机版"/>
 	<link type="text/css" rel="stylesheet" href="template/css/global.css">
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
 	<link type="text/css" rel="stylesheet" href="template/css/info.css">
     <script>window['current'] = '{$row[catname]}';</script>
-    <script>function seeContact(id){if(confirm("查看该信息联系方式需支付{$row[usecoin]}个金币，确定查看吗？")){var url='index.php?mod=information&action=seecontact&&id='+id;$.get(url,function(data){if(data==='余额不足'){QQ3479015851WindowMsg('',1,'您当前金币余额不足，请先充值','index.php?mod=member&action=pay');return false}else if(data==='请先登录'){QQ3479015851WindowMsg('',1,'您尚未登录，请先登录','index.php?mod=login&returnurl=');return false}else{$("#showContact").html(data);$("#djcklxfs").hide();$("#showContact").show();return true}})}}</script>
+    <script>function seeContact(id){if(confirm("查看该信息联系方式需支付{$row[usecoin]}个金币，确定查看吗？")){var url='index.php?mod=information&action=seecontact&&id='+id;$.get(url,function(data){if(data==='余额不足'){SysGlbCfmWindowMsg('',1,'您当前金币余额不足，请先充值','index.php?mod=member&action=pay');return false}else if(data==='请先登录'){SysGlbCfmWindowMsg('',1,'您尚未登录，请先登录','index.php?mod=login&returnurl=');return false}else{$("#showContact").html(data);$("#djcklxfs").hide();$("#showContact").show();return true}})}}</script>
 </head>
-<body class="{$qq3479015851_global[cfg_tpl_dir]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]}">
 <div class="wrapper">
 	{template header_search}
 	<div class="detail">	
@@ -20,7 +20,7 @@
 			<div class="status_bar">
 				<span class="date"><i class="ico"></i>{echo GetTime($row[begintime])}</span>
 				<span class="browse_num"><i class="ico"></i><span id="totalcount" >{$row[hit]}</span>次</span>
-				<a rel="nofollow" href="{$qq3479015851_global[SiteUrl]}/box.php?part=wap_shoucang&infoid={$row[id]}" class="btn_Favorite"><i class="ico"></i>收藏</a>
+				<a rel="nofollow" href="{$SystemGlobalcfm_global[SiteUrl]}/box.php?part=wap_shoucang&infoid={$row[id]}" class="btn_Favorite"><i class="ico"></i>收藏</a>
 			</div>
 		</div>
 		{if $row[image]}
@@ -223,20 +223,20 @@
 		{/if}
         {if $row[extra]}
 		<ul class="attr_info" style="margin-top:0;">
-        	{loop $row[extra] $qq3479015851}
-            {if $qq3479015851[value]}
+        	{loop $row[extra] $SystemGlobalcfm}
+            {if $SystemGlobalcfm[value]}
 			<li>
-				<span class="attrName2"  style="{if strexists($qq3479015851[value],'元')}color:#ff7800;{/if}">{$qq3479015851[title]}：</span>
-				<span class="attrVal"  style="{if strexists($qq3479015851[value],'元')}color:#ff7800;font-weight:bold;font-size:20px;{/if}">{if in_array($qq3479015851[value],array('0元','0元/月','0元/平米/天','0万元','0.00元','0.00万元'))}面议{else}{echo str_replace('.00','',$qq3479015851[value])}{/if}</span>
+				<span class="attrName2"  style="{if strexists($SystemGlobalcfm[value],'元')}color:#ff7800;{/if}">{$SystemGlobalcfm[title]}：</span>
+				<span class="attrVal"  style="{if strexists($SystemGlobalcfm[value],'元')}color:#ff7800;font-weight:bold;font-size:20px;{/if}">{if in_array($SystemGlobalcfm[value],array('0元','0元/月','0元/平米/天','0万元','0.00元','0.00万元'))}面议{else}{echo str_replace('.00','',$SystemGlobalcfm[value])}{/if}</span>
 			</li>
             {/if}
 			{/loop}
 		</ul>
 		{/if}
     	{if $row[usecoin] != 0 && $iflogin == 0}
-        <script>QQ3479015851WindowMsg('',1,'该信息联系方式已被隐藏，登录后可查看！','index.php?mod=login&returnurl={echo urlencode("index.php?mod=information&id=".$row[id])}','nodeurl');</script>
+        <script>SysGlbCfmWindowMsg('',1,'该信息联系方式已被隐藏，登录后可查看！','index.php?mod=login&returnurl={echo urlencode("index.php?mod=information&id=".$row[id])}','nodeurl');</script>
         {elseif $viewid!=$id && $row[usecoin] > 0 && $iflogin == 1}
-        <script>QQ3479015851WindowMsg('',0,'查看该信息联系方式需支付{$row[usecoin]}个金币！');</script>
+        <script>SysGlbCfmWindowMsg('',0,'查看该信息联系方式需支付{$row[usecoin]}个金币！');</script>
         <ul class="attr_info bottom">
 			<span class="attrVal mfico">
 				<li id="djcklxfs">
@@ -277,26 +277,26 @@
 			</span>
 		</ul>
         {else}
-        <script>QQ3479015851WindowMsg('',0,'该信息已过期，联系方式已被隐藏!');</script>
+        <script>SysGlbCfmWindowMsg('',0,'该信息已过期，联系方式已被隐藏!');</script>
         {/if}
         {/if}
 		<div class="detail-tit">详细描述</div>
 		<div class="detail_txt_che">
 			{$row[content]}
-			<br />联系我时，请说是在{$qq3479015851_global[SiteName]}看到的。
+			<br />联系我时，请说是在{$SystemGlobalcfm_global[SiteName]}看到的。
 		</div>
         {if $row[mappoint]}
         <div class="detail-tit">地理位置</div>
 		<div class="detail_txt_che">
-			<iframe src="{$qq3479015851_global[SiteUrl]}/map.php?title={$row[title]}&isshow=1&p={$row[mappoint]}&width=360&height=190" height="205" width="100%" frameborder="0" scrolling="no"></iframe>
+			<iframe src="{$SystemGlobalcfm_global[SiteUrl]}/map.php?title={$row[title]}&isshow=1&p={$row[mappoint]}&width=360&height=190" height="205" width="100%" frameborder="0" scrolling="no"></iframe>
 		</div>
         {/if}
 		<div class="detail-tit">相关信息</div>
 		<div class="follow">
 			<ul>
             	{php $relevant = qq3479015851_get_infos(6,NULL,NULL,NULL,$row['catid'],NULL,NULL,NULL,$cityid);}
-            	{loop $relevant $qq3479015851}
-					<li><a href="index.php?mod=information&id={$qq3479015851[id]}">{echo cutstr($qq3479015851['title'],26)}</a><span>{echo get_format_time($qq3479015851['begintime'])}</span></li>
+            	{loop $relevant $SystemGlobalcfm}
+					<li><a href="index.php?mod=information&id={$SystemGlobalcfm[id]}">{echo cutstr($SystemGlobalcfm['title'],26)}</a><span>{echo get_format_time($SystemGlobalcfm['begintime'])}</span></li>
 				{/loop}
 			</ul>
 

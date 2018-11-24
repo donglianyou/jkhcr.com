@@ -4,7 +4,7 @@
 .smalltxt{ font-size:12px!important; color:#999!important; font-weight:100!important}
 .altbg1{ background-color:#f1f5f8; width:45%;}
 </style>
-<div id="<?=QQ3479015851_SOFTNAME?>" style=" padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style=" padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -19,7 +19,7 @@
 <form method="post" action="?">
 <input type="hidden" name="type" value="<?=$type?>">
 <input name="return_url" value="<?php echo GetUrl();?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr"><td colspan="2">手机版全局设置</td></tr>
     <tbody style="display: yes; background-color:white">

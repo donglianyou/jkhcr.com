@@ -1,5 +1,5 @@
 <?php include qq3479015851_tpl('inc_head');?>
-<div id="<?=QQ3479015851_SOFTNAME?>" style=" padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style=" padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -14,7 +14,7 @@
 <form action="friendlink.php?part=update&id=<?=$link[id]?>" method="post" enctype="multipart/form-data" name="form1" onSubmit="return CheckSubmit();";>
     <input type="hidden" name="createtime" value="<?=date("Y-m-d H:i:s", time()) 
 ?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%" cellspacing="0" cellpadding="0" class="vbm">
       <tr class="firstr">
         <td colspan="5">
@@ -73,7 +73,7 @@ logo不显示在分类页面
       </tbody>
       </table>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%" cellspacing="0" cellpadding="0" class="vbm">
      <tr class="firstr">
         <td colspan="3">
@@ -107,7 +107,7 @@ logo不显示在分类页面
 </tbody>
     </table>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr"><td colspan="2">显示位置</td></tr>
   <tr bgcolor="#f5fbff">

@@ -1,13 +1,13 @@
 {mytemplate inc_header}
-<!--{if $qq3479015851_global[head_style] == 'normal'}-->
+<!--{if $SystemGlobalcfm_global[head_style] == 'normal'}-->
 <div class="body1000">
 <div class="daohang_con2">
     <div class="daohang2">
         <ul>
             <li><a href="{$city[domain]}" id="index">首页</a></li>
             <!--{php $navurl_header = qq3479015851_get_navurl('header',15);}-->
-            <!--{loop $navurl_header $k $qq3479015851}-->
-            <li><a {if $qq3479015851[flag] == $cat[catid] || $qq3479015851[flag] == $cat[parentid]}class="current"{/if} target="{$qq3479015851[target]}" id="{$qq3479015851[flag]}" href="{if $qq3479015851[flag] != 'outlink'}{$city[domain]}{/if}{$qq3479015851[url]}"><font color="{$qq3479015851[color]}">{$qq3479015851[title]}</font><sup class="{$qq3479015851[ico]}"></sup></a></li>
+            <!--{loop $navurl_header $k $SystemGlobalcfm}-->
+            <li><a {if $SystemGlobalcfm[flag] == $cat[catid] || $SystemGlobalcfm[flag] == $cat[parentid]}class="current"{/if} target="{$SystemGlobalcfm[target]}" id="{$SystemGlobalcfm[flag]}" href="{if $SystemGlobalcfm[flag] != 'outlink'}{$city[domain]}{/if}{$SystemGlobalcfm[url]}"><font color="{$SystemGlobalcfm[color]}">{$SystemGlobalcfm[title]}</font><sup class="{$SystemGlobalcfm[ico]}"></sup></a></li>
             <!--{/loop}-->
         </ul>
     </div>
@@ -24,13 +24,13 @@
         <dd class="cont" style="display:none;">
         <ul>
         <!--{php $global_cat = get_categories_tree(0,'category');}-->
-        <!--{loop $global_cat $qq3479015851}-->
+        <!--{loop $global_cat $SystemGlobalcfm}-->
         <li>
-        <em><a href="{$city[domain]}{$qq3479015851[uri]}" style="color:{$qq3479015851[color]}" target="_blank" title="{$city[cityname]}{$qq3479015851[catname]}">{$qq3479015851[catname]}</a></em>
+        <em><a href="{$city[domain]}{$SystemGlobalcfm[uri]}" style="color:{$SystemGlobalcfm[color]}" target="_blank" title="{$city[cityname]}{$SystemGlobalcfm[catname]}">{$SystemGlobalcfm[catname]}</a></em>
         <dl>
         <dt><b></b></dt>
         <dd>
-        <!--{loop $qq3479015851[children] $w}-->
+        <!--{loop $SystemGlobalcfm[children] $w}-->
         <a href="{$city[domain]}{$w[uri]}" style="color:{$w[color]}" target="_blank" title="{$city[cityname]}{$w[catname]}">{$w[catname]}</a>
         <!--{/loop}-->
         </dd>
@@ -45,8 +45,8 @@
         <ul>
             <li><a href="{$city[domain]}" id="index">首页</a></li>
             <!--{php $navurl_header = qq3479015851_get_navurl('header',15);}-->
-            <!--{loop $navurl_header $k $qq3479015851}-->
-            <li><a {if $qq3479015851[flag] == $cat[catid] || $qq3479015851[flag] == $cat[parentid]}class="current"{/if} target="{$qq3479015851[target]}" id="{$qq3479015851[flag]}" href="{if $qq3479015851[flag] != 'outlink'}{$city[domain]}{/if}{$qq3479015851[url]}"><font color="{$qq3479015851[color]}">{$qq3479015851[title]}</font><sup class="{$qq3479015851[ico]}"></sup></a></li>
+            <!--{loop $navurl_header $k $SystemGlobalcfm}-->
+            <li><a {if $SystemGlobalcfm[flag] == $cat[catid] || $SystemGlobalcfm[flag] == $cat[parentid]}class="current"{/if} target="{$SystemGlobalcfm[target]}" id="{$SystemGlobalcfm[flag]}" href="{if $SystemGlobalcfm[flag] != 'outlink'}{$city[domain]}{/if}{$SystemGlobalcfm[url]}"><font color="{$SystemGlobalcfm[color]}">{$SystemGlobalcfm[title]}</font><sup class="{$SystemGlobalcfm[ico]}"></sup></a></li>
             <!--{/loop}-->
         </ul>
     </div>

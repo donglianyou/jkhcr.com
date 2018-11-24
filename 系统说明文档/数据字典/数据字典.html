@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://www.mymps.com.cn/doc/db.html -->
+<html><style type="text/css" id="2874124017"></style><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<meta charset="gbk">
+
+<title>数据库表结构 - Mymps模板制作/标签/参考手册 - 更多蚂蚁分类工具请进入QQ群:201809840</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./数据字典_files/jquery-1.9.1.min.js"></script>
+<link href="./数据字典_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./数据字典_files/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="./数据字典_files/docs.css" rel="stylesheet">
+<link href="./数据字典_files/prettify.css" rel="stylesheet">
+<!--[if lt IE 9]>
+  <script src="/assets/js/html5shiv.js"></script>
+<![endif]-->
+<style>
+.span9 h4{text-indent:2em;text-align:left;}
+.span9 p{text-indent:2em;text-align:left;}
+</style><script type="text/javascript" src="./数据字典_files/noerr.js"></script><script type="text/javascript" src="./数据字典_files/noright.js"></script><style>
+.code { font-family: Courier, Courier New; font-weight: normal; color:#000; font-size:12px;}
+td a{ text-decoration:underline;}
+.thead td{ font-weight:bold;}
+#table {
+	margin:auto;
+	width:100%;
+	border-collapse:collapse;
+	margin:10px 0;
+}
+#table td, #table th {
+	border:1px solid #CDCDCD;
+	padding:3px 7px 2px 7px;
+}
+#table th {
+	text-align:left;
+	padding-top:5px;
+	padding-bottom:4px;
+	background-color:#F3F7F8;
+}
+</style><script type="text/javascript">
+function blocknone(targetid){
+	var input = document.getElementsByTagName("tr"); //获取页面所有input     
+			   
+	for(var i=0;i<input.length;i++)
+	{   
+		  if(input.item(i).id.indexOf("db_") >= 0 )//判断input的id中是否包含h字符串   
+		   {   
+				document.getElementById(input.item(i).id).style.display = "none";//隐藏控件   
+		   }
+	}
+	
+	var ifview = document.getElementById(targetid);
+	ifview.style.display = ifview.style.display == 'none' ? '' : 'none';
+}
+</script></head>
+
+
+
+
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="50">
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+        	            <li>
+              <a href="http://www.mymps.com.cn/doc/article.html">使用教程_QQ群:201809840</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/index.html">模板基础</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/structure.html">模板目录结构</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/grammer.html">标签语法</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/base.html">基本标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/senior.html">高级标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/diy.html">自定义标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/demo.html">调用示例</a>
+            </li>
+                        <li class="active">
+              <a href="./数据字典_files/数据字典.html">数据字典</a>
+            </li>
+                    </ul>
+      </div>
+    </div>
+  </div>
+</div>    <div class="jumbotron subhead" id="overview">
+    <div class="container">
+    <h1>数据库表结构</h1>
+    <p class="lead"></p>
+    </div>
+    </div>
+    <div class="container">
+
+    <div class="row">
+      
+      <div class="container" style="padding:10px 30px;">
+      
+        <table class="table table-striped table-hover table-bordered" id="ba1">
+            <tbody>
+                <tr class="info thead">
+                    <td>表名</td>
+                    <td>说明</td>
+                </tr>
+                                <tr>
+                    <td><a href="javascript:blocknone('db_1');">my_about</a></td>
+                    <td>关于我们栏目数据（网站简介，联系我们等）</td>
+                </tr>
+                
+	<tr id="db_1" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td>栏目ID</td><td>int(5)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>typename</td><td>栏目名称</td><td>char(25)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>content</td><td>栏目内容</td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>displayorder</td><td>排列顺序</td><td>smallint(3)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pubdate</td><td>填写时间</td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_2');">my_admin</a></td>
+                    <td>后台管理员数据</td>
+                </tr>
+                
+	<tr id="db_2" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td>管理员ID</td><td>int(10) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>userid</td><td>管理员账号</td><td>char(30)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pwd</td><td>管理员密码</td><td>char(32)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>uname</td><td>管理员别名（新闻作者显示）</td><td>char(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>tname</td><td>管理员别名</td><td>char(30)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>email</td><td>电子邮箱</td><td>char(30)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>typeid</td><td>管理员级别</td><td>smallint(5) unsigned</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>logintime</td><td>上次登录时间</td><td>int(10) unsigned</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>loginip</td><td>上次登录IP</td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cityid</td><td>所属分站ID</td><td>mediumint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_3');">my_admin_record_action</a></td>
+                    <td>管理员操作记录</td>
+                </tr>
+                
+	<tr id="db_3" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(11)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>adminid</td><td></td><td>char(30)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pubdate</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ip</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>action</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_4');">my_admin_record_login</a></td>
+                    <td>管理员登录记录</td>
+                </tr>
+                
+	<tr id="db_4" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(11) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>adminid</td><td></td><td>char(32)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>adminpwd</td><td></td><td>char(30)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pubdate</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ip</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>result</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_5');">my_admin_type</a></td>
+                    <td>管理员组别/类型</td>
+                </tr>
+                
+	<tr id="db_5" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>smallint(5)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>typename</td><td></td><td>varchar(30)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ifsystem</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>purviews</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_6');">my_advertisement</a></td>
+                    <td>网站广告数据</td>
+                </tr>
+                
+	<tr id="db_6" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>advid</td><td></td><td>mediumint(8) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>available</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>type</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>displayorder</td><td></td><td>tinyint(3)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>targets</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>parameters</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>code</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>starttime</td><td></td><td>int(10) unsigned</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>endtime</td><td></td><td>int(10) unsigned</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>cityid</td><td></td><td>mediumint(5)</td><td>MUL</td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_7');">my_announce</a></td>
+                    <td>网站公告</td>
+                </tr>
+                
+	<tr id="db_7" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(10)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>redirecturl</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>titlecolor</td><td></td><td>char(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>content</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>author</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pubdate</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>begintime</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>endtime</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>hits</td><td></td><td>int(11)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cityid</td><td></td><td>mediumint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_8');">my_area</a></td>
+                    <td>区县/二级地区分类</td>
+                </tr>
+                
+	<tr id="db_8" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>areaid</td><td></td><td>mediumint(6)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>areaname</td><td></td><td>varchar(32)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cityid</td><td></td><td>int(11) unsigned</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>displayorder</td><td></td><td>smallint(6)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_9');">my_badwords</a></td>
+                    <td>违禁词语设置</td>
+                </tr>
+                
+	<tr id="db_9" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>words</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>view</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ifcheck</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_10');">my_cache</a></td>
+                    <td>缓存及时间设置</td>
+                </tr>
+                
+	<tr id="db_10" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>smallint(3)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>page</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>time</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>open</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_11');">my_category</a></td>
+                    <td>信息栏目/分类</td>
+                </tr>
+                
+	<tr id="db_11" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>catid</td><td></td><td>mediumint(6)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>if_view</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>color</td><td></td><td>char(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>catname</td><td></td><td>varchar(32)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>icon</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>usecoin</td><td></td><td>mediumint(8)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>keywords</td><td></td><td>varchar(255)</td><td></td><td>YES</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>description</td><td></td><td>varchar(255)</td><td></td><td>YES</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>parentid</td><td></td><td>int(11)</td><td>MUL</td><td>YES</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>modid</td><td></td><td>smallint(5)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>catorder</td><td></td><td>smallint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>if_upimg</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>if_mappoint</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>dir_type</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>dir_typename</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>template</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td>list</td><td></td></tr><tr bgcolor="#FFFFFF"><td>template_info</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td>info</td><td></td></tr><tr bgcolor="#FFFFFF"><td>html_dir</td><td></td><td>varchar(200)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>htmlpath</td><td></td><td>varchar(200)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_12');">my_certification</a></td>
+                    <td>会员的身份证/营业执照认证上传数据</td>
+                </tr>
+                
+	<tr id="db_12" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(11) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>typeid</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>userid</td><td></td><td>varchar(30)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>img_path</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pubtime</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_13');">my_channel</a></td>
+                    <td>新闻频道/栏目分类</td>
+                </tr>
+                
+	<tr id="db_13" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>catid</td><td></td><td>mediumint(6)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>if_view</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>color</td><td></td><td>char(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>catname</td><td></td><td>varchar(32)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>keywords</td><td></td><td>varchar(255)</td><td></td><td>YES</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>description</td><td></td><td>varchar(255)</td><td></td><td>YES</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>parentid</td><td></td><td>int(11)</td><td>MUL</td><td>YES</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>catorder</td><td></td><td>smallint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>dir_type</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>dir_typename</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>html_dir</td><td></td><td>varchar(200)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>htmlpath</td><td></td><td>varchar(200)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_14');">my_checkanswer</a></td>
+                    <td>验证问答设置</td>
+                </tr>
+                
+	<tr id="db_14" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>smallint(3)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>question</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>answer</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_15');">my_city</a></td>
+                    <td>分站/城市划分</td>
+                </tr>
+                
+	<tr id="db_15" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>cityid</td><td></td><td>mediumint(6)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>status</td><td></td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>provinceid</td><td></td><td>smallint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cityname</td><td></td><td>varchar(32)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>citypy</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>displayorder</td><td></td><td>smallint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>directory</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>firstletter</td><td></td><td>varchar(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>mappoint</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ifhot</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>domain</td><td></td><td>varchar(150)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>keywords</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>description</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_16');">my_comment</a></td>
+                    <td>新闻/机构/信息评论数据</td>
+                </tr>
+                
+	<tr id="db_16" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(8)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>userid</td><td></td><td>varchar(20)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>content</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pubtime</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ip</td><td></td><td>char(16)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>comment_level</td><td></td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>typeid</td><td></td><td>int(8)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>type</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td>information</td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_17');">my_config</a></td>
+                    <td>网站核心设置数据</td>
+                </tr>
+                
+	<tr id="db_17" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>description</td><td></td><td>varchar(100)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>value</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>type</td><td></td><td>varchar(10)</td><td>MUL</td><td>NO</td><td>config</td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_18');">my_corp</a></td>
+                    <td>商家机构分类</td>
+                </tr>
+                
+	<tr id="db_18" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>corpid</td><td></td><td>mediumint(6)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>corpname</td><td></td><td>varchar(32)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>parentid</td><td></td><td>int(11) unsigned</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>corporder</td><td></td><td>smallint(6)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_19');">my_coupon</a></td>
+                    <td>优惠券数据</td>
+                </tr>
+                
+	<tr id="db_19" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>mediumint(8) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cate_id</td><td></td><td>smallint(5) unsigned</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>areaid</td><td></td><td>smallint(5)</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>userid</td><td></td><td>varchar(30)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pre_picture</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>picture</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>begindate</td><td></td><td>int(10)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>enddate</td><td></td><td>int(10)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>des</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>content</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ctype</td><td></td><td>enum('折扣券','抵价券')</td><td></td><td>NO</td><td>折扣券</td><td></td></tr><tr bgcolor="#FFFFFF"><td>sup</td><td></td><td>varchar(3)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>prints</td><td></td><td>mediumint(8) unsigned</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>comments</td><td></td><td>mediumint(8) unsigned</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>grade</td><td></td><td>smallint(5) unsigned</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>flag</td><td></td><td>tinyint(1) unsigned</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>dateline</td><td></td><td>int(10) unsigned</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>status</td><td></td><td>tinyint(1) unsigned</td><td>MUL</td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>hit</td><td></td><td>int(10)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>qq</td><td></td><td>int(8)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>web_address</td><td></td><td>char(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>qq_qun</td><td></td><td>int(8)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cityid</td><td></td><td>mediumint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>streetid</td><td></td><td>mediumint(6)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_20');">my_coupon_category</a></td>
+                    <td>优惠券分类</td>
+                </tr>
+                
+	<tr id="db_20" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>cate_id</td><td></td><td>smallint(3)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cate_name</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cate_view</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>cate_order</td><td></td><td>smallint(3)</td><td></td><td>NO</td><td>0</td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_21');">my_crons</a></td>
+                    <td>定时任务数据</td>
+                </tr>
+                
+	<tr id="db_21" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>cronid</td><td></td><td>smallint(6) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>name</td><td></td><td>char(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>lastrun</td><td></td><td>int(10) unsigned</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>nextrun</td><td></td><td>int(10) unsigned</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>day</td><td></td><td>tinyint(2)</td><td></td><td>NO</td><td>0</td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_22');">my_faq</a></td>
+                    <td>网站帮助数据</td>
+                </tr>
+                
+	<tr id="db_22" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>tinyint(5)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>typeid</td><td></td><td>tinyint(5)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>char(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>content</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_23');">my_faq_type</a></td>
+                    <td>网站帮助分类</td>
+                </tr>
+                
+	<tr id="db_23" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>tinyint(5)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>typename</td><td></td><td>char(50)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_24');">my_flink</a></td>
+                    <td>友情链接</td>
+                </tr>
+                
+	<tr id="db_24" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>smallint(5) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cityid</td><td></td><td>mediumint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ifindex</td><td></td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>catid</td><td></td><td>mediumint(6)</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>url</td><td></td><td>varchar(200)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>webname</td><td></td><td>char(30)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>weblogo</td><td></td><td>char(250)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>dayip</td><td></td><td>char(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pr</td><td></td><td>smallint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>msg</td><td></td><td>char(200)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>name</td><td></td><td>varchar(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>qq</td><td></td><td>varchar(11)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>email</td><td></td><td>char(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>typeid</td><td></td><td>smallint(5) unsigned</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>ischeck</td><td></td><td>smallint(1)</td><td>MUL</td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>ordernumber</td><td></td><td>int(8)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>createtime</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_25');">my_flink_type</a></td>
+                    <td>友情链接分类</td>
+                </tr>
+                
+	<tr id="db_25" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>mediumint(8) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>typename</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_26');">my_focus</a></td>
+                    <td>网站焦点图</td>
+                </tr>
+                
+	<tr id="db_26" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>smallint(5) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>image</td><td></td><td>varchar(100)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pre_image</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>url</td><td></td><td>varchar(100)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>words</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pubdate</td><td></td><td>int(11)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>focusorder</td><td></td><td>smallint(5) unsigned</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>typename</td><td></td><td>enum('网站首页','新闻首页')</td><td></td><td>NO</td><td>网站首页</td><td></td></tr><tr bgcolor="#FFFFFF"><td>cityid</td><td></td><td>mediumint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_27');">my_goods</a></td>
+                    <td>商品数据</td>
+                </tr>
+                
+	<tr id="db_27" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>goodsid</td><td></td><td>int(10)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>goodsbh</td><td></td><td>varchar(11)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>userid</td><td></td><td>varchar(30)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>goodsname</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>catid</td><td></td><td>smallint(3)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>oldprice</td><td></td><td>varchar(8)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>nowprice</td><td></td><td>varchar(8)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>huoyuan</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>gift</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>oicq</td><td></td><td>varchar(11)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>content</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>picture</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pre_picture</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>rushi</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>tuihuan</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>jiayi</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>weixiu</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>fahuo</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>zhengpin</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>tuijian</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cuxiao</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>remai</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>baozhang</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>onsale</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>hit</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>dateline</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cityid</td><td></td><td>mediumint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>streetid</td><td></td><td>mediumint(6)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_28');">my_goods_category</a></td>
+                    <td>商品分类</td>
+                </tr>
+                
+	<tr id="db_28" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>catid</td><td></td><td>mediumint(6)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>if_view</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>color</td><td></td><td>char(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>catname</td><td></td><td>varchar(32)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>keywords</td><td></td><td>varchar(255)</td><td></td><td>YES</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>description</td><td></td><td>varchar(255)</td><td></td><td>YES</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>parentid</td><td></td><td>int(11)</td><td>MUL</td><td>YES</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>catorder</td><td></td><td>smallint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_29');">my_goods_order</a></td>
+                    <td>商品订单</td>
+                </tr>
+                
+	<tr id="db_29" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(10)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>goodsid</td><td></td><td>int(10)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ordernum</td><td></td><td>smallint(5)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>oname</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>tel</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>mobile</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>address</td><td></td><td>varchar(200)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ip</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>qq</td><td></td><td>varchar(11)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>msg</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>dateline</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_30');">my_group</a></td>
+                    <td>团购数据</td>
+                </tr>
+                
+	<tr id="db_30" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>groupid</td><td></td><td>int(10)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>userid</td><td></td><td>varchar(50)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>gname</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cate_id</td><td></td><td>smallint(3)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>areaid</td><td></td><td>smallint(5)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>dateline</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>displayorder</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>signintotal</td><td></td><td>smallint(5)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>glevel</td><td></td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>message</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>gaddress</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>meetdate</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>enddate</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>mastername</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>masterqq</td><td></td><td>mediumint(6)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>des</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>content</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>picture</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pre_picture</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>commenturl</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>biztype</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>othercontent</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>web_address</td><td></td><td>char(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cityid</td><td></td><td>mediumint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>streetid</td><td></td><td>mediumint(6)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_31');">my_group_category</a></td>
+                    <td>团购分类</td>
+                </tr>
+                
+	<tr id="db_31" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>cate_id</td><td></td><td>smallint(3)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cate_name</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cate_view</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>cate_order</td><td></td><td>smallint(3)</td><td></td><td>NO</td><td>0</td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_32');">my_group_signin</a></td>
+                    <td>团购报名数据</td>
+                </tr>
+                
+	<tr id="db_32" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>signid</td><td></td><td>int(10)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>sname</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>sex</td><td></td><td>enum('男','女')</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>age</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>groupid</td><td></td><td>int(10)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>qqmsn</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>tel</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>dateline</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>totalnumber</td><td></td><td>smallint(5)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>status</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>signinip</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>message</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_33');">my_info_img</a></td>
+                    <td>信息图片</td>
+                </tr>
+                
+	<tr id="db_33" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(10)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>image_id</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>path</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>prepath</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>infoid</td><td></td><td>int(11)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>uptime</td><td></td><td>int(11)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_34');">my_info_report</a></td>
+                    <td>信息举报数据</td>
+                </tr>
+                
+	<tr id="db_34" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(8)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>infoid</td><td></td><td>int(8)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>infotitle</td><td></td><td>char(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>report_type</td><td></td><td>smallint(3)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>content</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ip</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pubtime</td><td></td><td>int(11)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_35');">my_info_typemodels</a></td>
+                    <td>自定义信息模型</td>
+                </tr>
+                
+	<tr id="db_35" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>smallint(6) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>name</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>displayorder</td><td></td><td>int(8)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>type</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>options</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_36');">my_info_typeoptions</a></td>
+                    <td>自定义信息字段</td>
+                </tr>
+                
+	<tr id="db_36" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>optionid</td><td></td><td>smallint(6) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>classid</td><td></td><td>smallint(6) unsigned</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>displayorder</td><td></td><td>tinyint(3)</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>description</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>identifier</td><td></td><td>varchar(40)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>type</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>rules</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>available</td><td></td><td>char(2)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>required</td><td></td><td>char(2)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>search</td><td></td><td>char(2)</td><td>MUL</td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a style="font-weight:bold;" href="javascript:blocknone('db_37');">my_information</a></td>
+                    <td>分类信息主表</td>
+                </tr>
+                
+	<tr id="db_37" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td>分类信息ID编号</td><td>int(10)</td><td>PRI</td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>title</td><td>信息标题</td><td>varchar(30)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>catid</td><td>所属分类ID</td><td>int(8)</td><td>MUL</td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>cityid</td><td>所属分站ID</td><td>mediumint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>areaid</td><td>所属地区ID</td><td>int(8)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>streetid</td><td>所属街道ID</td><td>mediumint(6)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>begintime</td><td>发布时间</td><td>int(11)</td><td>MUL</td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>activetime</td><td>有效期时间</td><td>smallint(3)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>endtime</td><td>有效期截止时间</td><td>int(11)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>content</td><td>信息内容</td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>userid</td><td>发布该信息的会员ID</td><td>varchar(30)</td><td>MUL</td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>contact_who</td><td>联系人</td><td>char(10)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>qq</td><td>联系QQ</td><td>char(12)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>email</td><td>联系邮箱</td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>tel</td><td>联系电话</td><td>varchar(30)</td><td>MUL</td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>updatetime</td><td>刷新时间</td><td>int(11)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>hit</td><td>浏览次数</td><td>int(10)</td><td></td><td>NO</td><td>0</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>ismember</td><td>是否会员发布<br>0=游客发布<br>1=会员发布</td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>manage_pwd</td><td>管理密码</td><td>char(32)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>ip</td><td>发布地IP<br>WAP=手机发布</td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>ip2area</td><td>IP所在地</td><td>varchar(32)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>info_level</td><td>信息等级<br>0=待审信息<br>1=正常信息<br>2=推荐信息</td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>img_path</td><td>信息缩略图路径</td><td>varchar(200)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>img_count</td><td>上传的图片数量</td><td>smallint(3)</td><td></td><td>NO</td><td>0</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>upgrade_type</td><td>是否大类置顶<br>1=未大类置顶<br>2=大类置顶</td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td>1</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>upgrade_time</td><td>大类置顶截止时间</td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>upgrade_type_list</td><td>是否小类置顶<br>1=未小类置顶<br>2=小类置顶</td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td>1</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>upgrade_time_list</td><td>小类置顶截止时间</td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>ifred</td><td>是否标题套红<br>0=未标题套红<br>1=标题套红</td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>ifbold</td><td>是否标题加粗<br>0=未标题加粗<br>1=标题加粗</td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>certify</td><td>是否验证会员发布的信息<br>0=未验证<br>1=通过验证</td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>dir_typename</td><td>所在分类的拼音路径</td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>upgrade_type_index</td><td>是否首页置顶<br>1=未首页置顶<br>2=首页置顶</td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>upgrade_time_index</td><td>首页置顶截止时间</td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>mappoint</td><td>标注的地图坐标</td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>latitude</td><td>信息发布者的纬度</td><td>decimal(20,17)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>longitude</td><td>信息发布者的经度</td><td>decimal(20,17)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>web_address</td><td>网址</td><td>char(100)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>catname</td><td>所属分类名称</td><td>varchar(32)</td><td></td><td>NO</td><td></td><td></td></tr>
+    </tbody></table>
+    </td>
+    </tr>                                
+    
+    <tr>
+        <td><a>my_information_数字</a></td>
+        <td>以模型ID区分的各模型数据存储分表</td>
+    </tr>
+    <tr style="display:none;"></tr>
+    
+    <tr>
+                    <td><a href="javascript:blocknone('db_60');">my_insidelink</a></td>
+                    <td>站内文字链接设置</td>
+                </tr>
+                
+	<tr id="db_60" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>mediumint(8) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>word</td><td></td><td>char(16)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>url</td><td></td><td>char(60)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_61');">my_jswizard</a></td>
+                    <td>数据调用项目数据</td>
+                </tr>
+                
+	<tr id="db_61" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>smallint(5)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>flag</td><td></td><td>varchar(50)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>customtype</td><td></td><td>char(8)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>parameter</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>edittime</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_62');">my_lifebox</a></td>
+                    <td>生活百宝箱</td>
+                </tr>
+                
+	<tr id="db_62" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>smallint(4)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>typeid</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>2</td><td></td></tr><tr bgcolor="#FFFFFF"><td>lifename</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>lifeurl</td><td></td><td>varchar(200)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>if_view</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>displayorder</td><td></td><td>smallint(3)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cityid</td><td></td><td>mediumint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_63');">my_mail_sendlist</a></td>
+                    <td>电子邮件发送记录</td>
+                </tr>
+                
+	<tr id="db_63" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>mediumint(8)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>email</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>template_id</td><td></td><td>varchar(50)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>email_content</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>error</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>email_subject</td><td></td><td>varchar(200)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>last_send</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_64');">my_mail_template</a></td>
+                    <td>电子邮件模板</td>
+                </tr>
+                
+	<tr id="db_64" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>template_id</td><td></td><td>tinyint(1) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>is_sys</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>template_code</td><td></td><td>varchar(30)</td><td>UNI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>is_html</td><td></td><td>tinyint(1) unsigned</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>template_subject</td><td></td><td>varchar(200)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>template_content</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>last_modify</td><td></td><td>int(10) unsigned</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>last_send</td><td></td><td>int(10) unsigned</td><td></td><td>NO</td><td>0</td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a style="font-weight:bold;" href="javascript:blocknone('db_65');">my_member</a></td>
+                    <td>会员数据</td>
+                </tr>
+                
+	<tr id="db_65" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td>会员ID</td><td>mediumint(8)</td><td>PRI</td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>userid</td><td>登录账号</td><td>varchar(20)</td><td>MUL</td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>openid</td><td>第三方登录ID</td><td>varchar(50)</td><td>MUL</td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>userpwd</td><td>登录密码</td><td>char(36)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>catid</td><td>所属行业分类ID</td><td>varchar(250)</td><td>MUL</td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>areaid</td><td>所属地区ID</td><td>char(8)</td><td>MUL</td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>cname</td><td>联系人</td><td>varchar(40)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>tname</td><td>机构名称</td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>introduce</td><td>店铺介绍</td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>sex</td><td>性别</td><td>enum('男','女')</td><td></td><td>NO</td><td>男</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>tel</td><td>座机</td><td>varchar(30)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>address</td><td>联系地址</td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>busway</td><td>公交路线</td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>mappoint</td><td>机构地图坐标位置</td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>qq</td><td>联系QQ</td><td>char(12)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>msn</td><td>msn</td><td>char(50)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>email</td><td>联系人邮箱地址</td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>template</td><td>店铺使用模板</td><td>char(250)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>keywords</td><td>店铺关键词</td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>logo</td><td>店铺LOGO大图路径</td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>prelogo</td><td>店铺LOGO小图路径</td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>banner</td><td>店铺banner路径</td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>safequestion</td><td>验证问题</td><td>char(25)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>safeanswer</td><td>验证问题答案</td><td>char(25)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>levelid</td><td>会员等级ID</td><td>smallint(3)</td><td>MUL</td><td>NO</td><td>1</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>money_own</td><td>会员金币</td><td>mediumint(8)</td><td></td><td>NO</td><td>0</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>credit</td><td>会员实际信用值</td><td>int(10)</td><td></td><td>NO</td><td>0</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>credits</td><td>会员信用值标识</td><td>smallint(2)</td><td></td><td>NO</td><td>1</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>score</td><td>会员积分</td><td>int(10)</td><td></td><td>NO</td><td>0</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>joinip</td><td>注册地IP</td><td>char(16)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>loginip</td><td>上次登录IP</td><td>char(16)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>jointime</td><td>注册时间</td><td>int(10) unsigned</td><td>MUL</td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>logintime</td><td>上次登录时间</td><td>int(10) unsigned</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>qdtime</td><td>签到时间</td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>web</td><td>机构网址</td><td>char(50)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>per_certify</td><td>是否通过身份证认证<br>0=未通过身份证认证<br>1=通过身份证认证</td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>com_certify</td><td>是否通过营业执照认证<br>1=未通过营业执照认证<br>1=通过营业执照认证</td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>if_corp</td><td>区分机构/个人会员<br>0=个人会员<br>1=机构会员</td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>ifindex</td><td>是否首页显示<br>1=首页不显示<br>2=首页推荐显示</td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td>1</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>iflist</td><td>是否列表显示<br>1=列表不显示<br>2=列表推荐显示</td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td>1</td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>mobile</td><td>联系电话</td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>levelup_time</td><td>会员截止时间</td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>hit</td><td>店铺浏览次数</td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>cityid</td><td>所属分站ID</td><td>mediumint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>streetid</td><td>所属街道ID</td><td>mediumint(6)</td><td></td><td>NO</td><td></td><td></td></tr>
+    <tr bgcolor="#FFFFFF"><td>status</td><td>是否通过审核<br>0=未通过审核<br>1=通过审核</td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td></td><td></td></tr>
+    </tbody></table>
+    </td>
+    </tr>
+    <tr>
+        <td><a href="javascript:blocknone('db_66');">my_member_album</a></td>
+        <td>机构相册</td>
+    </tr>
+                
+	<tr id="db_66" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(11)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>path</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>prepath</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>userid</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pubtime</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_67');">my_member_category</a></td>
+                    <td>机构所属行业数据</td>
+                </tr>
+                
+	<tr id="db_67" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(11)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>userid</td><td></td><td>varchar(20)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>catid</td><td></td><td>mediumint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_68');">my_member_comment</a></td>
+                    <td>机构点评</td>
+                </tr>
+                
+	<tr id="db_68" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(10) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>userid</td><td></td><td>varchar(20)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>fromuser</td><td></td><td>varchar(20)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>face</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pubtime</td><td></td><td>int(10) unsigned</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>quality</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>service</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>environment</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>price</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>avgprice</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>enjoy</td><td></td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>content</td><td></td><td>mediumtext</td><td></td><td>YES</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>reply</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>retime</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>commentlevel</td><td></td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>flower</td><td></td><td>int(5)</td><td></td><td>NO</td><td>0</td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_69');">my_member_docu</a></td>
+                    <td>机构文章</td>
+                </tr>
+                
+	<tr id="db_69" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(11)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>typeid</td><td></td><td>int(11)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>userid</td><td></td><td>varchar(20)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>author</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>source</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>content</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>hit</td><td></td><td>int(10)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>imgpath</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pre_imgpath</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pubtime</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>if_check</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_70');">my_member_docutype</a></td>
+                    <td>机构文章类型</td>
+                </tr>
+                
+	<tr id="db_70" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>typeid</td><td></td><td>int(11)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>typename</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>arrid</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>ifview</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>displayorder</td><td></td><td>int(5)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_71');">my_member_level</a></td>
+                    <td>机构等级</td>
+                </tr>
+                
+	<tr id="db_71" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>tinyint(5)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>levelname</td><td></td><td>varchar(30)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ifsystem</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>purviews</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>money_own</td><td></td><td>mediumint(8)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>perday_maxpost</td><td></td><td>smallint(5)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>allow_tpl</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>member_contact</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>signin_notice</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>signin_del</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>signin_view</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>moneysettings</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_72');">my_member_pm</a></td>
+                    <td>会员站内短消息</td>
+                </tr>
+                
+	<tr id="db_72" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>smallint(10) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>fromuser</td><td></td><td>varchar(50)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>touser</td><td></td><td>varchar(50)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pubtime</td><td></td><td>int(10) unsigned</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>retime</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>retitle</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>content</td><td></td><td>mediumtext</td><td></td><td>YES</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>recontent</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>if_read</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>if_sys</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>if_del</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_73');">my_member_record_login</a></td>
+                    <td>会员登录记录</td>
+                </tr>
+                
+	<tr id="db_73" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(11) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>userid</td><td></td><td>char(32)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>userpwd</td><td></td><td>char(30)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pubdate</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ip</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>browser</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>port</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>outdate</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>os</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ip2area</td><td></td><td>varchar(32)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>result</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_74');">my_member_record_use</a></td>
+                    <td>会员消费记录</td>
+                </tr>
+                
+	<tr id="db_74" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(8)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>userid</td><td></td><td>char(50)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>paycost</td><td></td><td>char(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>subject</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>pubtime</td><td></td><td>int(10)</td><td>MUL</td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_75');">my_member_tpl</a></td>
+                    <td>机构模板</td>
+                </tr>
+                
+	<tr id="db_75" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>smallint(3)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>if_view</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>2</td><td></td></tr><tr bgcolor="#FFFFFF"><td>tpl_name</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>tpl_path</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>displayorder</td><td></td><td>int(5)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>edittime</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_76');">my_navurl</a></td>
+                    <td>网站导航</td>
+                </tr>
+                
+	<tr id="db_76" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>mediumint(6)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>url</td><td></td><td>char(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>color</td><td></td><td>varchar(7)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>flag</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ico</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>target</td><td></td><td>varchar(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>char(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>typeid</td><td></td><td>smallint(5) unsigned</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>isview</td><td></td><td>smallint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>displayorder</td><td></td><td>int(5)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>createtime</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>cityid</td><td></td><td>mediumint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_77');">my_news</a></td>
+                    <td>网站新闻资讯</td>
+                </tr>
+                
+	<tr id="db_77" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(10)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>iscommend</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>isfocus</td><td></td><td>varchar(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>isbold</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>isjump</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>redirect_url</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>varchar(30)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>keywords</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>catid</td><td></td><td>int(8)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>begintime</td><td></td><td>int(11)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>introduction</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>content</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>author</td><td></td><td>varchar(30)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>source</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>hit</td><td></td><td>int(10)</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>perhit</td><td></td><td>int(10)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>imgpath</td><td></td><td>varchar(100)</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_78');">my_payapi</a></td>
+                    <td>支付接口</td>
+                </tr>
+                
+	<tr id="db_78" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>payid</td><td></td><td>smallint(6)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>paytype</td><td></td><td>varchar(20)</td><td>UNI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>buytype</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>myorder</td><td></td><td>tinyint(4)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>payfee</td><td></td><td>varchar(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>payuser</td><td></td><td>varchar(60)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>partner</td><td></td><td>varchar(60)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>paykey</td><td></td><td>varchar(120)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>paylogo</td><td></td><td>varchar(200)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>paysay</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>payname</td><td></td><td>varchar(120)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>isclose</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>payemail</td><td></td><td>varchar(120)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_79');">my_payrecord</a></td>
+                    <td>支付记录</td>
+                </tr>
+                
+	<tr id="db_79" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(11)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>uid</td><td></td><td>int(11)</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>userid</td><td></td><td>varchar(30)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>orderid</td><td></td><td>varchar(50)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>money</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>paybz</td><td></td><td>varchar(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>type</td><td></td><td>varchar(12)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>payip</td><td></td><td>varchar(20)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>posttime</td><td></td><td>int(10)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>ifadd</td><td></td><td>tinyint(1)</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_80');">my_plugin</a></td>
+                    <td>网站插件设置</td>
+                </tr>
+                
+	<tr id="db_80" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>smallint(5) unsigned</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>flag</td><td></td><td>varchar(30)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>iscore</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>name</td><td></td><td>varchar(60)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>directory</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>disable</td><td></td><td>tinyint(1) unsigned</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>config</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>version</td><td></td><td>varchar(60)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>releasetime</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>author</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>introduce</td><td></td><td>mediumtext</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>siteurl</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>email</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>copyright</td><td></td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_81');">my_province</a></td>
+                    <td>省份划分</td>
+                </tr>
+                
+	<tr id="db_81" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>provinceid</td><td></td><td>smallint(6)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>provincename</td><td></td><td>varchar(32)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>displayorder</td><td></td><td>smallint(6)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_82');">my_shoucang</a></td>
+                    <td>会员收藏的信息</td>
+                </tr>
+                
+	<tr id="db_82" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(10)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>infoid</td><td></td><td>int(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>varchar(30)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>url</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>userid</td><td></td><td>varchar(30)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>intime</td><td></td><td>int(11)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_83');">my_street</a></td>
+                    <td>街道/三级区域划分</td>
+                </tr>
+                
+	<tr id="db_83" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>streetid</td><td></td><td>mediumint(6)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>streetname</td><td></td><td>varchar(32)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>areaid</td><td></td><td>int(11) unsigned</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>displayorder</td><td></td><td>smallint(6)</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_84');">my_telephone</a></td>
+                    <td>便民电话数据</td>
+                </tr>
+                
+	<tr id="db_84" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>smallint(4)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>telname</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>telnumber</td><td></td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>color</td><td></td><td>char(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>if_bold</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>displayorder</td><td></td><td>smallint(5)</td><td>MUL</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>if_view</td><td></td><td>tinyint(1)</td><td></td><td>NO</td><td>1</td><td></td></tr><tr bgcolor="#FFFFFF"><td>cityid</td><td></td><td>mediumint(6)</td><td>MUL</td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_85');">my_template</a></td>
+                    <td>网站模板</td>
+                </tr>
+                
+	<tr id="db_85" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>filepath</td><td></td><td>varchar(250)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>content</td><td></td><td>longtext</td><td></td><td>NO</td><td></td><td></td></tr></tbody></table></td></tr>                                <tr>
+                    <td><a href="javascript:blocknone('db_86');">my_upload</a></td>
+                    <td>上传附件数据</td>
+                </tr>
+                
+	<tr id="db_86" style="display:none">
+	<td colspan="2" style="background-color:white">
+	<table id="table">
+	<tbody><tr>
+	<th>Field</th>
+	<th>Comment</th>
+	<th>Type</th>
+	<th>Key</th>
+	<th>Null</th>
+	<th>Default</th>
+	<th>Extra</th>
+	</tr>
+	<tr bgcolor="#FFFFFF"><td>id</td><td></td><td>int(11)</td><td>PRI</td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>title</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>url</td><td></td><td>varchar(100)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>width</td><td></td><td>varchar(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>height</td><td></td><td>varchar(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>playtime</td><td></td><td>varchar(10)</td><td></td><td>NO</td><td></td><td></td></tr><tr bgcolor="#FFFFFF"><td>filesize</td><td></td><td>int(11)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>newsid</td><td></td><td>int(11)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>uptime</td><td></td><td>int(11)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>adminid</td><td></td><td>int(11)</td><td></td><td>NO</td><td>0</td><td></td></tr><tr bgcolor="#FFFFFF"><td>memberid</td><td></td><td>int(11)</td><td>MUL</td><td>NO</td><td>0</td><td></td></tr></tbody></table></td></tr>                            </tbody>
+        </table>
+
+
+      </div>
+    </div>
+
+  </div>
+    <div class="footer">
+  <div class="container">
+    <p class="center">更多蚂蚁分类工具请进入QQ群:201809840</p>
+
+    <ul class="footer-links">
+      <li><a href="http://www.mymps.com.cn/" target="_blank">蚂蚁分类信息系统官网</a></li>
+      <li><a href="http://bbs.mymps.com.cn/">蚂蚁论坛</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<script src="./数据字典_files/bootstrap.min.js" language="javascript" type="text/javascript"></script>
+<script src="./数据字典_files/prettify.js"></script>
+<script src="./数据字典_files/application.js"></script>
+</body></html>

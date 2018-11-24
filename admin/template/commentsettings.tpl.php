@@ -2,7 +2,7 @@
 <style>
 .vbm td li{ margin:10px 0!important;}
 </style>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -17,7 +17,7 @@
 <form action="?config.php?" method="post">
 <input name="part" type="hidden" value="commentsettings">
 <input name="action" type="hidden" value="do_post">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td colspan="2" align="left">评论/点评设置</td>

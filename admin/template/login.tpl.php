@@ -11,11 +11,11 @@
 
 <body>
 	<div class="topbg">
-		<span class="left"><a href="<?php echo $qq3479015851_global[SiteUrl]?>" target="_blank">访问网站首页</a></span>
+		<span class="left"><a href="<?php echo $SystemGlobalcfm_global[SiteUrl]?>" target="_blank">访问网站首页</a></span>
 		<span class="right"><a href="#" onClick="var strHref=window.location.href;this.style.behavior='url(#default#homepage)';this.setHomePage('<?php echo GetUrl();?>');" style="cursor: hand">设为首页</a> <a href="#" onClick="collect();">加入收藏</a></span>
 	</div>
 	<div class="wrap">
-		<h1>cxkeji 后台管理中心</h1>
+		<h1>后台管理中心</h1>
 		<form name="Login" action="index.php?part=chk&url=<?=$url?>&go=<?=$go?>" method="post" onSubmit="return CheckForm();">
             <input name="do" value="login" type="hidden">
 			<div class="login">
@@ -29,7 +29,7 @@
 					</li>
 					<?php if ($authcodesettings['adminlogin'] == 1){?>
 					<li>
-						<img style="float:right;" src="../<?php echo $qq3479015851_global[cfg_authcodefile]; ?>" alt="看不清，请点击刷新" class="authcode" onClick="this.src=this.src+'?'" align="absmiddle"/> <input style="float:left; width:55px; height:40px;" class="input" type="text" required name="checkcode" placeholder="验证码" title="验证码" />
+						<img style="float:right;" src="../<?php echo $SystemGlobalcfm_global[cfg_authcodefile]; ?>" alt="看不清，请点击刷新" class="authcode" onClick="this.src=this.src+'?'" align="absmiddle"/> <input style="float:left; width:55px; height:40px;" class="input" type="text" required name="checkcode" placeholder="验证码" title="验证码" />
 					</li>
 					 
 					<?php }?>
@@ -39,7 +39,7 @@
 		</form>
 	</div>
 	<div class="foot">
-		Powered by <a href="http://junchang.taobao.com" target="_blank">QQ896685868</a> <?php echo QQ3479015851_VERSION; ?>
+		Powered by <a href="/" target="_blank">健康网</a>
 	</div>
 </body>
 </html>

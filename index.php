@@ -7,21 +7,20 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('IN_SMT', true);
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 define('CURSCRIPT','index');
 
 require_once dirname(__FILE__)."/include/global.php";
-require_once QQ3479015851_DATA."/config.php";
-require_once QQ3479015851_DATA."/config.db.php";
-require_once QQ3479015851_INC."/db.class.php";
+require_once SysGlbCfm_DATA."/config.php";
+require_once SysGlbCfm_DATA."/config.db.php";
+require_once SysGlbCfm_INC."/db.class.php";
 
 ifsiteopen();
 
-if($fromuid && $qq3479015851_global['cfg_if_affiliate'] == 1){
+if($fromuid && $SystemGlobalcfm_global['cfg_if_affiliate'] == 1){
 	msetcookie("fromuid",$fromuid,3600*24);
 	msetcookie("fromip",GetIP(),3600*24);
 }
@@ -29,35 +28,35 @@ if($fromuid && $qq3479015851_global['cfg_if_affiliate'] == 1){
 if($cityid) msetcookie('cityid',$cityid,3600*24);
 
 if(!$cityid && !is_robot()){
-	if(in_array($qq3479015851_global['cfg_redirectpage'],array('nchome','ncchangecity'))){
+	if(in_array($SystemGlobalcfm_global['cfg_redirectpage'],array('nchome','ncchangecity'))){
 		$ip = GetIP();
 		if(is_array($fromcity = get_ip2city($ip))){
 			@header("location:".$fromcity['domain']);
 			exit;
-		} elseif($qq3479015851_global['cfg_redirectpage'] == 'ncchangecity') {
+		} elseif($SystemGlobalcfm_global['cfg_redirectpage'] == 'ncchangecity') {
 			$loc					= get_location('index');
 			$page_title				= $loc['page_title'];
 			$seo = get_seoset();
 			$seo['seo_keywords'] = str_replace('{city}','',$seo['seo_keywords']);
 			$seo['seo_description'] = str_replace('{city}','',$seo['seo_description']);
-			$qq3479015851_global = array_merge($qq3479015851_global,$seo);
+			$SystemGlobalcfm_global = array_merge($SystemGlobalcfm_global,$seo);
 			globalassign();
 			include qq3479015851_tpl('changecity');
 			exit;
 		}
-	}elseif($qq3479015851_global['cfg_redirectpage'] == 'changecity') {
+	}elseif($SystemGlobalcfm_global['cfg_redirectpage'] == 'changecity') {
 		$loc					= get_location('index');
 		$page_title				= $loc['page_title'];
 		$seo = get_seoset();
-		$qq3479015851_global = array_merge($qq3479015851_global,$seo);
+		$SystemGlobalcfm_global = array_merge($SystemGlobalcfm_global,$seo);
 		globalassign();
 		$ip = GetIP();
 		$fromcity = get_ip2city($ip);
 		include qq3479015851_tpl('changecity');
 		exit;
-	}elseif(is_numeric($qq3479015851_global['cfg_redirectpage'])){
-		$r = get_city_caches($qq3479015851_global['cfg_redirectpage']);
-		$r['domain'] = $r['domain'] ? $r['domain'] : $qq3479015851_global['SiteUrl'];
+	}elseif(is_numeric($SystemGlobalcfm_global['cfg_redirectpage'])){
+		$r = get_city_caches($SystemGlobalcfm_global['cfg_redirectpage']);
+		$r['domain'] = $r['domain'] ? $r['domain'] : $SystemGlobalcfm_global['SiteUrl'];
 		@header("location:".$r['domain']);
 		unset($r);
 		exit;
@@ -65,7 +64,7 @@ if(!$cityid && !is_robot()){
 }
 
 $cache = get_cache_config();
-require_once QQ3479015851_INC.'/cachepages.class.php';
+require_once SysGlbCfm_INC.'/cachepages.class.php';
 $cachepages = new cachepages($cache['site']['time'],'index_'.$cityid);
 $cachetime = $cache['site']['time'] > 0 ? true : false;
 $cachepages->cacheCheck();
@@ -78,7 +77,7 @@ $city = get_city_caches($cityid);
 $city['cityid'] && $city_limit = "AND a.cityid = '$city[cityid]'";
 
 $maincity = get_city_caches(0);
-$independency = explode(',',$qq3479015851_global['cfg_independency']);
+$independency = explode(',',$SystemGlobalcfm_global['cfg_independency']);
 $independency = is_array($independency) ? $independency : array();
 
 
@@ -135,7 +134,7 @@ if(!$city['cityid']){
 	$city['keywords'] = $city['keywords'] ? $city['keywords'] : str_replace('{city}',$city['cityname'],$seo['seo_keywords']);
 	$city['description'] = $city['description'] ? $city['description'] : str_replace('{city}',$city['cityname'],$seo['seo_description']);
 }
-$qq3479015851_global = array_merge($qq3479015851_global,$seo);
+$SystemGlobalcfm_global = array_merge($SystemGlobalcfm_global,$seo);
 
 $advertisement			= get_advertisement('index');
 $adveritems				= $city['advertisement'];
@@ -148,12 +147,12 @@ if($tpl_index['banmian'] == 'portal'){
 	$index_cat = get_categories_tree(0,'category');
 
 	if(ifplugin('group')){
-		require_once QQ3479015851_ROOT.'/plugin/group/include/functions.php';
+		require_once SysGlbCfm_ROOT.'/plugin/group/include/functions.php';
 		$groups = qq3479015851_get_groups(3,NULL,$cityid);
 		$groupclass = get_group_class();
 	}
 	if(ifplugin('goods')){
-		require_once QQ3479015851_ROOT.'/plugin/goods/include/functions.php';
+		require_once SysGlbCfm_ROOT.'/plugin/goods/include/functions.php';
 		$goods = qq3479015851_get_goods($tpl_index['goods'],1,NULL,NULL,NULL,NULL,$cityid);
 	}
 	$in = $tpl_index['portal']['ershou'].','.$tpl_index['portal']['zhaopin'].','.$tpl_index['portal']['ershoufang'].','.$tpl_index['portal']['jianli'].','.$tpl_index['portal']['zufang'];
@@ -168,7 +167,7 @@ if($tpl_index['banmian'] == 'portal'){
 
 	$portaluri['morezufang'] = Rewrite('category',array('catid'=>$tpl_index['portal']['zufang'],'dir_typename'=>$hd[$tpl_index['portal']['zufang']]['dir_typename']));
 	$portaluri['catidzufang'] = $tpl_index['portal']['zufang'];
-	$portaluri['postzhaopin'] = $qq3479015851_global['cfg_postfile'].'?catid='.$tpl_index['portal']['zhaopin'];
+	$portaluri['postzhaopin'] = $SystemGlobalcfm_global['cfg_postfile'].'?catid='.$tpl_index['portal']['zhaopin'];
 	$portaluri['morezhaopin'] = Rewrite('category',array('catid'=>$tpl_index['portal']['zhaopin'],'dir_typename'=>$hd[$tpl_index['portal']['zhaopin']]['dir_typename']));
 	$portaluri['catidzhaopin'] = $tpl_index['portal']['zhaopin'];
 	$portaluri['moreershoufang'] = Rewrite('category',array('catid'=>$tpl_index['portal']['ershoufang'],'dir_typename'=>$hd[$tpl_index['portal']['ershoufang']]['dir_typename']));
@@ -284,7 +283,7 @@ if($tpl_index['banmian'] == 'portal'){
 } elseif($tpl_index['banmian'] == 'simple'){
 		
 	if(ifplugin('goods')){
-		require_once QQ3479015851_ROOT.'/plugin/goods/include/functions.php';
+		require_once SysGlbCfm_ROOT.'/plugin/goods/include/functions.php';
 		$goods = qq3479015851_get_goods($tpl_index['goods'],1,NULL,NULL,NULL,NULL,$cityid);
 	}
 	$index_cat = get_categories_tree(0,'category');

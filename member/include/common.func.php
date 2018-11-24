@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 function write_money_use($info = '', $cost = '')
 {
@@ -28,7 +27,7 @@ function write_money_use($info = '', $cost = '')
 
 function member_reg($userid, $userpwd, $email = '', $safequestion = '', $safeanswer = '', $openid = '', $cname = '', $status = '', $openid_wx = '', $logo = '', $prelogo = '')
 {
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	global $db;
 	global $db_qq3479015851;
 	global $member_log;
@@ -50,7 +49,7 @@ function member_reg($userid, $userpwd, $email = '', $safequestion = '', $safeans
 	$safeanswer = trim($safeanswer);
 	$row = $db->getRow('SELECT money_own FROM `' . $db_qq3479015851 . 'member_level` WHERE id = \'1\'');
 	$money_own = $row['money_own'];
-	$status = (($status == 1) || ($qq3479015851_global['cfg_member_verify'] == 1) || ($qq3479015851_global['cfg_member_verify'] == 4) ? 1 : 0);
+	$status = (($status == 1) || ($SystemGlobalcfm_global['cfg_member_verify'] == 1) || ($SystemGlobalcfm_global['cfg_member_verify'] == 4) ? 1 : 0);
 	$sql = 'INSERT INTO `' . $db_qq3479015851 . 'member`(id,userid,userpwd,logo,prelogo,email,safequestion,safeanswer,levelid,joinip,loginip,jointime,logintime,money_own,openid,openid_wx,cname,status) VALUES (\'\',\'' . $userid . '\',\'' . $userpwd . '\',\'' . $logo . '\',\'' . $prelogo . '\',\'' . $email . '\',\'' . $safequestion . '\',\'' . $safeanswer . '\',\'1\',\'' . $ip . '\',\'' . $ip . '\',\'' . $timestamp . '\',\'' . $timestamp . '\',\'' . $money_own . '\',\'' . $openid . '\',\'' . $openid_wx . '\',\'' . $cname . '\',\'' . $status . '\')';
 	$db->query($sql);
 }

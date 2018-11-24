@@ -2,27 +2,27 @@
 <html lang="zh-CN" class="index_page">
 <head>
 	{template header}
-	<title>所有分类 - {$qq3479015851_global[SiteName]}</title>
+	<title>所有分类 - {$SystemGlobalcfm_global[SiteName]}</title>
 	<link type="text/css" rel="stylesheet" href="template/css/global.css">
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
 	<link type="text/css" rel="stylesheet" href="template/css/all.css">
     <script>window['current'] = '信息分类';</script>
 </head>
 
-<body class="{$qq3479015851_global[cfg_tpl_dir]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]}">
 
 <div class="wrapper">
 {template header_search}
-{loop $cat_list $qq3479015851}
+{loop $cat_list $SystemGlobalcfm}
 <div class="navv">
 <div class="nav_tt nav_ttbg1">
-{if $qq3479015851[icon]}<img src="{$qq3479015851_global[SiteUrl]}{$qq3479015851[icon]}" align="center" valign="middle" class="icon">&nbsp;{/if} 
-<a href="index.php?mod=category&catid={$qq3479015851[catid]}&cityid={$cityid}">{$qq3479015851[catname]}</a>
-<span class="apost"><a href="index.php?mod=post&catid={$qq3479015851[catid]}&cityid={$cityid}">发信息<i class="filt-arrowright"></i></a></span>
+{if $SystemGlobalcfm[icon]}<img src="{$SystemGlobalcfm_global[SiteUrl]}{$SystemGlobalcfm[icon]}" align="center" valign="middle" class="icon">&nbsp;{/if} 
+<a href="index.php?mod=category&catid={$SystemGlobalcfm[catid]}&cityid={$cityid}">{$SystemGlobalcfm[catname]}</a>
+<span class="apost"><a href="index.php?mod=post&catid={$SystemGlobalcfm[catid]}&cityid={$cityid}">发信息<i class="filt-arrowright"></i></a></span>
 </div>
 <div class="big_dl sale">
 	<ul>
-    	{loop $qq3479015851[children] $c}
+    	{loop $SystemGlobalcfm[children] $c}
 		<li class="one_third"><a href="index.php?mod=category&catid={$c[catid]}&cityid={$cityid}">{echo cutstr($c['catname'],8)}</a></li>
 		{/loop}
 	</ul>

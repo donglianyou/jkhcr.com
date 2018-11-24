@@ -9,7 +9,7 @@ function chkform(){
 }
 </script>
 <form method=post onSubmit="return chkform()" name="form" action="?part=edit">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%"  border="0" cellspacing="0" cellpadding="0" class="vbm">
 <input name="part" value="update" type="hidden">
 <input type="hidden" name="corpid" value="<?=$corp[corpid]?>">

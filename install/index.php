@@ -1,6 +1,6 @@
 <?php
 
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 $charset = 'utf-8';
 $dbcharset = 'utf8';
 require_once dirname(__FILE__) . '/global.php';
@@ -9,7 +9,7 @@ require_once dirname(__FILE__) . '/../include/cache.fun.php';
 chk_qq3479015851_install();
 $step = (isset($_GET['step']) ? intval($_GET['step']) : '');
 $step = ($step ? $step : '1');
-$installinfo = '欢迎来到 <font class="softname">' . QQ3479015851_SOFTNAME . '</font> <font class="version">' . QQ3479015851_VERSION . '</font> 安装向导，安装前请仔细阅读安装说明后才开始安装。安装文件夹里同样提供了有关软件安装的说明，请您仔细阅读。<div style="margin-top:.5em">安装过程中遇到任何问题 &nbsp;<a href="' . QQ3479015851_BBS . '" target="_blank" class="black"><u><b>请到官方讨论区寻求帮助</b></u></a></div>';
+$installinfo = '欢迎来到 <font class="softname">' . SysGlbCfm_SOFTNAME . '</font> <font class="version">' . SysGlbCfm_VERSION . '</font> 安装向导，安装前请仔细阅读安装说明后才开始安装。安装文件夹里同样提供了有关软件安装的说明，请您仔细阅读。<div style="margin-top:.5em">安装过程中遇到任何问题 &nbsp;<a href="' . SysGlbCfm_BBS . '" target="_blank" class="black"><u><b>请到官方讨论区寻求帮助</b></u></a></div>';
 
 if ($step == '1') {
 	$info = '阅读安装协议';
@@ -34,7 +34,7 @@ else if ($step == '3') {
 	$sp_name = $_SERVER['SERVER_NAME'];
 	$short_open_tag = (ini_get('short_open_tag') ? '<font color=green>支持</font>' : '<font color=red>请修改php.ini，short_open_tag=On，否则无法安装</font>');
 	$disabled = (ini_get('short_open_tag') ? '' : 'disabled="disabled"');
-	require_once QQ3479015851_DATA . '/sp_testdirs.php';
+	require_once SysGlbCfm_DATA . '/sp_testdirs.php';
 	include qq3479015851_tpl('inc_head');
 	echo '<div class="c"></div>' . "\r\n" . '<div id="content">' . "\r\n" . '  <div class="wrapD">' . "\r\n\t" . '<div class="wrapE">' . "\r\n" . '<div class="boxA">' . "\r\n\t\t" . '<div style="width:57%; float:left">' . "\r\n\t\t" . '  <h3>检测系统环境</h3>' . "\r\n\t" . '<table class="dlA">' . "\r\n\t\t" . '<tr>' . "\r\n\t\t\t\t" . '<td width="130">服务器域名</td>' . "\r\n\t\t\t\t" . '<td>';
 	echo $sp_name;
@@ -45,11 +45,11 @@ else if ($step == '3') {
 	echo '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t\t" . '<tr>' . "\r\n\t\t\t\t" . '<td>PHP程式版本</td>' . "\r\n\t\t\t\t" . '<td>';
 	echo $phpv;
 	echo '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t\t" . '<tr>' . "\r\n\t\t\t\t" . '<td>qq3479015851路径</td>' . "\r\n\t\t\t\t" . '<td>';
-	echo QQ3479015851_ROOT;
+	echo SysGlbCfm_ROOT;
 	echo '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t\t" . '<tr>' . "\r\n\t\t\t\t" . '<td>短标记支持</td>' . "\r\n\t\t\t\t" . '<td>';
 	echo $short_open_tag;
 	echo '</td>' . "\r\n\t\t" . '</tr>' . "\r\n\t" . '</table>' . "\r\n\t\t" . '</div>' . "\r\n\t\t" . '<div style="margin-left:56%">' . "\r\n\t\t" . '  <h3>检查目录可写</h3>' . "\r\n" . '          <div style="margin-top:20px;">' . "\r\n\t\t" . '  ';
-	include QQ3479015851_TPL . '/box/sp_testdirs.html';
+	include SysGlbCfm_TPL . '/box/sp_testdirs.html';
 	echo "\t\t" . '  </div>' . "\r\n\t\t" . '</div>' . "\r\n\t\t\r\n\t" . '  </div>' . "\r\n\t" . '  <div class="c"></div>' . "\r\n" . '      <br />' . "\r\n\t" . '</div>' . "\r\n" . '  </div>' . "\r\n" . '  <div class="stepbt">' . "\r\n\t" . '<input type="button" onclick="javascript:history.go(-1);" class="gray large last" value="上一步：阅读使用说明">' . "\r\n\t" . '<input style="cursor:pointer;" class="next qq3479015851 large" type="button" onclick="location.href=\'?step=4\'" value="进入下一步" ';
 	echo $disabled;
 	echo '>' . "\r\n" . '        </button>' . "\r\n" . '  </div>' . "\r\n\r\n" . '</div>' . "\r\n" . '</div>' . "\r\n";
@@ -88,7 +88,7 @@ else if ($step == '5') {
 	mysql_connect($db_host, $db_user, $db_pass);
 	$cur_os = PHP_OS;
 	$cur_phpversion = PHP_VERSION;
-	($cur_phpversion < '4.3.0') && write_msg('您的PHP版本低于4.3.0, 无法安装使用 ' . QQ3479015851_SOFTNAME . '<br />');
+	($cur_phpversion < '4.3.0') && write_msg('您的PHP版本低于4.3.0, 无法安装使用 ' . SysGlbCfm_SOFTNAME . '<br />');
 	$cur_mysqlversion = mysql_get_server_info();
 	($cur_mysqlversion < '3.23') && write_msg('您的MySQL版本低于3.23, 由于程序没有经过此平台的测试, 建议您换 MySQL4 的数据库服务器.<br />');
 	$yes = mysql_select_db($db_name);
@@ -120,7 +120,7 @@ else if ($step == '5') {
 	$files .= '$cookiedomain = "' . $cookiedomain . '";' . "\n\n";
 	$files .= '$cookiepath = "' . $cookiepath . '";' . "\n\n";
 	$files .= '?>';
-	$file = @fopen(QQ3479015851_DATA . '/config.db.php', 'wb+');
+	$file = @fopen(SysGlbCfm_DATA . '/config.db.php', 'wb+');
 	!$file && write_msg('无法打开数据库配置文件 /config.db.php');
 
 	if (!@fwrite($file, trim($files))) {
@@ -129,35 +129,35 @@ else if ($step == '5') {
 	}
 
 	@fclose($file);
-	require_once QQ3479015851_INC . '/db.class.php';
+	require_once SysGlbCfm_INC . '/db.class.php';
 
-	if ($install = import(QQ3479015851_ROOT . '/install/install.sql', $db_qq3479015851, $dbcharset)) {
+	if ($install = import(SysGlbCfm_ROOT . '/install/install.sql', $db_qq3479015851, $dbcharset)) {
 		if ($installarea) {
-			import(QQ3479015851_ROOT . '/install/install_area.sql', $db_qq3479015851, $dbcharset);
+			import(SysGlbCfm_ROOT . '/install/install_area.sql', $db_qq3479015851, $dbcharset);
 		}
 
 		if ($installcategory) {
-			import(QQ3479015851_ROOT . '/install/install_category.sql', $db_qq3479015851, $dbcharset);
+			import(SysGlbCfm_ROOT . '/install/install_category.sql', $db_qq3479015851, $dbcharset);
 		}
 
 		if ($installcoupon) {
-			import(QQ3479015851_ROOT . '/install/install_coupon.sql', $db_qq3479015851, $dbcharset);
+			import(SysGlbCfm_ROOT . '/install/install_coupon.sql', $db_qq3479015851, $dbcharset);
 		}
 
 		if ($installgroup) {
-			import(QQ3479015851_ROOT . '/install/install_group.sql', $db_qq3479015851, $dbcharset);
+			import(SysGlbCfm_ROOT . '/install/install_group.sql', $db_qq3479015851, $dbcharset);
 		}
 
 		if ($installcorp) {
-			import(QQ3479015851_ROOT . '/install/install_corp.sql', $db_qq3479015851, $dbcharset);
+			import(SysGlbCfm_ROOT . '/install/install_corp.sql', $db_qq3479015851, $dbcharset);
 		}
 
 		if ($installinfomodel) {
-			import(QQ3479015851_ROOT . '/install/install_infomodel.sql', $db_qq3479015851, $dbcharset);
+			import(SysGlbCfm_ROOT . '/install/install_infomodel.sql', $db_qq3479015851, $dbcharset);
 		}
 
 		if ($installadv) {
-			import(QQ3479015851_ROOT . '/install/install_adv.sql', $db_qq3479015851, $dbcharset);
+			import(SysGlbCfm_ROOT . '/install/install_adv.sql', $db_qq3479015851, $dbcharset);
 		}
 
 		$password = md5($password);
@@ -171,10 +171,10 @@ else if ($step == '5') {
 		restore_footerurl();
 		$step = '!';
 		$info = '完成安装';
-		$qq3479015851_install_success_info = '恭喜，您的 ' . QQ3479015851_SOFTNAME . '分类信息系统 ' . QQ3479015851_VERSION . ' 已经安装成功！';
+		$SystemGlobalcfm_install_success_info = '恭喜，您的 ' . SysGlbCfm_SOFTNAME . '分类信息系统 ' . SysGlbCfm_VERSION . ' 已经安装成功！';
 		include qq3479015851_tpl('inc_head');
 		echo '<div class="c"></div>' . "\r\n" . '<div id="content">' . "\r\n\r\n" . '<div class="wrapD">' . "\r\n" . '<div class="wrapE">' . "\r\n" . '<div class="boxB">' . "\r\n" . '<div class="cgLeft"></div>' . "\r\n" . '<div class="cg" style="margin-left:35%">' . "\r\n" . '  <h1>';
-		echo $qq3479015851_install_success_info;
+		echo $SystemGlobalcfm_install_success_info;
 		echo '</h1>' . "\r\n" . '  <ul class="listA">' . "\r\n" . '    <li>系统前台地址 ： <a href="';
 		echo $now_domain;
 		echo '/index.php" target="_blank" style="color:#000">';
@@ -184,15 +184,15 @@ else if ($step == '5') {
 		echo '/admin/index.php?go=config" target="_blank" style="color:#000">';
 		echo $now_domain;
 		echo '/admin/index.php</a></li>' . "\r\n" . '    <li>';
-		echo QQ3479015851_SOFTNAME;
+		echo SysGlbCfm_SOFTNAME;
 		echo '官方论坛 ： <a href="';
-		echo QQ3479015851_BBS;
+		echo SysGlbCfm_BBS;
 		echo '" target="_blank" style="color:#000">';
-		echo QQ3479015851_BBS;
+		echo SysGlbCfm_BBS;
 		echo '</a></li>' . "\r\n" . '  </ul>' . "\r\n" . '</div>' . "\r\n" . '</div>' . "\r\n" . '<div class="c"></div>' . "\r\n" . '</div>' . "\r\n" . '</div>' . "\r\n" . '<div class="stepbt"><input type="button" class="next gray large" onClick="closewindows();" value="关闭窗口"></div>' . "\r\n" . '<script language="JavaScript">' . "\r\n" . 'function closewindows(){' . "\r\n" . 'var agt = navigator.userAgent.toLowerCase();' . "\r\n" . 'var is_ie = ((agt.indexOf("msie") != -1) && (agt.indexOf("opera") == -1));' . "\r\n" . 'if (is_ie) {' . "\r\n" . 'var ieversion = parseFloat(agt.substring(agt.indexOf("msie")+5,agt.indexOf(\';\',agt.indexOf("msie"))));' . "\r\n" . 'if (ieversion < 5.5) {' . "\r\n" . '    var str  = \'<object id="notipclose" classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11"><param name="command" value="close"></object>\';' . "\r\n" . '    document.body.insertadjacenthtml(beforeend,str);' . "\r\n" . '    document.all.notipclose.click();' . "\r\n" . '} else {' . "\r\n" . '    window.opener = null;' . "\r\n" . '    window.close();' . "\r\n" . '}' . "\r\n" . '} else {' . "\r\n" . 'window.close();' . "\r\n" . '}' . "\r\n" . '}' . "\r\n" . '</script>' . "\r\n\r\n" . '</div>' . "\r\n\r\n" . '</div>' . "\r\n";
 	}
 	else {
-		write_msg('您的' . QQ3479015851_SOFTNAME . '安装失败！');
+		write_msg('您的' . SysGlbCfm_SOFTNAME . '安装失败！');
 	}
 }
 
@@ -201,7 +201,7 @@ function restore_headerurl()
 {
 	global $db;
 	global $db_qq3479015851;
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	$query = $db->query('SELECT * FROM `' . $db_qq3479015851 . 'category` WHERE parentid = \'0\'');
 
 	while ($row = $db->fetchRow($query)) {

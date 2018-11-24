@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://www.mymps.com.cn/doc/senior.html -->
+<html><style type="text/css" id="2874124017"></style><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<meta charset="gbk">
+
+<title>高级标签 - Mymps模板制作/标签/参考手册 - 更多蚂蚁分类工具请进入QQ群:200641831</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./常用高级标签_files/jquery-1.9.1.min.js"></script>
+<link href="./常用高级标签_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./常用高级标签_files/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="./常用高级标签_files/docs.css" rel="stylesheet">
+<link href="./常用高级标签_files/prettify.css" rel="stylesheet">
+<!--[if lt IE 9]>
+  <script src="/assets/js/html5shiv.js"></script>
+<![endif]-->
+<style>
+.span9 h4{text-indent:2em;text-align:left;}
+.span9 p{text-indent:2em;text-align:left;}
+</style><script type="text/javascript" src="./常用高级标签_files/noerr.js"></script><script type="text/javascript" src="./常用高级标签_files/noright.js"></script><style>
+.code { font-family: Courier, Courier New; font-weight: normal; color:#000; font-size:12px;}
+</style></head>
+
+
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="50">
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+        	            <li>
+              <a href="http://www.mymps.com.cn/doc/article.html">使用教程_QQ群:200641831</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/index.html">模板基础</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/structure.html">模板目录结构</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/grammer.html">标签语法</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/base.html">基本标签</a>
+            </li>
+                        <li class="active">
+              <a href="./常用高级标签_files/常用高级标签.html">高级标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/diy.html">自定义标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/demo.html">调用示例</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/db.html">数据字典</a>
+            </li>
+                    </ul>
+      </div>
+    </div>
+  </div>
+</div>    <div class="jumbotron subhead" id="overview">
+    <div class="container">
+    <h1>常用高级标签</h1>
+    <p class="lead"></p>
+    </div>
+    </div>
+    <div class="container">
+    <div class="row">
+    <div class="container" style="padding:10px 30px;">
+        <p>截取字数（30表示截取15个汉字）</p>
+        <div class="well code">
+       {echo cutstr($mymps[title],30)}
+        </div>
+        <p>输出时间默认输出格式(2025-04-29)</p>
+        <div class="well code">
+       {echo GetTime($mymps[begintime])}
+        </div>
+        <p>输出时间按指定格式（如2025年12月25日）</p>
+        <div class="well code">
+       {echo GetTime($mymps[begintime],'Y年-m月-d日')}
+        </div>
+        <p>输出友好时间格式（如1分钟前）</p>
+        <div class="well code">
+       {echo get_format_time($mymps[begintime])}
+        </div>
+        <p>清除html格式</p>
+        <div class="well code">
+       {echo clear_html($mymps[content])}
+        </div>
+
+            
+    </div>
+    </div>
+    </div>
+    <div class="footer">
+  <div class="container">
+    <p class="center">更多蚂蚁分类工具请进入QQ群:200641831</p>
+
+    <ul class="footer-links">
+      <li><a href="http://www.mymps.com.cn/" target="_blank">蚂蚁分类信息系统官网</a></li>
+      <li><a href="http://bbs.mymps.com.cn/">蚂蚁论坛</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<script src="./常用高级标签_files/bootstrap.min.js" language="javascript" type="text/javascript"></script>
+<script src="./常用高级标签_files/prettify.js"></script>
+<script src="./常用高级标签_files/application.js"></script>
+</body></html>

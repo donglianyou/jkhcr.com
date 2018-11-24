@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 function member_groups( )
 {
@@ -17,15 +16,15 @@ function member_groups( )
 				$all = $db->getAll( "SELECT * FROM `".$db_qq3479015851."member_level`" );
 				foreach ( $all as $k => $v )
 				{
-								$qq3479015851 .= "<option value=".$v[id].">".$v[levelname]."</option>";
+								$SystemGlobalcfm .= "<option value=".$v[id].">".$v[levelname]."</option>";
 				}
-				return $qq3479015851;
+				return $SystemGlobalcfm;
 }
 
 define( "CURSCRIPT", "pm" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
-require_once( QQ3479015851_MEMBER."/include/common.func.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
+require_once( SysGlbCfm_MEMBER."/include/common.func.php" );
 if ( !in_array( $part, array( "outbox", "send", "del" ) ) )
 {
 				$part = "send";
@@ -127,5 +126,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$qq3479015851_global = $db = $db_qq3479015851 = $part = NULL;
+$SystemGlobalcfm_global = $db = $db_qq3479015851 = $part = NULL;
 ?>

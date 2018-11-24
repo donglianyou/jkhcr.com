@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-<title><?=$here?>  - powered by <?=QQ3479015851_SOFTNAME?></title>
-<link href='template/css/<?=QQ3479015851_SOFTNAME?>.css' rel='stylesheet' type='text/css'>
+<title><?=$here?>  - powered by <?=SysGlbCfm_SOFTNAME?></title>
+<link href='template/css/<?=SysGlbCfm_SOFTNAME?>.css' rel='stylesheet' type='text/css'>
 <script type='text/javascript' src='../template/global/qq3479015851.js'></script>
 <script type='text/javascript' src='../template/global/noerr.js'></script>
 </head>
 
 <body>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <form name="form1" action="test_same.php?" method="post">
 <input name="part" value="do_action" type="hidden">

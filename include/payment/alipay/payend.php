@@ -7,20 +7,19 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 define('IN_ADMIN', true);
 define('CURSCRIPT', 'payend');
 require_once dirname(__FILE__) . '/../../../include/global.php';
-require_once QQ3479015851_DATA . '/config.php';
-require_once QQ3479015851_DATA . '/config.db.php';
-require_once QQ3479015851_INC . '/db.class.php';
-require_once QQ3479015851_INC . '/member.class.php';
+require_once SysGlbCfm_DATA . '/config.php';
+require_once SysGlbCfm_DATA . '/config.db.php';
+require_once SysGlbCfm_INC . '/db.class.php';
+require_once SysGlbCfm_INC . '/member.class.php';
 
 if (!($member_log->chk_in())) {
-	write_msg('', $qq3479015851_global['SiteUrl'] . '/' . $qq3479015851_global['cfg_member_logfile'] . '?url=' . urlencode(GetUrl()));
+	write_msg('', $SystemGlobalcfm_global['SiteUrl'] . '/' . $SystemGlobalcfm_global['cfg_member_logfile'] . '?url=' . urlencode(GetUrl()));
 }
 
 $editor = 1;
@@ -46,7 +45,7 @@ $get_seller_email = rawurldecode($_GET['seller_email']);
 ksort($_GET);
 reset($_GET);
 if (($_GET['trade_status'] == 'TRADE_FINISHED') || ($_GET['trade_status'] == 'TRADE_SUCCESS') || ($_GET['trade_status'] == 'WAIT_BUYER_CONFIRM_GOODS') || ($_GET['trade_status'] == 'WAIT_SELLER_SEND_GOODS')) {
-	include QQ3479015851_INC . '/pay.fun.php';
+	include SysGlbCfm_INC . '/pay.fun.php';
 	$orderid = $_GET['trade_no'];
 	$ddno = $_GET['out_trade_no'];
 	$money = $_GET['total_fee'];
@@ -86,15 +85,15 @@ if (($_GET['trade_status'] == 'TRADE_FINISHED') || ($_GET['trade_status'] == 'TR
 		$html_text = getHttpResponsePOST($gotopayurl, getcwd() . '\\cacert.pem', $parameter, trim(strtolower($charset)));
 		$paybz = '充值成功';
 		UpdatePayRecord($ddno, $paybz);
-		write_msg('您已成功支付，请前往支付宝确认收货完成金币充值！', $qq3479015851_global['SiteUrl'] . '/member/index.php?m=pay&ac=record');
+		write_msg('您已成功支付，请前往支付宝确认收货完成金币充值！', $SystemGlobalcfm_global['SiteUrl'] . '/member/index.php?m=pay&ac=record');
 	}
 
 	UpdatePayRecord($ddno, $paybz);
-	write_msg('您已成功充值 ' . ($money * $qq3479015851_global['cfg_coin_fee']) . ' 个金币', $qq3479015851_global['SiteUrl'] . '/member/index.php?m=pay&ac=record');
+	write_msg('您已成功充值 ' . ($money * $SystemGlobalcfm_global['cfg_coin_fee']) . ' 个金币', $SystemGlobalcfm_global['SiteUrl'] . '/member/index.php?m=pay&ac=record');
 }
 
 is_object($db) && $db->Close();
-$qq3479015851_global = NULL;
+$SystemGlobalcfm_global = NULL;
 function getHttpResponsePOST($url, $cacert_url, $para, $input_charset = '')
 {
 	if (trim($input_charset) != '') {

@@ -2,15 +2,15 @@
 <html lang="zh-CN" class="index_page">
 <head>
 	{template header}
-	<title>{$news[title]} - {$qq3479015851_global[SiteName]}</title>
+	<title>{$news[title]} - {$SystemGlobalcfm_global[SiteName]}</title>
 	<link type="text/css" rel="stylesheet" href="template/css/global.css">
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
     <link type="text/css" rel="stylesheet" href="template/css/news.css">
     <script>window['current'] = '{$news[catname]}';</script>
-    <base href="{$qq3479015851_global[SiteUrl]}" />
+    <base href="{$SystemGlobalcfm_global[SiteUrl]}" />
 </head>
 
-<body class="{$qq3479015851_global[cfg_tpl_dir]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]}">
 <div class="wrapper">
     {template header_search}
     
@@ -41,10 +41,10 @@
             <div class="bd">
                 <ul class="list_normal">
                     <!--{php $relate_news = qq3479015851_get_news(8,$news['catid']);}-->
-                    {loop $relate_news $qq3479015851}
+                    {loop $relate_news $SystemGlobalcfm}
                     <li>
-                    <span class="time">[{echo GetTime($qq3479015851[begintime],'m-d')}]</span> 
-                    <a href="index.php?mod=news&id={$qq3479015851[id]}">{$qq3479015851[title]}</a>
+                    <span class="time">[{echo GetTime($SystemGlobalcfm[begintime],'m-d')}]</span> 
+                    <a href="index.php?mod=news&id={$SystemGlobalcfm[id]}">{$SystemGlobalcfm[title]}</a>
                     <span class="jian"></span>
                     </li>
                     {/loop}

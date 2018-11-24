@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 
 function GetUrlToDomain( $domain )
@@ -80,7 +79,7 @@ function getRd( $domain )
 function errormsg( $error_msg )
 {
 				global $charset;
-				global $qq3479015851_global;
+				global $SystemGlobalcfm_global;
 				global $cityid;
 				redirectmsg( $error_msg, "javascript:history.back();" );
 }
@@ -88,7 +87,7 @@ function errormsg( $error_msg )
 function redirectmsg( $redirectmsg, $url )
 {
 				global $charset;
-				global $qq3479015851_global;
+				global $SystemGlobalcfm_global;
 				global $cityid;
 				$url = $url ? $url : "javascript:history.back();";
 				include( qq3479015851_tpl( "notice_redirect" ) );
@@ -198,12 +197,12 @@ function get_mobile_gg( $typeid = 1 )
 
 define( "WAP", TRUE );
 define( "CURSCRIPT", "wap" );
-define( "QQ3479015851", TRUE );
+define( "SysGlbCfm", TRUE );
 define( "IN_SMT", TRUE );
 require_once( dirname( __FILE__ )."/../include/global.php" );
-require_once( QQ3479015851_DATA."/config.php" );
-require_once( QQ3479015851_DATA."/config.db.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_DATA."/config.php" );
+require_once( SysGlbCfm_DATA."/config.db.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 $mobile_settings = get_mobile_settings( );
 if ( $mobile_settings['allowmobile'] != 1 )
 {
@@ -211,7 +210,7 @@ if ( $mobile_settings['allowmobile'] != 1 )
 }
 if ( pcclient( ) )
 {
-				write_msg( "", $qq3479015851_global['SiteUrl'] );
+				write_msg( "", $SystemGlobalcfm_global['SiteUrl'] );
 }
 $lat = isset( $lat ) ? ( double )$lat : "";
 $lng = isset( $lng ) ? ( double )$lng : "";
@@ -233,7 +232,7 @@ if ( $cityid )
 				msetcookie( "cityid", $cityid );
 }
 $s_uid = $iflogin = NULL;
-include( QQ3479015851_INC."/member.class.php" );
+include( SysGlbCfm_INC."/member.class.php" );
 $returnurl = urlencode( geturl( ) );
 if ( $member_log->chk_in( ) )
 {
@@ -249,10 +248,10 @@ if ( !$id && !in_array( $mod, array( "information", "news", "goods" ) ) )
 				$city_limit = empty( $city['cityid'] ) ? "" : " AND cityid = '".$city['cityid']."'";
 				$city_limit_a = empty( $city['cityid'] ) ? "" : " AND a.cityid = '".$city['cityid']."'";
 }
-include( QQ3479015851_ROOT."/m/include/inc_".$mod.".php" );
+include( SysGlbCfm_ROOT."/m/include/inc_".$mod.".php" );
 if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$parent_cats = $loginfo = $newinfo = $mod = $ac = $qq3479015851_global = $catid = $areaid = $db = $db_qq3479015851 = $mobile_settings = $member_log = NULL;
+$parent_cats = $loginfo = $newinfo = $mod = $ac = $SystemGlobalcfm_global = $catid = $areaid = $db = $db_qq3479015851 = $mobile_settings = $member_log = NULL;
 ?>

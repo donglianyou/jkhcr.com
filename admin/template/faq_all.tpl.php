@@ -15,7 +15,7 @@
 </div>
 <form name='form1' method='post' action='?part=delall' onSubmit='return checkSubmit();'>
 <input name="url" value="<?=GetUrl()?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td width="60"><input name="checkall" class="checkbox" type="checkbox" id="checkall" onClick="CheckAll(this.form)"/>删?</td>

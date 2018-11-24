@@ -7,20 +7,19 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-function GetQQ3479015851Verify($type = 'engber', $noise = '12', $line = '1', $distort = '6', $incline = '30', $return = true, $close = '0', $number = '4')
+function GetSysGlbCfmVerify($type = 'engber', $noise = '12', $line = '1', $distort = '6', $incline = '30', $return = true, $close = '0', $number = '4')
 {
 	global $timestamp;
 
 	if ($type == 'plus') {
-		$str1 = GetQQ3479015851Rand('number', GetRand(array(1, 2)));
-		$str2 = GetQQ3479015851Rand('number', 1);
+		$str1 = GetSysGlbCfmRand('number', GetRand(array(1, 2)));
+		$str2 = GetSysGlbCfmRand('number', 1);
 		$text = $str1 . '+' . $str2 . '=';
 	}
 	else {
-		$text = GetQQ3479015851Rand($type, $number);
+		$text = GetSysGlbCfmRand($type, $number);
 	}
 
 	$time = $timestamp + 600;
@@ -73,14 +72,14 @@ function GetQQ3479015851Verify($type = 'engber', $noise = '12', $line = '1', $di
 
 	$buttum_c = ImageColorAllocate($im, $tmpC0, $tmpC1, $tmpC2);
 	imagefill($im, 16, 13, $buttum_c);
-	$font = QQ3479015851_DATA . '/ttf/qq3479015851' . mt_rand(1, 6) . '.ttf';
+	$font = SysGlbCfm_DATA . '/ttf/qq3479015851' . mt_rand(1, 6) . '.ttf';
 
 	if ($noise) {
 		for ($i = 0; $i < $noise; $i++) {
 			$noiseColor = imagecolorallocate($im, mt_rand(150, 225), mt_rand(150, 225), mt_rand(150, 225));
 
 			for ($j = 0; $j < 3; $j++) {
-				imagestring($im, 5, mt_rand(-10, $im_x), mt_rand(-10, $im_y), GetQQ3479015851Rand('engber', 1), $noiseColor);
+				imagestring($im, 5, mt_rand(-10, $im_x), mt_rand(-10, $im_y), GetSysGlbCfmRand('engber', 1), $noiseColor);
 			}
 		}
 	}
@@ -139,7 +138,7 @@ function GetQQ3479015851Verify($type = 'engber', $noise = '12', $line = '1', $di
 	}
 }
 
-function GetQQ3479015851Rand($type = 'engber', $number = 4)
+function GetSysGlbCfmRand($type = 'engber', $number = 4)
 {
 	$hash = '';
 

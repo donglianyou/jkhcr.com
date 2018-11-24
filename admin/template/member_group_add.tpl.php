@@ -2,7 +2,7 @@
 <style>
 label{float:left; width:180px}
 </style>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -12,7 +12,7 @@ label{float:left; width:180px}
 		</div>
 	</div>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <form name="form1" action="member.php?do=group&part=insert" onSubmit="return checkSubmit();" method="post">
   <tr class="firstr">

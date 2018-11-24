@@ -1,10 +1,10 @@
 <?php
-$qq3479015851_global = array (
+$SystemGlobalcfm_global = array (
   'cfg_cityshowtype' => 'pinyin',
   'cfg_if_nonmember_info' => '1',
   'cfg_if_info_verify' => '0',
   'cfg_postfile' => 'publish.php',
-  'screen_index' => 'full',
+  'screen_search' => 'full',
   'cfg_upimg_watermark_position' => '9',
   'cfg_upimg_watermark_diaphaneity' => '60',
   'cfg_upimg_watermark_size' => '12',
@@ -14,11 +14,11 @@ $qq3479015851_global = array (
   'cfg_upimg_watermark_height' => '50',
   'cfg_upimg_watermark_width' => '180',
   'cfg_independency' => 'advertisement,topnav,focus,announce,friendlink,telephone,lifebox',
-  'screen_info' => 'full',
+  'screen_cat' => 'full',
   'cfg_citiesdir' => '/city',
   'cfg_redirectpage' => 'home',
   'cfg_upimg_watermark' => '1',
-  'screen_cat' => 'full',
+  'screen_info' => 'full',
   'cfg_upimg_size' => '500',
   'cfg_upimg_type' => 'png,jpg,gif,jpeg',
   'cfg_score_fee' => '10',
@@ -56,8 +56,7 @@ $qq3479015851_global = array (
   'SiteQQ' => '',
   'SiteUrl' => 'http://jkhcr.cn',
   'SiteName' => '我的网站',
-  'bodybg' => '1',
-  'cfg_tpl_dir' => 'red',
+  'head_style' => 'new',
   'cfg_member_upgrade_top' => '2',
   'cfg_member_upgrade_list_top' => '2',
   'cfg_member_upgrade_index_top' => '4',
@@ -78,7 +77,8 @@ $qq3479015851_global = array (
   'mapflag' => 'baidu',
   'mapapi_charset' => '',
   'mapview_level' => '14',
-  'screen_search' => 'full',
-  'head_style' => 'new',
+  'bodybg' => '1',
+  'screen_index' => 'full',
+  'cfg_tpl_dir' => 'blue',
 );
 ?>

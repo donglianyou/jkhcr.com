@@ -1,5 +1,5 @@
 <?php include qq3479015851_tpl('inc_head');?>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -10,7 +10,7 @@
 		</div>
 	</div>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">相关说明</td>
@@ -22,7 +22,7 @@
   </tr>
 </table>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="margin-top:10px;">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="margin-top:10px;">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">实时更新会员信用值缓存</td>
@@ -42,7 +42,7 @@
 </table>
 </div>
 <form action="?" method="post">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr"><td colspan="5">信用等级</td></tr> 
 <tr bgcolor="#f5f8ff" style="font-weight:bold"><td>信用等级</td><td>信用度大于</td><td>信用度小于</td><td>等级图标</td></tr> 

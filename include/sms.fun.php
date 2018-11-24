@@ -7,14 +7,13 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 function send_regsms($sms_user, $sms_pwd, $phonenum, $sms_regtpl = '')
 {
 	global $db;
 	global $db_qq3479015851;
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	global $timestamp;
 	if (!($phonenum) || !(is_mobile($phonenum))) {
 		return false;
@@ -43,7 +42,7 @@ function send_pwdsms($sms_user, $sms_pwd, $phonenum, $sms_pwdtpl = '')
 {
 	global $db;
 	global $db_qq3479015851;
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	global $timestamp;
 	if (!($phonenum) || !(is_mobile($phonenum))) {
 		return false;

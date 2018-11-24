@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-!(defined('QQ3479015851')) && exit('FORBIDDEN');
+!(defined('SysGlbCfm')) && exit('FORBIDDEN');
 $db = new mysql($db_host, $db_user, $db_pass, $db_name);
 $db_host = $db_user = $db_pass = NULL;
 class mysql
@@ -267,7 +266,7 @@ class mysql
 		$msg .= '</style>' . "\n";
 		$msg .= '</head>' . "\n";
 		$msg .= '<body bgcolor="#FFFFFF" text="#000000" link="#006699" vlink="#5493B4">' . "\n";
-		$msg .= '<b>QQ3479015851 error</b>: ' . htmlspecialchars($this->error()) . "\n" . '<br />';
+		$msg .= '<b>SysGlbCfm error</b>: ' . htmlspecialchars($this->error()) . "\n" . '<br />';
 		$msg .= '<b>error number</b>: ' . $this->errno() . "\n" . '<br />';
 		$msg .= '<b>Date</b>: ' . date('Y-m-d @ H:i') . "\n" . '<br />';
 		$msg .= '<b>Script</b>: http://' . $_SERVER['HTTP_HOST'] . getenv('REQUEST_URI') . "\n" . '<br />';

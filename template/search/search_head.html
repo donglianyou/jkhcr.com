@@ -1,12 +1,12 @@
 {template search_header}
 <div class="s_logo">
-    <div class="logo"><a href="{$qq3479015851_global[SiteUrl]}"><img src="{$qq3479015851_global[SiteLogo]}" alt="{$qq3479015851_global[SiteName]}"></a></div>
+    <div class="logo"><a href="{$SystemGlobalcfm_global[SiteUrl]}"><img src="{$SystemGlobalcfm_global[SiteLogo]}" alt="{$SystemGlobalcfm_global[SiteName]}"></a></div>
     <div class="s_info">
     <form action="search.php?" method="get" />
         <div class="s_ulA" id="searchType">
             <ul>
                 <li name="s8" id="s8_information" onclick="show_tab('information');" {if $mod == 'information'}class="current"{/if}><a href="#">信息</a></li>
-				{if $qq3479015851_global[cfg_if_corp] == 1}<li name="s8" id="s8_store" onclick="show_tab('store');" {if $mod == 'store'}class="current"{/if}><a href="#">商家</a></li>{/if}
+				{if $SystemGlobalcfm_global[cfg_if_corp] == 1}<li name="s8" id="s8_store" onclick="show_tab('store');" {if $mod == 'store'}class="current"{/if}><a href="#">商家</a></li>{/if}
 				{loop $allowplugin $plugin}
                 <li name="s8" id="s8_{$plugin[flag]}" onclick="show_tab('{$plugin[flag]}');" {if $mod == $plugin[flag]}class="current"{/if}><a href="#">{$plugin[name]}</a></li>
 				{/loop}

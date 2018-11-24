@@ -27,7 +27,7 @@
 </script>
 <script language="javascript" src="js/vbm.js"></script>
 <form method="POST" name="form1" action="?part=add" enctype="multipart/form-data" onSubmit="return CheckSubmit();">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%"  border="0" cellspacing="0" cellpadding="0" class="vbm">
             <tbody>
 			<?php if(!$admin_cityid){?>
@@ -73,9 +73,9 @@
               <tr bgcolor="#f5fbff" >
                 <td align="right" valign="top">选择上传的图片：</td>
                 <td><input type="file" name="qq3479015851_focus" size="45" id="litpic"><br /><br />
-                  支持上传的类型：<?=$qq3479015851_global[cfg_upimg_type]?><br />
-网站首页焦点图尺寸：<?=$qq3479015851_qq3479015851[cfg_focus_limit][$tpl_index[banmian]][index][width]?> * <?=$qq3479015851_qq3479015851[cfg_focus_limit][$tpl_index[banmian]][index][height]?><br />
-新闻首页焦点图尺寸：<?=$qq3479015851_qq3479015851[cfg_focus_limit][news][width]?> * <?=$qq3479015851_qq3479015851[cfg_focus_limit][news][height]?><br />
+                  支持上传的类型：<?=$SystemGlobalcfm_global[cfg_upimg_type]?><br />
+网站首页焦点图尺寸：<?=$SystemGlobalcfm_qq3479015851[cfg_focus_limit][$tpl_index[banmian]][index][width]?> * <?=$SystemGlobalcfm_qq3479015851[cfg_focus_limit][$tpl_index[banmian]][index][height]?><br />
+新闻首页焦点图尺寸：<?=$SystemGlobalcfm_qq3479015851[cfg_focus_limit][news][width]?> * <?=$SystemGlobalcfm_qq3479015851[cfg_focus_limit][news][height]?><br />
 </td>
               </tr>
             </tbody>

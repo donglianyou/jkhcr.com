@@ -1,10 +1,7 @@
 <?php
 /*
  * ============================================================================
- * 欢迎光临诚信源码之家 http://junchang.taobao.com
- * ============================================================================
- * 程序交流QQ：896685868
- * QQ群 ：200641831 
+ * Powered By 中国健康养生网站
 `*/
 $admin_menu[siteabout][name] = '站 务';
 $admin_menu[siteabout][style] = 'home';
@@ -94,7 +91,5 @@ $admin_menu[extend][group][element]['在线支付']['管理支付接口'] = 'pay
 $admin_menu[extend][group][element]['其它扩展']['管理广告位'] = 'adv.php';
 $admin_menu[extend][group][element]['其它扩展']['数据调用'] = 'jswizard.php';
 $admin_menu[extend][group][element]['其它扩展']['第三方账号整合'] = 'passport.php';
-$admin_menu[extend][group][element]['系统帮助']['诚信源码之家'] = 'http://junchang.taobao.com';
-$admin_menu[extend][group][element]['系统帮助']['QQ咨询'] = 'tencent://message/?uin=896685868&amp;Site=my.roebx.com&amp;Menu=yes';
 
 ?>

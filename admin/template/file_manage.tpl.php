@@ -1,6 +1,6 @@
 <?php include qq3479015851_tpl('inc_head');?>
 <?php if($part == 'template'){?>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -16,7 +16,7 @@
         <img src="../images/warn.gif" align="absmiddle"> 安全提示：当前在线编辑模板功能</span>：<?=$cfg_if_tpledit?>。建议您只有在十分必要的时候才开启它。您可以修改 /data/config.inc.php 关闭此功能
     </ul>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr" align="left">
     <td><?=$mulu?><b style="color:red">【当前所在目录：<?=$path?>】</b></td>
@@ -56,7 +56,7 @@ while ($file=@readdir($fso))
   </tr>
 </table>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
       <tr class="firstr"> 
         <td><b>文件名</b></td>
@@ -73,7 +73,7 @@ while ($file=@readdir($fso)) {
 	$size=@filesize("$path/$file");
 	$size=@getSize($size);
 	$lastsave=@date("Y-n-d H:i:s",filemtime("$path/$file"));
-    $image_uri = $part == 'template' ? $qq3479015851_global[SiteUrl].'/'.$part.'/default'.str_replace($showdir,'',$fullpath) : $qq3479015851_global[SiteUrl].'/attachment'.str_replace($showdir,'',$fullpath);
+    $image_uri = $part == 'template' ? $SystemGlobalcfm_global[SiteUrl].'/'.$part.'/default'.str_replace($showdir,'',$fullpath) : $SystemGlobalcfm_global[SiteUrl].'/attachment'.str_replace($showdir,'',$fullpath);
     ?>
     <tr bgcolor="white">
     <?php if(is_pic($file)=='yes'){?>

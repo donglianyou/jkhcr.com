@@ -1,7 +1,7 @@
 <?php include qq3479015851_tpl('inc_head');
 $admindir = getcwdOL();
 ?>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -15,7 +15,7 @@ $admindir = getcwdOL();
 <input type='hidden' name='part' value='verify'/>
 <input name="url" type="hidden" value="<?=GetUrl()?>">
 <input name="do_act" value="<?=$type?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td width="30">选择</td>
@@ -40,7 +40,7 @@ if($admin_id != 1 && $member[userid] == 'admin'){}else{
       <td><?=$member[id]?></td>
       <td><?=$member[if_corp] == 1 ? '商家' : '个人'?></td>
 	  <td><font color="red">[待审]</font> <a href="javascript:void(0);" onclick="
-setbg('<?=QQ3479015851_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$member[userid]?>&admindir=<?=$admindir?>')"><?php echo $member['if_corp'] ? $member['tname'].'('.$member[userid].')' : $member[userid]; ?></a></td>
+setbg('<?=SysGlbCfm_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$member[userid]?>&admindir=<?=$admindir?>')"><?php echo $member['if_corp'] ? $member['tname'].'('.$member[userid].')' : $member[userid]; ?></a></td>
 	  <? if($type == 'store'){?><td><?=$member[cname]?></td><td><?=$member[tel]?></td><td><font title="<?=$member[address]?>"><?=cutstr($member[address],20)?></font></td><? }else{?>
       <td><?=$member[email]?></td>
 	  <? }?>

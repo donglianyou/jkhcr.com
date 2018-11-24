@@ -1,5 +1,5 @@
 <?php
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 require_once dirname(__FILE__).'/../../../include/global.php';
 require_once qq3479015851_DATA.'/config.php';
 require_once qq3479015851_DATA.'/config.db.php';

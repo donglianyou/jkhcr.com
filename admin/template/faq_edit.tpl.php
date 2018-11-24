@@ -26,7 +26,7 @@ function CheckSubmit()
 }
 </script>
 <form method=post  name="form1" action="?part=edit&id=<?=$edit[id]?>" onSubmit="return CheckSubmit();">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <input name="action" type="hidden" value="dopost">
 <tr bgcolor="#f5fbff" >

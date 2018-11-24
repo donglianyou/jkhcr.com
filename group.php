@@ -7,20 +7,19 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('IN_SMT',true);
 define('CURSCRIPT','group');
-define('QQ3479015851',TRUE);
+define('SysGlbCfm',TRUE);
 define('DIR_NAV',dirname(__FILE__));
 
 require_once DIR_NAV.'/include/global.php';
-require_once QQ3479015851_DATA."/config.php";
+require_once SysGlbCfm_DATA."/config.php";
 
 ifsiteopen();
-require_once QQ3479015851_DATA."/config.db.php";
-require_once QQ3479015851_INC."/db.class.php";
+require_once SysGlbCfm_DATA."/config.db.php";
+require_once SysGlbCfm_INC."/db.class.php";
 
 $id 		= isset($id) 		? intval($id) 		: '';
 $cate_id 	= isset($cate_id) 	? intval($cate_id) 	: 0;
@@ -35,19 +34,19 @@ if(!submit_check(CURSCRIPT.'_submit')){
 
 	require_once DIR_NAV.'/plugin/group/include/functions.php';
 	
-	require_once QQ3479015851_DATA.'/grouplevel.inc.php';
+	require_once SysGlbCfm_DATA.'/grouplevel.inc.php';
 	
 	$group_class = get_group_class();
 	
 	if($id) {
 		
 		$group  = $db -> getRow("SELECT * FROM `{$db_qq3479015851}group` WHERE groupid = '$id' AND glevel > '0'");
-		if(!$group['groupid']) write_msg('该团购活动不存在或者尚未通过审核！',$qq3479015851_global['SiteUrl']);
+		if(!$group['groupid']) write_msg('该团购活动不存在或者尚未通过审核！',$SystemGlobalcfm_global['SiteUrl']);
 		$city = get_city_caches($group['cityid'] ? $group['cityid'] : $cityid);
 		/*自动补充总站数据start*/
-		if($qq3479015851_global['cfg_independency'] && $cityid){
+		if($SystemGlobalcfm_global['cfg_independency'] && $cityid){
 			$maincity = get_city_caches(0);
-			$independency = explode(',',$qq3479015851_global['cfg_independency']);
+			$independency = explode(',',$SystemGlobalcfm_global['cfg_independency']);
 			$independency = is_array($independency) ? $independency : array();
 			if(in_array('advertisement',$independency)){
 				$city['advertisement'] = empty($city['advertisement']) ? $maincity['advertisement'] : $city['advertisement'];
@@ -59,7 +58,7 @@ if(!submit_check(CURSCRIPT.'_submit')){
 		$group['remaindate'] = intval(($group['enddate'] - $timestamp)/(86400));
 		
 		$data = '';
-		@include QQ3479015851_DATA.'/caches/area_option_static.php';
+		@include SysGlbCfm_DATA.'/caches/area_option_static.php';
 		$group['areaname'] = $data ? $data[$group['areaid']]['areaname'] : $db -> getOne("SELECT areaname FROM `{$db_qq3479015851}area` WHERE areaid = '$group[areaid]'");
 		$data = NULL;
 		
@@ -88,9 +87,9 @@ if(!submit_check(CURSCRIPT.'_submit')){
 		
 		if($city['cityid']){
 		/*自动补充总站数据start*/
-		if($qq3479015851_global['cfg_independency'] && $cityid){
+		if($SystemGlobalcfm_global['cfg_independency'] && $cityid){
 			$maincity = get_city_caches(0);
-			$independency = explode(',',$qq3479015851_global['cfg_independency']);
+			$independency = explode(',',$SystemGlobalcfm_global['cfg_independency']);
 			$independency = is_array($independency) ? $independency : array();
 			if(in_array('advertisement',$independency)){
 				$city['advertisement'] = empty($city['advertisement']) ? $maincity['advertisement'] : $city['advertisement'];

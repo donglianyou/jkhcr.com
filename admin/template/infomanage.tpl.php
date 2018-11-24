@@ -6,7 +6,7 @@ ifcheck = false;
 <form action="infomanage.php?" method="get">
 <input name="action" value="viewresult" type="hidden"/>
 <input name="return_url" value="<?php echo GetUrl(); ?>" type="hidden" />
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">搜索符合条件的信息主题</td>
@@ -121,7 +121,7 @@ if($action == 'viewresult'){
 <input name="step" value="submit" type="hidden">
 <input name="return_url" value="<?php echo GetUrl(); ?>" type="hidden" />
 <div class="clear"></div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm" >
 <tr class="firstr">
   	<td colspan="9">请选择你要进行的操作</td>

@@ -7,12 +7,11 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-!(defined('QQ3479015851')) && exit('FORBIDDEN');
-require_once QQ3479015851_DATA . '/config.db.php';
-require_once QQ3479015851_INC . '/db.class.php';
+!(defined('SysGlbCfm')) && exit('FORBIDDEN');
+require_once SysGlbCfm_DATA . '/config.db.php';
+require_once SysGlbCfm_INC . '/db.class.php';
 $ip = '';
 $ip = GetIP();
 $infoid = (isset($_POST['infoid']) ? intval($_POST['infoid']) : '');
@@ -26,6 +25,6 @@ if (0 < qq3479015851_count('info_report', 'WHERE infoid = \'' . $infoid . '\' AN
 }
 
 $db->query('INSERT INTO `' . $db_qq3479015851 . 'info_report` (report_type,content,infoid,infotitle,ip,pubtime)VALUES(\'' . $report_type . '\',\'' . $content . '\',\'' . $infoid . '\',\'' . $infotitle . '\',\'' . $ip . '\',\'' . $timestamp . '\')');
-echo '<div style="margin:10px 15px"><font style="color:red; font-size:12px"><h1>感谢您的举报 :)</h1><br />● 在' . $qq3479015851_global[SiteName] . '，每天有数千条违规信息通过用户举报被删除。<br /><br />● 如果你是不小心点错了举报按钮，别担心。只有当一个信息收到一定数量的举报时才会被删除。</font></div>';
+echo '<div style="margin:10px 15px"><font style="color:red; font-size:12px"><h1>感谢您的举报 :)</h1><br />● 在' . $SystemGlobalcfm_global[SiteName] . '，每天有数千条违规信息通过用户举报被删除。<br /><br />● 如果你是不小心点错了举报按钮，别担心。只有当一个信息收到一定数量的举报时才会被删除。</font></div>';
 
 ?>

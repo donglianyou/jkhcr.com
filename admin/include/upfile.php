@@ -7,21 +7,20 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 define('IN_AJAX', true);
 define('CURSCRIPT', 'upfile');
 include dirname(__FILE__) . '/../../include/global.php';
-require_once QQ3479015851_DATA . '/config.inc.php';
-require_once QQ3479015851_DATA . '/config.php';
-require_once QQ3479015851_DATA . '/config.db.php';
-require_once QQ3479015851_INC . '/admin.class.php';
-require_once QQ3479015851_INC . '/db.class.php';
+require_once SysGlbCfm_DATA . '/config.inc.php';
+require_once SysGlbCfm_DATA . '/config.php';
+require_once SysGlbCfm_DATA . '/config.db.php';
+require_once SysGlbCfm_INC . '/admin.class.php';
+require_once SysGlbCfm_INC . '/db.class.php';
 @header('Content-type: text/html; charset=' . $charset);
 
-if (!$qq3479015851_admin->qq3479015851_admin_chk_getinfo()) {
+if (!$SystemGlobalcfm_admin->qq3479015851_admin_chk_getinfo()) {
 	exit('Access Denied!');
 }
 else {
@@ -32,26 +31,26 @@ $destination = (isset($destination) ? trim($destination) : '');
 
 if ($delfile) {
 	if ($adv == 1) {
-		$delfile == str_replace($qq3479015851_global['SiteUrl'], '', $delfile);
+		$delfile == str_replace($SystemGlobalcfm_global['SiteUrl'], '', $delfile);
 	}
 
-	@unlink(QQ3479015851_ROOT . trim($delfile));
+	@unlink(SysGlbCfm_ROOT . trim($delfile));
 }
 
 $id = (isset($id) ? trim($id) : 'imgsrc');
 $adv = intval($adv);
 if (is_array($_FILES) && submit_check(CURSCRIPT . '_submit')) {
 	!$destination && ($destination = 'other');
-	require_once QQ3479015851_INC . '/upfile.fun.php';
+	require_once SysGlbCfm_INC . '/upfile.fun.php';
 	$name_file = 'qq3479015851_img';
 	check_upimage($name_file);
 
 	if ($_FILES[$name_file]['name']) {
-		$watermark = (!empty($watermark) ? $qq3479015851_global['cfg_upimg_watermark'] : 0);
+		$watermark = (!empty($watermark) ? $SystemGlobalcfm_global['cfg_upimg_watermark'] : 0);
 
-		if ($qq3479015851_image = start_upload($name_file, '/' . $destination . '/' . date('Ym') . '/', $watermark, $width, $height)) {
+		if ($SystemGlobalcfm_image = start_upload($name_file, '/' . $destination . '/' . date('Ym') . '/', $watermark, $width, $height)) {
 			$msg = '图片上传成功！';
-			$path = $qq3479015851_image;
+			$path = $SystemGlobalcfm_image;
 		}
 		else {
 			$msg = '图片上传失败！';
@@ -63,7 +62,7 @@ if (is_array($_FILES) && submit_check(CURSCRIPT . '_submit')) {
 		$path = '';
 	}
 
-	echo '<script laguage=javascript>alert(\'' . $msg . '\');window.parent.document.getElementById("' . $id . '").value=\'' . ($adv == 1 ? $qq3479015851_global['SiteUrl'] : '') . $path . '\';</script><a href=\'?adv=1&destination=' . $destination . '&watermark=' . $watermark . '&delfile=' . $path . '\' style=\'font-size:12px\'>点此重新上传图片</a>';
+	echo '<script laguage=javascript>alert(\'' . $msg . '\');window.parent.document.getElementById("' . $id . '").value=\'' . ($adv == 1 ? $SystemGlobalcfm_global['SiteUrl'] : '') . $path . '\';</script><a href=\'?adv=1&destination=' . $destination . '&watermark=' . $watermark . '&delfile=' . $path . '\' style=\'font-size:12px\'>点此重新上传图片</a>';
 }
 else {
 	echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' . "\r\n" . '<html xmlns="http://www.w3.org/1999/xhtml">' . "\r\n" . '<head>' . "\r\n" . '<meta http-equiv=\'Content-Type\' content=\'text/html; charset=utf-8\'>' . "\r\n" . '<title>upfile</title>' . "\r\n" . '<link href=\'../template/css/qq3479015851.css\' rel=\'stylesheet\' type=\'text/css\'>' . "\r\n" . '<script language="javascript" src="../js/vbm.js"></script>' . "\r\n" . '<body style=" margin:0; padding:0px;">' . "\r\n" . '  <table width="100%" border="0" cellpadding="0" cellspacing="0" style="border:1px #c5d8e8 solid; padding:22px; background-color:#f5fbff">' . "\r\n" . '<form name="form1" enctype="multipart/form-data" action="?" method="post">' . "\r\n" . '<input name="destination" value="';

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>powered by qq896685868</title>
+<title>网站管理后台</title>
 <style>
 body{background-color:white; font-size:12px; margin:0px; padding:0px; color:#666} 
 
@@ -24,35 +24,35 @@ $i = 0;
 foreach($admin_menu as $q => $w){
 
 	$i=$i+1;
-    $qq3479015851_admin_menu .= $w[style] != 'more' ? '<div class="div"><div class="h'.($i<7?" list":"").'">'.$w[name].'</div>' : '';
+    $SystemGlobalcfm_admin_menu .= $w[style] != 'more' ? '<div class="div"><div class="h'.($i<7?" list":"").'">'.$w[name].'</div>' : '';
 
     if(is_array($w[group])){
         foreach($w[group] as $e=>$r){
 				
                 if($i < 7){
-					$qq3479015851_admin_menu .= "<dl class='list' id=\"".$q."\" ".$estyle.">";
+					$SystemGlobalcfm_admin_menu .= "<dl class='list' id=\"".$q."\" ".$estyle.">";
 				} else {
-					$qq3479015851_admin_menu .= "<dl id=\"".$q."\" ".$estyle.">";
+					$SystemGlobalcfm_admin_menu .= "<dl id=\"".$q."\" ".$estyle.">";
 				}
                 foreach ($w[group][$e] as $r => $t){
                     if(is_array($t)){
-                        $qq3479015851_admin_menu .= "<ul>";
-                        $qq3479015851_admin_menu .= "<div class=\"r\">".$r."</div>";
+                        $SystemGlobalcfm_admin_menu .= "<ul>";
+                        $SystemGlobalcfm_admin_menu .= "<div class=\"r\">".$r."</div>";
                         foreach ($w[group][$e][$r] as $y => $u){
-                            $qq3479015851_admin_menu .= "<li><a href=\"".($y!='提交售后工单'?$admindir."/":"").$u."\" target=\"framRight\">".$y."</a></li>";
+                            $SystemGlobalcfm_admin_menu .= "<li><a href=\"".($y!='提交售后工单'?$admindir."/":"").$u."\" target=\"framRight\">".$y."</a></li>";
                         }
-                        $qq3479015851_admin_menu .= "</ul>";
+                        $SystemGlobalcfm_admin_menu .= "</ul>";
                     }
                 }
-                $qq3479015851_admin_menu .= "</dl>";
+                $SystemGlobalcfm_admin_menu .= "</dl>";
 
         }
     }
     
-    $qq3479015851_admin_menu .= '</div>';
+    $SystemGlobalcfm_admin_menu .= '</div>';
 
 }
-echo $qq3479015851_admin_menu;
+echo $SystemGlobalcfm_admin_menu;
 ?>
 </body>
 </html>

@@ -15,7 +15,7 @@
 <form name='form1' method='post' action='?part=<?=$part?>' onSubmit='return checkSubmit();'>
 <input name="url" type="hidden" value="<?=GetUrl()?>">
 <input name="action" type="hidden" value="delall" />
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td width="30">选择</td>

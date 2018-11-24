@@ -7,24 +7,23 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-function ToPayMoney($money, $orderid, $uid, $userid, $qq3479015851_paytype)
+function ToPayMoney($money, $orderid, $uid, $userid, $SystemGlobalcfm_paytype)
 {
 	global $db;
 	global $db_qq3479015851;
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	global $timestamp;
 	$orderid = var_action($orderid);
 
 	if ($money) {
-		if ($qq3479015851_global['cfg_coin_fee']) {
-			$money = $money * $qq3479015851_global['cfg_coin_fee'];
+		if ($SystemGlobalcfm_global['cfg_coin_fee']) {
+			$money = $money * $SystemGlobalcfm_global['cfg_coin_fee'];
 		}
 
 		$payip = GetIP();
-		$db->query('INSERT INTO ' . $db_qq3479015851 . 'payrecord(id,uid,userid,orderid,money,posttime,paybz,type,payip) values(\'\',\'' . $uid . '\',\'' . $userid . '\',\'' . $orderid . '\',\'' . $money . '\',\'' . $timestamp . '\',\'等待支付\',\'' . $qq3479015851_paytype . '\',\'' . $payip . '\');');
+		$db->query('INSERT INTO ' . $db_qq3479015851 . 'payrecord(id,uid,userid,orderid,money,posttime,paybz,type,payip) values(\'\',\'' . $uid . '\',\'' . $userid . '\',\'' . $orderid . '\',\'' . $money . '\',\'' . $timestamp . '\',\'等待支付\',\'' . $SystemGlobalcfm_paytype . '\',\'' . $payip . '\');');
 	}
 }
 
@@ -32,7 +31,7 @@ function UpdatePayRecord($orderid, $paybz, $upmoney = 1)
 {
 	global $db;
 	global $db_qq3479015851;
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	global $timestamp;
 	$orderid = var_action($orderid);
 	$r = $db->getRow('SELECT money,userid,ifadd FROM `' . $db_qq3479015851 . 'payrecord` WHERE orderid = \'' . $orderid . '\'');
@@ -46,30 +45,30 @@ function UpdatePayRecord($orderid, $paybz, $upmoney = 1)
 	$db->query('UPDATE `' . $db_qq3479015851 . 'payrecord` SET paybz = \'' . $paybz . '\',ifadd = 1 WHERE orderid = \'' . $orderid . '\';');
 }
 
-function PayApiPayMoney($money, $paybz, $orderid, $uid, $userid, $qq3479015851_paytype)
+function PayApiPayMoney($money, $paybz, $orderid, $uid, $userid, $SystemGlobalcfm_paytype)
 {
 	global $db;
 	global $db_qq3479015851;
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	global $timestamp;
 	$orderid = var_action($orderid);
 	$num = $db->getOne('SELECT count(id) FROM ' . $db_qq3479015851 . 'payrecord WHERE orderid = \'' . $orderid . '\'');
 
 	if (0 < $num) {
-		write_msg('您已充值过 ' . $money . ' 请不要重复刷新', $qq3479015851_global[SiteUrl] . '/member/index.php?m=pay&ac=record');
+		write_msg('您已充值过 ' . $money . ' 请不要重复刷新', $SystemGlobalcfm_global[SiteUrl] . '/member/index.php?m=pay&ac=record');
 	}
 	else if ($money) {
-		if ($qq3479015851_global['cfg_coin_fee']) {
-			$money = $money * $qq3479015851_global['cfg_coin_fee'];
+		if ($SystemGlobalcfm_global['cfg_coin_fee']) {
+			$money = $money * $SystemGlobalcfm_global['cfg_coin_fee'];
 		}
 
 		$sql = $db->query('UPDATE `' . $db_qq3479015851 . 'member` SET money_own = money_own + ' . $money . ' WHERE userid = \'' . $userid . '\'');
 		$payip = GetIP();
-		$db->query('INSERT INTO ' . $db_qq3479015851 . 'payrecord(id,uid,userid,orderid,money,ifadd,posttime,paybz,type,payip) values(\'\',\'' . $uid . '\',\'' . $userid . '\',\'' . $orderid . '\',\'' . $money . '\',1,\'' . $timestamp . '\',\'' . $paybz . '\',\'' . $qq3479015851_paytype . '\',\'' . $payip . '\');');
-		write_msg('您已成功充值 ' . $money . ' 个金币', $qq3479015851_global[SiteUrl] . '/member/index.php?m=pay&ac=record');
+		$db->query('INSERT INTO ' . $db_qq3479015851 . 'payrecord(id,uid,userid,orderid,money,ifadd,posttime,paybz,type,payip) values(\'\',\'' . $uid . '\',\'' . $userid . '\',\'' . $orderid . '\',\'' . $money . '\',1,\'' . $timestamp . '\',\'' . $paybz . '\',\'' . $SystemGlobalcfm_paytype . '\',\'' . $payip . '\');');
+		write_msg('您已成功充值 ' . $money . ' 个金币', $SystemGlobalcfm_global[SiteUrl] . '/member/index.php?m=pay&ac=record');
 	}
 	else {
-		write_msg('充值失败，请联系网站管理员以获得帮助。', $qq3479015851_global[SiteUrl] . '/member/index.php?m=pay&ac=record');
+		write_msg('充值失败，请联系网站管理员以获得帮助。', $SystemGlobalcfm_global[SiteUrl] . '/member/index.php?m=pay&ac=record');
 	}
 }
 

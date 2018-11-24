@@ -1,6 +1,6 @@
 <?php include qq3479015851_tpl('inc_head');?>
   <form action="?part=list" method="post">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td><input class="checkbox" name="checkall" type="checkbox" id="checkall" onClick="CheckAll(this.form)"/> 删?</td>
@@ -28,7 +28,7 @@
 </form>
 <form action="site_about.php?part=edit" method="post">
 <input type="hidden" name="id" value="<?=$id?>">
-<div id="<?=QQ3479015851_SOFTNAME?>" style="margin-top:10px; clear:both">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="margin-top:10px; clear:both">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
 <td colspan="2"><?php echo !$id ? '新增' : '修改' ;?>栏目</td>

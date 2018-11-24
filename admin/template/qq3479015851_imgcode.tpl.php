@@ -2,7 +2,7 @@
 <style>
 .vbm td li{ margin:10px 0!important;}
 </style>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -14,7 +14,7 @@
 		</div>
 	</div>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">相关说明</td>
@@ -30,7 +30,7 @@
 </div>
 <form action="?part=imgcode" method="post">
 <input name="action" type="hidden" value="do_post">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td colspan="2" align="left">启用验证码</td>
@@ -44,7 +44,7 @@
       <td align="left" valign="top">
       <div style="margin-top:20px; color:#999">
 验证码可以避免恶意注册及恶意发布信息主题，请选择需要打开验证码的操作。注意: 启用验证码会使得部分操作变得繁琐，建议仅在必需时打开<br /><br />
-<img src="../<?php echo $qq3479015851_global['cfg_authcodefile']?>?action=preview" id="authcode" style="border:1px #ddd solid;"><br /><br />
+<img src="../<?php echo $SystemGlobalcfm_global['cfg_authcodefile']?>?action=preview" id="authcode" style="border:1px #ddd solid;"><br /><br />
 <a href="#" onClick="$obj('authcode').src=$obj('authcode').src+'&'">[刷新]</a>
 	  </div>
       </td>
@@ -52,7 +52,7 @@
 
 </table>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td colspan="2" align="left">验证码类型</td>

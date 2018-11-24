@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-!defined('QQ3479015851') && exit('FORBIDDEN');
+!defined('SysGlbCfm') && exit('FORBIDDEN');
 $member_menu = array();
 $member_menu['user']['info'] = '分类信息';
 $member_menu['user']['pay'] = '充值金币';
@@ -36,12 +35,12 @@ else {
 
 $member_menu['user']['password'] = '密码';
 
-if ($qq3479015851_global['cfg_if_corp'] == 1) {
+if ($SystemGlobalcfm_global['cfg_if_corp'] == 1) {
 	$member_menu['corp']['shop'] = '店铺资料';
 	$member_menu['corp']['comment'] = '店铺点评';
 	$member_menu['corp']['album'] = '店铺相册';
 	$member_menu['corp']['document'] = '店铺文章';
-	@include QQ3479015851_DATA . '/caches/pluginmenu_member.php';
+	@include SysGlbCfm_DATA . '/caches/pluginmenu_member.php';
 
 	if (is_array($data)) {
 		foreach ($data as $key => $val ) {
@@ -55,18 +54,18 @@ function qq3479015851_member_purview($purview = '')
 	$member_menu['corp']['banner'] = '上传商铺banner';
 
 	foreach ($member_menu as $k => $v ) {
-		$qq3479015851_member_purview .= '<tr bgcolor="#f5fbff"><td>' . ($k == 'user' ? '个人会员菜单' : '商家会员菜单') . '</td><td>';
+		$SystemGlobalcfm_member_purview .= '<tr bgcolor="#f5fbff"><td>' . ($k == 'user' ? '个人会员菜单' : '商家会员菜单') . '</td><td>';
 
 		foreach ($member_menu[$k] as $w => $y ) {
-			$qq3479015851_member_purview .= '<label for="purview_' . $w . '" style="width:110px"><input type="checkbox" class="checkbox" name="purview[]" id="purview_' . $w . '" value="purview_' . $w . '"';
-			$qq3479015851_member_purview .= ((is_array($purview) && in_array('purview_' . $w, $purview)) || empty($purview) ? 'checked' : '');
-			$qq3479015851_member_purview .= '>' . $y . '</label> ';
+			$SystemGlobalcfm_member_purview .= '<label for="purview_' . $w . '" style="width:110px"><input type="checkbox" class="checkbox" name="purview[]" id="purview_' . $w . '" value="purview_' . $w . '"';
+			$SystemGlobalcfm_member_purview .= ((is_array($purview) && in_array('purview_' . $w, $purview)) || empty($purview) ? 'checked' : '');
+			$SystemGlobalcfm_member_purview .= '>' . $y . '</label> ';
 		}
 
-		$qq3479015851_member_purview .= '</td></tr>';
+		$SystemGlobalcfm_member_purview .= '</td></tr>';
 	}
 
-	return $qq3479015851_member_purview;
+	return $SystemGlobalcfm_member_purview;
 }
 
 function cur_purviews($purview = '')
@@ -74,18 +73,18 @@ function cur_purviews($purview = '')
 	global $member_menu;
 
 	foreach ($member_menu as $k => $v ) {
-		$qq3479015851_member_purview .= '<tr><td align="center" width="10%">' . ($k == 'user' ? '个人会员菜单' : '商家会员菜单') . '</td><td>';
+		$SystemGlobalcfm_member_purview .= '<tr><td align="center" width="10%">' . ($k == 'user' ? '个人会员菜单' : '商家会员菜单') . '</td><td>';
 
 		foreach ($member_menu[$k] as $w => $y ) {
-			$qq3479015851_member_purview .= '<label for="purview_' . $w . '" style="width:110px"><input type="checkbox" class="checkbox" name="purview[]" id="purview_' . $w . '" value="purview_' . $w . '"';
-			$qq3479015851_member_purview .= ((is_array($purview) && in_array('purview_' . $w, $purview)) || empty($purview) ? 'checked' : '');
-			$qq3479015851_member_purview .= '>' . $y . '</label> ';
+			$SystemGlobalcfm_member_purview .= '<label for="purview_' . $w . '" style="width:110px"><input type="checkbox" class="checkbox" name="purview[]" id="purview_' . $w . '" value="purview_' . $w . '"';
+			$SystemGlobalcfm_member_purview .= ((is_array($purview) && in_array('purview_' . $w, $purview)) || empty($purview) ? 'checked' : '');
+			$SystemGlobalcfm_member_purview .= '>' . $y . '</label> ';
 		}
 
-		$qq3479015851_member_purview .= '</td></tr>';
+		$SystemGlobalcfm_member_purview .= '</td></tr>';
 	}
 
-	return $qq3479015851_member_purview;
+	return $SystemGlobalcfm_member_purview;
 }
 
 

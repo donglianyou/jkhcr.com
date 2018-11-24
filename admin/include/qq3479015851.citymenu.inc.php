@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 $admin_menu[siteabout][name] = '站 务';
 $admin_menu[siteabout][style] = 'home';
@@ -51,7 +50,7 @@ if (is_array($data)) {
 	unset($data);
 }
 
-$admin_menu[extend][name] = '扩 展cxkeji';
+$admin_menu[extend][name] = '扩 展';
 $admin_menu[extend][style] = '';
 $admin_menu[extend][group][element]['其它扩展']['管理广告位'] = 'adv.php';
 

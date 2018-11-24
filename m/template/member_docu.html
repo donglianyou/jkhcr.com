@@ -2,7 +2,7 @@
 <html lang="zh-CN" class="index_page">
 <head>
 	{template header}
-	<title>我的文章 - {$qq3479015851_global[SiteName]}</title>
+	<title>我的文章 - {$SystemGlobalcfm_global[SiteName]}</title>
 	<link type="text/css" rel="stylesheet" href="template/css/global.css">
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
 	<link type="text/css" rel="stylesheet" href="template/css/member.css">
@@ -10,7 +10,7 @@
     
 </head>
 
-<body class="{$qq3479015851_global[cfg_tpl_dir]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]}">
 <div class="wrapper">
 
 	{template header_search}
@@ -23,12 +23,12 @@
 
 	<div class="my_docu">
     <ul>
-    	{loop $list $qq3479015851}
-        <li id="info{$qq3479015851[id]}">
-            <h3><a href="index.php?mod=store&id={$row[id]}&action=docu&docuid={$qq3479015851[id]}">{$qq3479015851[title]}</a></h3>
+    	{loop $list $SystemGlobalcfm}
+        <li id="info{$SystemGlobalcfm[id]}">
+            <h3><a href="index.php?mod=store&id={$row[id]}&action=docu&docuid={$SystemGlobalcfm[id]}">{$SystemGlobalcfm[title]}</a></h3>
             <dl class="cfix">
-             <dt>浏览人次：{$qq3479015851[hit]}次</dt>
-             <dd>发布时间：{echo GetTime($qq3479015851[pubtime])}</dd>
+             <dt>浏览人次：{$SystemGlobalcfm[hit]}次</dt>
+             <dd>发布时间：{echo GetTime($SystemGlobalcfm[pubtime])}</dd>
             </dl>
         </li>
         {/loop}

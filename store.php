@@ -7,17 +7,16 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('IN_SMT',true);
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 define('CURSCRIPT','store');
 
 require_once dirname(__FILE__)."/include/global.php";
-require_once QQ3479015851_DATA."/config.php";
-require_once QQ3479015851_DATA."/config.db.php";
-require_once QQ3479015851_INC."/db.class.php";
+require_once SysGlbCfm_DATA."/config.php";
+require_once SysGlbCfm_DATA."/config.db.php";
+require_once SysGlbCfm_INC."/db.class.php";
 
 ifsiteopen();
 
@@ -43,24 +42,24 @@ if($Uid && $seo['seo_force_store'] == 'rewrite'){
 	$CAtid = $detail = NULL;
 }
 
-in_array($part,array('index','comment')) && require_once QQ3479015851_INC."/member.class.php";
+in_array($part,array('index','comment')) && require_once SysGlbCfm_INC."/member.class.php";
 
 if($action != 'dopost'){
 	
 	if(empty($user)&&empty($uid)){
-		write_msg('您指定的商铺不存在或者未通过审核！',$qq3479015851_global[SiteUrl].'/corporation.php');
+		write_msg('您指定的商铺不存在或者未通过审核！',$SystemGlobalcfm_global[SiteUrl].'/corporation.php');
 	}elseif(empty($uid) && $user) {
 		$uid = $db -> getOne("SELECT id FROM `{$db_qq3479015851}member` WHERE userid ='$user'");
 	}
 	
 	if(!pcclient()){
-		write_msg('',$qq3479015851_global['SiteUrl'].'/m/index.php?mod=store&id='.$uid);
+		write_msg('',$SystemGlobalcfm_global['SiteUrl'].'/m/index.php?mod=store&id='.$uid);
 	}
  
 	$where  = "WHERE a.id = '$uid' AND status = '1' AND if_corp = '1'";
 	
 	$store	= $db -> getRow("SELECT a.* FROM `{$db_qq3479015851}member` AS a $where");
-	if(!$store || empty($uid)) write_msg('您指定的机构不存在或者未通过审核！',$qq3479015851_global[SiteUrl].'/corporation.php');
+	if(!$store || empty($uid)) write_msg('您指定的机构不存在或者未通过审核！',$SystemGlobalcfm_global[SiteUrl].'/corporation.php');
 	if(!$store['template'] || !in_array($store['template'],array('blue','green','orange','purple','pink'))) $store['template'] = 'blue';
 	
 	$allow_param = array('about','info','document','album','contactus','comment','index','goods');
@@ -88,10 +87,10 @@ if($action != 'dopost'){
 	$store['levelname'] = $db -> getOne("SELECT levelname FROM `{$db_qq3479015851}member_level` WHERE id = '$store[levelid]'");
 
 	if($store['contact']['member_contact'] == 0){
-		$store['cname'] 	= $qq3479015851_global['SiteTeacher'];
-		$store['tel']		= $qq3479015851_global['SiteTel'];
-		$store['qq']		= $qq3479015851_global['SiteQQ'];
-		$store['email']	= $qq3479015851_global['SiteEmail'];
+		$store['cname'] 	= $SystemGlobalcfm_global['SiteTeacher'];
+		$store['tel']		= $SystemGlobalcfm_global['SiteTel'];
+		$store['qq']		= $SystemGlobalcfm_global['SiteQQ'];
+		$store['email']	= $SystemGlobalcfm_global['SiteEmail'];
 	}
 	
 	if($part == 'about'){
@@ -242,24 +241,24 @@ if($action != 'dopost'){
 			$arr['fromuser']	 = $row['fromuser'] ? $row['fromuser'] : '匿名网友';
 			$arr['useruri']		 = $row['fromuser'] ? Rewrite('space',array('user'=>$row['fromuser'])) : '#';	
 			$arr['pubtime'] 	 = GetTime($row['pubtime']);
-			$arr['face']		 = $row['face'] ? $row['face'] : $qq3479015851_global['SiteUrl'].'/images/noavatar_small.gif';
+			$arr['face']		 = $row['face'] ? $row['face'] : $SystemGlobalcfm_global['SiteUrl'].'/images/noavatar_small.gif';
 			$comment[]      	 = $arr;
 		}
 		
 		$pageview = store_page2($seo['seo_force_store']);
 	
-		require_once QQ3479015851_INC."/member.class.php";
+		require_once SysGlbCfm_INC."/member.class.php";
 		$commentsettings = get_commentsettings();
 		$store['commentsettings'] = $commentsettings[CURSCRIPT];
 		$commentsettings = NULL;
 		if($iflogin = $member_log -> chk_in()){
-			$store['loginlimit'] = $s_uid.'<a href="'.$qq3479015851_global[SiteUrl].'/'.$qq3479015851_global[cfg_member_logfile].'?mod=out&url='.urlencode(GetUrl()).'">[退出]</a>';
+			$store['loginlimit'] = $s_uid.'<a href="'.$SystemGlobalcfm_global[SiteUrl].'/'.$SystemGlobalcfm_global[cfg_member_logfile].'?mod=out&url='.urlencode(GetUrl()).'">[退出]</a>';
 		} else {
 			if($store['commentsettings'] == 2){
 				$store['loginlimit'] = '<span class="left">用户名：<input name="loginuser" class="login_test" type="text" /> 密码：<input name="loginpwd" class="login_test" type="password" />';
 			}
 			
-			$store['loginlimit'] .= '验证码：<input name="checkcode" class="login_test" style="width:50px" type="text" /></span><span class="left"> <img src="'.$qq3479015851_global["SiteUrl"].'/'.$qq3479015851_global["cfg_authcodefile"].'" alt="看不清，请点击刷新" align="absmiddle" class="authcode" onClick="this.src=this.src+\'?\'"/></span>';
+			$store['loginlimit'] .= '验证码：<input name="checkcode" class="login_test" style="width:50px" type="text" /></span><span class="left"> <img src="'.$SystemGlobalcfm_global["SiteUrl"].'/'.$SystemGlobalcfm_global["cfg_authcodefile"].'" alt="看不清，请点击刷新" align="absmiddle" class="authcode" onClick="this.src=this.src+\'?\'"/></span>';
 		}
  		$store['location'] = get_store_location($uri['index'],$store['tname'],'留言点评');
 		
@@ -286,7 +285,7 @@ if($action != 'dopost'){
 		if(empty($userid)) write_msg('您还没有指定点评的对象!');
 		
 		if(empty($content)) write_msg('请填写点评内容!');
-		$result 		= verify_badwords_filter($qq3479015851_global['cfg_if_comment_verify'],'',$content);
+		$result 		= verify_badwords_filter($SystemGlobalcfm_global['cfg_if_comment_verify'],'',$content);
 		$content 		= textarea_post_change($result['content']);
 		
 		$commentlevel	= $result['level'];
@@ -337,8 +336,8 @@ if($action != 'dopost'){
 is_object($db) && $db->Close();
 
 function get_store_location($homeurl='',$storename='',$curlocate=''){
-	global $qq3479015851_global;
-	$raquo = $qq3479015851_global['cfg_raquo'];
+	global $SystemGlobalcfm_global;
+	$raquo = $SystemGlobalcfm_global['cfg_raquo'];
 	$location = ' <a href="'.$homeurl.'" target="_blank" title='.$storename.'>'.$storename."</a> ".$raquo." ".$curlocate;
 	
 	return $location;

@@ -4,7 +4,7 @@
 .smalltxt{ font-size:12px!important; color:#999!important; font-weight:100!important}
 .altbg1{ background-color:#f1f5f8}
 </style>
-<div id="<?=QQ3479015851_SOFTNAME?>" style=" padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style=" padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -14,7 +14,7 @@
         </div>
     </div>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <form method="get" action="?">
     <input name="part" value="add" type="hidden">
@@ -46,7 +46,7 @@
 <form name='form1' method='post' action='?'>
 <input name="forward_url" value="<?=GetUrl()?>" type="hidden">
 <input name="part" value="<?=$part?>" type="hidden"/>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
 <td width="5%"><input class="checkbox" name="checkall" type="checkbox" id="checkall" onClick="CheckAll(this.form)"/>删?</td>

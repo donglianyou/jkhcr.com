@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-if (!defined('QQ3479015851')) {
+if (!defined('SysGlbCfm')) {
 	exit('Forbidden');
 }
 
@@ -28,11 +27,11 @@ if ($ac == 'del') {
 
 		foreach ($del as $k => $v ) {
 			if ($v['path']) {
-				@unlink(QQ3479015851_ROOT . $v['path']);
+				@unlink(SysGlbCfm_ROOT . $v['path']);
 			}
 
 			if ($v['prepath']) {
-				@unlink(QQ3479015851_ROOT . $v['prepath']);
+				@unlink(SysGlbCfm_ROOT . $v['prepath']);
 			}
 		}
 
@@ -51,7 +50,7 @@ if ($ac == 'del') {
 else if ($ac == 'refresh') {
 	($l == 'inormal') && write_msg('', '?m=info&error=7&l=inormal&page=' . $page);
 	empty($id) && write_msg('', '?m=info&error=1&page=' . $page);
-	$delmoney = $qq3479015851_global['cfg_member_info_refresh'];
+	$delmoney = $SystemGlobalcfm_global['cfg_member_info_refresh'];
 
 	if ($money_own < $delmoney) {
 		write_msg('', '?m=pay&error=2');
@@ -74,7 +73,7 @@ else if ($ac == 'refresh') {
 else if ($ac == 'red') {
 	($l == 'inormal') && write_msg('', '?m=info&error=7&l=inormal&page=' . $page);
 	empty($id) && write_msg('', '?m=info&error=1&page=' . $page);
-	$delmoney = $qq3479015851_global['cfg_member_info_red'];
+	$delmoney = $SystemGlobalcfm_global['cfg_member_info_red'];
 
 	if ($money_own < $delmoney) {
 		write_msg('', '?m=pay&error=2');
@@ -92,7 +91,7 @@ else if ($ac == 'red') {
 else if ($ac == 'bold') {
 	($l == 'inormal') && write_msg('', '?m=info&error=7&l=inormal&page=' . $page);
 	empty($id) && write_msg('', '?m=info&error=1&page=' . $page);
-	$delmoney = $qq3479015851_global['cfg_member_info_bold'];
+	$delmoney = $SystemGlobalcfm_global['cfg_member_info_bold'];
 
 	if ($money_own < $delmoney) {
 		write_msg('', '?m=pay&error=2');
@@ -108,7 +107,7 @@ else if ($ac == 'bold') {
 	write_msg('', '?m=info&success=5&page=' . $page);
 }
 else if ($ac == 'upgrade') {
-	require_once QQ3479015851_DATA . '/info.level.inc.php';
+	require_once SysGlbCfm_DATA . '/info.level.inc.php';
 	unset($information_level);
 	unset($news_level);
 
@@ -126,8 +125,8 @@ else if ($ac == 'upgrade') {
 	include qq3479015851_tpl('info_upgrade');
 }
 else if ($ac == 'actionupgrade') {
-	require_once QQ3479015851_INC . '/class.fun.php';
-	require_once QQ3479015851_INC . '/cache.fun.php';
+	require_once SysGlbCfm_INC . '/class.fun.php';
+	require_once SysGlbCfm_INC . '/cache.fun.php';
 	$id = (isset($id) ? intval($id) : intval($_POST['id']));
 	$catid = (isset($catid) ? intval($catid) : intval($_POST['catid']));
 	$upgrade_time = (isset($upgrade_time) ? intval($upgrade_time) : intval($_POST['upgrade_time']));
@@ -136,7 +135,7 @@ else if ($ac == 'actionupgrade') {
 	$iftop = (isset($iftop) ? intval($iftop) : intval($_POST['iftop']));
 	$iflisttop = (isset($iflisttop) ? intval($iflisttop) : intval($_POST['iflisttop']));
 	$ifindextop = (isset($ifindextop) ? intval($ifindextop) : intval($_POST['ifindextop']));
-	$money_cost = $upgrade_time * $qq3479015851_global[$upgrade_type];
+	$money_cost = $upgrade_time * $SystemGlobalcfm_global[$upgrade_type];
 	$upgrade_time = ($upgrade_time * 3600 * 24) + $timestamp;
 	if (empty($id) || empty($catid) || empty($upgrade_time) || !in_array($upgrade_type, array('cfg_member_upgrade_index_top', 'cfg_member_upgrade_top', 'cfg_member_upgrade_list_top'))) {
 		if ($box) {
@@ -210,7 +209,7 @@ else if ($ac == 'actionupgrade') {
 	}
 }
 else {
-	require_once QQ3479015851_DATA . '/info.level.inc.php';
+	require_once SysGlbCfm_DATA . '/info.level.inc.php';
 	runcron();
 
 	if ($l == 'normal') {

@@ -1,5 +1,5 @@
 <?php include qq3479015851_tpl('inc_head');?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">技巧提示</td>
@@ -12,7 +12,7 @@
   </tr>
 </table>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 <div class="mpstopic-category">
 	<div class="panel-tab">
 		<ul class="clearfix tab-list">
@@ -24,7 +24,7 @@
 	</div>
 </div>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="vbm">
   <form action="data_replace.php" name="form1" method="post" target="stafrm" onSubmit="return CheckSubmit()">
   	<input type='hidden' name='part' value='do_action'>
@@ -46,9 +46,9 @@
                 <tr>
                   <td id="tables">
                     <?php
-  $qq3479015851_tables = fetchtablelist($db_qq3479015851);
+  $SystemGlobalcfm_tables = fetchtablelist($db_qq3479015851);
   echo "<select name='exptable' id='exptable' size='10' style='width:60%' onchange='ShowFields()'>\r\n";
-  foreach($qq3479015851_tables as $key => $val){
+  foreach($SystemGlobalcfm_tables as $key => $val){
 	  echo "<option value='{$val[Name]}'>{$val[Name]}</option>\r\n";
   }
   echo "</select>\r\n";

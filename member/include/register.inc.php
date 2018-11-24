@@ -7,14 +7,13 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-if (!defined('QQ3479015851')) {
+if (!defined('SysGlbCfm')) {
 	exit('Forbidden');
 }
 
-($qq3479015851_global['cfg_if_member_register'] != 1) && write_msg('操作失败！系统管理员关闭了新会员注册！');
+($SystemGlobalcfm_global['cfg_if_member_register'] != 1) && write_msg('操作失败！系统管理员关闭了新会员注册！');
 if (!$mixcode || ($mixcode != md5($cookiepre))) {
 	exit('您请求的来路不正确');
 	exit();
@@ -40,17 +39,17 @@ $introduce = ($introduce ? textarea_post_change($introduce) : '');
 $ip = '';
 $ip = GetIP();
 $ip2area = $ipdata = '';
-require_once QQ3479015851_INC . '/ip.class.php';
+require_once SysGlbCfm_INC . '/ip.class.php';
 $ipdata = new ip();
 $ipaddress = $ipdata->getaddress($ip);
 $ip2area = $ipaddress['area1'] . $ipaddress['area2'];
 $i = 1;
 unset($ipdata);
 unset($ipaddress);
-$qq3479015851_global['cfg_member_regplace'] = ($qq3479015851_global['cfg_member_regplace'] ? str_replace('，', ',', $qq3479015851_global['cfg_member_regplace']) : '');
-if (!empty($qq3479015851_global['cfg_member_regplace']) && !empty($ip2area)) {
+$SystemGlobalcfm_global['cfg_member_regplace'] = ($SystemGlobalcfm_global['cfg_member_regplace'] ? str_replace('，', ',', $SystemGlobalcfm_global['cfg_member_regplace']) : '');
+if (!empty($SystemGlobalcfm_global['cfg_member_regplace']) && !empty($ip2area)) {
 	$allow_reg_area = array();
-	$allow_reg_area = explode(',', $qq3479015851_global['cfg_member_regplace']);
+	$allow_reg_area = explode(',', $SystemGlobalcfm_global['cfg_member_regplace']);
 
 	foreach ($allow_reg_area as $k => $v ) {
 		if (strstr($ip2area, $v)) {
@@ -59,7 +58,7 @@ if (!empty($qq3479015851_global['cfg_member_regplace']) && !empty($ip2area)) {
 	}
 
 	if ($i == 1) {
-		write_msg('系统管理员已限制为<b style=\'color:red\'>' . $qq3479015851_global['cfg_member_regplace'] . '</b>本地IP，方能注册! <br />如果您要继续操作，请联系客服。', 'olmsg');
+		write_msg('系统管理员已限制为<b style=\'color:red\'>' . $SystemGlobalcfm_global['cfg_member_regplace'] . '</b>本地IP，方能注册! <br />如果您要继续操作，请联系客服。', 'olmsg');
 		exit();
 	}
 
@@ -68,8 +67,8 @@ if (!empty($qq3479015851_global['cfg_member_regplace']) && !empty($ip2area)) {
 	unset($i);
 }
 
-if (!empty($qq3479015851_global['cfg_forbidden_reg_ip'])) {
-	foreach (explode(',', $qq3479015851_global['cfg_forbidden_reg_ip']) as $ctrlip ) {
+if (!empty($SystemGlobalcfm_global['cfg_forbidden_reg_ip'])) {
+	foreach (explode(',', $SystemGlobalcfm_global['cfg_forbidden_reg_ip']) as $ctrlip ) {
 		if (preg_match('/^(' . preg_quote($ctrlip = trim($ctrlip), '/') . ')/', $ip)) {
 			$ctrlip = $ctrlip . '%';
 			write_msg('您当前的IP <b style=\'color:red\'>' . $ip . '</b> 已被管理员加入黑名单，不允许注册网站会员！');
@@ -86,7 +85,7 @@ if (($authcodesettings['register'] == 1) && empty($activation) && !$randcode = q
 
 ($reuserpwd != $userpwd) && empty($activation) && write_msg('你两次输入的密码不一致！');
 $data = '';
-@include QQ3479015851_DATA . '/caches/checkanswer_settings.php';
+@include SysGlbCfm_DATA . '/caches/checkanswer_settings.php';
 
 if (is_array($data)) {
 	$whenregister = $data['whenregister'];
@@ -104,7 +103,7 @@ if (is_array($data)) {
 	$result = $checkquestion = NULL;
 }
 
-if ($qq3479015851_global['cfg_member_verify'] == '4') {
+if ($SystemGlobalcfm_global['cfg_member_verify'] == '4') {
 	if (!$mobile) {
 		write_msg('请输入您的手机号码!');
 	}
@@ -129,7 +128,7 @@ if (($reg_corp == '1') && (empty($tname) || empty($catid) || empty($cname))) {
 }
 
 if (PASSPORT_TYPE == 'phpwind') {
-	require QQ3479015851_ROOT . '/pw_client/uc_client.php';
+	require SysGlbCfm_ROOT . '/pw_client/uc_client.php';
 	$checkuser = uc_check_username($userid);
 
 	if ($checkuser == -2) {
@@ -153,7 +152,7 @@ if (PASSPORT_TYPE == 'phpwind') {
 	uc_user_register($userid, md5($userpwd), $email);
 }
 else if (PASSPORT_TYPE == 'ucenter') {
-	require QQ3479015851_ROOT . '/uc_client/client.php';
+	require SysGlbCfm_ROOT . '/uc_client/client.php';
 	if ($activation && ($activeuser = uc_get_user($activation))) {
 		$userid = $activeuser[1];
 		$uid = $activeuser[0];
@@ -161,7 +160,7 @@ else if (PASSPORT_TYPE == 'ucenter') {
 	else {
 		$user = $db->getRow('SELECT id,userid FROM `' . $db_qq3479015851 . 'member` WHERE userid = \'' . $userid . '\'');
 		if (uc_get_user($userid) && !$user['userid']) {
-			write_msg('该用户无需注册，请重新登录', $qq3479015851_global[SiteUrl] . '/' . $qq3479015851_global['cfg_member_logfile']);
+			write_msg('该用户无需注册，请重新登录', $SystemGlobalcfm_global[SiteUrl] . '/' . $SystemGlobalcfm_global['cfg_member_logfile']);
 		}
 
 		$email = ($email ? $email : $mobile . '@139.com');
@@ -206,7 +205,7 @@ else {
 }
 
 if ($userid) {
-	require QQ3479015851_INC . '/email.fun.php';
+	require SysGlbCfm_INC . '/email.fun.php';
 	$score_change = get_credit_score();
 	$score_changer = $score_change['score']['rank']['register'];
 	$score_changer = ($score_changer === 0 ? ' +0' : $score_changer);
@@ -231,9 +230,9 @@ if ($userid) {
 	}
 
 	$score_change = $score_changer = NULL;
-	if ($qq3479015851_global['cfg_member_reg_title'] && $qq3479015851_global['cfg_member_reg_content']) {
-		$title = str_replace('{username}', $userid, $qq3479015851_global['cfg_member_reg_title']);
-		$content = str_replace('{sitename}', $qq3479015851_global['SiteName'], $qq3479015851_global['cfg_member_reg_content']);
+	if ($SystemGlobalcfm_global['cfg_member_reg_title'] && $SystemGlobalcfm_global['cfg_member_reg_content']) {
+		$title = str_replace('{username}', $userid, $SystemGlobalcfm_global['cfg_member_reg_title']);
+		$content = str_replace('{sitename}', $SystemGlobalcfm_global['SiteName'], $SystemGlobalcfm_global['cfg_member_reg_content']);
 		$content = str_replace('{time}', GetTime($timestamp), $content);
 		$content = str_replace('{username}', $userid, $content);
 		sendpm('admin', $userid, $title, $content, 1);
@@ -241,14 +240,14 @@ if ($userid) {
 
 	$fromuid = mgetcookie('fromuid');
 	$fromip = mgetcookie('fromip');
-	if ($fromuid && ($qq3479015851_global['cfg_if_affiliate'] == 1)) {
+	if ($fromuid && ($SystemGlobalcfm_global['cfg_if_affiliate'] == 1)) {
 		$fromuid = intval($fromuid);
 		$fromip = trim($fromip);
-		$score_changer = '+' . $qq3479015851_global['cfg_affiliate_score'];
+		$score_changer = '+' . $SystemGlobalcfm_global['cfg_affiliate_score'];
 		$db->query('UPDATE `' . $db_qq3479015851 . 'member` SET score = score' . $score_changer . ' WHERE id = \'' . $fromuid . '\'');
 	}
 
-	if ($qq3479015851_global['cfg_member_verify'] == 3) {
+	if ($SystemGlobalcfm_global['cfg_member_verify'] == 3) {
 		$code = base64_encode($uid . '.' . md5($uid . '+' . md5($userpwd)) . '.' . $timestamp);
 		$webmail = NULL;
 
@@ -331,7 +330,7 @@ if ($userid) {
 		globalassign();
 		include qq3479015851_tpl('register_2');
 	}
-	else if ($qq3479015851_global['cfg_member_verify'] == 2) {
+	else if ($SystemGlobalcfm_global['cfg_member_verify'] == 2) {
 		$error = '3';
 		globalassign();
 		include qq3479015851_tpl('register_2');
@@ -343,15 +342,15 @@ if ($userid) {
 			$user_login = uc_user_login($userid, md5($userpwd), 0);
 			$ucsynlogin = $user_login['synlogin'];
 			echo $ucsynlogin;
-			echo qq3479015851_goto($url ? $url : $qq3479015851_global['SiteUrl'] . '/member/index.php');
+			echo qq3479015851_goto($url ? $url : $SystemGlobalcfm_global['SiteUrl'] . '/member/index.php');
 		}
 		else if (PASSPORT_TYPE == 'ucenter') {
 			list($uid, $username, $password, $email) = uc_user_login($userid, $userpwd);
 			echo uc_user_synlogin($uid);
-			echo qq3479015851_goto($url ? $url : $qq3479015851_global['SiteUrl'] . '/member/index.php');
+			echo qq3479015851_goto($url ? $url : $SystemGlobalcfm_global['SiteUrl'] . '/member/index.php');
 		}
 		else {
-			write_msg('恭喜！注册成功,现在正转入用户管理中心', $qq3479015851_global['SiteUrl'] . '/member/index.php');
+			write_msg('恭喜！注册成功,现在正转入用户管理中心', $SystemGlobalcfm_global['SiteUrl'] . '/member/index.php');
 		}
 	}
 }

@@ -7,20 +7,19 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('IN_SMT',true);
 define('CURSCRIPT','post');
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 define('IN_MANAGE',true);
 
 require_once dirname(__FILE__)."/include/global.php";
 require_once dirname(__FILE__)."/data/config.php";
-require_once QQ3479015851_DATA."/config.db.php";
-require_once QQ3479015851_INC."/db.class.php";
-require_once QQ3479015851_INC."/upfile.fun.php";
-require_once QQ3479015851_DATA."/config.inc.php";
+require_once SysGlbCfm_DATA."/config.db.php";
+require_once SysGlbCfm_INC."/db.class.php";
+require_once SysGlbCfm_INC."/upfile.fun.php";
+require_once SysGlbCfm_DATA."/config.inc.php";
 
 ifsiteopen();
 $authcodesettings = read_static_cache('authcodesettings');
@@ -34,12 +33,12 @@ if($action != 'ok')
 	$ip = '';
 	$ip = GetIP();
 	$ip2area 	= $address = $ipdata = '';
-	require_once QQ3479015851_INC.'/ip.class.php';
+	require_once SysGlbCfm_INC.'/ip.class.php';
 	$ipdata  = new ip();
 	$address = $ipdata -> getaddress($ip);
 	$ip2area = $address['area1'].$address['area2'];
 	$ip2area = iconv('GB2312','UTF-8',$ip2area);
-	if($qq3479015851_global['cfg_if_post_othercity'] == 0 && $cityid && is_array($cityarr = get_ip2city($ip))){
+	if($SystemGlobalcfm_global['cfg_if_post_othercity'] == 0 && $cityid && is_array($cityarr = get_ip2city($ip))){
 		if($cityid != $cityarr[cityid]) write_msg('您的IP不属于该分站，请不要在该分站下发布信息^_^');
 	}
 	unset($ipdata,$address);
@@ -69,7 +68,7 @@ if($act == 'dopost') {
 	$areaid 	= intval($areaid);
 	$streetid	= intval($streetid);
 	$title 		= trim(mhtmlspecialchars($title));
-	$content	= $qq3479015851_global['cfg_post_editor'] == 1 ? $content : textarea_post_change($content) ;
+	$content	= $SystemGlobalcfm_global['cfg_post_editor'] == 1 ? $content : textarea_post_change($content) ;
 	$begintime 	= $timestamp;
 	$activetime	= $endtime 	= intval($endtime);
 	$endtime 	= ($endtime == 0)?0:(($endtime*3600*24)+$begintime);
@@ -79,7 +78,7 @@ if($act == 'dopost') {
 	$qq			= isset($qq) ? trim(mhtmlspecialchars($qq)) : '';
 	$web_address= trim(mhtmlspecialchars($web_address));
 	$email		= isset($email) ? trim(mhtmlspecialchars($email)) : '';
-	$result 	= verify_badwords_filter($qq3479015851_global['cfg_if_info_verify'],$title,$content);
+	$result 	= verify_badwords_filter($SystemGlobalcfm_global['cfg_if_info_verify'],$title,$content);
 	$title 		= $result['title'];
 	$content 	= $result['content'];
 	$content	= preg_replace("/<a[^>]+>(.+?)<\/a>/i","$1",$content);;//去除超链接文字和代码
@@ -91,10 +90,10 @@ if($act == 'dopost') {
 	
 	if($action == 'input'){
 	
-		if(!empty($qq3479015851_global['cfg_allow_post_area']) && !empty($ip2area)){
+		if(!empty($SystemGlobalcfm_global['cfg_allow_post_area']) && !empty($ip2area)){
 			$i = 1;
 			$allow_post_area = array();
-			$allow_post_area = explode('=',$qq3479015851_global['cfg_allow_post_area']);
+			$allow_post_area = explode('=',$SystemGlobalcfm_global['cfg_allow_post_area']);
 			$allow_post_areas = explode(',',$allow_post_area[0]);
 			foreach($allow_post_areas as $k => $v){
 				if(strstr($ip2area,$v)) {
@@ -112,7 +111,7 @@ if($act == 'dopost') {
 		
 		$checkquestion = isset($checkquestion) ? $checkquestion : '';
 		$data = '';
-		@include QQ3479015851_DATA.'/caches/checkanswer_settings.php';
+		@include SysGlbCfm_DATA.'/caches/checkanswer_settings.php';
 		if(is_array($data)){
 			$whenpost = $data['whenpost'];
 			$result   = read_static_cache('checkanswer');
@@ -130,7 +129,7 @@ if($act == 'dopost') {
 		
 		
 		
-		if($qq3479015851_global['cfg_upload_type']==1){
+		if($SystemGlobalcfm_global['cfg_upload_type']==1){
 			$img_count	= upload_img_num('qq3479015851_img_');
 		}else{
 			$img_count = count($images);
@@ -138,9 +137,9 @@ if($act == 'dopost') {
 		
 		
 		
-		if(!empty($qq3479015851_global['cfg_disallow_post_tel']) && !empty($tel)){
+		if(!empty($SystemGlobalcfm_global['cfg_disallow_post_tel']) && !empty($tel)){
 			$disallow_tel = array();
-			$disallow_tel = explode('=',$qq3479015851_global['cfg_disallow_post_tel']);
+			$disallow_tel = explode('=',$SystemGlobalcfm_global['cfg_disallow_post_tel']);
 			$disallow_telarray = explode(',',$disallow_tel[0]);
 			if($disallow_tel[1] == -1){
 				in_array($tel,$disallow_telarray) && write_msg("您的电话号码<b style='color:red'>".$tel."</b> 已被管理员加入黑名单！<br />如果您要继续操作，请联系客服。");
@@ -156,11 +155,11 @@ if($act == 'dopost') {
 		}
 		
 		if (empty($ismember)){
-			if($qq3479015851_global['cfg_if_nonmember_info'] != 1) write_msg('对不起，您还没有登录！请您登录后再发布信息！');
+			if($SystemGlobalcfm_global['cfg_if_nonmember_info'] != 1) write_msg('对不起，您还没有登录！请您登录后再发布信息！');
 			 //游客发布信息数量限制
-			if($qq3479015851_global['cfg_if_nonmember_info'] == 1 && $qq3479015851_global['cfg_nonmember_perday_post'] > 0){
+			if($SystemGlobalcfm_global['cfg_if_nonmember_info'] == 1 && $SystemGlobalcfm_global['cfg_nonmember_perday_post'] > 0){
 				$count = qq3479015851_count("information","WHERE ip = '$ip' AND begintime > '".mktime(0,0,0)."' AND ismember = '0'");
-				$count >= $qq3479015851_global[cfg_nonmember_perday_post] && write_msg("很抱歉！游客每天只能发布 <b style='color:red'>".$qq3479015851_global[cfg_nonmember_perday_post]."</b> 条信息<br />如果您要继续操作，请联系客服。");
+				$count >= $SystemGlobalcfm_global[cfg_nonmember_perday_post] && write_msg("很抱歉！游客每天只能发布 <b style='color:red'>".$SystemGlobalcfm_global[cfg_nonmember_perday_post]."</b> 条信息<br />如果您要继续操作，请联系客服。");
 			}
 			empty($manage_pwd) && write_msg("请输入您的管理密码！以便于以后对该信息的修改和删除");
 			empty($contact_who) && write_msg("请填写联系人！");
@@ -173,7 +172,7 @@ if($act == 'dopost') {
 			$sql = "INSERT INTO `{$db_qq3479015851}information` (title,content,gid,catid,catname,dir_typename,cityid,areaid,begintime,activetime,endtime,manage_pwd,ismember,ip,ip2area,info_level,qq,email,tel,contact_who,img_count,mappoint,latitude,longitude)VALUES('$title','$content','$d[gid]','$catid','$d[catname]','$d[dir_typename]','$cityid','$areaid','$begintime','$activetime','$endtime','$manage_pwd','$ismember','$ip','$ip2area','$info_level','$qq','$email','$tel','$contact_who','$img_count','$mappoint','$lat','$lng')";
 		}elseif($ismember == 1){
 			$s_uid = $status = '';
-			require_once QQ3479015851_INC."/member.class.php";
+			require_once SysGlbCfm_INC."/member.class.php";
 			if(!$member_log->chk_in()) write_msg("对不起,您还没有登录！");
 			$memberinfo	= $member_log -> get_info();
 			$status = $memberinfo['status'];
@@ -198,7 +197,7 @@ if($act == 'dopost') {
 			}
 			
 			chk_member_purview("purview_info");
-			$perpost_money_cost = $qq3479015851_global['cfg_member_perpost_consume'] ? $qq3479015851_global['cfg_member_perpost_consume'] : 0 ;
+			$perpost_money_cost = $SystemGlobalcfm_global['cfg_member_perpost_consume'] ? $SystemGlobalcfm_global['cfg_member_perpost_consume'] : 0 ;
 			$userid = trim($s_uid);
 			
 			/*信息认证情况*/
@@ -251,14 +250,14 @@ if($act == 'dopost') {
 		}
 		
 		
-		if($qq3479015851_global['cfg_upload_type']==1){
+		if($SystemGlobalcfm_global['cfg_upload_type']==1){
 			if($img_count > 0){
 				$img_path = '';
 				
-				$qq3479015851_img_w=0;
-				$qq3479015851_img_h=0;
-				$qq3479015851_preimg_w=0;
-				$qq3479015851_preimg_h=0;
+				$SystemGlobalcfm_img_w=0;
+				$SystemGlobalcfm_img_h=0;
+				$SystemGlobalcfm_preimg_w=0;
+				$SystemGlobalcfm_preimg_h=0;
 				
 				
 				for($i=0;$i<$img_count;$i++){
@@ -267,16 +266,16 @@ if($act == 'dopost') {
 					if($_FILES[$name_file]['name']){
 						$destination="/information/".date('Ym')."/";
 						check_upimage($name_file);
-						$qq3479015851_image = start_upload($name_file,$destination,$qq3479015851_global['cfg_upimg_watermark'],$qq3479015851_qq3479015851['cfg_information_limit']['width'],$qq3479015851_qq3479015851['cfg_information_limit']['height']);
-						$db -> query("INSERT INTO `{$db_qq3479015851}info_img` (image_id,path,prepath,infoid,uptime,prewidth,preheight,width,height) VALUES ('$i','$qq3479015851_image[0]','$qq3479015851_image[1]','$id','$timestamp','$qq3479015851_preimg_w','$qq3479015851_preimg_h','$qq3479015851_img_w','$qq3479015851_img_h')");
+						$SystemGlobalcfm_image = start_upload($name_file,$destination,$SystemGlobalcfm_global['cfg_upimg_watermark'],$SystemGlobalcfm_qq3479015851['cfg_information_limit']['width'],$SystemGlobalcfm_qq3479015851['cfg_information_limit']['height']);
+						$db -> query("INSERT INTO `{$db_qq3479015851}info_img` (image_id,path,prepath,infoid,uptime,prewidth,preheight,width,height) VALUES ('$i','$SystemGlobalcfm_image[0]','$SystemGlobalcfm_image[1]','$id','$timestamp','$SystemGlobalcfm_preimg_w','$SystemGlobalcfm_preimg_h','$SystemGlobalcfm_img_w','$SystemGlobalcfm_img_h')");
 					}
-					if($i === 0) $img_path = $qq3479015851_image[1];
+					if($i === 0) $img_path = $SystemGlobalcfm_image[1];
 				}
 				if($img_path) $db -> query("UPDATE `{$db_qq3479015851}information` SET img_path = '$img_path' WHERE id = '$id'");
 			}
 		}
 		
-		if($qq3479015851_global['cfg_upload_type']>1){
+		if($SystemGlobalcfm_global['cfg_upload_type']>1){
 			
 			if (0 < $img_count) {
 				$img_path = '';
@@ -290,10 +289,10 @@ if($act == 'dopost') {
 							$prepath = $infoarr[0];
 							$path = str_replace("pre_","",$prepath);
 
-							$qq3479015851_img_w=$infoarr[1];
-							$qq3479015851_img_h=$infoarr[2];
-							$qq3479015851_preimg_w=$infoarr[3];
-							$qq3479015851_preimg_h=$infoarr[4];
+							$SystemGlobalcfm_img_w=$infoarr[1];
+							$SystemGlobalcfm_img_h=$infoarr[2];
+							$SystemGlobalcfm_preimg_w=$infoarr[3];
+							$SystemGlobalcfm_preimg_h=$infoarr[4];
 						}else{
 							$qiniu_w = $qiniusettings['thumW'];
 							$qiniu_h = $qiniusettings['thumH'];
@@ -302,44 +301,44 @@ if($act == 'dopost') {
 							$qiniu_thu = $qiniusettings['thumPic'];
 							$infoarr=array();
 							$infoarr=explode("%%",$imgwh[$i]);
-							$qq3479015851_img_w=$infoarr[0];
-							$qq3479015851_img_h=$infoarr[1];
+							$SystemGlobalcfm_img_w=$infoarr[0];
+							$SystemGlobalcfm_img_h=$infoarr[1];
 							
-							if($qq3479015851_img_w>$qiniu_w){
-								$tow = $qq3479015851_img_w / $qiniu_w;
+							if($SystemGlobalcfm_img_w>$qiniu_w){
+								$tow = $SystemGlobalcfm_img_w / $qiniu_w;
 							}else{
 								$tow = 0;
 							}
-							if($qq3479015851_img_h>$qiniu_h){
-								$toh = $qq3479015851_img_h / $qiniu_h;
+							if($SystemGlobalcfm_img_h>$qiniu_h){
+								$toh = $SystemGlobalcfm_img_h / $qiniu_h;
 							}else{
 								$toh = 0;
 							}
 							if($tow==0 && $toh==0){
-								$qq3479015851_preimg_w = $qq3479015851_img_w;
-								$qq3479015851_preimg_h = $qq3479015851_img_h;
+								$SystemGlobalcfm_preimg_w = $SystemGlobalcfm_img_w;
+								$SystemGlobalcfm_preimg_h = $SystemGlobalcfm_img_h;
 							}
 							if($tow>0 && $toh==0){
-								$qq3479015851_preimg_w = ($qq3479015851_img_h*$qiniu_w)/$qq3479015851_img_w;
-								$qq3479015851_preimg_h = $qq3479015851_img_h;
+								$SystemGlobalcfm_preimg_w = ($SystemGlobalcfm_img_h*$qiniu_w)/$SystemGlobalcfm_img_w;
+								$SystemGlobalcfm_preimg_h = $SystemGlobalcfm_img_h;
 							}
 							if($tow==0 && $toh>0){
-								$qq3479015851_preimg_h = ($qq3479015851_img_w*$qiniu_h)/$qq3479015851_img_h;
-								$qq3479015851_preimg_w = $qq3479015851_img_w;
+								$SystemGlobalcfm_preimg_h = ($SystemGlobalcfm_img_w*$qiniu_h)/$SystemGlobalcfm_img_h;
+								$SystemGlobalcfm_preimg_w = $SystemGlobalcfm_img_w;
 							}
 							if($tow>0 && $toh>0 && $tow>$toh){
-								$qq3479015851_preimg_w = ($qq3479015851_img_h*$qiniu_w)/$qq3479015851_img_w;
-								$qq3479015851_preimg_h = $qq3479015851_img_h;
+								$SystemGlobalcfm_preimg_w = ($SystemGlobalcfm_img_h*$qiniu_w)/$SystemGlobalcfm_img_w;
+								$SystemGlobalcfm_preimg_h = $SystemGlobalcfm_img_h;
 							}
 							if($tow>0 && $toh>0 && $tow<$toh){
-								$qq3479015851_preimg_h = ($qq3479015851_img_w*$qiniu_h)/$qq3479015851_img_h;
-								$qq3479015851_preimg_w = $qq3479015851_img_w;
+								$SystemGlobalcfm_preimg_h = ($SystemGlobalcfm_img_w*$qiniu_h)/$SystemGlobalcfm_img_h;
+								$SystemGlobalcfm_preimg_w = $SystemGlobalcfm_img_w;
 							}
 							
 							$path = $images[$i].$qiniu_sep.$qiniu_ori;
 							$prepath = $images[$i].$qiniu_sep.$qiniu_thu;
 						}
-						$db -> query("INSERT INTO `{$db_qq3479015851}info_img` (image_id,path,prepath,infoid,uptime,prewidth,preheight,width,height) VALUES ('$i','$path','$prepath','$id','$timestamp','$qq3479015851_preimg_w','$qq3479015851_preimg_h','$qq3479015851_img_w','$qq3479015851_img_h')");
+						$db -> query("INSERT INTO `{$db_qq3479015851}info_img` (image_id,path,prepath,infoid,uptime,prewidth,preheight,width,height) VALUES ('$i','$path','$prepath','$id','$timestamp','$SystemGlobalcfm_preimg_w','$SystemGlobalcfm_preimg_h','$SystemGlobalcfm_img_w','$SystemGlobalcfm_img_h')");
 					}
 					if ($i === 0) {
 						$img_path = $prepath;
@@ -360,10 +359,10 @@ if($act == 'dopost') {
 		
 		if(is_array($_FILES)){
 			
-			$qq3479015851_img_w=0;
-			$qq3479015851_img_h=0;
-			$qq3479015851_preimg_w=0;
-			$qq3479015851_preimg_h=0;
+			$SystemGlobalcfm_img_w=0;
+			$SystemGlobalcfm_img_h=0;
+			$SystemGlobalcfm_preimg_w=0;
+			$SystemGlobalcfm_preimg_h=0;
 			
 			
 			for($i=0;$i<count($_FILES);$i++){
@@ -371,15 +370,15 @@ if($act == 'dopost') {
 				if($_FILES[$name_file]['name']){
 					$destination = "/information/".date('Ym')."/";
 					check_upimage($name_file);
-					$qq3479015851_image = start_upload($name_file,$destination,$qq3479015851_global['cfg_upimg_watermark'],$qq3479015851_qq3479015851['cfg_information_limit']['width'],$qq3479015851_qq3479015851['cfg_information_limit']['height']);
+					$SystemGlobalcfm_image = start_upload($name_file,$destination,$SystemGlobalcfm_global['cfg_upimg_watermark'],$SystemGlobalcfm_qq3479015851['cfg_information_limit']['width'],$SystemGlobalcfm_qq3479015851['cfg_information_limit']['height']);
 					if($row = $db -> getRow("SELECT path,prepath FROM `{$db_qq3479015851}info_img` WHERE infoid = '$id' AND image_id = '$i'")){
-						@unlink(QQ3479015851_ROOT.$row['path']);
-						@unlink(QQ3479015851_ROOT.$row['prepath']);
-						$db->query("UPDATE `{$db_qq3479015851}info_img` SET prewidth='$qq3479015851_preimg_w' ,preheight='$qq3479015851_preimg_h' ,width='$qq3479015851_img_w' ,height='$qq3479015851_img_h' , image_id = '$i' , path = '$qq3479015851_image[0]' , prepath = '$qq3479015851_image[1]' , uptime = '$timestamp' WHERE image_id = '$i' AND infoid = '$id'");
+						@unlink(SysGlbCfm_ROOT.$row['path']);
+						@unlink(SysGlbCfm_ROOT.$row['prepath']);
+						$db->query("UPDATE `{$db_qq3479015851}info_img` SET prewidth='$SystemGlobalcfm_preimg_w' ,preheight='$SystemGlobalcfm_preimg_h' ,width='$SystemGlobalcfm_img_w' ,height='$SystemGlobalcfm_img_h' , image_id = '$i' , path = '$SystemGlobalcfm_image[0]' , prepath = '$SystemGlobalcfm_image[1]' , uptime = '$timestamp' WHERE image_id = '$i' AND infoid = '$id'");
 					} else {
-						$db->query("INSERT INTO `{$db_qq3479015851}info_img` (image_id,path,prepath,infoid,uptime,prewidth,preheight,width,height) VALUES ('$i','$qq3479015851_image[0]','$qq3479015851_image[1]','$id','$timestamp','$qq3479015851_preimg_w','$qq3479015851_preimg_h','$qq3479015851_img_w','$qq3479015851_img_h')");
+						$db->query("INSERT INTO `{$db_qq3479015851}info_img` (image_id,path,prepath,infoid,uptime,prewidth,preheight,width,height) VALUES ('$i','$SystemGlobalcfm_image[0]','$SystemGlobalcfm_image[1]','$id','$timestamp','$SystemGlobalcfm_preimg_w','$SystemGlobalcfm_preimg_h','$SystemGlobalcfm_img_w','$SystemGlobalcfm_img_h')");
 					}
-					if($i===0 && $qq3479015851_image[1]) $db -> query("UPDATE `{$db_qq3479015851}information` SET img_path = '$qq3479015851_image[1]' WHERE id = '$id'");
+					if($i===0 && $SystemGlobalcfm_image[1]) $db -> query("UPDATE `{$db_qq3479015851}information` SET img_path = '$SystemGlobalcfm_image[1]' WHERE id = '$id'");
 				}
 			}
 		}
@@ -390,8 +389,8 @@ if($act == 'dopost') {
 				if($val == 'on'){
 					$infoimgrow = $db -> getRow("SELECT id,path,prepath FROM `{$db_qq3479015851}info_img` WHERE image_id = '$key' AND infoid = '$id'");
 					if($infoimgrow){
-						@unlink(QQ3479015851_ROOT.$infoimgrow['path']);
-						@unlink(QQ3479015851_ROOT.$infoimgrow['prepath']);
+						@unlink(SysGlbCfm_ROOT.$infoimgrow['path']);
+						@unlink(SysGlbCfm_ROOT.$infoimgrow['prepath']);
 						qq3479015851_delete("info_img","WHERE id = '$infoimgrow[id]'");
 						if($infoimgrow['prepath'] == $img_path) $db->query("UPDATE `{$db_qq3479015851}information` SET img_path = '' WHERE id = '$id'");
 					}
@@ -415,7 +414,7 @@ if($act == 'dopost') {
 		$manage_pwd = empty($manage_pwd) ? "" : "manage_pwd='".md5($manage_pwd)."',";
 		$userid 	= empty($userid) ? "" : "userid='$userid',";
 		$img_count 	= qq3479015851_count("info_img","WHERE infoid = '$id'");
-		$img_path	= $qq3479015851_image[1] ? $qq3479015851_image[1] : '';
+		$img_path	= $SystemGlobalcfm_image[1] ? $SystemGlobalcfm_image[1] : '';
 		
 		$d = $db->getRow("SELECT catname,dir_typename FROM `{$db_qq3479015851}category` WHERE catid = '$catid'");
 		$sql 		= "UPDATE `{$db_qq3479015851}information` SET {$manage_pwd} {$userid} title = '$title',content = '$content',catid = '$catid', cityid='$cityid',areaid = '$areaid',streetid='$streetid', activetime = '$activetime', endtime = '$endtime', ismember = '$ismember' , ip = '$ip' , ip2area = '$ip2area' , info_level = '$info_level' , qq = '$qq' , email = '$email' , tel = '$tel' , contact_who = '$contact_who' , img_count = '$img_count' , mappoint = '$mappoint',catname='$d[catname]',dir_typename='$d[dir_typename]' WHERE id = '$id'";
@@ -444,10 +443,10 @@ if($act == 'dopost') {
 		
 	}else{
 		
-		if(!empty($qq3479015851_global['cfg_allow_post_area']) && !empty($ip2area)){
+		if(!empty($SystemGlobalcfm_global['cfg_allow_post_area']) && !empty($ip2area)){
 			$i = 1;
 			$allow_post_area = array();
-			$allow_post_area = explode('=',$qq3479015851_global['cfg_allow_post_area']);
+			$allow_post_area = explode('=',$SystemGlobalcfm_global['cfg_allow_post_area']);
 			$allow_post_areas = explode(',',$allow_post_area[0]);
 			foreach($allow_post_areas as $k => $v){
 				if(strstr($ip2area,$v)) {
@@ -463,8 +462,8 @@ if($act == 'dopost') {
 			unset($allow_post_area,$ip2area,$address,$ipdata,$allow_post_areas,$i);
 		}
 		
-		if(!empty($qq3479015851_global['cfg_forbidden_post_ip'])){
-			foreach(explode(",", $qq3479015851_global['cfg_forbidden_post_ip']) as $ctrlip) {
+		if(!empty($SystemGlobalcfm_global['cfg_forbidden_post_ip'])){
+			foreach(explode(",", $SystemGlobalcfm_global['cfg_forbidden_post_ip']) as $ctrlip) {
 				if(preg_match("/^(".preg_quote(($ctrlip = trim($ctrlip)), '/').")/", $ip)) {
 					$ctrlip = $ctrlip.'%';
 					write_msg("您当前的IP <b style='color:red'>".$ip."</b> 已被管理员加入黑名单，不允许发布信息！");
@@ -486,13 +485,13 @@ if($act == 'dopost') {
 			$cat_option = $db->getAll("SELECT catid,catname FROM `{$db_qq3479015851}category` WHERE parentid = '$catid' ORDER BY catorder ASC");
 		}
 		
-		require_once QQ3479015851_DATA."/info_lasttime.php";
-		require_once QQ3479015851_DATA."/info.type.inc.php";
-		require_once QQ3479015851_INC."/member.class.php";
+		require_once SysGlbCfm_DATA."/info_lasttime.php";
+		require_once SysGlbCfm_DATA."/info.type.inc.php";
+		require_once SysGlbCfm_INC."/member.class.php";
 		
 		if($log = $member_log->chk_in()) chk_member_purview("purview_info");
 		
-		if($qq3479015851_global['cfg_post_editor'] == 1){
+		if($SystemGlobalcfm_global['cfg_post_editor'] == 1){
 			$acontent 	= get_editor('content','information','','400px','300px','include/kindeditor');
 		} else {
 			$acontent = "<textarea name=\"content\" style=\"width:400px;height:300px;\" class=\"input\" require=\"true\" datatype=\"limit\" msg=\"请填写信息内容描述\"></textarea>";
@@ -509,7 +508,7 @@ if($act == 'dopost') {
 				write_msg('您的会员账号尚未通过审核，不能发布信息！');
 				exit;
 			}
-			($his_money-$qq3479015851_global['cfg_member_perpost_consume']) < 0 && write_msg('您的用户余额 <font color=red><b>'.$his_money.'</b></font>过低 不能再发布信息，请联系管理员充值');
+			($his_money-$SystemGlobalcfm_global['cfg_member_perpost_consume']) < 0 && write_msg('您的用户余额 <font color=red><b>'.$his_money.'</b></font>过低 不能再发布信息，请联系管理员充值');
 			$per = $db->getRow("SELECT b.perday_maxpost FROM `{$db_qq3479015851}member` AS a LEFT JOIN `{$db_qq3479015851}member_level` AS b ON a.levelid = b.id WHERE a.userid = '$s_uid'");
 			$perday_maxpost = $per[perday_maxpost];
 			if(!empty($perday_maxpost)){
@@ -530,12 +529,12 @@ if($act == 'dopost') {
 			$post['imgcode']= $authcodesettings['memberpost'] == 1 ? 1 : '';
 			
 		}else{
-			if(!empty($qq3479015851_global['cfg_nonmember_perday_post'])){
+			if(!empty($SystemGlobalcfm_global['cfg_nonmember_perday_post'])){
 				$count = qq3479015851_count("information","WHERE ip = '$ip' AND begintime > '".mktime(0,0,0)."' AND ismember = '0'");
-				$count >= $qq3479015851_global[cfg_nonmember_perday_post] && write_msg("很抱歉！游客每天只能发布".$qq3479015851_global[cfg_nonmember_perday_post]."条信息");
+				$count >= $SystemGlobalcfm_global[cfg_nonmember_perday_post] && write_msg("很抱歉！游客每天只能发布".$SystemGlobalcfm_global[cfg_nonmember_perday_post]."条信息");
 			}
 			
-			$qq3479015851_global['cfg_if_nonmember_info']=='0' && write_msg("对不起，您还没有登录！请您登录后再发布信息！",$qq3479015851_global['cfg_member_logfile']."?url=".urlencode(getUrl()));
+			$SystemGlobalcfm_global['cfg_if_nonmember_info']=='0' && write_msg("对不起，您还没有登录！请您登录后再发布信息！",$SystemGlobalcfm_global['cfg_member_logfile']."?url=".urlencode(getUrl()));
 			
 			$onload = "";
 			$post['manage_pwd'] =  1;
@@ -547,8 +546,8 @@ if($act == 'dopost') {
 		$post['qq3479015851_extra_value'] 	 = return_category_info_options($cat['modid']);
 		$post['upload_img'] 		 = $cat['if_upimg'] == 1 ? get_upload_image_view(1,$id) : '';
 		
-		$post['upload_type']		 =$qq3479015851_global['cfg_upload_type'];
-		$post['cfg_upimg_number']	 =$qq3479015851_global['cfg_upimg_number'];
+		$post['upload_type']		 =$SystemGlobalcfm_global['cfg_upload_type'];
+		$post['cfg_upimg_number']	 =$SystemGlobalcfm_global['cfg_upimg_number'];
 
 		$post['GetInfoLastTime']	 = GetInfoLastTime();
 		$post['action']		 	  	 ="input";
@@ -575,11 +574,11 @@ if($act == 'dopost') {
 	
 	} elseif ($action == 'edit') {
 		
-		$page_title = '修改信息-'.$qq3479015851_global['SiteName'];
+		$page_title = '修改信息-'.$SystemGlobalcfm_global['SiteName'];
 	
-		require_once QQ3479015851_DATA."/info_lasttime.php";
-		require_once QQ3479015851_DATA."/info.type.inc.php";
-		require_once QQ3479015851_INC."/member.class.php";
+		require_once SysGlbCfm_DATA."/info_lasttime.php";
+		require_once SysGlbCfm_DATA."/info.type.inc.php";
+		require_once SysGlbCfm_INC."/member.class.php";
 		
 		$editlimit = mgetcookie('editlimit');
 		if($editlimit > 30) write_msg('您今天修改的信息太多了，休息一下吧 ^_^');
@@ -592,7 +591,7 @@ if($act == 'dopost') {
 		
 		if($post['ismember'] == 1){
 			if(!$log = $member_log -> chk_in()){
-				write_msg('',$qq3479015851_global['SiteUrl'].'/'.$qq3479015851_global['cfg_member_logfile'].'?url='.urlencode($qq3479015851_global['SiteUrl'].'/'.$qq3479015851_global['cfg_postfile'].'?action=edit&id='.$id));
+				write_msg('',$SystemGlobalcfm_global['SiteUrl'].'/'.$SystemGlobalcfm_global['cfg_member_logfile'].'?url='.urlencode($SystemGlobalcfm_global['SiteUrl'].'/'.$SystemGlobalcfm_global['cfg_postfile'].'?action=edit&id='.$id));
 			}elseif($log && $s_uid != $post['userid']){
 				write_msg('操作失败！该信息不是您发布的！','information.php?id='.$id);
 			}
@@ -617,7 +616,7 @@ if($act == 'dopost') {
 		
 		$post['mobile'] = $post['tel'];
 		
-		if($qq3479015851_global['cfg_post_editor'] == 1){
+		if($SystemGlobalcfm_global['cfg_post_editor'] == 1){
 			$acontent 	= get_editor('content','information',$post[content],'400px','300px','include/kindeditor');
 		} else {
 			$acontent = "<textarea name=\"content\" style='width:400px;height:300px;'>".de_textarea_post_change($post[content])."</textarea>";

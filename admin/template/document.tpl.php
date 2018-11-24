@@ -1,5 +1,5 @@
 <?php include qq3479015851_tpl('inc_head');?>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -13,7 +13,7 @@
 <form action="document.php" method="post">
 <input name="forward_url" type="hidden" value="<?=GetUrl()?>">
 <input name="do" type="hidden" value="docu">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm" >
   <tr class="firstr">
     <td width="50"><input name="checkall" type="checkbox" id="checkall" onclick="CheckAll(this.form)" class="checkbox"/>删?</td>

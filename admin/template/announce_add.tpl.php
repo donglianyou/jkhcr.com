@@ -25,7 +25,7 @@ function CheckSubmit()
 }
 </script>
 <form method=post  name="form1" action="announce.php?part=insert" onSubmit="return CheckSubmit();">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 
 <tr class="firstr">

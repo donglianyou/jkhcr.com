@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 /*
  * ============================================================================
@@ -22,7 +21,7 @@
  * QQ群 ：625621054  [入群提供技术支持,升级新功能]
 `*/
 
-!(defined('QQ3479015851')) && exit('FORBIDDEN');
+!(defined('SysGlbCfm')) && exit('FORBIDDEN');
 $member_log = new qq3479015851_member_log($cookiepre);
 class qq3479015851_member_log
 {
@@ -58,20 +57,20 @@ class qq3479015851_member_log
 
 	public function in($s_uid = '', $s_pwd = '', $memory = '', $url = '', $type = '')
 	{
-		global $qq3479015851_global;
+		global $SystemGlobalcfm_global;
 		global $uid;
 		global $db_qq3479015851;
 		global $db;
 		global $timestamp;
 		global $do;
-		global $qq3479015851_qq3479015851;
+		global $SystemGlobalcfm_qq3479015851;
 		if ($s_uid && $s_pwd) {
 			$this->PutLogin($s_uid, $s_pwd, $memory);
 			if (($do != 'power') && !(defined('WAP'))) {
 				$timestamp = ($timestamp ? $timestamp : time());
 				$loginip = GetIP();
 
-				if ($qq3479015851_qq3479015851['cfg_iflogin_port'] == 1) {
+				if ($SystemGlobalcfm_qq3479015851['cfg_iflogin_port'] == 1) {
 					if ($loginip) {
 						require_once 'ip.class.php';
 						$ipdata = new ip();
@@ -98,7 +97,7 @@ class qq3479015851_member_log
 
 			if ($url != 'noredirect') {
 				if (empty($url) && empty($type)) {
-					echo qq3479015851_goto($qq3479015851_global['SiteUrl'] . '/member/index.php');
+					echo qq3479015851_goto($SystemGlobalcfm_global['SiteUrl'] . '/member/index.php');
 				}
 				else {
 					if (!(empty($url)) && empty($type)) {
@@ -112,7 +111,7 @@ class qq3479015851_member_log
 
 	public function out($url = '')
 	{
-		global $qq3479015851_global;
+		global $SystemGlobalcfm_global;
 		global $db;
 		global $db_qq3479015851;
 		global $timestamp;

@@ -9,8 +9,8 @@
     <div class="cateintro relate">
     <div class="introleft">{$cat[catname]}相关区域</div>
     <div class="introflink">
-    <!--{loop $area_list $qq3479015851}-->
-    {if $qq3479015851[areaid]}<a href='{$city[domain]}{$qq3479015851[uri]}' target="_blank">{$qq3479015851[areaname]}{$cat[catname]}</a>{/if}
+    <!--{loop $area_list $SystemGlobalcfm}-->
+    {if $SystemGlobalcfm[areaid]}<a href='{$city[domain]}{$SystemGlobalcfm[uri]}' target="_blank">{$SystemGlobalcfm[areaname]}{$cat[catname]}</a>{/if}
     <!--{/loop}-->
     </div>
     </div>
@@ -20,9 +20,9 @@
     <div class="cateintro relate">
     <div class="introleft">{$cat[catname]}附近分站</div>
     <div class="introflink">
-    <!--{loop $nearbycities $qq3479015851}-->
-    <!--{if $qq3479015851[cityid] != $city[cityid]}-->
-    <a href='{$qq3479015851[domain]}{$cat[caturi]}' target="_blank">{$qq3479015851[cityname]}{$cat[catname]}</a>
+    <!--{loop $nearbycities $SystemGlobalcfm}-->
+    <!--{if $SystemGlobalcfm[cityid] != $city[cityid]}-->
+    <a href='{$SystemGlobalcfm[domain]}{$cat[caturi]}' target="_blank">{$SystemGlobalcfm[cityname]}{$cat[catname]}</a>
     <!--{/if}-->
     <!--{/loop}-->
     </div>
@@ -32,8 +32,8 @@
     <div class="cateintro relate">
     <div class="introleft">{$cat[catname]}热门分站</div>
     <div class="introflink">
-    <!--{loop $hotcities $qq3479015851}-->
-    <a href='{$qq3479015851[domain]}{$cat[caturi]}' target="_blank">{$qq3479015851[cityname]}{$cat[catname]}</a>
+    <!--{loop $hotcities $SystemGlobalcfm}-->
+    <a href='{$SystemGlobalcfm[domain]}{$cat[caturi]}' target="_blank">{$SystemGlobalcfm[cityname]}{$cat[catname]}</a>
     <!--{/loop}-->
     </div>
     </div>
@@ -44,11 +44,11 @@
     <div class="cateintro">
     <div class="introleft">频道友情链接</div>
     <div class="introflink">
-    <!--{loop $friendlink $qq3479015851}-->
-    <a href='{$qq3479015851[url]}' target='_blank'>{$qq3479015851[name]}</a>
+    <!--{loop $friendlink $SystemGlobalcfm}-->
+    <a href='{$SystemGlobalcfm[url]}' target='_blank'>{$SystemGlobalcfm[name]}</a>
     <!--{/loop}-->
     </div>
     </div>
     <!--{/if}-->
 </div>
-<script type="text/javascript" src="{$qq3479015851_global[SiteUrl]}/template/default/js/hover_bg.js"></script>
+<script type="text/javascript" src="{$SystemGlobalcfm_global[SiteUrl]}/template/default/js/hover_bg.js"></script>

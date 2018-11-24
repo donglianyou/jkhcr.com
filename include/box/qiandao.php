@@ -7,14 +7,13 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-!(defined('QQ3479015851')) && exit('FORBIDDEN');
-require_once QQ3479015851_DATA . '/config.db.php';
-require_once QQ3479015851_INC . '/db.class.php';
-require_once QQ3479015851_INC . '/cache.fun.php';
-require_once QQ3479015851_INC . '/member.class.php';
+!(defined('SysGlbCfm')) && exit('FORBIDDEN');
+require_once SysGlbCfm_DATA . '/config.db.php';
+require_once SysGlbCfm_INC . '/db.class.php';
+require_once SysGlbCfm_INC . '/cache.fun.php';
+require_once SysGlbCfm_INC . '/member.class.php';
 
 if (!($member_log->chk_in())) {
 	write_msg('对不起,您还没有登录！');
@@ -34,7 +33,7 @@ if (!(empty($score_changer))) {
 		}
 
 		$score = $db->getOne('SELECT score FROM `' . $db_qq3479015851 . 'member` WHERE userid = \'' . $s_uid . '\'');
-		include QQ3479015851_ROOT . '/template/box/qiandao.html';
+		include SysGlbCfm_ROOT . '/template/box/qiandao.html';
 	}
 	else {
 		echo '<p style="font-size:12px;margin:30px 10px;">今天您已经签到过了，明天再来吧！</p>';

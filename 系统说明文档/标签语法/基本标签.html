@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://www.mymps.com.cn/doc/base.html# -->
+<html><style type="text/css" id="2874124017"></style><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<meta charset="gbk">
+
+<title>基本标签 - Mymps模板制作/标签/参考手册 - 更多蚂蚁分类工具请进入QQ群:200641831</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./基本标签_files/jquery-1.9.1.min.js"></script>
+<link href="./基本标签_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./基本标签_files/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="./基本标签_files/docs.css" rel="stylesheet">
+<link href="./基本标签_files/prettify.css" rel="stylesheet">
+<!--[if lt IE 9]>
+  <script src="/assets/js/html5shiv.js"></script>
+<![endif]-->
+<style>
+.span9 h4{text-indent:2em;text-align:left;}
+.span9 p{text-indent:2em;text-align:left;}
+</style><script type="text/javascript" src="./基本标签_files/noerr.js"></script><script type="text/javascript" src="./基本标签_files/noright.js"></script><script type="text/javascript">
+function showb(i){
+	var a1 = document.getElementById('a1');
+	var a2 = document.getElementById('a2');
+	var a3 = document.getElementById('a3');
+	var ba1 = document.getElementById('ba1');
+	var ba2 = document.getElementById('ba2');
+	var ba3 = document.getElementById('ba3');
+	var a = document.getElementById(i);
+	var b = document.getElementById('b'+i);
+	a1.className='';
+	a2.className='';
+	a3.className='';
+	ba1.style.display='none';
+	ba2.style.display='none';
+	ba3.style.display='none';
+	a.className='active';
+	b.style.display='';
+}
+</script><style>
+.code { font-family: Courier, Courier New; font-weight: normal; color:#000; font-size:12px;}
+</style></head>
+
+
+
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="50">
+  
+  <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+        	            <li>
+              <a href="http://www.mymps.com.cn/doc/article.html">使用教程_QQ群:200641831</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/index.html">模板基础</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/structure.html">模板目录结构</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/grammer.html">标签语法</a>
+            </li>
+                        <li class="active">
+              <a href="http://www.mymps.com.cn/doc/base.html">基本标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/senior.html">高级标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/diy.html">自定义标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/demo.html">调用示例</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/db.html">数据字典</a>
+            </li>
+                    </ul>
+      </div>
+    </div>
+  </div>
+</div>  <div class="jumbotron subhead" id="overview">
+    <div class="container">
+      <h1>基本标签</h1>
+      <p class="lead">
+        蚂蚁CMS站点信息配置基本标签
+      </p>
+      <div class="subnav">
+    <ul class="nav nav-pills">
+      
+            <li class="active" id="a1">
+              <a href="#" onclick="showb(&#39;a1&#39;);">通用基本标签</a>
+            </li>
+          
+            <li id="a2" class="">
+              <a href="#" onclick="showb(&#39;a2&#39;);">单城版特有标签</a>
+            </li>
+            
+            <li id="a3" class="">
+              <a href="#" onclick="showb(&#39;a3&#39;);">多城版特有标签</a>
+            </li>
+      
+    </ul>
+    </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      
+      <div class="container" style="padding:10px 30px;">
+
+       <table class="table table-striped table-hover table-bordered" id="ba1">
+	<tbody>
+		<tr class="info thead">
+			<td>调用的内容</td>
+			<td>调用的标签</td>
+		</tr>
+		<tr>
+			<td>网站名称</td>
+			<td>{$mymps_global[SiteName]}</td>
+		</tr>
+        <tr>
+			<td>网站域名</td>
+			<td>{$mymps_global[SiteUrl]}</td>
+		</tr>
+        <tr>
+			<td>客服QQ</td>
+			<td>{$mymps_global[SiteQQ]}</td>
+		</tr>
+        <tr>
+			<td>客服邮箱</td>
+			<td>{$mymps_global[SiteEmail}</td>
+		</tr>
+        <tr>
+			<td>客服电话</td>
+			<td>{$mymps_global[SiteTel}</td>
+		</tr>
+        <tr>
+			<td>网站备案号</td>
+			<td>{$mymps_global[SiteBeian}</td>
+		</tr>
+        <tr>
+			<td>网站LOGO</td>
+			<td>{$mymps_global[SiteUrl}{$mymps_global[SiteLogo}</td>
+		</tr>
+        <tr>
+			<td>第三方统计代码</td>
+			<td>{$mymps_global[SiteStat]}</td>
+		</tr>
+        <tr>
+			<td>验证码文件名</td>
+			<td>{$mymps_global[cfg_authcodefile]}</td>
+		</tr>
+        <tr>
+			<td>会员注册文件名</td>
+			<td>{$mymps_global[cfg_member_logfile]}</td>
+		</tr>
+        <tr>
+			<td>信息发布文件名</td>
+			<td>{$mymps_global[cfg_postfile]}</td>
+		</tr>
+        <tr>
+			<td>关于我们的URL链接</td>
+			<td>{$about[aboutus_uri]}</td>
+		</tr>
+        <tr>
+			<td>新闻首页的URL链接</td>
+			<td>{$about[news_uri]}</td>
+		</tr>
+        <tr>
+			<td>网站帮助首页的URL链接</td>
+			<td>{$about[faq_uri]}</td>
+		</tr>
+        <tr>
+			<td>商铺/黄页首页的URL链接</td>
+			<td>{$about[yp_uri]}</td>
+		</tr>
+        <tr>
+			<td>友情链接内页的URL链接</td>
+			<td>{$about[friendlink_uri]}</td>
+		</tr>
+        <tr>
+			<td>网站公告的URL链接</td>
+			<td>{$about[announce_uri]}</td>
+		</tr>
+        <tr>
+			<td>网站地图的URL链接</td>
+			<td>{$about[sitemap_uri]}</td>
+		</tr>
+		
+	</tbody>
+</table>
+
+ <table class="table table-striped table-hover table-bordered" id="ba2" style="display: none;">
+	<tbody>
+		<tr class="info thead">
+			<td>调用的内容</td>
+			<td>调用的标签</td>
+		</tr>
+		<tr>
+			<td>网站面向城市</td>
+			<td>{$mymps_global[SiteCity]}</td>
+		</tr>
+	</tbody>
+</table>
+
+ <table class="table table-striped table-hover table-bordered" id="ba3" style="display: none;">
+	<tbody>
+		<tr class="info thead">
+			<td>调用的内容</td>
+			<td>调用的标签</td>
+		</tr>
+		<tr>
+			<td>当前所在城市ID</td>
+			<td>{$city[cityid]}</td>
+		</tr>
+        <tr>
+			<td>当前所在城市名称</td>
+			<td>{$city[cityname]}</td>
+		</tr>
+        <tr>
+			<td>当前所在城市域名</td>
+			<td>{$city[domain]}</td>
+		</tr>
+	</tbody>
+</table>
+
+      </div>
+    </div>
+
+  </div>
+    <div class="footer">
+  <div class="container">
+    <p class="center">更多蚂蚁分类工具请进入QQ群:200641831</p>
+
+    <ul class="footer-links">
+      <li><a href="http://www.mymps.com.cn/" target="_blank">蚂蚁分类信息系统官网</a></li>
+      <li><a href="http://bbs.mymps.com.cn/">蚂蚁论坛</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<script src="./基本标签_files/bootstrap.min.js" language="javascript" type="text/javascript"></script>
+<script src="./基本标签_files/prettify.js"></script>
+<script src="./基本标签_files/application.js"></script>
+</body></html>

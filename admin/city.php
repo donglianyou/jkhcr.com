@@ -14,8 +14,8 @@
 @set_time_limit( 0 );
 define( "CURSCRIPT", "city" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+require_once( SysGlbCfm_INC."/db.class.php" );
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }
@@ -23,7 +23,7 @@ if ( $admin_cityid )
 {
 				write_msg( "您没有权限访问该页！" );
 }
-$qq3479015851directory = array( "admin", "api", "attachment", "backup", "data", "html", "images", "include", "install", "member", "mypub", "plugin", "public", "rewrite", "template", "uc_client" );
+$SystemGlobalcfmdirectory = array( "admin", "api", "attachment", "backup", "data", "html", "images", "include", "install", "member", "mypub", "plugin", "public", "rewrite", "template", "uc_client" );
 if ( !submit_check( CURSCRIPT."_submit" ) )
 {
 				$here = "分站设置";
@@ -36,7 +36,7 @@ else
 				{
 								$cfg_redirectpage = $cfg_redirectpagee ? $cfg_redirectpagee : "";
 				}
-				foreach ( $qq3479015851directory as $k => $v )
+				foreach ( $SystemGlobalcfmdirectory as $k => $v )
 				{
 								if ( !( $cfg_citiesdir == "/".$v ) )
 								{

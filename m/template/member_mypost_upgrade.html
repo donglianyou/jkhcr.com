@@ -2,14 +2,14 @@
 <html lang="zh-CN" class="index_page">
 <head>
 	{template header}
-	<title>信息置顶 - {$qq3479015851_global[SiteName]}</title>
+	<title>信息置顶 - {$SystemGlobalcfm_global[SiteName]}</title>
 	<link type="text/css" rel="stylesheet" href="template/css/global.css">
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
 	<link type="text/css" rel="stylesheet" href="template/css/member_new.css">
     <script>window['current'] = '会员中心';</script>
 </head>
 
-<body class="{$qq3479015851_global[cfg_tpl_dir]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]}">
 <div class="wrapper">
 
 	{template header_search}
@@ -23,11 +23,11 @@
     <div class="inner_html tips">
         <div class="hd">温馨提示</div>
         <div class="bd">
-        首页置顶：1天仅需<font color="#FF3300">{$qq3479015851_global[cfg_member_upgrade_index_top]}个</font>金币，在网站<font color="#FF3300">首页第一屏</font>展示您发布的信息,吸引全场眼球！
+        首页置顶：1天仅需<font color="#FF3300">{$SystemGlobalcfm_global[cfg_member_upgrade_index_top]}个</font>金币，在网站<font color="#FF3300">首页第一屏</font>展示您发布的信息,吸引全场眼球！
         <br /><br />
-        大类置顶：1天仅需<font color="#FF3300">{$qq3479015851_global[cfg_member_upgrade_top]}个</font>金币</span>显示在<font color="#FF3300">{$info[gname]}</font>类目列表页面的最顶部位置，吸引更多关注！
+        大类置顶：1天仅需<font color="#FF3300">{$SystemGlobalcfm_global[cfg_member_upgrade_top]}个</font>金币</span>显示在<font color="#FF3300">{$info[gname]}</font>类目列表页面的最顶部位置，吸引更多关注！
         <br /><br />
-        小类置顶：1天仅需<font color="#FF3300">{$qq3479015851_global[cfg_member_upgrade_list_top]}个</font>金币</span>显示在<font color="#FF3300">{$info[catname]}</font>类目列表页面的最顶部位置，吸引更多关注！
+        小类置顶：1天仅需<font color="#FF3300">{$SystemGlobalcfm_global[cfg_member_upgrade_list_top]}个</font>金币</span>显示在<font color="#FF3300">{$info[catname]}</font>类目列表页面的最顶部位置，吸引更多关注！
         </div>
     </div>
     
@@ -87,11 +87,11 @@
 		var ID1=document.getElementById("upgrade_time").value; 
 		var ID2=document.getElementById("total").value;
 		if(ID0 == "cfg_member_upgrade_top"){
-			document.getElementById("total").innerHTML=({$qq3479015851_global[cfg_member_upgrade_top]}*ID1);
+			document.getElementById("total").innerHTML=({$SystemGlobalcfm_global[cfg_member_upgrade_top]}*ID1);
 		}else if(ID0 == "cfg_member_upgrade_list_top"){
-			document.getElementById("total").innerHTML=({$qq3479015851_global[cfg_member_upgrade_list_top]}*ID1);
+			document.getElementById("total").innerHTML=({$SystemGlobalcfm_global[cfg_member_upgrade_list_top]}*ID1);
 		}else{
-			document.getElementById("total").innerHTML=({$qq3479015851_global[cfg_member_upgrade_index_top]}*ID1);
+			document.getElementById("total").innerHTML=({$SystemGlobalcfm_global[cfg_member_upgrade_index_top]}*ID1);
 		}
 		
 		if(ID0==""||ID1=="") 

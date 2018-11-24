@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 $element = array(
 	'信息'    => array('style' => 'info', 'url' => 'info.php?part=all', 'table' => 'information', 'type' => ''),
@@ -33,18 +32,18 @@ function member_get_count()
 			$and = ($value[where] ? $value[where] : '');
 
 			if ($value[style] == 'pm') {
-				$qq3479015851_member_count .= '<li class="' . $value[style] . '"><a href="' . $value[url] . '">' . $k . '(' . $pm_total . ')</a></li>';
+				$SystemGlobalcfm_member_count .= '<li class="' . $value[style] . '"><a href="' . $value[url] . '">' . $k . '(' . $pm_total . ')</a></li>';
 			}
 			else {
-				$qq3479015851_member_count .= '<li class="' . $value[style] . '"><a href="' . $value[url] . '">' . $k . '(' . qq3479015851_count($value[table], 'WHERE userid = \'' . $s_uid . '\'' . $and) . ')</a></li>';
+				$SystemGlobalcfm_member_count .= '<li class="' . $value[style] . '"><a href="' . $value[url] . '">' . $k . '(' . qq3479015851_count($value[table], 'WHERE userid = \'' . $s_uid . '\'' . $and) . ')</a></li>';
 			}
 		}
 		else {
-			$qq3479015851_member_count .= '<li class="' . $value[style] . '"><a href="' . $value[url] . '">' . $k . '(' . $money_own . ')</a></li>';
+			$SystemGlobalcfm_member_count .= '<li class="' . $value[style] . '"><a href="' . $value[url] . '">' . $k . '(' . $money_own . ')</a></li>';
 		}
 	}
 
-	return $qq3479015851_member_count;
+	return $SystemGlobalcfm_member_count;
 }
 
 

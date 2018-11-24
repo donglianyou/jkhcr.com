@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://www.mymps.com.cn/doc/article-3.html -->
+<html><style type="text/css" id="2517905709"></style><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<meta charset="gbk">
+
+<title>系统接口设置/教程 - Mymps模板制作/标签/参考手册 - 更多蚂蚁分类工具请进入QQ群:201809840</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./QQ登录接口设置教程_files/jquery-1.9.1.min.js"></script>
+<link href="./QQ登录接口设置教程_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./QQ登录接口设置教程_files/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="./QQ登录接口设置教程_files/docs.css" rel="stylesheet">
+<link href="./QQ登录接口设置教程_files/prettify.css" rel="stylesheet">
+<!--[if lt IE 9]>
+  <script src="/assets/js/html5shiv.js"></script>
+<![endif]-->
+<style>
+.span9 h4{text-indent:2em;text-align:left;}
+.span9 p{text-indent:2em;text-align:left;}
+</style><script type="text/javascript" src="./QQ登录接口设置教程_files/noerr.js"></script><script type="text/javascript" src="./QQ登录接口设置教程_files/noright.js"></script><style>
+.code { font-family: Courier, Courier New; font-weight: normal; color:#000; font-size:12px;}
+.bcontent{ font-size:16px; line-height:200%;}
+</style></head>
+
+
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="50">
+  
+  <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+        	            <li class="active">
+              <a href="http://www.mymps.com.cn/doc/article.html">使用教程_QQ群:201809840</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/index.html">模板基础</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/structure.html">模板目录结构</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/grammer.html">标签语法</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/base.html">基本标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/senior.html">高级标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/diy.html">自定义标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/demo.html">调用示例</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/db.html">数据字典</a>
+            </li>
+                    </ul>
+      </div>
+    </div>
+  </div>
+</div>  <div class="jumbotron subhead" id="overview">
+    <div class="container">
+      <h1>使用教程</h1>
+      <p class="lead">
+        接口配置/系统设置/使用教程
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav affix-top">
+                  <li><a href="http://www.mymps.com.cn/doc/article-1.html"><i class="icon-chevron-right"></i> 电子邮箱服务器配置教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-2.html"><i class="icon-chevron-right"></i> 在线支付接口设置教程</a></li>
+		          <li class="active"><a href="./QQ登录接口设置教程_files/QQ登录接口设置教程.html"><i class="icon-chevron-right"></i> QQ登录接口设置教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-4.html"><i class="icon-chevron-right"></i> UCENTER/DISCUZ论坛整合教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-5.html"><i class="icon-chevron-right"></i> 伪静态路径使用教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-6.html"><i class="icon-chevron-right"></i> 地图标注接口设置</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-7.html"><i class="icon-chevron-right"></i> 网站整体转移服务器空间教程 </a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-8.html"><i class="icon-chevron-right"></i> IP数据库更新教程</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-9.html"><i class="icon-chevron-right"></i> 微信登录整合教程（5.8起支持）</a></li>
+		          <li><a href="http://www.mymps.com.cn/doc/article-10.html"><i class="icon-chevron-right"></i> 短信接口设置（5.8起支持）</a></li>
+		  
+        </ul>
+      </div>
+      <div class="span9">
+        <section>
+        <div class="page-header"><h1>QQ登录接口设置教程</h1><span style="font-size:12px;">发布时间：2015-01-10 &nbsp;&nbsp;&nbsp;&nbsp;浏览：984</span></div>
+            <div class="bcontent">
+            <strong>一、 登录<a href="https://connect.qq.com/manage.html" target="_blank">https://connect.qq.com/manage.html</a> 申请appid, appkey ，创建网站应用 </strong><br>
+<br>
+（回调地址写<span style="color:#E53333;">http://你的域名/include/qqlogin/qq_callback.php</span>） <br>
+<br>
+<strong>二、 登录你的mymps网站后台，选择扩展 –》 其它扩展 -》第三方账号整合 –》 QQ登录整合</strong><br>
+选择开启，依次填写<br>
+参数一填写：你申请到的appid<br>
+参数二填写：你申请到的appkey<br>
+参数三填写：http://你的域名/include/qqlogin/qq_callback.php<br>
+提交保存<br>
+<br>
+<strong>注意事项：如果QQ登录依然出现错误，可尝试以下方法后重新提交审核</strong><br>
+调整步骤：<br>
+1，php.ini 设置配置文件：allow_url_fopen = On<br>
+2，php.ini 搜索 extension=php_curl.dll 将前面的;去掉<br>
+3，php.ini 打开extension=php_openssl.dll扩展(去掉前面的;)<br>
+4，如果是IIS服务器环境，需要把 php目录下的libeay32.dll和ssleay32.dl文件复制到C:\windows\system32目录下
+设置完后，重新IIS即可。<br>
+<br>
+注意事项：<br>
+1，打开文件时建议使用editplus等专业工具，保存格式为utf8 + nobom<br>
+2，以上方式仍然无效时，请用editplus等工具打开/include/openlogin.fun.php，大概第140行代码前加入//,注释掉第140行代码            <br>
+            <br>
+            <a href="http://www.mymps.com.cn/member/index.php?mod=service&action=add#list" target="_blank" style="text-decoration:underline;color:red; font-size:16px;">如果以上教程仍不能解决您的问题，请在此提交售后工单 &gt;&gt;</a>
+            </div>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+    <div class="footer">
+  <div class="container">
+    <p class="center">更多蚂蚁分类工具请进入QQ群:201809840</p>
+
+    <ul class="footer-links">
+      <li><a href="http://www.mymps.com.cn/" target="_blank">蚂蚁分类信息系统官网</a></li>
+      <li><a href="http://bbs.mymps.com.cn/">蚂蚁论坛</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<script src="./QQ登录接口设置教程_files/bootstrap.min.js" language="javascript" type="text/javascript"></script>
+<script src="./QQ登录接口设置教程_files/prettify.js"></script>
+<script src="./QQ登录接口设置教程_files/application.js"></script>
+</body></html>

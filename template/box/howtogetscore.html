@@ -131,10 +131,10 @@ input.submit{border:1px solid;cursor:pointer;border-color:#fff #848484 #848484 #
 				<td style="color:<?php if($score_change['score'][rank][$v] <= 0){echo 'red';}else{echo 'green';}?>"><?php echo $score_change['score'][rank][$v]?></td> 
 				</tr>
 				<?php }?>
-				<?php if($qq3479015851_global['cfg_if_affiliate'] == 1){?>
+				<?php if($SystemGlobalcfm_global['cfg_if_affiliate'] == 1){?>
 				<tr align="center" bgcolor="white">
 				<td class="icon">注册推广</td>
-				<td style="color:green">一个会员增加积分<?php echo $qq3479015851_global['cfg_affiliate_score']?></td> 
+				<td style="color:green">一个会员增加积分<?php echo $SystemGlobalcfm_global['cfg_affiliate_score']?></td> 
 				</tr>
 				<?php }?>
 				</table>

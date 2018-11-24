@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 error_reporting(E_ALL^E_NOTICE);
 @set_magic_quotes_runtime(0);
@@ -16,13 +15,13 @@ error_reporting(E_ALL^E_NOTICE);
 
 __FILE__ == '' && die('Fatal error code: 0');
 
-define("QQ3479015851",true);
+define("SysGlbCfm",true);
 define('MAGIC_QUOTES_GPC', @get_magic_quotes_gpc());
-define("QQ3479015851_ROOT",dirname(__FILE__));
-define('QQ3479015851_DATA',QQ3479015851_ROOT.'/data');
-define('QQ3479015851_INC',QQ3479015851_ROOT.'/include');
-define('QQ3479015851_TPL',QQ3479015851_ROOT.'/template');
-define('QQ3479015851_ASS',QQ3479015851_ROOT.'/include/assign');
+define("SysGlbCfm_ROOT",dirname(__FILE__));
+define('SysGlbCfm_DATA',SysGlbCfm_ROOT.'/data');
+define('SysGlbCfm_INC',SysGlbCfm_ROOT.'/include');
+define('SysGlbCfm_TPL',SysGlbCfm_ROOT.'/template');
+define('SysGlbCfm_ASS',SysGlbCfm_ROOT.'/include/assign');
 
 if(function_exists('date_default_timezone_set')) date_default_timezone_set('Hongkong');
 $timestamp = time();
@@ -35,9 +34,9 @@ if(PHP_VERSION < '4.1.0') {
 	unset($HTTP_GET_VARS,$HTTP_SERVER_VARS);
 }
 
-require_once QQ3479015851_DATA."/config.php";
-require_once QQ3479015851_ROOT."/version.php";
-require_once QQ3479015851_ROOT."/include/common.fun.php";
+require_once SysGlbCfm_DATA."/config.php";
+require_once SysGlbCfm_ROOT."/version.php";
+require_once SysGlbCfm_ROOT."/include/common.fun.php";
 
 $_GET = mhtmlspecialchars($_GET);
 $part = isset($_REQUEST['part']) ? trim(mhtmlspecialchars($_REQUEST['part'])) : '';
@@ -55,7 +54,7 @@ $uid = isset($_GET['uid']) ? intval($_GET['uid']) : '';
 
 !in_array($part,array('upgrade','shoucang','wap_shoucang','report','do_report','information','checkmemberinfo','sp_testdirs','adminmenu','member','memberinfopost','advertisement','advertisementview','jswizard','custom','iptoarea','goodsorder','score_coin','credits_up','howtogetscore','seecontact','seecontact_tel','delinfo','qiandao')) && exit('FORBIDDEN');
 
-include QQ3479015851_INC.'/box/'.$part.'.php';
+include SysGlbCfm_INC.'/box/'.$part.'.php';
 
 is_object($db) && $db->Close();
 ?>

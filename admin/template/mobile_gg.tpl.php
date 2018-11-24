@@ -33,7 +33,7 @@
 .smalltxt{ font-size:12px!important; color:#999!important; font-weight:100!important}
 .altbg1{ background-color:#f1f5f8; width:45%;}
 </style>
-<div id="<?=QQ3479015851_SOFTNAME?>" style=" padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style=" padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -50,7 +50,7 @@
 <form method="post" action="?">
 <input name="type" value="<?=$type?>" type="hidden">
 <input name="return_url" value="<?php echo GetUrl();?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
     <td width="50"><input name="checkall" type="checkbox" class="checkbox" id="checkall" onClick="CheckAll(this.form)"/> 删?</td>
@@ -89,7 +89,7 @@
 <form method="post" id="form1" name="form1" action="?" enctype="multipart/form-data" onSubmit="return CheckSubmit();">
 <input name="type" value="<?=$type?>" type="hidden">
 <input name="id" value="<?=$id?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%"  border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tbody>
  <tr class="firstr">
@@ -135,9 +135,9 @@
   <tr bgcolor="#FFFFFF" >
     <td align="right" valign="top">选择上传的图片：</td>
     <td><input type="file" name="qq3479015851_focus" size="45" id="litpic"><br /><br />
-      支持上传的类型：<?=$qq3479015851_global[cfg_upimg_type]?><br />
-手机版首页幻灯片尺寸：<?=$qq3479015851_qq3479015851[cfg_hdp_limit][width]?> * <?=$qq3479015851_qq3479015851[cfg_hdp_limit][height]?><br />
-手机版新闻首页幻灯片尺寸：<?=$qq3479015851_qq3479015851[cfg_hdp_limit][width]?> * <?=$qq3479015851_qq3479015851[cfg_hdp_limit][height]?><br />
+      支持上传的类型：<?=$SystemGlobalcfm_global[cfg_upimg_type]?><br />
+手机版首页幻灯片尺寸：<?=$SystemGlobalcfm_qq3479015851[cfg_hdp_limit][width]?> * <?=$SystemGlobalcfm_qq3479015851[cfg_hdp_limit][height]?><br />
+手机版新闻首页幻灯片尺寸：<?=$SystemGlobalcfm_qq3479015851[cfg_hdp_limit][width]?> * <?=$SystemGlobalcfm_qq3479015851[cfg_hdp_limit][height]?><br />
 </td>
   </tr>
 </tbody>

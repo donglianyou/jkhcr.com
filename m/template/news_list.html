@@ -2,14 +2,14 @@
 <html lang="zh-CN" class="index_page">
 <head>
 	{template header}
-	<title>{$cat[catname]} - 热点资讯 - {$qq3479015851_global[SiteName]}</title>
+	<title>{$cat[catname]} - 热点资讯 - {$SystemGlobalcfm_global[SiteName]}</title>
 	<link type="text/css" rel="stylesheet" href="template/css/global.css">
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
     <link type="text/css" rel="stylesheet" href="template/css/news.css">
     <script>window['current'] = '{$cat[catname]}';</script>
 </head>
 
-<body class="{$qq3479015851_global[cfg_tpl_dir]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]}">
 <div class="wrapper">
 
     {template header_search}
@@ -18,9 +18,9 @@
     
     <div class="select_01" id="wrapper2">
         <ul class="tab-hd" id="scroller2">
-        <!--{loop $rootchannel $qq3479015851}-->
-            <li class="{if $qq3479015851[catid] == $catid}current{/if} item"><a href="index.php?mod=news&catid={$qq3479015851[catid]}">最新</a></li>
-            <!--{loop $qq3479015851[children] $w}-->
+        <!--{loop $rootchannel $SystemGlobalcfm}-->
+            <li class="{if $SystemGlobalcfm[catid] == $catid}current{/if} item"><a href="index.php?mod=news&catid={$SystemGlobalcfm[catid]}">最新</a></li>
+            <!--{loop $SystemGlobalcfm[children] $w}-->
             <li class="{if $w[catid] == $catid}current{/if} item"><a href="index.php?mod=news&catid={$w[catid]}">{$w[catname]}</a></li>
             <!--{loopelse}-->
             <script>$("#wrapper2").hide();</script>
@@ -47,13 +47,13 @@
     <div class="mod_02" id="myPicsrc">
                 <div class="bd tab-cont">
                     <ul class="list_normal list_news">
-                        <!--{loop $news $qq3479015851}-->
+                        <!--{loop $news $SystemGlobalcfm}-->
                         <li class="img">
-                            <a href="{$qq3479015851[uri]}" class="link">
-                            <p class="img"><img src="{$qq3479015851[imgpath]}" onerror="this.src='{$qq3479015851_global[SiteUrl]}/images/nophoto.jpg'" /></p>
-                            <p class="tit"{if $qq3479015851[iscommend] ==1}style="color:red"{/if}>{$qq3479015851[title]}</p>
-                            <p class="txt">{echo cutstr($qq3479015851[content],60,'...')}</p>
-                            <p class="hot po_ab">{echo GetTime($qq3479015851[begintime],'m-d')}</p>
+                            <a href="{$SystemGlobalcfm[uri]}" class="link">
+                            <p class="img"><img src="{$SystemGlobalcfm[imgpath]}" onerror="this.src='{$SystemGlobalcfm_global[SiteUrl]}/images/nophoto.jpg'" /></p>
+                            <p class="tit"{if $SystemGlobalcfm[iscommend] ==1}style="color:red"{/if}>{$SystemGlobalcfm[title]}</p>
+                            <p class="txt">{echo cutstr($SystemGlobalcfm[content],60,'...')}</p>
+                            <p class="hot po_ab">{echo GetTime($SystemGlobalcfm[begintime],'m-d')}</p>
                             </a>
                         </li>
                         <!--{/loop}-->

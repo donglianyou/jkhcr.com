@@ -32,7 +32,7 @@ function getpinyinhead(t){
 }
 </script>
 <script type="text/javascript" src="js/vbm.js"></script>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -62,7 +62,7 @@ function getpinyinhead(t){
 
 <form name="form_qq3479015851" action="?part=list" method="post">
 <input name="url" type="hidden" value="<?=GetUrl()?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
     <table border="0" cellspacing="0" cellpadding="0" class="vbm">
         <tr class="firstr">
           <td width="40"><input name="chkall" type="checkbox" onclick="AllCheck('prefix', this.form, 'action')" class="checkbox" id="createdir"/></td>
@@ -85,8 +85,8 @@ function getpinyinhead(t){
           <td width="40"><?=$area[cityid]?></td>
           <td width="40"><?=$area[status]==1?'<font color=green>正常</font>':'<font color=red>已关闭</font>'?></td>
           <td width="80" style="<?php if($area['ifhot'] == '1') echo 'color:red; text-decoration:underline'; ?>"><label><b><?=$area[cityname]?></b></label></td>
-          <td align="left"><?=$qq3479015851_global['cfg_citiesdir']?>/<?=$area[directory]?></td>
-          <td align="left"><a href="<?=$area[domain] ? $area[domain] : $qq3479015851_global['SiteUrl'].$qq3479015851_global['cfg_citiesdir'].'/'.$area[directory]?>" target="_blank" style="text-decoration:underline"><?=$area[domain] ? $area[domain] : $qq3479015851_global['SiteUrl'].$qq3479015851_global['cfg_citiesdir'].'/'.$area[directory]?></a></td>
+          <td align="left"><?=$SystemGlobalcfm_global['cfg_citiesdir']?>/<?=$area[directory]?></td>
+          <td align="left"><a href="<?=$area[domain] ? $area[domain] : $SystemGlobalcfm_global['SiteUrl'].$SystemGlobalcfm_global['cfg_citiesdir'].'/'.$area[directory]?>" target="_blank" style="text-decoration:underline"><?=$area[domain] ? $area[domain] : $SystemGlobalcfm_global['SiteUrl'].$SystemGlobalcfm_global['cfg_citiesdir'].'/'.$area[directory]?></a></td>
           <td width="40"><input name="updatecity_displayorder[<?=$area[cityid]?>]" value="<?=$area[displayorder]?>" class="txt" type="text"/></td>
           <td><a href="?part=list&cityid=<?=$area[cityid]?>">下属地区</a> / <a href="?part=edit&cityid=<?=$area[cityid]?>">编辑分站</a> / <a onClick="if(!confirm('该操作将同时删除该分站下的地区，路段，分类信息，会员，广告，公告设置，你确定要删除该分站吗？'))return false;" href="?part=del&cityid=<?=$area[cityid]?>">删除分站</a></td>
         </tr>
@@ -135,7 +135,7 @@ function getpinyinhead(t){
 <input name="areaid" value="<?php echo $areaid; ?>" type="hidden">
 <input name="cityname" value="<?php echo $cityname; ?>" type="hidden" />
 <input name="cityid" value="<?php echo $cityid; ?>" type="hidden" />
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 	<table border="0" cellspacing="0" cellpadding="0" class="vbm">
         <tr class="firstr">
           <td width="40"><label><input name="checkall" type="checkbox" id="checkall" onClick="CheckAll(this.form)" class="checkbox"/>删?</label></td>
@@ -170,7 +170,7 @@ function getpinyinhead(t){
 <input name="newstreet[areaid]" value="<?=$areaid?>" type="hidden">
 <input name="cityname" value="<?php echo $cityname; ?>" type="hidden" />
 <input name="cityid" value="<?php echo $cityid; ?>" type="hidden" />
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
   <td colspan="2" align="left">增加 <span><?=$currentname?></span>地区下的街道</td>
@@ -198,7 +198,7 @@ function getpinyinhead(t){
 <div class="clear"></div>
 <form action="?" method="post">
 <input name="cityid" value="<?=$cityid?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
         <tr class="firstr">
           <td width="5%"><label><input name="checkall" type="checkbox" id="checkall" onClick="CheckAll(this.form)" class="checkbox"/>删?</label></td>
@@ -233,7 +233,7 @@ function getpinyinhead(t){
 <div class="clear" style="margin-top:5px"></div>
 <form method=post name="form" action="?">
 <input name="newarea[cityid]" value="<?=$cityid?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
   <td colspan="2" align="left">增加 <span><?=$currentname?></span>分站下的地区</td>

@@ -96,7 +96,7 @@ function newsinfovalue(){
 .showtpl1 label,.showtpl2 label{ cursor:pointer;}
 
 .showtpl a:hover,.showindex a:hover{ text-decoration:none; cursor:pointer}</style>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -113,16 +113,16 @@ function newsinfovalue(){
 <input name="screen_cat" value="full" type="hidden">
 <input name="screen_info" value="full" type="hidden">
 <input name="screen_search" value="full" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 	<tr class="firstr"><td colspan="2">网站模板应用设置</td></tr>
 	<tr bgcolor="white">
 		<td width="20%" class="altbg1" ><b>网站使用模板风格</b><br /><span class="smalltxt"></span></td>
 		<td class="altbg2">
 		<?php foreach($template['fengge']['flag'] as $k => $v){?>
-			<div id="index_<?=$k?>" class="showtpl1 <?php if($qq3479015851_global['cfg_tpl_dir'] == $k){?>checked<?php }?>">
+			<div id="index_<?=$k?>" class="showtpl1 <?php if($SystemGlobalcfm_global['cfg_tpl_dir'] == $k){?>checked<?php }?>">
 			<label for="<?=$k?>">
-			<div class="txt"><span class="<?=$k?>"></span><div class="clearfix"></div><input onclick="$Obj('index_blue').className='showtpl1';$Obj('index_green').className='showtpl1';$Obj('index_orange').className='showtpl1';$Obj('index_red').className='showtpl1';$Obj('index_<?=$k?>').className='showtpl1 checked';" id="<?=$k?>" name="cfg_tpl_dir" type="radio" class="radio" value="<?=$k?>" <?php if($qq3479015851_global['cfg_tpl_dir'] == $k){?>checked="checked"<?php }?>><?=$v?> <br /><font color="#666">(<?=$k?>)</font></div>
+			<div class="txt"><span class="<?=$k?>"></span><div class="clearfix"></div><input onclick="$Obj('index_blue').className='showtpl1';$Obj('index_green').className='showtpl1';$Obj('index_orange').className='showtpl1';$Obj('index_red').className='showtpl1';$Obj('index_<?=$k?>').className='showtpl1 checked';" id="<?=$k?>" name="cfg_tpl_dir" type="radio" class="radio" value="<?=$k?>" <?php if($SystemGlobalcfm_global['cfg_tpl_dir'] == $k){?>checked="checked"<?php }?>><?=$v?> <br /><font color="#666">(<?=$k?>)</font></div>
 			</label>
 			</div>
 		<?php }?>
@@ -131,15 +131,15 @@ function newsinfovalue(){
 	<tr bgcolor="white">
 		<td width="20%" class="altbg1" ><b>模板是否显示背景图</b><br /><span class="smalltxt"></span></td>
 		<td class="altbg2">
-		 	<label for="bodybg_1"><input id="bodybg_1" name="bodybg" type="radio" value="1" <?php if($qq3479015851_global['bodybg'] == '1'){echo ' checked="checked" ';}?>> 是</label>
-			<label for="bodybg_0"><input id="bodybg_0" name="bodybg" type="radio" value="0" <?php if($qq3479015851_global['bodybg'] == '0'){?>checked="checked"<?php }?>> 否</label>
+		 	<label for="bodybg_1"><input id="bodybg_1" name="bodybg" type="radio" value="1" <?php if($SystemGlobalcfm_global['bodybg'] == '1'){echo ' checked="checked" ';}?>> 是</label>
+			<label for="bodybg_0"><input id="bodybg_0" name="bodybg" type="radio" value="0" <?php if($SystemGlobalcfm_global['bodybg'] == '0'){?>checked="checked"<?php }?>> 否</label>
 		</td>
 	</tr>
     <tr bgcolor="white">
 		<td width="20%" class="altbg1" ><b>主导航样式</b><br /><span class="smalltxt"></span></td>
 		<td class="altbg2">
-		 	<input id="style_normal" name="head_style" type="radio" value="normal" <?php if($qq3479015851_global['head_style'] == 'normal'){echo ' checked="checked" ';}?>> 传统样式
-			<input id="style_standard" name="head_style" type="radio" value="new" <?php if($qq3479015851_global['head_style'] == 'new'){?>checked="checked"<?php }?>> 左侧下拉样式
+		 	<input id="style_normal" name="head_style" type="radio" value="normal" <?php if($SystemGlobalcfm_global['head_style'] == 'normal'){echo ' checked="checked" ';}?>> 传统样式
+			<input id="style_standard" name="head_style" type="radio" value="new" <?php if($SystemGlobalcfm_global['head_style'] == 'new'){?>checked="checked"<?php }?>> 左侧下拉样式
 		</td>
 	</tr>
     <tr bgcolor="white">

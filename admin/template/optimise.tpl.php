@@ -9,7 +9,7 @@ body{ text-align:center!important;}
 .finished{ margin-top:70px; margin-bottom:70px; color:#226499; font-family:microsoft yahei; font-size:18px;}
 .vbm{ text-align:center;}
 </style>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -20,10 +20,10 @@ body{ text-align:center!important;}
 		</div>
 	</div>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
-  	<td>一键优化QQ3479015851系统/清除冗余数据</td>
+  	<td>一键优化SysGlbCfm系统/清除冗余数据</td>
   </tr>
   <tr>
   <td>

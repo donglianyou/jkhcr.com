@@ -3,7 +3,7 @@
 <script language="javascript" src="template/javascript.js"></script>
 
 </head>
-<body class="<?php echo $qq3479015851_global['cfg_tpl_dir']; ?>">
+<body class="<?php echo $SystemGlobalcfm_global['cfg_tpl_dir']; ?>">
 <div class="container">
 
 	<?php include qq3479015851_tpl('inc_head');?>
@@ -57,7 +57,7 @@
                 <h3 class="label">上传新图片：</h3>
                 <div class="form-enter">
                      <input name="album_up" type="file" id="litpic" onChange="SeePic(document.picview,document.form1.litpic);"/> <?php echo $ac == 'edit' ? '若不上传新相片请勿选择， ' : ''; ?>
-        支持上传的类型：<?=$qq3479015851_global[cfg_upimg_type]?>
+        支持上传的类型：<?=$SystemGlobalcfm_global[cfg_upimg_type]?>
                 </div>
             </div>
         
@@ -69,7 +69,7 @@
 		<div class="formrow">
                 <h3 class="label">注意事项：</h3>
                 <div class="form-enter">
-                 请确保图片清晰。图片格式为 <?=$qq3479015851_global['cfg_upimg_type']?> ，不超过 <?=$qq3479015851_global[cfg_upimg_size]?>KB 。<br />
+                 请确保图片清晰。图片格式为 <?=$SystemGlobalcfm_global['cfg_upimg_type']?> ，不超过 <?=$SystemGlobalcfm_global[cfg_upimg_size]?>KB 。<br />
 在上传过程中，如果长时间停止，请取消重传；或将图片缩小后重传。
                 </div>
             </div>

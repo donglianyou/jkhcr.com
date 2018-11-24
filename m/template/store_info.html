@@ -2,14 +2,14 @@
 <html lang="zh-CN" class="index_page">
 <head>
 	{template header}
-	<title>分类信息 - {$store[tname]} - {$qq3479015851_global[SiteName]}</title>
+	<title>分类信息 - {$store[tname]} - {$SystemGlobalcfm_global[SiteName]}</title>
 	<link type="text/css" rel="stylesheet" href="template/css/global.css">
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
     <link type="text/css" rel="stylesheet" href="template/css/store.css">
     <script>window['current'] = '{$navi[$action]}';</script>
 </head>
 
-<body class="{$qq3479015851_global[cfg_tpl_dir]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]}">
 <div class="wrapper">
 
     {template header_search}
@@ -26,10 +26,10 @@
        </p>
        
        <ul class="infolst">
-       {loop $info_list $qq3479015851}
-        <li class="linkdetail" onclick="javascript:window.location.href='index.php?mod=information&id={$qq3479015851[id]}'" pageTitle="详情">
-                <dd class="tit" style="">{$qq3479015851[title]}</dd>
-                <dd class="tm"> {echo GetTime($qq3479015851[begintime],'m-d')}</dd>
+       {loop $info_list $SystemGlobalcfm}
+        <li class="linkdetail" onclick="javascript:window.location.href='index.php?mod=information&id={$SystemGlobalcfm[id]}'" pageTitle="详情">
+                <dd class="tit" style="">{$SystemGlobalcfm[title]}</dd>
+                <dd class="tm"> {echo GetTime($SystemGlobalcfm[begintime],'m-d')}</dd>
         </li>
        {loopelse}
         <li class="linkdetail">没有找到相关的信息！</li>

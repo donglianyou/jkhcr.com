@@ -7,16 +7,15 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define( "IN_SMT", TRUE );
 define( "CURSCRIPT", "category" );
-define( "QQ3479015851", TRUE );
+define( "SysGlbCfm", TRUE );
 require_once( dirname( __FILE__ )."/include/global.php" );
-require_once( QQ3479015851_DATA."/config.php" );
-require_once( QQ3479015851_DATA."/config.db.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_DATA."/config.php" );
+require_once( SysGlbCfm_DATA."/config.db.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 $catid = isset( $catid ) ? intval( $catid ) : 0;
 $cityid = isset( $cityid ) ? intval( $cityid ) : 0;
 $areaid = isset( $areaid ) ? intval( $areaid ) : 0;
@@ -61,7 +60,7 @@ else if ( $CAtid && $rewrite == "rewrite" )
 }
 if ( !( $cat = get_cat_info( $catid ) ) )
 {
-				write_msg( "您所指定的栏目不存在或者已被删除！", $qq3479015851_global['SiteUrl'] );
+				write_msg( "您所指定的栏目不存在或者已被删除！", $SystemGlobalcfm_global['SiteUrl'] );
 }
 $cache = get_cache_config( );
 if ( 1 < $page )
@@ -102,7 +101,7 @@ if (1 < $cat['modid']) {
 
 
 
-require_once( QQ3479015851_INC."/cachepages.class.php" );
+require_once( SysGlbCfm_INC."/cachepages.class.php" );
 $cachetime = $cache['list']['time'];
 $cachepages = new cachepages($cache['list']['time'], 'list_'.$catid.'_'.$cityid.'_'.$areaid.'_'.$streetid);
 $cachepages->cacheCheck();
@@ -113,10 +112,10 @@ $cat['caturi'] = rewrite( "category", array(
 	"dir_typename" => $cat['dir_typename']
 	) );
 $city = get_city_caches( $cityid );
-if ( $qq3479015851_global['cfg_independency'] && $cityid )
+if ( $SystemGlobalcfm_global['cfg_independency'] && $cityid )
 {
 	$maincity = get_city_caches( 0 );
-	$independency = explode( ",", $qq3479015851_global['cfg_independency'] );
+	$independency = explode( ",", $SystemGlobalcfm_global['cfg_independency'] );
 	$independency = is_array( $independency ) ? $independency : array( );
 	if ( in_array( "friendlink", $independency ) )
 	{
@@ -136,9 +135,9 @@ $cat['keywords'] = str_replace( "{city}", $city['cityname'], $cat['keywords'] );
 $cat['keywords'] = $cat['keywords'] ? $cat['keywords'] : $city['cityname'].$cat['catname']."信息";
 $cat['description'] = str_replace( "{city}", $city['cityname'], $cat['description'] );
 $cat['description'] = $cat['description'] ? $cat['description'] : $city['cityname'].$cat['catname']."频道为您提供".$city['cityname'].$cat['catname']."信息，在此有大量".$city['cityname'].$cat['catname']."信息供您选择，您可以免费查看和发布".$city['cityname'].$cat['catname']."信息。";
-$qq3479015851_extra_model = mod_identifier( );
-$qq3479015851_extra_model = $qq3479015851_extra_model[$cat['modid']];
-$qq3479015851_extra_model = is_array( $qq3479015851_extra_model ) ? $qq3479015851_extra_model : array( );
+$SystemGlobalcfm_extra_model = mod_identifier( );
+$SystemGlobalcfm_extra_model = $SystemGlobalcfm_extra_model[$cat['modid']];
+$SystemGlobalcfm_extra_model = is_array( $SystemGlobalcfm_extra_model ) ? $SystemGlobalcfm_extra_model : array( );
 $page_title_extra .= $city['area'][$areaid]['areaname'].$city['area'][$areaid]['street'][$streetid]['streetname'];
 $cat_list = get_categories_tree( $catid );
 if ( $cat['parentid'] == 0 )
@@ -167,7 +166,7 @@ $where .= empty( $streetid ) ? "" : " AND a.streetid = '".$streetid."'";
 $orderby = $cat['parentid'] == 0 ? " ORDER BY a.upgrade_type DESC,a.begintime DESC" : " ORDER BY a.upgrade_type_list DESC,a.begintime DESC";
 $param = setparam( $allow_identifiers, $rewrite, "category-", $city['domain'].$seo['seo_htmldir'].$cat['html_dir'] );
 $rows_num = $db->getOne( "SELECT COUNT(a.id) FROM `".$db_qq3479015851."information` AS a ".$s." ".$where );
-$idin = get_page_idin( "id", "SELECT a.id FROM `".$db_qq3479015851."information` AS a ".$s.$where.$orderby, $qq3479015851_global['cfg_list_page_line'] );
+$idin = get_page_idin( "id", "SELECT a.id FROM `".$db_qq3479015851."information` AS a ".$s.$where.$orderby, $SystemGlobalcfm_global['cfg_list_page_line'] );
 $sql = "SELECT a.id,a.tel,a.title,a.cityid,a.userid,a.contact_who,a.content,a.img_path,a.img_count,a.upgrade_type,a.upgrade_type_list,a.upgrade_time,a.upgrade_time_list,a.upgrade_time_index,a.begintime,a.endtime,a.info_level,a.certify,a.ifred,a.ifbold,a.dir_typename,a.contact_who,b.areaname FROM ".$db_qq3479015851."information AS a LEFT JOIN `".$db_qq3479015851."area` AS b ON a.areaid = b.areaid WHERE a.id IN (".$idin.") ".$orderby;
 $info_list = array( );
 $page1 = $idin ? $db->getAll( $sql ) : array( );
@@ -226,33 +225,33 @@ if ( $adveritems )
 switch ( $rewrite )
 {
 case "rewrite" :
-				foreach ( $qq3479015851_extra_model as $key => $val )
+				foreach ( $SystemGlobalcfm_extra_model as $key => $val )
 				{
 								if ( is_array( $val['list'] ) )
 								{
 												foreach ( $val['list'] as $k => $v )
 												{
-																$qq3479015851_extra_model[$key]['list'][$k]['uri'] = "category";
+																$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] = "category";
 																foreach ( $allow_identifiers as $keys )
 																{
 																				if ( $v['identifier'] == $keys )
 																				{
-																								$qq3479015851_extra_model[$key]['list'][$k]['uri'] .= $v[id] ? "-".$keys."-".$v[id] : "";
+																								$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] .= $v[id] ? "-".$keys."-".$v[id] : "";
 																				}
 																				else
 																				{
-																								$qq3479015851_extra_model[$key]['list'][$k]['uri'] .= $$keys ? "-".$keys."-".$$keys : "";
+																								$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] .= $$keys ? "-".$keys."-".$$keys : "";
 																				}
 																}
-																$qq3479015851_extra_model[$key]['list'][$k]['uri'] .= ".html";
+																$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] .= ".html";
 																if ( $v['id'] == $$v['identifier'] )
 																{
-																				$qq3479015851_extra_model[$key]['list'][$k]['select'] .= 1;
+																				$SystemGlobalcfm_extra_model[$key]['list'][$k]['select'] .= 1;
 																				$page_title_extra .= $v[name] != "不限" ? $v[name] : "";
 																}
 																else
 																{
-																				$qq3479015851_extra_model[$key]['list'][$k]['select'] .= 0;
+																				$SystemGlobalcfm_extra_model[$key]['list'][$k]['select'] .= 0;
 																}
 												}
 								}
@@ -313,34 +312,34 @@ case "rewrite" :
 				}
 				break;
 case "rewrite_py" :
-				foreach ( $qq3479015851_extra_model as $key => $val )
+				foreach ( $SystemGlobalcfm_extra_model as $key => $val )
 				{
 								if ( is_array( $val['list'] ) )
 								{
 												foreach ( $val['list'] as $k => $v )
 												{
-																$qq3479015851_extra_model[$key]['list'][$k]['uri'] = $dir_typename."/";
+																$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] = $dir_typename."/";
 																foreach ( $allow_identifiers as $keys )
 																{
 																				if ( $v['identifier'] == $keys )
 																				{
-																								$qq3479015851_extra_model[$key]['list'][$k]['uri'] .= $v['id'] ? $keys."-".$v['id']."-" : "";
+																								$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] .= $v['id'] ? $keys."-".$v['id']."-" : "";
 																				}
 																				else
 																				{
-																								$qq3479015851_extra_model[$key]['list'][$k]['uri'] .= $$keys ? $keys."-".$$keys."-" : "";
+																								$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] .= $$keys ? $keys."-".$$keys."-" : "";
 																				}
 																}
-																$qq3479015851_extra_model[$key]['list'][$k]['uri'] = substr( $qq3479015851_extra_model[$key]['list'][$k]['uri'], 0, -1 );
-																$qq3479015851_extra_model[$key]['list'][$k]['uri'] .= "/";
+																$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] = substr( $SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'], 0, -1 );
+																$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] .= "/";
 																if ( $v['id'] == $$v['identifier'] )
 																{
-																				$qq3479015851_extra_model[$key]['list'][$k]['select'] .= 1;
+																				$SystemGlobalcfm_extra_model[$key]['list'][$k]['select'] .= 1;
 																				$page_title_extra .= $v['name'] != "不限" ? $v['name'] : "";
 																}
 																else
 																{
-																				$qq3479015851_extra_model[$key]['list'][$k]['select'] .= 0;
+																				$SystemGlobalcfm_extra_model[$key]['list'][$k]['select'] .= 0;
 																}
 												}
 								}
@@ -403,33 +402,33 @@ case "rewrite_py" :
 				}
 				break;
 				default:
-				foreach ( $qq3479015851_extra_model as $key => $val )
+				foreach ( $SystemGlobalcfm_extra_model as $key => $val )
 				{
 								if ( is_array( $val['list'] ) )
 								{
 												foreach ( $val['list'] as $k => $v )
 												{
-																$qq3479015851_extra_model[$key]['list'][$k]['uri'] = "category.php?";
+																$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] = "category.php?";
 																foreach ( $allow_identifiers as $keys )
 																{
 																				if ( $v['identifier'] == $keys )
 																				{
-																								$qq3479015851_extra_model[$key]['list'][$k]['uri'] .= $v['id'] ? $keys."=".$v[id]."&" : "";
+																								$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] .= $v['id'] ? $keys."=".$v[id]."&" : "";
 																				}
 																				else
 																				{
-																								$qq3479015851_extra_model[$key]['list'][$k]['uri'] .= $$keys ? $keys."=".$$keys."&" : "";
+																								$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] .= $$keys ? $keys."=".$$keys."&" : "";
 																				}
 																}
-																$qq3479015851_extra_model[$key]['list'][$k]['uri'] = substr( $qq3479015851_extra_model[$key]['list'][$k]['uri'], 0, -1 );
+																$SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'] = substr( $SystemGlobalcfm_extra_model[$key]['list'][$k]['uri'], 0, -1 );
 																if ( $v[id] == $$v[identifier] )
 																{
-																				$qq3479015851_extra_model[$key]['list'][$k]['select'] .= 1;
+																				$SystemGlobalcfm_extra_model[$key]['list'][$k]['select'] .= 1;
 																				$page_title_extra .= $v[name] != "不限" ? $v[name] : "";
 																}
 																else
 																{
-																				$qq3479015851_extra_model[$key]['list'][$k]['select'] .= 0;
+																				$SystemGlobalcfm_extra_model[$key]['list'][$k]['select'] .= 0;
 																}
 												}
 								}
@@ -491,7 +490,7 @@ case "rewrite_py" :
 }
 $pdetail = $page_title_extra.( $cat['title'] ? $cat['title'] : $cat['catname'] );
 $pdetail .= 1 < $page ? "-第".$page."页" : "";
-$pdetail .= "-".$city['cityname'].$qq3479015851_global['SiteName'];
+$pdetail .= "-".$city['cityname'].$SystemGlobalcfm_global['SiteName'];
 $pdetail = $city['cityname'].$pdetail;
 $loc = get_location( "category", $catid, "", "", $pdetail );
 $page_title = $loc['page_title'];

@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-if (!defined('QQ3479015851')) {
+if (!defined('SysGlbCfm')) {
 	exit('Forbidden');
 }
 
@@ -21,7 +20,7 @@ if (submit_check('document_submit')) {
 	$name_file = 'docu_image';
 
 	if (in_array($ac, array('new', 'edit'))) {
-		require_once QQ3479015851_DATA . '/config.inc.php';
+		require_once SysGlbCfm_DATA . '/config.inc.php';
 		$title = (isset($_POST['title']) ? trim(mhtmlspecialchars($_POST['title'])) : '');
 		$imgpath = (isset($_POST['imgpath']) ? mhtmlspecialchars($_POST['imgpath']) : '');
 		$pre_imgpath = (isset($_POST['pre_imgpath']) ? mhtmlspecialchars($_POST['pre_imgpath']) : '');
@@ -54,12 +53,12 @@ if (submit_check('document_submit')) {
 
 	if ($ac == 'new') {
 		if (($documenttype[$tid]['arrid'] == '2') && $_FILES[$name_file]['name']) {
-			require_once QQ3479015851_INC . '/upfile.fun.php';
+			require_once SysGlbCfm_INC . '/upfile.fun.php';
 			$destination = '/document/' . date('Ym') . '/';
 			check_upimage($name_file);
-			$qq3479015851_image = start_upload($name_file, $destination, $qq3479015851_global['cfg_upimg_watermark'], $qq3479015851_qq3479015851['cfg_normal_limit']['width'], $qq3479015851_qq3479015851['cfg_normal_limit']['height']);
-			$imgpath = $qq3479015851_image[0];
-			$pre_imgpath = $qq3479015851_image[1];
+			$SystemGlobalcfm_image = start_upload($name_file, $destination, $SystemGlobalcfm_global['cfg_upimg_watermark'], $SystemGlobalcfm_qq3479015851['cfg_normal_limit']['width'], $SystemGlobalcfm_qq3479015851['cfg_normal_limit']['height']);
+			$imgpath = $SystemGlobalcfm_image[0];
+			$pre_imgpath = $SystemGlobalcfm_image[1];
 			$db->query('INSERT INTO `' . $db_qq3479015851 . 'member_docu` (title,author,source,pubtime,userid,content,imgpath,pre_imgpath,typeid) VALUES (\'' . $title . '\',\'' . $author . '\',\'' . $source . '\',\'' . $timestamp . '\',\'' . $s_uid . '\',\'' . $content . '\',\'' . $imgpath . '\',\'' . $pre_imgpath . '\',\'' . $tid . '\')');
 		}
 		else {
@@ -76,12 +75,12 @@ if (submit_check('document_submit')) {
 			}
 
 			if (($docutype_arr[$row['typeid']]['arrid'] == '2') && $_FILES[$name_file]['name']) {
-				require_once QQ3479015851_INC . '/upfile.fun.php';
+				require_once SysGlbCfm_INC . '/upfile.fun.php';
 				$destination = '/document/' . date('Ym') . '/';
 				check_upimage($name_file);
-				$qq3479015851_image = start_upload($name_file, $destination, $qq3479015851_global['cfg_upimg_watermark'], $qq3479015851_qq3479015851['cfg_normal_limit']['width'], $qq3479015851_qq3479015851['cfg_normal_limit']['height'], $imgpath, $pre_imgpath);
-				$imgpath = $qq3479015851_image[0];
-				$pre_imgpath = $qq3479015851_image[1];
+				$SystemGlobalcfm_image = start_upload($name_file, $destination, $SystemGlobalcfm_global['cfg_upimg_watermark'], $SystemGlobalcfm_qq3479015851['cfg_normal_limit']['width'], $SystemGlobalcfm_qq3479015851['cfg_normal_limit']['height'], $imgpath, $pre_imgpath);
+				$imgpath = $SystemGlobalcfm_image[0];
+				$pre_imgpath = $SystemGlobalcfm_image[1];
 				$db->query('UPDATE `' . $db_qq3479015851 . 'member_docu` SET title = \'' . $title . '\',content = \'' . $content . '\',author = \'' . $author . '\', source = \'' . $source . '\' ,pubtime = \'' . $timestamp . '\' ,imgpath = \'' . $imgpath . '\' , pre_imgpath = \'' . $pre_imgpath . '\' ' . $where . ' AND id = \'' . $id . '\'');
 			}
 			else {
@@ -101,8 +100,8 @@ if (submit_check('document_submit')) {
 			}
 
 			foreach ($delete as $k => $v ) {
-				@unlink(QQ3479015851_ROOT . $v['imgpath']);
-				@unlink(QQ3479015851_ROOT . $v['pre_imgpath']);
+				@unlink(SysGlbCfm_ROOT . $v['imgpath']);
+				@unlink(SysGlbCfm_ROOT . $v['pre_imgpath']);
 			}
 
 			$db->query('DELETE FROM `' . $db_qq3479015851 . 'member_docu` ' . $where . ' AND id ' . $create_in);

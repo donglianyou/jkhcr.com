@@ -7,18 +7,17 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('IN_SMT',true);
 define('CURSCRIPT','coupon');
-define('QQ3479015851',TRUE);
+define('SysGlbCfm',TRUE);
 define('DIR_NAV',dirname(__FILE__));
 
 require_once DIR_NAV.'/include/global.php';
-require_once QQ3479015851_DATA."/config.php";
-require_once QQ3479015851_DATA."/config.db.php";
-require_once QQ3479015851_INC."/db.class.php";
+require_once SysGlbCfm_DATA."/config.php";
+require_once SysGlbCfm_DATA."/config.db.php";
+require_once SysGlbCfm_INC."/db.class.php";
 
 ifsiteopen();
 
@@ -34,9 +33,9 @@ if(!in_array($orderby,array('prints','dateline','hit'))) $orderby = 'hit';
 
 $city = get_city_caches($cityid);
 /*自动补充总站数据start*/
-if($qq3479015851_global['cfg_independency'] && $cityid){
+if($SystemGlobalcfm_global['cfg_independency'] && $cityid){
 	$maincity = get_city_caches(0);
-	$independency = explode(',',$qq3479015851_global['cfg_independency']);
+	$independency = explode(',',$SystemGlobalcfm_global['cfg_independency']);
 	$independency = is_array($independency) ? $independency : array();
 	if(in_array('advertisement',$independency)){
 		$city['advertisement'] = empty($city['advertisement']) ? $maincity['advertisement'] : $city['advertisement'];
@@ -169,11 +168,11 @@ if($id) {
 is_object($db) && $db->Close();
 
 function get_coupon_location($cate_id=0,$str=''){
-	global $db,$db_qq3479015851,$couponclass,$areaid,$areaname,$qq3479015851_global,$city;
+	global $db,$db_qq3479015851,$couponclass,$areaid,$areaname,$SystemGlobalcfm_global,$city;
 	
-	$raquo = $qq3479015851_global['cfg_raquo'];
-	$location   = '当前位置：<a href="'.$qq3479015851_global['SiteUrl'].'">'.$city['cityname'].$GLOBALS['qq3479015851_global']['SiteName'].'</a>'.' <code>'.$raquo.'</code> '.' <a href="'.plugin_url(CURSCRIPT,array('cate_id'=>0)).'">'.$city[cityname].'优惠券</a>';
-	$page_title = $city['cityname'].'优惠券 - '.$qq3479015851_global['SiteName'];
+	$raquo = $SystemGlobalcfm_global['cfg_raquo'];
+	$location   = '当前位置：<a href="'.$SystemGlobalcfm_global['SiteUrl'].'">'.$city['cityname'].$GLOBALS['qq3479015851_global']['SiteName'].'</a>'.' <code>'.$raquo.'</code> '.' <a href="'.plugin_url(CURSCRIPT,array('cate_id'=>0)).'">'.$city[cityname].'优惠券</a>';
+	$page_title = $city['cityname'].'优惠券 - '.$SystemGlobalcfm_global['SiteName'];
 	
 	if(!empty($cate_id)){
 		$page_title =  htmlspecialchars($couponclass[$cate_id]['cate_name']) . ' - ' . $page_title;
@@ -181,7 +180,7 @@ function get_coupon_location($cate_id=0,$str=''){
 		htmlspecialchars($couponclass[$cate_id]['cate_name']).'</a>';
 	}
 	
-	$areaname = $qq3479015851_global['SiteCity'].($areaid ? get_areaname($areaid) : '');
+	$areaname = $SystemGlobalcfm_global['SiteCity'].($areaid ? get_areaname($areaid) : '');
 	$page_title = $areaname.$page_title;
 	
 	if (!empty($str)){

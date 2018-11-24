@@ -12,17 +12,17 @@
 `*/
 function get_special_subject( $arr = "" )
 {
-				require_once( QQ3479015851_DATA."/info_special.inc.php" );
+				require_once( SysGlbCfm_DATA."/info_special.inc.php" );
 				foreach ( $specialarray as $key => $val )
 				{
-								$qq3479015851 .= "<label for=\"".$key."\">";
-								$qq3479015851 .= "<input class=\"checkbox\" ";
-								$qq3479015851 .= is_array( $arr ) ? in_array( $key, $arr ) ? "checked " : "" : "";
-								$qq3479015851 .= "type=\"checkbox\" name=\"parameter[special][]\" value=\"".$key."\" id=\"".$key."\">".$val;
-								$qq3479015851 .= "</label>";
-								$qq3479015851 .= in_array( $key, array( 3, 6 ) ) ? "<hr style=\"height:1px; border:1px #C5D8E8 solid;\">" : "";
+								$SystemGlobalcfm .= "<label for=\"".$key."\">";
+								$SystemGlobalcfm .= "<input class=\"checkbox\" ";
+								$SystemGlobalcfm .= is_array( $arr ) ? in_array( $key, $arr ) ? "checked " : "" : "";
+								$SystemGlobalcfm .= "type=\"checkbox\" name=\"parameter[special][]\" value=\"".$key."\" id=\"".$key."\">".$val;
+								$SystemGlobalcfm .= "</label>";
+								$SystemGlobalcfm .= in_array( $key, array( 3, 6 ) ) ? "<hr style=\"height:1px; border:1px #C5D8E8 solid;\">" : "";
 				}
-				return $qq3479015851;
+				return $SystemGlobalcfm;
 }
 
 function get_special_news( $arr = "" )
@@ -32,13 +32,13 @@ function get_special_news( $arr = "" )
 				$specialarray[2] = "图片新闻";
 				foreach ( $specialarray as $key => $val )
 				{
-								$qq3479015851 .= "<label for=\"".$key."\">";
-								$qq3479015851 .= "<input class=\"checkbox\" ";
-								$qq3479015851 .= is_array( $arr ) ? in_array( $key, $arr ) ? "checked " : "" : "";
-								$qq3479015851 .= "type=\"checkbox\" name=\"parameter[special][]\" value=\"".$key."\" id=\"".$key."\">".$val;
-								$qq3479015851 .= "</label>";
+								$SystemGlobalcfm .= "<label for=\"".$key."\">";
+								$SystemGlobalcfm .= "<input class=\"checkbox\" ";
+								$SystemGlobalcfm .= is_array( $arr ) ? in_array( $key, $arr ) ? "checked " : "" : "";
+								$SystemGlobalcfm .= "type=\"checkbox\" name=\"parameter[special][]\" value=\"".$key."\" id=\"".$key."\">".$val;
+								$SystemGlobalcfm .= "</label>";
 				}
-				return $qq3479015851;
+				return $SystemGlobalcfm;
 }
 
 function get_special_store( $arr = "" )
@@ -49,13 +49,13 @@ function get_special_store( $arr = "" )
 				$specialarray[3] = "执照认证商家";
 				foreach ( $specialarray as $key => $val )
 				{
-								$qq3479015851 .= "<label for=\"".$key."\">";
-								$qq3479015851 .= "<input class=\"checkbox\" ";
-								$qq3479015851 .= is_array( $arr ) ? in_array( $key, $arr ) ? "checked " : "" : "";
-								$qq3479015851 .= "type=\"checkbox\" name=\"parameter[special][]\" value=\"".$key."\" id=\"".$key."\">".$val;
-								$qq3479015851 .= "</label>";
+								$SystemGlobalcfm .= "<label for=\"".$key."\">";
+								$SystemGlobalcfm .= "<input class=\"checkbox\" ";
+								$SystemGlobalcfm .= is_array( $arr ) ? in_array( $key, $arr ) ? "checked " : "" : "";
+								$SystemGlobalcfm .= "type=\"checkbox\" name=\"parameter[special][]\" value=\"".$key."\" id=\"".$key."\">".$val;
+								$SystemGlobalcfm .= "</label>";
 				}
-				return $qq3479015851;
+				return $SystemGlobalcfm;
 }
 
 function get_special_goods( $arr = "" )
@@ -64,22 +64,22 @@ function get_special_goods( $arr = "" )
 				$specialarray[1] = "推荐商品";
 				$specialarray[2] = "热卖商品";
 				$specialarray[3] = "促销商品";
-				$qq3479015851 = "<select name=\"parameter[special][]\" class=\"select\">";
-				$qq3479015851 .= "<option value=\"\">不限类型</option>";
+				$SystemGlobalcfm = "<select name=\"parameter[special][]\" class=\"select\">";
+				$SystemGlobalcfm .= "<option value=\"\">不限类型</option>";
 				foreach ( $specialarray as $key => $val )
 				{
-								$qq3479015851 .= "<option value=\"".$key."\"";
-								$qq3479015851 .= is_array( $arr ) ? in_array( $key, $arr ) ? "checked " : "" : "";
-								$qq3479015851 .= "  >".$val;
-								$qq3479015851 .= "</option>";
+								$SystemGlobalcfm .= "<option value=\"".$key."\"";
+								$SystemGlobalcfm .= is_array( $arr ) ? in_array( $key, $arr ) ? "checked " : "" : "";
+								$SystemGlobalcfm .= "  >".$val;
+								$SystemGlobalcfm .= "</option>";
 				}
-				$qq3479015851 .= "</select>";
-				return $qq3479015851;
+				$SystemGlobalcfm .= "</select>";
+				return $SystemGlobalcfm;
 }
 
 define( "CURSCRIPT", "jswizard" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 require_once( dirname( __FILE__ )."/include/customtype.inc.php" );
 if ( $admin_cityid )
 {
@@ -87,7 +87,7 @@ if ( $admin_cityid )
 }
 $part = $part ? trim( $part ) : "default";
 $action = $action ? trim( $action ) : "";
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }
@@ -202,5 +202,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$qq3479015851_global = $db = $db_qq3479015851 = $part = NULL;
+$SystemGlobalcfm_global = $db = $db_qq3479015851 = $part = NULL;
 ?>

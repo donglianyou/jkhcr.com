@@ -1,5 +1,5 @@
 <?=qq3479015851_admin_tpl_global_head();?>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
     <td><strong><?=$nav_path?></strong></td>

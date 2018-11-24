@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 function get_coupon_class()
 {
@@ -40,17 +39,17 @@ function get_couponclass_select($formname = 'cate_id', $cate_id = '', $ifselect 
 	global $db;
 	global $db_qq3479015851;
 	$data = get_coupon_class();
-	$qq3479015851 .= ($ifselect == 'yes' ? '<select name="' . $formname . '" id="' . $formname . '">' : '');
+	$SystemGlobalcfm .= ($ifselect == 'yes' ? '<select name="' . $formname . '" id="' . $formname . '">' : '');
 
 	foreach ($data as $k => $v ) {
-		$qq3479015851 .= '<option value="' . $v[cate_id] . '"';
-		$qq3479015851 .= ($cate_id == $v['cate_id'] ? ' selected style="background-color:#6EB00C;color:white"' : '');
-		$qq3479015851 .= '>' . $v[cate_name] . '</option>';
+		$SystemGlobalcfm .= '<option value="' . $v[cate_id] . '"';
+		$SystemGlobalcfm .= ($cate_id == $v['cate_id'] ? ' selected style="background-color:#6EB00C;color:white"' : '');
+		$SystemGlobalcfm .= '>' . $v[cate_name] . '</option>';
 	}
 
-	$qq3479015851 .= ($ifselect == 'yes' ? '</select>' : '');
+	$SystemGlobalcfm .= ($ifselect == 'yes' ? '</select>' : '');
 	unset($data);
-	return $qq3479015851;
+	return $SystemGlobalcfm;
 }
 
 

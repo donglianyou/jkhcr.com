@@ -3,7 +3,7 @@
 <script language="javascript" src="template/javascript.js"></script>
 
 </head>
-<body class="<?php echo $qq3479015851_global['cfg_tpl_dir']; ?>">
+<body class="<?php echo $SystemGlobalcfm_global['cfg_tpl_dir']; ?>">
 <div class="container">
 
 	<?php include qq3479015851_tpl('inc_head');?>
@@ -17,7 +17,7 @@
                             <div class="pwrap">
     <div class="phead"><div class="phead-inner"><div class="phead-inner">
         <h3 class="ptitle"><span>我发布的分类信息</span></h3>
-        <p class="pextra addwebsite"><a href="../<?php echo $qq3479015851_global['cfg_postfile']; ?>" target="_blank"><span>发布分类信息</span></a></p>
+        <p class="pextra addwebsite"><a href="../<?php echo $SystemGlobalcfm_global['cfg_postfile']; ?>" target="_blank"><span>发布分类信息</span></a></p>
     </div></div></div>
     <div class="pbody">
 
@@ -42,7 +42,7 @@
 				<table width="100%" border="0" cellspacing="0" cellpadding="0" class="xinfabu prico">
 	  <tr class="xintit">
 	    <td colspan="3">
-			<span class="czfr"><?php if($art['info_level'] > 0){?><a href="<?php echo $qq3479015851_global['cfg_postfile'] ? '../'.$qq3479015851_global['cfg_postfile'] : '../post.php'?>?action=edit&id=<?=$art[id]?>" target="_blank">修改</a> | <?php }?>
+			<span class="czfr"><?php if($art['info_level'] > 0){?><a href="<?php echo $SystemGlobalcfm_global['cfg_postfile'] ? '../'.$SystemGlobalcfm_global['cfg_postfile'] : '../post.php'?>?action=edit&id=<?=$art[id]?>" target="_blank">修改</a> | <?php }?>
 			<a href="?m=info&ac=del&id=<?php echo $art['id']; ?>&l=<?php echo $l;?>&page=<?php echo $page;?>" onClick="if(!confirm('您确定要删除这条信息吗?一旦删除将不可恢复'))return false;">删除</a>
 			</span>
  		   	<span class="xthpic"></span>
@@ -66,7 +66,7 @@
 			<?php if($art['info_level'] < 1){?>
 			<span class="examine"></span><b class="f14 red_f6">审核中</b><br />
 			<p class="xsitxt">审核通过后即可自动正常显示，如不放心可稍后回来再看一下。</p>
-			<?}elseif($art['endtime'] < $timestamp && $art['endtime'] && $qq3479015851_global['cfg_info_if_gq'] != 1){?>
+			<?}elseif($art['endtime'] < $timestamp && $art['endtime'] && $SystemGlobalcfm_global['cfg_info_if_gq'] != 1){?>
 			<span class="examine"></span><b class="f14 red_f6">显示中</b><br />
 			<p class="xsitxt" >信息联系方式关闭，可使用刷新功能重新发布。</p>
 			<?php }else{?>
@@ -86,16 +86,16 @@
    			 <td class="w1">
 			 <?php if($art['info_level'] > 0){?>
 			 <span class="refresh">
-			 <a  <?php if(mgetcookie('refreshed'.$art['id']) != 1){ ?> onClick="<?php if($qq3479015851_global['cfg_member_info_refresh']>0){?>if(!confirm('您当前拥有金币<?php echo $money_own; ?>个，刷新该信息将扣除您<?php echo $qq3479015851_global['cfg_member_info_refresh']; ?>个金币'))return false;<? }?>" <?php }else{?> onClick="alert('该信息已被刷新过了，不能重复刷新。');return false;" <?php }?> title='刷新后信息靠前显示，相当于新发一条。' href="?m=info&ac=refresh&id=<?=$art[id]?>">刷新</a>
+			 <a  <?php if(mgetcookie('refreshed'.$art['id']) != 1){ ?> onClick="<?php if($SystemGlobalcfm_global['cfg_member_info_refresh']>0){?>if(!confirm('您当前拥有金币<?php echo $money_own; ?>个，刷新该信息将扣除您<?php echo $SystemGlobalcfm_global['cfg_member_info_refresh']; ?>个金币'))return false;<? }?>" <?php }else{?> onClick="alert('该信息已被刷新过了，不能重复刷新。');return false;" <?php }?> title='刷新后信息靠前显示，相当于新发一条。' href="?m=info&ac=refresh&id=<?=$art[id]?>">刷新</a>
 			 </span>
 			 <span class="extension" >
-			 <a <?php if($art['ifbold'] == 1){?>onClick="alert('该信息的信息标题已被加粗过了，不能重复加粗。');return false;"<?php }else{?> onClick="if(!confirm('您当前拥有金币<?php echo $money_own; ?>个，加粗该信息标题将扣除您<?php echo $qq3479015851_global['cfg_member_info_bold']; ?>个金币'))return false;" <?php }?>href="?m=info&ac=bold&id=<?=$art[id]?>&page=<?=$page?>">加粗</a>
+			 <a <?php if($art['ifbold'] == 1){?>onClick="alert('该信息的信息标题已被加粗过了，不能重复加粗。');return false;"<?php }else{?> onClick="if(!confirm('您当前拥有金币<?php echo $money_own; ?>个，加粗该信息标题将扣除您<?php echo $SystemGlobalcfm_global['cfg_member_info_bold']; ?>个金币'))return false;" <?php }?>href="?m=info&ac=bold&id=<?=$art[id]?>&page=<?=$page?>">加粗</a>
 	</span><br />	
 	<span class="sticky" >
 		<a href="?m=info&ac=upgrade&id=<?=$art[id]?>">置顶</a>
 	</span>
 	<span class="extension precision" >
-		<a class="on" <?php if($art['ifred'] == 1){?>onClick="alert('该信息的信息标题已被套红过了，不能重复套红。');return false;"<?php }else{?>onClick="if(!confirm('您当前拥有金币<?php echo $money_own; ?>个，套红该信息标题将扣除您<?php echo $qq3479015851_global['cfg_member_info_red']; ?>个金币'))return false;"<?php }?> href="?m=info&ac=red&id=<?=$art[id]?>&page=<?=$page?>">套红</a>
+		<a class="on" <?php if($art['ifred'] == 1){?>onClick="alert('该信息的信息标题已被套红过了，不能重复套红。');return false;"<?php }else{?>onClick="if(!confirm('您当前拥有金币<?php echo $money_own; ?>个，套红该信息标题将扣除您<?php echo $SystemGlobalcfm_global['cfg_member_info_red']; ?>个金币'))return false;"<?php }?> href="?m=info&ac=red&id=<?=$art[id]?>&page=<?=$page?>">套红</a>
 	</span>	
 		  <?php }?>
 		  </td>

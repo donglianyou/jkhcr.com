@@ -7,12 +7,11 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define( "CURSCRIPT", "site_about" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 if ( $admin_cityid )
 {
 				write_msg( "您没有权限访问该页！" );
@@ -24,7 +23,7 @@ if ( !in_array( $part, array( "list", "edit" ) ) )
 if ( !submit_check( CURSCRIPT."_submit" ) )
 {
 				chk_admin_purview( "purview_栏目设置" );
-				require_once( QQ3479015851_DATA."/html_type.inc.php" );
+				require_once( SysGlbCfm_DATA."/html_type.inc.php" );
 				$about = $db->getRow( "SELECT * FROM ".$db_qq3479015851."about WHERE id = '".$id."'" );
 				$acontent = $id ? get_editor( "content", "Default", $about['content'] ) : get_editor( "content", "Default", "" );
 				$about[displayorder] = $id ? $about[displayorder] : $db->getOne( "SELECT max(displayorder) FROM `".$db_qq3479015851."about` " ) + 1;
@@ -82,5 +81,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$qq3479015851_global = $db = $db_qq3479015851 = $part = NULL;
+$SystemGlobalcfm_global = $db = $db_qq3479015851 = $part = NULL;
 ?>

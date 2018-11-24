@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://www.mymps.com.cn/doc/demo-goods.html -->
+<html><style type="text/css" id="2874124017"></style><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<meta charset="gbk">
+
+<title>调用示例 - Mymps模板制作/标签/参考手册 - 更多蚂蚁分类工具请进入QQ群:201809840</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./商品调用_files/jquery-1.9.1.min.js"></script>
+<link href="./商品调用_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./商品调用_files/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="./商品调用_files/docs.css" rel="stylesheet">
+<link href="./商品调用_files/prettify.css" rel="stylesheet">
+<!--[if lt IE 9]>
+  <script src="/assets/js/html5shiv.js"></script>
+<![endif]-->
+<style>
+.span9 h4{text-indent:2em;text-align:left;}
+.span9 p{text-indent:2em;text-align:left;}
+</style><script type="text/javascript" src="./商品调用_files/noerr.js"></script><script type="text/javascript" src="./商品调用_files/noright.js"></script><style>
+.code { font-family: Courier, Courier New; font-weight: normal; color:#000; font-size:12px;}
+</style><script type="text/javascript">
+function showb(i){
+	var a1 = document.getElementById('a1');
+	var a2 = document.getElementById('a2');
+	var ba1 = document.getElementById('ba1');
+	var ba2 = document.getElementById('ba2');
+	var a = document.getElementById(i);
+	var b = document.getElementById('b'+i);
+	a1.className='';
+	a2.className='';
+	ba1.style.display='none';
+	ba2.style.display='none';
+	a.className='active';
+	b.style.display='';
+}
+</script></head>
+
+
+
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="50">
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+        	            <li>
+              <a href="http://www.mymps.com.cn/doc/article.html">使用教程_QQ群:201809840</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/index.html">模板基础</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/structure.html">模板目录结构</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/grammer.html">标签语法</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/base.html">基本标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/senior.html">高级标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/diy.html">自定义标签</a>
+            </li>
+                        <li class="active">
+              <a href="http://www.mymps.com.cn/doc/demo.html">调用示例</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/db.html">数据字典</a>
+            </li>
+                    </ul>
+      </div>
+    </div>
+  </div>
+</div>    <div class="jumbotron subhead" id="overview">
+    <div class="container">
+    <h1>数据调用示例</h1>
+    <p class="lead"> 蚂蚁CMS商品数据调用</p>
+    <div class="subnav">
+    <ul class="nav nav-pills">
+       <li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="http://www.mymps.com.cn/doc/demo-goods.html#">分类信息 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="http://www.mymps.com.cn/doc/demo-info.html">信息调用</a></li>
+<li><a href="http://www.mymps.com.cn/doc/demo-cat.html">分类调用</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="http://www.mymps.com.cn/doc/demo-goods.html#">商家机构 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="http://www.mymps.com.cn/doc/demo-store.html">机构调用</a></li>
+<li><a href="http://www.mymps.com.cn/doc/demo-docu.html">机构文章</a></li>
+<li><a href="http://www.mymps.com.cn/doc/demo-corp.html">机构分类</a></li>
+</ul>
+</li>
+
+<li><a href="http://www.mymps.com.cn/doc/demo-navigation.html">导航调用</a></li>
+
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="http://www.mymps.com.cn/doc/demo-goods.html#">插件调用<b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="http://www.mymps.com.cn/doc/demo-news.html">新闻</a></li>
+<li class="active"><a href="./商品调用_files/商品调用.html">商品</a></li>
+<li><a href="http://www.mymps.com.cn/doc/demo-group.html">团购</a></li>
+</ul>
+</li>
+
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="http://www.mymps.com.cn/doc/demo-goods.html#">站务 <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="http://www.mymps.com.cn/doc/demo-focus.html">焦点图</a></li>
+<li><a href="http://www.mymps.com.cn/doc/demo-announce.html">网站公告</a></li>
+<li><a href="http://www.mymps.com.cn/doc/demo-faq.html">网站帮助</a></li>
+<li><a href="http://www.mymps.com.cn/doc/demo-friendlink.html">友情链接</a></li>
+</ul>
+</li>    </ul>
+    </div>
+    </div>
+    </div>
+    <div class="container">
+    <div class="row">
+    <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav affix-top">
+          <li class="active" id="a2"><a href="javascript:void(0);" onclick="showb(&#39;a2&#39;);"><i class="icon-chevron-right"></i> 过滤条件说明</a></li>
+          <li id="a1"><a href="javascript:void(0);" onclick="showb(&#39;a1&#39;);"><i class="icon-chevron-right"></i> 调用实例</a></li>
+        </ul>
+      </div>
+    <div class="span9">
+    <p>&nbsp;</p>
+    <div id="ba1" style="display:none">
+        <p>范例一：调用10条商品信息</p>
+        <div class="well code">
+        {php $goods = mymps_get_goods();}<br>
+        </div>
+        <p>范例二：调用9条当前分站下的促销商品</p>
+        <div class="well code">
+        {php $goods = mymps_get_goods(9,NULL,'cuxiao',NULL,NULL,NULL,$city[cityid]);}<br>
+        </div>
+        <div class="well code">
+        数据循环输出<br>
+        {loop $goods $mymps}<br>
+        	&nbsp;&nbsp;&nbsp;{$mymps[goodsid]}输出商品编号<br>
+            &nbsp;&nbsp;&nbsp;{$mymps[goodsname]}输出商品名称<br>
+            &nbsp;&nbsp;&nbsp;{$mymps[uri]}输出商品URL链接<br>
+            &nbsp;&nbsp;&nbsp;{$mymps[content]}输出商品内容介绍<br>
+            &nbsp;&nbsp;&nbsp;{$mymps_global[SiteUrl]}/{$mymps[pre_picture]}输出商品缩略图<br>
+            &nbsp;&nbsp;&nbsp;{$mymps[nowprice]}输出商品原价<br>
+            &nbsp;&nbsp;&nbsp;{$mymps[nowprice]}输出商品售价<br>
+        {/loop}
+        </div>
+    </div>
+    <div id="ba2">
+        <div class="well code">
+            mymps_get_goods($num,$onsale,$shuxing,$catid,$userid,$orderby,$cityid)
+        </div>
+        <table class="table table-striped table-hover table-bordered">
+        <tbody>
+        <tr class="info thead">
+        <td>参数名</td>
+        <td>代表意义</td>
+        <td>可调用值</td>
+        <td>默认值/为NULL时</td>
+        </tr>
+        <tr>
+        <td>$num</td>
+        <td>显示数目</td>
+        <td></td>
+        <td>10条</td>
+        </tr>
+        <tr>
+        <td>$onsale</td>
+        <td>是否上架商品</td>
+        <td>=1已上架商品</td>
+        <td>不过滤</td>
+        </tr>
+        <tr>
+        <td>$shuxing</td>
+        <td>商品属性</td>
+        <td>=cuxiao促销商品<br>=remai热卖商品<br>=tuijian推荐商品</td>
+        <td>不过滤</td>
+        </tr>
+        <tr>
+        <td>$catid</td>
+        <td>所属商品分类</td>
+        <td></td>
+        <td>不过滤</td>
+        </tr>
+        <tr>
+        <td>$userid</td>
+        <td>所属商家用户名</td>
+        <td></td>
+        <td>不过滤</td>
+        </tr>
+        <tr>
+        <td>$orderby</td>
+        <td>排序方式</td>
+        <td>=1按发布时间排序<br>=0按浏览次数排序</td>
+        <td>按发布时间排序</td>
+        </tr>
+        <tr>
+        <td>$cityid</td>
+        <td>所属分站</td>
+        <td></td>
+        <td>不过滤</td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="footer">
+  <div class="container">
+    <p class="center">更多蚂蚁分类工具请进入QQ群:201809840</p>
+
+    <ul class="footer-links">
+      <li><a href="http://www.mymps.com.cn/" target="_blank">蚂蚁分类信息系统官网</a></li>
+      <li><a href="http://bbs.mymps.com.cn/">蚂蚁论坛</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<script src="./商品调用_files/bootstrap.min.js" language="javascript" type="text/javascript"></script>
+<script src="./商品调用_files/prettify.js"></script>
+<script src="./商品调用_files/application.js"></script>
+</body></html>

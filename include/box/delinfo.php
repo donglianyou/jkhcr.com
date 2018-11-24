@@ -7,17 +7,16 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-!(defined('QQ3479015851')) && exit('FORBIDDEN');
-define('QQ3479015851', true);
-define('MEMBERDIR', QQ3479015851_ROOT . '/member');
-require_once QQ3479015851_INC . '/cache.fun.php';
-require_once QQ3479015851_INC . '/class.fun.php';
-require_once QQ3479015851_DATA . '/config.db.php';
-require_once QQ3479015851_INC . '/db.class.php';
-require_once QQ3479015851_INC . '/member.class.php';
+!(defined('SysGlbCfm')) && exit('FORBIDDEN');
+define('SysGlbCfm', true);
+define('MEMBERDIR', SysGlbCfm_ROOT . '/member');
+require_once SysGlbCfm_INC . '/cache.fun.php';
+require_once SysGlbCfm_INC . '/class.fun.php';
+require_once SysGlbCfm_DATA . '/config.db.php';
+require_once SysGlbCfm_INC . '/db.class.php';
+require_once SysGlbCfm_INC . '/member.class.php';
 
 if (!($id)) {
 	write_msg('删除的信息主题ID不能为空！');
@@ -30,7 +29,7 @@ if (!($infoid = $db->getOne('SELECT id FROM `' . $db_qq3479015851 . 'information
 $post = is_member_info($id);
 $manage_pwd = (isset($_POST['manage_pwd']) ? trim($_POST['manage_pwd']) : '');
 if (empty($manage_pwd) && !($post['ismember'])) {
-	include QQ3479015851_ROOT . '/template/box/info_write_pwd.html';
+	include SysGlbCfm_ROOT . '/template/box/info_write_pwd.html';
 }
 else {
 	if (!(empty($manage_pwd)) || ($post['ismember'] == 1)) {
@@ -40,11 +39,11 @@ else {
 
 		if ($post['ismember'] == 1) {
 			if (!($member_log->chk_in())) {
-				@include QQ3479015851_DATA . '/caches/authcodesettings.php';
+				@include SysGlbCfm_DATA . '/caches/authcodesettings.php';
 				$authcodesettings = $data;
 				$data = NULL;
 				$gourl = 'delinfo';
-				include QQ3479015851_ROOT . '/template/box/login.html';
+				include SysGlbCfm_ROOT . '/template/box/login.html';
 				$authcodesettings = NULL;
 				exit();
 			}
@@ -58,8 +57,8 @@ else {
 
 		if (is_array($image)) {
 			foreach ($image as $k => $v ) {
-				@unlink(QQ3479015851_ROOT . $v['prepath']);
-				@unlink(QQ3479015851_ROOT . $v['path']);
+				@unlink(SysGlbCfm_ROOT . $v['prepath']);
+				@unlink(SysGlbCfm_ROOT . $v['path']);
 				qq3479015851_delete('info_img', 'WHERE id = ' . $v['id']);
 			}
 		}
@@ -69,7 +68,7 @@ else {
 		}
 
 		qq3479015851_delete('information', 'WHERE id = \'' . $id . '\'');
-		$url = ($post['ismember'] == 1 ? $qq3479015851_global['SiteUrl'] . '/member/index.php?m=info' : $qq3479015851_global['SiteUrl']);
+		$url = ($post['ismember'] == 1 ? $SystemGlobalcfm_global['SiteUrl'] . '/member/index.php?m=info' : $SystemGlobalcfm_global['SiteUrl']);
 		write_msg('成功删除编号为 ' . $id . ' 的信息主题！<br /><br /><input value="关闭窗口" type="button" onclick="parent.location.href=\'' . $url . '\';parent.closeopendiv();" style=\'margin-left:auto;margin-right:auto;\' class=\'blue\'>', olmsg);
 	}
 }

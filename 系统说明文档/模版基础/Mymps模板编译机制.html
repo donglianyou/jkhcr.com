@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://www.mymps.com.cn/doc/index-compile.html -->
+<html><style type="text/css" id="2517905709"></style><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<meta charset="gbk">
+
+<title>Mymps模板编译机制 - 起步 - Mymps模板制作/标签/参考手册 - 更多蚂蚁分类工具请进入QQ群:200641831</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="./Mymps模板编译机制_files/jquery-1.9.1.min.js"></script>
+<link href="./Mymps模板编译机制_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./Mymps模板编译机制_files/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+<link href="./Mymps模板编译机制_files/docs.css" rel="stylesheet">
+<link href="./Mymps模板编译机制_files/prettify.css" rel="stylesheet">
+<!--[if lt IE 9]>
+  <script src="/assets/js/html5shiv.js"></script>
+<![endif]-->
+<style>
+.span9 h4{text-indent:2em;text-align:left;}
+.span9 p{text-indent:2em;text-align:left;}
+</style><script type="text/javascript" src="./Mymps模板编译机制_files/noerr.js"></script><script type="text/javascript" src="./Mymps模板编译机制_files/noright.js"></script><style>
+.code { font-family: Courier, Courier New; font-weight: normal; color:#000; font-size:12px;}
+</style></head>
+
+
+
+<body data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="50">
+  
+  <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+        	            <li>
+              <a href="http://www.mymps.com.cn/doc/article.html">使用教程_QQ群:200641831</a>
+            </li>
+                        <li class="active">
+              <a href="http://www.mymps.com.cn/doc/index.html">模板基础</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/structure.html">模板目录结构</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/grammer.html">标签语法</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/base.html">基本标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/senior.html">高级标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/diy.html">自定义标签</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/demo.html">调用示例</a>
+            </li>
+                        <li>
+              <a href="http://www.mymps.com.cn/doc/db.html">数据字典</a>
+            </li>
+                    </ul>
+      </div>
+    </div>
+  </div>
+</div>  <div class="jumbotron subhead" id="overview">
+    <div class="container">
+      <h1>起步</h1>
+      <p class="lead">
+        蚂蚁CMS模板语言基础
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav affix-top">
+		            <li><a href="http://www.mymps.com.cn/doc/index.html"><i class="icon-chevron-right"></i> 前言介绍</a></li>
+                    <li><a href="http://www.mymps.com.cn/doc/index-html.html"><i class="icon-chevron-right"></i> HTML书写规范</a></li>
+                    <li class="active"><a href="./Mymps模板编译机制_files/Mymps模板编译机制.html"><i class="icon-chevron-right"></i> Mymps模板编译机制</a></li>
+                  </ul>
+      </div>
+      <div class="span9">
+
+        <section>
+        <div class="page-header">
+            <h1>Mymps模板编译机制</h1>
+            </div>
+			                <p>模板编译文件存放：所有的模板编译文件均被解析成 php 文件存放在 /data/templates 中, 以 “数字_模板标示符组合.tpl.php”形式保存。</p>
+                <p>页面缓存刷新原理：当开发者编辑过模板文件之后, Mymps模板解析器会匹配模板 html 文件与缓存 php 文件的最后修改时间, 如若模板 html 文件较新或无缓存文件, 则更新或生成缓存, 否则不采取任何动作。</p>
+                <p>手动删除/data/templates下的编译文件不会影响Mymps系统的整体运行, Mymps模板缓存仍然会进行自动生成。
+                </p>
+                    </section>
+
+      </div>
+    </div>
+
+  </div>
+    <div class="footer">
+  <div class="container">
+    <p class="center">更多蚂蚁分类工具请进入QQ群:200641831</p>
+
+    <ul class="footer-links">
+      <li><a href="http://www.mymps.com.cn/" target="_blank">蚂蚁分类信息系统官网</a></li>
+      <li><a href="http://bbs.mymps.com.cn/">蚂蚁论坛</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<script src="./Mymps模板编译机制_files/bootstrap.min.js" language="javascript" type="text/javascript"></script>
+<script src="./Mymps模板编译机制_files/prettify.js"></script>
+<script src="./Mymps模板编译机制_files/application.js"></script>
+</body></html>

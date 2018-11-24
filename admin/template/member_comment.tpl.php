@@ -9,7 +9,7 @@
 </style>
 <script type="text/javascript" src="/template/global/messagebox.js"></script>
 <script type="text/javascript" src="js/vbm.js"></script>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -34,7 +34,7 @@
 </div>
 <form name='form1' method='post' action='?'>
 <input name="url" type="hidden" value="<?=GetUrl()?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td width="40">选择</td>
@@ -58,7 +58,7 @@ foreach($comment AS $list)
         <td><div class="start<?=$list[service]?>"></div></td>
         <td><div class="start<?=$list[environment]?>"></div></td>
         <td><div class="start<?=$list[price]?>"></div></td>
-        <td><a href="javascript:setbg('<?=QQ3479015851_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$list[userid]?>')"><?=$list[userid]?></a></td>
+        <td><a href="javascript:setbg('<?=SysGlbCfm_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$list[userid]?>')"><?=$list[userid]?></a></td>
         <td>
         <?php if (empty($list['commentlevel'])) echo '<font color=red>待审</font>'; else echo '<font color=green>正常</font>'?>
         </td>

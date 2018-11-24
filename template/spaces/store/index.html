@@ -3,24 +3,24 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="{$qq3479015851_global[SiteUrl]}/template/default/js/uaredirect.js" type="text/javascript"></script>
-<script type="text/javascript">uaredirect("{$qq3479015851_global[SiteUrl]}/m/index.php?mod=store&id={$store[id]}&action=index");</script>
+<script src="{$SystemGlobalcfm_global[SiteUrl]}/template/default/js/uaredirect.js" type="text/javascript"></script>
+<script type="text/javascript">uaredirect("{$SystemGlobalcfm_global[SiteUrl]}/m/index.php?mod=store&id={$store[id]}&action=index");</script>
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
 <meta http-equiv="keywords" content="{$store[tname]}">
-<title>{$store[tname]}-{$qq3479015851_global[SiteName]}</title>
-<link href="{$qq3479015851_global[SiteUrl]}/template/spaces/store/css/{$store[template]}.css" type="text/css" rel="stylesheet" />
+<title>{$store[tname]}-{$SystemGlobalcfm_global[SiteName]}</title>
+<link href="{$SystemGlobalcfm_global[SiteUrl]}/template/spaces/store/css/{$store[template]}.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 {template header}
 <!--{if $goods}-->
-<link rel="stylesheet" type="text/css" href="{$qq3479015851_global[SiteUrl]}/template/default/css/jquery.lightbox.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="{$SystemGlobalcfm_global[SiteUrl]}/template/default/css/jquery.lightbox.css" media="screen"/>
 <div class="goods">
 	<div class="bd">
 		<ul>
 			<div class="last"><a href="javascript:void(0);" id="LeftArr">左移</a></div>
 			<div class="shop_info" id="ISL_Cont_1">
-				{loop $goods $qq3479015851}
-				<li><a target="_blank" href="{$qq3479015851[uri]}" title="{$qq3479015851[goodsname]}"><img src="{$qq3479015851_global[SiteUrl]}{$qq3479015851[picture]}"/></a><span><a href="{$qq3479015851_global[SiteUrl]}{$qq3479015851[picture]}" title="{$qq3479015851[goodsname]}" target="_blank">{echo cutstr($qq3479015851[goodsname],16)}</a></span><em>&yen;{$qq3479015851[nowprice]}</em></li>
+				{loop $goods $SystemGlobalcfm}
+				<li><a target="_blank" href="{$SystemGlobalcfm[uri]}" title="{$SystemGlobalcfm[goodsname]}"><img src="{$SystemGlobalcfm_global[SiteUrl]}{$SystemGlobalcfm[picture]}"/></a><span><a href="{$SystemGlobalcfm_global[SiteUrl]}{$SystemGlobalcfm[picture]}" title="{$SystemGlobalcfm[goodsname]}" target="_blank">{echo cutstr($SystemGlobalcfm[goodsname],16)}</a></span><em>&yen;{$SystemGlobalcfm[nowprice]}</em></li>
 				{/loop}
 				</div> 
 			<div class="next"><a href="javascript:void(0);" id="RightArr">右移</a></div>
@@ -29,16 +29,16 @@
 </div>
 <div class="clear"></div>
 <!--{elseif $album}-->
-<link rel="stylesheet" type="text/css" href="{$qq3479015851_global[SiteUrl]}/template/default/css/jquery.lightbox.css" media="screen"/>
-<script type="text/javascript" src="{$qq3479015851_global[SiteUrl]}/template/default/js/jquery.lightbox.js"></script>
+<link rel="stylesheet" type="text/css" href="{$SystemGlobalcfm_global[SiteUrl]}/template/default/css/jquery.lightbox.css" media="screen"/>
+<script type="text/javascript" src="{$SystemGlobalcfm_global[SiteUrl]}/template/default/js/jquery.lightbox.js"></script>
 <script type="text/javascript">$(function() {$('#ISL_Cont_1 a').lightBox();});</script>
 <div class="goods">
 	<div class="bd">
 		<ul>
 			<div class="last"><a href="javascript:void(0);" id="LeftArr">左移</a></div>
 			<div class="shop_info" id="ISL_Cont_1">
-				{loop $album $qq3479015851}
-				<li><a href="{$qq3479015851_global[SiteUrl]}{$qq3479015851[path]}" title="{$qq3479015851[title]}"><img src="{$qq3479015851_global[SiteUrl]}{$qq3479015851[prepath]}"/></a><span><a href="{$qq3479015851_global[SiteUrl]}{$qq3479015851[path]}" title="{$qq3479015851[title]}" target="_blank">{echo cutstr($qq3479015851[title],16)}</a></span></li>
+				{loop $album $SystemGlobalcfm}
+				<li><a href="{$SystemGlobalcfm_global[SiteUrl]}{$SystemGlobalcfm[path]}" title="{$SystemGlobalcfm[title]}"><img src="{$SystemGlobalcfm_global[SiteUrl]}{$SystemGlobalcfm[prepath]}"/></a><span><a href="{$SystemGlobalcfm_global[SiteUrl]}{$SystemGlobalcfm[path]}" title="{$SystemGlobalcfm[title]}" target="_blank">{echo cutstr($SystemGlobalcfm[title],16)}</a></span></li>
 				{/loop}
 				</div> 
 			<div class="next"><a href="javascript:void(0);" id="RightArr">右移</a></div>
@@ -66,10 +66,10 @@
                        <th>发布时间</th>
 					   </tr> 
                        {php $course = qq3479015851_get_infos('5',NULL,NULL,$store['userid']);}
-                       {loop $course $qq3479015851}
+                       {loop $course $SystemGlobalcfm}
 					   <tr> 
-					   <td><a href="{$qq3479015851[uri]}" target="_blank">{$qq3479015851[title]}</a></td> 
-                       <td>{echo GetTime($qq3479015851[begintime],'Y-m-d')}</td> 
+					   <td><a href="{$SystemGlobalcfm[uri]}" target="_blank">{$SystemGlobalcfm[title]}</a></td> 
+                       <td>{echo GetTime($SystemGlobalcfm[begintime],'Y-m-d')}</td> 
 					   </tr>
                        {loopelse}
                        <tr> 
@@ -93,10 +93,10 @@
 					   <th align="center">发布时间</th>
 					   </tr>
                        {php $docu_list = get_member_docu('5',$store['userid']);}
-                       {loop $docu_list $qq3479015851}
+                       {loop $docu_list $SystemGlobalcfm}
 					   <tr>
-					   <td><a href="{$qq3479015851[uri]}">{$qq3479015851[title]}</a></td> 
-					   <td align="center">{echo GetTime($qq3479015851[pubtime],'Y-m-d')}</td>
+					   <td><a href="{$SystemGlobalcfm[uri]}">{$SystemGlobalcfm[title]}</a></td> 
+					   <td align="center">{echo GetTime($SystemGlobalcfm[pubtime],'Y-m-d')}</td>
 					   </tr>
                        {loopelse}
                        <tr> 
@@ -111,7 +111,7 @@
 <div class="clear"></div>
 {template footer}
 {if $goods || $album}
-<script src="{$qq3479015851_global[SiteUrl]}/template/spaces/store/js/scrollPic.js" type="text/javascript"></script>
+<script src="{$SystemGlobalcfm_global[SiteUrl]}/template/spaces/store/js/scrollPic.js" type="text/javascript"></script>
 <script type="text/javascript">
 var scrollPic_02 = new ScrollPic();
 scrollPic_02.scrollContId   = "ISL_Cont_1"; //内容容器ID

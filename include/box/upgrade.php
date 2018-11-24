@@ -7,23 +7,22 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-!(defined('QQ3479015851')) && exit('FORBIDDEN');
+!(defined('SysGlbCfm')) && exit('FORBIDDEN');
 
 if (empty($id)) {
 	exit('<center style=\'margin:20px; text-align:left; line-height:23px; color:#585858; font-size:12px\'>无效的分类信息主题！</center>');
 }
 
-require_once QQ3479015851_DATA . '/config.db.php';
-require_once QQ3479015851_INC . '/db.class.php';
-require_once QQ3479015851_DATA . '/info.level.inc.php';
-require_once QQ3479015851_INC . '/member.class.php';
+require_once SysGlbCfm_DATA . '/config.db.php';
+require_once SysGlbCfm_INC . '/db.class.php';
+require_once SysGlbCfm_DATA . '/info.level.inc.php';
+require_once SysGlbCfm_INC . '/member.class.php';
 $log = $member_log->chk_in();
 
 if ($ac == 'actionupgrade') {
-	define('MEMBERDIR', QQ3479015851_ROOT . '/member');
+	define('MEMBERDIR', SysGlbCfm_ROOT . '/member');
 	$where = ' WHERE userid = \'' . $s_uid . '\'';
 	$id = intval($_POST['id']);
 	$catid = intval($_POST['catid']);
@@ -33,7 +32,7 @@ if ($ac == 'actionupgrade') {
 	$iflisttop = intval($_POST['iflisttop']);
 	$ifindextop = intval($_POST['ifindextop']);
 	$money_own = $db->getOne('SELECT money_own FROM `' . $db_qq3479015851 . 'member` WHERE userid = \'' . $s_uid . '\'');
-	include QQ3479015851_ROOT . '/member/include/inc_info.php';
+	include SysGlbCfm_ROOT . '/member/include/inc_info.php';
 }
 else {
 	$row = $db->getRow('SELECT title,ismember,userid,catid,upgrade_type,upgrade_type_index,upgrade_type_list FROM `' . $db_qq3479015851 . 'information` WHERE id = \'' . $id . '\' AND info_level != 0');
@@ -46,7 +45,7 @@ else {
 			$money = $member_log->get_info();
 			$money = $money['money_own'];
 			$catid = $row['catid'];
-			include QQ3479015851_ROOT . '/template/box/' . $part . '.html';
+			include SysGlbCfm_ROOT . '/template/box/' . $part . '.html';
 		}
 		else {
 			if (($row['ismember'] == 1) && $log && ($s_uid != $row['userid'])) {
@@ -54,11 +53,11 @@ else {
 			}
 			else {
 				if (($row['ismember'] == 1) && !($log)) {
-					@include QQ3479015851_DATA . '/caches/authcodesettings.php';
+					@include SysGlbCfm_DATA . '/caches/authcodesettings.php';
 					$authcodesettings = $data;
 					$data = NULL;
 					$catid = $row['catid'];
-					include QQ3479015851_ROOT . '/template/box/login.html';
+					include SysGlbCfm_ROOT . '/template/box/login.html';
 					$authcodesettings = NULL;
 				}
 				else if ($row['ismember'] != 1) {

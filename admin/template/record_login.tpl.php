@@ -1,6 +1,6 @@
 <?php include qq3479015851_tpl('inc_head');?>
 <?php if($do == 'admin'){?>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -27,7 +27,7 @@
      </form>
 	</ul>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <form name='form1' method='post' action='?do=<?=$do?>&part=<?=$part?>' onSubmit='return checkSubmit();'>
     <input type='hidden' name='action' value='delall'/>
@@ -60,7 +60,7 @@ foreach($record AS $k)
     <tr bgcolor="#ffffff" height="28">
     <td align="center" style="border-right:1px #fff solid;"><input name="checkall" type="checkbox" class="checkbox" id="checkall" onClick="CheckAll(this.form)"/></td>
     <td colspan="10"><input type="submit" onClick="if(!confirm('确定要操作吗？\n\n此操作不可以恢复！'))return false;" value="批量删除" class="qq3479015851 mini" <?php if($do == 'admin'){echo "disabled";}?>/>  
-         <input type="button" value="只保存最新的<?=$qq3479015851_qq3479015851['cfg_record_save']?>条记录" class="qq3479015851 mini" onclick="location.href='?do=<?=$do?>&part=<?=$part?>&action=delrecord&url=<?=urlencode(GetUrl())?>'">    
+         <input type="button" value="只保存最新的<?=$SystemGlobalcfm_qq3479015851['cfg_record_save']?>条记录" class="qq3479015851 mini" onclick="location.href='?do=<?=$do?>&part=<?=$part?>&action=delrecord&url=<?=urlencode(GetUrl())?>'">    
     </td>
     </tr>
     </form>

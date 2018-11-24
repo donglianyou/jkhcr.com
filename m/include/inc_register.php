@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 if ( CURSCRIPT != "wap" )
 {
@@ -16,12 +15,12 @@ if ( CURSCRIPT != "wap" )
 }
 if ( $mobile_settings['register'] != 1 )
 {
-				redirectmsg( "本站手机版已关闭注册功能！如需注册，请打开 ".$qq3479015851_global[SiteUrl]." 网页后再进行注册！", "javascript:history.back();" );
+				redirectmsg( "本站手机版已关闭注册功能！如需注册，请打开 ".$SystemGlobalcfm_global[SiteUrl]." 网页后再进行注册！", "javascript:history.back();" );
 }
 $authcodesettings = read_static_cache( "authcodesettings" );
 if ( $action == "register" )
 {
-				include( QQ3479015851_ROOT."/member/include/common.func.php" );
+				include( SysGlbCfm_ROOT."/member/include/common.func.php" );
 				if ( !$mixcode && $mixcode != md5( $cookiepre ) )
 				{
 								redirectmsg( "系统判断您的来路不正确！", "javascript:history.back();" );
@@ -30,7 +29,7 @@ if ( $action == "register" )
 				{
 								redirectmsg( "验证码输入错误，请返回重新输入", "javascript:history.back();" );
 				}
-				if ( $qq3479015851_global['cfg_member_verify'] == 4 )
+				if ( $SystemGlobalcfm_global['cfg_member_verify'] == 4 )
 				{
 								if ( !$mobile )
 								{
@@ -80,7 +79,7 @@ if ( $action == "register" )
 				}
 				if ( PASSPORT_TYPE == "ucenter" )
 				{
-								require( QQ3479015851_ROOT."/uc_client/client.php" );
+								require( SysGlbCfm_ROOT."/uc_client/client.php" );
 								if ( $activation && ( $activeuser = uc_get_user( $activation ) ) )
 								{
 												list( $uid, $userid ) = $activeuser;
@@ -90,7 +89,7 @@ if ( $action == "register" )
 												$user = $db->getRow( "SELECT id,userid FROM `".$db_qq3479015851."member` WHERE userid = '".$userid."'" );
 												if ( uc_get_user( $userid ) && !$user['userid'] )
 												{
-																redirectmsg( "该用户无需注册，请重新登录", $qq3479015851_global[SiteUrl]."/m/index.php?m=login" );
+																redirectmsg( "该用户无需注册，请重新登录", $SystemGlobalcfm_global[SiteUrl]."/m/index.php?m=login" );
 												}
 												$uid = uc_user_register( $userid, $userpwd, $email );
 												if ( $uid <= 0 )
@@ -155,7 +154,7 @@ if ( $action == "register" )
 				{
 								$db->query( "UPDATE `".$db_qq3479015851."member` SET mobile='".$mobile."',money_own = '".$money_own."',score = score".$score_changer." WHERE userid = '".$userid."'" );
 				}
-				if ( $qq3479015851_global['cfg_member_verify'] == 1 || $qq3479015851_global['cfg_member_verify'] == 4 )
+				if ( $SystemGlobalcfm_global['cfg_member_verify'] == 1 || $SystemGlobalcfm_global['cfg_member_verify'] == 4 )
 				{
 								$member_log->in( $userid, md5( $userpwd ), "off", "noredirect" );
 								if ( $reg_corp == 1 )

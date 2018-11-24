@@ -7,18 +7,17 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define( "CURSCRIPT", "friendlink" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 $do = $do ? $do : "link";
 switch ( $do )
 {
 case "link" :
 				$part = $part ? $part : "list";
-				require_once( QQ3479015851_INC."/flink.fun.php" );
+				require_once( SysGlbCfm_INC."/flink.fun.php" );
 				if ( $part == "list" )
 				{
 								chk_admin_purview( "purview_友情链接" );
@@ -166,5 +165,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 ?>

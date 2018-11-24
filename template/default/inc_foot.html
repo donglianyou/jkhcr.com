@@ -1,7 +1,7 @@
 <div id="ad_footerbanner"></div>
 <!--{if $advertisement[type][floatad] || $advertisement[type][couplead]}-->
 <div align="left"  style="clear: both;">
-<script src="{$qq3479015851_global[SiteUrl]}/template/global/floatadv.js" type="text/javascript"></script>
+<script src="{$SystemGlobalcfm_global[SiteUrl]}/template/global/floatadv.js" type="text/javascript"></script>
 <!--{if $advertisement[type][couplead]}-->
 <script type="text/javascript">
 	{$adveritems[$advertisement[type][couplead][0]]}theFloaters.play();
@@ -18,20 +18,20 @@
 <!--{if $advertisement[type][headerbanner]}-->
 <div class="header" id="ad_header_none">
 {php $countheaderbanner = count($advertisement[type][headerbanner]);$i=1;}
-<!--{loop $advertisement['type']['headerbanner'] $qq3479015851}-->
-<!--{if {$adveritems[$qq3479015851]}}--><div class="headerbanner" {if $countheaderbanner == $i}style="margin-right:0;"{/if}>{$adveritems[$qq3479015851]}</div><!--{/if}-->
+<!--{loop $advertisement['type']['headerbanner'] $SystemGlobalcfm}-->
+<!--{if {$adveritems[$SystemGlobalcfm]}}--><div class="headerbanner" {if $countheaderbanner == $i}style="margin-right:0;"{/if}>{$adveritems[$SystemGlobalcfm]}</div><!--{/if}-->
 {php $i=$i+1;}
 <!--{/loop}-->
 </div>
 <!--{/if}-->
-<!--{loop $advertisement[type][indexcatad] $k $qq3479015851}-->
-<div class="indexcatad" id="ad_indexcatad_{$k}_none"><!--{$adveritems[$qq3479015851[0]]}--></div>
+<!--{loop $advertisement[type][indexcatad] $k $SystemGlobalcfm}-->
+<div class="indexcatad" id="ad_indexcatad_{$k}_none"><!--{$adveritems[$SystemGlobalcfm[0]]}--></div>
 <!--{/loop}-->
 <!--{if $advertisement[type][interlistad][top]}-->
 <div id="ad_interlistad_top_none">
 <ul class="interlistdiv">
-<!--{loop $advertisement[type][interlistad][top] $qq3479015851}-->
-<!--{if $adveritems[$qq3479015851]}--><li class="hover"><!--{$adveritems[$qq3479015851]}--></li><!--{/if}-->
+<!--{loop $advertisement[type][interlistad][top] $SystemGlobalcfm}-->
+<!--{if $adveritems[$SystemGlobalcfm]}--><li class="hover"><!--{$adveritems[$SystemGlobalcfm]}--></li><!--{/if}-->
 <!--{/loop}-->
 </ul>
 </div>
@@ -39,30 +39,30 @@
 <!--{if $advertisement[type][interlistad][bottom]}-->
 <div id="ad_interlistad_bottom_none">
 <ul class="interlistdiv">
-<!--{loop $advertisement[type][interlistad][bottom] $qq3479015851}-->
-<!--{if $adveritems[$qq3479015851]}--><li class="hover"><!--{$adveritems[$qq3479015851]}--></li><!--{/if}-->
+<!--{loop $advertisement[type][interlistad][bottom] $SystemGlobalcfm}-->
+<!--{if $adveritems[$SystemGlobalcfm]}--><li class="hover"><!--{$adveritems[$SystemGlobalcfm]}--></li><!--{/if}-->
 <!--{/loop}-->
 </ul>
 </div>
 <!--{/if}-->
 <!--{if $advertisement[type][intercatad]}-->
 <div class="intercatdiv" id="ad_intercatdiv_none">
-<!--{loop $advertisement[type][intercatad] $qq3479015851}-->
-<div class="intercatad">{$adveritems[$qq3479015851]}</div>
+<!--{loop $advertisement[type][intercatad] $SystemGlobalcfm}-->
+<div class="intercatad">{$adveritems[$SystemGlobalcfm]}</div>
 <!--{/loop}-->
 </div>
 <!--{/if}-->
 <!--{if $advertisement[type][topbanner]}-->
 <div class="topbanner" id="ad_topbanner_none">
-<!--{loop $advertisement[type][topbanner] $qq3479015851}-->
-<div class="topbannerad">{$adveritems[$qq3479015851]}</div>
+<!--{loop $advertisement[type][topbanner] $SystemGlobalcfm}-->
+<div class="topbannerad">{$adveritems[$SystemGlobalcfm]}</div>
 <!--{/loop}-->
 </div>
 <!--{/if}-->
 <!--{if $advertisement[type][footerbanner]}-->
 <div class="footerbanner" id="ad_footerbanner_none">
-<!--{loop $advertisement[type][footerbanner] $qq3479015851}-->
-<div class="footerbannerad">{$adveritems[$qq3479015851]}</div>
+<!--{loop $advertisement[type][footerbanner] $SystemGlobalcfm}-->
+<div class="footerbannerad">{$adveritems[$SystemGlobalcfm]}</div>
 <!--{/loop}-->
 </div>
 <!--{/if}-->
@@ -73,9 +73,9 @@
         	<div class="hd">信息管理</div>
             <div class="bd">
             	<ul>
-                	<li><a target="_blank" href="{$qq3479015851_global[SiteUrl]}/{$qq3479015851_global[cfg_postfile]}?cityid={$cityid}">免费发布信息</a></li>
-                    <li><a target="_blank" href="{$qq3479015851_global[SiteUrl]}/delinfo.php?cityid={$cityid}" rel="nofollow">修改/删除信息</a></li>
-                    <li><a target="_blank" href="{$qq3479015851_global[SiteUrl]}/search.php?cityid={$cityid}" rel="nofollow">信息快速搜索</a></li>
+                	<li><a target="_blank" href="{$SystemGlobalcfm_global[SiteUrl]}/{$SystemGlobalcfm_global[cfg_postfile]}?cityid={$cityid}">免费发布信息</a></li>
+                    <li><a target="_blank" href="{$SystemGlobalcfm_global[SiteUrl]}/delinfo.php?cityid={$cityid}" rel="nofollow">修改/删除信息</a></li>
+                    <li><a target="_blank" href="{$SystemGlobalcfm_global[SiteUrl]}/search.php?cityid={$cityid}" rel="nofollow">信息快速搜索</a></li>
                 </ul>
             </div>
         </div>
@@ -83,8 +83,8 @@
         	<div class="hd">商家服务</div>
             <div class="bd">
             	<ul>
-                	<li><a target="_blank" href="{$qq3479015851_global[SiteUrl]}/{$qq3479015851_global[cfg_member_logfile]}?mod=register&action=store&cityid={$cityid}">商家入驻</a></li>
-                    <li><a target="_blank" href="{$qq3479015851_global[SiteUrl]}/{$qq3479015851_global[cfg_member_logfile]}?cityid={$cityid}">商家登录</a></li>
+                	<li><a target="_blank" href="{$SystemGlobalcfm_global[SiteUrl]}/{$SystemGlobalcfm_global[cfg_member_logfile]}?mod=register&action=store&cityid={$cityid}">商家入驻</a></li>
+                    <li><a target="_blank" href="{$SystemGlobalcfm_global[SiteUrl]}/{$SystemGlobalcfm_global[cfg_member_logfile]}?cityid={$cityid}">商家登录</a></li>
                 </ul>
             </div>
         </div>
@@ -93,8 +93,8 @@
             <div class="bd">
             	<ul>
                 	<!--{php $navurl_foot = qq3479015851_get_navurl('foot',30);}-->
-                    <!--{loop $navurl_foot $k $qq3479015851}-->
-                	<li><a href="{$qq3479015851[url]}" style="color:{$qq3479015851[color]}" target="{$qq3479015851[target]}">{$qq3479015851[title]}<sup class="{$qq3479015851[ico]}"></sup></a></li>
+                    <!--{loop $navurl_foot $k $SystemGlobalcfm}-->
+                	<li><a href="{$SystemGlobalcfm[url]}" style="color:{$SystemGlobalcfm[color]}" target="{$SystemGlobalcfm[target]}">{$SystemGlobalcfm[title]}<sup class="{$SystemGlobalcfm[ico]}"></sup></a></li>
                     <!--{/loop}-->
                 </ul>
             </div>
@@ -103,7 +103,7 @@
         	<div class="hd">扫一扫，访问手机站</div>
             <div class="bd">
             	<ul>
-                	<img alt="{$qq3479015851_global[SiteName]}手机版" src="{$qq3479015851_global[SiteUrl]}/qrcode.php?value={$qq3479015851_global[SiteUrl]}/m/index.php&size=4.7">
+                	<img alt="{$SystemGlobalcfm_global[SiteName]}手机版" src="{$SystemGlobalcfm_global[SiteUrl]}/qrcode.php?value={$SystemGlobalcfm_global[SiteUrl]}/m/index.php&size=4.7">
                 </ul>
             </div>
         </div>
@@ -117,14 +117,14 @@
         </div>
         <div class="foot_mobile">
         	<ul>
-            {if $qq3479015851_global[SiteTel]}<div class="h1"><font>{$qq3479015851_global[SiteTel]}</font></div>{/if}
-            {if $qq3479015851_global[SiteEmail]}<div class="h3">邮箱：<font>{$qq3479015851_global[SiteEmail]}</font></div>{/if}
+            {if $SystemGlobalcfm_global[SiteTel]}<div class="h1"><font>{$SystemGlobalcfm_global[SiteTel]}</font></div>{/if}
+            {if $SystemGlobalcfm_global[SiteEmail]}<div class="h3">邮箱：<font>{$SystemGlobalcfm_global[SiteEmail]}</font></div>{/if}
             </ul>
         </div>
     </div>
     <div class="clearfix"></div>
     <div class="foot_powered">
-    	Copyright &copy; {$qq3479015851_global[SiteName]}版权所有 <a href="http://www.miibeian.gov.cn">{$qq3479015851_global[SiteBeian]}</a>
+    	Copyright &copy; {$SystemGlobalcfm_global[SiteName]}版权所有 <a href="http://www.miibeian.gov.cn">{$SystemGlobalcfm_global[SiteBeian]}</a>
     </div>
 </div>
 <p id="back-to-top"><a href="#top"><span></span></a></p>

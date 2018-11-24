@@ -2,13 +2,13 @@
 <html lang="zh-CN" class="index_page">
 <head>
 	{template header}
-	<title>我的收藏 - {$qq3479015851_global[SiteName]}</title>
+	<title>我的收藏 - {$SystemGlobalcfm_global[SiteName]}</title>
 	<link type="text/css" rel="stylesheet" href="template/css/global.css">
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
 	<link type="text/css" rel="stylesheet" href="template/css/member.css">
     <script>window['current'] = '会员中心';</script>
 </head>
-<body class="{$qq3479015851_global[cfg_tpl_dir]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]}">
 <div class="wrapper">
 
 	{template header_search}	
@@ -21,8 +21,8 @@
 
 	<div class="ucenter">
 		<ul class="u_infolst">
-        	{loop $list $qq3479015851}
-			<li><a href="{$qq3479015851[url]}"><h2>{$qq3479015851[title]}</h2><div class="attr"><span>{$qq3479015851[catname]}</span><span class="time">{$qq3479015851[intime]}</span></div></a></li>
+        	{loop $list $SystemGlobalcfm}
+			<li><a href="{$SystemGlobalcfm[url]}"><h2>{$SystemGlobalcfm[title]}</h2><div class="attr"><span>{$SystemGlobalcfm[catname]}</span><span class="time">{$SystemGlobalcfm[intime]}</span></div></a></li>
             {loopelse}
             <div style="margin:30px 0;text-align:center">您还没有收藏信息哦~</div>
             {/loop}

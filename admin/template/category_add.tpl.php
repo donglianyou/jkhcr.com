@@ -32,7 +32,7 @@ function insertunit2(text) {
 	$obj('jstemplate2').value=text;
 }
 </script>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">技巧提示</td>
@@ -45,7 +45,7 @@ function insertunit2(text) {
 </table>
 </div>
 <form method=post onSubmit="return chkform()" name="form1" action="?part=add">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%"  border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
 <td colspan="2">
@@ -100,7 +100,7 @@ function insertunit2(text) {
 </tbody>
 </table>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table cellpadding="0" cellspacing="0" class="vbm">
 <tr class="firstr">
 <td colspan="3">
@@ -132,7 +132,7 @@ function insertunit2(text) {
 </tbody>
 </table>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table cellpadding="0" cellspacing="0" class="vbm">
 <tr class="firstr">
 <td colspan="3">

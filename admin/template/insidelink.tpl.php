@@ -1,6 +1,6 @@
 <?php include qq3479015851_tpl('inc_head');?>
 <form action="?" method="post">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
     	<td colspan="2">文字内链设置</td>
@@ -15,7 +15,7 @@
     </tr>
 </table>
 </div>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
       <td colspan="3">内链文字设置</td>

@@ -1,6 +1,6 @@
 <?php include qq3479015851_tpl('inc_head');?>
 <script type="text/javascript" src="js/titlealt.js"></script>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr">
 	<td colspan="2">检索分类信息</td>
@@ -33,7 +33,7 @@
 </table>
 </div>
 <div class="clear"></div>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -52,7 +52,7 @@
 </div>
 <form action="?action=pm" method="post">
 <input name="url" type="hidden" value="<?=GetUrl()?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm" >
     <tr class="firstr">
     <td width="30">选择</td>

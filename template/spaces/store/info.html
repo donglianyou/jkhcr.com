@@ -3,8 +3,8 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>分类信息-{$store[tname]}-{$qq3479015851_global[SiteName]}</title>
-<link href="{$qq3479015851_global[SiteUrl]}/template/spaces/store/css/{$store[template]}.css" type="text/css" rel="stylesheet" />
+<title>分类信息-{$store[tname]}-{$SystemGlobalcfm_global[SiteName]}</title>
+<link href="{$SystemGlobalcfm_global[SiteUrl]}/template/spaces/store/css/{$store[template]}.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 
@@ -21,11 +21,11 @@
 					   <th class="list_left">所在栏目</th>
                        <th class="list_left">发布时间</th>
 					   </tr> 
-                       {loop $info $qq3479015851}
+                       {loop $info $SystemGlobalcfm}
 					   <tr> 
-					   <td><a href="{$qq3479015851[uri]}" target="_blank">{$qq3479015851[title]}</a></td> 
-					   <td align="left">{$qq3479015851[catname]}</td> 
-                       <td>{echo GetTime($qq3479015851[begintime],'m-d')}</td> 
+					   <td><a href="{$SystemGlobalcfm[uri]}" target="_blank">{$SystemGlobalcfm[title]}</a></td> 
+					   <td align="left">{$SystemGlobalcfm[catname]}</td> 
+                       <td>{echo GetTime($SystemGlobalcfm[begintime],'m-d')}</td> 
 					   </tr>
                        {loopelse}
                        <tr> 

@@ -5,7 +5,7 @@ $admindir = getcwdOL();
 
 <script type='text/javascript' src='js/calendar.js'></script>
 <form action="?" method="get">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">搜索符合条件的报名信息</td>
@@ -29,7 +29,7 @@ $admindir = getcwdOL();
 </form>
 <form action="?part=list" method="post">
 <input name="url" type="hidden" value="<?=GetUrl()?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm" >
     <tr class="firstr">
     <td width="30">&nbsp;</td>
@@ -49,7 +49,7 @@ $admindir = getcwdOL();
     <td><input type='checkbox' name='selectedids[]' value="<?=$row['signid']?>" class='checkbox' id="<?=$row['signid']?>"></td>
     <td><a href="?part=view&id=<?=$row[signid]?>"><?=$row['sname']?></a></td>
     <td><a href="javascript:void(0);" onclick="
-setbg('<?=QQ3479015851_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$row[userid]?>&admindir=<?=$admindir?>')"><?=$row[userid]?></a></td>
+setbg('<?=SysGlbCfm_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$row[userid]?>&admindir=<?=$admindir?>')"><?=$row[userid]?></a></td>
     <td><a href="../group.php?id=<?=$row['groupid']?>" target="_blank"><?=$row['gname']?></a></td>
     <td><?=$row['tel']?></td>
     <td><em><?php echo GetTime($row['dateline']); ?></em></td>

@@ -17,7 +17,7 @@ function CheckSubmit()
 	return true;
 }
 </script>
-<div id="<?=QQ3479015851_SOFTNAME?>" style=" padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style=" padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -29,7 +29,7 @@ function CheckSubmit()
     </div>
 </div>
 <form action="?part=insert" method="post" enctype="multipart/form-data" name="form1" onSubmit="return CheckSubmit();";>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 <input type="hidden" name="createtime" value="<?=date("Y-m-d H:i:s", time())?>">
 <tr class="firstr">

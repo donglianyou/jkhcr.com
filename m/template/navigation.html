@@ -2,8 +2,8 @@
 <!--{if $navigation}-->
 <div class="select_01" id="wrapper2">
     <ul class="tab-hd" id="scroller2">
-        <!--{loop $navigation $qq3479015851}-->
-        <li class="item {if $qq3479015851[flag] == 'index'}current{/if}"><a style="color:{$qq3479015851[color]};" target="{$qq3479015851[target]}" href="{$qq3479015851[url]}">{$qq3479015851[title]}</a></li>
+        <!--{loop $navigation $SystemGlobalcfm}-->
+        <li class="item {if $SystemGlobalcfm[flag] == 'index'}current{/if}"><a style="color:{$SystemGlobalcfm[color]};" target="{$SystemGlobalcfm[target]}" href="{$SystemGlobalcfm[url]}">{$SystemGlobalcfm[title]}</a></li>
         <!--{/loop}-->
     </ul>
 </div>

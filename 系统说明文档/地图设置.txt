@@ -1,0 +1,20 @@
+首先进入后台管理，系统-》核心设置-》系统配置-》地图接口设置 
+
+1，baidu 
+（1）百度地图api地址填写http://api.map.baidu.com/api?v=1.4
+（注意：百度1.5版本以上需要注册密钥，密钥申请地址：http://lbsyun.baidu.com/apiconsole/key?application=key）
+（2）地图标识填写"baidu"，地图api编码留空，地图默认缩放等级可自行设置调整（默认14）
+（3）提交保存设置
+（4）标注起始坐标
+
+2，51ditu 
+（1）地图api地址填写：http://api.51ditu.com/js/maps.js
+（2）地图标识填写"51ditu"，地图api编码留空，地图默认缩放等级可自行设置调整
+（3）提交保存设置
+（4）标注起始坐标
+
+3，google
+（1）进入 https://developers.google.com/maps/documentation/javascript/v2/v2tov3 申请api，如果你的域名后缀是.cn，则可能无法申请通过认证，您可以将.cn改为.CN，得到google api的key以后，地图api地址填写"https://maps.googleapis.com/maps/api/js?key=申请的密钥&callback=initMap"
+（2）地图标识填写"google_v3"，地图api编码填写"UTF-8"，地图默认缩放等级填写"15"
+（3）提交保存设置
+（4）标注起始坐标

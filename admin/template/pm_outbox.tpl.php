@@ -1,7 +1,7 @@
 <?php include qq3479015851_tpl('inc_head');
 $admindir = getcwdOL();
 ?>
-<div id="<?=QQ3479015851_SOFTNAME?>" style="padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style="padding-bottom:0">
 	<div class="mpstopic-category">
 		<div class="panel-tab">
 			<ul class="clearfix tab-list">
@@ -14,7 +14,7 @@ $admindir = getcwdOL();
 <script type='text/javascript' src='js/vbm.js'></script>
 <form action="?action=pm" method="post">
 <input name="url" type="hidden" value="<?=GetUrl()?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm" >
     <tr class="firstr">
     <td width="50"><input name="checkall" type="checkbox" id="checkall" onClick="CheckAll(this.form)" class="checkbox"/> 删?</td>
@@ -35,7 +35,7 @@ $admindir = getcwdOL();
     </a></td>
     <td><?=$row[fromuser]?></td>
     <td><a href="
-javascript:setbg('<?=QQ3479015851_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$row[touser]?>&admindir=<?=$admindir?>')"><?=$row[touser]?></a></td>
+javascript:setbg('<?=SysGlbCfm_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$row[touser]?>&admindir=<?=$admindir?>')"><?=$row[touser]?></a></td>
     <td>
     <?php
     if($row[if_read] == 1)echo '<font color=green>已读</font>'; 

@@ -27,7 +27,7 @@ function CheckSubmit()
 <form method=post  name="form1" action="announce.php?part=edit" onSubmit="return CheckSubmit();">
 <input name="id" value="<?=$edit[id]?>" type="hidden" />
 <input name="action" value="dopost" type="hidden" />
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
 
 <tr class="firstr">

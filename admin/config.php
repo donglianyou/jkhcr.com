@@ -33,7 +33,7 @@ if ( $admin_cityid )
 }
 if ( $part != "phpinfo" )
 {
-				require_once( QQ3479015851_INC."/db.class.php" );
+				require_once( SysGlbCfm_INC."/db.class.php" );
 				chk_admin_purview( "purview_系统配置" );
 }
 if ( $part == "phpinfo" )
@@ -45,7 +45,7 @@ else if ( $part == "list" )
 {
 				chk_admin_purview( "purview_系统配置" );
 				require_once( dirname( __FILE__ )."/include/config.inc.php" );
-				$here = "QQ3479015851 系统参数设置";
+				$here = "SysGlbCfm 系统参数设置";
 				$res = $db->query( "SELECT description,value FROM ".$db_qq3479015851."config WHERE type = 'config'" );
 				while ( $row = $db->fetchRow( $res ) )
 				{
@@ -306,5 +306,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 ?>

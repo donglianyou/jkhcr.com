@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-if (!defined('QQ3479015851')) {
+if (!defined('SysGlbCfm')) {
 	exit('FORBIDDEN');
 }
 
@@ -22,14 +21,14 @@ $report_type_arr[4] = '其它原因';
 function get_report_type()
 {
 	global $report_type_arr;
-	$qq3479015851 .= '<select name=\'report_type\'>';
+	$SystemGlobalcfm .= '<select name=\'report_type\'>';
 
 	foreach ($report_type_arr as $k => $value ) {
-		$qq3479015851 .= '<option value="' . $k . '">' . $value . '</option>';
+		$SystemGlobalcfm .= '<option value="' . $k . '">' . $value . '</option>';
 	}
 
-	$qq3479015851 .= '</select>';
-	return $qq3479015851;
+	$SystemGlobalcfm .= '</select>';
+	return $SystemGlobalcfm;
 }
 
 

@@ -36,8 +36,8 @@ function get_city_area( $areaid = "" )
 
 function write_city_file( $dirname, $cityid, $directory )
 {
-				global $qq3479015851directory;
-				global $qq3479015851_global;
+				global $SystemGlobalcfmdirectory;
+				global $SystemGlobalcfm_global;
 				global $db;
 				global $db_qq3479015851;
 				if ( !$cityid )
@@ -47,7 +47,7 @@ function write_city_file( $dirname, $cityid, $directory )
 				if ( empty( $dirname ) )
 				{
 								$p = "";
-								if ( in_array( $directory, $qq3479015851directory ) )
+								if ( in_array( $directory, $SystemGlobalcfmdirectory ) )
 								{
 												write_msg( "该目录名 <b>".$directory."</b> 与qq3479015851保留目录名重名<br /><br />请更换一个目录名后再试" );
 												exit( );
@@ -58,28 +58,28 @@ function write_city_file( $dirname, $cityid, $directory )
 								$p = "../";
 				}
 				$dirname = $dirname."/".$directory;
-				if ( !createdir( QQ3479015851_ROOT."/".$dirname ) )
+				if ( !createdir( SysGlbCfm_ROOT."/".$dirname ) )
 				{
-								write_msg( QQ3479015851_ROOT."/".$dirname." 目录创建失败!" );
+								write_msg( SysGlbCfm_ROOT."/".$dirname." 目录创建失败!" );
 				}
 				$string = "<?php\r\n\$cityid=".$cityid.";\r\nrequire dirname(__FILE__).'/../".$p."'.basename(__FILE__);\r\n?>";
-				createfile( QQ3479015851_ROOT.$dirname."/about.php", $string );
-				createfile( QQ3479015851_ROOT.$dirname."/index.php", $string );
-				createfile( QQ3479015851_ROOT.$dirname."/category.php", $string );
-				createfile( QQ3479015851_ROOT.$dirname."/information.php", $string );
-				createfile( QQ3479015851_ROOT.$dirname."/news.php", $string );
-				createfile( QQ3479015851_ROOT.$dirname."/coupon.php", $string );
-				createfile( QQ3479015851_ROOT.$dirname."/goods.php", $string );
-				createfile( QQ3479015851_ROOT.$dirname."/corporation.php", $string );
-				createfile( QQ3479015851_ROOT.$dirname."/group.php", $string );
+				createfile( SysGlbCfm_ROOT.$dirname."/about.php", $string );
+				createfile( SysGlbCfm_ROOT.$dirname."/index.php", $string );
+				createfile( SysGlbCfm_ROOT.$dirname."/category.php", $string );
+				createfile( SysGlbCfm_ROOT.$dirname."/information.php", $string );
+				createfile( SysGlbCfm_ROOT.$dirname."/news.php", $string );
+				createfile( SysGlbCfm_ROOT.$dirname."/coupon.php", $string );
+				createfile( SysGlbCfm_ROOT.$dirname."/goods.php", $string );
+				createfile( SysGlbCfm_ROOT.$dirname."/corporation.php", $string );
+				createfile( SysGlbCfm_ROOT.$dirname."/group.php", $string );
 }
 
 function DelCity( $cityid )
 {
 				global $db;
 				global $db_qq3479015851;
-				global $qq3479015851_global;
-				global $qq3479015851directory;
+				global $SystemGlobalcfm_global;
+				global $SystemGlobalcfmdirectory;
 				$all = $db->getAll( "SELECT areaid FROM `".$db_qq3479015851."area` WHERE cityid = '".$cityid."'" );
 				if ( is_array( $all ) )
 				{
@@ -95,9 +95,9 @@ function DelCity( $cityid )
 								unset( $all );
 				}
 				$directory = $db->getOne( "SELECT directory FROM `".$db_qq3479015851."city` WHERE cityid = '".$cityid."'" );
-				if ( $directory && !in_array( $directory, $qq3479015851directory ) )
+				if ( $directory && !in_array( $directory, $SystemGlobalcfmdirectory ) )
 				{
-								deldir( QQ3479015851_ROOT.$qq3479015851_global['cfg_citiesdir']."/".$directory );
+								deldir( SysGlbCfm_ROOT.$SystemGlobalcfm_global['cfg_citiesdir']."/".$directory );
 				}
 				unset( $directory );
 				qq3479015851_delete( "area", "WHERE cityid = '".$cityid."'" );
@@ -120,8 +120,8 @@ function DelCity( $cityid )
 
 define( "CURSCRIPT", "area" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
-if ( !defined( "IN_ADMIN" ) || !defined( "QQ3479015851" ) )
+require_once( SysGlbCfm_INC."/db.class.php" );
+if ( !defined( "IN_ADMIN" ) || !defined( "SysGlbCfm" ) )
 {
 				exit( "Access Denied" );
 }
@@ -129,7 +129,7 @@ if ( $admin_cityid )
 {
 				write_msg( "您没有权限访问该页！" );
 }
-$qq3479015851directory = array( "admin", "api", "attachment", "backup", "data", "images", "include", "install", "member", "m", "plugin", "rewrite", "template", "uc_client" );
+$SystemGlobalcfmdirectory = array( "admin", "api", "attachment", "backup", "data", "images", "include", "install", "member", "m", "plugin", "rewrite", "template", "uc_client" );
 $rpp = 120;
 $start = isset( $_GET['start'] ) && 1 < $_GET['start'] ? $_GET['start'] : 1;
 $limit_start = $start - 1;
@@ -247,14 +247,14 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 								clear_cache_files( "citysiteabout_".$cityid );
 								clear_cache_files( "allcities" );
 								clear_cache_files( "hot_cities" );
-								write_msg( "成功删除编号为".$cityid."的城市分站", "?part=list", "QQ3479015851_record" );
+								write_msg( "成功删除编号为".$cityid."的城市分站", "?part=list", "SysGlbCfm_record" );
 				}
 				else if ( $part == "makealldir" )
 				{
 								$r = $db->getAll( "SELECT cityid,directory FROM `".$db_qq3479015851."city` WHERE `status` = '1' LIMIT ".$limit_start.",".$rpp );
 								foreach ( $r as $k => $v )
 								{
-												write_city_file( $qq3479015851_global['cfg_citiesdir'], $v['cityid'], $v['directory'] );
+												write_city_file( $SystemGlobalcfm_global['cfg_citiesdir'], $v['cityid'], $v['directory'] );
 												$converted = 1;
 								}
 								if ( $converted )
@@ -271,10 +271,10 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 								$directory = $db->getAll( "SELECT directory FROM `".$db_qq3479015851."city` LIMIT ".$limit_start.",".$rpp );
 								foreach ( $directory as $k => $v )
 								{
-												if ( empty( $qq3479015851_global['cfg_citiesdir'] ) && in_array( $v, $qq3479015851directory ) || !$v['directory'] && in_array( $v['directory'], $qq3479015851directory ) )
+												if ( empty( $SystemGlobalcfm_global['cfg_citiesdir'] ) && in_array( $v, $SystemGlobalcfmdirectory ) || !$v['directory'] && in_array( $v['directory'], $SystemGlobalcfmdirectory ) )
 												{
 																$converted = 1;
-																deldir( QQ3479015851_ROOT.$qq3479015851_global['cfg_citiesdir']."/".$v['directory'] );
+																deldir( SysGlbCfm_ROOT.$SystemGlobalcfm_global['cfg_citiesdir']."/".$v['directory'] );
 												}
 								}
 								if ( $converted )
@@ -291,7 +291,7 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 								$query = $db->query( "SELECT * FROM `".$db_qq3479015851."city`" );
 								while ( $row = $db->fetchRow( $query ) )
 								{
-												$domaina = str_replace( "http://www.", "", $qq3479015851_global['SiteUrl'] );
+												$domaina = str_replace( "http://www.", "", $SystemGlobalcfm_global['SiteUrl'] );
 												$domain = "http://".$row[directory].".".$domaina."/";
 												$db->query( "UPDATE `".$db_qq3479015851."city` SET domain = '".$domain."' WHERE cityid = '".$row['cityid']."'" );
 												$domain = NULL;
@@ -365,7 +365,7 @@ else
 												if ( $batch_newcityname && $batch_newdirectory )
 												{
 																$db->query( "INSERT INTO `".$db_qq3479015851."city` (provinceid,cityname,citypy,displayorder,directory,domain,firstletter,ifhot) VALUES ('".$batchnewprovinceid."','".$batch_newcityname."','".$batch_newcitypy."','".$batch_newdisplayorder."','".$batch_newdirectory."','".$batch_newdomain."','".$batch_newfirstletter."','".$batch_newifhot."')" );
-																write_city_file( $qq3479015851_global['cfg_citiesdir'], $db->insert_id( ), $batch_newdirectory );
+																write_city_file( $SystemGlobalcfm_global['cfg_citiesdir'], $db->insert_id( ), $batch_newdirectory );
 												}
 								}
 								clear_cache_files( "allcities" );
@@ -382,15 +382,15 @@ else
 								case "mkdir" :
 												foreach ( $actiondir as $k => $v )
 												{
-																write_city_file( $qq3479015851_global['cfg_citiesdir'], $k, $v );
+																write_city_file( $SystemGlobalcfm_global['cfg_citiesdir'], $k, $v );
 												}
 												break;
 								case "deldir" :
 												foreach ( $actiondir as $k => $v )
 												{
-																if ( empty( $qq3479015851_global['cfg_citiesdir'] ) && in_array( $v, $qq3479015851directory ) || !$v && in_array( $v, $qq3479015851directory ) )
+																if ( empty( $SystemGlobalcfm_global['cfg_citiesdir'] ) && in_array( $v, $SystemGlobalcfmdirectory ) || !$v && in_array( $v, $SystemGlobalcfmdirectory ) )
 																{
-																				deldir( QQ3479015851_ROOT.$qq3479015851_global['cfg_citiesdir']."/".$v );
+																				deldir( SysGlbCfm_ROOT.$SystemGlobalcfm_global['cfg_citiesdir']."/".$v );
 																}
 												}
 												break;
@@ -398,9 +398,9 @@ else
 												foreach ( $actiondir as $k => $v )
 												{
 																$db->query( "UPDATE `".$db_qq3479015851."city` SET `status` = '1' WHERE `cityid` = '".$k."'" );
-																if ( !$v && in_array( $v, $qq3479015851directory ) )
+																if ( !$v && in_array( $v, $SystemGlobalcfmdirectory ) )
 																{
-																				write_city_file( $qq3479015851_global['cfg_citiesdir'], $k, $v );
+																				write_city_file( $SystemGlobalcfm_global['cfg_citiesdir'], $k, $v );
 																}
 												}
 												break;
@@ -408,9 +408,9 @@ else
 												foreach ( $actiondir as $k => $v )
 												{
 																$db->query( "UPDATE `".$db_qq3479015851."city` SET `status` = '0' WHERE `cityid` = '".$k."'" );
-																if ( $v && !in_array( $v, $qq3479015851directory ) )
+																if ( $v && !in_array( $v, $SystemGlobalcfmdirectory ) )
 																{
-																				deldir( QQ3479015851_ROOT.$qq3479015851_global['cfg_citiesdir']."/".$v );
+																				deldir( SysGlbCfm_ROOT.$SystemGlobalcfm_global['cfg_citiesdir']."/".$v );
 																}
 																clear_cache_files( "city_".$k );
 												}
@@ -470,19 +470,19 @@ else
 								{
 												write_msg( $citynew['cityname']." 城市分站重复，请检查是否已经添加过该分站!" );
 								}
-								if ( empty( $qq3479015851_global['cfg_citiesdir'] ) && in_array( $citynew['directory'], $qq3479015851directory ) )
+								if ( empty( $SystemGlobalcfm_global['cfg_citiesdir'] ) && in_array( $citynew['directory'], $SystemGlobalcfmdirectory ) )
 								{
 												write_msg( "该目录名 <b>".$citynew[directory]."</b> 与qq3479015851保留目录重名<br /><br />请更换一个目录名后再试" );
 								}
 								$db->query( "INSERT INTO `".$db_qq3479015851."city` (provinceid,cityname,citypy,displayorder,directory,mappoint,domain,firstletter,ifhot,title,keywords,description) VALUES ('".$citynew['provinceid']."','".$citynew['cityname']."','".$citynew['citypy']."','".$citynew['displayorder']."','".$citynew['directory']."','".$citynew['mappoint']."','".$citynew['domain']."','".$citynew['firstletter']."','".$citynew['ifhot']."','".$citynew['title']."','".$citynew['keywords']."','".$citynew['description']."')" );
 								$cid = $db->insert_id( );
-								write_city_file( $qq3479015851_global['cfg_citiesdir'], $cid, $citynew['directory'] );
+								write_city_file( $SystemGlobalcfm_global['cfg_citiesdir'], $cid, $citynew['directory'] );
 								clear_cache_files( "changecity_cities" );
 								clear_cache_files( "changeprovince_cities" );
 								clear_cache_files( "hot_cities" );
 								clear_cache_files( "allcities" );
 								clear_cache_files( "city_".$cid );
-								write_msg( "城市分站 ".$citynew['cityname']." 创建成功！", $return, "QQ3479015851_record" );
+								write_msg( "城市分站 ".$citynew['cityname']." 创建成功！", $return, "SysGlbCfm_record" );
 				}
 				if ( is_array( $cityedit ) )
 				{
@@ -511,20 +511,20 @@ else
 								$cityedit['title'] = trim( $cityedit['title'] );
 								$cityedit['keywords'] = trim( $cityedit['keywords'] );
 								$cityedit['description'] = trim( $cityedit['description'] );
-								if ( empty( $qq3479015851_global['cfg_citiesdir'] ) && in_array( $cityedit['directory'], $qq3479015851directory ) )
+								if ( empty( $SystemGlobalcfm_global['cfg_citiesdir'] ) && in_array( $cityedit['directory'], $SystemGlobalcfmdirectory ) )
 								{
 												write_msg( "该目录名 <b>".$cityedit[directory]."</b> 与qq3479015851保留目录重名<br /><br />请更换一个目录名后再试" );
 								}
 								$db->query( "UPDATE `".$db_qq3479015851."city` SET provinceid = '".$cityedit['provinceid']."',cityname = '".$cityedit['cityname']."' , citypy = '".$cityedit['citypy']."' , displayorder = '".$cityedit['displayorder']."' , directory = '".$cityedit['directory']."' , mappoint = '".$cityedit['mappoint']."' , domain = '".$cityedit['domain']."' , firstletter = '".$cityedit['firstletter']."' , ifhot = '".$cityedit['ifhot']."', title = '".$cityedit['title']."', keywords = '".$cityedit['keywords']."', description = '".$cityedit['description']."' WHERE cityid = '".$cityid."'" );
 								if ( $cityedit['olddirectory'] != $cityedit['directory'] )
 								{
-												deldir( QQ3479015851_ROOT."/c/".$cityedit['olddirectory'] );
+												deldir( SysGlbCfm_ROOT."/c/".$cityedit['olddirectory'] );
 								}
 								clear_cache_files( "allcities" );
 								clear_cache_files( "changecity_cities" );
 								clear_cache_files( "changeprovince_cities" );
 								clear_cache_files( "hot_cities" );
-								write_city_file( $qq3479015851_global['cfg_citiesdir'], $cityid, $cityedit['directory'] );
+								write_city_file( $SystemGlobalcfm_global['cfg_citiesdir'], $cityid, $cityedit['directory'] );
 								clear_cache_files( "city_".$cityid );
 								write_msg( "城市分站 ".$cityedit[cityname]." 修改成功！", "area.php?part=edit&cityid=".$cityid, "qq3479015851" );
 				}
@@ -545,7 +545,7 @@ else
 												$db->query( "INSERT INTO `".$db_qq3479015851."area` (areaname,cityid,displayorder)VALUES('".$v."','".$newarea['cityid']."','".$newarea['displayorder']."')" );
 												clear_cache_files( "city_".$newarea[cityid] );
 								}
-								write_msg( "分站地区增加成功！", "area.php?cityid=".$newarea[cityid], "QQ3479015851_record" );
+								write_msg( "分站地区增加成功！", "area.php?cityid=".$newarea[cityid], "SysGlbCfm_record" );
 				}
 				if ( is_array( $newstreet ) )
 				{
@@ -564,7 +564,7 @@ else
 												$db->query( "INSERT INTO `".$db_qq3479015851."street` (streetname,areaid,displayorder)VALUES('".$v."','".$newstreet['areaid']."','".$newarea['newstreet']."')" );
 												clear_cache_files( "city_".$newstreet[cityid] );
 								}
-								write_msg( "街道/路段增加成功！", "area.php?areaid=".$newstreet[areaid]."&cityid=".$cityid."&cityname=".$cityname, "QQ3479015851_record" );
+								write_msg( "街道/路段增加成功！", "area.php?areaid=".$newstreet[areaid]."&cityid=".$cityid."&cityname=".$cityname, "SysGlbCfm_record" );
 				}
 				if ( is_array( $updatecity_displayorder ) )
 				{
@@ -619,11 +619,11 @@ else
 								$db->query( "DELETE FROM `".$db_qq3479015851."street` WHERE ".create_in( $deleteareaid, "areaid" ) );
 								$db->query( "DELETE FROM `".$db_qq3479015851."area` WHERE ".create_in( $deleteareaid, "areaid" ) );
 				}
-				write_msg( "分站地区更新成功！", $return, "QQ3479015851_record" );
+				write_msg( "分站地区更新成功！", $return, "SysGlbCfm_record" );
 }
 if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = NULL;
 ?>

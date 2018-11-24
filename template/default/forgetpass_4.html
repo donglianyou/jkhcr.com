@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="{$qq3479015851_global[SiteUrl]}/favicon.ico" />
-<link rel="stylesheet" href="{$qq3479015851_global[SiteUrl]}/template/default/css/global.css" />
-<link rel="stylesheet" href="{$qq3479015851_global[SiteUrl]}/template/default/css/style.css" />
-<link rel="stylesheet" href="{$qq3479015851_global[SiteUrl]}/template/default/css/login.css" />
-<title>找回密码-{$qq3479015851_global[SiteName]}</title>
+<link rel="shortcut icon" href="{$SystemGlobalcfm_global[SiteUrl]}/favicon.ico" />
+<link rel="stylesheet" href="{$SystemGlobalcfm_global[SiteUrl]}/template/default/css/global.css" />
+<link rel="stylesheet" href="{$SystemGlobalcfm_global[SiteUrl]}/template/default/css/style.css" />
+<link rel="stylesheet" href="{$SystemGlobalcfm_global[SiteUrl]}/template/default/css/login.css" />
+<title>找回密码-{$SystemGlobalcfm_global[SiteName]}</title>
 </head>
 
-<body class="{$qq3479015851_global[cfg_tpl_dir]}">
+<body class="{$SystemGlobalcfm_global[cfg_tpl_dir]}">
 {mytemplate inc_head_log}
 <div class="inner">
 	<div class="body">
@@ -17,13 +17,13 @@
 	<div id="main" class="findpwdpart">
     	{if $status == 'error2'}
 		<div class="step2">
-			<span><font class="number">1</font> {echo $qq3479015851_global[cfg_member_verify] == 4 ? '填写手机号码' : '填写电子邮箱';}</span>
+			<span><font class="number">1</font> {echo $SystemGlobalcfm_global[cfg_member_verify] == 4 ? '填写手机号码' : '填写电子邮箱';}</span>
 			<span class="cur"><font class="number">2</font> 验证信息</span>
 			<span><font class="number">3</font> 重设密码</span>
 		</div>
 		{else}
 		<div class="step3">
-			<span><font class="number">1</font> {echo $qq3479015851_global[cfg_member_verify] == 4 ? '填写手机号码' : '填写电子邮箱';}</span>
+			<span><font class="number">1</font> {echo $SystemGlobalcfm_global[cfg_member_verify] == 4 ? '填写手机号码' : '填写电子邮箱';}</span>
 			<span><font class="number">2</font> 验证信息</span>
 			<span class="cur"><font class="number">3</font> 重设密码</span>
 		</div>
@@ -41,7 +41,7 @@
                 <div>手机号：<strong>{$mobile}</strong>(<font color="#666">此手机号可用于登录</font>)</div>
                 {/if}
 				<div class="clear15"></div>
-				<div><a href="{$qq3479015851_global[SiteUrl]}/{$qq3479015851_global[cfg_member_logfile]}?mod=login">[登录会员中心]</a></div>
+				<div><a href="{$SystemGlobalcfm_global[SiteUrl]}/{$SystemGlobalcfm_global[cfg_member_logfile]}?mod=login">[登录会员中心]</a></div>
 			</div>
 			{else}
 			<div class="clear15"></div>

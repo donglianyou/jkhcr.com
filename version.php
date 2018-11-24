@@ -7,14 +7,13 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-!defined('QQ3479015851') && exit('FORBIDDEN');
+!defined('SysGlbCfm') && exit('FORBIDDEN');
 //下面的设置请不要修改，否则可能造成系统无法正常运行
-define('QQ3479015851_SOFTNAME','qq3479015851');
-define('QQ3479015851_VERSION','多城市 UTF8');
-define('QQ3479015851_RELEASE','');
-define('QQ3479015851_WWW','http://blog.csdn.net/qq_35921430');
-define('QQ3479015851_BBS','http://blog.csdn.net/qq_35921430');
+define('SysGlbCfm_SOFTNAME','qq3479015851');
+define('SysGlbCfm_VERSION','多城市 UTF8');
+define('SysGlbCfm_RELEASE','');
+define('SysGlbCfm_WWW','http://blog.csdn.net/qq_35921430');
+define('SysGlbCfm_BBS','http://blog.csdn.net/qq_35921430');
 ?>

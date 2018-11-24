@@ -7,15 +7,14 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 error_reporting(E_ALL^E_NOTICE);
 __FILE__ == '' && die('Fatal error code: 0');
 
-define('QQ3479015851',true);
+define('SysGlbCfm',true);
 define('CURRENTDIR',dirname(__FILE__));
-define('QQ3479015851_DATA',dirname(__FILE__).'/data');
+define('SysGlbCfm_DATA',dirname(__FILE__).'/data');
 define('MAGIC_QUOTES_GPC', get_magic_quotes_gpc());
 
 if (isset($_REQUEST['GLOBALS']) OR isset($_FILES['GLOBALS'])) {
@@ -57,9 +56,9 @@ if($part == 'authcode') {
 	$Number = $data['number'];
 	
 	if($action =='action'){
-		$_SESSION['chkcode'] = GetQQ3479015851Verify($Type,$Noise,$Line,$Distort,$Incline,true,$Close,$Number);
+		$_SESSION['chkcode'] = GetSysGlbCfmVerify($Type,$Noise,$Line,$Distort,$Incline,true,$Close,$Number);
 	}else{
-		GetQQ3479015851Verify($Type,$Noise,$Line,$Distort,$Incline,false,$Close,$Number);
+		GetSysGlbCfmVerify($Type,$Noise,$Line,$Distort,$Incline,false,$Close,$Number);
 	}
 } elseif($part == 'contact') {
 	$height = "24";

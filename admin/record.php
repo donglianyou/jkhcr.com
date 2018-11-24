@@ -7,13 +7,12 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define( "CURSCRIPT", "record" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
-require_once( QQ3479015851_DATA."/config.inc.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
+require_once( SysGlbCfm_DATA."/config.inc.php" );
 if ( !in_array( $do, array( "member", "admin" ) ) )
 {
 				$do = "admin";
@@ -41,18 +40,18 @@ else
 if ( $action == "delrecord" )
 {
 				$total_count = qq3479015851_count( $do."_record_".$part );
-				if ( $total_count < $qq3479015851_qq3479015851['cfg_record_save'] )
+				if ( $total_count < $SystemGlobalcfm_qq3479015851['cfg_record_save'] )
 				{
-								write_msg( "操作失败！相关记录不满 ".$qq3479015851_qq3479015851['cfg_record_save']." 条！" );
+								write_msg( "操作失败！相关记录不满 ".$SystemGlobalcfm_qq3479015851['cfg_record_save']." 条！" );
 				}
-				$delrecord = $db->getAll( "SELECT id FROM `".$db_qq3479015851.$do."_record_".$part."` ORDER BY ID DESC LIMIT 1,".$qq3479015851_qq3479015851['cfg_record_save'] );
+				$delrecord = $db->getAll( "SELECT id FROM `".$db_qq3479015851.$do."_record_".$part."` ORDER BY ID DESC LIMIT 1,".$SystemGlobalcfm_qq3479015851['cfg_record_save'] );
 				foreach ( $delrecord as $k => $value )
 				{
 								$id .= $value[id].",";
 				}
 				$id = substr( $id, 0, -1 );
 				qq3479015851_delete( $do."_record_".$part, "WHERE id NOT IN (".$id.")" );
-				write_msg( "成功删除操作记录！", $url, "QQ3479015851" );
+				write_msg( "成功删除操作记录！", $url, "SysGlbCfm" );
 				exit( );
 }
 if ( $action == "doexcel" )
@@ -70,7 +69,7 @@ if ( $action == "doexcel" )
 								$data[$row['id']][] = gettime( $row['pubdate'] );
 								$data[$row['id']][] = gettime( $row['outdate'] ? $row['outdate'] : $row['pubdate'] + 3627 );
 				}
-				require( QQ3479015851_INC."/php-excel.class.php" );
+				require( SysGlbCfm_INC."/php-excel.class.php" );
 				$xls = new excel_xml( "gb2312", false, "MemberRecordSheet" );
 				$xls->addArray( $data );
 				$xls->generateXML( date( "Y-m-d-His", $timestamp ) );
@@ -81,7 +80,7 @@ if ( $action == "savemonth" )
 {
 				$monthdate = strtotime( "-2 months" );
 				$db->query( "DELETE FROM `".$db_qq3479015851."member_record_login` WHERE pubdate < '".$monthdate."'" );
-				write_msg( "已成功删除两个月前的登录记录！", "record.php?do=member&part=login", "QQ3479015851" );
+				write_msg( "已成功删除两个月前的登录记录！", "record.php?do=member&part=login", "SysGlbCfm" );
 				exit( );
 }
 switch ( $do )
@@ -198,5 +197,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$qq3479015851_global = $db = $db_qq3479015851 = $part = NULL;
+$SystemGlobalcfm_global = $db = $db_qq3479015851 = $part = NULL;
 ?>

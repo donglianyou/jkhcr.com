@@ -13,7 +13,7 @@
 define( "CURSCRIPT", "infomanage" );
 define( "IN_AJAX", true );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
 if ( !submit_check( CURSCRIPT."_submit" ) && $action != "viewresult" )
 {
 	chk_admin_purview( "purview_批量管理" );
@@ -84,7 +84,7 @@ else
 	}
 	if ( $detail == "yes" )
 	{
-		require_once( QQ3479015851_DATA."/info.level.inc.php" );
+		require_once( SysGlbCfm_DATA."/info.level.inc.php" );
 		$here = "批量主题管理";
 		$starttime = "";
 		$endtime = "";
@@ -142,15 +142,15 @@ else
 			{
 				if ( 1 < $row['modid'] )
 				{
-					@unlink( QQ3479015851_ROOT.@$row['html_path'] );
+					@unlink( SysGlbCfm_ROOT.@$row['html_path'] );
 				}
 			}
 			qq3479015851_delete( "information", "WHERE id IN(".$selectedids.")" );
 			$query = $db->query( "SELECT * FROM `".$db_qq3479015851."info_img` WHERE infoid IN ({$selectedids})" );
 			while ( $row = $db->fetchrow( $query ) )
 			{
-				@unlink( @QQ3479015851_ROOT.@$row['imgpath'] );
-				@unlink( @QQ3479015851_ROOT.@$row['pre_imgpath'] );
+				@unlink( @SysGlbCfm_ROOT.@$row['imgpath'] );
+				@unlink( @SysGlbCfm_ROOT.@$row['pre_imgpath'] );
 			}
 			qq3479015851_delete( "info_img", "WHERE infoid IN (".$selectedids.")" );
 			qq3479015851_delete( "comment", "WHERE typeid IN (".$selectedids.") AND type = 'information'" );
@@ -166,8 +166,8 @@ else
 			$count = 0;
 			while ( $row = $db->fetchrow( $query ) )
 			{
-				@unlink( @QQ3479015851_ROOT.@$row['imgpath'] );
-				@unlink( @QQ3479015851_ROOT.@$row['pre_imgpath'] );
+				@unlink( @SysGlbCfm_ROOT.@$row['imgpath'] );
+				@unlink( @SysGlbCfm_ROOT.@$row['pre_imgpath'] );
 				++$count;
 			}
 			qq3479015851_delete( "info_img", "WHERE infoid IN (".$selectedids.")" );
@@ -213,5 +213,5 @@ if ( is_object( $db ) )
 {
 	$db->close( );
 }
-$db = $qq3479015851_global = $part = $action = $here = $where = $selectedids = $step = NULL;
+$db = $SystemGlobalcfm_global = $part = $action = $here = $where = $selectedids = $step = NULL;
 ?>

@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-!(defined('QQ3479015851')) && exit('FORBIDDEN');
+!(defined('SysGlbCfm')) && exit('FORBIDDEN');
 $cfg_photo_type['gif'] = false;
 $cfg_photo_type['jpeg'] = false;
 $cfg_photo_type['png'] = false;
@@ -44,17 +43,17 @@ if (function_exists('imagecreatefromwbmp') && function_exists('imagewbmp')) {
 }
 function check_upimage($file = 'filename')
 {
-	global $qq3479015851_global;
-	$size = $qq3479015851_global['cfg_upimg_size'] * 1024;
-	$upimg_allow = explode(',', $qq3479015851_global['cfg_upimg_type']);
+	global $SystemGlobalcfm_global;
+	$size = $SystemGlobalcfm_global['cfg_upimg_size'] * 1024;
+	$upimg_allow = explode(',', $SystemGlobalcfm_global['cfg_upimg_type']);
 
 	if ($size < $_FILES[$file]['size']) {
-		write_msg('上传文件应小于' . $qq3479015851_global['cfg_upimg_size'] . 'KB');
+		write_msg('上传文件应小于' . $SystemGlobalcfm_global['cfg_upimg_size'] . 'KB');
 		exit();
 	}
 
 	if (!(in_array(FileExt($_FILES[$file]['name']), $upimg_allow))) {
-		write_msg('系统只允许上传' . $qq3479015851_global['cfg_upimg_type'] . '格式的图片！');
+		write_msg('系统只允许上传' . $SystemGlobalcfm_global['cfg_upimg_type'] . '格式的图片！');
 	}
 
 	if (!(preg_match('/^image\\//i', $_FILES[$file]['type']))) {
@@ -66,13 +65,13 @@ function check_upimage($file = 'filename')
  	$file=$_FILES[$file];
 	$file= $file['tmp_name'];
 	if(!getimagesize($file)){
-		write_msg('系统只允许上传' . $qq3479015851_global['cfg_upimg_type'] . '格式的图片！');
+		write_msg('系统只允许上传' . $SystemGlobalcfm_global['cfg_upimg_type'] . '格式的图片！');
 	}
 /* 	if(!exif_imagetype($file)){
-		write_msg('系统只允许上传' . $qq3479015851_global['cfg_upimg_type'] . '格式的图片！');
+		write_msg('系统只允许上传' . $SystemGlobalcfm_global['cfg_upimg_type'] . '格式的图片！');
 	}
 	if((exif_imagetype($file)+0)>3){
-		write_msg('系统只允许上传' . $qq3479015851_global['cfg_upimg_type'] . '格式的图片！');
+		write_msg('系统只允许上传' . $SystemGlobalcfm_global['cfg_upimg_type'] . '格式的图片！');
 	}   */
 	
 	
@@ -84,18 +83,18 @@ function check_upimage($file = 'filename')
 
 function check_upimage_mulup($file = 'filename')
 {
-	global $qq3479015851_global;
-	$size = $qq3479015851_global['cfg_upimg_size'] * 1024;
-	$upimg_allow = explode(',', $qq3479015851_global['cfg_upimg_type']);
+	global $SystemGlobalcfm_global;
+	$size = $SystemGlobalcfm_global['cfg_upimg_size'] * 1024;
+	$upimg_allow = explode(',', $SystemGlobalcfm_global['cfg_upimg_type']);
 
 	if ($size < $_FILES[$file]['size']) {
-		//write_msg('上传文件应小于' . $qq3479015851_global['cfg_upimg_size'] . 'KB');
+		//write_msg('上传文件应小于' . $SystemGlobalcfm_global['cfg_upimg_size'] . 'KB');
 		return false;
 		exit();
 	}
 
 	if (!(in_array(FileExt($_FILES[$file]['name']), $upimg_allow))) {
-		//write_msg('系统只允许上传' . $qq3479015851_global['cfg_upimg_type'] . '格式的图片！');
+		//write_msg('系统只允许上传' . $SystemGlobalcfm_global['cfg_upimg_type'] . '格式的图片！');
 		return false;
 		exit();
 	}
@@ -111,15 +110,15 @@ function check_upimage_mulup($file = 'filename')
  	$file=$_FILES[$file];
 	$file= $file['tmp_name'];
 	if(!getimagesize($file)){
-		//write_msg('系统只允许上传' . $qq3479015851_global['cfg_upimg_type'] . '格式的图片！');
+		//write_msg('系统只允许上传' . $SystemGlobalcfm_global['cfg_upimg_type'] . '格式的图片！');
 		return false;
 		exit();
 	}
 /* 	if(!exif_imagetype($file)){
-		write_msg('系统只允许上传' . $qq3479015851_global['cfg_upimg_type'] . '格式的图片！');
+		write_msg('系统只允许上传' . $SystemGlobalcfm_global['cfg_upimg_type'] . '格式的图片！');
 	}
 	if((exif_imagetype($file)+0)>3){
-		write_msg('系统只允许上传' . $qq3479015851_global['cfg_upimg_type'] . '格式的图片！');
+		write_msg('系统只允许上传' . $SystemGlobalcfm_global['cfg_upimg_type'] . '格式的图片！');
 	}   */
 
 	return true;
@@ -157,30 +156,30 @@ function upload_img_num($file = 'filename')
 
 function start_upload($file_name, $destination_folder, $watermark = 0, $limit_width = '', $limit_height = '', $edit_filename = '', $edit_pre_filename = '')
 {
-	global $qq3479015851_global;
+	global $SystemGlobalcfm_global;
 	global $timestamp;
 	//check_upimage($file_name);
 	!(is_uploaded_file($_FILES[$file_name]['tmp_name'])) && write_msg('请重新选择您要上传的图片!');
 	$file = $_FILES[$file_name];
-	@createdir(QQ3479015851_UPLOAD . $destination_folder);
+	@createdir(SysGlbCfm_UPLOAD . $destination_folder);
 	$file_name = $file['tmp_name'];
 	$pinfo = pathinfo($file['name']);
 	$ftype = $pinfo['extension'];
 	$fname = $pinfo[basename];
 	if (empty($edit_filename) && empty($edit_pre_filename)) {
 		$destination_file = $timestamp . random() . '.' . $ftype;
-		$destination = QQ3479015851_UPLOAD . $destination_folder . $destination_file;
-		$small_destination = QQ3479015851_UPLOAD . $destination_folder . 'pre_' . $destination_file;
+		$destination = SysGlbCfm_UPLOAD . $destination_folder . $destination_file;
+		$small_destination = SysGlbCfm_UPLOAD . $destination_folder . 'pre_' . $destination_file;
 	}
 	else {
-		$destination = QQ3479015851_ROOT . $edit_filename;
-		$small_destination = QQ3479015851_ROOT . $edit_pre_filename;
-		$forbidarray = array(QQ3479015851_ROOT . '/images/logo.gif', QQ3479015851_ROOT . '/images/nopic.gif', QQ3479015851_ROOT . '/images/nophoto.jpg', QQ3479015851_ROOT . '/images/noavatar.gif', QQ3479015851_ROOT . '/images/noavatar_small.gif');
-		if (!(in_array($destination, $forbidarray)) && ($destination != QQ3479015851_ROOT)) {
+		$destination = SysGlbCfm_ROOT . $edit_filename;
+		$small_destination = SysGlbCfm_ROOT . $edit_pre_filename;
+		$forbidarray = array(SysGlbCfm_ROOT . '/images/logo.gif', SysGlbCfm_ROOT . '/images/nopic.gif', SysGlbCfm_ROOT . '/images/nophoto.jpg', SysGlbCfm_ROOT . '/images/noavatar.gif', SysGlbCfm_ROOT . '/images/noavatar_small.gif');
+		if (!(in_array($destination, $forbidarray)) && ($destination != SysGlbCfm_ROOT)) {
 			@unlink($destination);
 		}
 
-		if (!(in_array($small_destination, $forbidarray)) && ($destination != QQ3479015851_ROOT)) {
+		if (!(in_array($small_destination, $forbidarray)) && ($destination != SysGlbCfm_ROOT)) {
 			@unlink($small_destination);
 		}
 
@@ -205,25 +204,25 @@ function start_upload($file_name, $destination_folder, $watermark = 0, $limit_wi
 
 	if (!(empty($limit_width)) && !(empty($limit_height))) {
 		ImageResize($destination, $limit_width, $limit_height, $small_destination);
-		$qq3479015851_image = array();
-		$qq3479015851_image[0] = ($edit_filename ? $edit_filename : '/attachment' . $destination_folder . $destination_file);
-		$qq3479015851_image[1] = ($proportion != 1 ? ($edit_pre_filename ? $edit_pre_filename : '/attachment' . $destination_folder . 'pre_' . $destination_file) : $qq3479015851_image[0]);
+		$SystemGlobalcfm_image = array();
+		$SystemGlobalcfm_image[0] = ($edit_filename ? $edit_filename : '/attachment' . $destination_folder . $destination_file);
+		$SystemGlobalcfm_image[1] = ($proportion != 1 ? ($edit_pre_filename ? $edit_pre_filename : '/attachment' . $destination_folder . 'pre_' . $destination_file) : $SystemGlobalcfm_image[0]);
 	}
 	else {
-		$qq3479015851_image = ($edit_filename ? $edit_filename : '/attachment' . $destination_folder . $destination_file);
+		$SystemGlobalcfm_image = ($edit_filename ? $edit_filename : '/attachment' . $destination_folder . $destination_file);
 	}
 
-	return $qq3479015851_image;
+	return $SystemGlobalcfm_image;
 }
 
 function ImageResize($srcFile, $toW, $toH, $toFile = '')
 {
 	global $cfg_photo_type;
 	global $cfg_jpeg_query;
-	global $qq3479015851_img_w;
-	global $qq3479015851_img_h;
-	global $qq3479015851_preimg_w;
-	global $qq3479015851_preimg_h;
+	global $SystemGlobalcfm_img_w;
+	global $SystemGlobalcfm_img_h;
+	global $SystemGlobalcfm_preimg_w;
+	global $SystemGlobalcfm_preimg_h;
 	
 	if (empty($cfg_jpeg_query)) {
 		$cfg_jpeg_query = 85;
@@ -271,23 +270,23 @@ function ImageResize($srcFile, $toW, $toH, $toFile = '')
 	}
 
 	$srcW = ImageSX($im);
-	$qq3479015851_img_w=$srcW;
+	$SystemGlobalcfm_img_w=$srcW;
 	$srcH = ImageSY($im);     
-	$qq3479015851_img_h=$srcH;
+	$SystemGlobalcfm_img_h=$srcH;
 	$toWH = $toW / $toH;
 	$srcWH = $srcW / $srcH;
 
 	if ($toWH <= $srcWH) {
 		$ftoW = $toW;
 		$ftoH = $ftoW * ($srcH / $srcW);
-		$qq3479015851_preimg_w=floor($ftoW);
-		$qq3479015851_preimg_h=floor($ftoH);
+		$SystemGlobalcfm_preimg_w=floor($ftoW);
+		$SystemGlobalcfm_preimg_h=floor($ftoH);
 	}
 	else {
 		$ftoH = $toH;
 		$ftoW = $ftoH * ($srcW / $srcH);
-		$qq3479015851_preimg_w=floor($ftoW);
-		$qq3479015851_preimg_h=floor($ftoH);
+		$SystemGlobalcfm_preimg_w=floor($ftoW);
+		$SystemGlobalcfm_preimg_h=floor($ftoH);
 	}
 
 	if (($toW < $srcW) || ($toH < $srcH)) {
@@ -361,8 +360,8 @@ function gdversion()
 
 function WaterImg($srcFile, $fromGo = 'up')
 {
-	global $qq3479015851_global;
-	include QQ3479015851_DATA . '/watermark.inc.php';
+	global $SystemGlobalcfm_global;
+	include SysGlbCfm_DATA . '/watermark.inc.php';
 
 	if ($photo_markup != '1') {
 		return NULL;
@@ -384,7 +383,7 @@ function WaterImg($srcFile, $fromGo = 'up')
 		return NULL;
 	}
 
-	$trueMarkimg = QQ3479015851_ROOT . $photo_markimg;
+	$trueMarkimg = SysGlbCfm_ROOT . $photo_markimg;
 	if (!(file_exists($trueMarkimg)) || empty($photo_markimg)) {
 		$trueMarkimg = '';
 	}
@@ -394,7 +393,7 @@ function WaterImg($srcFile, $fromGo = 'up')
 
 function ImgWaterMark($srcFile, $w_pos = 0, $w_img = '', $w_text = '', $w_font = 5, $w_color = '#FF0000', $w_pct)
 {
-	$font_type = QQ3479015851_DATA . '/ttf/number.ttf';
+	$font_type = SysGlbCfm_DATA . '/ttf/number.ttf';
 	if (empty($srcFile) || !(file_exists($srcFile))) {
 		return NULL;
 	}

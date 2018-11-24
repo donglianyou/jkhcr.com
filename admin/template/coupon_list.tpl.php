@@ -11,7 +11,7 @@ $(function(){
 });
 </script>
 <form action="?" method="get">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm">
   <tr class="firstr">
   	<td colspan="2">搜索符合条件的优惠券</td>
@@ -58,7 +58,7 @@ $(function(){
 </form>
 <form action="?part=list" method="post">
 <input name="url" type="hidden" value="<?=GetUrl()?>">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table border="0" cellspacing="0" cellpadding="0" class="vbm" >
     <tr class="firstr">
     <td width="30">&nbsp;</td>
@@ -76,10 +76,10 @@ $(function(){
 <?php foreach($coupon AS $row){?>
     <tr bgcolor="white" >
     <td><input type='checkbox' name='selectedids[]' value="<?=$row['id']?>" class='checkbox' id="<?=$row['id']?>"></td>
-    <td><img src="<?=$qq3479015851_global['SiteUrl'].$row['pre_picture']?>" width="60"></td>
+    <td><img src="<?=$SystemGlobalcfm_global['SiteUrl'].$row['pre_picture']?>" width="60"></td>
     <td><a href="../coupon.php?id=<?=$row[id]?>" target="_blank"><?=$row['title']?></a></td>
     <td><a href="javascript:void(0);" onclick="
-setbg('<?=QQ3479015851_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$row[userid]?>&admindir=<?=$admindir?>')"><?=$row[userid]?></a></td>
+setbg('<?=SysGlbCfm_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$row[userid]?>&admindir=<?=$admindir?>')"><?=$row[userid]?></a></td>
     <td><em><?php echo GetTime($row['dateline']); ?></em></td>
     <td><?php echo $row['status'] == 1 ? '<font color=green>可用</font>' : '<font color=red>失效</font>' ;?></td>
     <td><?=$row['prints']?></td>

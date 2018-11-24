@@ -1,0 +1,30 @@
+QQ登录设置：
+
+一、 登录https://connect.qq.com/manage.html 申请appid, appkey ，创建网站应用 
+
+（回调地址写http://你的域名/include/qqlogin/qq_callback.php） 
+
+二、 登录你的mymps网站后台，选择扩展 –》 其它扩展 -》第三方账号整合 –》 QQ登录整合
+选择开启，依次填写
+参数一填写：你申请到的appid
+参数二填写：你申请到的appkey
+参数三填写：http://你的域名/include/qqlogin/qq_callback.php
+提交保存
+
+注意事项：如果QQ登录依然出现错误，可尝试以下方法后重新提交审核
+调整步骤：
+1，php.ini 设置配置文件：allow_url_fopen = On
+2，php.ini 搜索 extension=php_curl.dll 将前面的;去掉
+3，php.ini 打开extension=php_openssl.dll扩展(去掉前面的;)
+4，如果是IIS服务器环境，需要把 php目录下的libeay32.dll和ssleay32.dl文件复制到C:\windows\system32目录下 设置完后，重新IIS即可。
+
+
+
+微信登录设置：
+
+参数一填写：你申请到的appid
+参数二填写：你申请到的appkey
+参数三填写：http://你的域名/include/wxlogin/wx_callback.php
+
+注意事项：
+1，打开文件时建议使用editplus等专业工具，保存格式为utf8 + nobom

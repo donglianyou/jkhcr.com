@@ -50,8 +50,8 @@ function restore_url( )
 
 define( "CURSCRIPT", "mobile" );
 require_once( dirname( __FILE__ )."/global.php" );
-require_once( QQ3479015851_INC."/db.class.php" );
-require_once( QQ3479015851_INC."/upfile.fun.php" );
+require_once( SysGlbCfm_INC."/db.class.php" );
+require_once( SysGlbCfm_INC."/upfile.fun.php" );
 if ( $admin_cityid )
 {
 				write_msg( "您没有权限访问该页！" );
@@ -168,7 +168,7 @@ else if ( $type == "nav" )
 								}
 				}
 				clear_cache_files( "mobile_nav" );
-				write_msg( "手机文字导航设置更新成功！", "mobile.php?type=nav", "QQ3479015851Record" );
+				write_msg( "手机文字导航设置更新成功！", "mobile.php?type=nav", "SysGlbCfmRecord" );
 }
 else if ( $type == "nav_ico" )
 {
@@ -214,7 +214,7 @@ else if ( $type == "gg" )
 								foreach ( $delids as $kids => $vids )
 								{
 												$delrow = $db->getRow( "SELECT image FROM `".$db_qq3479015851."mobile_gg` WHERE id = '{$vids}'" );
-												@unlink( QQ3479015851_ROOT.$delrow['image'] );
+												@unlink( SysGlbCfm_ROOT.$delrow['image'] );
 												qq3479015851_delete( "mobile_gg", "WHERE id = ".$vids );
 								}
 								clear_cache_files( "mobile_gg" );
@@ -237,9 +237,9 @@ else if ( $type == "gg" )
 								{
 												check_upimage( $name_file );
 												$destination = "/mobile_gg/";
-												$qq3479015851_image = start_upload( $name_file, $destination, 0, "", "", $image );
+												$SystemGlobalcfm_image = start_upload( $name_file, $destination, 0, "", "", $image );
 												unset( $limit );
-												$image = $qq3479015851_image;
+												$image = $SystemGlobalcfm_image;
 								}
 								$res = $db->query( "UPDATE `".$db_qq3479015851."mobile_gg` SET image='{$image}',words='{$words}',typeid='{$typeid}',url='{$url}',displayorder='{$displayorder}' WHERE id = '{$id}'" );
 								clear_cache_files( "mobile_gg" );
@@ -252,9 +252,9 @@ else if ( $type == "gg" )
 								{
 												check_upimage( $name_file );
 												$destination = "/mobile_gg/";
-												$qq3479015851_image = start_upload( $name_file, $destination, 0 );
+												$SystemGlobalcfm_image = start_upload( $name_file, $destination, 0 );
 												unset( $limit );
-												$db->query( "INSERT INTO `".$db_qq3479015851."mobile_gg` (id,image,words,url,pubdate,displayorder,typeid)\r\n\t\t\t\t\t\tVALUES('','{$qq3479015851_image}','{$words}','{$url}','{$timestamp}','{$displayorder}','{$typeid}')" );
+												$db->query( "INSERT INTO `".$db_qq3479015851."mobile_gg` (id,image,words,url,pubdate,displayorder,typeid)\r\n\t\t\t\t\t\tVALUES('','{$SystemGlobalcfm_image}','{$words}','{$url}','{$timestamp}','{$displayorder}','{$typeid}')" );
 												clear_cache_files( "mobile_gg" );
 												write_msg( "幻灯片广告上传成功！", "mobile.php?type=gg" );
 								}
@@ -264,5 +264,5 @@ if ( is_object( $db ) )
 {
 				$db->Close( );
 }
-$qq3479015851_global = $db = $db_qq3479015851 = $part = NULL;
+$SystemGlobalcfm_global = $db = $db_qq3479015851 = $part = NULL;
 ?>

@@ -7,34 +7,33 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 define('CURSCRIPT','login');
 define('IN_SMT',true);
-define('QQ3479015851', true);
+define('SysGlbCfm', true);
 define('IN_MANAGE',true);
 
 require_once dirname(__FILE__)."/include/global.php";
 require_once dirname(__FILE__)."/data/config.php";
-require_once QQ3479015851_DATA."/config.db.php";
-require_once QQ3479015851_INC."/db.class.php";
+require_once SysGlbCfm_DATA."/config.db.php";
+require_once SysGlbCfm_INC."/db.class.php";
 
 ifsiteopen();
-if($qq3479015851_global['cfg_if_member_log_in'] != 1) write_msg("操作失败！系统管理员关闭了会员功能！");
+if($SystemGlobalcfm_global['cfg_if_member_log_in'] != 1) write_msg("操作失败！系统管理员关闭了会员功能！");
 
 $authcodesettings = read_static_cache('authcodesettings');
-require_once QQ3479015851_MEMBER.'/include/common.func.php';
+require_once SysGlbCfm_MEMBER.'/include/common.func.php';
 
 if(!in_array($mod,array(CURSCRIPT,'register','forgetpass','out','openlogin','validate'))){
 	$mod = $_REQUEST['mod'] = CURSCRIPT;
 }
-require_once QQ3479015851_DATA."/config.inc.php";
-require_once QQ3479015851_INC."/member.class.php";
+require_once SysGlbCfm_DATA."/config.inc.php";
+require_once SysGlbCfm_INC."/member.class.php";
 
 $url   = isset($url) ? trim(checkhtml($url)) : '';
 $action = isset($action) ? $action : '';
-$action = ($qq3479015851_global['cfg_if_corp'] != 1 && $action == 'store') ? 'person' : $action;
+$action = ($SystemGlobalcfm_global['cfg_if_corp'] != 1 && $action == 'store') ? 'person' : $action;
 $cityid = isset($cityid) ? intval($cityid) : '';
 
 if(!submit_check('log_submit')){
@@ -68,16 +67,16 @@ if(!submit_check('log_submit')){
 		case 'out':
 			if(PASSPORT_TYPE == 'ucenter'){
 				$member_log -> out('noredirect');
-				require QQ3479015851_ROOT.'/uc_client/client.php';
+				require SysGlbCfm_ROOT.'/uc_client/client.php';
 				$ucsynlogout = uc_user_synlogout();
 				echo $ucsynlogout;
-				echo qq3479015851_goto($url ? $url : $qq3479015851_global['SiteUrl'].'/'.$qq3479015851_global['cfg_member_logfile']);
+				echo qq3479015851_goto($url ? $url : $SystemGlobalcfm_global['SiteUrl'].'/'.$SystemGlobalcfm_global['cfg_member_logfile']);
 			} elseif(PASSPORT_TYPE == 'phpwind'){
 				$member_log -> out('noredirect');
-				require QQ3479015851_ROOT.'/pw_client/uc_client.php';
+				require SysGlbCfm_ROOT.'/pw_client/uc_client.php';
 				$ucsynlogout = uc_user_synlogout();
 				echo $ucsynlogout;
-				echo qq3479015851_goto($url ? $url : $qq3479015851_global['SiteUrl'].'/'.$qq3479015851_global['cfg_member_logfile']);
+				echo qq3479015851_goto($url ? $url : $SystemGlobalcfm_global['SiteUrl'].'/'.$SystemGlobalcfm_global['cfg_member_logfile']);
 			} else {
 				$member_log -> out(trim($url));
 			}
@@ -91,7 +90,7 @@ if(!submit_check('log_submit')){
 			$loc 		= get_location('login',0,'会员登录');
 			$page_title = $loc['page_title'];
 			$location 	= $loc['location'];
-			$qq3479015851_imgcode = $authcodesettings['login'];
+			$SystemGlobalcfm_imgcode = $authcodesettings['login'];
 			globalassign();
 			include qq3479015851_tpl(CURSCRIPT);
 			
@@ -99,7 +98,7 @@ if(!submit_check('log_submit')){
 		
 		case 'register':
 
-			$qq3479015851_global['cfg_if_member_register'] != 1 && write_msg("操作失败！系统管理员关闭了新会员注册！");
+			$SystemGlobalcfm_global['cfg_if_member_register'] != 1 && write_msg("操作失败！系统管理员关闭了新会员注册！");
 			
 			$city = get_city_caches($cityid);
 			$loc 		= get_location('register',0,'会员注册');
@@ -107,9 +106,9 @@ if(!submit_check('log_submit')){
 			$location	= $loc['location'];
 			
 			if(in_array($action,array('store','person'))){
-				require QQ3479015851_DATA.'/safequestions.php';
+				require SysGlbCfm_DATA.'/safequestions.php';
 				$safequestion = GetSafequestion(0,'safequestion');
-				$qq3479015851_imgcode = $authcodesettings['register'];
+				$SystemGlobalcfm_imgcode = $authcodesettings['register'];
 				$submit = '立即注册';
 				if($action == 'store') $get_area_options = select_where_option('/include/selectwhere.php',$city['cityid'],$areaid,$streetid);
 				if($action == 'store') $get_member_cat = get_member_cat();
@@ -149,7 +148,7 @@ if(!submit_check('log_submit')){
 					include qq3479015851_tpl(qq3479015851_tpl($mod.'_4'));
 				}
 			} else {
-				$qq3479015851_imgcode = $authcodesettings['forgetpass'];
+				$SystemGlobalcfm_imgcode = $authcodesettings['forgetpass'];
 				globalassign();
 				include qq3479015851_tpl($mod);
 			}
@@ -157,7 +156,7 @@ if(!submit_check('log_submit')){
 		break;
 	}
 }else{
-	include QQ3479015851_MEMBER.'/include/'.$mod.'.inc.php';
+	include SysGlbCfm_MEMBER.'/include/'.$mod.'.inc.php';
 }
 
 is_object($db) && $db->Close();

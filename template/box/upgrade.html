@@ -3,9 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Language" content="zh-CN" />
-<title><?=$qq3479015851_global[SiteName]?>推广服务中心</title>
-<link type="text/css" rel="stylesheet" href="<?=$qq3479015851_global[SiteUrl]?>/template/global/zhiding.css" >
-<script src="<?=$qq3479015851_global[SiteUrl]?>/template/global/qq3479015851_noerr.js" type="text/javascript"></script>
+<title><?=$SystemGlobalcfm_global[SiteName]?>推广服务中心</title>
+<link type="text/css" rel="stylesheet" href="<?=$SystemGlobalcfm_global[SiteUrl]?>/template/global/zhiding.css" >
+<script src="<?=$SystemGlobalcfm_global[SiteUrl]?>/template/global/qq3479015851_noerr.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="dcontent">
@@ -18,7 +18,7 @@
 
 		<div id="tagContent">
 			<div class="border">
-                <form method="post" action="<?=$qq3479015851_global[SiteUrl]?>/box.php?part=upgrade" name="form1" onsubmit="document.form1.post_submit.disabled=true;">
+                <form method="post" action="<?=$SystemGlobalcfm_global[SiteUrl]?>/box.php?part=upgrade" name="form1" onsubmit="document.form1.post_submit.disabled=true;">
                 <input type="hidden" name="id" value="<?=$id?>">
                 <input type="hidden" name="catid" value="<?=$catid?>">
                 <input type="hidden" name="money_own" value="<?=$money_own?>">
@@ -43,7 +43,7 @@
 							<td style="height:38px">
                                 <div class="listingRow">
                                 <h4 class="listingTitle">
-                                <a style="text-decoration:underline;" href="<?=$qq3479015851_global[SiteUrl]?>/information.php?id=<?=$id?>" target="_blank"><?=$row[title]?></a>
+                                <a style="text-decoration:underline;" href="<?=$SystemGlobalcfm_global[SiteUrl]?>/information.php?id=<?=$id?>" target="_blank"><?=$row[title]?></a>
                                 																			</h4>
                                 </div>
 							</td>
@@ -70,7 +70,7 @@
 				</table>
 				<div class="blank20"></div>
                 <CENTER>
-                <button type="submit" class="ButtonOrgLong WordSevenLong" name="actionupgrade"  style="width:250px;background:transparent url(<?=$qq3479015851_global[SiteUrl]?>/images/zhiding/pay_btnTmp.png) no-repeat scroll 0pt -105px;" id="post_submit">确认无误，提交置顶</button>
+                <button type="submit" class="ButtonOrgLong WordSevenLong" name="actionupgrade"  style="width:250px;background:transparent url(<?=$SystemGlobalcfm_global[SiteUrl]?>/images/zhiding/pay_btnTmp.png) no-repeat scroll 0pt -105px;" id="post_submit">确认无误，提交置顶</button>
                 </CENTER>
 				</form>
 				<script language="javascript">
@@ -80,11 +80,11 @@
                     var ID1=document.getElementById("upgrade_time").value; 
                     var ID2=document.getElementById("total").value;
                     if(ID0 == "cfg_member_upgrade_top"){
-                        document.getElementById("total").innerHTML=<?php echo $qq3479015851_global[cfg_member_upgrade_top]?>*ID1;
+                        document.getElementById("total").innerHTML=<?php echo $SystemGlobalcfm_global[cfg_member_upgrade_top]?>*ID1;
                     }else if(ID0 == "cfg_member_upgrade_list_top"){
-                        document.getElementById("total").innerHTML=<?php echo $qq3479015851_global[cfg_member_upgrade_list_top]?>*ID1;
+                        document.getElementById("total").innerHTML=<?php echo $SystemGlobalcfm_global[cfg_member_upgrade_list_top]?>*ID1;
                     }else{
-                        document.getElementById("total").innerHTML=<?php echo $qq3479015851_global[cfg_member_upgrade_index_top]?>*ID1;
+                        document.getElementById("total").innerHTML=<?php echo $SystemGlobalcfm_global[cfg_member_upgrade_index_top]?>*ID1;
                     }
                     
                     if(ID0==""||ID1=="") 

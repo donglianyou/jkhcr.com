@@ -1,5 +1,5 @@
-<script type="text/javascript" src="<?=$qq3479015851_global[SiteUrl]?>/template/default/js/jquery.autocomplete.min.js"></script> 
-<link rel="stylesheet" href="<?=$qq3479015851_global[SiteUrl]?>/template/default/css/jquery.autocomplete.css" />
+<script type="text/javascript" src="<?=$SystemGlobalcfm_global[SiteUrl]?>/template/default/js/jquery.autocomplete.min.js"></script> 
+<link rel="stylesheet" href="<?=$SystemGlobalcfm_global[SiteUrl]?>/template/default/css/jquery.autocomplete.css" />
 <script type="text/javascript"> 
 var cities = [
 <? $i=1;if(is_array($allcities = get_allcities()))foreach($allcities as $k =>$v){?>

@@ -14,15 +14,15 @@
 define('CURSCRIPT','member');
 
 require_once(dirname(__FILE__)."/global.php");
-require_once(QQ3479015851_INC."/db.class.php");
-require_once(QQ3479015851_MEMBER."/include/qq3479015851.menu.inc.php");
+require_once(SysGlbCfm_INC."/db.class.php");
+require_once(SysGlbCfm_MEMBER."/include/qq3479015851.menu.inc.php");
 
 $do = $do ? mhtmlspecialchars($do) : 'member';
 $tuijian = $tuijian ? mhtmlspecialchars($tuijian) : 'all';
 $if_corp = !$if_corp ? 0 : 1; 
 
 if(in_array(PASSPORT_TYPE,array('ucenter','phpwind'))){
-	require (PASSPORT_TYPE == 'ucenter' ? QQ3479015851_ROOT.'/uc_client/client.php' : QQ3479015851_ROOT.'/pw_client/uc_client.php');
+	require (PASSPORT_TYPE == 'ucenter' ? SysGlbCfm_ROOT.'/uc_client/client.php' : SysGlbCfm_ROOT.'/pw_client/uc_client.php');
 }
 
 switch ($do){
@@ -44,8 +44,8 @@ switch ($do){
 			foreach ($id as $k => $v){
 				$row = $db->getRow("SELECT id,userid,prelogo,logo FROM `{$db_qq3479015851}member` WHERE id ='$v'");
 					//$deluserarr[] = $row['userid'];
-				if($row['logo'] != '/images/nophoto.jpg') @unlink(QQ3479015851_ROOT.$row['logo']);
-				if($row['prelogo'] != '/images/nophoto.jpg') @unlink(QQ3479015851_ROOT.$row['prelogo']);
+				if($row['logo'] != '/images/nophoto.jpg') @unlink(SysGlbCfm_ROOT.$row['logo']);
+				if($row['prelogo'] != '/images/nophoto.jpg') @unlink(SysGlbCfm_ROOT.$row['prelogo']);
 				
 				qq3479015851_delete("member_category","WHERE userid = '$row[userid]'");
 				qq3479015851_delete("member_pm","WHERE fromuser = '$row[userid]' OR fromuser = '$row[userid]'");
@@ -64,8 +64,8 @@ switch ($do){
 				$query = $db -> query("SELECT path,prepath FROM `{$db_qq3479015851}member_album` WHERE userid = '$row[userid]'");
 				if($query){
 					while($r = $db -> fetchRow($query)){
-						@unlink(QQ3479015851_ROOT.$r['path']);
-						@unlink(QQ3479015851_ROOT.$r['prepath']);
+						@unlink(SysGlbCfm_ROOT.$r['path']);
+						@unlink(SysGlbCfm_ROOT.$r['prepath']);
 					}
 				}
 				
@@ -92,7 +92,7 @@ switch ($do){
 				$query = $db -> query("SELECT img_path FROM `{$db_qq3479015851}information` WHERE userid = '$row[userid]'");
 				if($query){
 					while($r = $db -> fetchRow($query)){
-						@unlink(QQ3479015851_ROOT.$r['img_path']);
+						@unlink(SysGlbCfm_ROOT.$r['img_path']);
 					}
 				}
 				$row['userid'] && qq3479015851_delete("information","WHERE userid = '$row[userid]'");
@@ -136,8 +136,8 @@ switch ($do){
 				$query = $db -> query("SELECT path,prepath FROM `{$db_qq3479015851}member_album` WHERE userid = '$row[userid]'");
 				if($query){
 					while($r = $db -> fetchRow($query)){
-						@unlink(QQ3479015851_ROOT.$r['path']);
-						@unlink(QQ3479015851_ROOT.$r['prepath']);
+						@unlink(SysGlbCfm_ROOT.$r['path']);
+						@unlink(SysGlbCfm_ROOT.$r['prepath']);
 					}
 				}
 				$row['userid'] && qq3479015851_delete("member_album","WHERE userid = '$row[userid]'");
@@ -296,7 +296,7 @@ switch ($do){
 		
 	}elseif($part == 'insert'){
 		
-		require_once QQ3479015851_MEMBER.'/include/common.func.php';
+		require_once SysGlbCfm_MEMBER.'/include/common.func.php';
 		
 		if(PASSPORT_TYPE == 'phpwind'){
 				//整合pw
@@ -577,8 +577,8 @@ switch ($do){
 				foreach ($id as $k => $v){
 					$row = $db->getRow("SELECT id,userid,prelogo,logo FROM `{$db_qq3479015851}member` WHERE id ='$v[id]'");
 						//$deluserarr[] = $row['userid'];
-					if($row['logo'] != '/images/nophoto.jpg') @unlink(QQ3479015851_ROOT.$row['logo']);
-					if($row['prelogo'] != '/images/nophoto.jpg') @unlink(QQ3479015851_ROOT.$row['prelogo']);
+					if($row['logo'] != '/images/nophoto.jpg') @unlink(SysGlbCfm_ROOT.$row['logo']);
+					if($row['prelogo'] != '/images/nophoto.jpg') @unlink(SysGlbCfm_ROOT.$row['prelogo']);
 					
 					qq3479015851_delete("member_category","WHERE userid = '$row[userid]'");
 					qq3479015851_delete("member_pm","WHERE fromuser = '$row[userid]' OR fromuser = '$row[userid]'");
@@ -609,8 +609,8 @@ switch ($do){
 				foreach ($id as $k => $v){
 					$row = $db->getRow("SELECT id,userid,prelogo,logo FROM `{$db_qq3479015851}member` WHERE id ='$v'");
 						//$deluserarr[] = $row['userid'];
-					if($row['logo'] != '/images/nophoto.jpg') @unlink(QQ3479015851_ROOT.$row['logo']);
-					if($row['prelogo'] != '/images/nophoto.jpg') @unlink(QQ3479015851_ROOT.$row['prelogo']);
+					if($row['logo'] != '/images/nophoto.jpg') @unlink(SysGlbCfm_ROOT.$row['logo']);
+					if($row['prelogo'] != '/images/nophoto.jpg') @unlink(SysGlbCfm_ROOT.$row['prelogo']);
 					
 					qq3479015851_delete("member_category","WHERE userid = '$row[userid]'");
 					qq3479015851_delete("member_pm","WHERE fromuser = '$row[userid]' OR fromuser = '$row[userid]'");
@@ -733,7 +733,7 @@ switch ($do){
 			$settings = serialize($settings);
 			$db->query("INSERT INTO `{$db_qq3479015851}member_level` (id,levelname,ifsystem,purviews,money_own,perday_maxpost,signin_notice,signin_del,signin_view,moneysettings) VALUES ('','$levelname','0','$purview','$money_own','$perday_maxpost','$signin_notice','$signin_del','$signin_view','$settings')");
 			clear_cache_files('member_'.$db->insert_id());
-			write_msg("添加用户组 ".$levelname." 成功","member.php?do=group","QQ3479015851");
+			write_msg("添加用户组 ".$levelname." 成功","member.php?do=group","SysGlbCfm");
 		}else{
 			write_msg("用户组名不能为空！");
 		}
@@ -775,18 +775,18 @@ switch ($do){
 }
 
 is_object($db) && $db->Close();
-$qq3479015851_global = $db = $db_qq3479015851 = $part = NULL;
+$SystemGlobalcfm_global = $db = $db_qq3479015851 = $part = NULL;
 
 if (!function_exists('get_member_level')){
 	 function get_member_level_label(){
 		global $db,$db_qq3479015851;
 		$member_level = $db -> getAll("SELECT id,levelname FROM `{$db_qq3479015851}member_level`");
 		foreach($member_level as $k=>$value){
-			$qq3479015851 .= "<label for=".$value[id]."><input name=do_action value=".$value[id]." type=radio class=radio id=".$value[id]."";
-			$qq3479015851 .= ($id==$value[id])?" checked":"";
-			$qq3479015851 .= ">".$value[levelname]."</label>";
+			$SystemGlobalcfm .= "<label for=".$value[id]."><input name=do_action value=".$value[id]." type=radio class=radio id=".$value[id]."";
+			$SystemGlobalcfm .= ($id==$value[id])?" checked":"";
+			$SystemGlobalcfm .= ">".$value[levelname]."</label>";
 		}
-		return $qq3479015851;
+		return $SystemGlobalcfm;
 	  } 
 }
 
@@ -794,15 +794,15 @@ if (!function_exists('get_member_level')){
 	function get_member_level($id='',$name='levelid'){
 		global $db,$db_qq3479015851;
 		$member_level = $db -> getAll("SELECT id,levelname FROM `{$db_qq3479015851}member_level`");
-		$qq3479015851 .= "<select name=\"".$name."\">";
-		$qq3479015851 .= "<option value=''>>不限组别</option>";
+		$SystemGlobalcfm .= "<select name=\"".$name."\">";
+		$SystemGlobalcfm .= "<option value=''>>不限组别</option>";
 		foreach($member_level as $k=>$value){
-			$qq3479015851 .= "<option value=".$value[id]."";
-			$qq3479015851 .= ($id==$value[id])?" selected style=\"background-color:#6EB00C;color:white\"":"";
-			$qq3479015851 .= ">".$value[levelname]."</option>";
+			$SystemGlobalcfm .= "<option value=".$value[id]."";
+			$SystemGlobalcfm .= ($id==$value[id])?" selected style=\"background-color:#6EB00C;color:white\"":"";
+			$SystemGlobalcfm .= ">".$value[levelname]."</option>";
 		}
-		$qq3479015851 .= "</select>";
-		return $qq3479015851;
+		$SystemGlobalcfm .= "</select>";
+		return $SystemGlobalcfm;
 	}
 }
 ?>

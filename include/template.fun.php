@@ -7,10 +7,9 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
-if (!(defined('QQ3479015851'))) {
+if (!(defined('SysGlbCfm'))) {
 	exit('Access Denied');
 }
 function myparseTemplate($tplfile, $templateid, $tpldir)
@@ -19,7 +18,7 @@ function myparseTemplate($tplfile, $templateid, $tpldir)
 	global $mytemplates;
 	$nest = 6;
 	$file = basename($tplfile, '.html');
-	$objfile = QQ3479015851_DATA . '/templates/' . $templateid . '_' . $file . '.tpl.php';
+	$objfile = SysGlbCfm_DATA . '/templates/' . $templateid . '_' . $file . '.tpl.php';
 
 	if (!(@$fp = fopen($tplfile, 'r'))) {
 		exit('Current template file \'./' . $tpldir . '/' . $file . '.html\' not found or have no access!');
@@ -55,7 +54,7 @@ function myparseTemplate($tplfile, $templateid, $tpldir)
 		$headeradd .= ';';
 	}
 
-	$template = '<? if(!defined(\'QQ3479015851\')) exit(\'Access Denied\');' . "\r\n" . '/*分类信息系统' . "\r\n" . '联系QQ：3479015851*/?>' . "\r\n" . $template;
+	$template = '<? if(!defined(\'SysGlbCfm\')) exit(\'Access Denied\');' . "\r\n" . '/*分类信息系统' . "\r\n" . '联系QQ：3479015851*/?>' . "\r\n" . $template;
 	$template = preg_replace('/[' . "\n\r\t" . ']*\\{qq3479015851tag_([a-z0-9_]+)\\}[' . "\n\r\t" . ']*/is', "\n" . '<?php echo custom(\'\\1\'); ?>' . "\n", $template);
 	$template = preg_replace('/[' . "\n\r\t" . ']*\\{template\\s+([a-z0-9_]+)\\}[' . "\n\r\t" . ']*/is', "\n" . '<?php include qq3479015851_tpl(\'\\1\'); ?>' . "\n", $template);
 	$template = preg_replace('/[' . "\n\r\t" . ']*\\{php\\s+(.+?)\\}[' . "\n\r\t" . ']*/ies', 'stripvtags(\'<?php \\1 ?>\',\'\')', $template);
@@ -87,9 +86,9 @@ function loadmytemplate($file, $templateid = 0, $tpldir = '')
 	global $mytemplates;
 	$tpldir = ($tpldir ? $tpldir : TPLDIR);
 	$templateid = ($templateid ? $templateid : TEMPLATEID);
-	$tplfile = QQ3479015851_ROOT . '/template/' . $tpldir . '/' . $file . '.html';
+	$tplfile = SysGlbCfm_ROOT . '/template/' . $tpldir . '/' . $file . '.html';
 	if (($templateid != 1) && !(file_exists($tplfile))) {
-		$tplfile = QQ3479015851_ROOT . '/template/default/' . $file . '.html';
+		$tplfile = SysGlbCfm_ROOT . '/template/default/' . $file . '.html';
 	}
 
 	$content = @implode('', file($tplfile));
@@ -144,15 +143,15 @@ function stripblock($var, $s)
 
 function chktplrefresh($maintpl, $subtpl, $timecompare, $templateid, $tpldir)
 {
-	global $qq3479015851_qq3479015851;
+	global $SystemGlobalcfm_qq3479015851;
 	
 	
-	if($qq3479015851_qq3479015851['tplrefresh'] == 0){
+	if($SystemGlobalcfm_qq3479015851['tplrefresh'] == 0){
 		myparsetemplate($subtpl,$templateid, $tpldir);
 		return true;
 	}
 	
-	if (empty($timecompare) || ($qq3479015851_qq3479015851['tplrefresh'] == 1)) {
+	if (empty($timecompare) || ($SystemGlobalcfm_qq3479015851['tplrefresh'] == 1)) {
 		if ($timecompare < @filemtime($subtpl)) {
 			myparsetemplate($subtpl, $templateid, $tpldir);
 			return true;

@@ -10,7 +10,7 @@ function checkSubmit()
      return true;
 }
 </script>
-<div id="<?=QQ3479015851_SOFTNAME?>" style=" padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style=" padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -36,7 +36,7 @@ function checkSubmit()
 <input type="hidden" name="if_corp" value="1" />
 <?} ?>
 <input name="reg_corp" value="1" type="hidden"/>
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%"  border="0" cellspacing="0" cellpadding="0" class="vbm">
 	<tr class="firstr">
 		<td colspan="2">帐号信息</td>

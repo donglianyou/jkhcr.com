@@ -2,7 +2,7 @@
 $admindir = getcwdOL();
 ?>
 <script type='text/javascript' src='js/vbm.js'></script>
-<div id="<?=QQ3479015851_SOFTNAME?>" style=" padding-bottom:0">
+<div id="<?=SysGlbCfm_SOFTNAME?>" style=" padding-bottom:0">
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
@@ -15,7 +15,7 @@ $admindir = getcwdOL();
 </div>
 <form name='form1' method='post' action='certification.php'>
 <input name="forward_url" value="<?=GetUrl()?>" type="hidden">
-<div id="<?=QQ3479015851_SOFTNAME?>">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
     <table border="0" cellspacing="0" cellpadding="0" class="vbm">
     <tr class="firstr">
     <td colspan="6"><b><?=$certify_arr[$typeid]?>认证提交记录</b></td>
@@ -34,7 +34,7 @@ $admindir = getcwdOL();
           <td><?=$typeid==1?$value[tname]:$value[cname]?></td>
           <td><a href='javascript:blocknone("pm_<?=$value[id]?>");'><?=$value[img_path]?></a></td>
           <td><a href="
-javascript:setbg('QQ3479015851会员中心',400,110,'../box.php?part=member&userid=<?=$value[userid]?>&admindir=<?=$admindir?>')"><?=$value[userid]?></a>
+javascript:setbg('SysGlbCfm会员中心',400,110,'../box.php?part=member&userid=<?=$value[userid]?>&admindir=<?=$admindir?>')"><?=$value[userid]?></a>
 <div class="clear"></div>
 <?php if($value[per_certify] == '1'){?>
         <img src="../images/person1.gif" alt="已通过身份证认证"/>
@@ -52,7 +52,7 @@ javascript:setbg('QQ3479015851会员中心',400,110,'../box.php?part=member&user
         </tr>
         <tr style="background-color:white; display:none" id="pm_<?=$value[id]?>">
             <td>&nbsp;</td>
-            <td colspan="6"><a href="<?=$qq3479015851_global[SiteUrl]?><?=$value[img_path]?>" target="_blank"><img style="max-width:450px; max-height:300px;" src="<?=$qq3479015851_global[SiteUrl]?><?=$value[img_path]?>" height="200"/></a></td>
+            <td colspan="6"><a href="<?=$SystemGlobalcfm_global[SiteUrl]?><?=$value[img_path]?>" target="_blank"><img style="max-width:450px; max-height:300px;" src="<?=$SystemGlobalcfm_global[SiteUrl]?><?=$value[img_path]?>" height="200"/></a></td>
             </tr>
     <?}?>
     </table>

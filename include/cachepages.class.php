@@ -7,8 +7,7 @@
  * ----------------------------------------------------------------------------
  * 这是一个自由软件！您可以对程序代码进行修改和使用。
  * ============================================================================
- * 程序交流QQ：3479015851
- * QQ群 ：625621054  [入群提供技术支持]
+ * Powered By 中国健康养生网站
 `*/
 class cachepages
 {
@@ -24,13 +23,13 @@ class cachepages
 		}
 
 		if (CURSCRIPT == 'information') {
-			$this->cacheRoot = QQ3479015851_DATA . '/pagesinfo/';
+			$this->cacheRoot = SysGlbCfm_DATA . '/pagesinfo/';
 		}
 		else if (CURSCRIPT == 'category') {
-			$this->cacheRoot = QQ3479015851_DATA . '/pageslist/';
+			$this->cacheRoot = SysGlbCfm_DATA . '/pageslist/';
 		}
 		else {
-			$this->cacheRoot = QQ3479015851_DATA . '/pagesqq3479015851/';
+			$this->cacheRoot = SysGlbCfm_DATA . '/pagesqq3479015851/';
 		}
 
 		$this->cacheFileName = $this->getCacheFileName($curscript);

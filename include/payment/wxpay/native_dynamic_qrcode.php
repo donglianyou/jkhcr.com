@@ -47,7 +47,7 @@
 	if($uid>0){
 		@header("Content-Type: text/html; charset=utf-8");
 		$ip=GetIP();
-		$money=$total_fee*$qq3479015851_global['cfg_coin_fee'];//实际充值的金币数量比例
+		$money=$total_fee*$SystemGlobalcfm_global['cfg_coin_fee'];//实际充值的金币数量比例
 		$db->query("
 		INSERT INTO {$db_qq3479015851}payrecord(uid,userid,orderid,money,paybz,type,payip,posttime,ifadd) 
 		VALUES('$uid','$s_uid','$out_trade_no','$money','等待支付','wxcode','{$ip}',UNIX_TIMESTAMP(),'0')");
