@@ -103,13 +103,13 @@
                     <?php $i =1; ?>                    <?php if(is_array($index_cat)){foreach($index_cat as $SystemGlobalcfm) { ?>                    <? if($i < 11) { ?>
                         <li>
                             <em><a href="<?=$SystemGlobalcfm['uri']?>" style="color:<?=$SystemGlobalcfm['color']?>" target="_blank"><?=$SystemGlobalcfm['catname']?></a></em>
-                            <dl>
+                            <!-- <dl>
                                 <dt><b></b></dt>
                                 <dd>
                                 <?php if(is_array($SystemGlobalcfm['children'])){foreach($SystemGlobalcfm['children'] as $w) { ?>                                <a href="<?=$w['uri']?>" style="color:<?=$w['color']?>" target="_blank" title="<?=$w['catname']?>"><?=$w['catname']?></a>
                                 <?php }} ?>
                                 </dd>
-                            </dl>
+                            </dl> -->
                         </li>
                     <?php } ?>
                     <?php $i=$i+1; ?>                    <?php }} ?>

@@ -224,13 +224,13 @@ sub,sup{font-size:100%;vertical-align:baseline}
 #infomenu .cont li dl{position:absolute;visibility:hidden}
 #infomenu .cont li em{position:absolute;width:150px;height:22px;text-indent:25px;-webkit-transition:background .5s ease;transition:background .5s ease}
 #infomenu .cont li em a{color:#333;font-size:14px}
-#infomenu .cont li.thismenu em{position:absolute;width:535px;height:24px;border-radius:3px 3px 0}
+/*#infomenu .cont li.thismenu em{position:absolute;width:535px;height:24px;border-radius:3px 3px 0}
 #infomenu .cont li.thismenu dl{top:0;left:170px;z-index:100;visibility:visible;width:449px;height:200px;text-align:left}
 #infomenu .cont li.thismenu dl dt{position:relative;z-index:100;margin:5px 2px;padding-left:20px;width:345px;height:35px;background:#fff;line-height:35px}
 #infomenu .cont li.thismenu dl dd{position:absolute;top:30px;left:0;padding:10px 0 10px 15px;width:350px;border-top:0;border-radius:0 0 3px 3px;background:#fff;zoom:1}
 #infomenu .cont li.thismenu dl b{z-index:99;font-size:14px}
 #infomenu .cont li.thismenu dl dd a{font-size:14px;float:left;display:block;overflow:hidden;padding:0 5px;width:105px;color:#333;text-align:left;white-space:nowrap}
-.daohang_con{overflow:auto;margin-top:10px;width:100%;height:auto;text-align:center}
+*/.daohang_con{overflow:auto;margin-top:10px;width:100%;height:auto;text-align:center}
 .daohang_con .ul{display:block;margin-top:10px;width:75pc;height:auto;text-align:left}
 .daohang,.daohang_con .ul{margin-right:auto;margin-left:auto}
 .daohang{float:right;overflow:hidden;background:0 0;background-repeat:repeat-x;text-align:center}
