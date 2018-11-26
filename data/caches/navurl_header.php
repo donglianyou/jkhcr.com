@@ -6,8 +6,8 @@ $data = array (
     'id' => '32',
     1 => 'news.php',
     'url' => 'news.php',
-    2 => '#006ffd',
-    'color' => '#006ffd',
+    2 => '',
+    'color' => '',
     3 => 'news',
     'flag' => 'news',
     4 => '',
@@ -31,8 +31,8 @@ $data = array (
   array (
     0 => '20',
     'id' => '20',
-    1 => 'category.php?catid=2',
-    'url' => 'category.php?catid=2',
+    1 => 'category.php?catid=3',
+    'url' => 'category.php?catid=3',
     2 => '',
     'color' => '',
     3 => '2',
@@ -41,8 +41,8 @@ $data = array (
     'ico' => '',
     5 => '_self',
     'target' => '_self',
-    6 => '燕窝',
-    'title' => '燕窝',
+    6 => '燕窝及高端滋补品',
+    'title' => '燕窝及高端滋补品',
     7 => '3',
     'typeid' => '3',
     8 => '2',
@@ -58,8 +58,8 @@ $data = array (
   array (
     0 => '21',
     'id' => '21',
-    1 => 'category.php?catid=3',
-    'url' => 'category.php?catid=3',
+    1 => 'category.php?catid=4',
+    'url' => 'category.php?catid=4',
     2 => '',
     'color' => '',
     3 => '3',
@@ -83,37 +83,10 @@ $data = array (
   ),
   3 => 
   array (
-    0 => '22',
-    'id' => '22',
-    1 => 'category.php?catid=4',
-    'url' => 'category.php?catid=4',
-    2 => '',
-    'color' => '',
-    3 => '4',
-    'flag' => '4',
-    4 => '',
-    'ico' => '',
-    5 => '_self',
-    'target' => '_self',
-    6 => '滋补品',
-    'title' => '滋补品',
-    7 => '3',
-    'typeid' => '3',
-    8 => '2',
-    'isview' => '2',
-    9 => '4',
-    'displayorder' => '4',
-    10 => '0',
-    'createtime' => '0',
-    11 => '0',
-    'cityid' => '0',
-  ),
-  4 => 
-  array (
     0 => '23',
     'id' => '23',
-    1 => 'category.php?catid=5',
-    'url' => 'category.php?catid=5',
+    1 => 'category.php?catid=252',
+    'url' => 'category.php?catid=252',
     2 => '',
     'color' => '',
     3 => '5',
@@ -135,34 +108,7 @@ $data = array (
     11 => '0',
     'cityid' => '0',
   ),
-  5 => 
-  array (
-    0 => '27',
-    'id' => '27',
-    1 => 'category.php?catid=9',
-    'url' => 'category.php?catid=9',
-    2 => '',
-    'color' => '',
-    3 => '9',
-    'flag' => '9',
-    4 => '',
-    'ico' => '',
-    5 => '_self',
-    'target' => '_self',
-    6 => '益生制品',
-    'title' => '益生制品',
-    7 => '3',
-    'typeid' => '3',
-    8 => '2',
-    'isview' => '2',
-    9 => '6',
-    'displayorder' => '6',
-    10 => '0',
-    'createtime' => '0',
-    11 => '0',
-    'cityid' => '0',
-  ),
-  6 => 
+  4 => 
   array (
     0 => '24',
     'id' => '24',
@@ -189,12 +135,12 @@ $data = array (
     11 => '0',
     'cityid' => '0',
   ),
-  7 => 
+  5 => 
   array (
     0 => '25',
     'id' => '25',
-    1 => 'category.php?catid=7',
-    'url' => 'category.php?catid=7',
+    1 => 'brand.php',
+    'url' => 'brand.php',
     2 => '',
     'color' => '',
     3 => '7',
@@ -216,7 +162,7 @@ $data = array (
     11 => '0',
     'cityid' => '0',
   ),
-  8 => 
+  6 => 
   array (
     0 => '26',
     'id' => '26',
@@ -243,7 +189,7 @@ $data = array (
     11 => '0',
     'cityid' => '0',
   ),
-  9 => 
+  7 => 
   array (
     0 => '33',
     'id' => '33',
@@ -270,7 +216,7 @@ $data = array (
     11 => '0',
     'cityid' => '0',
   ),
-  10 => 
+  8 => 
   array (
     0 => '34',
     'id' => '34',
@@ -284,8 +230,8 @@ $data = array (
     'ico' => '',
     5 => '_self',
     'target' => '_self',
-    6 => '商家店铺',
-    'title' => '商家店铺',
+    6 => '供应信息',
+    'title' => '供应信息',
     7 => '3',
     'typeid' => '3',
     8 => '2',
@@ -297,7 +243,7 @@ $data = array (
     11 => '0',
     'cityid' => '0',
   ),
-  11 => 
+  9 => 
   array (
     0 => '31',
     'id' => '31',

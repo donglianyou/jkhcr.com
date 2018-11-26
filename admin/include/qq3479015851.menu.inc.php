@@ -5,6 +5,8 @@
 `*/
 $admin_menu[siteabout][name] = '站 务';
 $admin_menu[siteabout][style] = 'home';
+$admin_menu[siteabout][group][element]['品牌推荐']['品牌推荐'] = 'brand.php';
+$admin_menu[siteabout][group][element]['品牌推荐']['添加品牌'] = 'brand.php?part=add';
 $admin_menu[siteabout][group][element]['首页幻灯片']['幻灯片列表'] = 'focus.php';
 $admin_menu[siteabout][group][element]['首页幻灯片']['上传幻灯片'] = 'focus.php?part=add';
 $admin_menu[siteabout][group][element]['关于我们']['栏目设置'] = 'site_about.php?part=list';

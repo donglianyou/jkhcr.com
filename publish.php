@@ -51,7 +51,7 @@ if($act == 'dopost') {
 		exit();
 	}
 	
-	empty($areaid) && write_msg('请选择您要发布的地区！');
+	/*empty($areaid) && write_msg('请选择您要发布的地区！');*/
 	empty($title) && write_msg("请输入信息标题!");
 	empty($content) && write_msg("您还没有输入信息描述!");
 	empty($tel) && write_msg("联系电话不能为空！");

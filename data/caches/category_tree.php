@@ -3,7 +3,7 @@ $data = array (
   3 => 
   array (
     'catid' => '3',
-    'catname' => '燕窝',
+    'catname' => '燕窝及高端滋补品',
     'color' => '',
     'if_view' => '2',
     'dir_typename' => 'fang',
@@ -48,30 +48,6 @@ $data = array (
       ),
     ),
   ),
-  251 => 
-  array (
-    'catid' => '251',
-    'catname' => '滋补品',
-    'color' => '',
-    'if_view' => '2',
-    'dir_typename' => 'zibupin',
-    'uri' => 'category.php?catid=251',
-    'usecoin' => '0',
-    'icon' => '',
-    'children' => 
-    array (
-      254 => 
-      array (
-        'catid' => '254',
-        'catname' => '梅花鹿茸',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'meihualurong',
-        'uri' => 'category.php?catid=254',
-        'usecoin' => '0',
-      ),
-    ),
-  ),
   252 => 
   array (
     'catid' => '252',
@@ -92,30 +68,6 @@ $data = array (
         'color' => '',
         'dir_typename' => 'jinzhengu',
         'uri' => 'category.php?catid=256',
-        'usecoin' => '0',
-      ),
-    ),
-  ),
-  253 => 
-  array (
-    'catid' => '253',
-    'catname' => '益生制品',
-    'color' => '',
-    'if_view' => '2',
-    'dir_typename' => 'yishengzhipin',
-    'uri' => 'category.php?catid=253',
-    'usecoin' => '0',
-    'icon' => '',
-    'children' => 
-    array (
-      257 => 
-      array (
-        'catid' => '257',
-        'catname' => '干酪乳杆菌',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'ganlaoruganjun',
-        'uri' => 'category.php?catid=257',
         'usecoin' => '0',
       ),
     ),

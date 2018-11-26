@@ -24,16 +24,7 @@
     </dd>
 	</dl>
 	<!--{/loop}-->
-    <!--{if $area_list}-->
-	<dl>
-	<dt>区域查找：</dt>
-	<dd>
-    	<!--{loop $area_list $SystemGlobalcfm}-->
-		<div><a href="{$city[domain]}{$SystemGlobalcfm[uri]}" {if $SystemGlobalcfm[select] == 1}class="curr"{/if}>{$SystemGlobalcfm[areaname]}</a></div>
-		<!--{/loop}-->
-	</dd>
-	</dl>
-	<!--{/if}-->
+
     <!--{if $street_list}-->
 		<dl>
 		<dt></dt>
@@ -41,18 +32,6 @@
         	<!--{loop $street_list $SystemGlobalcfm}-->
 			<div><a href="{$city[domain]}{$SystemGlobalcfm[uri]}" {if $SystemGlobalcfm[select] == 1}class="curr"{/if}>{$SystemGlobalcfm[streetname]}</a></div>
 			<!--{/loop}-->
-		</dd>
-		</dl>
-	<!--{/if}-->
-    <!--{if !$cityid && $hotcities}-->
-		<dl>
-		<dt>热门分站</dt>
-		<dd>
-		<div><a href="#" class="curr">不限</a></div>
-        	<!--{loop $hotcities $SystemGlobalcfm}-->
-			<div><a href="{$SystemGlobalcfm[domain]}{$cat[caturi]}">{$SystemGlobalcfm[cityname]}</a></div>
-			<!--{/loop}-->
-		<div><a href="{$SystemGlobalcfm_global[SiteUrl]}/changecity.php">更多 &raquo;</a></div>
 		</dd>
 		</dl>
 	<!--{/if}-->

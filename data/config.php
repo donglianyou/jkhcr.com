@@ -1,6 +1,6 @@
 <?php
 $SystemGlobalcfm_global = array (
-  'cfg_cityshowtype' => 'pinyin',
+  'cfg_independency' => 'advertisement',
   'cfg_if_nonmember_info' => '1',
   'cfg_if_info_verify' => '0',
   'cfg_postfile' => 'publish.php',
@@ -13,10 +13,10 @@ $SystemGlobalcfm_global = array (
   'cfg_upimg_watermark_img' => '',
   'cfg_upimg_watermark_height' => '50',
   'cfg_upimg_watermark_width' => '180',
-  'cfg_independency' => 'advertisement,topnav,focus,announce,friendlink,telephone,lifebox',
-  'screen_cat' => 'full',
   'cfg_citiesdir' => '/city',
   'cfg_redirectpage' => 'home',
+  'screen_cat' => 'full',
+  'cfg_cityshowtype' => 'pinyin',
   'cfg_upimg_watermark' => '1',
   'screen_info' => 'full',
   'cfg_upimg_size' => '500',
