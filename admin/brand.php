@@ -22,19 +22,19 @@ case "link" :
 				{
 								chk_admin_purview( "purview_友情链接" );
 								$where = $ifindex ? " WHERE ifindex = '".$ifindex."'" : " WHERE 1";
-								$where .= $catid ? " AND catid = '".$catid."'" : "";
+								$where .= $typeid ? " AND typeid = '".$typeid."'" : "";
 								$where .= $admin_cityid ? " AND cityid = '".$admin_cityid."'" : $cityid ? " AND cityid = '".$cityid."'" : " AND cityid = ''";
 								$rows_num = qq3479015851_count( "flink", $where );
-								$param = setparam( array( "do", "cityid", "part", "ifindex", "catid" ) );
+								$param = setparam( array( "do", "cityid", "part", "ifindex", "catid","typeid" ) );
 								$links = page1( "SELECT * FROM ".$db_qq3479015851."brand ".$where." ORDER BY ordernumber ASC" );
-								$here = "友情链接管理";
+								$here = "品牌管理";
 								$cats = $db->getAll( "SELECT * FROM `".$db_qq3479015851."category` WHERE parentid = '0'" );
 								include( qq3479015851_tpl( CURSCRIPT."_default" ) );
 				}
 				else if ( $part == "add" )
 				{
 								chk_admin_purview( "purview_增加链接" );
-								$here = "添加友情链接";
+								$here = "添加品牌";
 								$sql = "SELECT * FROM ".$db_qq3479015851."brand_type ORDER BY id Asc";
 								$links = $db->getAll( $sql );
 								include( qq3479015851_tpl( CURSCRIPT."_add" ) );
@@ -44,13 +44,13 @@ case "link" :
 								$sql = "Insert Into `".$db_qq3479015851."brand`(id,cityid,ifindex,url,webname,weblogo,typeid,createtime,ischeck,ordernumber,catid)\r\n\t\t\t\tValues('','".$cityid."','".$ifindex."','".$url."','".$webname."','".$weblogo."','".$typeid."','".$timestamp."','".$ischeck."','".$ordernumber."','".$catid."'); ";
 								$res = $db->query( $sql );
 								clear_cache_files( "city_".$cityid );
-								write_msg( "添加友情链接 ".$webname." 成功", "?part=list", "qq3479015851" );
+								write_msg( "添加品牌 ".$webname." 成功", "?part=list", "qq3479015851" );
 				}
 				else if ( $part == "edit" )
 				{
 								$sql = "SELECT * FROM ".$db_qq3479015851."brand WHERE id = '".$id."'";
 								$link = $db->getRow( $sql );
-								$here = "编辑友情链接";
+								$here = "编辑品牌";
 								include( qq3479015851_tpl( CURSCRIPT."_edit" ) );
 				}
 				else if ( $part == "update" )
@@ -75,7 +75,7 @@ case "link" :
 												}
 												qq3479015851_delete( "flink", "WHERE id = '".$id."'" );
 												clear_cache_files( "city_".$cityid );
-												write_msg( "删除友情链接 ".$id." 成功", "brand.php".$cityid );
+												write_msg( "删除品牌 ".$id." 成功", "brand.php".$cityid );
 								}
 								else
 								{
@@ -114,7 +114,7 @@ case "link" :
 																}
 												}
 												clear_cache_files( "city_".$cityid );
-												write_msg( "友情链接设置更新成功！", "?do=link&part=list&cityid=".$cityid, "qq3479015851" );
+												write_msg( "品牌设置更新成功！", "?do=link&part=list&cityid=".$cityid, "qq3479015851" );
 								}
 				}
 				break;

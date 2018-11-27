@@ -20,11 +20,11 @@
 </div>
 <div class="clearfix"></div>
 <div class="small-section">
-	<a href="brand.php?cityid=<?=$cityid?>"  <?php if(empty($ifindex) && empty($catid)) echo 'class="current"'; ?>>全部</a>
-	<a href="brand.php?ifindex=2&cityid=<?=$cityid?>" <?php if($ifindex == 2) echo 'class="current"'; ?>>首页</a>
-	<?php foreach($cats as $k => $v){?>
-	<a href="brand.php?catid=<?=$v['catid']?>&cityid=<?=$cityid?>" <?php if($catid == $v['catid']) echo 'class="current"'; ?>><?=$v['catname']?></a>
-	<?php }?>
+	<a href="brand.php?cityid=" class="current">全部</a>
+		<a href="brand.php?typeid=1&amp;cityid=" class="current">燕窝及高端滋补品</a>
+		<a href="brand.php?typeid=2&amp;cityid=" class="current">酵素</a>
+		<a href="brand.php?typeid=4&amp;cityid=" class="current">功能食品</a>
+	
 </div>
 <div class="clearfix"></div>
 <form method='post' action='?part=doall'>
@@ -52,10 +52,10 @@
       <td align="left"><a href="<?=$row[url]?>" target="_blank" style="text-decoration:underline;"><?=$row[url]?></a></td>
       <td align="left"><?=webtypename($row[typeid])?></td>
 	  <?php if(!$catid){?>
-      <td><?if (!empty($row[weblogo])){?><a href="<?=$row[weblogo]?>"><img src="<?=$row[weblogo]?>" width="85" height="35" border="0" alt="点击查看图片完整大小"/></a><?}else{?>无<?}?></td>
+      <td><?if (!empty($row[weblogo])){?><a href="<?=$row[weblogo]?>"><img src="<?=$row[weblogo]?>" width="125" style="max-height:110px" border="0" alt="点击查看图片完整大小"/></a><?}else{?>无<?}?></td>
 	  <?php }?>
       <td><em><?=GetTime($row[createtime])?></em></td>
-      <td><a href='brand.php?id=<?=$row[id]?>&part=edit'>更改</a> / <a href='brand.php?id=<?=$row[id]?>&part=delete' onClick="return confirm('您确定要删除该链接吗，如不确定请点取消')">删除</a> </td>
+      <td><a href='brand.php?id=<?=$row['id']?>&part=edit'>更改</a> / <a href='brand.php?id=<?=$row[id]?>&part=delete' onClick="return confirm('您确定要删除该链接吗，如不确定请点取消')">删除</a> </td>
     </tr>
     <?}?>
 <tr bgcolor="#ffffff" height="28">
