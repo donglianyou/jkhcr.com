@@ -10,6 +10,10 @@ body{ font-family:Arial, Helvetica, sans-serif!important;}
 <script type='text/javascript' src='../template/global/qq3479015851.js'></script>
 <script type='text/javascript' src='../template/global/noerr.js'></script>
 <script type='text/javascript' src='js/loading.js'></script>
+<link rel="stylesheet" href="../template/global/basic.css">
+<link rel="stylesheet" href="../template/global/dropzone.min.css">
+<script src="../template/global/jquery.min.js"></script>
+<script src="../template/global/dropzone.min.js"></script>
 <script language="javascript">
 var current_domain = '<?php echo $SystemGlobalcfm_global[SiteUrl]; ?>';
 function $$(obj){

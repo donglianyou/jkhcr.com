@@ -15,9 +15,9 @@ function CheckSubmit()
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
-                <li><a href="brand.php?part=list">已增加友情链接</a></li>
-                <li><a href="brand.php?part=add" <?php if($part=='add'){?>class="current"<?php }?>>增加友情链接</a></li>
-                <?php if(!$admin_cityid){?><li><a href="brand.php?do=type" <?php if($do=='type'){?>class="current"<?php }?>>网站类型管理</a></li><?php }?>
+                <li><a href="brand.php?part=list">所有品牌</a></li>
+                <li><a href="brand.php?part=add" <?php if($part=='add'){?>class="current"<?php }?>>添加品牌</a></li>
+                <?php if(!$admin_cityid){?><li><a href="brand.php?do=type" <?php if($do=='type'){?>class="current"<?php }?>>品牌类型管理</a></li><?php }?>
             </ul>
         </div>
     </div>
@@ -47,7 +47,7 @@ function CheckSubmit()
 	}
 	?>
     <tr class="firstr">
-      <td colspan="5" align="left"><strong>新增一个网站类型：</strong></td>
+      <td colspan="5" align="left"><strong>新增一个品牌类型：</strong></td>
     </tr>
     <form action="brand.php?do=type" method="post" enctype="multipart/form-data" name="form1" onSubmit="return CheckSubmit();";>
     <input name="part" value="insert" type="hidden"/>

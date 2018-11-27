@@ -3,9 +3,9 @@
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
-                <li><a href="brand.php?part=list" <?php if($part=='list'){?>class="current"<?php }?>>已增加友情链接</a></li>
-                <li><a href="brand.php?part=add" <?php if($part=='add'){?>class="current"<?php }?>>增加友情链接</a></li>
-                <?php if(!$admin_cityid){?><li><a href="brand.php?do=type" <?php if($do=='type'){?>class="current"<?php }?>>网站类型管理</a></li><?php }?>
+                <li><a href="brand.php?part=list" <?php if($part=='list'){?>class="current"<?php }?>>所有品牌</a></li>
+                <li><a href="brand.php?part=add" <?php if($part=='add'){?>class="current"<?php }?>>添加品牌</a></li>
+                <?php if(!$admin_cityid){?><li><a href="brand.php?do=type" <?php if($do=='type'){?>class="current"<?php }?>>品牌类型管理</a></li><?php }?>
             </ul>
 			<ul style="float:right; text-align:right">
             <?php if(!$admin_cityid){?>
@@ -34,8 +34,9 @@
       <td width="30">选择</td>
       <td width="40">状态</td>
 	  <td width="80">顺序</td>
-      <td width="140">网站名称</td>
-      <td>网站地址</td>
+      <td width="140">品牌名称</td>
+      <td>品牌地址</td>
+      <td>品牌类型</td>
 	  <?php if(!$catid){?>
       <td>网站logo</td>
 	  <?php }?>
@@ -49,6 +50,7 @@
       <td><input name="ordernumber[<?=$row[id]?>]" value="<?=$row[ordernumber]?>" class="txt"/></td>
       <td><?=$row[webname]?></td>
       <td align="left"><a href="<?=$row[url]?>" target="_blank" style="text-decoration:underline;"><?=$row[url]?></a></td>
+      <td align="left"><?=webtypename($row[typeid])?></td>
 	  <?php if(!$catid){?>
       <td><?if (!empty($row[weblogo])){?><a href="<?=$row[weblogo]?>"><img src="<?=$row[weblogo]?>" width="85" height="35" border="0" alt="点击查看图片完整大小"/></a><?}else{?>无<?}?></td>
 	  <?php }?>
@@ -59,9 +61,9 @@
 <tr bgcolor="#ffffff" height="28">
     <td style="border-right:1px #fff solid;"><input name="checkall" type="checkbox" id="checkall" onClick="CheckAll(this.form)" class="checkbox"/></td>
     <td colspan="10">
-	<b>转为-></b> 
-	<label for="index"><input name="do_action" class="radio" id="index" value="index" type="radio">首页显示</label> 
-	<label for="inside"><input name="do_action" class="radio" id="inside" value="inside" type="radio">取消首页显示</label>
+	<b>选择-></b>
+	<!--<label for="index"><input name="do_action" class="radio" id="index" value="index" type="radio">首页显示</label> 
+	<label for="inside"><input name="do_action" class="radio" id="inside" value="inside" type="radio">取消首页显示</label>-->
 	<label for="check2"><input name="do_action" class="radio" id="check2" value="check2" type="radio">正常</label>
 	<label for="check1"><input name="do_action" class="radio" id="check1" value="check1" type="radio">待审</label>
 	<hr style="height:1px; border:1px #c5d8e8 solid;"/>

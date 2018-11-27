@@ -47,13 +47,20 @@ function apply_flink_dayip($dayip = '')
 	return $str;
 }
 
+function webtypename($typeid = '')
+{
+	$alltype = $GLOBALS['db']->getAll('SELECT a.typename FROM '. $GLOBALS['db_qq3479015851'] . 'brand_type a left join ' . $GLOBALS['db_qq3479015851'] . 'brand b on a.id=b.typeid where b.typeid='.$typeid);
+	return $alltype[0]['typename'];
+}
+
+
 function webtype_option($typeid = '')
 {
 	$alltype = $GLOBALS['db']->getAll('SELECT * FROM ' . $GLOBALS['db_qq3479015851'] . 'brand_type ORDER BY id Asc');
 
 	foreach ($alltype as $row ) {
 		$return .= '<option value=' . $row[id];
-		$return .= ($row[id] == $typeid ? 'selected style=\'background-color:#6EB00C;color:white\'' : '');
+		$return .= ($row[id] == $typeid ? ' selected style=\'background-color:#6EB00C;color:white\'' : '');
 		$return .= '>' . $row[typename] . '</option>';
 	}
 

@@ -3,9 +3,9 @@
     <div class="mpstopic-category">
         <div class="panel-tab">
             <ul class="clearfix tab-list">
-                <li><a href="brand.php?part=list">已增加友情链接</a></li>
-                <li><a href="brand.php?part=add">增加友情链接</a></li>
-                <?php if(!$admin_cityid){?><li><a href="brand.php?do=type" <?php if($do=='type'){?>class="current"<?php }?>>网站类型管理</a></li><?php }?>
+                <li><a href="brand.php?part=list">所有品牌</a></li>
+                <li><a href="brand.php?part=add">添加品牌</a></li>
+                <?php if(!$admin_cityid){?><li><a href="brand.php?do=type" <?php if($do=='type'){?>class="current"<?php }?>>品牌类型管理</a></li><?php }?>
 				<li><a href="brand.php?part=edit&id=<?=$id?>" class="current">编辑链接</a></li>
             </ul>
         </div>
@@ -42,19 +42,38 @@
         	<input name="url" type=text class=text id="url" value="<?=$link[url]?>" size="30" />        </td>
       </tr>
       <tr bgcolor="#f5fbff">
-        <td height="25">网站名称：</td>
+        <td height="25">品牌名称：</td>
         <td>
         	<input name="webname" type=text class=text id="webname" size="30" value="<?=$link[webname]?>"/>        </td>
       </tr>
       <tr bgcolor="#f5fbff">
-        <td height="25">网站LOGO：</td>
+        <td height="25">品牌LOGO：</td>
         <td>
-        <input name="weblogo" type=text class=text id="weblogo" size="30" value="<?=$link[weblogo]?>"/> <br />尺寸80*35<br />
-若显示文字链接则不需添加logo地址<br />
-logo不显示在分类页面
+        <div id="dropz" style="width: 200px;" class="dropzone"></div>
+					<input name="weblogo" type="hidden" id="weblogo" value="<?=$link[weblogo]?>"/>
+					<script>
+						$( "div#dropz" ).dropzone( {
+							url: "/admin/upload.php",
+							maxFiles: 1, //最大上传数量
+							maxFilesize: 100, //最大上传的文件大小，单位MB
+							filesizeBase: 1024, //文件大小的标准规格，这里MB以1024kb为单位
+							acceptedFiles: ".jpg,.png,.gif", //允许上传的文件类型
+							init: function () {
+								this.on( "success", function (file,data) {
+									//上传成功触发的事件
+									console.log('ok');
+									$("#weblogo").val(data);
+								} );
+								this.on( "error", function (file,data) {
+									//上传失败触发的事件
+									console.log('fail');
+								} );
+							}
+						} );
+					</script>
     </td>
       </tr>
-      <tr bgcolor="#f5fbff">
+      <!--<tr bgcolor="#f5fbff">
         <td width="19%" height="25">PR值</td>
         <td>
 		<?=apply_flink_pr($link[pr]);?>	
@@ -65,9 +84,9 @@ logo不显示在分类页面
         <td>
         <?=apply_flink_dayip($link[dayip]);?>	    
 		</td>
-      </tr>
+      </tr>-->
       <tr bgcolor="#f5fbff">
-        <td height="25">网站简况：</td>
+        <td height="25">品牌简介：</td>
         <td><textarea name="msg" cols="50" rows="5" id="msg"><?=de_textarea_post_change($link[msg])?></textarea></td>
       </tr>
       </tbody>
@@ -83,7 +102,7 @@ logo不显示在分类页面
       </tr>
       <tbody id="menu_3">
       <tr bgcolor="#f5fbff">
-        <td height="25">网站类型：</td>
+        <td height="25">品牌类型：</td>
         <td>
         <select name="typeid" id="typeid">
 		<?php echo webtype_option($link[typeid]) ; ?>
@@ -107,7 +126,7 @@ logo不显示在分类页面
 </tbody>
     </table>
 </div>
-<div id="<?=SysGlbCfm_SOFTNAME?>">
+<!--<div id="<?=SysGlbCfm_SOFTNAME?>">
 <table width="100%" cellspacing="0" cellpadding="0" class="vbm">
 <tr class="firstr"><td colspan="2">显示位置</td></tr>
   <tr bgcolor="#f5fbff">
@@ -130,7 +149,7 @@ logo不显示在分类页面
   </tr>
       </tbody>
     </table>
-</div>
+</div>-->
 <center><input type="submit" name="submit" value="提 交" class="qq3479015851 large" /></center>
 </form>
 <?php qq3479015851_admin_tpl_global_foot();?>
