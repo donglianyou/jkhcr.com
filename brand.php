@@ -18,7 +18,7 @@ require_once dirname(__FILE__)."/include/global.php";
 
 ifsiteopen();
 
-$catid  	= isset($catid)  	? intval($catid)  : '';
+$typeid  	= isset($typeid)  	? intval($typeid)  : '';
 $areaid 	= isset($areaid) 	? intval($areaid) : '';
 
 require_once SysGlbCfm_DATA."/config.db.php";
@@ -27,20 +27,20 @@ require_once SysGlbCfm_INC."/db.class.php";
 $seo	 	= get_seoset();
 $rewrite	= $seo['seo_force_yp'];
 
-if($Catid && $rewrite == 'rewrite'){
-	$detail=explode("-",$Catid);
-	if($detail[0] && in_array($detail[0],array('catid','areaid','page'))){
+if($typeid && $rewrite == 'rewrite'){
+	$detail=explode("-",$typeid);
+	if($detail[0] && in_array($detail[0],array('typeid','areaid','page'))){
 		$detail[1] = intval($detail[1]);
 		for($i=0;$i<count($detail) ;$i++ ){
 			$_GET[$detail[$i]]=$$detail[$i]=str_replace(array('#@#','#!#'),array('-','/'),$detail[++$i]);	
 		}
 		extract($_GET);
 	}
-	$Catid = $detail = NULL;
+	$typeid = $detail = NULL;
 }
 
 
-if($catid && !$cur = $db -> getRow("SELECT parentid,corpname FROM `{$db_qq3479015851}corp` WHERE corpid = '$catid'")){
+if($typeid && !$cur = $db -> getRow("SELECT parentid,corpname FROM `{$db_qq3479015851}corp` WHERE corpid = '$typeid'")){
 	write_msg('当前商家分类不存在或者未被启用！');
 }
 
@@ -56,7 +56,7 @@ if($SystemGlobalcfm_global['cfg_independency'] && $cityid){
 	$maincity = NULL;
 }
 
-$cate_limit 	= !empty($catid) 	? " AND b.catid IN(".get_corp_children($catid).") "  : "";
+$cate_limit 	= !empty($typeid) 	? " AND b.typeid IN(".get_corp_children($typeid).") "  : "";
 $city_limit 	= !$city['cityid'] ? "": " AND a.cityid = '$city[cityid]'";
 $city_limit 	.= !$areaid ? "": " AND a.areaid = '$areaid'";
 $level_limit	= " AND a.status = '1' AND a.if_corp = '1'";
@@ -65,7 +65,7 @@ $sql = empty($cate_limit) ? "SELECT a.* FROM `{$db_qq3479015851}member` AS a WHE
 $count_sql	= empty($cate_limit) ? "SELECT COUNT(a.id) FROM `{$db_qq3479015851}member` AS a WHERE 1 {$level_limit}{$city_limit}" : "SELECT COUNT(b.id) FROM `{$db_qq3479015851}member` AS a LEFT JOIN {$db_qq3479015851}member_category AS b ON a.userid = b.userid WHERE 1  {$level_limit}{$cate_limit}{$city_limit}";
 
 $rows_num 	= $db -> getOne($count_sql);
-$param		= setParam(array('catid','areaid'),$rewrite,'corporation-');
+$param		= setParam(array('typeid','areaid'),$rewrite,'corporation-');
 if(is_array($res = page1($sql,$SystemGlobalcfm_global['cfg_list_page_line'] ? $SystemGlobalcfm_global['cfg_list_page_line'] : 10))){
 	foreach($res as $key => $val){
 		$arr['userid']		= $val['userid'];
@@ -87,29 +87,29 @@ if(is_array($res = page1($sql,$SystemGlobalcfm_global['cfg_list_page_line'] ? $S
 	}
 }
 
-/*友情链接*/
-if(!$cityid || in_array('friendlink',$independency)){
-	$friendlink = $city['flink'] ? $city['flink'] : $maincity['flink'];
-}elseif($cityid){
-	$friendlink = $city['flink'];
-}
-unset($city['flink'],$maincity['flink']);
+/*品牌推荐*/
+$sql1 = "SELECT * FROM ".$db_qq3479015851."brand where typeid=1 ORDER BY id Asc";
+$brand1 = $db->getAll( $sql1);
+$sql2 = "SELECT * FROM ".$db_qq3479015851."brand where typeid=2 ORDER BY id Asc";
+$brand2 = $db->getAll( $sql2);
+$sql3 = "SELECT * FROM ".$db_qq3479015851."brand where typeid=4 ORDER BY id Asc";
+$brand3 = $db->getAll( $sql3);
 
-$ypcategory = get_corp_tree(empty($cur['parentid']) ? $catid : $cur['parentid'],'corp');
+$ypcategory = get_corp_tree(empty($cur['parentid']) ? $typeid : $cur['parentid'],'corp');
 if($city['cityid']){
 	$area_list = $city['area'];
 	if(is_array($area_list)){
 		$area_list	= array_merge(array('0'=>array('areaid'=>'','areaname'=>'不限地区')),$area_list);
 		if(is_array($area_list)){
 			foreach($area_list as $areakey => $areaval){
-				$area_list[$areakey]['uri'] = Rewrite('corp',array('catid'=>$catid,'areaid'=>$areaval['areaid']));
+				$area_list[$areakey]['uri'] = Rewrite('corp',array('typeid'=>$typeid,'areaid'=>$areaval['areaid']));
 				$area_list[$areakey]['select'] = $areaval['areaid'] == $areaid ? '1' : 0;
 			}
 		}
 	}
 }
 
-$loc 			= get_location('corp',$catid);
+$loc 			= get_location('corp',$typeid);
 $page_title 	= $loc['page_title'];
 $location		= $loc['location'];
 $advertisement	= get_advertisement('other');

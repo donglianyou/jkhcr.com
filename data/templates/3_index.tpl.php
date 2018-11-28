@@ -6,15 +6,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/js/uaredirect.js" type="text/javascript"></script>
-<script type="text/javascript">uaredirect("<?=$SystemGlobalcfm_global['SiteUrl']?>/m/index.php?mod=corp&catid=<?=$catid?>&cityid=<?=$cityid?>");</script>
+<script type="text/javascript">uaredirect("<?=$SystemGlobalcfm_global['SiteUrl']?>/m/index.php?mod=goods&cityid=<?=$news['cityid']?>");</script>
+<meta name="keywords" content="<?=$keywords?>" />
+<meta name="description" content="<?=$description?>" />
 <title><?=$page_title?></title>
-<link rel="shortcut icon" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/favicon.ico" />
 <link rel="stylesheet" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/css/global.css" />
 <link rel="stylesheet" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/css/style.css" />
-<link rel="stylesheet" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/css/corp.css" />
+<link rel="stylesheet" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/plugin/goods/template/newstyle.css" />
 <link rel="stylesheet" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/css/pagination2.css" />
+<script src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/global/noerr.js" type="text/javascript"></script>
 <script src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/js/global.js" type="text/javascript"></script>
 <script src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/js/jquery.min.js" type="text/javascript"></script>
+<script src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/js/dropdown.js" type="text/javascript"></script>
 </head>
 
 <body class="<?=$SystemGlobalcfm_global['cfg_tpl_dir']?> full bodybg<?=$SystemGlobalcfm_global['cfg_tpl_dir']?><?=$SystemGlobalcfm_global['bodybg']?>"><script type="text/javascript">var current_domain="<?=$SystemGlobalcfm_global['SiteUrl']?>";var current_cityid="<?=$city['cityid']?>";var current_logfile="<?=$SystemGlobalcfm_global['cfg_member_logfile']?>";</script>
@@ -141,74 +144,82 @@
 <div class="clear"></div>
 <div class="location"><?=$location?></div>
 <div class="clear"></div>
-<div class="corporation_content">
-<div class="content_left">
+<div class="wrapper">
+<div class="goods_left">
 <div class="cate_seller">
+<div class="whiteborder">
 <div class="bd">
 <ul>
-            <?php $i=1; ?>                <?php if(is_array($ypcategory)){foreach($ypcategory as $SystemGlobalcfm) { ?><li class="item">
-<a href="javascript:void(<?=$SystemGlobalcfm['corpid']?>);" class="rights" onclick="showHide(this,'items<?=$SystemGlobalcfm['corpid']?>');"><?=$SystemGlobalcfm['corpname']?></a>
-<ul id="items<?=$SystemGlobalcfm['corpid']?>" style="display:<? if($catid > 0) { if($SystemGlobalcfm['corpid'] == $cur['parentid'] || $SystemGlobalcfm['corpid'] == $catid) { ?><?php } else { ?>none<?php } ?><?php } else { if($i==1) { ?><?php } else { ?>none<?php } ?><?php } ?>;">
-<li><a href="<?=$SystemGlobalcfm['uri']?>">全部</a></li>
-                <?php if(is_array($SystemGlobalcfm['children'])){foreach($SystemGlobalcfm['children'] as $w) { ?><li><a href="<?=$w['uri']?>" <? if($catid == $w['corpid']) { ?>class="current"<?php } ?>><?=$w['corpname']?></a></li>
+                        <?php $i=1; ?>                        <?php if(is_array($goods_cat)){foreach($goods_cat as $fcat) { ?><li class="item"><a href="javascript:void(0);" class="rights" onclick="showHide(this,'items<?=$fcat['catid']?>');"><?=$fcat['catname']?></a>
+<ul class="contnt" id="items<?=$fcat['catid']?>" 
+style="display:
+                        <? if($cat['catid'] > 0) { if($fcat['catid'] == $cat['parentid'] || $fcat['catid'] == $catid) { ?><?php } else { ?>none<?php } ?>
+<?php } else { if($i == 1) { ?><?php } else { ?>none<?php } ?>
+                        <?php } ?>
+;">
+<li><a href="<?=$fcat['uri']?>">全部</a></li>
+                        <?php if(is_array($fcat['children'])){foreach($fcat['children'] as $scat) { ?><li><a href="<?=$scat['uri']?>"  <? if($catid == $scat['catid']) { ?> class="current"<?php } ?>><?=$scat['catname']?></a></li>
 <?php }} ?>
 </ul>
 </li>
-                <?php $i++; ?>                <?php }} ?>
+<div class="clearfix"></div>
+                        <?php $i++; ?><?php }} ?>
 </ul>
+</div>
 </div>
 </div>
 <div class="clear"></div>
-<div class="joinus">
+<div class="best_seller">
+<div class="contntt">
+<div class="hd">一周销量排行榜</div>
+<div class="bd">
 <ul>
-<a href="<?=$SystemGlobalcfm_global['SiteUrl']?>/<?=$SystemGlobalcfm_global['cfg_member_logfile']?>?mod=register&action=store" target="_blank" class="joinshop">即刻登记我的商铺</a>
-<center>立刻拥有机构展示网站</center>
+                        <?php $remai_goods = qq3479015851_get_goods(5,1,'remai',NULL,NULL,NULL,$city['cityid']); ?>                        <?php if(is_array($remai_goods)){foreach($remai_goods as $v) { ?><li>
+<div class="goods_image"><a href="<?=$v['uri']?>" target="_blank"><img src="<?=$SystemGlobalcfm_global['SiteUrl']?><?=$v['picture']?>" border="0" alt="<?=$v['goodsname']?>"/></a></div>
+<div class="goods_title"><a href="<?=$v['uri']?>" target="_blank"><?=$v['goodsname']?></a></div>
+<div class="goods_price">&yen;<?=$v['nowprice']?></div>
+</li>
+                            <?php }} ?>
 </ul>
 </div>
 </div>
-<div class="content_right">
-<div class="hot_corporations">
-<div class="hd cfix"><span class="hdl">燕窝及高端滋补品</span></div>
-<div class="clearfix"></div>
-<div class="bd cfix">
+</div>
+</div>
+<div class="goods_right">
+<div class="hot_seller">
 <ul>
-<? if($brand1) { ?>
-<ul class="image"><?php if(is_array($brand1)){foreach($brand1 as $SystemGlobalcfm) { ?><li><span class="imga"><a href="<?=$SystemGlobalcfm['url']?>" class="f13" target="_blank" title="<?=$SystemGlobalcfm['webname']?>"><img src="<?=$SystemGlobalcfm_global['SiteUrl']?><?=$SystemGlobalcfm['weblogo']?>" alt="<?=$SystemGlobalcfm['name']?>"></a></span><span class="txt"><a href="<?=$SystemGlobalcfm['url']?>" target="_blank"><?=$SystemGlobalcfm['webname']?></a></span></li>
+                <?php $tuijian_goods = qq3479015851_get_goods(3,1,'tuijian',NULL,NULL,NULL,$city['cityid']); ?>                <?php if(is_array($tuijian_goods)){foreach($tuijian_goods as $v) { ?><li>
+<div class="goods_image"><a href="<?=$v['uri']?>" target="_blank"><img src="<?=$SystemGlobalcfm_global['SiteUrl']?><?=$v['pre_picture']?>" border="0" alt="<?=$v['goodsname']?>"/></a></div>
+<div class="goodsright">
+                            <div class="goods_title"><a href="<?=$v['uri']?>" target="_blank"><?=$v['goodsname']?></a></div>
+                            <div class="goods_price">&yen;<?=$v['nowprice']?></div>
+                        </div>
+</li>
+                    <?php }} ?>
+</ul>
+</div>
+<div class="clear"></div>
+<div class="goods_list">
+<div class="hd">
+<li <? if($orderby == 'dateline') { ?>class="currenth"<?php } ?>><a href="<?=$uri['dateline']?>">按上架时间</a></li>
+<li <? if($orderby == 'hit') { ?>class="currenth"<?php } ?>><a href="<?=$uri['hit']?>">按人气排序</a></li>
+<li <? if($tuijian == 1) { ?>class="currenth"<?php } ?>><a href="<?=$uri['tuijian']?>">仅显示推荐</a></li>
+<li <? if($cuxiao == 1) { ?>class="currenth"<?php } ?>><a href="<?=$uri['cuxiao']?>">仅显示促销</a></li>
+</div>
+<div class="bd">
+<div class="main_list">
+<ul class="cfix">
+                    <?php if(is_array($list)){foreach($list as $v) { ?><li> <b><a href="<?=$v['uri']?>" target=_blank><img src="<?=$SystemGlobalcfm_global['SiteUrl']?><?=$v['picture']?>" class="img0" width=170 height=170 border=0 alt="<?=$v['goodsname']?>"/></a></b> <span class="price"><?=$v['nowprice']?><del>￥<?=$v['oldprice']?></del></span> <span class="title"><a href="<?=$v['uri']?>" target=_blank><? echo cutstr($v['goodsname'],26); ?></a></span> <a href="<?=$v['uri']?>" class="menu" target="_blank"><img src="<?=$SystemGlobalcfm_global['SiteUrl']?>/plugin/goods/template/images/pro_list_18.gif"/></a> <a href="<?=$v['uri']?>" target=_blank class="menu"><img src="<?=$SystemGlobalcfm_global['SiteUrl']?>/plugin/goods/template/images/pro_list_29.gif" alt="" /></a> </li>
+<?php }} else {{ ?>
+<li>暂无相关商品！</li>
 <?php }} ?>
 </ul>
-<?php } ?>					
-</ul>
+
+</div>
+<div class="clear15"></div>
+<div class="pagination2"><?=$page_view?></div>
 </div>
 </div>
-<div class="clear"></div>
-<div class="hot_corporations">
-<div class="hd cfix"><span class="hdl">酵素</span></div>
-<div class="clearfix"></div>
-<div class="bd cfix">
-<ul>
-<? if($brand2) { ?>
-<ul class="image"><?php if(is_array($brand2)){foreach($brand2 as $SystemGlobalcfm) { ?><li><span class="imga"><a href="<?=$SystemGlobalcfm['url']?>" class="f13" target="_blank" title="<?=$SystemGlobalcfm['webname']?>"><img src="<?=$SystemGlobalcfm_global['SiteUrl']?><?=$SystemGlobalcfm['weblogo']?>" alt="<?=$SystemGlobalcfm['name']?>"></a></span><span class="txt"><a href="<?=$SystemGlobalcfm['url']?>" target="_blank"><?=$SystemGlobalcfm['webname']?></a></span></li>
-<?php }} ?>
-</ul>
-<?php } ?>					
-</ul>
-</div>
-</div>
-<div class="clear"></div>
-<div class="hot_corporations">
-<div class="hd cfix"><span class="hdl">功能食品</span></div>
-<div class="clearfix"></div>
-<div class="bd cfix">
-<ul>
-<? if($brand4) { ?>
-<ul class="image"><?php if(is_array($brand4)){foreach($brand4 as $SystemGlobalcfm) { ?><li><span class="imga"><a href="<?=$SystemGlobalcfm['url']?>" class="f13" target="_blank" title="<?=$SystemGlobalcfm['webname']?>"><img src="<?=$SystemGlobalcfm_global['SiteUrl']?><?=$SystemGlobalcfm['weblogo']?>" alt="<?=$SystemGlobalcfm['name']?>"></a></span><span class="txt"><a href="<?=$SystemGlobalcfm['url']?>" target="_blank"><?=$SystemGlobalcfm['webname']?></a></span></li>
-<?php }} ?>
-</ul>
-<?php } ?>				
-</ul>
-</div>
-</div>
-<div class="clear"></div>
 </div>
 </div>
 <div class="clear"></div><div id="ad_footerbanner"></div>
@@ -317,6 +328,6 @@
 </div>
 <p id="back-to-top"><a href="#top"><span></span></a></p>
 <script type="text/javascript">loadDefault(["addiv","iflogin","show_tab","scrolltop","changecity"]);</script></div>
-<script>loadDefault(['hover_bg','dropdown']);</script>
+</div>
 </body>
 </html>
