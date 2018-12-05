@@ -146,7 +146,7 @@
 <?=$location?>
 </div>
 <div class="clear"></div>
-<div class="wrapper"><div id="select">
+<!-- <div class="wrapper"><div id="select">
 <? if($cat_list) { ?>
 <dl class='fore' id='select-brand'>
 <dt>栏目分类：</dt>
@@ -189,7 +189,7 @@
 <input type="submit" value="搜本类" class="new_searchsubmit" />
 </form>
 </dl>
-</div></div>
+</div></div> -->
 <div class="clear"></div>
 <div class="new_listhd">
 <div class="listhdleft">
