@@ -197,7 +197,9 @@
                 </div>
             </div>
         </div>
+<!-- 品牌推荐 -->
         
+       
         <?php $members = qq3479015851_get_members(14,NULL,NULL,NULL,2,NULL,NULL,$cityid); ?>        <? if($members) { ?>
         <div class="clear5"></div>
 <div class="hotschool">
@@ -249,7 +251,7 @@
 <div class="goods">
         	<div class="ul">
 <div class="hd">
-<span class="hdleft">商品网购</span>
+<span class="hdleft">在线商品</span>
 <span class="more"><a href="<?=$about['goods_uri']?>" target="_blank">更多</a></span>
 </div>
 <div class="bd">

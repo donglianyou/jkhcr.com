@@ -62,7 +62,7 @@ if($action != 'dopost'){
 	if(!$store || empty($uid)) write_msg('您指定的机构不存在或者未通过审核！',$SystemGlobalcfm_global[SiteUrl].'/corporation.php');
 	if(!$store['template'] || !in_array($store['template'],array('blue','green','orange','purple','pink'))) $store['template'] = 'blue';
 	
-	$allow_param = array('about','info','document','album','contactus','comment','index','goods');
+	$allow_param = array('about','brand','info','document','album','contactus','comment','index','goods');
 	if(!$part || !in_array($part,$allow_param)) $part = 'index';
 	foreach($allow_param as $allow){
 		$uri[$allow] = Rewrite('store',array('uid'=>$uid,'part'=>$allow));
@@ -96,7 +96,9 @@ if($action != 'dopost'){
 	if($part == 'about'){
 		
 		
-	} elseif($part == 'info'){
+	}elseif($part == 'brand'){
+	
+	}elseif($part == 'info'){
 		
 		$where = " WHERE userid = '$store[userid]' AND info_level > '0'";
 		$sql = "SELECT a.* FROM {$db_qq3479015851}information AS a $where ORDER BY a.id DESC";

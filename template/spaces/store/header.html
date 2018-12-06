@@ -36,13 +36,14 @@
 <div class="navigation">
 	<ul>
 		<li><a href="{$uri[index]}" {if $part == 'index'}class="current"{/if}>首页</a></li>
-		<li><a href="{$uri[about]}" {if $part == 'about'}class="current"{/if}>机构简介</a></li>
-		<li><a href="{$uri[info]}" {if $part == 'info'}class="current"{/if}>分类信息</a></li>
-        <li><a href="{$uri[goods]}" {if $part == 'goods'}class="current"{/if}>商品展示</a></li>
+		<li><a href="{$uri[about]}" {if $part == 'about'}class="current"{/if}>公司简介</a></li>
+		<!--<li><a href="{$uri[brand]}" {if $part == 'brand'}class="current"{/if}>品牌推荐</a></li>-->
+		<li><a href="{$uri[info]}" {if $part == 'info'}class="current"{/if}>供求信息</a></li>
+        <li><a href="{$uri[goods]}" {if $part == 'goods'}class="current"{/if}>产品图片</a></li>
         {php $docunav = get_member_docunav();}
 		{loop $docunav $SystemGlobalcfm}<li><a {if $SystemGlobalcfm[typeid] == $typeid || $SystemGlobalcfm[typeid] == $docu[typeid]}class="current"{/if} href="{$SystemGlobalcfm[uri]}" >{$SystemGlobalcfm[typename]}</a></li> {/loop}
 		<li><a href="{$uri[comment]}"{if $part == 'comment'}class="current"{/if}>留言点评</a></li>
-		<li><a href="{$uri[album]}"{if $part == 'album'}class="current"{/if}>机构相册</a></li>
+		<li><a href="{$uri[album]}"{if $part == 'album'}class="current"{/if}>公司相册</a></li>
 		<li><a href="{$uri[contactus]}"{if $part == 'contactus'}class="current"{/if}>联系我们</a></li>
 	</ul>
 </div>

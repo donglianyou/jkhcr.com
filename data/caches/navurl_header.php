@@ -31,8 +31,8 @@ $data = array (
   array (
     0 => '20',
     'id' => '20',
-    1 => 'category.php?catid=3',
-    'url' => 'category.php?catid=3',
+    1 => 'corporation.php?catid=14',
+    'url' => 'corporation.php?catid=14',
     2 => '',
     'color' => '',
     3 => '2',
@@ -58,8 +58,8 @@ $data = array (
   array (
     0 => '21',
     'id' => '21',
-    1 => 'category.php?catid=4',
-    'url' => 'category.php?catid=4',
+    1 => 'corporation.php?catid=21',
+    'url' => 'corporation.php?catid=21',
     2 => '',
     'color' => '',
     3 => '3',
@@ -85,8 +85,8 @@ $data = array (
   array (
     0 => '23',
     'id' => '23',
-    1 => 'category.php?catid=252',
-    'url' => 'category.php?catid=252',
+    1 => 'corporation.php?catid=22',
+    'url' => 'corporation.php?catid=22',
     2 => '',
     'color' => '',
     3 => '5',
@@ -220,8 +220,8 @@ $data = array (
   array (
     0 => '34',
     'id' => '34',
-    1 => 'corporation.php',
-    'url' => 'corporation.php',
+    1 => 'store.php?uid=1&part=info',
+    'url' => 'store.php?uid=1&part=info',
     2 => '',
     'color' => '',
     3 => 'corp',
