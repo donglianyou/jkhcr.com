@@ -1,3 +1,7 @@
+.brandad{width: 1200px; height: 65px; margin: 0 auto;}
+.brandad ul{width: 100%; margin: 10px 0;}
+.brandad ul li{width: 150px; height: 65px; margin-left: 10px; margin-bottom: 10px; float: left; border: 1px solid #2283d4;}
+.brandad ul li img{width: 150px; height: 65px;}
 .bodybgcolor{width:100%}
 .body1000{margin-left:auto;margin-right:auto;width:1000px}
 #iflogin img{margin-top:8px}

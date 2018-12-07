@@ -1,0 +1,40 @@
+<div class="col2">
+	<div class="searchnews">
+		<form action="{$SystemGlobalcfm_global[SiteUrl]}/search.php" method="get" target="_blank">
+		<input name="mod" value="news" type="hidden">
+        <input name="cityid" value="{$city[cityid]}" type="hidden">
+		<input name="keywords" value="" type="text" class="input">
+		<input type="submit" class="submit" value="搜文章">
+		</form>
+	</div>
+	<div class="clear"></div>
+	<div class="information">
+		<ul>
+        	<!--{php $latest_info = qq3479015851_get_infos(10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,$city[cityid]);}-->
+        	<!--{loop $latest_info $SystemGlobalcfm}-->
+			<li><a href="{$SystemGlobalcfm[uri]}" title="{$SystemGlobalcfm[title]}" target="_blank"  style="{if $SystemGlobalcfm[ifred] == 1}color:red;{/if} {if $SystemGlobalcfm[ifbold] == 1}font-weight:bold;{/if}">{$SystemGlobalcfm[title]}</a></li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+	<div class="clear"></div>
+	<div class="imgnews">
+		<ul>
+        	<!--{php $image_news = qq3479015851_get_news(6,NULL,1,NULL,NULL,1,$city[cityid]);}-->
+        	<!--{loop $image_news $SystemGlobalcfm}-->
+			<li><a href="{$SystemGlobalcfm[uri]}"><img src="{echo strstr($SystemGlobalcfm[imgpath],'http') ? $SystemGlobalcfm[imgpath] : $SystemGlobalcfm_global[SiteUrl].$SystemGlobalcfm[imgpath]}" alt="{$SystemGlobalcfm[title]}"/></a><br /><a href="{$SystemGlobalcfm[uri]}" title="{$SystemGlobalcfm[title]}" {if $SystemGlobalcfm[iscommend] == 1}style="color:red"{/if}>{echo cutstr($SystemGlobalcfm[title],22)}</a></li>
+			<!--{/loop}-->
+		</ul>
+	</div>
+	<div class="clear"></div>
+	<div class="hotread">
+		<div class="hd">热门阅读排行</div>
+		<div class="list">
+			<ul>
+            	<!--{php $latest_news = qq3479015851_get_news(15,NULL,NULL,NULL,NULL,NULL,$city[cityid]);}-->
+            	<!--{loop $latest_news $SystemGlobalcfm}-->
+				<li><a href="{$SystemGlobalcfm[uri]}" title="{$SystemGlobalcfm[title]}" {if $SystemGlobalcfm[iscommend] == 1}style="color:red"{/if}>{$SystemGlobalcfm[title]}</a></li>
+				<!--{/loop}-->
+			</ul>
+		</div>
+	</div>
+</div>

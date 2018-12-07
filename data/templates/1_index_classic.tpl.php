@@ -89,7 +89,14 @@
         <?php } ?>
 </div>
 </div>
-<div class="clear"></div><div class="bodybgcolor">
+<div class="clear"></div>
+<div class="brandad">
+<? if($brand1) { ?>
+<ul><?php if(is_array($brand1)){foreach($brand1 as $SystemGlobalcfm) { ?><li><a href="<?=$SystemGlobalcfm['url']?>" target="_blank" title="<?=$SystemGlobalcfm['webname']?>"><img src="<?=$SystemGlobalcfm_global['SiteUrl']?><?=$SystemGlobalcfm['weblogo']?>" alt="<?=$SystemGlobalcfm['name']?>"></a></li>
+<?php }} ?>
+</ul>
+<?php } ?>
+</div><div class="bodybgcolor">
 <div class="body1000">
     <div id="ad_header"></div>
 <div class="clearfix"></div>

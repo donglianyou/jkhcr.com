@@ -13,6 +13,7 @@ define('IN_SMT', true);
 define('SysGlbCfm', true);
 define('CURSCRIPT','index');
 
+
 require_once dirname(__FILE__)."/include/global.php";
 require_once SysGlbCfm_DATA."/config.php";
 require_once SysGlbCfm_DATA."/config.db.php";
@@ -125,6 +126,12 @@ $page_title				= $loc['page_title'];
 unset($loc);
 
 $seo = get_seoset();
+
+/*品牌推荐*/
+$sql1 = "SELECT * FROM ".$db_qq3479015851."brand ORDER BY ordernumber ASC limit 0,14";
+$brand1 = $db->getAll( $sql1);
+
+
 if(!$city['cityid']){
 	$city['title'] = $page_title;
 	$city['keywords'] = str_replace('{city}','',$seo['seo_keywords']);

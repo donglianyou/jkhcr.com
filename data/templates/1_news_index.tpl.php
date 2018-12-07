@@ -6,17 +6,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/js/uaredirect.js" type="text/javascript"></script>
-<script type="text/javascript">uaredirect("<?=$SystemGlobalcfm_global['SiteUrl']?>/m/index.php?mod=category&catid=<?=$catid?>&cityid=<?=$cityid?>");</script>
+<script type="text/javascript">uaredirect("<?=$SystemGlobalcfm_global['SiteUrl']?>/m/index.php?mod=news&cityid=<?=$city['cityid']?>");</script>
 <title><?=$page_title?></title>
-<meta name="keywords" content="<?=$cat['keywords']?>" />
-<meta name="description" content="<?=$cat['description']?>" />
+<meta name="keywords" content="<?=$s['keywords']?>" />
+<meta name="description" content="<?=$s['description']?>" />
 <link rel="shortcut icon" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/favicon.ico" />
 <link rel="stylesheet" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/css/global.css" />
 <link rel="stylesheet" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/css/style.css" />
-<link rel="stylesheet" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/css/category.css" />
-<link rel="stylesheet" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/css/pagination2.css" />
+<link rel="stylesheet" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/css/newstyle.css" />
 <script src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/js/global.js" type="text/javascript"></script>
 <script src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/js/jquery.flashSlider-1.0.min.js"></script>
 </head>
 
 <body class="<?=$SystemGlobalcfm_global['cfg_tpl_dir']?> full bodybg<?=$SystemGlobalcfm_global['cfg_tpl_dir']?><?=$SystemGlobalcfm_global['bodybg']?>"><script type="text/javascript">var current_domain="<?=$SystemGlobalcfm_global['SiteUrl']?>";var current_cityid="<?=$city['cityid']?>";var current_logfile="<?=$SystemGlobalcfm_global['cfg_member_logfile']?>";</script>
@@ -90,7 +90,14 @@
         <?php } ?>
 </div>
 </div>
-<div class="clear"></div><? if($SystemGlobalcfm_global['head_style'] == 'normal') { ?>
+<div class="clear"></div>
+<div class="brandad">
+<? if($brand1) { ?>
+<ul><?php if(is_array($brand1)){foreach($brand1 as $SystemGlobalcfm) { ?><li><a href="<?=$SystemGlobalcfm['url']?>" target="_blank" title="<?=$SystemGlobalcfm['webname']?>"><img src="<?=$SystemGlobalcfm_global['SiteUrl']?><?=$SystemGlobalcfm['weblogo']?>" alt="<?=$SystemGlobalcfm['name']?>"></a></li>
+<?php }} ?>
+</ul>
+<?php } ?>
+</div><? if($SystemGlobalcfm_global['head_style'] == 'normal') { ?>
 <div class="body1000">
 <div class="daohang_con2">
     <div class="daohang2">
@@ -139,150 +146,114 @@
 <div id="ad_header"></div>
 <div class="clearfix"></div>
 <script>loadDefault(['category','category_select'])</script>
-<?php } ?><div class="bodybgcolor">
-<div class="body1000">
+<?php } ?><div class="clear"></div>
+    <div class="body1000">
+<div class="location"><?=$location?></div>
 <div class="clear"></div>
-<div class="location">
-<?=$location?>
-</div>
-<div class="clear"></div>
-<!-- <div class="wrapper"><div id="select">
-<? if($cat_list) { ?>
-<dl class='fore' id='select-brand'>
-<dt>栏目分类：</dt>
-<dd>
-<div class='content'>
-    <?php if(is_array($cat_list)){foreach($cat_list as $SystemGlobalcfm) { ?><div><a href="<?=$city['domain']?><?=$SystemGlobalcfm['uri']?>" <? if($SystemGlobalcfm['catid'] == $cat['catid']) { ?>class="curr"<?php } ?> title="<?=$city['cityname']?><?=$SystemGlobalcfm['catname']?>">不限</a></div>
-        <?php if(is_array($SystemGlobalcfm['children'])){foreach($SystemGlobalcfm['children'] as $w) { ?><div><a href="<?=$city['domain']?><?=$w['uri']?>" <? if($w['catid'] == $cat['catid']) { ?>class="curr"<?php } ?> title="<?=$city['cityname']?><?=$w['catname']?>"><?=$w['catname']?></a></div>
-        <?php }} ?>
-<?php }} ?>
-</div>
-</dd>
-</dl>
-    <?php } ?>
-    <?php if(is_array($SystemGlobalcfm_extra_model)){foreach($SystemGlobalcfm_extra_model as $SystemGlobalcfm) { ?><dl>
-<dt><?=$SystemGlobalcfm['title']?>：</dt>
-<dd>
-    <?php if(is_array($SystemGlobalcfm['list'])){foreach($SystemGlobalcfm['list'] as $w) { ?><div><a href="<?=$city['domain']?><?=$w['uri']?>" <? if($w['select'] == 1) { ?>class="curr"<?php } ?>><?=$w['name']?></a></div>
-<?php }} ?>
-    </dd>
-</dl>
-<?php }} ?>
-
-    <? if($street_list) { ?>
-<dl>
-<dt></dt>
-<dd>
-        <?php if(is_array($street_list)){foreach($street_list as $SystemGlobalcfm) { ?><div><a href="<?=$city['domain']?><?=$SystemGlobalcfm['uri']?>" <? if($SystemGlobalcfm['select'] == 1) { ?>class="curr"<?php } ?>><?=$SystemGlobalcfm['streetname']?></a></div>
-<?php }} ?>
-</dd>
-</dl>
-<?php } ?>
-<dl class="lastdl">
-<form method="get" action="<?=$SystemGlobalcfm_global['SiteUrl']?>/search.php?" target="_blank">
-<input name="mod" value="information" type="hidden">
-<input name="catid" value="<?=$cat['catid']?>" type="hidden">
-<input name="cityid" value="<?=$cityid?>" type="hidden">
-        <input name="areaid" value="<?=$areaid?>" type="hidden">
-<input name="streetid" value="<?=$streetid?>" type="hidden">
-<input name="keywords" type="text" value="" class="searchinput" id="searchbody" onmouseover="hiddennotice('searchbody');"/>
-<input type="submit" value="搜本类" class="new_searchsubmit" />
-</form>
-</dl>
-</div></div> -->
-<div class="clear"></div>
-<div class="new_listhd">
-<div class="listhdleft">
-<div><a href="#" class="currentr"><span></span><?=$city['cityname']?><?=$page_title_extra?><?=$cat['catname']?>信息</a></div>
-</div>
-<div class="listhdcenter">
-信息总数：<span><?=$rows_num?></span> ，置顶信息可使成交率提高5倍！
-</div>
-<div class="listhdright">
-<a href="<?=$SystemGlobalcfm_global['SiteUrl']?>/<?=$SystemGlobalcfm_global['cfg_postfile']?>?catid=<?=$cat['catid']?>&cityid=<?=$cityid?>" target="_blank">免费发布<?=$city['cityname']?><?=$cat['catname']?>信息>></a>
-</div>
-</div>
-
-<div class="clearfix"></div>
-<div class="body1000">
-<div id="ad_intercatdiv"></div>
-<div class="infolists">
-<div class='section'>
-<ul class='sep'>
-<div id="ad_interlistad_top"></div>
-                <?php if(is_array($info_list)){foreach($info_list as $k => $SystemGlobalcfm) { ?><div class='hover media cfix <? if($SystemGlobalcfm['upgrade_type'] > 1) { ?>ding<?php } ?>'>
-<a href='<?=$SystemGlobalcfm['uri']?>' target='_blank' class='media-cap'><img src='<? if(!$SystemGlobalcfm['img_path']) { ?><?=$SystemGlobalcfm_global['SiteUrl']?>/images/nophoto.gif<?php } else { ?><?=$SystemGlobalcfm_global['SiteUrl']?><?=$SystemGlobalcfm['img_path']?><?php } ?>' title='<?=$SystemGlobalcfm['title']?>'></a>
-<div class='media-body'>
-<div class='media-body-title'>
-<small class='pull-right'><? echo get_format_time($SystemGlobalcfm['begintime']); ?></small>
-<a href="<?=$SystemGlobalcfm['uri']?>" target="_blank" style="<? if($SystemGlobalcfm['ifred'] == 1) { ?>color:red;<?php } ?> <? if($SystemGlobalcfm['ifbold'] == 1) { ?>font-weight:bold;<?php } ?>"><?=$SystemGlobalcfm['title']?></a><? if($SystemGlobalcfm['img_count']) { ?><span class="img_count"><?=$SystemGlobalcfm['img_count']?>图</span><?php } if($SystemGlobalcfm['info_level'] == 2) { ?><span class="tuijian">推荐</span><?php } if($SystemGlobalcfm['certify'] == 1) { ?><span class="certify">认证</span><?php } ?>
-</div>
-<div class='typo-small'><? echo cutstr($SystemGlobalcfm['content'],100); ?></div>
-<div class='typo-smalls'>
-                <? if($SystemGlobalcfm['areaname']) { ?><font class="xx1"><?=$SystemGlobalcfm['areaname']?></font><?php } ?>
-                <?php $i=2; ?>                <?php if(is_array($SystemGlobalcfm['extra'])){foreach($SystemGlobalcfm['extra'] as $w) { ?>                	<? if($w && $w != '<font class=mayi></font>') { ?><font class="xx<?=$i?>"><? if(in_array($w,array('0元','0元/月','0万元','0元/平米','0元/平米/天','0平米'))) { ?>面议<?php } else { echo str_replace('.00','',$w); ?><?php } ?></font><?php } ?>
-                <?php $i++; ?>                <?php }} ?>
-</div>
-</div>
-</div>
+<div class="column">
+<div class="col3">
+<div class="newsfocus">
+<div id="slider">
+<ul>
+                    <?php $focus = qq3479015851_get_focus('news',3); ?>                    <?php if(is_array($focus)){foreach($focus as $SystemGlobalcfm) { ?><li><a href="<?=$SystemGlobalcfm['url']?>" title="<?=$SystemGlobalcfm['words']?>" target="_blank"><img src="<? echo strstr($SystemGlobalcfm['image'],'http') ? $SystemGlobalcfm['image'] : $SystemGlobalcfm_global['SiteUrl'].$SystemGlobalcfm['image']; ?>" alt="<?=$SystemGlobalcfm['words']?>" width="333" height="226" border="0" /></a></li>
 <?php }} ?>
 </ul>
 </div>
-<div class="clear"></div>
-<div class="pagination2">
-<?=$pageview?>
+<script type="text/javascript">$(document).ready(function() {$("#slider").flashSlider();});</script>
 </div>
 <div class="clear"></div>
+<div class="newinfo">
+<div class="hd">最新发布信息</div>
+<div class="bd">
+<div id="indextop">
+<div id="indextop1">
+                            
+                            <?php $latest_info = qq3479015851_get_infos(10,NULL,NULL,NULL,NULL,NULL,NULL,NULL,$city['cityid']); ?><?php if(is_array($latest_info)){foreach($latest_info as $SystemGlobalcfm) { ?><div class="li"><span class="tm">[<? echo GetTime($SystemGlobalcfm['begintime'],'y-m-d'); ?>]</span><span class="tt"><a href="<?=$SystemGlobalcfm['uri']?>" title="<?=$SystemGlobalcfm['title']?>" target="_blank" ><?=$SystemGlobalcfm['title']?></a></span></div>
+<?php }} ?>
+                            
 </div>
-</div><div class="clear"></div>
-<div class="colorfoot">
-    <div class="cateintro">
-        <div class="introleft"><?=$city['cityname']?><?=$cat['catname']?>频道</div>
-        <div class="introright"><?=$city['cityname']?><?=$cat['catname']?>频道为您提供<?=$city['cityname']?><?=$cat['catname']?>信息，在此有大量<?=$city['cityname']?><?=$cat['catname']?>信息供您选择，您可以免费查看和发布<?=$city['cityname']?><?=$cat['catname']?>信息。</div>
-    </div>
-    <? if($area_list) { ?>
-    <div class="clearfix"></div>
-    <div class="cateintro relate">
-    <div class="introleft"><?=$cat['catname']?>相关区域</div>
-    <div class="introflink">
-    <?php if(is_array($area_list)){foreach($area_list as $SystemGlobalcfm) { ?>    <? if($SystemGlobalcfm['areaid']) { ?><a href='<?=$city['domain']?><?=$SystemGlobalcfm['uri']?>' target="_blank"><?=$SystemGlobalcfm['areaname']?><?=$cat['catname']?></a><?php } ?>
-    <?php }} ?>
-    </div>
-    </div>
-    <?php } ?>
-    <?php $nearbycities = get_nearby_cities($city['provinceid']); ?>    <? if($nearbycities) { ?>
-    <div class="cateintro relate">
-    <div class="introleft"><?=$cat['catname']?>附近分站</div>
-    <div class="introflink">
-    <?php if(is_array($nearbycities)){foreach($nearbycities as $SystemGlobalcfm) { ?>    <? if($SystemGlobalcfm['cityid'] != $city['cityid']) { ?>
-    <a href='<?=$SystemGlobalcfm['domain']?><?=$cat['caturi']?>' target="_blank"><?=$SystemGlobalcfm['cityname']?><?=$cat['catname']?></a>
-    <?php } ?>
-    <?php }} ?>
-    </div>
-    </div>
-    <?php } ?>
-    <? if($hotcities) { ?>
-    <div class="cateintro relate">
-    <div class="introleft"><?=$cat['catname']?>热门分站</div>
-    <div class="introflink">
-    <?php if(is_array($hotcities)){foreach($hotcities as $SystemGlobalcfm) { ?>    <a href='<?=$SystemGlobalcfm['domain']?><?=$cat['caturi']?>' target="_blank"><?=$SystemGlobalcfm['cityname']?><?=$cat['catname']?></a>
-    <?php }} ?>
-    </div>
-    </div>
-    <?php } ?>
+<div id="indextop2"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="col4">
+<div class="todaynews">
+<ul>
+                    <?php $i=1;$top_news	= qq3479015851_get_news(18,NULL,NULL,NULL,NULL,NULL,$cityid); ?>                        <?php if(is_array($top_news)){foreach($top_news as $SystemGlobalcfm) { ?>                        <? if($i ==1) { ?>
+ <div class="head">
+ <h1><a href="<?=$SystemGlobalcfm['uri']?>" target="_blank" ><?=$SystemGlobalcfm['title']?></a></h1>
+ <p><? echo cutstr($SystemGlobalcfm['content'],254); ?><a href="<?=$SystemGlobalcfm['uri']?>" style="margin-left:20px" target="_blank">查看全文>></a></p>
+</div>
+<?php } else { ?>
+<div class="li"><span class="date"><? echo GetTime($SystemGlobalcfm['begintime'],'y-m-d'); ?></span><a href="<?=$SystemGlobalcfm['caturi']?>" class="catname"><?=$SystemGlobalcfm['catname']?></a><a href="<?=$SystemGlobalcfm['uri']?>" title="<?=$SystemGlobalcfm['title']?>" target="_blank"><?=$SystemGlobalcfm['title']?></a></div>
+<?php } ?>
+                        <?php $i++; ?>                        <?php }} ?>
+</ul>
+</div>
+</div>
+<div class="col5">
+<div class="top10">
+<h3 class="top_tips">热门机构推荐榜</h3>
+<ul>
+                <?php $i=1; ?>                    <?php $hot_member = qq3479015851_get_members(12,3,NULL,NULL,NULL,NULL,NULL,$city['cityid']); ?>                    <?php if(is_array($hot_member)){foreach($hot_member as $SystemGlobalcfm) { ?><li class="stitle" id="s_tle_<?=$i?>" onmouseover="show_top10(<?=$i?>);" <? if($i==1) { ?>style="display:none;"<?php } ?>><span><?=$i?></span><a href="<?=$SystemGlobalcfm['uri']?>" target="_blank"><? echo cutstr($SystemGlobalcfm['tname'],28); ?></a></li>
+<li class="ithumb" id="i_img_<?=$i?>" <? if($i >1) { ?>style="display:none;"<?php } ?>>
+<div class="ithumb_c">
+<p class="i_num"><?=$i?></p>
+<p class="i_img"><a href="<?=$SystemGlobalcfm['uri']?>" target="_blank"><img src="<?=$SystemGlobalcfm_global['SiteUrl']?><?=$SystemGlobalcfm['prelogo']?>" width="78" height="58" alt="<?=$SystemGlobalcfm['tname']?>" border="0" /></a></p>
+<p class="i_tle"><a href="<?=$SystemGlobalcfm['uri']?>" target="_blank"><?=$SystemGlobalcfm['tname']?></a></p>
+</div>
+</li>
+                    <?php $i++; ?>                    <?php }} ?>
+<script type="text/javascript" language="javascript" src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/js/news.js"></script>
+</ul>
+<p class="top_more"><a href="<?=$SystemGlobalcfm_global['SiteUrl']?>/<?=$SystemGlobalcfm_global['cfg_member_logfile']?>?mod=register&action=store" target="_blank">立即注册商家会员>></a></p>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="column2">
+<div class="tuwen">
+<div class="hd">精彩图文</div>
+<div class="bd">
+<ul>
+                    <?php $image_news = qq3479015851_get_news(7,NULL,1,NULL,NULL,1,$city['cityid']); ?>                    <?php if(is_array($image_news)){foreach($image_news as $SystemGlobalcfm) { ?><li><a href="<?=$SystemGlobalcfm['uri']?>" target="_blank"><img src="<? echo strstr($SystemGlobalcfm['imgpath'],'http') ? $SystemGlobalcfm['imgpath'] : $SystemGlobalcfm_global['SiteUrl'].$SystemGlobalcfm['imgpath']; ?>" alt="<?=$SystemGlobalcfm['title']?>"/></a><span><a href="<?=$SystemGlobalcfm['uri']?>" title="<?=$SystemGlobalcfm['title']?>" <? if($SystemGlobalcfm['iscommend'] == 1) { ?>style="color:red"<?php } ?>><?=$SystemGlobalcfm['title']?></a></span></li>
+<?php }} ?>
+</ul>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="column3">
+<div class="news_daohang">
+<div class="bd">
+<ul>
+                    <?php $i=1; ?>                    <?php if(is_array($channel)){foreach($channel as $SystemGlobalcfm) { ?><div class="square <? if($i%2 != 0) { ?>fl<?php } else { ?>fr<?php } ?>">
+<div class="hc">
+<span class="cate"><?=$SystemGlobalcfm['catname']?></span>
+<span class="more"><a href="<?=$SystemGlobalcfm['uri']?>" target="_blank">更多</a></span>
+</div>
+<div class="bc">
+                            <?php if(is_array($SystemGlobalcfm['news'])){foreach($SystemGlobalcfm['news'] as $w) { ?><div class="li"><span class="title"><a href="<?=$w['uri']?>" title="<?=$w['title']?>" target="_blank" <? if($w['iscommend'] == 1) { ?>style="color:red"<?php } ?>><?=$w['title']?></a></span><span class="time"><? echo GetTime($w['begintime'],'y-m-d'); ?></span></div>
+<?php }} ?>
+</div>
+</div>
+                    <?php $i++; ?>                    <?php }} ?>
 
-    <? if($friendlink) { ?>
-    <div class="clearfix"></div>
-    <div class="cateintro">
-    <div class="introleft">频道友情链接</div>
-    <div class="introflink">
-    <?php if(is_array($friendlink)){foreach($friendlink as $SystemGlobalcfm) { ?>    <a href='<?=$SystemGlobalcfm['url']?>' target='_blank'><?=$SystemGlobalcfm['name']?></a>
-    <?php }} ?>
-    </div>
-    </div>
-    <?php } ?>
+</ul>
 </div>
-<script type="text/javascript" src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/js/hover_bg.js"></script><div id="ad_footerbanner"></div>
+</div>
+<div class="read">
+<div class="hd"><span>热门阅读排行</span></div>
+<div class="bd">
+<ul>
+                    <?php $hot_news	= qq3479015851_get_news(20,NULL,NULL,NULL,1,1,$city['cityid']); ?>                    <?php if(is_array($hot_news)){foreach($hot_news as $SystemGlobalcfm) { ?><div class="li"><a target="_blank" href="<?=$SystemGlobalcfm['uri']?>" title="<?=$SystemGlobalcfm['title']?>" <? if($SystemGlobalcfm['iscommend'] == 1) { ?>style="color:red"<?php } ?>><? echo cutstr($SystemGlobalcfm['title'],28); ?></a></div>
+<?php }} ?>
+</ul>
+</div>
+</div>
+</div>
+<div class="clear"></div><div id="ad_footerbanner"></div>
 <? if($advertisement['type']['floatad'] || $advertisement['type']['couplead']) { ?>
 <div align="left"  style="clear: both;">
 <script src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/global/floatadv.js" type="text/javascript"></script>
@@ -388,6 +359,7 @@
 </div>
 <p id="back-to-top"><a href="#top"><span></span></a></p>
 <script type="text/javascript">loadDefault(["addiv","iflogin","show_tab","scrolltop","changecity"]);</script></div>
-</div>
 </body>
 </html>
+<script type="text/javascript">loadDefault(['newsindex','ppRoll']);</script>
+<script type="text/javascript">var indextop = new ppRoll({speed:60,demo:"indextop",demo1:"indextop1",demo2:"indextop2",objStr:"indextop",width:"310px",height:"217px",direction:"top"});</script>
