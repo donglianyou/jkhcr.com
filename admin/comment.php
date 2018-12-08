@@ -15,7 +15,7 @@ require_once( SysGlbCfm_INC."/db.class.php" );
 $part = $part ? trim( $part ) : "information";
 $action = $action ? trim( $action ) : "list";
 $id = isset( $id ) ? $id : "";
-if ( !in_array( $part, array( "information", "news", "coupon", "group" ) ) )
+if ( !in_array( $part, array( "information", "news", "xiehui", "zhanhui", "coupon", "group" ) ) )
 {
 				$part = "information";
 }
@@ -26,6 +26,12 @@ if ( $part == "information" )
 else if ( $part == "news" )
 {
 				chk_admin_purview( "purview_新闻评论" );
+}else if ( $part == "xiehui" )
+{
+				chk_admin_purview( "purview_协会评论" );
+}else if ( $part == "zhanhui" )
+{
+				chk_admin_purview( "purview_展会评论" );
 }
 else if ( $part == "coupon" )
 {
@@ -82,7 +88,7 @@ else if ( $action == "list" )
 				$admindir = getcwdol( );
 				$comment_level = isset( $comment_level ) ? intval( $comment_level ) : "";
 				require_once( SysGlbCfm_DATA."/info.level.inc.php" );
-				$part_arr = array( "information" => "分类信息评论", "news" => "新闻评论", "group" => "团购评论", "coupon" => "优惠券评论" );
+				$part_arr = array( "information" => "分类信息评论", "news" => "新闻评论", "xiehui" => "协会评论", "zhanhui" => "展会评论", "group" => "团购评论", "coupon" => "优惠券评论" );
 				$here = $part_arr[$part];
 				unset( $part_arr );
 				$where = " WHERE type = '".$part."' ";
@@ -103,6 +109,12 @@ else if ( $action == "list" )
 												break;
 								case "news" :
 												$arr['title'] = "<a href=../news.php?id=".$row[typeid]." target=_blank>".$row[title]."</a>";
+												break;
+								case "xiehui" :
+												$arr['title'] = "<a href=../xiehui.php?id=".$row[typeid]." target=_blank>".$row[title]."</a>";
+												break;
+								case "zhanhui" :
+												$arr['title'] = "<a href=../zhanhui.php?id=".$row[typeid]." target=_blank>".$row[title]."</a>";
 												break;
 								case "group" :
 												$arr['title'] = "<a href=../group.php?id=".$row[infoid]." target=_blank>".$row[title]."</a>";

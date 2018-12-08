@@ -155,7 +155,7 @@
 <div class="newsfocus">
 <div id="slider">
 <ul>
-                    <?php $focus = qq3479015851_get_focus('news',3); ?>                    <?php if(is_array($focus)){foreach($focus as $SystemGlobalcfm) { ?><li><a href="<?=$SystemGlobalcfm['url']?>" title="<?=$SystemGlobalcfm['words']?>" target="_blank"><img src="<? echo strstr($SystemGlobalcfm['image'],'http') ? $SystemGlobalcfm['image'] : $SystemGlobalcfm_global['SiteUrl'].$SystemGlobalcfm['image']; ?>" alt="<?=$SystemGlobalcfm['words']?>" width="333" height="226" border="0" /></a></li>
+                    <?php $focus = qq3479015851_get_focus('xiehui',3); ?>                    <?php if(is_array($focus)){foreach($focus as $SystemGlobalcfm) { ?><li><a href="<?=$SystemGlobalcfm['url']?>" title="<?=$SystemGlobalcfm['words']?>" target="_blank"><img src="<? echo strstr($SystemGlobalcfm['image'],'http') ? $SystemGlobalcfm['image'] : $SystemGlobalcfm_global['SiteUrl'].$SystemGlobalcfm['image']; ?>" alt="<?=$SystemGlobalcfm['words']?>" width="333" height="226" border="0" /></a></li>
 <?php }} ?>
 </ul>
 </div>
@@ -184,7 +184,7 @@
 <div class="col4">
 <div class="todaynews">
 <ul>
-                    <?php $i=1;$top_news	= qq3479015851_get_news(18,NULL,NULL,NULL,NULL,NULL,$cityid); ?>                        <?php if(is_array($top_news)){foreach($top_news as $SystemGlobalcfm) { ?>                        <? if($i ==1) { ?>
+                    <?php $i=1;$top_news	= qq3479015851_get_xiehui(18,NULL,NULL,NULL,NULL,NULL,$cityid); ?>                        <?php if(is_array($top_news)){foreach($top_news as $SystemGlobalcfm) { ?>                        <? if($i ==1) { ?>
  <div class="head">
  <h1><a href="<?=$SystemGlobalcfm['uri']?>" target="_blank" ><?=$SystemGlobalcfm['title']?></a></h1>
  <p><? echo cutstr($SystemGlobalcfm['content'],254); ?><a href="<?=$SystemGlobalcfm['uri']?>" style="margin-left:20px" target="_blank">查看全文>></a></p>
@@ -221,7 +221,7 @@
 <div class="hd">精彩图文</div>
 <div class="bd">
 <ul>
-                    <?php $image_news = qq3479015851_get_news(7,NULL,1,NULL,NULL,1,$city['cityid']); ?>                    <?php if(is_array($image_news)){foreach($image_news as $SystemGlobalcfm) { ?><li><a href="<?=$SystemGlobalcfm['uri']?>" target="_blank"><img src="<? echo strstr($SystemGlobalcfm['imgpath'],'http') ? $SystemGlobalcfm['imgpath'] : $SystemGlobalcfm_global['SiteUrl'].$SystemGlobalcfm['imgpath']; ?>" alt="<?=$SystemGlobalcfm['title']?>"/></a><span><a href="<?=$SystemGlobalcfm['uri']?>" title="<?=$SystemGlobalcfm['title']?>" <? if($SystemGlobalcfm['iscommend'] == 1) { ?>style="color:red"<?php } ?>><?=$SystemGlobalcfm['title']?></a></span></li>
+                    <?php $image_xiehui = qq3479015851_get_xiehui(7,NULL,1,NULL,NULL,1,$city['cityid']); ?>                    <?php if(is_array($image_xiehui)){foreach($image_xiehui as $SystemGlobalcfm) { ?><li><a href="<?=$SystemGlobalcfm['uri']?>" target="_blank"><img src="<? echo strstr($SystemGlobalcfm['imgpath'],'http') ? $SystemGlobalcfm['imgpath'] : $SystemGlobalcfm_global['SiteUrl'].$SystemGlobalcfm['imgpath']; ?>" alt="<?=$SystemGlobalcfm['title']?>"/></a><span><a href="<?=$SystemGlobalcfm['uri']?>" title="<?=$SystemGlobalcfm['title']?>" <? if($SystemGlobalcfm['iscommend'] == 1) { ?>style="color:red"<?php } ?>><?=$SystemGlobalcfm['title']?></a></span></li>
 <?php }} ?>
 </ul>
 </div>

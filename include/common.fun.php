@@ -1915,6 +1915,82 @@ function qq3479015851_get_news($num=10,$catid=NULL,$ifimg=NULL,$leftjoin=NULL,$i
 	}
 	return $res;
 }
+/*新增，协会专栏*/
+function qq3479015851_get_xiehui($num=10,$catid=NULL,$ifimg=NULL,$leftjoin=NULL,$ifhot=NULL,$orderby=1){
+	global $city,$db,$db_qq3479015851;
+	$cat_limit  = empty($catid) ? '' : "AND a.catid IN(".get_cat_children($catid,'channel').")";
+	$img_limit  = !$ifimg ? '' : "AND a.imgpath != ''";
+	$commend_limit = empty($ifhot) ? '' : " AND a.iscommend = '1'";
+	$orderby	= empty($orderby) ? "ORDER BY a.hit DESC" : "ORDER BY a.id DESC";
+	$res = array();
+	if($leftjoin){
+		$query = $db -> query("SELECT a.*,b.catname FROM `{$GLOBALS['db_qq3479015851']}xiehui` AS a LEFT JOIN `{$GLOBALS['db_qq3479015851']}xhchannel` AS b ON a.catid = b.catid WHERE 1 {$cat_limit} {$img_limit}{$city_limit} {$commend_limit} {$orderby} LIMIT 0,$num");
+		while($row = $db -> fetchRow($query)){
+			$arr['id'] 			= $row['id'];
+			$arr['title'] 		= $row['title'];
+			$arr['iscommend']	= $row['iscommend'];
+			$arr['imgpath'] 	= $row['imgpath'];
+			$arr['content'] 	= clear_html($row['content']);
+			$arr['begintime'] 	= $row['begintime'];
+			$arr['catname']		= $row['catname'];
+			$arr['caturi']		= Rewrite('xiehui',array('catid'=>$row['catid']));
+			$arr['uri']			= $row['isjump'] ? $row['redirect_url'] : Rewrite('xiehui',array('id'=>$row['id']));
+			$res[]      = $arr;
+		}
+	}else{
+		$query = $db -> query("SELECT a.* FROM `{$GLOBALS['db_qq3479015851']}xiehui` AS a WHERE 1 {$cat_limit} {$img_limit}{$city_limit} {$orderby} LIMIT 0,$num");
+		while($row = $db -> fetchRow($query)){
+			$arr['id'] 			= $row['id'];
+			$arr['title'] 		= $row['isbold'] == 1 ? '<strong>'.$row['title'].'</strong>' : $row['title'];
+			$arr['title'] 		= $row['title'];
+			$arr['iscommend']	= $row['iscommend'];
+			$arr['imgpath'] 	= $row['imgpath'];
+			$arr['content'] 	= clear_html($row['content']);
+			$arr['begintime'] 	= $row['begintime'];
+			$arr['uri']			= $row['isjump'] ? $row['redirect_url'] : Rewrite('xiehui',array('id'=>$row['id']));
+			$res[]      = $arr;
+		}
+	}
+	return $res;
+}
+/*新增，展会*/
+function qq3479015851_get_zhanhui($num=10,$catid=NULL,$ifimg=NULL,$leftjoin=NULL,$ifhot=NULL,$orderby=1){
+	global $city,$db,$db_qq3479015851;
+	$cat_limit  = empty($catid) ? '' : "AND a.catid IN(".get_cat_children($catid,'channel').")";
+	$img_limit  = !$ifimg ? '' : "AND a.imgpath != ''";
+	$commend_limit = empty($ifhot) ? '' : " AND a.iscommend = '1'";
+	$orderby	= empty($orderby) ? "ORDER BY a.hit DESC" : "ORDER BY a.id DESC";
+	$res = array();
+	if($leftjoin){
+		$query = $db -> query("SELECT a.*,b.catname FROM `{$GLOBALS['db_qq3479015851']}zhanhui` AS a LEFT JOIN `{$GLOBALS['db_qq3479015851']}zhchannel` AS b ON a.catid = b.catid WHERE 1 {$cat_limit} {$img_limit}{$city_limit} {$commend_limit} {$orderby} LIMIT 0,$num");
+		while($row = $db -> fetchRow($query)){
+			$arr['id'] 			= $row['id'];
+			$arr['title'] 		= $row['title'];
+			$arr['iscommend']	= $row['iscommend'];
+			$arr['imgpath'] 	= $row['imgpath'];
+			$arr['content'] 	= clear_html($row['content']);
+			$arr['begintime'] 	= $row['begintime'];
+			$arr['catname']		= $row['catname'];
+			$arr['caturi']		= Rewrite('zhanhui',array('catid'=>$row['catid']));
+			$arr['uri']			= $row['isjump'] ? $row['redirect_url'] : Rewrite('zhanhui',array('id'=>$row['id']));
+			$res[]      = $arr;
+		}
+	}else{
+		$query = $db -> query("SELECT a.* FROM `{$GLOBALS['db_qq3479015851']}zhanhui` AS a WHERE 1 {$cat_limit} {$img_limit}{$city_limit} {$orderby} LIMIT 0,$num");
+		while($row = $db -> fetchRow($query)){
+			$arr['id'] 			= $row['id'];
+			$arr['title'] 		= $row['isbold'] == 1 ? '<strong>'.$row['title'].'</strong>' : $row['title'];
+			$arr['title'] 		= $row['title'];
+			$arr['iscommend']	= $row['iscommend'];
+			$arr['imgpath'] 	= $row['imgpath'];
+			$arr['content'] 	= clear_html($row['content']);
+			$arr['begintime'] 	= $row['begintime'];
+			$arr['uri']			= $row['isjump'] ? $row['redirect_url'] : Rewrite('zhanhui',array('id'=>$row['id']));
+			$res[]      = $arr;
+		}
+	}
+	return $res;
+}
 
 function qq3479015851_get_members($num=NULL,$level=NULL,$orderby=NULL,$if_certify=NULL,$ifindex=NULL,$iflist=NULL,$catid=NULL,$cityid=NULL){
 	global $db,$db_qq3479015851,$SystemGlobalcfm_global;

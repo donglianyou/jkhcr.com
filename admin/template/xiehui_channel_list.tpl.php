@@ -1,0 +1,41 @@
+<? include qq3479015851_tpl('inc_head')?>
+<div id="<?=SysGlbCfm_SOFTNAME?>" style=" padding-bottom:0">
+    <div class="mpstopic-category">
+        <div class="panel-tab">
+            <ul class="clearfix tab-list">
+                <li><a title="已添加的协会类别" href="xhchannel.php" <?php if($part == 'list'){?>class="current"<?php }?>>已添加的协会类别</a></li>
+                <li><a title="新增协会类别" href="xhchannel.php?part=add" <?php if($part == 'add'){?>class="current"<?php }?>>新增协会类别</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<form name="form_qq3479015851" action="?part=list" method="post">
+<div id="<?=SysGlbCfm_SOFTNAME?>">
+<table border="0" cellspacing="0" cellpadding="0" class="vbm">
+    <tr class="firstr">
+      <td width="40">编号</td>
+      <td width="40">启用?</td>
+      <td>名称</td>
+      <td width="80">排列顺序</td>
+      <td>操作</td>
+      <td>&nbsp;</td>
+    </tr>
+<?php
+foreach($f_cat AS $cat)
+{
+?>
+	  <tr <?php if($cat[level] == 0){?>bgcolor="#f5fbff" <?}else{?>  bgcolor="#ffffff" <?}?>>
+	  <td width="40"><?=$cat[catid]?></td>
+      <td><input name="if_viewids[]" value="<?=$cat[catid]?>" type="checkbox" <?if ($cat[if_view] == 2) echo 'checked';?> class="checkbox"/></td>
+  <td><li style="margin-left:<?=$cat['level']>1?$cat[level]*3:$cat[level]?>em;" <?php if($cat['parentid'] != '0') echo 'class="son"'?>><a <?php if($cat[level] == 0){?>style="font-weight:bold" <?}?> href="../xiehui.php?catid=<?=$cat[catid]?>" target="_blank"><?=$cat[catname]?></a></li></td>
+      <td width="80"><input name="catorder[<?=$cat[catid]?>]" value="<?=$cat[catorder]?>" class="txt"/></td>
+	  <td><a href="xhchannel.php?part=edit&catid=<?=$cat[catid]?>">编辑</a> / <a href="xhchannel.php?part=del&catid=<?=$cat[catid]?>" onClick="if(!confirm('确定要删除该协会栏目吗？\n\n该操作将删除隶属该栏目的子栏目以及协会文章！'))return false;">删除</a></td>
+      <td width="30"><a onclick="window.scrollTo(0,0);" style="cursor:pointer" title="至页面顶端">TOP</a></td>
+    </tr>
+<?}?>
+</table>
+</div>
+<center><input name="<?=CURSCRIPT?>_submit" type="submit" value="提交" class="qq3479015851 large"/></center>
+</form>
+<?=qq3479015851_admin_tpl_global_foot()?>
