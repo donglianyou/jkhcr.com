@@ -22,7 +22,7 @@ $data = array (
   'items' => 
   array (
     55 => '<a href="#" target="_blank"><img src="/attachment/adv/acenter.jpg" border="0"></a>',
-    56 => '<a href="#" target="_blank"><img src="/attachment/adv/topbanner.gif" height="110" width="1200" border="0"></a>',
+    56 => '<a href="#" target="_blank"><img src="/attachment/adv/topbanner.jpg" height="110" width="1200" border="0"></a>',
     41 => '<a target="_blank" href="http://junchang.taobao.com/qq_35921430/goumai.php">二手 空调 淘宝网www.taobao.com - 网购首选。</a> <br>2011新款新潮流，新品发布淘宝网春夏特辑，限时优惠，赶快加入',
     43 => '<a href="http://junchang.taobao.com/qq_35921430" target="_blank">二手车摩托车 junchang.taobao.com/qq_35921430</a><br>
 一淘巨优惠，折扣宝典，教你省钱！免费领 返现金 1折包邮。折扣享不停',
@@ -41,8 +41,8 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
     36 => '<a href="#" target="_blank"><img src="/attachment/adv/intercatad2.gif" border="0"></a>',
     22 => '<a href="#" target="_blank"><img src="/attachment/adv/160x600.gif" border="0"></a>',
     24 => '<a href="#" target="_blank"><img src="/attachment/adv/intercatad2.jpg" width="160" border="0"></a>',
-    12 => '<a href="#" target="_blank"><img src="/attachment/adv/topbanner.png" width="1000" border="0"></a>',
-    14 => '<a href="#" target="_blank"><img src="/attachment/adv/ggad.gif" border="0"></a>',
+    12 => '<a href="#" target="_blank"><img src="/attachment/adv/bottombanner.jpg" height="90" width="1200" border="0"></a>',
+    14 => '<a href="#" target="_blank"><img src="/attachment/adv/ggad.gif" height="90" width="1200" border="0"></a>',
   ),
   1 => 
   array (

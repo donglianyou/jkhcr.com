@@ -91,8 +91,8 @@
 </div>
 <div class="clear"></div>
 <div class="brandad">
-<? if($brand1) { ?>
-<ul><?php if(is_array($brand1)){foreach($brand1 as $SystemGlobalcfm) { ?><li><a href="<?=$SystemGlobalcfm['url']?>" target="_blank" title="<?=$SystemGlobalcfm['webname']?>"><img src="<?=$SystemGlobalcfm_global['SiteUrl']?><?=$SystemGlobalcfm['weblogo']?>" alt="<?=$SystemGlobalcfm['name']?>"></a></li>
+<? if($brand) { ?>
+<ul><?php if(is_array($brand)){foreach($brand as $SystemGlobalcfm) { ?><li><a href="<?=$SystemGlobalcfm['url']?>" target="_blank" title="<?=$SystemGlobalcfm['webname']?>"><img src="<?=$SystemGlobalcfm_global['SiteUrl']?><?=$SystemGlobalcfm['weblogo']?>" alt="<?=$SystemGlobalcfm['webname']?>"></a></li>
 <?php }} ?>
 </ul>
 <?php } ?>
@@ -236,7 +236,7 @@
         <? if($i%2 != 0) { ?><div id="ad_indexcatad_<?=$fcat['catid']?>"></div><?php } ?>
         <div class="showbox <? if($i%2 != 0) { ?>sleft<?php } else { ?>sright<?php } ?>">
             <div class="hd">
-                <div class="cattitle"><? if($fcat['icon']) { ?><img alt="<?=$fcat['catname']?>" src="<?=$SystemGlobalcfm_global['SiteUrl']?><?=$fcat['icon']?>" align="absmiddle"/>&nbsp;&nbsp;<?php } ?><?=$fcat['catname']?>信息</div>
+                <div class="cattitle"><?=$fcat['catname']?>信息</div>
                 <div class="postinfo"></div>
                 <div class="moreinfo"><a href="<?=$SystemGlobalcfm_global['SiteUrl']?>/<?=$SystemGlobalcfm_global['cfg_postfile']?>?catid=<?=$fcat['catid']?>" target="_blank">发信息</a> | <a href="<?=$fcat['uri']?>" target="_blank">更多</a></div>
             </div>
@@ -254,20 +254,108 @@
         <? if($i%2 == 0) { ?><div id="ad_indexcatad_<?=$fcat['catid']?>"></div><?php } ?>
         <?php } ?>
         <?php $i++; ?>        <?php }} ?>
-</div><?php if(ifplugin('goods')){$goods = qq3479015851_get_goods($tpl_index['goods'],1,NULL,NULL,NULL,NULL,$cityid); ?>        <div class="clearfix"></div>
+        
+</div>
+<div class="infolist">
+<div class="showbox sleft">
+            <div class="hd">
+                <div class="cattitle">协会专栏</div>
+                <div class="postinfo"></div>
+                <div class="moreinfo"><a href="/xiehui.php" target="_blank">更多</a></div>
+            </div>
+            <div class="bd">
+                <ul>
+                    <?php if(is_array($fcat['information'])){foreach($fcat['information'] as $info) { ?>                    <li>
+                    <span class="time">[<? echo GetTime($info['begintime'],'m-d'); ?>]</span>
+                    <span class="info"><a href="<?=$info['uri']?>" target="_blank" title="<?=$info['title']?>" style="<? if($info['ifred']==1) { ?>color:red;<?php } ?> <? if($info['ifbold'] == 1) { ?>font-weight:bold;<?php } ?>"><?=$info['title']?></a></span>
+                    <span class="catname"><a href="<?=$info['caturi']?>" target="_blank"><?=$info['catname']?></a></span>
+                    </li>
+                    <?php }} ?>
+                </ul>
+            </div>
+        </div>
+        <div class="showbox sright">
+            <div class="hd">
+                <div class="cattitle">展会</div>
+                <div class="postinfo"></div>
+                <div class="moreinfo"><a href="/zhanhui.php" target="_blank">更多</a></div>
+            </div>
+            <div class="bd">
+                <ul>
+                    <?php if(is_array($fcat['information'])){foreach($fcat['information'] as $info) { ?>                    <li>
+                    <span class="time">[<? echo GetTime($info['begintime'],'m-d'); ?>]</span>
+                    <span class="info"><a href="<?=$info['uri']?>" target="_blank" title="<?=$info['title']?>" style="<? if($info['ifred']==1) { ?>color:red;<?php } ?> <? if($info['ifbold'] == 1) { ?>font-weight:bold;<?php } ?>"><?=$info['title']?></a></span>
+                    <span class="catname"><a href="<?=$info['caturi']?>" target="_blank"><?=$info['catname']?></a></span>
+                    </li>
+                    <?php }} ?>
+                </ul>
+            </div>
+        </div>
+</div>
+
+<!--燕窝及高端滋补品-->
+<? if($brand1) { ?>
+        <div class="clearfix"></div>
 <div class="goods">
         	<div class="ul">
 <div class="hd">
-<span class="hdleft">在线商品</span>
-<span class="more"><a href="<?=$about['goods_uri']?>" target="_blank">更多</a></span>
+<span class="hdleft">燕窝及高端滋补品</span>
+<span class="more"><a href="/corporation.php?catid=14" target="_blank">更多</a></span>
 </div>
 <div class="bd">
 <ul>
-                <?php if(is_array($goods)){foreach($goods as $SystemGlobalcfm) { ?><li>
-<a href="<?=$SystemGlobalcfm['uri']?>"  target=_blank><img src="<?=$SystemGlobalcfm_global['SiteUrl']?>/<?=$SystemGlobalcfm['pre_picture']?>" title="<?=$SystemGlobalcfm['goodsname']?>"/>
-<h3><?=$SystemGlobalcfm['goodsname']?></h3>
+                <?php if(is_array($brand1)){foreach($brand1 as $SystemGlobalcfm) { ?><li>
+<a href="<?=$SystemGlobalcfm['url']?>"  target=_blank><img src="<?=$SystemGlobalcfm_global['SiteUrl']?><?=$SystemGlobalcfm['weblogo']?>" title="<?=$SystemGlobalcfm['webname']?>"/>
+<h3><?=$SystemGlobalcfm['webname']?></h3>
 </a>
-<span class="price"><?=$SystemGlobalcfm['nowprice']?></span>
+</li>
+                <?php }} ?>
+              	</ul>
+</div>
+            </div>
+</div>
+<?php } ?>
+       
+       
+       
+       <!--酵素-->
+       <? if($brand2) { ?>
+        <div class="clearfix"></div>
+<div class="goods">
+        	<div class="ul">
+<div class="hd">
+<span class="hdleft">酵素</span>
+<span class="more"><a href="/corporation.php?catid=21" target="_blank">更多</a></span>
+</div>
+<div class="bd">
+<ul>
+                <?php if(is_array($brand2)){foreach($brand2 as $SystemGlobalcfm) { ?><li>
+<a href="<?=$SystemGlobalcfm['url']?>"  target=_blank><img src="<?=$SystemGlobalcfm_global['SiteUrl']?><?=$SystemGlobalcfm['weblogo']?>" title="<?=$SystemGlobalcfm['webname']?>"/>
+<h3><?=$SystemGlobalcfm['webname']?></h3>
+</a>
+</li>
+                <?php }} ?>
+              	</ul>
+</div>
+            </div>
+</div>
+<?php } ?>
+       
+       <!--功能食品-->
+       <? if($brand3) { ?>
+        <div class="clearfix"></div>
+<div class="goods">
+        	<div class="ul">
+<div class="hd">
+<span class="hdleft">功能食品</span>
+<span class="more"><a href="/corporation.php?catid=22" target="_blank">更多</a></span>
+</div>
+<div class="bd">
+<ul>
+                <?php if(is_array($brand3)){foreach($brand3 as $SystemGlobalcfm) { ?><li>
+<a href="<?=$SystemGlobalcfm['url']?>"  target=_blank><img src="<?=$SystemGlobalcfm_global['SiteUrl']?><?=$SystemGlobalcfm['weblogo']?>" title="<?=$SystemGlobalcfm['webname']?>"/>
+<h3><?=$SystemGlobalcfm['webname']?></h3>
+</a>
 </li>
                 <?php }} ?>
               	</ul>

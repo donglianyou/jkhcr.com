@@ -74,10 +74,10 @@
 </div>
 <div class="clear"></div>
 <div class="brandad">
-<!--{if $brand1}-->
+<!--{if $brand}-->
 <ul>
-	<!--{loop $brand1 $SystemGlobalcfm}-->
-	<li><a href="{$SystemGlobalcfm[url]}" target="_blank" title="{$SystemGlobalcfm[webname]}"><img src="{$SystemGlobalcfm_global[SiteUrl]}{$SystemGlobalcfm[weblogo]}" alt="{$SystemGlobalcfm[name]}"></a></li>
+	<!--{loop $brand $SystemGlobalcfm}-->
+	<li><a href="{$SystemGlobalcfm[url]}" target="_blank" title="{$SystemGlobalcfm[webname]}"><img src="{$SystemGlobalcfm_global[SiteUrl]}{$SystemGlobalcfm[weblogo]}" alt="{$SystemGlobalcfm[webname]}"></a></li>
 	<!--{/loop}-->
 </ul>
 <!--{/if}-->

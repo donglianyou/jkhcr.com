@@ -23,12 +23,12 @@ $data = array (
   array (
     55 => '<a href="#" target="_blank"><img src="/attachment/adv/acenter.jpg" border="0"></a>',
     57 => '<a href="#" target="_blank"><img src="/attachment/adv/topbanner1.png" width="1000" border="0"></a>',
-    56 => '<a href="#" target="_blank"><img src="/attachment/adv/topbanner.gif" height="110" width="1200" border="0"></a>',
-    38 => '<a href="http://junchang.taobao.com/qq_35921430/goumai.php" target="_blank"><img src="/attachment/adv/pagetop.gif" height="90" width="1200" border="0"></a>',
+    56 => '<a href="#" target="_blank"><img src="/attachment/adv/topbanner.jpg" height="110" width="1200" border="0"></a>',
+    38 => '<a href="#" target="_blank"><img src="/attachment/adv/pagetop.jpg" height="90" width="1200" border="0"></a>',
     28 => '<a href="#" target="_blank"><img src="" width="1000" border="0"></a>',
     29 => '<a href="#" target="_blank"><img src="" width="1000" border="0"></a>',
-    12 => '<a href="#" target="_blank"><img src="/attachment/adv/topbanner.png" width="1000" border="0"></a>',
-    14 => '<a href="#" target="_blank"><img src="/attachment/adv/ggad.gif" border="0"></a>',
+    12 => '<a href="#" target="_blank"><img src="/attachment/adv/bottombanner.jpg" height="90" width="1200" border="0"></a>',
+    14 => '<a href="#" target="_blank"><img src="/attachment/adv/ggad.gif" height="90" width="1200" border="0"></a>',
     21 => '<a href="#" target="_blank"><img src="/attachment/adv/topbanner2.gif" width="1000" border="0"></a>',
   ),
   'type' => 

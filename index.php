@@ -127,10 +127,18 @@ unset($loc);
 
 $seo = get_seoset();
 
-/*品牌推荐*/
-$sql1 = "SELECT * FROM ".$db_qq3479015851."brand ORDER BY ordernumber ASC limit 0,14";
-$brand1 = $db->getAll( $sql1);
+/*品牌推荐广告*/
+$brsql = "SELECT * FROM ".$db_qq3479015851."brand ORDER BY ordernumber ASC limit 0,14";
+$brand = $db->getAll( $brsql);
 
+
+/*品牌推荐*/
+$sql1 = "SELECT * FROM ".$db_qq3479015851."brand where typeid=1 ORDER BY id Asc";
+$brand1 = $db->getAll( $sql1);
+$sql2 = "SELECT * FROM ".$db_qq3479015851."brand where typeid=2 ORDER BY id Asc";
+$brand2 = $db->getAll( $sql2);
+$sql3 = "SELECT * FROM ".$db_qq3479015851."brand where typeid=4 ORDER BY id Asc";
+$brand3 = $db->getAll( $sql3);
 
 if(!$city['cityid']){
 	$city['title'] = $page_title;

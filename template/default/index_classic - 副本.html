@@ -173,7 +173,7 @@
         {if $i%2 != 0}<div id="ad_indexcatad_{$fcat[catid]}"></div>{/if}
         <div class="showbox {if $i%2 != 0}sleft{else}sright{/if}">
             <div class="hd">
-                <div class="cattitle">{$fcat[catname]}信息</div>
+                <div class="cattitle"><!--{if $fcat[icon]}<img alt="{$fcat[catname]}" src="{$SystemGlobalcfm_global[SiteUrl]}{$fcat[icon]}" align="absmiddle"/>&nbsp;&nbsp;{/if}-->{$fcat[catname]}信息</div>
                 <div class="postinfo"></div>
                 <div class="moreinfo"><a href="{$SystemGlobalcfm_global[SiteUrl]}/{$SystemGlobalcfm_global[cfg_postfile]}?catid={$fcat[catid]}" target="_blank">发信息</a> | <a href="{$fcat[uri]}" target="_blank">更多</a></div>
             </div>
@@ -200,7 +200,7 @@
             <div class="hd">
                 <div class="cattitle">协会专栏</div>
                 <div class="postinfo"></div>
-                <div class="moreinfo"><a href="/xiehui.php" target="_blank">更多</a></div>
+                <div class="moreinfo"><a href="category.php?catid=252" target="_blank">更多</a></div>
             </div>
             <div class="bd">
                 <ul>
@@ -218,7 +218,7 @@
             <div class="hd">
                 <div class="cattitle">展会</div>
                 <div class="postinfo"></div>
-                <div class="moreinfo"><a href="/zhanhui.php" target="_blank">更多</a></div>
+                <div class="moreinfo"><a href="category.php?catid=252" target="_blank">更多</a></div>
             </div>
             <div class="bd">
                 <ul>
@@ -234,72 +234,22 @@
         </div>
 		</div>
 		
-		<!--燕窝及高端滋补品-->
-		<!--{if $brand1}-->
+		<!--{php if(ifplugin('goods')){$goods = qq3479015851_get_goods($tpl_index['goods'],1,NULL,NULL,NULL,NULL,$cityid);}-->
         <div class="clearfix"></div>
 		<div class="goods">
         	<div class="ul">
 			<div class="hd">
-				<span class="hdleft">燕窝及高端滋补品</span>
-				<span class="more"><a href="/corporation.php?catid=14" target="_blank">更多</a></span>
+				<span class="hdleft">在线商品</span>
+				<span class="more"><a href="{$about[goods_uri]}" target="_blank">更多</a></span>
 			</div>
 			<div class="bd">
 				<ul>
-                <!--{loop $brand1 $SystemGlobalcfm}-->
+                <!--{loop $goods $SystemGlobalcfm}-->
 				<li>
-				<a href="{$SystemGlobalcfm[url]}"  target=_blank><img src="{$SystemGlobalcfm_global[SiteUrl]}{$SystemGlobalcfm[weblogo]}" title="{$SystemGlobalcfm[webname]}"/>
-				<h3>{$SystemGlobalcfm[webname]}</h3>
+				<a href="{$SystemGlobalcfm[uri]}"  target=_blank><img src="{$SystemGlobalcfm_global[SiteUrl]}/{$SystemGlobalcfm[pre_picture]}" title="{$SystemGlobalcfm[goodsname]}"/>
+				<h3>{$SystemGlobalcfm[goodsname]}</h3>
 				</a>
-				</li>
-                <!--{/loop}-->
-              	</ul>
-			</div>
-            </div>
-		</div>
-		<!--{/if}-->
-       
-       
-       
-       <!--酵素-->
-       <!--{if $brand2}-->
-        <div class="clearfix"></div>
-		<div class="goods">
-        	<div class="ul">
-			<div class="hd">
-				<span class="hdleft">酵素</span>
-				<span class="more"><a href="/corporation.php?catid=21" target="_blank">更多</a></span>
-			</div>
-			<div class="bd">
-				<ul>
-                <!--{loop $brand2 $SystemGlobalcfm}-->
-				<li>
-				<a href="{$SystemGlobalcfm[url]}"  target=_blank><img src="{$SystemGlobalcfm_global[SiteUrl]}{$SystemGlobalcfm[weblogo]}" title="{$SystemGlobalcfm[webname]}"/>
-				<h3>{$SystemGlobalcfm[webname]}</h3>
-				</a>
-				</li>
-                <!--{/loop}-->
-              	</ul>
-			</div>
-            </div>
-		</div>
-		<!--{/if}-->
-       
-       <!--功能食品-->
-       <!--{if $brand3}-->
-        <div class="clearfix"></div>
-		<div class="goods">
-        	<div class="ul">
-			<div class="hd">
-				<span class="hdleft">功能食品</span>
-				<span class="more"><a href="/corporation.php?catid=22" target="_blank">更多</a></span>
-			</div>
-			<div class="bd">
-				<ul>
-                <!--{loop $brand3 $SystemGlobalcfm}-->
-				<li>
-				<a href="{$SystemGlobalcfm[url]}"  target=_blank><img src="{$SystemGlobalcfm_global[SiteUrl]}{$SystemGlobalcfm[weblogo]}" title="{$SystemGlobalcfm[webname]}"/>
-				<h3>{$SystemGlobalcfm[webname]}</h3>
-				</a>
+				<span class="price">{$SystemGlobalcfm[nowprice]}</span>
 				</li>
                 <!--{/loop}-->
               	</ul>
