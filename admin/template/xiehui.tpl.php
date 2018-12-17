@@ -77,7 +77,7 @@ function NewsAdd(){
   <td>
   <select name='catid' style='width:300px'>
   <option value=''>请选择主分类...</option>
-  <?php echo cat_list('channel',0,$row[catid]);?>
+  <?php echo cat_list('xhchannel',0,$row[catid]);?>
 </select></td>
   </tr>
 <tr style=" background-color:#FFF">

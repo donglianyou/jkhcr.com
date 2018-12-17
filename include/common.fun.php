@@ -1127,6 +1127,40 @@ function Rewrite($types, $params){
 			}
 		
 		break;
+		//协会
+		case 'xiehui':
+			$rewrite = $seo['seo_force_xiehui'] == 'rewrite' ? 1 : 0;
+			$uri = $SystemGlobalcfm_global['SiteUrl'].'/';
+			if ($action == 'index' && empty($catid) && empty($id)){
+				$uri .= $rewrite ? 'xiehui' : 'xiehui.php';
+			}elseif($id && empty($catid) && empty($action)){
+				$uri .= $rewrite ? 'xiehui-id-'.$id : 'xiehui.php?id='.$id;
+			}elseif($catid && $rewrite && empty($id) && empty($action)){
+				$uri .= 'xiehui-catid-' . $catid;
+				$uri .= $page ? '-page-'.$page : '';
+			}elseif($catid && empty($rewrite) && empty($id) && empty($action)){
+				$uri .= 'xiehui.php?catid=' . $catid;
+				if($page)$uri .= '&amp;page=' . $page;
+			}
+		
+		break;
+		//展会
+		case 'zhanhui':
+			$rewrite = $seo['seo_force_zhanhui'] == 'rewrite' ? 1 : 0;
+			$uri = $SystemGlobalcfm_global['SiteUrl'].'/';
+			if ($action == 'index' && empty($catid) && empty($id)){
+				$uri .= $rewrite ? 'zhanhui' : 'zhanhui.php';
+			}elseif($id && empty($catid) && empty($action)){
+				$uri .= $rewrite ? 'zhanhui-id-'.$id : 'zhanhui.php?id='.$id;
+			}elseif($catid && $rewrite && empty($id) && empty($action)){
+				$uri .= 'zhanhui-catid-' . $catid;
+				$uri .= $page ? '-page-'.$page : '';
+			}elseif($catid && empty($rewrite) && empty($id) && empty($action)){
+				$uri .= 'zhanhui.php?catid=' . $catid;
+				if($page)$uri .= '&amp;page=' . $page;
+			}
+		
+		break;
 		//空间
 		case 'space':
 			$uri = $SystemGlobalcfm_global['SiteUrl'].'/';

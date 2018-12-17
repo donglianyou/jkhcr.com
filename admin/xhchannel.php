@@ -10,7 +10,7 @@
  * Powered By 中国健康养生网站
 `*/
 
-define( "CURSCRIPT", "zhchannel" );
+define( "CURSCRIPT", "xhchannel" );
 require_once( dirname( __FILE__ )."/global.php" );
 require_once( SysGlbCfm_INC."/db.class.php" );
 require_once( dirname( __FILE__ )."/include/color.inc.php" );
@@ -27,9 +27,9 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 				require_once( SysGlbCfm_DATA."/html_type.inc.php" );
 				if ( $part == "list" )
 				{
-								chk_admin_purview( "purview_新闻类别" );
-								$f_cat = cat_list( "channel", 0, 0, FALSE );
-								$here = "新闻栏目列表";
+								chk_admin_purview( "purview_协会类别" );
+								$f_cat = cat_list( "xhchannel", 0, 0, FALSE );
+								$here = "协会栏目列表";
 								include( qq3479015851_tpl( "xiehui_channel_list" ) );
 				}
 				else if ( $part == "edit" )
@@ -38,15 +38,15 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 								{
 												write_msg( "请选择你要修改的栏目ID！" );
 								}
-								$cat = $db->getRow( "SELECT * FROM ".$db_qq3479015851."channel WHERE catid = '{$catid}'" );
-								$here = "编辑新闻栏目";
+								$cat = $db->getRow( "SELECT * FROM ".$db_qq3479015851."xhchannel WHERE catid = '{$catid}'" );
+								$here = "编辑协会栏目";
 								include( qq3479015851_tpl( "xiehui_channel_edit" ) );
 				}
 				else if ( $part == "add" )
 				{
-								$maxorder = $db->getOne( "SELECT MAX(catorder) FROM ".$db_qq3479015851."channel" );
+								$maxorder = $db->getOne( "SELECT MAX(catorder) FROM ".$db_qq3479015851."xhchannel" );
 								$maxorder += 1;
-								$here = "添加新闻栏目";
+								$here = "添加协会栏目";
 								include( qq3479015851_tpl( "xiehui_channel_add" ) );
 				}
 				else if ( $part == "del" )
@@ -55,14 +55,14 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 								{
 												write_msg( "没有选择记录" );
 								}
-								qq3479015851_delete( "channel", "WHERE catid = '".$catid."'" );
-								qq3479015851_delete( "channel", "WHERE parentid = '".$catid."'" );
-								qq3479015851_delete( "xiehui", "WHERE catid IN(".get_cat_children( $catid, "channel" ).")" );
+								qq3479015851_delete( "xhchannel", "WHERE catid = '".$catid."'" );
+								qq3479015851_delete( "xhchannel", "WHERE parentid = '".$catid."'" );
+								qq3479015851_delete( "xiehui", "WHERE catid IN(".get_cat_children( $catid, "xhchannel" ).")" );
 								foreach ( array( "option_static", "pid_releate" ) as $range )
 								{
-												clear_cache_files( "channel_".$range );
+												clear_cache_files( "xhchannel_".$range );
 								}
-								write_msg( "删除新闻栏目 ".$catid." 成功", "channel.php?part=list", "SysGlbCfm" );
+								write_msg( "删除协会栏目 ".$catid." 成功", "xhchannel.php?part=list", "SysGlbCfm" );
 				}
 }
 else
@@ -76,43 +76,43 @@ else
 												$cur_action .= "排序 ";
 												foreach ( $catorder as $key => $value )
 												{
-																$db->query( "UPDATE `".$db_qq3479015851."channel` SET catorder = '{$value}' WHERE catid = ".$key );
+																$db->query( "UPDATE `".$db_qq3479015851."xhchannel` SET catorder = '{$value}' WHERE catid = ".$key );
 												}
 								}
 								if ( is_array( $if_viewids ) )
 								{
 												$cur_action .= "启用与否";
-												$db->query( "UPDATE `".$db_qq3479015851."channel` SET if_view = '1' " );
+												$db->query( "UPDATE `".$db_qq3479015851."xhchannel` SET if_view = '1' " );
 												foreach ( $if_viewids as $k => $val )
 												{
-																$db->query( "UPDATE `".$db_qq3479015851."channel` SET if_view = '2' WHERE catid = ".$val );
+																$db->query( "UPDATE `".$db_qq3479015851."xhchannel` SET if_view = '2' WHERE catid = ".$val );
 												}
 								}
 								else
 								{
-												$db->query( "UPDATE `".$db_qq3479015851."channel` SET if_view = '1' " );
+												$db->query( "UPDATE `".$db_qq3479015851."xhchannel` SET if_view = '1' " );
 								}
 								foreach ( array( "option_static", "pid_releate" ) as $range )
 								{
-												clear_cache_files( "channel_".$range );
+												clear_cache_files( "xhchannel_".$range );
 								}
-								write_msg( "新闻栏目 ".$cur_action." 更新成功！", "?part=list", "record" );
+								write_msg( "协会栏目 ".$cur_action." 更新成功！", "?part=list", "record" );
 				}
 				else if ( $part == "add" )
 				{
 								if ( empty( $catname ) )
 								{
-												write_msg( "请填写新闻栏目名称！" );
+												write_msg( "请填写协会栏目名称！" );
 								}
 								$len = strlen( $catname );
 								if ( $len < 2 )
 								{
-												write_msg( "新闻栏目名必须在2个字符以上" );
+												write_msg( "协会栏目名必须在2个字符以上" );
 								}
 								$catname = explode( "|", trim( $catname ) );
 								if ( empty( $catorder ) )
 								{
-												$maxorder = $db->getOne( "SELECT MAX(catorder) FROM ".$db_qq3479015851."channel" );
+												$maxorder = $db->getOne( "SELECT MAX(catorder) FROM ".$db_qq3479015851."xhchannel" );
 												$catorder += 1;
 								}
 								if ( is_array( $catname ) )
@@ -126,7 +126,7 @@ else
 																{
 																				write_msg( "分类名必须在2个至30个字符之间" );
 																}
-																$db->query( "INSERT INTO ".$db_qq3479015851."channel (catname,if_view,title,keywords,description,parentid,catorder,dir_type) VALUES ('{$value}','{$isview}','{$value}','{$value}','{$value}','{$parentid}','{$catorder}','{$dir_type}')" );
+																$db->query( "INSERT INTO ".$db_qq3479015851."xhchannel (catname,if_view,title,keywords,description,parentid,catorder,dir_type) VALUES ('{$value}','{$isview}','{$value}','{$value}','{$value}','{$parentid}','{$catorder}','{$dir_type}')" );
 																$insert_id = $db->insert_id( );
 																if ( $parentid == 0 )
 																{
@@ -145,7 +145,7 @@ else
 																}
 																else
 																{
-																				$row = $db->getRow( "SELECT * FROM `".$db_qq3479015851."channel` WHERE catid = '{$parentid}'" );
+																				$row = $db->getRow( "SELECT * FROM `".$db_qq3479015851."xhchannel` WHERE catid = '{$parentid}'" );
 																				if ( $dir_type == 1 )
 																				{
 																								$html_dir = ( $row['html_dir'] ? $row['html_dir'] : $row['html_dir'] ).$insert_id."/";
@@ -159,28 +159,28 @@ else
 																								$html_dir = ( $row['html_dir'] ? $row['html_dir'] : $row['html_dir'] ).getpinyin( $value, 1 )."/";
 																				}
 																}
-																$db->query( "UPDATE `".$db_qq3479015851."channel` SET html_dir = '{$html_dir}' WHERE catid = '{$insert_id}'" );
+																$db->query( "UPDATE `".$db_qq3479015851."xhchannel` SET html_dir = '{$html_dir}' WHERE catid = '{$insert_id}'" );
 												}
 												foreach ( array( "option_static", "pid_releate" ) as $range )
 												{
-																clear_cache_files( "channel_".$range );
+																clear_cache_files( "xhchannel_".$range );
 												}
-												write_msg( "新闻分类添加成功！", "?part=list", "record" );
+												write_msg( "协会分类添加成功！", "?part=list", "record" );
 								}
 								else
 								{
-												write_msg( "新闻分类添加失败，请按格式填写！" );
+												write_msg( "协会分类添加失败，请按格式填写！" );
 								}
 				}
 				else if ( $part == "edit" )
 				{
 								if ( empty( $catname ) )
 								{
-												write_msg( "请填写新闻栏目名称！" );
+												write_msg( "请填写协会栏目名称！" );
 								}
 								if ( strlen( $catname ) < 2 )
 								{
-												write_msg( "新闻栏目名必须在2个字符以上" );
+												write_msg( "协会栏目名必须在2个字符以上" );
 								}
 								if ( $catid == $parentid )
 								{
@@ -188,7 +188,7 @@ else
 								}
 								if ( $parentid != 0 )
 								{
-												$row = $db->getRow( "SELECT catname,html_dir FROM `".$db_qq3479015851."channel` WHERE catid = '{$parentid}'" );
+												$row = $db->getRow( "SELECT catname,html_dir FROM `".$db_qq3479015851."xhchannel` WHERE catid = '{$parentid}'" );
 								}
 								if ( $dir_type == 4 )
 								{
@@ -232,16 +232,16 @@ else
 								{
 												$html_dir = $row['html_dir'].getpinyin( $catname, 1 )."/";
 								}
-								$sql = "UPDATE ".$db_qq3479015851."channel SET catname='{$catname}',if_view='{$isview}',title='{$title}',color='{$fontcolor}',keywords='{$keywords}',description='{$description}',parentid='{$parentid}',catorder='{$catorder}',dir_type = '{$dir_type}', dir_typename = '{$mydir}', html_dir = '{$html_dir}' WHERE catid = '{$catid}'";
+								$sql = "UPDATE ".$db_qq3479015851."xhchannel SET catname='{$catname}',if_view='{$isview}',title='{$title}',color='{$fontcolor}',keywords='{$keywords}',description='{$description}',parentid='{$parentid}',catorder='{$catorder}',dir_type = '{$dir_type}', dir_typename = '{$mydir}', html_dir = '{$html_dir}' WHERE catid = '{$catid}'";
 								$res = $db->query( $sql );
-								$nav_path = "新闻栏目管理 &raquo 编辑栏目";
-								$message = "成功编辑新闻栏目 ".$catname;
+								$nav_path = "协会栏目管理 &raquo 编辑栏目";
+								$message = "成功编辑协会栏目 ".$catname;
 								$after_action = "<a href='?part=add'><u>继续增加栏目</u></a>\r\n\t\t&nbsp;&nbsp;<a href='?part=edit&catid=".$catid."'><u>重新编辑该栏目</u></a>&nbsp;&nbsp;<a href='?part=list#{$catid}'><u>已增加栏目管理</u></a>";
 								foreach ( array( "option_static", "pid_releate" ) as $range )
 								{
-												clear_cache_files( "channel_".$range );
+												clear_cache_files( "xhchannel_".$range );
 								}
-								write_msg( $message, "channel.php" );
+								write_msg( $message, "xhchannel.php" );
 				}
 }
 if ( is_object( $db ) )

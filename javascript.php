@@ -245,7 +245,7 @@ else
         echo $callback."(".json_encode( $return ).")";
         exit( );
     }
-    else if ( in_array( $part, array( "information", "news", "member" ) ) )
+    else if ( in_array( $part, array( "information", "news", "xiehui", "zhanhui", "member" ) ) )
     {
         if ( empty( $id ) )
         {

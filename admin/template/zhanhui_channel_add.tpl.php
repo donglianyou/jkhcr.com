@@ -49,7 +49,7 @@ function chkform(){
   <td>隶属栏目： </td>
   <td><select name="parentid" id="parentid" >
     <option value="0">作为根栏目...</option>
-<?php echo cat_list('channel',0,0,true,1);?>
+<?php echo cat_list('zhchannel',0,0,true,1);?>
   </select>  </td>
 </tr>
 <tr bgcolor="#f5fbff">

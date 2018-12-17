@@ -24,8 +24,8 @@ $id   	 = isset($id) 		? intval($id) 		: '';
 $inajax  = isset($inajax) 	? intval($inajax) 	: '';
 
 if(empty($id)) exit('Access Denied!');
-if(!in_array($part,array('information','news','store'))) write_msg('您提交的评论所属模块不能为空!');
-$dotphpurlarray = array('information'=>'information.php','news'=>'news.php','coupon'=>'coupon.php','group'=>'group.php');
+if(!in_array($part,array('information','news','xiehui','zhanui','store'))) write_msg('您提交的评论所属模块不能为空!');
+$dotphpurlarray = array('information'=>'information.php','news'=>'news.php','xiehui'=>'xiehui.php','zhanhui'=>'zhanhui.php','coupon'=>'coupon.php','group'=>'group.php');
 
 $commentsettings = get_commentsettings();
 if(!$commentsettings[$part]){

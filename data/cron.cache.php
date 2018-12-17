@@ -2,14 +2,14 @@
 $m_cron = array (
   'advertisement' => 
   array (
-    'lastrun' => '1544843560',
-    'nextrun' => '1544889600',
+    'lastrun' => '1545011799',
+    'nextrun' => '1545062400',
     'day' => '1',
   ),
   'levelup' => 
   array (
-    'lastrun' => '1544843560',
-    'nextrun' => '1544889600',
+    'lastrun' => '1545011799',
+    'nextrun' => '1545062400',
     'day' => '1',
   ),
 );

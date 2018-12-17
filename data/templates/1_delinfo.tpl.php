@@ -10,36 +10,9 @@
 <link rel="stylesheet" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/css/global.css" />
 <link rel="stylesheet" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/css/style.css" />
 <link rel="stylesheet" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/css/post.css" />
-<script src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/global/noerr.js" type="text/javascript"></script>
+<link rel="stylesheet" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/css/delinfo.css" />
 <script src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/js/global.js" type="text/javascript"></script>
 <script src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/js/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/js/jquery.autocomplete.min.js"></script> 
-<link rel="stylesheet" href="<?=$SystemGlobalcfm_global['SiteUrl']?>/template/default/css/jquery.autocomplete.css" />
-<script type="text/javascript">
-var cates = [<?php $i=1; ?><?php if(is_array($categories)){foreach($categories as $SystemGlobalcfm) { if($i >1) { ?>,<?php } ?>
-{ name1: "<?=$SystemGlobalcfm['dir_typename']?>",name: "<?=$SystemGlobalcfm['catid']?>", to: "<?=$SystemGlobalcfm['catname']?>" }<?php if(is_array($SystemGlobalcfm['children'])){foreach($SystemGlobalcfm['children'] as $w) { ?>,
-{ name1: "<?=$w['dir_typename']?>",name: "<?=$w['catid']?>", to: "<?=$w['catname']?>" }
-<?php }} ?><?php $i++; ?><?php }} ?><?php $i=NULL;unset($i); ?>]; 
-$(function() {
-$('#catname').autocomplete(cates, { 
-max: 20, 
-minChars: 0, 
-width: 316, 
-scrollHeight: 100,
-matchContains: true, 
-autoFill: false,
-formatItem: function(row, i, max) { 
-return row.to; 
-}, 
-formatMatch: function(row, i, max) { 
-return row.name1 + row.name + row.to; 
-}, 
-formatResult: function(row) { 
-return row.to; 
-} 
-}); 
-}); 
-</script>
 </head>
 
 <body class="<?=$SystemGlobalcfm_global['cfg_tpl_dir']?> bodybg<?=$SystemGlobalcfm_global['cfg_tpl_dir']?><?=$SystemGlobalcfm_global['bodybg']?>"><script type="text/javascript">var current_domain="<?=$SystemGlobalcfm_global['SiteUrl']?>";var current_cityid="<?=$city['cityid']?>";var current_logfile="<?=$SystemGlobalcfm_global['cfg_member_logfile']?>";</script>
@@ -71,38 +44,25 @@ return row.to;
 <div class="cleafix"></div><div class="body1000">
 <div class="clear15"></div>
 <div id="main" class="wrapper">
-<div class="step1">
-<span class="cur"><font class="number">1</font> 选择信息分类</span>
-<span><font class="number">2</font> 填写信息内容</span>
-<span><font class="number">3</font> 发布成功</span>
+
+<div class="stepon2 cfix borderline">
+<li>
+<form action="<?=$SystemGlobalcfm_global['SiteUrl']?>/search.php" method="get" name="DelinfoFrom">
+<input name="mod" type="hidden" value="information">
+<input type="text" class="typeinput" name="tel">
+<input class="typebtn" value="点击查询" type="submit"  onclick="return CheckForm();"/>
+</form>
+</li><br />
+<li>输入您的手机号码，点击查询按钮查找信息</li>
 </div>
-<div id="fenlei2">
-            <div class="minheight" id="ymenu-side"> 
-               <ul class="ym-mainmnu">
-               <?php if(is_array($categories)){foreach($categories as $k => $SystemGlobalcfm) { ?>                    <li class="ym-tab">
-                        <a href="#" class="black"><?=$SystemGlobalcfm['catname']?></a>
-                        <ul class="ym-submnu">
-                            <?php if(is_array($SystemGlobalcfm['children'])){foreach($SystemGlobalcfm['children'] as $u => $w) { ?>                            <li><a href="?action=input&catid=<?=$w['catid']?>&cityid=<?=$cityid?>"><?=$w['catname']?></a></li>
-                            <?php }} ?>
-                        </ul> 
-                    </li>
-                    <?php }} ?>
-                </ul>
-                <? if($catid > 0) { ?>
-                <div class="clear"></div>
-                <div class="backall"><a href="?action=input&cityid=<?=$cityid?>">&laquo;重新选择大类</a></div>
-                <?php } ?>
-            </div>
-            <form action="?" method="get">
-        	<div class="psearch">
-                <div class="pshead"><em>搜索栏</em><input type="text" id="catname" name="catname" placeholder="请输入关键字查找您要发布的分类" class="pstxt" value=""><input type="button" value="帮我推荐类别" onclick="if(this.form.catname.value==''){this.form.catname.focus();alert('请输入类别名称！');return false;};this.form.submit()" class="psbtn" id="btn_cateSearch">
-                </div>
-       		</div>
-            </form>
-</div> 
-        
+<div><h2 class="balance-h2">其它修改/删除方式</h2></div>
+<div class="stepon cfix">
+<a href="<?=$SystemGlobalcfm_global['SiteUrl']?>/<?=$SystemGlobalcfm_global['cfg_member_logfile']?>">登录账户修改/删除 &raquo;</a><br />
+<font color="#666666">会员通过用户中心修改/删除自己发布的信息</font>
+</div>
+
 </div>
 <div class="clear"></div><div class="footer">	&copy; <?=$SystemGlobalcfm_global['SiteName']?> <a href="http://www.miibeian.gov.cn" target="_blank"><?=$SystemGlobalcfm_global['SiteBeian']?></a> <?=$SystemGlobalcfm_global['SiteStat']?> <span class="none_<?=$SystemGlobalcfm_qq3479015851['debuginfo']?>"><? if($cachetime) { ?>This page is cached at <? echo GetTime($timestamp,'Y-m-d H:i:s'); ?><?php } ?></span><span class="my_mps"><strong><a href="<?=SysGlbCfm_WWW?>" target="_blank"><?=SysGlbCfm_SOFTNAME?></a></strong> <em><a href="<?=SysGlbCfm_BBS?>" target="_blank"><?=SysGlbCfm_VERSION?></a></em></span></div></div>
 </body>
 </html>
-<script type="text/javascript">loadDefault(['iflogin','post_select'])</script>
+<script type="text/javascript">loadDefault(['iflogin','chkdelinfo'])</script>

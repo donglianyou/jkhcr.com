@@ -47,7 +47,7 @@ if($id) {
 	
 	if($xiehui['redirect_url'] != '' && $xiehui['isjump'] == 1) write_msg('请稍候，当前页面正跳转至 '.$xiehui[redirect_url].' ',$xiehui[redirect_url]);
 	
-	$loc				 = get_location('channel',$xiehui[catid],$xiehui[title]);
+	$loc				 = get_location('xhchannel',$xiehui[catid],$xiehui[title]);
 	$location	 		 = $loc['location'];
 	$page_title			 = $loc['page_title'];
 	
@@ -67,16 +67,16 @@ if($id) {
 	$city = get_city_caches($cityid);
 	
 	$catid = isset($catid) ? intval($catid) : 0;
-	$channel = get_cat_info($catid,'channel');
+	$channel = get_cat_info($catid,'xhchannel');
 	if(!$channel) write_msg('您所指定的新闻栏目不存在或者已经删除！');
-	$loc		= get_location('channel',$catid);
+	$loc		= get_location('xhchannel',$catid);
 	$location	= $loc['location'];
 	$page_title	= $loc['page_title'];
 	
 	$seo		= get_seoset();
 	$rewrite 	= $seo['seo_force_news'];
 	
-	$cat_children	= get_cat_children($catid,'channel');
+	$cat_children	= get_cat_children($catid,'xhchannel');
 	$city_limit = $cityid ? " AND cityid = '$cityid'" : "";
 	
 	$param = setParam(array('catid'),$rewrite,'xiehui-');
@@ -97,7 +97,7 @@ if($id) {
 	$adveritems				= $city['advertisement'];
 	$advertisement			= $advertisement['all'];
 	
-	$cat_list = get_categories_tree(empty($channel['parentid']) ? $catid : $channel['parentid'],'channel');
+	$cat_list = get_categories_tree(empty($channel['parentid']) ? $catid : $channel['parentid'],'xhchannel');
 	$pageview = page2($rewrite);
 	
 } else {
@@ -106,7 +106,7 @@ if($id) {
 	
 	$city = get_city_caches($cityid);
 	
-	$catquery = $db -> query("SELECT catid,catname,html_dir FROM `{$db_qq3479015851}channel` WHERE parentid = '0' AND if_view = '2' ORDER BY catorder ASC");
+	$catquery = $db -> query("SELECT catid,catname,html_dir FROM `{$db_qq3479015851}xhchannel` WHERE parentid = '0' AND if_view = '2' ORDER BY catorder ASC");
 	while($queryrow = $db -> fetchRow($catquery)){
 		$_array['catid'] 	= $queryrow['catid'];
 		$_array['catname'] 	= $queryrow['catname'];
@@ -115,7 +115,7 @@ if($id) {
 	}
 	$city_limit = $cityid ? " AND cityid = '$cityid'" : "";
 	for($i=0; $i<count($channel); $i++){
-		$do_sql = $db -> query("SELECT iscommend,id,title,catid,begintime,isjump,redirect_url,cityid FROM `{$db_qq3479015851}xiehui` WHERE catid IN(".get_cat_children($channel[$i]['catid'],'channel').") {$city_limit} ORDER BY begintime DESC LIMIT 0,8");
+		$do_sql = $db -> query("SELECT iscommend,id,title,catid,begintime,isjump,redirect_url,cityid FROM `{$db_qq3479015851}xiehui` WHERE catid IN(".get_cat_children($channel[$i]['catid'],'xhchannel').") {$city_limit} ORDER BY begintime DESC LIMIT 0,8");
 		while($row = $db -> fetchRow($do_sql)){
 			$arr['id'] 			= $row['id'];
 			$arr['iscommend'] 	= $row['iscommend'];
