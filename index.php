@@ -140,6 +140,15 @@ $brand2 = $db->getAll( $sql2);
 $sql3 = "SELECT * FROM ".$db_qq3479015851."brand where typeid=4 ORDER BY id Asc";
 $brand3 = $db->getAll( $sql3);
 
+/*协会专栏*/
+$xhsql = "SELECT * FROM ".$db_qq3479015851."xiehui ORDER BY id DESC limit 0,6";
+$xiehui = $db->getAll($xhsql);
+
+/*展会*/
+$zhsql = "SELECT * FROM ".$db_qq3479015851."zhanhui ORDER BY id DESC limit 0,6";
+$zhanhui = $db->getAll($zhsql);
+
+
 if(!$city['cityid']){
 	$city['title'] = $page_title;
 	$city['keywords'] = str_replace('{city}','',$seo['seo_keywords']);
@@ -306,9 +315,7 @@ if($tpl_index['banmian'] == 'portal'){
 	$secondcats = get_smplist_cats($tpl_index['smp_cats']['second'],$tpl_index['showstyle']);
 	$thirdcats = get_smplist_cats($tpl_index['smp_cats']['third'],$tpl_index['showstyle']);
 	$fourthcats = get_smplist_cats($tpl_index['smp_cats']['fourth'],$tpl_index['showstyle']);
-
 } elseif($tpl_index['banmian'] == 'newsinfo'){
-	
 	//新增模版需要获取的数据
 	$catquery = $db -> query("SELECT catid,catname,html_dir FROM `{$db_qq3479015851}channel` WHERE parentid = '0' AND if_view = '2' ORDER BY catorder ASC limit 4");
 	while($queryrow = $db -> fetchRow($catquery)){
@@ -318,8 +325,6 @@ if($tpl_index['banmian'] == 'portal'){
 		$channel[]		= $_array;
 	}
 	unset($catquery);
-
-	
 	$index_cat = get_categories_tree(0,'category');
 	if(is_array($index_cat)){
 		foreach($index_cat as $firstcatkey => $firstcatval){
@@ -342,14 +347,10 @@ if($tpl_index['banmian'] == 'portal'){
 		}
 	}
 	$tpl_index[classic][cats] = $tpl_index[classic][cats] ? $tpl_index[classic][cats]+1 : '12';	
-
 }
-
 include qq3479015851_tpl('index_'.$tpl_index['banmian']);
-
 is_object($db) && $db->Close();
 $cachetime && $cachepages->caching();
-
 $city = $maincity = $advertisement =NULL;
 unset($city,$maincity,$advertisement);
 ?>

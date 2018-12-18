@@ -138,8 +138,6 @@
             </div>
         </div>
 		<!-- 品牌推荐 -->
-        
-       
         <!--{php $members = qq3479015851_get_members(14,NULL,NULL,NULL,2,NULL,NULL,$cityid);}-->
         <!--{if $members}-->
         <div class="clear5"></div>
@@ -183,7 +181,7 @@
                     <li>
                     <span class="time">[{echo GetTime($info[begintime],'m-d')}]</span>
                     <span class="info"><a href="{$info[uri]}" target="_blank" title="{$info[title]}" style="{if $info[ifred]==1}color:red;{/if} {if $info[ifbold] == 1}font-weight:bold;{/if}">{$info[title]}</a></span>
-                    <span class="catname"><a href="{$info[caturi]}" target="_blank">{$info[catname]}</a></span>
+                    <!--<span class="catname"><a href="{$info[caturi]}" target="_blank">{$info[catname]}</a></span>-->
                     </li>
                     <!--{/loop}-->
                 </ul>
@@ -204,11 +202,11 @@
             </div>
             <div class="bd">
                 <ul>
-                    <!--{loop $fcat[information] $info}-->
+                    <!--{loop $xiehui $xh}-->
                     <li>
-                    <span class="time">[{echo GetTime($info[begintime],'m-d')}]</span>
-                    <span class="info"><a href="{$info[uri]}" target="_blank" title="{$info[title]}" style="{if $info[ifred]==1}color:red;{/if} {if $info[ifbold] == 1}font-weight:bold;{/if}">{$info[title]}</a></span>
-                    <span class="catname"><a href="{$info[caturi]}" target="_blank">{$info[catname]}</a></span>
+                    <span class="time">[{echo GetTime($xh[begintime],'m-d')}]</span>
+                    <span class="info"><a href="/xiehui.php?id={$xh[id]}" target="_blank" title="{$xh[title]}" style="{if $xh[ifred]==1}color:red;{/if} {if $xh[ifbold] == 1}font-weight:bold;{/if}">{$xh[title]}</a></span>
+                    <!--<span class="catname"><a href="{$xh[caturi]}" target="_blank">{$xh[catname]}</a></span>-->
                     </li>
                     <!--{/loop}-->
                 </ul>
@@ -222,11 +220,11 @@
             </div>
             <div class="bd">
                 <ul>
-                    <!--{loop $fcat[information] $info}-->
+                    <!--{loop $zhanhui $zh}-->
                     <li>
-                    <span class="time">[{echo GetTime($info[begintime],'m-d')}]</span>
-                    <span class="info"><a href="{$info[uri]}" target="_blank" title="{$info[title]}" style="{if $info[ifred]==1}color:red;{/if} {if $info[ifbold] == 1}font-weight:bold;{/if}">{$info[title]}</a></span>
-                    <span class="catname"><a href="{$info[caturi]}" target="_blank">{$info[catname]}</a></span>
+                    <span class="time">[{echo GetTime($zh[begintime],'m-d')}]</span>
+                    <span class="info"><a href="/zhanhui.php?id={$zh[id]}" target="_blank" title="{$zh[title]}" style="{if $zh[ifred]==1}color:red;{/if} {if $zh[ifbold] == 1}font-weight:bold;{/if}">{$zh[title]}</a></span>
+                    <!--<span class="catname"><a href="{$zh[caturi]}" target="_blank">{$zh[catname]}</a></span>-->
                     </li>
                     <!--{/loop}-->
                 </ul>

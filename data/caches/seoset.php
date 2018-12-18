@@ -1,6 +1,6 @@
 <?php
 $data = array (
-  'seo_force_news' => 'active',
+  'seo_force_news' => 'rewrite',
   'seo_force_info' => 'active',
   'seo_force_category' => 'active',
   'seo_force_about' => 'active',
@@ -10,6 +10,7 @@ $data = array (
   'seo_description' => '{city}网站描述',
   'seo_keywords' => '{city}网站关键词',
   'seo_sitename' => '{city}网站名称',
+  'seo_force_goods' => 'active',
   'seo_force_yp' => 'active',
   'seo_force_space' => 'active',
   'seo_force_store' => 'active',
