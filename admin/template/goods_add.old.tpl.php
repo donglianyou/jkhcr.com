@@ -1,7 +1,7 @@
 <?php include qq3479015851_tpl('inc_header'); ?>
-<link rel="Stylesheet" type="text/css" href="template/css/new.dialog.css" />
-<link rel="stylesheet" type="text/css" href="template/css/new.my.css" />
-<script language="javascript" src="template/javascript.js"></script>
+<link rel="Stylesheet" type="text/css" href="/member/template/css/new.dialog.css" />
+<link rel="stylesheet" type="text/css" href="/member/template/css/new.my.css" />
+<script language="javascript" src="/member/template/javascript.js"></script>
 <script language="javascript">
 function check_sub(){
 	if (document.form1.goodsname.value=="") {
@@ -30,7 +30,7 @@ function check_sub(){
                             <div class="pwrap setting-userinfo">
                                 <div class="phead"><div class="phead-inner"><div class="phead-inner">
                                     <h3 class="ptitle"><span><?php echo $id ? '修改' : '发布'?>商品</span></h3>
-                                    <p class="pextra"><a href="?m=goods&type=corp"><span>&laquo; 返回我发布的商品</span></a></p>
+                                    <!--<p class="pextra"><a href="?m=goods&type=corp"><span>&laquo; 返回我发布的商品</span></a></p>-->
                                 </div></div></div>
                                 <div class="pbody">
                                     

@@ -360,6 +360,26 @@
 </div>
             </div>
 </div>
+<?php } ?><?php if(ifplugin('goods')){$goods = qq3479015851_get_goods($tpl_index['goods'],1,NULL,NULL,NULL,NULL,$cityid); ?>        <div class="clearfix"></div>
+<div class="goods">
+        	<div class="ul">
+<div class="hd">
+<span class="hdleft">在线商品</span>
+<span class="more"><a href="/goods.php" target="_blank">更多</a></span>
+</div>
+<div class="bd">
+<ul>
+                <?php if(is_array($goods)){foreach($goods as $SystemGlobalcfm) { ?><li>
+<a href="<?=$SystemGlobalcfm['uri']?>"  target=_blank><img src="<?=$SystemGlobalcfm_global['SiteUrl']?>/<?=$SystemGlobalcfm['pre_picture']?>" title="<?=$SystemGlobalcfm['goodsname']?>"/>
+<h3><?=$SystemGlobalcfm['goodsname']?></h3>
+</a>
+<span class="price"><?=$SystemGlobalcfm['nowprice']?></span>
+</li>
+                <?php }} ?>
+              	</ul>
+</div>
+            </div>
+</div>
 <?php } ?>
         
     	<? if($telephone) { ?>

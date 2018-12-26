@@ -7,11 +7,11 @@ function check_sub(){
 		document.form1.goodsname.focus();
 		return false;
 	}
-	if (document.form1.userid.value=="") {
+	/*if (document.form1.userid.value=="") {
 		alert('请填写发起商品的会员用户名');
 		document.form1.userid.focus();
 		return false;
-	}
+	}*/
 	if (document.form1.content.value=="") {
 		alert('请填写商品详细介绍！');
 		document.form1.content.focus();
@@ -32,7 +32,7 @@ function check_sub(){
 <tr class="firstr">
 	<td colspan="2">基本信息</td>
 </tr>
-<tr>
+<!--<tr>
     <td class="altbg1">隶属分站:<font color="red">*</font></td>
     <td>
         <select name="cityid">
@@ -40,19 +40,19 @@ function check_sub(){
 	<?php echo get_cityoptions($edit['cityid']); ?>
 	</select>
     </td>
-</tr>
+</tr>-->
 <tr>
     <td class="altbg1">商品名称:<font color="red">*</font></td>
     <td>
         <input type="text" name="goodsname" value="<?=$edit['goodsname']?>" class="text" />
     </td>
 </tr>
-<tr>
+<!--<tr>
     <td class="altbg1" width="15%">供货商家用户名:<font color="red">*</font></td>
     <td width="75%">
         <input type="text" name="userid" id="userid" value="<?=$edit['userid']?>" class="text" style="background-color:#eee"/> <font color=red>非必要，请勿修改</font>
     </td>
-</tr>
+</tr>-->
 <tr>
     <td class="altbg1">市场价格:</td>
     <td>

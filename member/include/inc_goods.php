@@ -75,9 +75,9 @@ if (submit_check('goods_submit')) {
 		write_msg('', '?m=goods&ac=detail&error=44&id=' . $id);
 	}
 
-	if (empty($cityid)) {
-		write_msg('', '?m=goods&ac=detail&error=40&id=' . $id);
-	}
+	// if (empty($cityid)) {
+	// 	write_msg('', '?m=goods&ac=detail&error=40&id=' . $id);
+	// }
 
 	if ($_FILES[$name_file]['name']) {
 		require_once SysGlbCfm_INC . '/upfile.fun.php';

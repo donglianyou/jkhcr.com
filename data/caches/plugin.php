@@ -83,7 +83,8 @@ $data = array (
     'seotitle' => '{city}商品标题',
     'seokeywords' => '{city}商品关键词',
     'seodescription' => '{city}商品描述',
-    'adminmenu' => '商品分类=goods_category.php
+    'adminmenu' => '添加商品=goods_add.php
+商品分类=goods_category.php
 商品管理=goods_list.php
 订单管理=goods_order.php',
     'membermenu' => NULL,
