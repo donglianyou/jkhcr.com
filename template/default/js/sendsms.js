@@ -9,24 +9,32 @@ function sendmsgbutton(){
 		$("#checkcode").focus();
 		return;
 	}
-	
-	var aj = $.ajax( {  
-    url:'../sendsms.php',  
-     data:{  phonenum : $("#reg_mobile").val()  },  
-     type:'post',  
-     cache:false,
-     dataType:'json', 
-     success:function(data) {  
-         if($.trim(data) =="success" ){  
- 
-         }else{  
-
-         }  
-      },  
-      error : function() {  
-
-      }  
+	$.post("../sendsms.php",{"phonenum":$("#reg_mobile").val()},function(data){
+		if($.trim(data) =="success" ){  
+			//alert($("#reg_mobile").val());
+		}else{  
+			//alert(data);
+		}  
 	});
+	/*var aj = $.ajax( { 
+    	url:'../sendsms.php',  
+		data:{
+			phonenum : $("#reg_mobile").val() ,
+		},  
+		type:'post',  
+		cache:false,
+		dataType:'json', 
+		success:function(data) {  
+			if($.trim(data) =="success" ){  
+				alert($("#reg_mobile").val());
+			 }else{  
+				 alert(data);
+			 }  
+		},  
+		error : function() {  
+
+		}  
+	});*/
 	var test = {
        node:null,
        count:120,

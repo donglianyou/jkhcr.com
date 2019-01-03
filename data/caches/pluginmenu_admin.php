@@ -19,7 +19,6 @@ $data = array (
   ),
   '商品' => 
   array (
-    '添加商品' => 'goods_add.php',
     '商品分类' => 'goods_category.php',
     '商品管理' => 'goods_list.php',
     '订单管理' => 'goods_order.php',

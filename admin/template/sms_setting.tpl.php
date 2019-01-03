@@ -9,8 +9,8 @@
 </td>
 <td>
 <label for="dxton"><input class="radio" name="sms_service" type="radio" id="dxton" value="dxton" onclick='document.getElementById("sms_div").style.display = "";' <?php if($sms_config[sms_service] == 'dxton'){?>checked="checked"<?}?>>通道一</label>
-<label for="ihuyi"><input name="sms_service" type="radio" class="radio" id="ihuyi" value="ihuyi" onclick='document.getElementById("sms_div").style.display = "";' <?php if($sms_config[sms_service] == 'ihuyi'){?>checked="checked"<?}?>>通道二</label>
-<label for="weimi"><input name="sms_service" type="radio" class="radio" id="weimi" value="weimi" onclick='document.getElementById("sms_div").style.display = "";' <?php if($sms_config[sms_service] == 'weimi'){?>checked="checked"<?}?>>通道三</label> 
+<!--<label for="ihuyi"><input name="sms_service" type="radio" class="radio" id="ihuyi" value="ihuyi" onclick='document.getElementById("sms_div").style.display = "";' <?php /*if($sms_config[sms_service] == 'ihuyi'){*/?>checked="checked"<?/*}*/?>>通道二</label>
+<label for="weimi"><input name="sms_service" type="radio" class="radio" id="weimi" value="weimi" onclick='document.getElementById("sms_div").style.display = "";' <?php /*if($sms_config[sms_service] == 'weimi'){*/?>checked="checked"<?/*}*/?>>通道三</label> -->
 <label for="no"><input class="radio" name="sms_service" type="radio" id="no" value="no" onclick='document.getElementById("sms_div").style.display = "none";' <?php if($sms_config[sms_service] == 'no' || empty($sms_config[sms_service])){?>checked="checked"<?}?>>不启用</label>
 </td>
 </tr>

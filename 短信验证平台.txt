@@ -1,0 +1,12 @@
+zz.253.com
+账号：	15000917187
+密码：	zhangyu88
+
+
+api账号：N4074466
+密码：2vJrLnRTFi69d1
+接口：http://smssh1.253.com/msg/send/json
+
+
+创蓝短信API文档：
+https://zz.253.com/api_doc/

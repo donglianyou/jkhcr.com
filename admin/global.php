@@ -281,7 +281,7 @@ function chk_admin_purview($purview)
 	}
 
 	$admin_uname = $data[$GLOBALS['admin_id']]['uname'];
-	!in_array($purview, explode(',', $data[$GLOBALS['admin_id']]['purviews'])) && write_msg('很抱歉，您所在会员组没有 <strong><font color=red>' . str_replace('purview_', '', $purview) . '</font></strong> 的操作权限！');
+	/*!in_array($purview, explode(',', $data[$GLOBALS['admin_id']]['purviews'])) && write_msg('很抱歉，您所在会员组没有 <strong><font color=red>' . str_replace('purview_', '', $purview) . '</font></strong> 的操作权限！');*/
 }
 
 
