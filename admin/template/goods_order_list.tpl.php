@@ -41,27 +41,33 @@ $(function(){
     <tr class="firstr">
 	<td width="50">
 	<input type="checkbox" name="chkall" onclick="AllCheck('prefix', this.form, 'selectedids')" class="checkbox"/>删?</td>
+	<td>订单号</td>
     <td>联系人</td>
     <td>商家用户名</td>
     <td>下单商品</td>
+    <td>单价</td>
     <td width="100">联系电话</td>
     <td>下单时间</td>
-    <td>IP</td>
     <td>数量</td>
+    <td>总价</td>
+    <td>状态</td>
     <td>操作</td>
   </tr>
 <tbody onmouseover="addMouseEvent(this);">
 <?php foreach($goods AS $row){?>
     <tr bgcolor="white" >
     <td><input type='checkbox' name='selectedids[]' value="<?=$row['id']?>" class='checkbox' id="<?=$row['id']?>"></td>
+	<td><?=$row['oid']?></td>
     <td><?=$row['oname']?></td>
     <td><a href="javascript:void(0);" onclick="
 setbg('<?=SysGlbCfm_SOFTNAME?>会员中心',400,110,'../box.php?part=member&userid=<?=$row[userid]?>&admindir=<?=$admindir?>')"><?=$row[userid]?></a></td>
     <td><a href="../goods.php?id=<?=$row['goodsid']?>" target="_blank"><?=$row['goodsname']?></a></td>
+    <td><?=$row['nowprice']?></td>
     <td><?=$row['tel']?></td>
     <td><em><?php echo GetTime($row['dateline']); ?></em></td>
-    <td><?=$row['ip']?></td>
     <td>&nbsp;<?=$row['ordernum']?></td>
+    <td>&nbsp;<?=$row['nowprice'] * $row['ordernum']?></td>
+    <td>&nbsp;<?=$row['status'];?></td>
     <td><a href="?part=view&id=<?=$row[id]?>">详细</a></td>
   </tr>
 <?}?>

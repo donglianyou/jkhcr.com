@@ -4,7 +4,7 @@ $data = array (
   'citypy' => '',
   'cityname' => '',
   'directory' => '',
-  'domain' => 'http://jkhcr.cn/',
+  'domain' => 'http://jkhcr.cn//',
   'mappoint' => '',
   'firstletter' => '',
   'title' => '',
@@ -17,7 +17,7 @@ $data = array (
       0 => 
       array (
         'name' => 'SKG',
-        'url' => 'http://www.lanyaku.com/',
+        'url' => 'http://www.baidu.com/',
         'logo' => '/flink/SKG.jpg',
       ),
     ),
@@ -26,7 +26,7 @@ $data = array (
       0 => 
       array (
         'name' => 'SKG',
-        'url' => 'http://www.lanyaku.com/',
+        'url' => 'http://www.baidu.com/',
       ),
     ),
   ),
@@ -37,13 +37,13 @@ $data = array (
     55 => '<a href="#" target="_blank"><img src="/attachment/adv/acenter.jpg" border="0"></a>',
     57 => '<a href="#" target="_blank"><img src="/attachment/adv/topbanner1.png" width="1000" border="0"></a>',
     21 => '<a href="#" target="_blank"><img src="/attachment/adv/topbanner2.gif" width="1000" border="0"></a>',
-    22 => '<a href="#" target="_blank"><img src="/attachment/adv/160x600.gif" border="0"></a>',
+    22 => '',
     23 => '<a href="#" target="_blank"><img src="/attachment/adv/bottombanner.jpg" height="90" width="1200" border="0"></a>',
-    24 => '<a href="#" target="_blank"><img src="/attachment/adv/intercatad2.jpg" width="160" border="0"></a>',
+    24 => '<a href="#" target="_blank"><img src="" width="160" border="0"></a>',
     56 => '<a href="#" target="_blank"><img src="/attachment/adv/topbanner.jpg" height="110" width="1200" border="0"></a>',
     28 => '<a href="#" target="_blank"><img src="" width="1000" border="0"></a>',
     29 => '<a href="#" target="_blank"><img src="" width="1000" border="0"></a>',
-    36 => '<a href="#" target="_blank"><img src="/attachment/adv/intercatad2.gif" border="0"></a>',
+    36 => '<a href="#" target="_blank"><img src="" border="0"></a>',
     38 => '<a href="#" target="_blank"><img src="/attachment/adv/pagetop.jpg" height="90" width="1200" border="0"></a>',
     41 => '<a target="_blank" href="http://junchang.taobao.com/qq_35921430/goumai.php">二手 空调 淘宝网www.taobao.com - 网购首选。</a> <br>2011新款新潮流，新品发布淘宝网春夏特辑，限时优惠，赶快加入',
     43 => '<a href="http://junchang.taobao.com/qq_35921430" target="_blank">二手车摩托车 junchang.taobao.com/qq_35921430</a><br>

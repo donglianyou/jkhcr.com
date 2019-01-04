@@ -6,6 +6,12 @@
        基本资料
       </td>
       </tr>
+	<tr bgcolor="#f5fbff">
+        <td>订单号</td>
+        <td bgcolor="white">
+        <?php echo $view['oid']; ?>
+        </td>
+      </tr>
       <tr bgcolor="#f5fbff">
         <td>订购的商品</td>
         <td bgcolor="white">
@@ -42,10 +48,28 @@
         <?php echo $view['qq']; ?>
         </td>
       </tr>
+		<tr bgcolor="#f5fbff">
+        <td>价格</td>
+        <td bgcolor="white">
+        <?php echo $view['nowprice']; ?>￥
+        </td>
+      </tr>
       <tr bgcolor="#f5fbff">
         <td>购买数量</td>
         <td bgcolor="white">
         <?php echo $view['ordernum']; ?>
+        </td>
+      </tr>
+	<tr bgcolor="#f5fbff">
+        <td>总价</td>
+        <td bgcolor="white">
+        <?php echo $view['nowprice'] * $view['ordernum']; ?>
+        </td>
+      </tr>
+	<tr bgcolor="#f5fbff">
+        <td>状态</td>
+        <td bgcolor="white">
+        <?php echo $view['status']; ?>
         </td>
       </tr>
       <tr bgcolor="#f5fbff">

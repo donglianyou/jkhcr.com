@@ -38,9 +38,9 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
     49 => '<a href="http://junchang.taobao.com/qq_35921430">找对象 上某某佳缘网</a><br />中国最受网民信赖、第一家在美上市的交友网站。提供丰富多彩的交友活动，数百万会员在这里成功找到对象。现有四千多万真实交友会员，让缘分千万里挑一！',
     50 => '<a href="http://junchang.taobao.com/qq_35921430">北京某某圆财务咨询有限公司 http://junchang.taobao.com/qq_35921430</a> <br /> 北京公司注册 北京代理记账 大额增资 审计环评卫生许可证 18888888888',
     51 => '<a href="http://junchang.taobao.com/qq_35921430">IBM 智慧资产时代的服务 www.ibm.com/cn</a><br>IBM服务管理,一切业务尽在掌握. IBM一系列的工具和服务助您一臂之力.',
-    36 => '<a href="#" target="_blank"><img src="/attachment/adv/intercatad2.gif" border="0"></a>',
-    22 => '<a href="#" target="_blank"><img src="/attachment/adv/160x600.gif" border="0"></a>',
-    24 => '<a href="#" target="_blank"><img src="/attachment/adv/intercatad2.jpg" width="160" border="0"></a>',
+    36 => '<a href="#" target="_blank"><img src="" border="0"></a>',
+    22 => '',
+    24 => '<a href="#" target="_blank"><img src="" width="160" border="0"></a>',
     12 => '<a href="#" target="_blank"><img src="/attachment/adv/bottombanner.jpg" height="90" width="1200" border="0"></a>',
     14 => '<a href="#" target="_blank"><img src="/attachment/adv/ggad.gif" height="90" width="1200" border="0"></a>',
   ),
@@ -312,12 +312,6 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
           0 => '46',
         ),
       ),
-      'intercatad' => 
-      array (
-        0 => '36',
-        1 => '22',
-        2 => '24',
-      ),
     ),
   ),
   28 => 
@@ -335,12 +329,6 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
         array (
           0 => '46',
         ),
-      ),
-      'intercatad' => 
-      array (
-        0 => '36',
-        1 => '22',
-        2 => '24',
       ),
     ),
   ),
@@ -360,12 +348,6 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
           0 => '46',
         ),
       ),
-      'intercatad' => 
-      array (
-        0 => '36',
-        1 => '22',
-        2 => '24',
-      ),
     ),
   ),
   30 => 
@@ -383,12 +365,6 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
         array (
           0 => '46',
         ),
-      ),
-      'intercatad' => 
-      array (
-        0 => '36',
-        1 => '22',
-        2 => '24',
       ),
     ),
   ),
@@ -408,12 +384,6 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
           0 => '46',
         ),
       ),
-      'intercatad' => 
-      array (
-        0 => '36',
-        1 => '22',
-        2 => '24',
-      ),
     ),
   ),
   32 => 
@@ -431,12 +401,6 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
         array (
           0 => '46',
         ),
-      ),
-      'intercatad' => 
-      array (
-        0 => '36',
-        1 => '22',
-        2 => '24',
       ),
     ),
   ),
@@ -456,12 +420,6 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
           0 => '46',
         ),
       ),
-      'intercatad' => 
-      array (
-        0 => '36',
-        1 => '22',
-        2 => '24',
-      ),
     ),
   ),
   34 => 
@@ -479,12 +437,6 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
         array (
           0 => '46',
         ),
-      ),
-      'intercatad' => 
-      array (
-        0 => '36',
-        1 => '22',
-        2 => '24',
       ),
     ),
   ),
@@ -504,12 +456,6 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
           0 => '46',
         ),
       ),
-      'intercatad' => 
-      array (
-        0 => '36',
-        1 => '22',
-        2 => '24',
-      ),
     ),
   ),
   36 => 
@@ -527,12 +473,6 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
         array (
           0 => '46',
         ),
-      ),
-      'intercatad' => 
-      array (
-        0 => '36',
-        1 => '22',
-        2 => '24',
       ),
     ),
   ),
@@ -552,12 +492,6 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
           0 => '46',
         ),
       ),
-      'intercatad' => 
-      array (
-        0 => '36',
-        1 => '22',
-        2 => '24',
-      ),
     ),
   ),
   38 => 
@@ -575,12 +509,6 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
         array (
           0 => '46',
         ),
-      ),
-      'intercatad' => 
-      array (
-        0 => '36',
-        1 => '22',
-        2 => '24',
       ),
     ),
   ),
@@ -600,12 +528,6 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
           0 => '46',
         ),
       ),
-      'intercatad' => 
-      array (
-        0 => '36',
-        1 => '22',
-        2 => '24',
-      ),
     ),
   ),
   40 => 
@@ -623,12 +545,6 @@ Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;R
         array (
           0 => '46',
         ),
-      ),
-      'intercatad' => 
-      array (
-        0 => '36',
-        1 => '22',
-        2 => '24',
       ),
     ),
   ),

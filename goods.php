@@ -147,6 +147,7 @@ if(!submit_check(CURSCRIPT.'_submit')){
 	}
 }else{
 
+    $oid = "o-".date('YmdHis') . str_pad(mt_rand(1, 99999), 5, '0', STR_PAD_LEFT);
 	$oname = $oname ? mhtmlspecialchars($oname) : '';
 	$goodsid = isset($goodsid) ? intval($goodsid) : '';
 	$ordernum = isset($ordernum) ? intval($ordernum) : '';
@@ -164,7 +165,7 @@ if(!submit_check(CURSCRIPT.'_submit')){
 	if(empty($goodsid)) write_msg('您要购买的商品不存在或已下架！');
 	if(empty($oname)) write_msg('您的姓名不能为空！');
 	
-	$db -> query("INSERT INTO `{$db_qq3479015851}goods_order` (goodsid,ordernum,oname,qq,tel,mobile,ip,address,msg,dateline) VALUES ('$goodsid','$ordernum','$oname','$qq','$tel','$mobile','$ip','$address','$msg','$timestamp')");
+	$db -> query("INSERT INTO `{$db_qq3479015851}goods_order` (oid,goodsid,ordernum,oname,qq,tel,mobile,ip,address,msg,dateline) VALUES ('$oid','$goodsid','$ordernum','$oname','$qq','$tel','$mobile','$ip','$address','$msg','$timestamp')");
 	
 	setcookie('goodsorder'.$goodsid,1,$timestamp+180,'/');
 	write_msg('您的订单已提交成功，我们会尽快与您取得联系！<br /><br /><input value="关闭窗口" type="button" onclick=\'parent.closeopendiv()\' style="margin-left:auto;margin-right:auto;" class="blue">','olmsg');

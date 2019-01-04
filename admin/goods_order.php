@@ -32,7 +32,7 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 								$where .= $userid != "" ? " AND b.userid = '".$userid."'" : "";
 								$rows_num = $db->getOne( "SELECT COUNT(id) FROM `".$db_qq3479015851."goods_order` AS a LEFT JOIN `".$db_qq3479015851."goods` AS b ON a.goodsid = b.goodsid ".$where );
 								$param = setparam( array( "part", "oname", "userid" ) );
-								$goods = page1( "SELECT a.*,b.goodsname,b.userid FROM `".$db_qq3479015851."goods_order` AS a LEFT JOIN `".$db_qq3479015851."goods` AS b ON a.goodsid = b.goodsid ".$where." ORDER BY dateline DESC" );
+								$goods = page1( "SELECT a.*,b.goodsname,b.nowprice,b.userid,c.status FROM `".$db_qq3479015851."goods_order` AS a LEFT JOIN `".$db_qq3479015851."goods` AS b ON a.goodsid = b.goodsid LEFT JOIN `".$db_qq3479015851."goods_status` AS c ON a.status_id = c.id".$where." ORDER BY dateline DESC" );
 				}
 				else if ( $part == "view" )
 				{
@@ -40,7 +40,7 @@ if ( !submit_check( CURSCRIPT."_submit" ) )
 								{
 												write_msg( "订单编号不能为空！" );
 								}
-								$view = $db->getRow( "SELECT a.*,b.goodsname FROM `".$db_qq3479015851."goods_order` AS a LEFT JOIN `".$db_qq3479015851."goods` AS b ON a.goodsid = b.goodsid WHERE a.id = '".$id."'" );
+								$view = $db->getRow( "SELECT a.*,b.goodsname,b.nowprice,c.status FROM `".$db_qq3479015851."goods_order` AS a LEFT JOIN `".$db_qq3479015851."goods` AS b ON a.goodsid = b.goodsid LEFT JOIN `".$db_qq3479015851."goods_status` AS c ON a.status_id = c.id  WHERE a.id = '".$id."'" );
 				}
 				$here = "商品订单管理";
 				include( qq3479015851_tpl( "goods_order_".$part ) );
