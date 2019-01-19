@@ -4,28 +4,25 @@ $data = array (
   array (
     1 => 
     array (
-      'words' => '天猫超市',
+      'words' => '2019第五届上海国际酵素产业博览会',
       'url' => 'index.php',
       'image' => '/attachment/mobile_gg/1469676806dzt6z.jpg',
     ),
-    3 => 
-    array (
-      'words' => '海量物品免费获取',
-      'url' => 'index.php',
-      'image' => '/attachment/mobile_gg/1469677858x6r1c.png',
-    ),
-  ),
-  2 => 
-  array (
     2 => 
     array (
-      'words' => '疯狂猜车',
+      'words' => '疯狂猜车2019第五届上海国际酵素产业博览会',
       'url' => 'index.php',
       'image' => '/attachment/mobile_gg/14696777801tuyl.jpg',
     ),
+    3 => 
+    array (
+      'words' => '2019第三届上海国际燕窝、高端滋补品展览会',
+      'url' => 'index.php',
+      'image' => '/attachment/mobile_gg/1469677858x6r1c.png',
+    ),
     4 => 
     array (
-      'words' => '7天退换',
+      'words' => '2019第五届上海国际酵素产业博览会',
       'url' => 'index.php',
       'image' => '/attachment/mobile_gg/1469677887yuini.png',
     ),

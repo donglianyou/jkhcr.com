@@ -27,12 +27,12 @@
 
 <div class="filter2" id="filter2">
     
-        <ul class="tab cfix">
+        <!--<ul class="tab cfix">
             <? if($cat_list) { ?><li class="item"><a href="javascript:void(0);"><span id="str_a_node">分类</span><em></em></a></li><?php } ?>
             <li class="item"><a href="javascript:void(0);"><span id="str_b_node">区域</span><em></em></a></li>
             <?php if(is_array($SystemGlobalcfm_extra_model)){foreach($SystemGlobalcfm_extra_model as $SystemGlobalcfm) { ?>            <li class="item"><a href="javascript:void(0);"><span id="str_<?=$SystemGlobalcfm['identifier']?>_node"><? echo cutstr($SystemGlobalcfm['title'],8); ?></span><em></em></a></li>
             <?php }} ?>
-        </ul>
+        </ul>-->
         
         <div class="inner" style="display:none;">
             <?php if(is_array($cat_list)){foreach($cat_list as $k => $SystemGlobalcfm) { ?>            <ul>

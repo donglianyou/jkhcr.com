@@ -7,7 +7,7 @@
 <div class="header">
 <a href="javascript:void(0);" onClick="return window.history.go(-1);" class="back left8">返回</a>
 <div class="search left8" id="search_ico" onClick="showNewPage('搜索',searchHtml,newPageSearch);">搜索</div>
-<a href="<?=$SystemGlobalcfm_global['SiteUrl']?>/m/index.php?mod=changecity" class="changecity left8" id="login_ico"><span class="change"><? echo $city['cityname']?$city['cityname']:'切换'; ?></span><span class="changecityico"></span></a>
+<a href="/" class="changecity left8" id="login_ico"><span class="change" style="margin: 3px 0px 0px 10px"><img src="/mlogo.gif" width="40px" height="auto" alt=""></span></a>
 <div id="ipageTitle" style="display:none;"><?=$SystemGlobalcfm_global['SiteName']?></div>
     <div class="login_inner" id="login_inner"></div>
 </div>
